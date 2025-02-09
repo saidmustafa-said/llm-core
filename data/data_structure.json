@@ -1,0 +1,23 @@
+{
+  "name": "Crystal Lake Overlook",
+  "description": "A serene lakeside spot with panoramic mountain views, ideal for sunset photography.",
+  "location": "Los Angeles, California",
+  "coordinates": { "latitude": 34.0522, "longitude": -118.2437 },
+  "tags": ["lake", "hiking", "family-friendly", "clear skies"],
+  "multimedia": {
+    "images": ["url1", "url2"],
+    "videos": ["url3 (clear sky timelapse)"]
+  },
+  "accessibility": {
+    "parking": true,
+    "wheelchair_accessible": true
+  },
+  "reviews": {
+    "rating": 4.7,
+    "sentiment": ["peaceful", "scenic"]
+  },
+  "best_time_to_visit": {
+    "season": "summer",
+    "time_of_day": "sunset"
+  }
+}

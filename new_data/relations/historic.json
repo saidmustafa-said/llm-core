@@ -1,0 +1,253 @@
+[
+    {
+        "name": "Maçka Silahhanesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0447085,
+            "longitude": 28.995223
+        },
+        "tags": [
+            "building"
+        ]
+    },
+    {
+        "name": "TCG Uluçalireis",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0414334,
+            "longitude": 28.947617
+        },
+        "tags": [
+            "attraction",
+            "ship"
+        ]
+    },
+    {
+        "name": "İstanbul Surları",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0355936,
+            "longitude": 28.9392959
+        },
+        "tags": [
+            "ruins"
+        ]
+    },
+    {
+        "name": "Fenerbahçe",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0414658,
+            "longitude": 28.9477902
+        },
+        "tags": [
+            "attraction",
+            "ship"
+        ]
+    },
+    {
+        "name": "Aya İrini Kilisesi",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0098292,
+            "longitude": 28.9809477
+        },
+        "tags": [
+            "museum",
+            "yes"
+        ]
+    },
+    {
+        "name": "Harem-i Hümayûn",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0130718,
+            "longitude": 28.9832643
+        },
+        "tags": [
+            "building"
+        ]
+    },
+    {
+        "name": "Rüstem Paşa Medresesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0131608,
+            "longitude": 28.9724589
+        },
+        "tags": [
+            "building"
+        ]
+    },
+    {
+        "name": "Rumeli Hisarı",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0849152,
+            "longitude": 29.0560944
+        },
+        "tags": [
+            "museum",
+            "castle"
+        ]
+    },
+    {
+        "name": "Yeni Valide Cami",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0247806,
+            "longitude": 29.015039
+        },
+        "tags": [
+            "yes",
+            "place_of_worship"
+        ]
+    },
+    {
+        "name": "Kariye Camii",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0312121,
+            "longitude": 28.9390238
+        },
+        "tags": [
+            "church",
+            "place_of_worship"
+        ]
+    },
+    {
+        "name": "İbrahim Paşa Sarayı",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0063974,
+            "longitude": 28.9748082
+        },
+        "tags": [
+            "castle"
+        ]
+    },
+    {
+        "name": "Mihrimah Sultan Medresesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0272561,
+            "longitude": 29.0163208
+        },
+        "tags": [
+            "yes",
+            "place_of_worship"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0099164,
+            "longitude": 28.9813769
+        },
+        "tags": [
+            "citywalls"
+        ]
+    },
+    {
+        "name": "Anadolu Hisarı",
+        "description": "Anadolu Hisarı (Güzelce Hisarı olarak da bilinir), İstanbul'un Anadoluhisarı semtinde, Göksu Deresi'nin İstanbul Boğazı'na döküldüğü yerdedir.",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0821285,
+            "longitude": 29.0670361
+        },
+        "tags": [
+            "castle"
+        ]
+    },
+    {
+        "name": "Khalkedon Limanı",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.998833,
+            "longitude": 29.02443
+        },
+        "tags": [
+            "archaeological_site"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.2491839,
+            "longitude": 29.0355415
+        },
+        "tags": [
+            "fort"
+        ]
+    },
+    {
+        "name": "Huber Köşkü",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1343562,
+            "longitude": 29.0619158
+        },
+        "tags": [
+            "building"
+        ]
+    },
+    {
+        "name": "Sultanahmet Camii",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0054066,
+            "longitude": 28.9766495
+        },
+        "tags": [
+            "attraction",
+            "mosque",
+            "place_of_worship"
+        ]
+    },
+    {
+        "name": "Nişancı Mehmet Paşa Medresesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0075896,
+            "longitude": 28.9338364
+        },
+        "tags": [
+            "building"
+        ]
+    },
+    {
+        "name": "Nuruosmaniye Camisi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0104074,
+            "longitude": 28.9703815
+        },
+        "tags": [
+            "attraction",
+            "yes",
+            "place_of_worship"
+        ]
+    }
+]

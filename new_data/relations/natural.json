@@ -1,0 +1,1114 @@
+[
+    {
+        "name": "Fatih Ormanı",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1331021,
+            "longitude": 29.0158818
+        },
+        "tags": []
+    },
+    {
+        "name": "Ömerli Baraj Gölü",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0230137,
+            "longitude": 29.3771528
+        },
+        "tags": []
+    },
+    {
+        "name": "Darlık Baraj Gölü",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0841147,
+            "longitude": 29.5811154
+        },
+        "tags": []
+    },
+    {
+        "name": "Büyükçekmece Gölü",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0647711,
+            "longitude": 28.554572
+        },
+        "tags": []
+    },
+    {
+        "name": "Haliç",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.041188,
+            "longitude": 28.9550616
+        },
+        "tags": []
+    },
+    {
+        "name": "Alibey Baraj Gölü",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1301057,
+            "longitude": 28.8974805
+        },
+        "tags": []
+    },
+    {
+        "name": "Sazlıdere Baraj Gölü",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1382223,
+            "longitude": 28.6963325
+        },
+        "tags": []
+    },
+    {
+        "name": "Elmalı-2 Baraj Gölü",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0720079,
+            "longitude": 29.1260963
+        },
+        "tags": []
+    },
+    {
+        "name": "Kâmil Abduş Gölü",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.8306482,
+            "longitude": 29.2852564
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0941317,
+            "longitude": 29.2119356
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1742028,
+            "longitude": 28.8946935
+        },
+        "tags": []
+    },
+    {
+        "name": "Yıldız Parkı",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0483032,
+            "longitude": 29.0168889
+        },
+        "tags": [
+            "park"
+        ]
+    },
+    {
+        "name": "Gölet",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0013314,
+            "longitude": 28.5382179
+        },
+        "tags": []
+    },
+    {
+        "name": "Gölet",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9534474,
+            "longitude": 29.2779898
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.2208782,
+            "longitude": 28.0665402
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0164292,
+            "longitude": 29.0589927
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0175203,
+            "longitude": 29.0594533
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0182786,
+            "longitude": 29.0616379
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0161778,
+            "longitude": 29.0612079
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0154418,
+            "longitude": 29.0603565
+        },
+        "tags": []
+    },
+    {
+        "name": "15",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0191756,
+            "longitude": 29.060443
+        },
+        "tags": []
+    },
+    {
+        "name": "19",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0195175,
+            "longitude": 29.0613543
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9455118,
+            "longitude": 29.1648839
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.945058,
+            "longitude": 29.1649401
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9453125,
+            "longitude": 29.1648498
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9451927,
+            "longitude": 29.1644414
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9449127,
+            "longitude": 29.1641866
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.945106,
+            "longitude": 29.1639835
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.945499,
+            "longitude": 29.1645774
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9456677,
+            "longitude": 29.1652547
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9458969,
+            "longitude": 29.1645859
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9460796,
+            "longitude": 29.1647343
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9459745,
+            "longitude": 29.1641097
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9455705,
+            "longitude": 29.1639942
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9452359,
+            "longitude": 29.1635918
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9459557,
+            "longitude": 29.1646543
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9462989,
+            "longitude": 29.1652428
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9456024,
+            "longitude": 29.1635921
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9638784,
+            "longitude": 29.221629
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.8713471,
+            "longitude": 29.3175175
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.8732538,
+            "longitude": 29.318936
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.8729994,
+            "longitude": 29.3182748
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.8717154,
+            "longitude": 29.3173064
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.906097,
+            "longitude": 29.3121745
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0595097,
+            "longitude": 29.1230008
+        },
+        "tags": []
+    },
+    {
+        "name": "Belgrad Ormanı",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.179093,
+            "longitude": 28.9469103
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0835494,
+            "longitude": 29.0921911
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0453648,
+            "longitude": 28.8895933
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1183743,
+            "longitude": 28.7768451
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.915411,
+            "longitude": 29.3251408
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9139155,
+            "longitude": 29.3240055
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.3406108,
+            "longitude": 28.1963627
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0582474,
+            "longitude": 28.8802847
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.2752311,
+            "longitude": 28.1605561
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9967262,
+            "longitude": 28.8915777
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0941087,
+            "longitude": 28.9122945
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1369355,
+            "longitude": 28.8824154
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1440038,
+            "longitude": 28.9292618
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9792803,
+            "longitude": 28.8431597
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0956849,
+            "longitude": 28.8319918
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1194687,
+            "longitude": 28.9162663
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1170937,
+            "longitude": 28.8973578
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0831403,
+            "longitude": 28.8745384
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0831403,
+            "longitude": 28.8745384
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1857064,
+            "longitude": 28.8510469
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0509545,
+            "longitude": 28.8894953
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1397524,
+            "longitude": 28.9638467
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1523345,
+            "longitude": 28.8614541
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1489057,
+            "longitude": 28.8359587
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1173783,
+            "longitude": 28.9049256
+        },
+        "tags": []
+    },
+    {
+        "name": "Karaağıl Devlet Ormanı",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9566247,
+            "longitude": 29.4297171
+        },
+        "tags": []
+    },
+    {
+        "name": "Başıbüyük Ormanı",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9526016,
+            "longitude": 29.1515561
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0514985,
+            "longitude": 28.7655385
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1310922,
+            "longitude": 28.8929632
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.8758507,
+            "longitude": 29.0604547
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1297083,
+            "longitude": 28.8706259
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.4189864,
+            "longitude": 28.1547604
+        },
+        "tags": []
+    },
+    {
+        "name": "Küçüksu",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0756741,
+            "longitude": 29.0680281
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0683291,
+            "longitude": 29.057802
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0692851,
+            "longitude": 29.0596753
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0689043,
+            "longitude": 29.0588762
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0695458,
+            "longitude": 29.0623027
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9776772,
+            "longitude": 29.0569654
+        },
+        "tags": []
+    },
+    {
+        "name": "Validebağ Korusu",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0150128,
+            "longitude": 29.0443603
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.2051693,
+            "longitude": 28.4567892
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.414051,
+            "longitude": 28.3755451
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.461338,
+            "longitude": 28.3079387
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9262851,
+            "longitude": 29.1237165
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.2302048,
+            "longitude": 28.0859685
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0959206,
+            "longitude": 28.8996244
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1985255,
+            "longitude": 28.0387817
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0939697,
+            "longitude": 28.9580693
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.094476,
+            "longitude": 28.954635
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0916801,
+            "longitude": 28.9545224
+        },
+        "tags": []
+    },
+    {
+        "name": "Durugöl",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.3441271,
+            "longitude": 28.5781869
+        },
+        "tags": []
+    },
+    {
+        "name": "Küçükçemece Gölü",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0183813,
+            "longitude": 28.745986
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.011163,
+            "longitude": 28.8787234
+        },
+        "tags": []
+    },
+    {
+        "name": "Bahçeşehir Göleti",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0691446,
+            "longitude": 28.6920299
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0612673,
+            "longitude": 28.7130745
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0611908,
+            "longitude": 28.7124701
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0627237,
+            "longitude": 28.7139923
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0630417,
+            "longitude": 28.7134581
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0632045,
+            "longitude": 28.7103863
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0630741,
+            "longitude": 28.7113886
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.2166063,
+            "longitude": 28.7710429
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.2083467,
+            "longitude": 28.7763222
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.3016212,
+            "longitude": 28.590114
+        },
+        "tags": []
+    },
+    {
+        "name": "Sık Orman",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1249179,
+            "longitude": 28.0527211
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9525763,
+            "longitude": 29.1338268
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0337038,
+            "longitude": 29.2132472
+        },
+        "tags": []
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.8887754,
+            "longitude": 29.3281228
+        },
+        "tags": []
+    }
+]

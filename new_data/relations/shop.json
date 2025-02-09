@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Zorlu Center",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0664574,
+            "longitude": 29.01688
+        },
+        "tags": []
+    },
+    {
+        "name": "Mall of İstanbul",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0630328,
+            "longitude": 28.8069731
+        },
+        "tags": []
+    },
+    {
+        "name": "Akasya Alışveriş Merkezi",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0015683,
+            "longitude": 29.0548147
+        },
+        "tags": []
+    },
+    {
+        "name": "Watergarden AVM",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 40.9976389,
+            "longitude": 29.0994145
+        },
+        "tags": []
+    },
+    {
+        "name": "Rings AVM",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 40.9736033,
+            "longitude": 29.2405803
+        },
+        "tags": []
+    }
+]

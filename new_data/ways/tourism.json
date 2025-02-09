@@ -1,0 +1,2104 @@
+[
+    {
+        "name": "Galata Kulesi",
+        "description": "No description available",
+        "location": "Istanbul",
+        "coordinates": {
+            "latitude": 41.0256344,
+            "longitude": 28.974213
+        },
+        "tags": [
+            "attraction",
+            "tower"
+        ]
+    },
+    {
+        "name": "Bozdoğan Su Kemeri",
+        "description": "Bozdoğan Kemeri, Roma İmparatoru Valens tarafından 4. yüzyılın sonlarında İstanbul'da yaptırılan su kemeri. Farklı dönemlerde Osmanlı Sultanları tarafından restore ettirilen su kemeri, şehrin önemli tarihi eserlerinden birisidir.",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0161583,
+            "longitude": 28.9551665
+        },
+        "tags": [
+            "attraction",
+            "aqueduct"
+        ]
+    },
+    {
+        "name": "Orhan Kemal Müzesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0305795,
+            "longitude": 28.9836082
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Ihlamur Kasrı",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0513081,
+            "longitude": 29.0013311
+        },
+        "tags": [
+            "attraction",
+            "park"
+        ]
+    },
+    {
+        "name": "Sultanahmet Meydanı",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0065205,
+            "longitude": 28.9760535
+        },
+        "tags": [
+            "attraction",
+            "yes"
+        ]
+    },
+    {
+        "name": "III. Ahmet Çeşmesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0082486,
+            "longitude": 28.9812612
+        },
+        "tags": [
+            "attraction",
+            "fountain",
+            "fountain"
+        ]
+    },
+    {
+        "name": "Beşiktaş Balık Çarşısı",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0436895,
+            "longitude": 29.0048264
+        },
+        "tags": [
+            "attraction",
+            "marketplace"
+        ]
+    },
+    {
+        "name": "Maslak Kasırları (Milli Saraylar)",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1191757,
+            "longitude": 29.0261277
+        },
+        "tags": [
+            "museum",
+            "castle"
+        ]
+    },
+    {
+        "name": "Çadır Köşkü",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0476515,
+            "longitude": 29.0132858
+        },
+        "tags": [
+            "attraction"
+        ]
+    },
+    {
+        "name": "Rixos Tersane İstanbul",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0357982,
+            "longitude": 28.9562914
+        },
+        "tags": [
+            "attraction"
+        ]
+    },
+    {
+        "name": "Çinili Köşk",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0120223,
+            "longitude": 28.9812383
+        },
+        "tags": [
+            "museum",
+            "building"
+        ]
+    },
+    {
+        "name": "Eski Şark Eserleri Müzesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.011393,
+            "longitude": 28.9804023
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Sultan Ahmet Türbesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0067741,
+            "longitude": 28.9769406
+        },
+        "tags": [
+            "attraction",
+            "tomb"
+        ]
+    },
+    {
+        "name": "Ayasofya-i Kebir Câmi-i Şerifi",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0085095,
+            "longitude": 28.9799976
+        },
+        "tags": [
+            "attraction",
+            "church",
+            "place_of_worship"
+        ]
+    },
+    {
+        "name": "Alman Çeşmesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0071134,
+            "longitude": 28.9766752
+        },
+        "tags": [
+            "attraction",
+            "yes",
+            "fountain"
+        ]
+    },
+    {
+        "name": "Agora Guesthouse",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0049156,
+            "longitude": 28.9801473
+        },
+        "tags": [
+            "guest_house"
+        ]
+    },
+    {
+        "name": "Vezir Hanı",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0092573,
+            "longitude": 28.9720052
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Sepetçiler Kasrı",
+        "description": "No description available",
+        "location": "Istanbul",
+        "coordinates": {
+            "latitude": 41.0163283,
+            "longitude": 28.9816446
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Pera Müzesi",
+        "description": "No description available",
+        "location": "Tepebaşı- Beyoğlu - Istanbul",
+        "coordinates": {
+            "latitude": 41.0318037,
+            "longitude": 28.975204
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Zeyrek Molla Camii",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0197178,
+            "longitude": 28.9572467
+        },
+        "tags": [
+            "attraction",
+            "place_of_worship"
+        ]
+    },
+    {
+        "name": "Bostanci Lunapark",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 40.9564981,
+            "longitude": 29.1010632
+        },
+        "tags": [
+            "theme_park"
+        ]
+    },
+    {
+        "name": "İTÜ Yılmaz Akdoruk Öğrenci Evi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1047247,
+            "longitude": 29.0209448
+        },
+        "tags": [
+            "guest_house"
+        ]
+    },
+    {
+        "name": "Haseki Hürrem Hamamı",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0069452,
+            "longitude": 28.9788591
+        },
+        "tags": [
+            "attraction",
+            "yes",
+            "public_bath"
+        ]
+    },
+    {
+        "name": "Kılıç Ali Paşa Camii",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.026417,
+            "longitude": 28.9809474
+        },
+        "tags": [
+            "attraction",
+            "place_of_worship"
+        ]
+    },
+    {
+        "name": "Galata Mevlevihanesi Müzesi",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0280128,
+            "longitude": 28.9751142
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Endem TV Kulesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0264095,
+            "longitude": 28.6205801
+        },
+        "tags": [
+            "attraction"
+        ]
+    },
+    {
+        "name": "Dolmabahçe Sarayı",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0387836,
+            "longitude": 28.9995191
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Mahmut Paşa Camii",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0111863,
+            "longitude": 28.9713768
+        },
+        "tags": [
+            "attraction",
+            "place_of_worship"
+        ]
+    },
+    {
+        "name": "Rüstem Paşa Camii",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0176797,
+            "longitude": 28.9687178
+        },
+        "tags": [
+            "attraction",
+            "place_of_worship"
+        ]
+    },
+    {
+        "name": "Elvis Müzik",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0281214,
+            "longitude": 28.9745159
+        },
+        "tags": [
+            "attraction"
+        ]
+    },
+    {
+        "name": "Milli Saraylar Resim Müzesi;Resim Müzesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0396619,
+            "longitude": 29.0027225
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Hezarfen Ahmet Çelebi Heykeli",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1041396,
+            "longitude": 29.0211195
+        },
+        "tags": [
+            "artwork"
+        ]
+    },
+    {
+        "name": "Buyukcekmece Kervansaray",
+        "description": "16.YY Osmanlı İmparatorluğu dönemi konaklama yeri. 1566'da Kanuni Sultan Süleyman tarafından Mimar Sinan'a yaptırılmıştır. Yapıldığında çatının tamamı kurşun olduğundan \"Kurşunlu Han\" olarak da bilinir. Kültürel ve sanatsal etkinliklerde kullanılır.",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0218871,
+            "longitude": 28.5758757
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0671686,
+            "longitude": 28.9582899
+        },
+        "tags": [
+            "artwork"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0672245,
+            "longitude": 28.9584901
+        },
+        "tags": [
+            "artwork"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0673292,
+            "longitude": 28.9583134
+        },
+        "tags": [
+            "artwork"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0415744,
+            "longitude": 28.9493406
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0420387,
+            "longitude": 28.9489474
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0421917,
+            "longitude": 28.9484994
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Lockheed F-104 Starfighter",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0423869,
+            "longitude": 28.949316
+        },
+        "tags": [
+            "attraction",
+            "aircraft"
+        ]
+    },
+    {
+        "name": "Douglas DC-3 'Dakota'",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0418216,
+            "longitude": 28.9484183
+        },
+        "tags": [
+            "artwork"
+        ]
+    },
+    {
+        "name": "Adnan Menderes Müzesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.8640523,
+            "longitude": 28.9943118
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "27 Mayıs Müzesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.8655541,
+            "longitude": 28.9947982
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Küçüksu Kasrı",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0784115,
+            "longitude": 29.0648848
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Barış Manço Evi",
+        "description": "House of a Turkish - International rock music legend tuned into an exhibit about his life and his work after his death",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 40.9817446,
+            "longitude": 29.0249322
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0440651,
+            "longitude": 28.9375302
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Türkiye İş Bankası Müzesi",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0160939,
+            "longitude": 28.9726009
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Dolmabahçe Sarayı",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0397895,
+            "longitude": 29.0015991
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0391296,
+            "longitude": 29.0005456
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Müze Gazhane",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 40.9967231,
+            "longitude": 29.0429042
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Alay Köşkü",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0110425,
+            "longitude": 28.978391
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Kapalı Çarşı",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0109699,
+            "longitude": 28.9682177
+        },
+        "tags": [
+            "attraction",
+            "yes",
+            "marketplace"
+        ]
+    },
+    {
+        "name": "Sultanbeyli Gölet",
+        "description": "No description available",
+        "location": "Istanbul",
+        "coordinates": {
+            "latitude": 40.9525534,
+            "longitude": 29.2770992
+        },
+        "tags": [
+            "attraction",
+            "park"
+        ]
+    },
+    {
+        "name": "Luna Park",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.024699,
+            "longitude": 29.2224724
+        },
+        "tags": [
+            "theme_park"
+        ]
+    },
+    {
+        "name": "Sağlık Müzesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0083138,
+            "longitude": 28.9752897
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Ihlamur Kasrı (Merasim Köşkü)",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0507255,
+            "longitude": 29.0011953
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Vialand İsfanbul Tema Park",
+        "description": "No description available",
+        "location": "Istanbul",
+        "coordinates": {
+            "latitude": 41.0713314,
+            "longitude": 28.9228874
+        },
+        "tags": [
+            "theme_park"
+        ]
+    },
+    {
+        "name": "TCDD 2451",
+        "description": "0-4-0 tank engine",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0152764,
+            "longitude": 28.9764265
+        },
+        "tags": [
+            "attraction",
+            "locomotive"
+        ]
+    },
+    {
+        "name": "İstanbul Arkeoloji Müzesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0116433,
+            "longitude": 28.9813725
+        },
+        "tags": [
+            "museum",
+            "building"
+        ]
+    },
+    {
+        "name": "Kamondo Merdivenleri",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.023967,
+            "longitude": 28.9737782
+        },
+        "tags": [
+            "attraction"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0427903,
+            "longitude": 28.9493459
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Büyük Mabeyn Köşkü",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0502671,
+            "longitude": 29.010926
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Set Köşkü",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0501024,
+            "longitude": 29.010636
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Şehir Müzesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0514836,
+            "longitude": 29.0131585
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Saray Tiyatrosu ve Sahne Sanatları Müzesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0514006,
+            "longitude": 29.0120193
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Yıldız Sarayı Müze Müdürlüğü",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0499954,
+            "longitude": 29.0115888
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Şale Kasrı",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0520986,
+            "longitude": 29.0126133
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Aziz Mahmud Hüdayi Vakfı Gazanfer Ağa Medresesi Eğitim ve Kültür Merkezi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0163484,
+            "longitude": 28.9554386
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Amcazade Külliyesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0152743,
+            "longitude": 28.9520598
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "İstanbul Arkeoloji Müzeleri",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0116941,
+            "longitude": 28.9812131
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Darphane-i Amire",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0104187,
+            "longitude": 28.9803773
+        },
+        "tags": [
+            "attraction"
+        ]
+    },
+    {
+        "name": "Topkapı Sarayı",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0128138,
+            "longitude": 28.9840154
+        },
+        "tags": [
+            "attraction",
+            "castle"
+        ]
+    },
+    {
+        "name": "Edebiyat Müzesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0488041,
+            "longitude": 29.0111404
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9826215,
+            "longitude": 29.1083525
+        },
+        "tags": [
+            "guest_house"
+        ]
+    },
+    {
+        "name": "Yoros Kalesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1785803,
+            "longitude": 29.0948567
+        },
+        "tags": [
+            "attraction",
+            "archaeological_site"
+        ]
+    },
+    {
+        "name": "Mevlana Bazaar",
+        "description": "No description available",
+        "location": "Istanbul",
+        "coordinates": {
+            "latitude": 41.0027107,
+            "longitude": 28.979801
+        },
+        "tags": [
+            "attraction"
+        ]
+    },
+    {
+        "name": "Viaport Outlet",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9393848,
+            "longitude": 29.3241545
+        },
+        "tags": [
+            "theme_park"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0638347,
+            "longitude": 29.0598532
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9556803,
+            "longitude": 29.1198751
+        },
+        "tags": [
+            "artwork"
+        ]
+    },
+    {
+        "name": "Fikret Otyam Müzesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9470515,
+            "longitude": 29.1071746
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "İZÜ Yabancı Akademisyen Misafirhanesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0312725,
+            "longitude": 28.7875328
+        },
+        "tags": [
+            "guest_house"
+        ]
+    },
+    {
+        "name": "İZÜ Yabancı Akademisyen Misafirhanesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.031143,
+            "longitude": 28.7878443
+        },
+        "tags": [
+            "guest_house"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.03103,
+            "longitude": 28.7870335
+        },
+        "tags": [
+            "guest_house"
+        ]
+    },
+    {
+        "name": "Eski Açık Tribün",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0385496,
+            "longitude": 28.9953909
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Deniz Müzesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0410687,
+            "longitude": 29.0056763
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "MSGSÜ Kültür ve Sanat Merkezi",
+        "description": "No description available",
+        "location": "Istanbul",
+        "coordinates": {
+            "latitude": 41.0276465,
+            "longitude": 28.9815954
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Malta Köşkü",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0511942,
+            "longitude": 29.015947
+        },
+        "tags": [
+            "attraction",
+            "manor"
+        ]
+    },
+    {
+        "name": "Cube Suites",
+        "description": "No description available",
+        "location": "Istanbul",
+        "coordinates": {
+            "latitude": 41.0058556,
+            "longitude": 28.9690582
+        },
+        "tags": [
+            "guest_house"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Istanbul",
+        "coordinates": {
+            "latitude": 41.0336999,
+            "longitude": 28.9404772
+        },
+        "tags": [
+            "museum",
+            "building"
+        ]
+    },
+    {
+        "name": "Muhammed El-Ensari Türbesi",
+        "description": "No description available",
+        "location": "Istanbul",
+        "coordinates": {
+            "latitude": 41.0397898,
+            "longitude": 28.9426813
+        },
+        "tags": [
+            "attraction"
+        ]
+    },
+    {
+        "name": "Öğretmen Evi",
+        "description": "No description available",
+        "location": "istanbul",
+        "coordinates": {
+            "latitude": 41.001091,
+            "longitude": 28.9039428
+        },
+        "tags": [
+            "guest_house"
+        ]
+    },
+    {
+        "name": "Hatice Abbas Halim Çocuk Evleri Sitesi Müdürlüğü",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 40.917771,
+            "longitude": 29.2244467
+        },
+        "tags": [
+            "guest_house"
+        ]
+    },
+    {
+        "name": "Kazım Karabekir Paşa Müzesi",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 40.9682691,
+            "longitude": 29.078593
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0309947,
+            "longitude": 28.786637
+        },
+        "tags": [
+            "guest_house"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0309585,
+            "longitude": 28.7862611
+        },
+        "tags": [
+            "guest_house"
+        ]
+    },
+    {
+        "name": "Cat Museum",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0265284,
+            "longitude": 28.9749954
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "İstanbul Oyuncak Müzesi",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 40.9759534,
+            "longitude": 29.0707066
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Ortabahçe",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0259051,
+            "longitude": 28.8894717
+        },
+        "tags": [
+            "attraction",
+            "park"
+        ]
+    },
+    {
+        "name": "santralistanbul Enerji Müzesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0665855,
+            "longitude": 28.946664
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Atatürk Museum, Şişli",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0564045,
+            "longitude": 28.9872127
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Leroz Lunapark Florya",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9622284,
+            "longitude": 28.8044504
+        },
+        "tags": [
+            "theme_park"
+        ]
+    },
+    {
+        "name": "Çamlıca Televizyon Kulesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0163724,
+            "longitude": 29.0655409
+        },
+        "tags": [
+            "attraction"
+        ]
+    },
+    {
+        "name": "Bilim Üsküdar",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 40.9974599,
+            "longitude": 29.0642331
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0843675,
+            "longitude": 29.0528883
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Yunus Heykeli",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.018754,
+            "longitude": 28.5853683
+        },
+        "tags": [
+            "artwork"
+        ]
+    },
+    {
+        "name": "Aşiyan Müzesi",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0826576,
+            "longitude": 29.0534519
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9639344,
+            "longitude": 28.8261944
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Demokrasi ve Özgürlük Müzesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.8650346,
+            "longitude": 28.9932236
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0785949,
+            "longitude": 28.9696624
+        },
+        "tags": [
+            "theme_park"
+        ]
+    },
+    {
+        "name": "Küçükçiftlik Park",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0431685,
+            "longitude": 28.9932875
+        },
+        "tags": [
+            "theme_park"
+        ]
+    },
+    {
+        "name": "Viasea Theme Park",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.8183446,
+            "longitude": 29.3170121
+        },
+        "tags": [
+            "theme_park"
+        ]
+    },
+    {
+        "name": "İklim Müzesi",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 40.9963286,
+            "longitude": 29.0418136
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.8702316,
+            "longitude": 29.1164854
+        },
+        "tags": [
+            "attraction"
+        ]
+    },
+    {
+        "name": "Perili Köşk",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0890732,
+            "longitude": 29.0565643
+        },
+        "tags": [
+            "attraction"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0404708,
+            "longitude": 29.0004081
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Astronomi Müzesi",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0300893,
+            "longitude": 29.0421995
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0923852,
+            "longitude": 28.9065061
+        },
+        "tags": [
+            "artwork"
+        ]
+    },
+    {
+        "name": "MSGSÜ Kültür ve Sanat Merkezi",
+        "description": "No description available",
+        "location": "Istanbul",
+        "coordinates": {
+            "latitude": 41.0275543,
+            "longitude": 28.9810246
+        },
+        "tags": [
+            "attraction"
+        ]
+    },
+    {
+        "name": "Danışma",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0258125,
+            "longitude": 28.7841733
+        },
+        "tags": [
+            "information"
+        ]
+    },
+    {
+        "name": "Kartal Belediyesi Masal Müzesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9167456,
+            "longitude": 29.2203114
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1115078,
+            "longitude": 28.9142357
+        },
+        "tags": [
+            "viewpoint"
+        ]
+    },
+    {
+        "name": "Atatürk Heykeli",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.8881483,
+            "longitude": 29.1861125
+        },
+        "tags": [
+            "artwork"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0412287,
+            "longitude": 28.9486789
+        },
+        "tags": [
+            "attraction"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.041192,
+            "longitude": 28.9487227
+        },
+        "tags": [
+            "attraction"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0411795,
+            "longitude": 28.9488031
+        },
+        "tags": [
+            "attraction"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0416506,
+            "longitude": 28.9492884
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Sonsuz Döngü Heykeli",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1070515,
+            "longitude": 29.0238904
+        },
+        "tags": [
+            "artwork"
+        ]
+    },
+    {
+        "name": "Adalar Müzesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.8564329,
+            "longitude": 29.1251424
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0667824,
+            "longitude": 28.6946312
+        },
+        "tags": [
+            "theme_park"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1043794,
+            "longitude": 29.0212953
+        },
+        "tags": [
+            "artwork"
+        ]
+    },
+    {
+        "name": "Su Sarnıcı",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.8649929,
+            "longitude": 28.9952895
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Oramiral Sadık Altıncan Kütüphanesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.8647327,
+            "longitude": 28.9927972
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Konukevi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9858234,
+            "longitude": 29.049596
+        },
+        "tags": [
+            "guest_house"
+        ]
+    },
+    {
+        "name": "Yeşilpınar Parkı mini lunaparkı",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.081126,
+            "longitude": 28.9210637
+        },
+        "tags": [
+            "theme_park"
+        ]
+    },
+    {
+        "name": "Atatürk Kültür Merkezi",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0365654,
+            "longitude": 28.9882459
+        },
+        "tags": [
+            "attraction",
+            "theatre"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0238456,
+            "longitude": 29.12476
+        },
+        "tags": [
+            "theme_park"
+        ]
+    },
+    {
+        "name": "Miniatürk",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0598464,
+            "longitude": 28.9487611
+        },
+        "tags": [
+            "theme_park"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9917403,
+            "longitude": 29.2229417
+        },
+        "tags": [
+            "artwork"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1060217,
+            "longitude": 29.055627
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Baruthane Müze",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9756297,
+            "longitude": 28.8594952
+        },
+        "tags": [
+            "museum",
+            "building"
+        ]
+    },
+    {
+        "name": "Haldun Taner Müze Evi",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 40.9762221,
+            "longitude": 29.0472216
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Sait Halim Paşa Yalısı",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1204464,
+            "longitude": 29.0700049
+        },
+        "tags": [
+            "attraction",
+            "building"
+        ]
+    },
+    {
+        "name": "İstanbul Dolphinarium",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0617625,
+            "longitude": 28.9430599
+        },
+        "tags": [
+            "zoo"
+        ]
+    },
+    {
+        "name": "İstanbul Kuş Cenneti",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0623982,
+            "longitude": 29.1063906
+        },
+        "tags": [
+            "zoo"
+        ]
+    },
+    {
+        "name": "Sinematek",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 40.9864836,
+            "longitude": 29.0326796
+        },
+        "tags": [
+            "museum",
+            "cinema"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9966249,
+            "longitude": 29.0423783
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0598744,
+            "longitude": 28.8889918
+        },
+        "tags": [
+            "theme_park"
+        ]
+    },
+    {
+        "name": "Ural Ataman Classic Car Museum",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.1281086,
+            "longitude": 29.0478419
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Sadberk Hanım Müzesi",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.1630055,
+            "longitude": 29.0481636
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Cam ve Billur Müzesi",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.1385096,
+            "longitude": 29.1039692
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Hafıza 15 Temmuz Müzesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0371844,
+            "longitude": 29.041552
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Florya Atatürk Deniz Köşkü",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9726583,
+            "longitude": 28.7825007
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Panorama 1453 Tarih Müzesi",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.0181549,
+            "longitude": 28.92041
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Çemberlitaş Sütunu",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.008553,
+            "longitude": 28.9712828
+        },
+        "tags": [
+            "attraction",
+            "monument"
+        ]
+    },
+    {
+        "name": "Büyük Saray Mozaikleri Müzesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0042947,
+            "longitude": 28.977433
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Şerefiye Sarnıcı",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0074148,
+            "longitude": 28.9723954
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Paşadere Su Kemeri",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1690059,
+            "longitude": 28.9373073
+        },
+        "tags": [
+            "attraction",
+            "aqueduct"
+        ]
+    },
+    {
+        "name": "Atatürk Evi Müzesi",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9717933,
+            "longitude": 28.7142712
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Bukoleon Sarayı Kalıntıları",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0024553,
+            "longitude": 28.9763545
+        },
+        "tags": [
+            "attraction",
+            "archaeological_site"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.8420294,
+            "longitude": 29.2927999
+        },
+        "tags": [
+            "artwork"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.841753,
+            "longitude": 29.2927415
+        },
+        "tags": [
+            "artwork"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0935436,
+            "longitude": 28.8947501
+        },
+        "tags": [
+            "artwork"
+        ]
+    },
+    {
+        "name": "Vehbi Koç Evi",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 41.1652679,
+            "longitude": 29.0527977
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Sanat Evi ve Kent Müzesi",
+        "description": "No description available",
+        "location": "İstanbul",
+        "coordinates": {
+            "latitude": 40.9559888,
+            "longitude": 28.8211794
+        },
+        "tags": [
+            "museum"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9932796,
+            "longitude": 29.0303273
+        },
+        "tags": [
+            "artwork"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9934926,
+            "longitude": 29.0305415
+        },
+        "tags": [
+            "artwork"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 40.9959749,
+            "longitude": 28.8843495
+        },
+        "tags": [
+            "artwork"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0700926,
+            "longitude": 28.9210788
+        },
+        "tags": [
+            "artwork"
+        ]
+    },
+    {
+        "name": "Eyüpsultan Belediyesi İşletme Müdürlüğü Kurtkemeri Şefliği",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1976337,
+            "longitude": 28.9200869
+        },
+        "tags": [
+            "information"
+        ]
+    },
+    {
+        "name": "Unknown Place",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0971576,
+            "longitude": 28.9236838
+        },
+        "tags": [
+            "artwork"
+        ]
+    },
+    {
+        "name": "İstanbul Başakşehir Futbol Klubü Kupası",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.1206489,
+            "longitude": 28.8081435
+        },
+        "tags": [
+            "artwork"
+        ]
+    },
+    {
+        "name": "Kibele",
+        "description": "No description available",
+        "location": "Türkiye/İstanbul",
+        "coordinates": {
+            "latitude": 41.0079044,
+            "longitude": 29.1097043
+        },
+        "tags": [
+            "artwork"
+        ]
+    }
+]
