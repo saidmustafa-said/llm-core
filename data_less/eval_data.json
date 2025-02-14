@@ -1,0 +1,14 @@
+[
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Burger King'. If my query is broad, please recommend 3-4 options associated with the tags: fast_food.",
+    "target_text": "{\"name\": \"Burger King\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0595388, \"longitude\": 28.9137855}, \"tags\": [\"fast_food\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Kyanus Gemi Cafe'. If my query is broad, please recommend 3-4 options associated with the tags: cafe.",
+    "target_text": "{\"name\": \"Kyanus Gemi Cafe\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0357727, \"longitude\": 28.9485404}, \"tags\": [\"cafe\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Western Union'. If my query is broad, please recommend 3-4 options associated with the tags: atm.",
+    "target_text": "{\"name\": \"Western Union\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0153498, \"longitude\": 28.9708419}, \"tags\": [\"atm\"]}"
+  }
+]

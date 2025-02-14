@@ -1,0 +1,254 @@
+[
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Opet'. If my query is broad, please recommend 3-4 options associated with the tags: fuel.",
+    "target_text": "{\"name\": \"Opet\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0260516, \"longitude\": 28.9798874}, \"tags\": [\"fuel\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'İrem Özdoğan Eczanesi'. If my query is broad, please recommend 3-4 options associated with the tags: pharmacy.",
+    "target_text": "{\"name\": \"İrem Özdoğan Eczanesi\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 40.9824789, \"longitude\": 29.0652149}, \"tags\": [\"pharmacy\"]}"
+  },
+  {
+    "input_text": "I am located in Istanbul. I would like to learn more about a place called 'Baba Ali cafe'. If my query is broad, please recommend 3-4 options associated with the tags: cafe.",
+    "target_text": "{\"name\": \"Baba Ali cafe\", \"description\": \"No description available\", \"location\": \"Istanbul\", \"coordinates\": {\"latitude\": 41.0039536, \"longitude\": 28.9364326}, \"tags\": [\"cafe\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'café limar'. If my query is broad, please recommend 3-4 options associated with the tags: cafe.",
+    "target_text": "{\"name\": \"café limar\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0358474, \"longitude\": 28.6739115}, \"tags\": [\"cafe\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Grace Rooftop Restaurant'. If my query is broad, please recommend 3-4 options associated with the tags: restaurant.",
+    "target_text": "{\"name\": \"Grace Rooftop Restaurant\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0062591, \"longitude\": 28.9736688}, \"tags\": [\"restaurant\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Nedim Erdinç Eczanesi'. If my query is broad, please recommend 3-4 options associated with the tags: pharmacy.",
+    "target_text": "{\"name\": \"Nedim Erdinç Eczanesi\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 40.9808486, \"longitude\": 29.0226736}, \"tags\": [\"pharmacy\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Evranos Eczanesi'. If my query is broad, please recommend 3-4 options associated with the tags: pharmacy.",
+    "target_text": "{\"name\": \"Evranos Eczanesi\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 40.980278, \"longitude\": 29.0658603}, \"tags\": [\"pharmacy\"]}"
+  },
+  {
+    "input_text": "I am located in İstanbul. I would like to learn more about a place called 'Opet Bağcılar'. If my query is broad, please recommend 3-4 options associated with the tags: fuel.",
+    "target_text": "{\"name\": \"Opet Bağcılar\", \"description\": \"No description available\", \"location\": \"İstanbul\", \"coordinates\": {\"latitude\": 41.0477, \"longitude\": 28.859748}, \"tags\": [\"fuel\"]}"
+  },
+  {
+    "input_text": "I am located in Istanbul. I would like to learn more about a place called 'QNB Finansbank'. If my query is broad, please recommend 3-4 options associated with the tags: bank.",
+    "target_text": "{\"name\": \"QNB Finansbank\", \"description\": \"No description available\", \"location\": \"Istanbul\", \"coordinates\": {\"latitude\": 40.9942445, \"longitude\": 28.9069785}, \"tags\": [\"bank\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Gümüş Cafe'. If my query is broad, please recommend 3-4 options associated with the tags: cafe.",
+    "target_text": "{\"name\": \"Gümüş Cafe\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.3169745, \"longitude\": 28.1754852}, \"tags\": [\"cafe\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Duru Mangalevi'. If my query is broad, please recommend 3-4 options associated with the tags: restaurant.",
+    "target_text": "{\"name\": \"Duru Mangalevi\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 40.9452471, \"longitude\": 29.120196}, \"tags\": [\"restaurant\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Cengiz Topel Taksi'. If my query is broad, please recommend 3-4 options associated with the tags: taxi.",
+    "target_text": "{\"name\": \"Cengiz Topel Taksi\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0866519, \"longitude\": 28.9235413}, \"tags\": [\"taxi\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Ataşehir Küçükbakkalköy 11 Nolu Aile Sağlığı Merkezi'. If my query is broad, please recommend 3-4 options associated with the tags: clinic.",
+    "target_text": "{\"name\": \"Ataşehir Küçükbakkalköy 11 Nolu Aile Sağlığı Merkezi\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 40.9812355, \"longitude\": 29.1151794}, \"tags\": [\"clinic\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'SARIKAYA KEBAP (KEBAPCI)'. If my query is broad, please recommend 3-4 options associated with the tags: restaurant.",
+    "target_text": "{\"name\": \"SARIKAYA KEBAP (KEBAPCI)\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0262402, \"longitude\": 28.9733863}, \"tags\": [\"restaurant\"]}"
+  },
+  {
+    "input_text": "I am located in Istanbul. I would like to learn more about a place called 'Unknown Place'. If my query is broad, please recommend 3-4 options associated with the tags: waste_basket.",
+    "target_text": "{\"name\": \"Unknown Place\", \"description\": \"No description available\", \"location\": \"Istanbul\", \"coordinates\": {\"latitude\": 40.9510828, \"longitude\": 29.1077006}, \"tags\": [\"waste_basket\"]}"
+  },
+  {
+    "input_text": "I am located in Istanbul. I would like to learn more about a place called 'Şölen Çorba'. If my query is broad, please recommend 3-4 options associated with the tags: restaurant.",
+    "target_text": "{\"name\": \"Şölen Çorba\", \"description\": \"No description available\", \"location\": \"Istanbul\", \"coordinates\": {\"latitude\": 40.9710073, \"longitude\": 29.2493752}, \"tags\": [\"restaurant\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Habil Pizza'. If my query is broad, please recommend 3-4 options associated with the tags: fast_food.",
+    "target_text": "{\"name\": \"Habil Pizza\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0938592, \"longitude\": 29.0909205}, \"tags\": [\"fast_food\"]}"
+  },
+  {
+    "input_text": "I am located in İstanbul. I would like to learn more about a place called 'PTT Cumhuriyet Mahallesi Şubesi'. If my query is broad, please recommend 3-4 options associated with the tags: post_office.",
+    "target_text": "{\"name\": \"PTT Cumhuriyet Mahallesi Şubesi\", \"description\": \"No description available\", \"location\": \"İstanbul\", \"coordinates\": {\"latitude\": 41.0225345, \"longitude\": 29.2240242}, \"tags\": [\"post_office\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Yapı Kredi'. If my query is broad, please recommend 3-4 options associated with the tags: atm.",
+    "target_text": "{\"name\": \"Yapı Kredi\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 40.8776114, \"longitude\": 29.0995876}, \"tags\": [\"atm\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Dürümle'. If my query is broad, please recommend 3-4 options associated with the tags: fast_food.",
+    "target_text": "{\"name\": \"Dürümle\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 40.9319432, \"longitude\": 29.1277033}, \"tags\": [\"fast_food\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Uskumruköy Eczanesi'. If my query is broad, please recommend 3-4 options associated with the tags: pharmacy.",
+    "target_text": "{\"name\": \"Uskumruköy Eczanesi\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.2200591, \"longitude\": 29.022754}, \"tags\": [\"pharmacy\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Unknown Place'. If my query is broad, please recommend 3-4 options associated with the tags: police.",
+    "target_text": "{\"name\": \"Unknown Place\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 40.8767394, \"longitude\": 29.1010246}, \"tags\": [\"police\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Yapı Kredi'. If my query is broad, please recommend 3-4 options associated with the tags: atm.",
+    "target_text": "{\"name\": \"Yapı Kredi\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.003931, \"longitude\": 29.031475}, \"tags\": [\"atm\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Yeni Sağlık Eczanesi'. If my query is broad, please recommend 3-4 options associated with the tags: pharmacy.",
+    "target_text": "{\"name\": \"Yeni Sağlık Eczanesi\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 40.9946784, \"longitude\": 29.0386302}, \"tags\": [\"pharmacy\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Dönerci Celal Usta'. If my query is broad, please recommend 3-4 options associated with the tags: restaurant.",
+    "target_text": "{\"name\": \"Dönerci Celal Usta\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 40.9976571, \"longitude\": 29.1456398}, \"tags\": [\"restaurant\"]}"
+  },
+  {
+    "input_text": "I am located in Istanbul. I would like to learn more about a place called 'Meşhur Çiğköfteci Ramazan Usta'. If my query is broad, please recommend 3-4 options associated with the tags: fast_food.",
+    "target_text": "{\"name\": \"Meşhur Çiğköfteci Ramazan Usta\", \"description\": \"No description available\", \"location\": \"Istanbul\", \"coordinates\": {\"latitude\": 40.9804497, \"longitude\": 29.2659091}, \"tags\": [\"fast_food\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Çınar Eczanesi'. If my query is broad, please recommend 3-4 options associated with the tags: pharmacy.",
+    "target_text": "{\"name\": \"Çınar Eczanesi\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 40.9597534, \"longitude\": 29.0832345}, \"tags\": [\"pharmacy\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'İnci Balık'. If my query is broad, please recommend 3-4 options associated with the tags: restaurant.",
+    "target_text": "{\"name\": \"İnci Balık\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 40.9349543, \"longitude\": 29.1249091}, \"tags\": [\"restaurant\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Beygah Semt Pazarı'. If my query is broad, please recommend 3-4 options associated with the tags: marketplace.",
+    "target_text": "{\"name\": \"Beygah Semt Pazarı\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0199571, \"longitude\": 28.6503626}, \"tags\": [\"marketplace\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Garanti BBVA'. If my query is broad, please recommend 3-4 options associated with the tags: atm.",
+    "target_text": "{\"name\": \"Garanti BBVA\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 40.9927123, \"longitude\": 29.023792}, \"tags\": [\"atm\"]}"
+  },
+  {
+    "input_text": "I am located in Istanbul. I would like to learn more about a place called 'royal tavuk'. If my query is broad, please recommend 3-4 options associated with the tags: restaurant.",
+    "target_text": "{\"name\": \"royal tavuk\", \"description\": \"No description available\", \"location\": \"Istanbul\", \"coordinates\": {\"latitude\": 40.9875161, \"longitude\": 28.8958573}, \"tags\": [\"restaurant\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Unknown Place'. If my query is broad, please recommend 3-4 options associated with the tags: post_office.",
+    "target_text": "{\"name\": \"Unknown Place\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0080285, \"longitude\": 29.2172704}, \"tags\": [\"post_office\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Unknown Place'. If my query is broad, please recommend 3-4 options associated with the tags: bench.",
+    "target_text": "{\"name\": \"Unknown Place\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.1763571, \"longitude\": 28.9846795}, \"tags\": [\"bench\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Garanti Bankası'. If my query is broad, please recommend 3-4 options associated with the tags: bank.",
+    "target_text": "{\"name\": \"Garanti Bankası\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0120293, \"longitude\": 29.2085247}, \"tags\": [\"bank\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Ziraat Bankası'. If my query is broad, please recommend 3-4 options associated with the tags: atm.",
+    "target_text": "{\"name\": \"Ziraat Bankası\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0087152, \"longitude\": 28.9710114}, \"tags\": [\"atm\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Köfteci'. If my query is broad, please recommend 3-4 options associated with the tags: restaurant.",
+    "target_text": "{\"name\": \"Köfteci\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 40.9725928, \"longitude\": 29.1090331}, \"tags\": [\"restaurant\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'La Sirene Bebek'. If my query is broad, please recommend 3-4 options associated with the tags: restaurant.",
+    "target_text": "{\"name\": \"La Sirene Bebek\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.076534, \"longitude\": 29.0443309}, \"tags\": [\"restaurant\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Lukoil'. If my query is broad, please recommend 3-4 options associated with the tags: fuel.",
+    "target_text": "{\"name\": \"Lukoil\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 40.9902534, \"longitude\": 29.1758465}, \"tags\": [\"fuel\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Beyzade Künefe'. If my query is broad, please recommend 3-4 options associated with the tags: restaurant.",
+    "target_text": "{\"name\": \"Beyzade Künefe\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.075559, \"longitude\": 28.9421711}, \"tags\": [\"restaurant\"]}"
+  },
+  {
+    "input_text": "I am located in Istanbul. I would like to learn more about a place called 'Arkadaşım Cafe'. If my query is broad, please recommend 3-4 options associated with the tags: cafe.",
+    "target_text": "{\"name\": \"Arkadaşım Cafe\", \"description\": \"No description available\", \"location\": \"Istanbul\", \"coordinates\": {\"latitude\": 41.0019507, \"longitude\": 28.9361568}, \"tags\": [\"cafe\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Vakıfbank'. If my query is broad, please recommend 3-4 options associated with the tags: bank.",
+    "target_text": "{\"name\": \"Vakıfbank\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.1758609, \"longitude\": 29.6098578}, \"tags\": [\"bank\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Unknown Place'. If my query is broad, please recommend 3-4 options associated with the tags: fountain.",
+    "target_text": "{\"name\": \"Unknown Place\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.03628, \"longitude\": 28.7787423}, \"tags\": [\"fountain\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Kokoretti Kokoreç'. If my query is broad, please recommend 3-4 options associated with the tags: restaurant.",
+    "target_text": "{\"name\": \"Kokoretti Kokoreç\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0866391, \"longitude\": 29.0075448}, \"tags\": [\"restaurant\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Paribu Cineverse'. If my query is broad, please recommend 3-4 options associated with the tags: cinema.",
+    "target_text": "{\"name\": \"Paribu Cineverse\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0100561, \"longitude\": 28.6582639}, \"tags\": [\"cinema\"]}"
+  },
+  {
+    "input_text": "I am located in Istanbul. I would like to learn more about a place called 'Pelin eczanesi'. If my query is broad, please recommend 3-4 options associated with the tags: pharmacy.",
+    "target_text": "{\"name\": \"Pelin eczanesi\", \"description\": \"No description available\", \"location\": \"Istanbul\", \"coordinates\": {\"latitude\": 41.0185481, \"longitude\": 28.9519654}, \"tags\": [\"pharmacy\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'İntiba Döner'. If my query is broad, please recommend 3-4 options associated with the tags: restaurant.",
+    "target_text": "{\"name\": \"İntiba Döner\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0834683, \"longitude\": 28.9773282}, \"tags\": [\"restaurant\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Altkat Coffee Community'. If my query is broad, please recommend 3-4 options associated with the tags: cafe.",
+    "target_text": "{\"name\": \"Altkat Coffee Community\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 40.9961003, \"longitude\": 29.0293239}, \"tags\": [\"cafe\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Budak Eczanesi'. If my query is broad, please recommend 3-4 options associated with the tags: pharmacy.",
+    "target_text": "{\"name\": \"Budak Eczanesi\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 40.9476233, \"longitude\": 29.1063375}, \"tags\": [\"pharmacy\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Çubuklu Taksi Durağı'. If my query is broad, please recommend 3-4 options associated with the tags: taxi.",
+    "target_text": "{\"name\": \"Çubuklu Taksi Durağı\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.1068361, \"longitude\": 29.083342}, \"tags\": [\"taxi\"]}"
+  },
+  {
+    "input_text": "I am located in İstanbul. I would like to learn more about a place called 'Opet Büyükçekmece Fatih'. If my query is broad, please recommend 3-4 options associated with the tags: fuel.",
+    "target_text": "{\"name\": \"Opet Büyükçekmece Fatih\", \"description\": \"No description available\", \"location\": \"İstanbul\", \"coordinates\": {\"latitude\": 41.0217351, \"longitude\": 28.5840546}, \"tags\": [\"fuel\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Unknown Place'. If my query is broad, please recommend 3-4 options associated with the tags: bench.",
+    "target_text": "{\"name\": \"Unknown Place\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 40.9858524, \"longitude\": 29.1156602}, \"tags\": [\"bench\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Unknown Place'. If my query is broad, please recommend 3-4 options associated with the tags: restaurant.",
+    "target_text": "{\"name\": \"Unknown Place\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0487522, \"longitude\": 28.9945396}, \"tags\": [\"restaurant\"]}"
+  },
+  {
+    "input_text": "I am located in Istanbul. I would like to learn more about a place called 'Dımlag'. If my query is broad, please recommend 3-4 options associated with the tags: fast_food.",
+    "target_text": "{\"name\": \"Dımlag\", \"description\": \"No description available\", \"location\": \"Istanbul\", \"coordinates\": {\"latitude\": 40.96902, \"longitude\": 29.2678951}, \"tags\": [\"fast_food\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Sharz.net Charging Station'. If my query is broad, please recommend 3-4 options associated with the tags: charging_station.",
+    "target_text": "{\"name\": \"Sharz.net Charging Station\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.1057289, \"longitude\": 28.9909027}, \"tags\": [\"charging_station\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Unknown Place'. If my query is broad, please recommend 3-4 options associated with the tags: shelter.",
+    "target_text": "{\"name\": \"Unknown Place\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0682028, \"longitude\": 28.8581289}, \"tags\": [\"shelter\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Vakıfbank'. If my query is broad, please recommend 3-4 options associated with the tags: atm.",
+    "target_text": "{\"name\": \"Vakıfbank\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0647246, \"longitude\": 28.6721272}, \"tags\": [\"atm\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Bonne Nuit'. If my query is broad, please recommend 3-4 options associated with the tags: cafe.",
+    "target_text": "{\"name\": \"Bonne Nuit\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0263383, \"longitude\": 28.9757438}, \"tags\": [\"cafe\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Melemenci'. If my query is broad, please recommend 3-4 options associated with the tags: fast_food.",
+    "target_text": "{\"name\": \"Melemenci\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0335247, \"longitude\": 28.8311422}, \"tags\": [\"fast_food\"]}"
+  },
+  {
+    "input_text": "I am located in Istanbul. I would like to learn more about a place called 'Birgül Kirtasiye ve Oyuncak'. If my query is broad, please recommend 3-4 options associated with the tags: library.",
+    "target_text": "{\"name\": \"Birgül Kirtasiye ve Oyuncak\", \"description\": \"No description available\", \"location\": \"Istanbul\", \"coordinates\": {\"latitude\": 41.0240875, \"longitude\": 28.9546073}, \"tags\": [\"library\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Ziraat Bankası'. If my query is broad, please recommend 3-4 options associated with the tags: bank.",
+    "target_text": "{\"name\": \"Ziraat Bankası\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 41.0954571, \"longitude\": 28.8637378}, \"tags\": [\"bank\"]}"
+  },
+  {
+    "input_text": "I am located in Istanbul. I would like to learn more about a place called 'İnegöl Et Lokantası'. If my query is broad, please recommend 3-4 options associated with the tags: restaurant.",
+    "target_text": "{\"name\": \"İnegöl Et Lokantası\", \"description\": \"No description available\", \"location\": \"Istanbul\", \"coordinates\": {\"latitude\": 40.9862283, \"longitude\": 28.9042186}, \"tags\": [\"restaurant\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'KFC'. If my query is broad, please recommend 3-4 options associated with the tags: fast_food.",
+    "target_text": "{\"name\": \"KFC\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 40.9986616, \"longitude\": 28.8739111}, \"tags\": [\"fast_food\"]}"
+  },
+  {
+    "input_text": "I am located in Türkiye/İstanbul. I would like to learn more about a place called 'Fitchino'. If my query is broad, please recommend 3-4 options associated with the tags: restaurant.",
+    "target_text": "{\"name\": \"Fitchino\", \"description\": \"No description available\", \"location\": \"Türkiye/İstanbul\", \"coordinates\": {\"latitude\": 40.9749917, \"longitude\": 28.7202106}, \"tags\": [\"restaurant\"]}"
+  }
+]
