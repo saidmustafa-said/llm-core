@@ -24,7 +24,7 @@ def compute_bounding_box(lat, lon, radius_m):
     max_lat = lat + delta_lat
     min_lon = lon - delta_lon
     max_lon = lon + delta_lon
-    print(lat,lon,radius_m,sep=",")
+    print(lat, lon, radius_m, sep=",")
     print(min_lat, max_lat, min_lon, max_lon, sep=",")
     return min_lat, max_lat, min_lon, max_lon
 
@@ -124,11 +124,11 @@ def get_top_n_by_route_distance(candidates, user_lat, user_lon, radius_m, travel
 # ---------------------------
 if __name__ == "__main__":
     # Load the POI data from the JSON file.
-    with open('osm_istanbul_relations.json') as f:
+    with open('../data/osm_istanbul_relations.json') as f:
         poi_data = json.load(f)
 
     # Simulated user query parameters:
-    user_lat = 40.985660   # Example: Istanbul city center latitude, 
+    user_lat = 40.985660   # Example: Istanbul city center latitude,
 
     user_lon = 29.027361   # Example: Istanbul city center longitude
     radius_m = 1000        # 5 km search radius for driving

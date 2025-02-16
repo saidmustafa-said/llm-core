@@ -1,0 +1,602 @@
+[
+  {
+    "name": "İstanbul Surları",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0142069,
+      "longitude": 28.9312722
+    },
+    "tags": ["attraction"]
+  },
+  {
+    "name": "Ayasofya-i Kebir Câmi-i Şerifi",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0084634,
+      "longitude": 28.9798633
+    },
+    "tags": ["museum"]
+  },
+  {
+    "name": "Fatih Camii",
+    "description": "No description available",
+    "location": "Istanbul",
+    "coordinates": {
+      "latitude": 41.0197482,
+      "longitude": 28.9497619
+    },
+    "tags": ["attraction", "place_of_worship"]
+  },
+  {
+    "name": "Maçka Silahhanesi",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0447085,
+      "longitude": 28.995223
+    },
+    "tags": ["building"]
+  },
+  {
+    "name": "Rahmi M. Koç Müzesi",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0420763,
+      "longitude": 28.9484777
+    },
+    "tags": ["museum"]
+  },
+  {
+    "name": "TCG Uluçalireis",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0414334,
+      "longitude": 28.947617
+    },
+    "tags": ["attraction", "ship"]
+  },
+  {
+    "name": "İstanbul Surları",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0355936,
+      "longitude": 28.9392959
+    },
+    "tags": ["ruins"]
+  },
+  {
+    "name": "Kız Kulesi",
+    "description": "No description available",
+    "location": "İstanbul",
+    "coordinates": {
+      "latitude": 41.0211108,
+      "longitude": 29.0040638
+    },
+    "tags": ["attraction"]
+  },
+  {
+    "name": "Taksim Meydanı",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0378734,
+      "longitude": 28.985615
+    },
+    "tags": ["attraction"]
+  },
+  {
+    "name": "Fenerbahçe",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0414658,
+      "longitude": 28.9477902
+    },
+    "tags": ["attraction", "ship"]
+  },
+  {
+    "name": "Marmara Üniversitesi Cumhuriyet Müzesi",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0048417,
+      "longitude": 28.97413
+    },
+    "tags": ["museum"]
+  },
+  {
+    "name": "Aya İrini Kilisesi",
+    "description": "No description available",
+    "location": "İstanbul",
+    "coordinates": {
+      "latitude": 41.0098292,
+      "longitude": 28.9809477
+    },
+    "tags": ["museum", "yes"]
+  },
+  {
+    "name": "Harem-i Hümayûn",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0130718,
+      "longitude": 28.9832643
+    },
+    "tags": ["building"]
+  },
+  {
+    "name": "Rüstem Paşa Medresesi",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0131608,
+      "longitude": 28.9724589
+    },
+    "tags": ["building"]
+  },
+  {
+    "name": "Yıldız Parkı",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0483032,
+      "longitude": 29.0168889
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Rumeli Hisarı",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0849152,
+      "longitude": 29.0560944
+    },
+    "tags": ["museum", "castle"]
+  },
+  {
+    "name": "Yeni Valide Cami",
+    "description": "No description available",
+    "location": "İstanbul",
+    "coordinates": {
+      "latitude": 41.0247806,
+      "longitude": 29.015039
+    },
+    "tags": ["yes", "place_of_worship"]
+  },
+  {
+    "name": "Selçuklu Parkı",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0452905,
+      "longitude": 28.7958244
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Yavuz Sultan Selim Cami",
+    "description": "No description available",
+    "location": "İstanbul",
+    "coordinates": {
+      "latitude": 41.0266074,
+      "longitude": 28.9512953
+    },
+    "tags": ["attraction", "place_of_worship"]
+  },
+  {
+    "name": "Kariye Camii",
+    "description": "No description available",
+    "location": "İstanbul",
+    "coordinates": {
+      "latitude": 41.0312121,
+      "longitude": 28.9390238
+    },
+    "tags": ["church", "place_of_worship"]
+  },
+  {
+    "name": "Şehzadebaşı Camii",
+    "description": "No description available",
+    "location": "İstanbul",
+    "coordinates": {
+      "latitude": 41.0138862,
+      "longitude": 28.9570828
+    },
+    "tags": ["attraction", "place_of_worship"]
+  },
+  {
+    "name": "Unknown Place",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 40.9567378,
+      "longitude": 29.2600361
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "İbrahim Paşa Sarayı",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0063974,
+      "longitude": 28.9748082
+    },
+    "tags": ["castle"]
+  },
+  {
+    "name": "Unknown Place",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 40.9257335,
+      "longitude": 29.3090954
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Unknown Place",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 40.9256029,
+      "longitude": 29.3094059
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Unknown Place",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 40.9253922,
+      "longitude": 29.3093674
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Mihrimah Sultan Medresesi",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0272561,
+      "longitude": 29.0163208
+    },
+    "tags": ["yes", "place_of_worship"]
+  },
+  {
+    "name": "Büyük Çamlıca",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0267563,
+      "longitude": 29.0676674
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Florya Sosyal Tesisleri",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 40.9614521,
+      "longitude": 28.8070524
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Unknown Place",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 40.9093124,
+      "longitude": 29.1850328
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Unknown Place",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0099164,
+      "longitude": 28.9813769
+    },
+    "tags": ["citywalls"]
+  },
+  {
+    "name": "Anadolu Hisarı",
+    "description": "Anadolu Hisarı (Güzelce Hisarı olarak da bilinir), İstanbul'un Anadoluhisarı semtinde, Göksu Deresi'nin İstanbul Boğazı'na döküldüğü yerdedir.",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0821285,
+      "longitude": 29.0670361
+    },
+    "tags": ["castle"]
+  },
+  {
+    "name": "Özkan Parkı",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 40.9039554,
+      "longitude": 29.2387277
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Khalkedon Limanı",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 40.998833,
+      "longitude": 29.02443
+    },
+    "tags": ["archaeological_site"]
+  },
+  {
+    "name": "Unknown Place",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.2491839,
+      "longitude": 29.0355415
+    },
+    "tags": ["fort"]
+  },
+  {
+    "name": "Atatürk Arboretumu",
+    "description": "No description available",
+    "location": "İstanbul",
+    "coordinates": {
+      "latitude": 41.1770246,
+      "longitude": 28.9824534
+    },
+    "tags": ["attraction", "garden"]
+  },
+  {
+    "name": "Nene Hatun Parkı",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.1009681,
+      "longitude": 28.8871306
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Unknown Place",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0208176,
+      "longitude": 28.7699283
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Bağcılar Bölge Parkı",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0334603,
+      "longitude": 28.8694133
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Unknown Place",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0391619,
+      "longitude": 28.9895384
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Çeşme Parkı",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 40.9695515,
+      "longitude": 29.1117148
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Küçüksu Kasrı Mesire Alanı",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0766245,
+      "longitude": 29.0651333
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Beylikdüze Osmanlı Bahçesi Parkı",
+    "description": "No description available",
+    "location": "İstanbul",
+    "coordinates": {
+      "latitude": 40.9957463,
+      "longitude": 28.644599
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Çamlık",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 40.9720789,
+      "longitude": 29.1522108
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Başakşehir 2.Etap Koru Parkı",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.1048437,
+      "longitude": 28.785087
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Avcılar Sahil Parkı-2",
+    "description": "No description available",
+    "location": "İstanbul",
+    "coordinates": {
+      "latitude": 40.9742496,
+      "longitude": 28.7431145
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Cemal Kaytaz Parkı",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 40.9746748,
+      "longitude": 28.7428395
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Küçükçekmece Sahil Parkı",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 40.9793002,
+      "longitude": 28.7520978
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Beykoz Spor Ormanı",
+    "description": "No description available",
+    "location": "İstanbul",
+    "coordinates": {
+      "latitude": 41.0641635,
+      "longitude": 29.1177652
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Beylerbeyi Sarayı Kompleksi",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0422156,
+      "longitude": 29.040508
+    },
+    "tags": ["museum"]
+  },
+  {
+    "name": "Moda Sahil Park",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 40.9808441,
+      "longitude": 29.0219802
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Huber Köşkü",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.1343562,
+      "longitude": 29.0619158
+    },
+    "tags": ["building"]
+  },
+  {
+    "name": "Sütlüce-3 Parkı",
+    "description": "No description available",
+    "location": "İstanbul",
+    "coordinates": {
+      "latitude": 41.0587548,
+      "longitude": 28.9462336
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Unknown Place",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 40.8460096,
+      "longitude": 29.3003331
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Unknown Place",
+    "description": "No description available",
+    "location": "İstanbul",
+    "coordinates": {
+      "latitude": 40.8906669,
+      "longitude": 29.2536532
+    },
+    "tags": ["restaurant"]
+  },
+  {
+    "name": "Sultanahmet Camii",
+    "description": "No description available",
+    "location": "İstanbul",
+    "coordinates": {
+      "latitude": 41.0054066,
+      "longitude": 28.9766495
+    },
+    "tags": ["attraction", "mosque", "place_of_worship"]
+  },
+  {
+    "name": "Nişancı Mehmet Paşa Medresesi",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0075896,
+      "longitude": 28.9338364
+    },
+    "tags": ["building"]
+  },
+  {
+    "name": "Nuruosmaniye Camisi",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0104074,
+      "longitude": 28.9703815
+    },
+    "tags": ["attraction", "yes", "place_of_worship"]
+  },
+  {
+    "name": "Erdoğan Sezer Parkı",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 41.0978832,
+      "longitude": 28.8824238
+    },
+    "tags": ["park"]
+  },
+  {
+    "name": "Şehit Asteğmen Mustafa Burcu Parkı",
+    "description": "No description available",
+    "location": "Türkiye/İstanbul",
+    "coordinates": {
+      "latitude": 40.9718815,
+      "longitude": 28.7179488
+    },
+    "tags": ["park"]
+  }
+]

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Recommender</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            background: #007bff;
+            color: white;
+            padding: 15px;
+            margin: 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        input,
+        button {
+            padding: 8px;
+            margin: 5px;
+            width: 90%;
+            max-width: 300px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+
+        .chip {
+            display: inline-block;
+            padding: 8px 12px;
+            margin: 5px;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .chip.selected {
+            background: #007bff;
+            color: white;
+        }
+
+        #map {
+            height: 400px;
+            width: 100%;
+            margin-top: 15px;
+            border-radius: 8px;
+        }
+
+        #loading {
+            display: none;
+            font-size: 16px;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>📍 Place Recommender</h2>
+
+    <div class="container">
+        <label>Latitude:</label>
+        <input type="text" id="latitude" value="40.985660">
+
+        <label>Longitude:</label>
+        <input type="text" id="longitude" value="29.027361">
+
+        <label>Radius (meters):</label>
+        <input type="number" id="radius" value="1000" min="100">
+        <div>
+            <span class="chip" onclick="selectRadius(1000)">1000 m</span>
+            <span class="chip" onclick="selectRadius(1500)">1500 m</span>
+            <span class="chip" onclick="selectRadius(2000)">2000 m</span>
+        </div>
+
+        <label>Select Category:</label>
+        <div>
+            <span class="chip selected" onclick="selectCategory('cafe')">Cafe</span>
+            <span class="chip" onclick="selectCategory('park')">Park</span>
+            <span class="chip" onclick="selectCategory('restaurant')">Restaurant</span>
+            <span class="chip" onclick="selectCategory('museum')">Museum</span>
+        </div>
+        <input type="hidden" id="tag" value="cafe">
+
+        <button onclick="search()">🔍 Search</button>
+        <p id="loading">Loading...</p>
+
+        <div id="map"></div>
+
+        <h3>Results:</h3>
+        <ul id="results"></ul>
+    </div>
+</body>
+
+</html>
