@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b7c4888af7a7d32ef419b501cdd999c0 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_b7c4888af7a7d32ef419b501cdd999c0" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b7c4888af7a7d32ef419b501cdd999c0 = L.map(
+                "map_b7c4888af7a7d32ef419b501cdd999c0",
+                {
+                    center: [41.007743399999995, 28.975241750000002],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_30e64089c20e450827d5eb1d6f187466 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_30e64089c20e450827d5eb1d6f187466.addTo(map_b7c4888af7a7d32ef419b501cdd999c0);
+        
+    
+            var marker_adb57c92f086c68ab5f14f33b96d3bc8 = L.marker(
+                [41.0085416, 28.9716244],
+                {
+}
+            ).addTo(map_b7c4888af7a7d32ef419b501cdd999c0);
+        
+    
+        var popup_ef062e1aa28924acb77a43ba07dcba74 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_45105f7eaf436a23777d79f6590b86cf = $(`<div id="html_45105f7eaf436a23777d79f6590b86cf" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Çemberlitaş Hamamı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_ef062e1aa28924acb77a43ba07dcba74.setContent(html_45105f7eaf436a23777d79f6590b86cf);
+            
+        
+
+        marker_adb57c92f086c68ab5f14f33b96d3bc8.bindPopup(popup_ef062e1aa28924acb77a43ba07dcba74)
+        ;
+
+        
+    
+    
+            var marker_c8c60bf8e4dce33160929704d47545c8 = L.marker(
+                [41.0069452, 28.9788591],
+                {
+}
+            ).addTo(map_b7c4888af7a7d32ef419b501cdd999c0);
+        
+    
+        var popup_2f99a782bb0e2bd50a8e0cc3b62087b9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f99c1c3708af0ba8963a8620ecee3ef6 = $(`<div id="html_f99c1c3708af0ba8963a8620ecee3ef6" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Haseki Hürrem Hamamı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_2f99a782bb0e2bd50a8e0cc3b62087b9.setContent(html_f99c1c3708af0ba8963a8620ecee3ef6);
+            
+        
+
+        marker_c8c60bf8e4dce33160929704d47545c8.bindPopup(popup_2f99a782bb0e2bd50a8e0cc3b62087b9)
+        ;
+
+        
+    
+</script>
+</html>

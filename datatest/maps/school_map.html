@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5f273a9b793345c63391b8442a3a4a22 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_5f273a9b793345c63391b8442a3a4a22" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5f273a9b793345c63391b8442a3a4a22 = L.map(
+                "map_5f273a9b793345c63391b8442a3a4a22",
+                {
+                    center: [40.996886721428574, 29.033328364285715],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c9479a34cd2b293b5196aa80da4e16c2 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c9479a34cd2b293b5196aa80da4e16c2.addTo(map_5f273a9b793345c63391b8442a3a4a22);
+        
+    
+            var marker_32b449737357528552dd67ab2657f19f = L.marker(
+                [41.0025605, 28.9027332],
+                {
+}
+            ).addTo(map_5f273a9b793345c63391b8442a3a4a22);
+        
+    
+        var popup_015c769edf8e60cfe563a34331e726a8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_97d074a56823bc1bf7bf67b6415e4d18 = $(`<div id="html_97d074a56823bc1bf7bf67b6415e4d18" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özlem Market&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_015c769edf8e60cfe563a34331e726a8.setContent(html_97d074a56823bc1bf7bf67b6415e4d18);
+            
+        
+
+        marker_32b449737357528552dd67ab2657f19f.bindPopup(popup_015c769edf8e60cfe563a34331e726a8)
+        ;
+
+        
+    
+    
+            var marker_a1b119d8fe179c41eeb8ef2e5e5e1e43 = L.marker(
+                [41.0164204, 29.0585454],
+                {
+}
+            ).addTo(map_5f273a9b793345c63391b8442a3a4a22);
+        
+    
+        var popup_2e5ad73372c38c7057a08722dde3f1ab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3f3aa891aa7a88f734762f3f776abef4 = $(`<div id="html_3f3aa891aa7a88f734762f3f776abef4" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Bilfen Çamlıca İlkokulu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_2e5ad73372c38c7057a08722dde3f1ab.setContent(html_3f3aa891aa7a88f734762f3f776abef4);
+            
+        
+
+        marker_a1b119d8fe179c41eeb8ef2e5e5e1e43.bindPopup(popup_2e5ad73372c38c7057a08722dde3f1ab)
+        ;
+
+        
+    
+    
+            var marker_ccb56b213270d615f6d9b6013ceeec9b = L.marker(
+                [40.9189904, 29.3932755],
+                {
+}
+            ).addTo(map_5f273a9b793345c63391b8442a3a4a22);
+        
+    
+        var popup_da32fae624b4a18e61d689b14837802a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8b523513476bd6ad86c84f81575ba3d0 = $(`<div id="html_8b523513476bd6ad86c84f81575ba3d0" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Terakki Vakfı Okulları Tepeören Yerleşkesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_da32fae624b4a18e61d689b14837802a.setContent(html_8b523513476bd6ad86c84f81575ba3d0);
+            
+        
+
+        marker_ccb56b213270d615f6d9b6013ceeec9b.bindPopup(popup_da32fae624b4a18e61d689b14837802a)
+        ;
+
+        
+    
+    
+            var marker_17705916c5ad41dcd6934ee538bab53f = L.marker(
+                [41.0134146, 29.0249446],
+                {
+}
+            ).addTo(map_5f273a9b793345c63391b8442a3a4a22);
+        
+    
+        var popup_5877a680c1315a3d6176f275c47b5885 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_198348faf04cdb5be65d8844727249d9 = $(`<div id="html_198348faf04cdb5be65d8844727249d9" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Atatürk Ortaokulu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_5877a680c1315a3d6176f275c47b5885.setContent(html_198348faf04cdb5be65d8844727249d9);
+            
+        
+
+        marker_17705916c5ad41dcd6934ee538bab53f.bindPopup(popup_5877a680c1315a3d6176f275c47b5885)
+        ;
+
+        
+    
+    
+            var marker_0f8d0fc97f7c9f51268fa3bb0b8968e2 = L.marker(
+                [41.0131206, 29.05105],
+                {
+}
+            ).addTo(map_5f273a9b793345c63391b8442a3a4a22);
+        
+    
+        var popup_e430689f1c3aa13c76d82ddc9b013620 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_06d63ce9034dd37ed2d8c76f86331dfa = $(`<div id="html_06d63ce9034dd37ed2d8c76f86331dfa" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Ata İlköğretim Okulu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_e430689f1c3aa13c76d82ddc9b013620.setContent(html_06d63ce9034dd37ed2d8c76f86331dfa);
+            
+        
+
+        marker_0f8d0fc97f7c9f51268fa3bb0b8968e2.bindPopup(popup_e430689f1c3aa13c76d82ddc9b013620)
+        ;
+
+        
+    
+    
+            var marker_ac01b6e33f17d5be0869f067d6652eef = L.marker(
+                [40.9115692, 29.223729],
+                {
+}
+            ).addTo(map_5f273a9b793345c63391b8442a3a4a22);
+        
+    
+        var popup_18434d39c1c2b4a7c673b31cd65077c7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a2e3fe8ccd1f3567d1aeeda29e434258 = $(`<div id="html_a2e3fe8ccd1f3567d1aeeda29e434258" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Yakacık Mesleki Ve Teknik Anadolu Lisesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_18434d39c1c2b4a7c673b31cd65077c7.setContent(html_a2e3fe8ccd1f3567d1aeeda29e434258);
+            
+        
+
+        marker_ac01b6e33f17d5be0869f067d6652eef.bindPopup(popup_18434d39c1c2b4a7c673b31cd65077c7)
+        ;
+
+        
+    
+    
+            var marker_446fe3cf828ceb3e529533ef14618e40 = L.marker(
+                [40.9121141, 29.2269275],
+                {
+}
+            ).addTo(map_5f273a9b793345c63391b8442a3a4a22);
+        
+    
+        var popup_3b2230ca9e15c14a44893e30f8347634 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9c310a18a305124e3a79b2d5b6295505 = $(`<div id="html_9c310a18a305124e3a79b2d5b6295505" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Doğa Koleji Yakacık Kampüsü&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_3b2230ca9e15c14a44893e30f8347634.setContent(html_9c310a18a305124e3a79b2d5b6295505);
+            
+        
+
+        marker_446fe3cf828ceb3e529533ef14618e40.bindPopup(popup_3b2230ca9e15c14a44893e30f8347634)
+        ;
+
+        
+    
+    
+            var marker_42cf3499f3d795f8e7f5f70be5210a64 = L.marker(
+                [40.9836317, 29.0244091],
+                {
+}
+            ).addTo(map_5f273a9b793345c63391b8442a3a4a22);
+        
+    
+        var popup_15509d2d5f8e6016f9115acedf3b6a49 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ecd8167280983bdf3300ba67daad6807 = $(`<div id="html_ecd8167280983bdf3300ba67daad6807" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Kadıkoy Kız Teknik ve Meslek Lisesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_15509d2d5f8e6016f9115acedf3b6a49.setContent(html_ecd8167280983bdf3300ba67daad6807);
+            
+        
+
+        marker_42cf3499f3d795f8e7f5f70be5210a64.bindPopup(popup_15509d2d5f8e6016f9115acedf3b6a49)
+        ;
+
+        
+    
+    
+            var marker_c60f653f95d8c7562e1d6522c26f4490 = L.marker(
+                [41.0250007, 29.0325234],
+                {
+}
+            ).addTo(map_5f273a9b793345c63391b8442a3a4a22);
+        
+    
+        var popup_108a11cbe76c5781dc1d12044c773403 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a29949c0c38661f8b719505f65c483c6 = $(`<div id="html_a29949c0c38661f8b719505f65c483c6" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Üsküdar American Academy&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_108a11cbe76c5781dc1d12044c773403.setContent(html_a29949c0c38661f8b719505f65c483c6);
+            
+        
+
+        marker_c60f653f95d8c7562e1d6522c26f4490.bindPopup(popup_108a11cbe76c5781dc1d12044c773403)
+        ;
+
+        
+    
+    
+            var marker_cc8a91c591683feabf99c530f5b6b07c = L.marker(
+                [41.0740721, 29.0578992],
+                {
+}
+            ).addTo(map_5f273a9b793345c63391b8442a3a4a22);
+        
+    
+        var popup_5cf3ee58c229d3e01de7e93679bc1dbc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9e718b766c41d83a22a903ca5142b8d9 = $(`<div id="html_9e718b766c41d83a22a903ca5142b8d9" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Taylan Doğuer Kandilli İlkokulu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_5cf3ee58c229d3e01de7e93679bc1dbc.setContent(html_9e718b766c41d83a22a903ca5142b8d9);
+            
+        
+
+        marker_cc8a91c591683feabf99c530f5b6b07c.bindPopup(popup_5cf3ee58c229d3e01de7e93679bc1dbc)
+        ;
+
+        
+    
+    
+            var marker_1854505f85f04185646d1d601f7c2bcf = L.marker(
+                [41.071423, 29.0573006],
+                {
+}
+            ).addTo(map_5f273a9b793345c63391b8442a3a4a22);
+        
+    
+        var popup_4e30901a815cbed91314105a1b601532 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d391ca5ab416edcdfb6698940592c611 = $(`<div id="html_d391ca5ab416edcdfb6698940592c611" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Kandilli Kız Anadolu Lisesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_4e30901a815cbed91314105a1b601532.setContent(html_d391ca5ab416edcdfb6698940592c611);
+            
+        
+
+        marker_1854505f85f04185646d1d601f7c2bcf.bindPopup(popup_4e30901a815cbed91314105a1b601532)
+        ;
+
+        
+    
+    
+            var marker_1b7f0333ea93e59f23483bcf7cb4051a = L.marker(
+                [41.0195403, 28.5845754],
+                {
+}
+            ).addTo(map_5f273a9b793345c63391b8442a3a4a22);
+        
+    
+        var popup_7598a142b86d56d3445692a060412ab7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cfcfc81ff37fc8556ea3cb7c112e1a52 = $(`<div id="html_cfcfc81ff37fc8556ea3cb7c112e1a52" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Büyükçekmece Anadolu Lisesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_7598a142b86d56d3445692a060412ab7.setContent(html_cfcfc81ff37fc8556ea3cb7c112e1a52);
+            
+        
+
+        marker_1b7f0333ea93e59f23483bcf7cb4051a.bindPopup(popup_7598a142b86d56d3445692a060412ab7)
+        ;
+
+        
+    
+    
+            var marker_0ecd22d47bb5effa6e4e916e7e2c7a3f = L.marker(
+                [41.0199015, 28.5851066],
+                {
+}
+            ).addTo(map_5f273a9b793345c63391b8442a3a4a22);
+        
+    
+        var popup_6a38847f9e702ca4f8ca59648468453f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6f948d4eee11bd7f7f662f2532881917 = $(`<div id="html_6f948d4eee11bd7f7f662f2532881917" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Büyükçekmece Atatürk Anadolu Lisesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_6a38847f9e702ca4f8ca59648468453f.setContent(html_6f948d4eee11bd7f7f662f2532881917);
+            
+        
+
+        marker_0ecd22d47bb5effa6e4e916e7e2c7a3f.bindPopup(popup_6a38847f9e702ca4f8ca59648468453f)
+        ;
+
+        
+    
+    
+            var marker_51e0251c54c655cd74af7ccbe5b17f7e = L.marker(
+                [40.974655, 29.2435776],
+                {
+}
+            ).addTo(map_5f273a9b793345c63391b8442a3a4a22);
+        
+    
+        var popup_2ed1c3bcad4e69c9d0c51935baa523f2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d00f702c7ec61567c0fd5db9ba5b9564 = $(`<div id="html_d00f702c7ec61567c0fd5db9ba5b9564" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Yenidoğu Okulları Sancaktepe Kampüsü&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_2ed1c3bcad4e69c9d0c51935baa523f2.setContent(html_d00f702c7ec61567c0fd5db9ba5b9564);
+            
+        
+
+        marker_51e0251c54c655cd74af7ccbe5b17f7e.bindPopup(popup_2ed1c3bcad4e69c9d0c51935baa523f2)
+        ;
+
+        
+    
+</script>
+</html>

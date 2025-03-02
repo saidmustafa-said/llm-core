@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0066d87279c397d3010ffe9856f9c591 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_0066d87279c397d3010ffe9856f9c591" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0066d87279c397d3010ffe9856f9c591 = L.map(
+                "map_0066d87279c397d3010ffe9856f9c591",
+                {
+                    center: [41.01392714181818, 29.000741256363632],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_64b08a8752ad9933b35ac6e9aeefaaf5 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_64b08a8752ad9933b35ac6e9aeefaaf5.addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+            var marker_04d77663587513a12354e98c90681904 = L.marker(
+                [41.0475599, 29.0238189],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_0f430162cb1e9f308e5737483bbfd7c6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c03645ba8b9b100ecc86bc8c31686342 = $(`<div id="html_c03645ba8b9b100ecc86bc8c31686342" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Feriye Sinemaları&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_0f430162cb1e9f308e5737483bbfd7c6.setContent(html_c03645ba8b9b100ecc86bc8c31686342);
+            
+        
+
+        marker_04d77663587513a12354e98c90681904.bindPopup(popup_0f430162cb1e9f308e5737483bbfd7c6)
+        ;
+
+        
+    
+    
+            var marker_ddf11cc1e41c1b044aa8c1b097c21d3d = L.marker(
+                [41.0625923, 28.9936569],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_41a065472d71b86e0ff5bb3e5a064e53 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b6b787a7411b0285f0918a9de9435650 = $(`<div id="html_b6b787a7411b0285f0918a9de9435650" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; ISTANBUL / Şişli</div>`)[0];
+                popup_41a065472d71b86e0ff5bb3e5a064e53.setContent(html_b6b787a7411b0285f0918a9de9435650);
+            
+        
+
+        marker_ddf11cc1e41c1b044aa8c1b097c21d3d.bindPopup(popup_41a065472d71b86e0ff5bb3e5a064e53)
+        ;
+
+        
+    
+    
+            var marker_b40f7cfbddfe1b8948c9e2c2b020cb52 = L.marker(
+                [40.9378231, 29.3246288],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_80a16d9b4f5c11f335f869b9101cd4b4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3e670a193a0d7075466be273f1796256 = $(`<div id="html_3e670a193a0d7075466be273f1796256" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse Viaport&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_80a16d9b4f5c11f335f869b9101cd4b4.setContent(html_3e670a193a0d7075466be273f1796256);
+            
+        
+
+        marker_b40f7cfbddfe1b8948c9e2c2b020cb52.bindPopup(popup_80a16d9b4f5c11f335f869b9101cd4b4)
+        ;
+
+        
+    
+    
+            var marker_032f95a5f064702638c2321f9eae5b9c = L.marker(
+                [41.0115191, 28.6492713],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_4358db4d3e2c768f35636f2c2c6840f2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5f0ec68aca64fe6345424a9525ff712e = $(`<div id="html_5f0ec68aca64fe6345424a9525ff712e" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Favori Sinemaları&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_4358db4d3e2c768f35636f2c2c6840f2.setContent(html_5f0ec68aca64fe6345424a9525ff712e);
+            
+        
+
+        marker_032f95a5f064702638c2321f9eae5b9c.bindPopup(popup_4358db4d3e2c768f35636f2c2c6840f2)
+        ;
+
+        
+    
+    
+            var marker_12ee77091c76ca0e0572b0af0db506e1 = L.marker(
+                [41.0082942, 28.9712832],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_051c80048e91386db218af4a1f7a15a2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0dd2c79e2ea63741409a2083f64cf8b4 = $(`<div id="html_0dd2c79e2ea63741409a2083f64cf8b4" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Movieplex&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_051c80048e91386db218af4a1f7a15a2.setContent(html_0dd2c79e2ea63741409a2083f64cf8b4);
+            
+        
+
+        marker_12ee77091c76ca0e0572b0af0db506e1.bindPopup(popup_051c80048e91386db218af4a1f7a15a2)
+        ;
+
+        
+    
+    
+            var marker_79c1a1a1752944af57a15e8e62f965ca = L.marker(
+                [40.9790187, 28.8500956],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_e2ae6f66857038e08e9adff3d8c8ad03 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f6cc0ce5bc5f0a3541cc1362f783ceaf = $(`<div id="html_f6cc0ce5bc5f0a3541cc1362f783ceaf" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_e2ae6f66857038e08e9adff3d8c8ad03.setContent(html_f6cc0ce5bc5f0a3541cc1362f783ceaf);
+            
+        
+
+        marker_79c1a1a1752944af57a15e8e62f965ca.bindPopup(popup_e2ae6f66857038e08e9adff3d8c8ad03)
+        ;
+
+        
+    
+    
+            var marker_4325e9d7cd4dda22cdcf689405ac2dcd = L.marker(
+                [41.0100561, 28.6582639],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_fc2af3eec0de1198e95bf6e39862980c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_deced06d67a6ca0a397345c43a8c065d = $(`<div id="html_deced06d67a6ca0a397345c43a8c065d" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_fc2af3eec0de1198e95bf6e39862980c.setContent(html_deced06d67a6ca0a397345c43a8c065d);
+            
+        
+
+        marker_4325e9d7cd4dda22cdcf689405ac2dcd.bindPopup(popup_fc2af3eec0de1198e95bf6e39862980c)
+        ;
+
+        
+    
+    
+            var marker_c7028426848e332ed7cd33a00d8ed7f1 = L.marker(
+                [40.9884436, 29.0288541],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_a151669ae0a98dbc0e4a73d79d4b8956 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8001754ff589380b28d69ac97740f2d6 = $(`<div id="html_8001754ff589380b28d69ac97740f2d6" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Kadıköy Sineması&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_a151669ae0a98dbc0e4a73d79d4b8956.setContent(html_8001754ff589380b28d69ac97740f2d6);
+            
+        
+
+        marker_c7028426848e332ed7cd33a00d8ed7f1.bindPopup(popup_a151669ae0a98dbc0e4a73d79d4b8956)
+        ;
+
+        
+    
+    
+            var marker_296538f49e5f3a945e41fcf187ad37ca = L.marker(
+                [40.9818911, 29.1316542],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_ff2c23d9f8541547fb88a5d73ec42efd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bc33f87c39cfedf2e5262df814a3637e = $(`<div id="html_bc33f87c39cfedf2e5262df814a3637e" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_ff2c23d9f8541547fb88a5d73ec42efd.setContent(html_bc33f87c39cfedf2e5262df814a3637e);
+            
+        
+
+        marker_296538f49e5f3a945e41fcf187ad37ca.bindPopup(popup_ff2c23d9f8541547fb88a5d73ec42efd)
+        ;
+
+        
+    
+    
+            var marker_89e3940a340e669afd1139cdf7d3fdbe = L.marker(
+                [41.0159048, 28.8780441],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_84f0de1a39fc7d4d55964c3ffadfad02 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9e131233a2a2a30d25e953916f83d19e = $(`<div id="html_9e131233a2a2a30d25e953916f83d19e" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_84f0de1a39fc7d4d55964c3ffadfad02.setContent(html_9e131233a2a2a30d25e953916f83d19e);
+            
+        
+
+        marker_89e3940a340e669afd1139cdf7d3fdbe.bindPopup(popup_84f0de1a39fc7d4d55964c3ffadfad02)
+        ;
+
+        
+    
+    
+            var marker_0631b87afb0f4587600e7479ec6616f8 = L.marker(
+                [41.0343222, 28.9800826],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_fdb2d1ea08c984a4a870972074bed019 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a05aeea2f54f4e9e089d968413eb5ab5 = $(`<div id="html_a05aeea2f54f4e9e089d968413eb5ab5" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Cine Majestic&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_fdb2d1ea08c984a4a870972074bed019.setContent(html_a05aeea2f54f4e9e089d968413eb5ab5);
+            
+        
+
+        marker_0631b87afb0f4587600e7479ec6616f8.bindPopup(popup_fdb2d1ea08c984a4a870972074bed019)
+        ;
+
+        
+    
+    
+            var marker_cbc12c536dbe8a13f728bce4390ce282 = L.marker(
+                [41.075771, 29.0122579],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_6c7577c8b8d85ad54c67862dc85b0fad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_410a8d820a96aaff8ff77140bc13b2f2 = $(`<div id="html_410a8d820a96aaff8ff77140bc13b2f2" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Cinema Pink&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_6c7577c8b8d85ad54c67862dc85b0fad.setContent(html_410a8d820a96aaff8ff77140bc13b2f2);
+            
+        
+
+        marker_cbc12c536dbe8a13f728bce4390ce282.bindPopup(popup_6c7577c8b8d85ad54c67862dc85b0fad)
+        ;
+
+        
+    
+    
+            var marker_6957209136a0c881a99f3d7bc39f60bb = L.marker(
+                [41.0772693, 29.0273237],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_0910c9ed3e511f8f9d3ebb019d7b1da0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4d85f8d8b61849ccdfc3bab65c7a91fe = $(`<div id="html_4d85f8d8b61849ccdfc3bab65c7a91fe" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Cinema Pink&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_0910c9ed3e511f8f9d3ebb019d7b1da0.setContent(html_4d85f8d8b61849ccdfc3bab65c7a91fe);
+            
+        
+
+        marker_6957209136a0c881a99f3d7bc39f60bb.bindPopup(popup_0910c9ed3e511f8f9d3ebb019d7b1da0)
+        ;
+
+        
+    
+    
+            var marker_b8819c8ad3d6564f0adfd26e524a1247 = L.marker(
+                [41.0782927, 29.0114996],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_c7550935eca9b534cc1f9610e257ac7b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dd3beebbb3be174d502d0863cf1f01a3 = $(`<div id="html_dd3beebbb3be174d502d0863cf1f01a3" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c7550935eca9b534cc1f9610e257ac7b.setContent(html_dd3beebbb3be174d502d0863cf1f01a3);
+            
+        
+
+        marker_b8819c8ad3d6564f0adfd26e524a1247.bindPopup(popup_c7550935eca9b534cc1f9610e257ac7b)
+        ;
+
+        
+    
+    
+            var marker_bc17d0de958725155f6497e52e9922ce = L.marker(
+                [41.0773059, 29.0099222],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_3dd5077c45f1b7da0a170a9d0b55a829 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5c7ce4d53dcd8cbc7ab28d310690af4b = $(`<div id="html_5c7ce4d53dcd8cbc7ab28d310690af4b" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; cinetime&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_3dd5077c45f1b7da0a170a9d0b55a829.setContent(html_5c7ce4d53dcd8cbc7ab28d310690af4b);
+            
+        
+
+        marker_bc17d0de958725155f6497e52e9922ce.bindPopup(popup_3dd5077c45f1b7da0a170a9d0b55a829)
+        ;
+
+        
+    
+    
+            var marker_7f3840e17da728d55e42012732c80198 = L.marker(
+                [40.94549, 29.305644],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_76f233d91c8abf352e9289a9f6af7ee2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4556489221834f0d31e611a81240bd62 = $(`<div id="html_4556489221834f0d31e611a81240bd62" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Ucar dugun salonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_76f233d91c8abf352e9289a9f6af7ee2.setContent(html_4556489221834f0d31e611a81240bd62);
+            
+        
+
+        marker_7f3840e17da728d55e42012732c80198.bindPopup(popup_76f233d91c8abf352e9289a9f6af7ee2)
+        ;
+
+        
+    
+    
+            var marker_d803b8316f88e051ad7dbe5491e955e2 = L.marker(
+                [41.0463895, 28.8977874],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_ebd6409f9ba749e71c06f3b3c6f92226 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_54ae091d8999a08e49afc9536a636d0e = $(`<div id="html_54ae091d8999a08e49afc9536a636d0e" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_ebd6409f9ba749e71c06f3b3c6f92226.setContent(html_54ae091d8999a08e49afc9536a636d0e);
+            
+        
+
+        marker_d803b8316f88e051ad7dbe5491e955e2.bindPopup(popup_ebd6409f9ba749e71c06f3b3c6f92226)
+        ;
+
+        
+    
+    
+            var marker_0773b9f9a2062fc9281a167e4b2f18b2 = L.marker(
+                [41.0341825, 28.9791733],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_3663397fe2ef79729676578e088933b9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_618d11678b60bc34789106f4409cd533 = $(`<div id="html_618d11678b60bc34789106f4409cd533" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Atlas&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_3663397fe2ef79729676578e088933b9.setContent(html_618d11678b60bc34789106f4409cd533);
+            
+        
+
+        marker_0773b9f9a2062fc9281a167e4b2f18b2.bindPopup(popup_3663397fe2ef79729676578e088933b9)
+        ;
+
+        
+    
+    
+            var marker_d8370e727f9b9519814db45152a39447 = L.marker(
+                [40.9973067, 29.0996407],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_6fecdaa81616f577e726d05d2f466a5d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ce11ca99d06e0ad06c0ebaff06666de7 = $(`<div id="html_ce11ca99d06e0ad06c0ebaff06666de7" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Cinemaximum&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_6fecdaa81616f577e726d05d2f466a5d.setContent(html_ce11ca99d06e0ad06c0ebaff06666de7);
+            
+        
+
+        marker_d8370e727f9b9519814db45152a39447.bindPopup(popup_6fecdaa81616f577e726d05d2f466a5d)
+        ;
+
+        
+    
+    
+            var marker_393df97c6fa71aa770de51243f22591b = L.marker(
+                [41.0208943, 29.0401988],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_e7d142ccea88529c8159ade22ab65e0c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ced712d6e5626fa6d51d4c2c30086a02 = $(`<div id="html_ced712d6e5626fa6d51d4c2c30086a02" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Spectrum Cineplex&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_e7d142ccea88529c8159ade22ab65e0c.setContent(html_ced712d6e5626fa6d51d4c2c30086a02);
+            
+        
+
+        marker_393df97c6fa71aa770de51243f22591b.bindPopup(popup_e7d142ccea88529c8159ade22ab65e0c)
+        ;
+
+        
+    
+    
+            var marker_fa513edeecc1265b6f7cd341eac57049 = L.marker(
+                [40.9961062, 28.8646599],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_eb3d9bd6af4b89027048f6d1c633403e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_72a91700239e25642fa9fac76d70662b = $(`<div id="html_72a91700239e25642fa9fac76d70662b" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; CineVIP&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_eb3d9bd6af4b89027048f6d1c633403e.setContent(html_72a91700239e25642fa9fac76d70662b);
+            
+        
+
+        marker_fa513edeecc1265b6f7cd341eac57049.bindPopup(popup_eb3d9bd6af4b89027048f6d1c633403e)
+        ;
+
+        
+    
+    
+            var marker_2f529668961465d6e1daa226da8ee9e3 = L.marker(
+                [40.8789832, 29.2290013],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_80e46c3fb88a66373e4b6c69798f7bc7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b5dd2414ec3e22971bd034526f2eef75 = $(`<div id="html_b5dd2414ec3e22971bd034526f2eef75" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Pendik Oscar Sineması&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_80e46c3fb88a66373e4b6c69798f7bc7.setContent(html_b5dd2414ec3e22971bd034526f2eef75);
+            
+        
+
+        marker_2f529668961465d6e1daa226da8ee9e3.bindPopup(popup_80e46c3fb88a66373e4b6c69798f7bc7)
+        ;
+
+        
+    
+    
+            var marker_4f54357df889b106dab5b6e08f31b34a = L.marker(
+                [40.8788682, 29.2304448],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_43ef03825963474123dca1c2686d4f2a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_104b032545bd7a4c213874e610427d9a = $(`<div id="html_104b032545bd7a4c213874e610427d9a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Pendik Güney Sineması&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_43ef03825963474123dca1c2686d4f2a.setContent(html_104b032545bd7a4c213874e610427d9a);
+            
+        
+
+        marker_4f54357df889b106dab5b6e08f31b34a.bindPopup(popup_43ef03825963474123dca1c2686d4f2a)
+        ;
+
+        
+    
+    
+            var marker_87804ec0de003263623563fda728e1ee = L.marker(
+                [40.9873797, 29.02687],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_2dd45fca219dfe91507ff916cee888e2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cb73f53b2d7e91e6d38fc14864436c75 = $(`<div id="html_cb73f53b2d7e91e6d38fc14864436c75" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_2dd45fca219dfe91507ff916cee888e2.setContent(html_cb73f53b2d7e91e6d38fc14864436c75);
+            
+        
+
+        marker_87804ec0de003263623563fda728e1ee.bindPopup(popup_2dd45fca219dfe91507ff916cee888e2)
+        ;
+
+        
+    
+    
+            var marker_2bf70ddb2f052f76b7a899c4b87d85c1 = L.marker(
+                [41.0478334, 28.8092251],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_60ee29885640fbbbeab9bf1c794ef075 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4513b44b40a2e8a57c6f14cfccf6941c = $(`<div id="html_4513b44b40a2e8a57c6f14cfccf6941c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Cinemarine&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_60ee29885640fbbbeab9bf1c794ef075.setContent(html_4513b44b40a2e8a57c6f14cfccf6941c);
+            
+        
+
+        marker_2bf70ddb2f052f76b7a899c4b87d85c1.bindPopup(popup_60ee29885640fbbbeab9bf1c794ef075)
+        ;
+
+        
+    
+    
+            var marker_71908a9ec06977be0ce73498a7bab308 = L.marker(
+                [41.0352223, 28.9207529],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_fd8f4d7efa21852b92e16ee5ebf23266 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_11a96e3240276d5c9552ee790535da68 = $(`<div id="html_11a96e3240276d5c9552ee790535da68" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_fd8f4d7efa21852b92e16ee5ebf23266.setContent(html_11a96e3240276d5c9552ee790535da68);
+            
+        
+
+        marker_71908a9ec06977be0ce73498a7bab308.bindPopup(popup_fd8f4d7efa21852b92e16ee5ebf23266)
+        ;
+
+        
+    
+    
+            var marker_2faf1846d0557b444ceb993d5c5aa14c = L.marker(
+                [41.0146132, 28.9449588],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_34cb19e32817f64585b3440e2ff3437c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fd4c635d43793687c1d50a2bb3d12449 = $(`<div id="html_fd4c635d43793687c1d50a2bb3d12449" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_34cb19e32817f64585b3440e2ff3437c.setContent(html_fd4c635d43793687c1d50a2bb3d12449);
+            
+        
+
+        marker_2faf1846d0557b444ceb993d5c5aa14c.bindPopup(popup_34cb19e32817f64585b3440e2ff3437c)
+        ;
+
+        
+    
+    
+            var marker_e08789961e942c3db9fdaa0f102af8fe = L.marker(
+                [41.1100333, 29.1319287],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_d67b507969a234054858eede54edee21 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_865413db425a95a154ae4b8e67eacd9f = $(`<div id="html_865413db425a95a154ae4b8e67eacd9f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_d67b507969a234054858eede54edee21.setContent(html_865413db425a95a154ae4b8e67eacd9f);
+            
+        
+
+        marker_e08789961e942c3db9fdaa0f102af8fe.bindPopup(popup_d67b507969a234054858eede54edee21)
+        ;
+
+        
+    
+    
+            var marker_f0bee8f10b585dae454387e41efed9e6 = L.marker(
+                [41.0007251, 29.0546544],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_516cdafab4739ce1a0ebb205bc650893 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_edfc9aaa6d9dc244a55388b5cb9b5106 = $(`<div id="html_edfc9aaa6d9dc244a55388b5cb9b5106" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_516cdafab4739ce1a0ebb205bc650893.setContent(html_edfc9aaa6d9dc244a55388b5cb9b5106);
+            
+        
+
+        marker_f0bee8f10b585dae454387e41efed9e6.bindPopup(popup_516cdafab4739ce1a0ebb205bc650893)
+        ;
+
+        
+    
+    
+            var marker_5a903ab2d1ec2d5de266eb36faa15121 = L.marker(
+                [41.0563297, 28.6679681],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_d4847058da742793ec0d24f4644c1d92 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e350c416c4bb60d0141c693bc5119264 = $(`<div id="html_e350c416c4bb60d0141c693bc5119264" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_d4847058da742793ec0d24f4644c1d92.setContent(html_e350c416c4bb60d0141c693bc5119264);
+            
+        
+
+        marker_5a903ab2d1ec2d5de266eb36faa15121.bindPopup(popup_d4847058da742793ec0d24f4644c1d92)
+        ;
+
+        
+    
+    
+            var marker_d351f386f7b49fd053a8ad8a6402661c = L.marker(
+                [41.033675, 29.1125641],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_37d82ee1c3fc39d5ceaf3ddca1736ee6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_61a99a771bb945690bc067ed4c2999d7 = $(`<div id="html_61a99a771bb945690bc067ed4c2999d7" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_37d82ee1c3fc39d5ceaf3ddca1736ee6.setContent(html_61a99a771bb945690bc067ed4c2999d7);
+            
+        
+
+        marker_d351f386f7b49fd053a8ad8a6402661c.bindPopup(popup_37d82ee1c3fc39d5ceaf3ddca1736ee6)
+        ;
+
+        
+    
+    
+            var marker_4bd3a60cc01fe48bfd907ec9df327a73 = L.marker(
+                [40.9187816, 29.1755365],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_4abe48a3dd302584c4b2ceab6c0358a1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_169c12401bc2d63bb6471a4eeb1d4e34 = $(`<div id="html_169c12401bc2d63bb6471a4eeb1d4e34" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_4abe48a3dd302584c4b2ceab6c0358a1.setContent(html_169c12401bc2d63bb6471a4eeb1d4e34);
+            
+        
+
+        marker_4bd3a60cc01fe48bfd907ec9df327a73.bindPopup(popup_4abe48a3dd302584c4b2ceab6c0358a1)
+        ;
+
+        
+    
+    
+            var marker_31fd054349f23eaef8939365e68b3d2a = L.marker(
+                [40.9657864, 28.7975449],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_41111196a9573d8dbea2f70a68629631 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d4fbc04b29171e6a9402914c46398809 = $(`<div id="html_d4fbc04b29171e6a9402914c46398809" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_41111196a9573d8dbea2f70a68629631.setContent(html_d4fbc04b29171e6a9402914c46398809);
+            
+        
+
+        marker_31fd054349f23eaef8939365e68b3d2a.bindPopup(popup_41111196a9573d8dbea2f70a68629631)
+        ;
+
+        
+    
+    
+            var marker_9fe1eea1399a8652cd201875e71f5250 = L.marker(
+                [41.1834648, 28.7352965],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_cb195b520808284a3c4e1d2fa833c61d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f813ef7ccfb2046c7ed66d69974e57b3 = $(`<div id="html_f813ef7ccfb2046c7ed66d69974e57b3" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_cb195b520808284a3c4e1d2fa833c61d.setContent(html_f813ef7ccfb2046c7ed66d69974e57b3);
+            
+        
+
+        marker_9fe1eea1399a8652cd201875e71f5250.bindPopup(popup_cb195b520808284a3c4e1d2fa833c61d)
+        ;
+
+        
+    
+    
+            var marker_c074a57fa08d27d920e201a9c6e43eed = L.marker(
+                [41.086461, 28.9823002],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_cc0b7de37e3e6a24e4c62cc5fdb771a2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8015b1bef7c51d2a3d6ec9724b3ccfcc = $(`<div id="html_8015b1bef7c51d2a3d6ec9724b3ccfcc" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_cc0b7de37e3e6a24e4c62cc5fdb771a2.setContent(html_8015b1bef7c51d2a3d6ec9724b3ccfcc);
+            
+        
+
+        marker_c074a57fa08d27d920e201a9c6e43eed.bindPopup(popup_cc0b7de37e3e6a24e4c62cc5fdb771a2)
+        ;
+
+        
+    
+    
+            var marker_d675da95bf90a8474916875292870c3b = L.marker(
+                [40.952869, 29.1222033],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_3b8a9edcbf7fb338d94d0201a690ecf2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2f903fd125e41f547afac234a5f7c321 = $(`<div id="html_2f903fd125e41f547afac234a5f7c321" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_3b8a9edcbf7fb338d94d0201a690ecf2.setContent(html_2f903fd125e41f547afac234a5f7c321);
+            
+        
+
+        marker_d675da95bf90a8474916875292870c3b.bindPopup(popup_3b8a9edcbf7fb338d94d0201a690ecf2)
+        ;
+
+        
+    
+    
+            var marker_c6c6ece40e45b734fe26a581fa131f42 = L.marker(
+                [41.1101241, 29.0322823],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_3c1b6868e2fcbee3fd692c378457f4a7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ab0eb465774f0a589194b37642f6d7ee = $(`<div id="html_ab0eb465774f0a589194b37642f6d7ee" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_3c1b6868e2fcbee3fd692c378457f4a7.setContent(html_ab0eb465774f0a589194b37642f6d7ee);
+            
+        
+
+        marker_c6c6ece40e45b734fe26a581fa131f42.bindPopup(popup_3c1b6868e2fcbee3fd692c378457f4a7)
+        ;
+
+        
+    
+    
+            var marker_158a52b46f1bc3492d5d90e8403ec745 = L.marker(
+                [40.9191705, 29.1673085],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_ab88dbc36882d421ec56769326f6b1a0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_58b0d227611f674c7827735e08c01981 = $(`<div id="html_58b0d227611f674c7827735e08c01981" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_ab88dbc36882d421ec56769326f6b1a0.setContent(html_58b0d227611f674c7827735e08c01981);
+            
+        
+
+        marker_158a52b46f1bc3492d5d90e8403ec745.bindPopup(popup_ab88dbc36882d421ec56769326f6b1a0)
+        ;
+
+        
+    
+    
+            var marker_8a5d449394bfe36d7ca6a3bc093334ef = L.marker(
+                [40.9973787, 28.8854275],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_f5b84f1e751c2a44d383d2e5a1ee65c1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_44ef695d5819dfe0332c720cd9f29e64 = $(`<div id="html_44ef695d5819dfe0332c720cd9f29e64" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f5b84f1e751c2a44d383d2e5a1ee65c1.setContent(html_44ef695d5819dfe0332c720cd9f29e64);
+            
+        
+
+        marker_8a5d449394bfe36d7ca6a3bc093334ef.bindPopup(popup_f5b84f1e751c2a44d383d2e5a1ee65c1)
+        ;
+
+        
+    
+    
+            var marker_a93a544e20761be391a43d43d2d35024 = L.marker(
+                [41.015759, 29.1789358],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_ebb1b519a13220897b4ce83e9798f05d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_779977ce93d654ca2ff5cbe338740037 = $(`<div id="html_779977ce93d654ca2ff5cbe338740037" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_ebb1b519a13220897b4ce83e9798f05d.setContent(html_779977ce93d654ca2ff5cbe338740037);
+            
+        
+
+        marker_a93a544e20761be391a43d43d2d35024.bindPopup(popup_ebb1b519a13220897b4ce83e9798f05d)
+        ;
+
+        
+    
+    
+            var marker_4da2cb787600d90d5dd2d1bb7ba19d8f = L.marker(
+                [40.9776189, 28.8711932],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_c837f6f28ef0d98e81d5b092317f3c26 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9ebe62909709b0f90dde745bd0451297 = $(`<div id="html_9ebe62909709b0f90dde745bd0451297" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c837f6f28ef0d98e81d5b092317f3c26.setContent(html_9ebe62909709b0f90dde745bd0451297);
+            
+        
+
+        marker_4da2cb787600d90d5dd2d1bb7ba19d8f.bindPopup(popup_c837f6f28ef0d98e81d5b092317f3c26)
+        ;
+
+        
+    
+    
+            var marker_a35e2da9b699db45238c12840b553344 = L.marker(
+                [41.0032995, 29.0706567],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_da3be67b1fc9793df55967a0c2657f5a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c7efe3d77b8b0f1d04f75c27c493377a = $(`<div id="html_c7efe3d77b8b0f1d04f75c27c493377a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_da3be67b1fc9793df55967a0c2657f5a.setContent(html_c7efe3d77b8b0f1d04f75c27c493377a);
+            
+        
+
+        marker_a35e2da9b699db45238c12840b553344.bindPopup(popup_da3be67b1fc9793df55967a0c2657f5a)
+        ;
+
+        
+    
+    
+            var marker_c591be618d98b6c8a062b4e637d183ba = L.marker(
+                [40.8657053, 29.2750766],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_d2291c9f250a397ac6170f2b644861ae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_98fbc81ff6d9a1d06fb2238d416637c7 = $(`<div id="html_98fbc81ff6d9a1d06fb2238d416637c7" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_d2291c9f250a397ac6170f2b644861ae.setContent(html_98fbc81ff6d9a1d06fb2238d416637c7);
+            
+        
+
+        marker_c591be618d98b6c8a062b4e637d183ba.bindPopup(popup_d2291c9f250a397ac6170f2b644861ae)
+        ;
+
+        
+    
+    
+            var marker_b47e6d9cadc0da10cb7d95b56fe46308 = L.marker(
+                [40.9998894, 29.0316855],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_1aac054137af0e21291df31f77aaf5fe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f840f5bf76777e1cfb28e3821c2e1c22 = $(`<div id="html_f840f5bf76777e1cfb28e3821c2e1c22" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_1aac054137af0e21291df31f77aaf5fe.setContent(html_f840f5bf76777e1cfb28e3821c2e1c22);
+            
+        
+
+        marker_b47e6d9cadc0da10cb7d95b56fe46308.bindPopup(popup_1aac054137af0e21291df31f77aaf5fe)
+        ;
+
+        
+    
+    
+            var marker_99d7f2917195de41c22d006748ed683e = L.marker(
+                [41.0685114, 28.9923228],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_8336ce2869abf17c6f4844dbb44db458 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_519a8eb818a8c25abd2e46d3c4b1ea52 = $(`<div id="html_519a8eb818a8c25abd2e46d3c4b1ea52" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_8336ce2869abf17c6f4844dbb44db458.setContent(html_519a8eb818a8c25abd2e46d3c4b1ea52);
+            
+        
+
+        marker_99d7f2917195de41c22d006748ed683e.bindPopup(popup_8336ce2869abf17c6f4844dbb44db458)
+        ;
+
+        
+    
+    
+            var marker_8de01db65836c383e9e2076029f6fae3 = L.marker(
+                [41.1077444, 28.987778],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_de16ebd6549b43eb5c8beedcaf924348 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_de9e6f91d84c4730567638347271d81f = $(`<div id="html_de9e6f91d84c4730567638347271d81f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_de16ebd6549b43eb5c8beedcaf924348.setContent(html_de9e6f91d84c4730567638347271d81f);
+            
+        
+
+        marker_8de01db65836c383e9e2076029f6fae3.bindPopup(popup_de16ebd6549b43eb5c8beedcaf924348)
+        ;
+
+        
+    
+    
+            var marker_c0ac5f3c6a6d1d0b44470f3bff5ad641 = L.marker(
+                [41.0746076, 28.9227481],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_ccda144e66034b23a563d86b023d0a8d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_be110aa0394b2d876b446c1ea117619d = $(`<div id="html_be110aa0394b2d876b446c1ea117619d" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_ccda144e66034b23a563d86b023d0a8d.setContent(html_be110aa0394b2d876b446c1ea117619d);
+            
+        
+
+        marker_c0ac5f3c6a6d1d0b44470f3bff5ad641.bindPopup(popup_ccda144e66034b23a563d86b023d0a8d)
+        ;
+
+        
+    
+    
+            var marker_6e4c5fa90d86b430aa9189fa50ffb034 = L.marker(
+                [41.0666179, 29.0167336],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_6f093d4b842c4403caf2f7962ad6d603 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_81e08c794ff004f861dd3d09927a771d = $(`<div id="html_81e08c794ff004f861dd3d09927a771d" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paribu Cineverse&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_6f093d4b842c4403caf2f7962ad6d603.setContent(html_81e08c794ff004f861dd3d09927a771d);
+            
+        
+
+        marker_6e4c5fa90d86b430aa9189fa50ffb034.bindPopup(popup_6f093d4b842c4403caf2f7962ad6d603)
+        ;
+
+        
+    
+    
+            var marker_e0be472a1176afb95336dad2cef1bcad = L.marker(
+                [41.0044732, 28.6899384],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_dc9ff7d0a7c13f9d81503647ccb64fc7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d06ef28dcd3da2176b4b2479261a2ed0 = $(`<div id="html_d06ef28dcd3da2176b4b2479261a2ed0" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Cinetech&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_dc9ff7d0a7c13f9d81503647ccb64fc7.setContent(html_d06ef28dcd3da2176b4b2479261a2ed0);
+            
+        
+
+        marker_e0be472a1176afb95336dad2cef1bcad.bindPopup(popup_dc9ff7d0a7c13f9d81503647ccb64fc7)
+        ;
+
+        
+    
+    
+            var marker_248e95c2157d608416c529a1f58c462f = L.marker(
+                [41.0718072, 28.9216373],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_7afb00f03de93996b810940d4bf73c5d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_30c01c115d30ff163cca5a07aca170ae = $(`<div id="html_30c01c115d30ff163cca5a07aca170ae" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_7afb00f03de93996b810940d4bf73c5d.setContent(html_30c01c115d30ff163cca5a07aca170ae);
+            
+        
+
+        marker_248e95c2157d608416c529a1f58c462f.bindPopup(popup_7afb00f03de93996b810940d4bf73c5d)
+        ;
+
+        
+    
+    
+            var marker_b008b0595f5b9594f1d7b6dac2614a9c = L.marker(
+                [40.9935797, 29.1209078],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_7044ac41a4348f5e177ad918403da56a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_891a0843c37bad357d8c7c19dae3d512 = $(`<div id="html_891a0843c37bad357d8c7c19dae3d512" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Cinematica&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_7044ac41a4348f5e177ad918403da56a.setContent(html_891a0843c37bad357d8c7c19dae3d512);
+            
+        
+
+        marker_b008b0595f5b9594f1d7b6dac2614a9c.bindPopup(popup_7044ac41a4348f5e177ad918403da56a)
+        ;
+
+        
+    
+    
+            var marker_e01436f76440e956f82577ec82610355 = L.marker(
+                [41.0596999, 28.9495798],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_b26df13821fa3cd9f41b42c9d476d840 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ce673a84a3f5cb537ad9815be31ac7b5 = $(`<div id="html_ce673a84a3f5cb537ad9815be31ac7b5" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Flyride - Helikopter turu simülasyonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_b26df13821fa3cd9f41b42c9d476d840.setContent(html_ce673a84a3f5cb537ad9815be31ac7b5);
+            
+        
+
+        marker_e01436f76440e956f82577ec82610355.bindPopup(popup_b26df13821fa3cd9f41b42c9d476d840)
+        ;
+
+        
+    
+    
+            var marker_6417f3456995bcb38a794786288958f4 = L.marker(
+                [41.0478267, 28.8960604],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_209e6f182859b2fbda80404cf98acabc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7b9c26cd772766468fdb00ed4ae1d419 = $(`<div id="html_7b9c26cd772766468fdb00ed4ae1d419" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Fly Ride Helikopter Turu Simülasyonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_209e6f182859b2fbda80404cf98acabc.setContent(html_7b9c26cd772766468fdb00ed4ae1d419);
+            
+        
+
+        marker_6417f3456995bcb38a794786288958f4.bindPopup(popup_209e6f182859b2fbda80404cf98acabc)
+        ;
+
+        
+    
+    
+            var marker_223cd4510fe4ada3eb13c0292048dfb4 = L.marker(
+                [40.8182367, 29.3188065],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_82f5ab00cdeabec2af26cccadc5cb50a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_78c3d216377e026993797d7a71a31001 = $(`<div id="html_78c3d216377e026993797d7a71a31001" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_82f5ab00cdeabec2af26cccadc5cb50a.setContent(html_78c3d216377e026993797d7a71a31001);
+            
+        
+
+        marker_223cd4510fe4ada3eb13c0292048dfb4.bindPopup(popup_82f5ab00cdeabec2af26cccadc5cb50a)
+        ;
+
+        
+    
+    
+            var marker_ec7e50e99ee816ed650bbe993376288b = L.marker(
+                [40.9864836, 29.0326796],
+                {
+}
+            ).addTo(map_0066d87279c397d3010ffe9856f9c591);
+        
+    
+        var popup_39046d090ca6c90cf3be07bab8b8f0f6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c96949fe87c4ad4c12f2c5c379462f52 = $(`<div id="html_c96949fe87c4ad4c12f2c5c379462f52" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Sinematek&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_39046d090ca6c90cf3be07bab8b8f0f6.setContent(html_c96949fe87c4ad4c12f2c5c379462f52);
+            
+        
+
+        marker_ec7e50e99ee816ed650bbe993376288b.bindPopup(popup_39046d090ca6c90cf3be07bab8b8f0f6)
+        ;
+
+        
+    
+</script>
+</html>

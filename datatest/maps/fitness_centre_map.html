@@ -1,0 +1,3566 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4edc51aedeb258186351bd2330ce214e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_4edc51aedeb258186351bd2330ce214e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4edc51aedeb258186351bd2330ce214e = L.map(
+                "map_4edc51aedeb258186351bd2330ce214e",
+                {
+                    center: [40.98825761931034, 29.03739609034483],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_35625446678338a9523d0f34d683c38f = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_35625446678338a9523d0f34d683c38f.addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+            var marker_55438e4885b1a9f8650cd67986977323 = L.marker(
+                [41.059317, 28.895181],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_c87511f4dfd1820da105f93a5c3aab0e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0c449a37afe3300262c54c7e3bd56805 = $(`<div id="html_0c449a37afe3300262c54c7e3bd56805" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Fitness World GYM&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_c87511f4dfd1820da105f93a5c3aab0e.setContent(html_0c449a37afe3300262c54c7e3bd56805);
+            
+        
+
+        marker_55438e4885b1a9f8650cd67986977323.bindPopup(popup_c87511f4dfd1820da105f93a5c3aab0e)
+        ;
+
+        
+    
+    
+            var marker_a063789c28fcb7158dee7764e535abd2 = L.marker(
+                [40.9006884, 29.1680089],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_f53867a754c7f149872fed6d684d5ceb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c1b14eb53b425efe87128bbff8e12bca = $(`<div id="html_c1b14eb53b425efe87128bbff8e12bca" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Caroline fitness center&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f53867a754c7f149872fed6d684d5ceb.setContent(html_c1b14eb53b425efe87128bbff8e12bca);
+            
+        
+
+        marker_a063789c28fcb7158dee7764e535abd2.bindPopup(popup_f53867a754c7f149872fed6d684d5ceb)
+        ;
+
+        
+    
+    
+            var marker_503a8a8ab1cc79249d8f9c7f9943bf22 = L.marker(
+                [41.0347954, 28.9215006],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_cbdbb1445f5bb9c16cde5892d260eced = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_89d9aea41e604e6457e406a89fcd3518 = $(`<div id="html_89d9aea41e604e6457e406a89fcd3518" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; MACFit&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_cbdbb1445f5bb9c16cde5892d260eced.setContent(html_89d9aea41e604e6457e406a89fcd3518);
+            
+        
+
+        marker_503a8a8ab1cc79249d8f9c7f9943bf22.bindPopup(popup_cbdbb1445f5bb9c16cde5892d260eced)
+        ;
+
+        
+    
+    
+            var marker_726cea2dce3e76b6326e7d00dd3689c5 = L.marker(
+                [41.0315302, 28.9826754],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_48ea45f48a73937ea57c9c0d42d03a18 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e27368cd876a14c6e875e2b1b8c7d5da = $(`<div id="html_e27368cd876a14c6e875e2b1b8c7d5da" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; CS-Club&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_48ea45f48a73937ea57c9c0d42d03a18.setContent(html_e27368cd876a14c6e875e2b1b8c7d5da);
+            
+        
+
+        marker_726cea2dce3e76b6326e7d00dd3689c5.bindPopup(popup_48ea45f48a73937ea57c9c0d42d03a18)
+        ;
+
+        
+    
+    
+            var marker_b837cab4096de346d68ff51c4611343d = L.marker(
+                [40.9823221, 29.0378589],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_a20a883dcb5c9363f5c6eb6e48debc60 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_349adb0a85eda569a1ae72785bf3a9b3 = $(`<div id="html_349adb0a85eda569a1ae72785bf3a9b3" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Hariom Yoga&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_a20a883dcb5c9363f5c6eb6e48debc60.setContent(html_349adb0a85eda569a1ae72785bf3a9b3);
+            
+        
+
+        marker_b837cab4096de346d68ff51c4611343d.bindPopup(popup_a20a883dcb5c9363f5c6eb6e48debc60)
+        ;
+
+        
+    
+    
+            var marker_edb132a659d36ca27911818b631bd59d = L.marker(
+                [40.9886311, 29.0247494],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_78d9e439b28270086ebb33b05b8a638d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ddad6f67f83c53aea5d544eb44ccaa8e = $(`<div id="html_ddad6f67f83c53aea5d544eb44ccaa8e" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Sport Universe Gym&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_78d9e439b28270086ebb33b05b8a638d.setContent(html_ddad6f67f83c53aea5d544eb44ccaa8e);
+            
+        
+
+        marker_edb132a659d36ca27911818b631bd59d.bindPopup(popup_78d9e439b28270086ebb33b05b8a638d)
+        ;
+
+        
+    
+    
+            var marker_bad8f83925076e99056cbae91709e937 = L.marker(
+                [41.07284, 28.8888062],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_987beed03f87b697c4334546b2693e9b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3aa81b640050ac8f8f1b505e96319686 = $(`<div id="html_3aa81b640050ac8f8f1b505e96319686" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Dark Fitnes&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_987beed03f87b697c4334546b2693e9b.setContent(html_3aa81b640050ac8f8f1b505e96319686);
+            
+        
+
+        marker_bad8f83925076e99056cbae91709e937.bindPopup(popup_987beed03f87b697c4334546b2693e9b)
+        ;
+
+        
+    
+    
+            var marker_ae271463871221182edd039138c25b95 = L.marker(
+                [40.9596958, 29.0919308],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_d46fdf35ded42db824a66bcd2a003979 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b3611f4b526950590f115cda99a0e623 = $(`<div id="html_b3611f4b526950590f115cda99a0e623" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Champion Gym&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_d46fdf35ded42db824a66bcd2a003979.setContent(html_b3611f4b526950590f115cda99a0e623);
+            
+        
+
+        marker_ae271463871221182edd039138c25b95.bindPopup(popup_d46fdf35ded42db824a66bcd2a003979)
+        ;
+
+        
+    
+    
+            var marker_da338bb4ebe89f15168a11293615f7cd = L.marker(
+                [40.9987414, 28.8590379],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_1c867ac39110c71a4319f03b40460877 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_62f8d33052f0cec957df527750db1e80 = $(`<div id="html_62f8d33052f0cec957df527750db1e80" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Fitnesspark Bahçelievler&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_1c867ac39110c71a4319f03b40460877.setContent(html_62f8d33052f0cec957df527750db1e80);
+            
+        
+
+        marker_da338bb4ebe89f15168a11293615f7cd.bindPopup(popup_1c867ac39110c71a4319f03b40460877)
+        ;
+
+        
+    
+    
+            var marker_d0f445b60cf02dfa999c058834afb30b = L.marker(
+                [40.8895515, 29.1800866],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_51c082dba7668523be4d08e7c1ed63d5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f76ddeaee56381e27564737599997a5b = $(`<div id="html_f76ddeaee56381e27564737599997a5b" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; MACFit&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_51c082dba7668523be4d08e7c1ed63d5.setContent(html_f76ddeaee56381e27564737599997a5b);
+            
+        
+
+        marker_d0f445b60cf02dfa999c058834afb30b.bindPopup(popup_51c082dba7668523be4d08e7c1ed63d5)
+        ;
+
+        
+    
+    
+            var marker_be3f4c222e35330da489bd83a1401bfd = L.marker(
+                [40.9744731, 29.0680747],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_070d2d7a7c6d55a383d91f60238219e8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0be4136908ed433caffe953681d37dc7 = $(`<div id="html_0be4136908ed433caffe953681d37dc7" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Luff Functional Fitness&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_070d2d7a7c6d55a383d91f60238219e8.setContent(html_0be4136908ed433caffe953681d37dc7);
+            
+        
+
+        marker_be3f4c222e35330da489bd83a1401bfd.bindPopup(popup_070d2d7a7c6d55a383d91f60238219e8)
+        ;
+
+        
+    
+    
+            var marker_8b042824ab0b2b7b5641ce494b99f122 = L.marker(
+                [40.9666777, 29.2632209],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_af04662441fb758d303aff6ac189f0a9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_266f19d521ae4688ec3a29333e4a425a = $(`<div id="html_266f19d521ae4688ec3a29333e4a425a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Fitness&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_af04662441fb758d303aff6ac189f0a9.setContent(html_266f19d521ae4688ec3a29333e4a425a);
+            
+        
+
+        marker_8b042824ab0b2b7b5641ce494b99f122.bindPopup(popup_af04662441fb758d303aff6ac189f0a9)
+        ;
+
+        
+    
+    
+            var marker_aacbe1033b4dbec9eeb5203e3f5f2adf = L.marker(
+                [41.0612661, 28.6442083],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_c431ad94caf4cd7a771b361fd453c519 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7831d374c0976ee5174ea2bd7e92f3a0 = $(`<div id="html_7831d374c0976ee5174ea2bd7e92f3a0" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Basi Systems Pilates&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c431ad94caf4cd7a771b361fd453c519.setContent(html_7831d374c0976ee5174ea2bd7e92f3a0);
+            
+        
+
+        marker_aacbe1033b4dbec9eeb5203e3f5f2adf.bindPopup(popup_c431ad94caf4cd7a771b361fd453c519)
+        ;
+
+        
+    
+    
+            var marker_d3bc0026d98bd63144599ebc65a1c219 = L.marker(
+                [41.0109758, 28.9399615],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_a0dad719b85d7006d9ecc669b52a9c1d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_966ceb36860d3192dee6872f143250f4 = $(`<div id="html_966ceb36860d3192dee6872f143250f4" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Fit Slim&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_a0dad719b85d7006d9ecc669b52a9c1d.setContent(html_966ceb36860d3192dee6872f143250f4);
+            
+        
+
+        marker_d3bc0026d98bd63144599ebc65a1c219.bindPopup(popup_a0dad719b85d7006d9ecc669b52a9c1d)
+        ;
+
+        
+    
+    
+            var marker_eea5e17d1306552ba015c82c89d13273 = L.marker(
+                [41.0588754, 29.0244368],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_ad9dc71b0ead3cd2827a862d1e2fd470 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8567dca2e18a856d4604389f80ad5dad = $(`<div id="html_8567dca2e18a856d4604389f80ad5dad" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; MACFit&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_ad9dc71b0ead3cd2827a862d1e2fd470.setContent(html_8567dca2e18a856d4604389f80ad5dad);
+            
+        
+
+        marker_eea5e17d1306552ba015c82c89d13273.bindPopup(popup_ad9dc71b0ead3cd2827a862d1e2fd470)
+        ;
+
+        
+    
+    
+            var marker_28bd3da0429dc329dfc6ab58214ef5b7 = L.marker(
+                [41.0121429, 28.9452624],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_95910330366dbfa8a93676649a3187e7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d604d58d39cb9f2165d9e6fb2b45200d = $(`<div id="html_d604d58d39cb9f2165d9e6fb2b45200d" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Xpower GYM&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_95910330366dbfa8a93676649a3187e7.setContent(html_d604d58d39cb9f2165d9e6fb2b45200d);
+            
+        
+
+        marker_28bd3da0429dc329dfc6ab58214ef5b7.bindPopup(popup_95910330366dbfa8a93676649a3187e7)
+        ;
+
+        
+    
+    
+            var marker_694b6cd9490a6b1815ec0505e4044c76 = L.marker(
+                [40.9953724, 28.9259827],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_b4efb1ebcc14e631c0cecbbdc6dc59e4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c0aad3553514c004f1b18cd765be5ba3 = $(`<div id="html_c0aad3553514c004f1b18cd765be5ba3" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Asta la vista&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_b4efb1ebcc14e631c0cecbbdc6dc59e4.setContent(html_c0aad3553514c004f1b18cd765be5ba3);
+            
+        
+
+        marker_694b6cd9490a6b1815ec0505e4044c76.bindPopup(popup_b4efb1ebcc14e631c0cecbbdc6dc59e4)
+        ;
+
+        
+    
+    
+            var marker_a032248d7cbf07852f18b7e6409feff5 = L.marker(
+                [40.9800985, 29.0228621],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_452bc4651741b82881c7794494de99d1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4c3be954bd7921420e7bedf60603cc38 = $(`<div id="html_4c3be954bd7921420e7bedf60603cc38" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Nefess Yoga&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_452bc4651741b82881c7794494de99d1.setContent(html_4c3be954bd7921420e7bedf60603cc38);
+            
+        
+
+        marker_a032248d7cbf07852f18b7e6409feff5.bindPopup(popup_452bc4651741b82881c7794494de99d1)
+        ;
+
+        
+    
+    
+            var marker_b5dce4339ac7ebff16c3c96d51c4b85e = L.marker(
+                [41.0165978, 28.9552928],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_707f9eacae2167b76946933cb1d915fc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_26f4228e1ad07c7d80c43f30112e4839 = $(`<div id="html_26f4228e1ad07c7d80c43f30112e4839" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; King Fitness Center&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_707f9eacae2167b76946933cb1d915fc.setContent(html_26f4228e1ad07c7d80c43f30112e4839);
+            
+        
+
+        marker_b5dce4339ac7ebff16c3c96d51c4b85e.bindPopup(popup_707f9eacae2167b76946933cb1d915fc)
+        ;
+
+        
+    
+    
+            var marker_99beba0e6fa9fff6d8efe3740fc29ab8 = L.marker(
+                [41.0111309, 28.9344692],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_1860517fbdca39da354241be3613f25d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_80558dec0cbe8f9402e9cd39331fdef9 = $(`<div id="html_80558dec0cbe8f9402e9cd39331fdef9" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Power Gym&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_1860517fbdca39da354241be3613f25d.setContent(html_80558dec0cbe8f9402e9cd39331fdef9);
+            
+        
+
+        marker_99beba0e6fa9fff6d8efe3740fc29ab8.bindPopup(popup_1860517fbdca39da354241be3613f25d)
+        ;
+
+        
+    
+    
+            var marker_c6d9bf770a95343fac726e3b88444c3e = L.marker(
+                [41.0054022, 28.9295494],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_613441f1a734d909ca92c7da07ef25a8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bf3352410fc355d3cd6f1c702f1f0ed5 = $(`<div id="html_bf3352410fc355d3cd6f1c702f1f0ed5" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Extreme Body Fitness&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_613441f1a734d909ca92c7da07ef25a8.setContent(html_bf3352410fc355d3cd6f1c702f1f0ed5);
+            
+        
+
+        marker_c6d9bf770a95343fac726e3b88444c3e.bindPopup(popup_613441f1a734d909ca92c7da07ef25a8)
+        ;
+
+        
+    
+    
+            var marker_da2a721fa8766025181dba0877876e89 = L.marker(
+                [41.0067288, 28.9300412],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_d1a4b6e445d9821e819141185578151e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f0a5814d7a5a0fb43ebbbe5a22dab8f7 = $(`<div id="html_f0a5814d7a5a0fb43ebbbe5a22dab8f7" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; R-Form&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_d1a4b6e445d9821e819141185578151e.setContent(html_f0a5814d7a5a0fb43ebbbe5a22dab8f7);
+            
+        
+
+        marker_da2a721fa8766025181dba0877876e89.bindPopup(popup_d1a4b6e445d9821e819141185578151e)
+        ;
+
+        
+    
+    
+            var marker_5377a9f5310679b2f4ac6d9d6743df52 = L.marker(
+                [41.013165, 28.9348555],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_db7d8e50f1dd3c819b1500b27d008892 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b2ab672f32c156ea39c17357f80c642d = $(`<div id="html_b2ab672f32c156ea39c17357f80c642d" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Fit Life&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_db7d8e50f1dd3c819b1500b27d008892.setContent(html_b2ab672f32c156ea39c17357f80c642d);
+            
+        
+
+        marker_5377a9f5310679b2f4ac6d9d6743df52.bindPopup(popup_db7d8e50f1dd3c819b1500b27d008892)
+        ;
+
+        
+    
+    
+            var marker_f2e11a64e7e0570441f7c1253e2f20f8 = L.marker(
+                [41.0151994, 28.9595184],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_a45a1e65b9c6461f42865b7bc06ec1fc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1b30e5257e3134e5ead10aeed3b90c3d = $(`<div id="html_1b30e5257e3134e5ead10aeed3b90c3d" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İÜ Coğrafya Stüdyo Kapalı Spor Salonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_a45a1e65b9c6461f42865b7bc06ec1fc.setContent(html_1b30e5257e3134e5ead10aeed3b90c3d);
+            
+        
+
+        marker_f2e11a64e7e0570441f7c1253e2f20f8.bindPopup(popup_a45a1e65b9c6461f42865b7bc06ec1fc)
+        ;
+
+        
+    
+    
+            var marker_e7612bff757abfc7075234861fa731ba = L.marker(
+                [41.0046175, 28.9339864],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_d0dc19811dec38ee378633d5007cee27 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6c5eb55f41b88718cb131c7474521eef = $(`<div id="html_6c5eb55f41b88718cb131c7474521eef" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Champion&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_d0dc19811dec38ee378633d5007cee27.setContent(html_6c5eb55f41b88718cb131c7474521eef);
+            
+        
+
+        marker_e7612bff757abfc7075234861fa731ba.bindPopup(popup_d0dc19811dec38ee378633d5007cee27)
+        ;
+
+        
+    
+    
+            var marker_7011de2e0e96de7c521bd16d5b019524 = L.marker(
+                [41.0052519, 28.9314296],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_b208c7593cdb4cbc8d4c428bdbcf0f27 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_935069fc2d4bcc1150dd4306e6bd1634 = $(`<div id="html_935069fc2d4bcc1150dd4306e6bd1634" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Club Sporıuum&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_b208c7593cdb4cbc8d4c428bdbcf0f27.setContent(html_935069fc2d4bcc1150dd4306e6bd1634);
+            
+        
+
+        marker_7011de2e0e96de7c521bd16d5b019524.bindPopup(popup_b208c7593cdb4cbc8d4c428bdbcf0f27)
+        ;
+
+        
+    
+    
+            var marker_373af65648b6ba871bea8ffb78dccc91 = L.marker(
+                [41.0170332, 28.9510711],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_411d20b4f0d633d3627f529c5ce04ff5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cb9f5c0e785a2ddd140555f9daec4688 = $(`<div id="html_cb9f5c0e785a2ddd140555f9daec4688" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Olympic spor salonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_411d20b4f0d633d3627f529c5ce04ff5.setContent(html_cb9f5c0e785a2ddd140555f9daec4688);
+            
+        
+
+        marker_373af65648b6ba871bea8ffb78dccc91.bindPopup(popup_411d20b4f0d633d3627f529c5ce04ff5)
+        ;
+
+        
+    
+    
+            var marker_66a642faaa8b01beab3a495a6aadcf3d = L.marker(
+                [41.0154981, 28.9246339],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_3bad559a903c6c05ee3d4d407c47511f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d3132c5b199ea0c7b91649f5f62d9bc0 = $(`<div id="html_d3132c5b199ea0c7b91649f5f62d9bc0" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Türktaş Sitesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_3bad559a903c6c05ee3d4d407c47511f.setContent(html_d3132c5b199ea0c7b91649f5f62d9bc0);
+            
+        
+
+        marker_66a642faaa8b01beab3a495a6aadcf3d.bindPopup(popup_3bad559a903c6c05ee3d4d407c47511f)
+        ;
+
+        
+    
+    
+            var marker_abeefcd1e927373d24e6c23589f85e97 = L.marker(
+                [41.021879, 28.9463104],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_59a6b814b711342e473a0e541e2422a2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e4e8c8fb8cb640f4723d2274e35454eb = $(`<div id="html_e4e8c8fb8cb640f4723d2274e35454eb" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; B fit&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_59a6b814b711342e473a0e541e2422a2.setContent(html_e4e8c8fb8cb640f4723d2274e35454eb);
+            
+        
+
+        marker_abeefcd1e927373d24e6c23589f85e97.bindPopup(popup_59a6b814b711342e473a0e541e2422a2)
+        ;
+
+        
+    
+    
+            var marker_4885634fd2216a2ed548b2d6b9d3de41 = L.marker(
+                [41.0220654, 28.9461164],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_4a4f3ac113716ef0af17c183226511f4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4d0f30cdab1981d5667b2ccf7262036a = $(`<div id="html_4d0f30cdab1981d5667b2ccf7262036a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Troy Gym&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_4a4f3ac113716ef0af17c183226511f4.setContent(html_4d0f30cdab1981d5667b2ccf7262036a);
+            
+        
+
+        marker_4885634fd2216a2ed548b2d6b9d3de41.bindPopup(popup_4a4f3ac113716ef0af17c183226511f4)
+        ;
+
+        
+    
+    
+            var marker_8ac0955fcad9a29e20e6692e5e1eacc3 = L.marker(
+                [41.0107006, 28.9432447],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_a172ee4461833ce2ca971dbc29a636d9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_15a8bf8ccb473c0b965bbefbd78f163f = $(`<div id="html_15a8bf8ccb473c0b965bbefbd78f163f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Flamingo&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_a172ee4461833ce2ca971dbc29a636d9.setContent(html_15a8bf8ccb473c0b965bbefbd78f163f);
+            
+        
+
+        marker_8ac0955fcad9a29e20e6692e5e1eacc3.bindPopup(popup_a172ee4461833ce2ca971dbc29a636d9)
+        ;
+
+        
+    
+    
+            var marker_4276940fcae592f03c0731bc10096cbb = L.marker(
+                [41.0107895, 28.9413741],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_172b6083697180fea7783e7e39f4ba79 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_24358104a684a9759eacd61ade6934ee = $(`<div id="html_24358104a684a9759eacd61ade6934ee" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Flamingo GYM&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_172b6083697180fea7783e7e39f4ba79.setContent(html_24358104a684a9759eacd61ade6934ee);
+            
+        
+
+        marker_4276940fcae592f03c0731bc10096cbb.bindPopup(popup_172b6083697180fea7783e7e39f4ba79)
+        ;
+
+        
+    
+    
+            var marker_b035eaf50393b1d88a38834d9a4c88fa = L.marker(
+                [41.0104704, 28.9422074],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_c91014d8c49f2b3fbf0e23fe7e163d50 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ceb5f1d681678b2113938ab195742010 = $(`<div id="html_ceb5f1d681678b2113938ab195742010" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Fitness World&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_c91014d8c49f2b3fbf0e23fe7e163d50.setContent(html_ceb5f1d681678b2113938ab195742010);
+            
+        
+
+        marker_b035eaf50393b1d88a38834d9a4c88fa.bindPopup(popup_c91014d8c49f2b3fbf0e23fe7e163d50)
+        ;
+
+        
+    
+    
+            var marker_cf04eb7965ce16c468cdeaaadb7f4fab = L.marker(
+                [41.0116376, 28.9397285],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_84cb22893dcb4591c4bbdcef1011cfc9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d040d5149bb689affb0d3859c9ce44f5 = $(`<div id="html_d040d5149bb689affb0d3859c9ce44f5" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Hakkay Yağlı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_84cb22893dcb4591c4bbdcef1011cfc9.setContent(html_d040d5149bb689affb0d3859c9ce44f5);
+            
+        
+
+        marker_cf04eb7965ce16c468cdeaaadb7f4fab.bindPopup(popup_84cb22893dcb4591c4bbdcef1011cfc9)
+        ;
+
+        
+    
+    
+            var marker_1fd46aaeb22fca84e45a7a0e6f96af8c = L.marker(
+                [41.0110995, 28.940002],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_44e414bb039ec7626f8420e9ce79d32d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a31a7db7f3fd041e4735621f92d8f352 = $(`<div id="html_a31a7db7f3fd041e4735621f92d8f352" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Fitslim&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_44e414bb039ec7626f8420e9ce79d32d.setContent(html_a31a7db7f3fd041e4735621f92d8f352);
+            
+        
+
+        marker_1fd46aaeb22fca84e45a7a0e6f96af8c.bindPopup(popup_44e414bb039ec7626f8420e9ce79d32d)
+        ;
+
+        
+    
+    
+            var marker_5aaeea807b260cee021eb21c72e4875d = L.marker(
+                [41.0185139, 28.943873],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_405ae7ba485cb744c11943ad9573a0a1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6613cee52ffb9a5be0fa7d59091ec768 = $(`<div id="html_6613cee52ffb9a5be0fa7d59091ec768" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Sportwani&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_405ae7ba485cb744c11943ad9573a0a1.setContent(html_6613cee52ffb9a5be0fa7d59091ec768);
+            
+        
+
+        marker_5aaeea807b260cee021eb21c72e4875d.bindPopup(popup_405ae7ba485cb744c11943ad9573a0a1)
+        ;
+
+        
+    
+    
+            var marker_6a8c6c62f88fa2a944a1229e43fd936c = L.marker(
+                [41.0165387, 28.9462535],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_3105cd4502dfb6d46787e0fa5fb7e643 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_14aab00717e06a2e448603071aff7491 = $(`<div id="html_14aab00717e06a2e448603071aff7491" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Atlas spor salonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_3105cd4502dfb6d46787e0fa5fb7e643.setContent(html_14aab00717e06a2e448603071aff7491);
+            
+        
+
+        marker_6a8c6c62f88fa2a944a1229e43fd936c.bindPopup(popup_3105cd4502dfb6d46787e0fa5fb7e643)
+        ;
+
+        
+    
+    
+            var marker_abeb02a9670c9493c813a7b5d5533871 = L.marker(
+                [41.0192505, 28.9417219],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_38de48158242b1e0139b8e1185fd7b7e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2a9701eda3428c1ce56fae2f0fa41f76 = $(`<div id="html_2a9701eda3428c1ce56fae2f0fa41f76" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Fatih Pilates gym&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_38de48158242b1e0139b8e1185fd7b7e.setContent(html_2a9701eda3428c1ce56fae2f0fa41f76);
+            
+        
+
+        marker_abeb02a9670c9493c813a7b5d5533871.bindPopup(popup_38de48158242b1e0139b8e1185fd7b7e)
+        ;
+
+        
+    
+    
+            var marker_0c01eca722a141e444b86129736f5af1 = L.marker(
+                [41.0272708, 29.0316385],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_381fd2b0936ffee89ed47b16ab392f2c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f71670920feac7a6836af7e8afd35841 = $(`<div id="html_f71670920feac7a6836af7e8afd35841" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; City Sport Center&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_381fd2b0936ffee89ed47b16ab392f2c.setContent(html_f71670920feac7a6836af7e8afd35841);
+            
+        
+
+        marker_0c01eca722a141e444b86129736f5af1.bindPopup(popup_381fd2b0936ffee89ed47b16ab392f2c)
+        ;
+
+        
+    
+    
+            var marker_827a35d9010e4af71f2d623923233a9e = L.marker(
+                [40.875801, 29.2533311],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_1584b818cba9ba709ac0cdb864b19650 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d1ccd36e5c64a2594208cd28aa6bb62b = $(`<div id="html_d1ccd36e5c64a2594208cd28aa6bb62b" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Mavi Club Fitness&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_1584b818cba9ba709ac0cdb864b19650.setContent(html_d1ccd36e5c64a2594208cd28aa6bb62b);
+            
+        
+
+        marker_827a35d9010e4af71f2d623923233a9e.bindPopup(popup_1584b818cba9ba709ac0cdb864b19650)
+        ;
+
+        
+    
+    
+            var marker_91d73e28abb287ea849160304c941fb3 = L.marker(
+                [41.0704673, 28.9994091],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_4002817551871349048298b94ec77e8c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4b3e4f4bc885f20b697cd862b4196fca = $(`<div id="html_4b3e4f4bc885f20b697cd862b4196fca" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_4002817551871349048298b94ec77e8c.setContent(html_4b3e4f4bc885f20b697cd862b4196fca);
+            
+        
+
+        marker_91d73e28abb287ea849160304c941fb3.bindPopup(popup_4002817551871349048298b94ec77e8c)
+        ;
+
+        
+    
+    
+            var marker_bc2ea57db9e3ed9b449ff84a48504978 = L.marker(
+                [40.8976504, 29.1695091],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_4a42ce27a3a8add8ec23077e2c5ee8c1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0909460f0f2373d37606eaeb019ba48f = $(`<div id="html_0909460f0f2373d37606eaeb019ba48f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Dragos FitnessCity&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_4a42ce27a3a8add8ec23077e2c5ee8c1.setContent(html_0909460f0f2373d37606eaeb019ba48f);
+            
+        
+
+        marker_bc2ea57db9e3ed9b449ff84a48504978.bindPopup(popup_4a42ce27a3a8add8ec23077e2c5ee8c1)
+        ;
+
+        
+    
+    
+            var marker_d77bb3670b44df972e55944889ce9f14 = L.marker(
+                [40.8974003, 29.1674757],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_4c316d1e0f1fdeea488b7e264e3f91de = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4d92dfd5609070ddf30363f04b530607 = $(`<div id="html_4d92dfd5609070ddf30363f04b530607" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Lifetime Fitness Center&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_4c316d1e0f1fdeea488b7e264e3f91de.setContent(html_4d92dfd5609070ddf30363f04b530607);
+            
+        
+
+        marker_d77bb3670b44df972e55944889ce9f14.bindPopup(popup_4c316d1e0f1fdeea488b7e264e3f91de)
+        ;
+
+        
+    
+    
+            var marker_47666cc4593499c0d5be66f8d6a31cc9 = L.marker(
+                [40.8977506, 29.1679014],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_412cfb9ba38bd18b1e0e1a5984040b85 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_519a84a9c87c451a68884bd54318e789 = $(`<div id="html_519a84a9c87c451a68884bd54318e789" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Salon Alican Öncel&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_412cfb9ba38bd18b1e0e1a5984040b85.setContent(html_519a84a9c87c451a68884bd54318e789);
+            
+        
+
+        marker_47666cc4593499c0d5be66f8d6a31cc9.bindPopup(popup_412cfb9ba38bd18b1e0e1a5984040b85)
+        ;
+
+        
+    
+    
+            var marker_d70283425937ed0f3bfbe3c959277d30 = L.marker(
+                [40.9572988, 29.0866322],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_1e20f1933e92748fb0bfade979ed0bf5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c6dd8a11eca56a571b68881137501a4b = $(`<div id="html_c6dd8a11eca56a571b68881137501a4b" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Lets Pilates&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_1e20f1933e92748fb0bfade979ed0bf5.setContent(html_c6dd8a11eca56a571b68881137501a4b);
+            
+        
+
+        marker_d70283425937ed0f3bfbe3c959277d30.bindPopup(popup_1e20f1933e92748fb0bfade979ed0bf5)
+        ;
+
+        
+    
+    
+            var marker_e0a019c8aaec5806e755579cae49f006 = L.marker(
+                [41.0312812, 29.183048],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_0361350ac7a01b9785c219e980451a18 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e926918bdf000b5948f8c89d67afa7b6 = $(`<div id="html_e926918bdf000b5948f8c89d67afa7b6" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Yoga Academy&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_0361350ac7a01b9785c219e980451a18.setContent(html_e926918bdf000b5948f8c89d67afa7b6);
+            
+        
+
+        marker_e0a019c8aaec5806e755579cae49f006.bindPopup(popup_0361350ac7a01b9785c219e980451a18)
+        ;
+
+        
+    
+    
+            var marker_48d170541d74c9ec856bd949669203de = L.marker(
+                [41.1049043, 28.8644349],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_a0ccb393fbb54a2233e749806d17eff7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8b398585367e3aa0e6553e633b1f7e24 = $(`<div id="html_8b398585367e3aa0e6553e633b1f7e24" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Free Life Fitness Spor Salonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_a0ccb393fbb54a2233e749806d17eff7.setContent(html_8b398585367e3aa0e6553e633b1f7e24);
+            
+        
+
+        marker_48d170541d74c9ec856bd949669203de.bindPopup(popup_a0ccb393fbb54a2233e749806d17eff7)
+        ;
+
+        
+    
+    
+            var marker_24649b191c6e8fc4111f6ae6dae6942f = L.marker(
+                [41.0318468, 29.1858413],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_5a40cba228f9e27cf857d4254fba4309 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_46fed119c589efd376b32d5dabc54a21 = $(`<div id="html_46fed119c589efd376b32d5dabc54a21" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Easy Fit&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_5a40cba228f9e27cf857d4254fba4309.setContent(html_46fed119c589efd376b32d5dabc54a21);
+            
+        
+
+        marker_24649b191c6e8fc4111f6ae6dae6942f.bindPopup(popup_5a40cba228f9e27cf857d4254fba4309)
+        ;
+
+        
+    
+    
+            var marker_b4cee6b0dcd55891a3da83c993248e94 = L.marker(
+                [41.099851, 28.8627508],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_5f592ee1b975f6fcaf7367fb2f112e0e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0a34ff14a808c0e3934c12a05d8026e8 = $(`<div id="html_0a34ff14a808c0e3934c12a05d8026e8" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Relax Fitness Spor&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_5f592ee1b975f6fcaf7367fb2f112e0e.setContent(html_0a34ff14a808c0e3934c12a05d8026e8);
+            
+        
+
+        marker_b4cee6b0dcd55891a3da83c993248e94.bindPopup(popup_5f592ee1b975f6fcaf7367fb2f112e0e)
+        ;
+
+        
+    
+    
+            var marker_73f34f95ebe8b79d217863eb06827113 = L.marker(
+                [40.9653059, 29.086817],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_07474f5b0a4744bc76c32929e7e10ee2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d67d73841280d930a05064f462912db3 = $(`<div id="html_d67d73841280d930a05064f462912db3" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Pilates Stüdio&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_07474f5b0a4744bc76c32929e7e10ee2.setContent(html_d67d73841280d930a05064f462912db3);
+            
+        
+
+        marker_73f34f95ebe8b79d217863eb06827113.bindPopup(popup_07474f5b0a4744bc76c32929e7e10ee2)
+        ;
+
+        
+    
+    
+            var marker_1577d5cf72bb9f82b286fbb12195e984 = L.marker(
+                [40.9879686, 29.1038308],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_d10e0a7dcd54f04ea2f4a4e154b66273 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_089e8ecd5712ad86646101b3aba9cfa5 = $(`<div id="html_089e8ecd5712ad86646101b3aba9cfa5" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Shape Club&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_d10e0a7dcd54f04ea2f4a4e154b66273.setContent(html_089e8ecd5712ad86646101b3aba9cfa5);
+            
+        
+
+        marker_1577d5cf72bb9f82b286fbb12195e984.bindPopup(popup_d10e0a7dcd54f04ea2f4a4e154b66273)
+        ;
+
+        
+    
+    
+            var marker_0e997f925667fba5b6e6053a80ad15d1 = L.marker(
+                [40.9789508, 29.2652612],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_76c73eef828d7abad46aa1f348b9ee6f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_da7f90a140f4d1b2b29c27b6a0482432 = $(`<div id="html_da7f90a140f4d1b2b29c27b6a0482432" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Ulusal Spor Klübü&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_76c73eef828d7abad46aa1f348b9ee6f.setContent(html_da7f90a140f4d1b2b29c27b6a0482432);
+            
+        
+
+        marker_0e997f925667fba5b6e6053a80ad15d1.bindPopup(popup_76c73eef828d7abad46aa1f348b9ee6f)
+        ;
+
+        
+    
+    
+            var marker_93d3456e0e9b35aaf21ed93ac1aee070 = L.marker(
+                [40.9382213, 29.1350339],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_f10075939f55176a5cb39b40dac68edb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_df5be99f20634f42e9c57f186f2e5196 = $(`<div id="html_df5be99f20634f42e9c57f186f2e5196" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; MACFit&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f10075939f55176a5cb39b40dac68edb.setContent(html_df5be99f20634f42e9c57f186f2e5196);
+            
+        
+
+        marker_93d3456e0e9b35aaf21ed93ac1aee070.bindPopup(popup_f10075939f55176a5cb39b40dac68edb)
+        ;
+
+        
+    
+    
+            var marker_52ad6d33925f0e30b991221a576a3286 = L.marker(
+                [40.9368993, 29.1361583],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_e4f6bc55be7af5909b29b74feee0ed21 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_69afd538cf37f988007888647f12756e = $(`<div id="html_69afd538cf37f988007888647f12756e" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Burgu Arjaan By Rotana Bodylines Pool and Fitness Center&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_e4f6bc55be7af5909b29b74feee0ed21.setContent(html_69afd538cf37f988007888647f12756e);
+            
+        
+
+        marker_52ad6d33925f0e30b991221a576a3286.bindPopup(popup_e4f6bc55be7af5909b29b74feee0ed21)
+        ;
+
+        
+    
+    
+            var marker_604ac42b77e96c82def6612b301e6a82 = L.marker(
+                [40.9167408, 29.1382015],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_21923b93dff15b56c7156b248408a1f0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7123b2f8fd6acd696fcf4b5dbc80802f = $(`<div id="html_7123b2f8fd6acd696fcf4b5dbc80802f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_21923b93dff15b56c7156b248408a1f0.setContent(html_7123b2f8fd6acd696fcf4b5dbc80802f);
+            
+        
+
+        marker_604ac42b77e96c82def6612b301e6a82.bindPopup(popup_21923b93dff15b56c7156b248408a1f0)
+        ;
+
+        
+    
+    
+            var marker_50d2eb48bd10c92f88d760ce42d11023 = L.marker(
+                [41.0154778, 28.9019813],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_b071a53c8442e32724d0793edce43798 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a421750ec11bb956cd9c0a57370bfc4c = $(`<div id="html_a421750ec11bb956cd9c0a57370bfc4c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Stadyum&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_b071a53c8442e32724d0793edce43798.setContent(html_a421750ec11bb956cd9c0a57370bfc4c);
+            
+        
+
+        marker_50d2eb48bd10c92f88d760ce42d11023.bindPopup(popup_b071a53c8442e32724d0793edce43798)
+        ;
+
+        
+    
+    
+            var marker_4ac509a934cd2fcda4c44effcda048d8 = L.marker(
+                [40.9874435, 28.8958338],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_266b8c733824347006f6b2e2ad5a6201 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_927d1b1b8aaa926cbb7d236e96568578 = $(`<div id="html_927d1b1b8aaa926cbb7d236e96568578" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Body Line&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_266b8c733824347006f6b2e2ad5a6201.setContent(html_927d1b1b8aaa926cbb7d236e96568578);
+            
+        
+
+        marker_4ac509a934cd2fcda4c44effcda048d8.bindPopup(popup_266b8c733824347006f6b2e2ad5a6201)
+        ;
+
+        
+    
+    
+            var marker_c0ee5afd9616861f7534a2e6ef8b02f4 = L.marker(
+                [40.9962783, 28.9104595],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_4cb7876a4f670aee7261348b51a314cc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_61df5a9c468012aba992d079fee9825c = $(`<div id="html_61df5a9c468012aba992d079fee9825c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Spor yaşam merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_4cb7876a4f670aee7261348b51a314cc.setContent(html_61df5a9c468012aba992d079fee9825c);
+            
+        
+
+        marker_c0ee5afd9616861f7534a2e6ef8b02f4.bindPopup(popup_4cb7876a4f670aee7261348b51a314cc)
+        ;
+
+        
+    
+    
+            var marker_7409f80dc165e1223521e13945772c09 = L.marker(
+                [41.0375177, 28.8241166],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_7391029f08b24a0691179411eb8f2475 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_afdef961b88d7a34ab314e9452d665af = $(`<div id="html_afdef961b88d7a34ab314e9452d665af" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Eser Spor Kulübü&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_7391029f08b24a0691179411eb8f2475.setContent(html_afdef961b88d7a34ab314e9452d665af);
+            
+        
+
+        marker_7409f80dc165e1223521e13945772c09.bindPopup(popup_7391029f08b24a0691179411eb8f2475)
+        ;
+
+        
+    
+    
+            var marker_a188d421cc2bf4b51f8b5f41a0bd9c44 = L.marker(
+                [40.9975392, 29.1066566],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_40f966d1cd40953af5c1ac787499a792 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_08ae173bfcb986a6fbd3d580023176d6 = $(`<div id="html_08ae173bfcb986a6fbd3d580023176d6" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Pleon&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_40f966d1cd40953af5c1ac787499a792.setContent(html_08ae173bfcb986a6fbd3d580023176d6);
+            
+        
+
+        marker_a188d421cc2bf4b51f8b5f41a0bd9c44.bindPopup(popup_40f966d1cd40953af5c1ac787499a792)
+        ;
+
+        
+    
+    
+            var marker_9118b02fdb3f86d5e4bcf545a473d3c7 = L.marker(
+                [41.0931454, 28.8057859],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_1bdf1d7a39da30815f268c09147b2c28 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1e5317e7614b0fc93bf9c59d34363a2a = $(`<div id="html_1e5317e7614b0fc93bf9c59d34363a2a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Proness CLUB Fitness Center&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_1bdf1d7a39da30815f268c09147b2c28.setContent(html_1e5317e7614b0fc93bf9c59d34363a2a);
+            
+        
+
+        marker_9118b02fdb3f86d5e4bcf545a473d3c7.bindPopup(popup_1bdf1d7a39da30815f268c09147b2c28)
+        ;
+
+        
+    
+    
+            var marker_223ac0431bd7271b7d4d503cafec46c0 = L.marker(
+                [41.0469941, 29.009313],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_fef1fb8ea2a3201bf319cbf198ef4c0e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0b9ebe3e983b8eefa56061ce0cd36ded = $(`<div id="html_0b9ebe3e983b8eefa56061ce0cd36ded" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Health Club &amp; Spa Soul&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_fef1fb8ea2a3201bf319cbf198ef4c0e.setContent(html_0b9ebe3e983b8eefa56061ce0cd36ded);
+            
+        
+
+        marker_223ac0431bd7271b7d4d503cafec46c0.bindPopup(popup_fef1fb8ea2a3201bf319cbf198ef4c0e)
+        ;
+
+        
+    
+    
+            var marker_586113673bbe200f7b53e0058541b63c = L.marker(
+                [40.8625038, 29.3350968],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_b4030ac86ca0d9e056b02a96f8046a77 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a65e6490feb735ca376c56e63b71d64f = $(`<div id="html_a65e6490feb735ca376c56e63b71d64f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_b4030ac86ca0d9e056b02a96f8046a77.setContent(html_a65e6490feb735ca376c56e63b71d64f);
+            
+        
+
+        marker_586113673bbe200f7b53e0058541b63c.bindPopup(popup_b4030ac86ca0d9e056b02a96f8046a77)
+        ;
+
+        
+    
+    
+            var marker_e21770e1820e69adb212a5953c9c6808 = L.marker(
+                [40.9838268, 29.0977647],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_6f9d54e0d4d9f8a588584de0e8863411 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5107b06cf6159a8274e9c40e0d00a1e7 = $(`<div id="html_5107b06cf6159a8274e9c40e0d00a1e7" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Ebru Karaduman Beden Atölyesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_6f9d54e0d4d9f8a588584de0e8863411.setContent(html_5107b06cf6159a8274e9c40e0d00a1e7);
+            
+        
+
+        marker_e21770e1820e69adb212a5953c9c6808.bindPopup(popup_6f9d54e0d4d9f8a588584de0e8863411)
+        ;
+
+        
+    
+    
+            var marker_0cd37567029f4c0a24e2f08cd15c1537 = L.marker(
+                [40.9133381, 29.2097608],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_c0ce2f15c37903b90e03816ae6dfc768 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d0b89af12defae444db84215ca0a44c8 = $(`<div id="html_d0b89af12defae444db84215ca0a44c8" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; UpLife&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_c0ce2f15c37903b90e03816ae6dfc768.setContent(html_d0b89af12defae444db84215ca0a44c8);
+            
+        
+
+        marker_0cd37567029f4c0a24e2f08cd15c1537.bindPopup(popup_c0ce2f15c37903b90e03816ae6dfc768)
+        ;
+
+        
+    
+    
+            var marker_941ebabe0d871c40e4f36ddbb95d8fb5 = L.marker(
+                [40.9501618, 29.1048661],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_2b98e140fc0d04b88fb5d062eea5f44e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2a3c579b4e844f3d82de684469f46b69 = $(`<div id="html_2a3c579b4e844f3d82de684469f46b69" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Fit Life Sports&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_2b98e140fc0d04b88fb5d062eea5f44e.setContent(html_2a3c579b4e844f3d82de684469f46b69);
+            
+        
+
+        marker_941ebabe0d871c40e4f36ddbb95d8fb5.bindPopup(popup_2b98e140fc0d04b88fb5d062eea5f44e)
+        ;
+
+        
+    
+    
+            var marker_98df67a4100aa8f15796e34b7d9bf024 = L.marker(
+                [40.9830845, 29.0955482],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_be2dac342eafc853a6102887e96abe27 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_99c245474c5b77b739c41ac8af26acf1 = $(`<div id="html_99c245474c5b77b739c41ac8af26acf1" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Crross Fit Skylıght&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_be2dac342eafc853a6102887e96abe27.setContent(html_99c245474c5b77b739c41ac8af26acf1);
+            
+        
+
+        marker_98df67a4100aa8f15796e34b7d9bf024.bindPopup(popup_be2dac342eafc853a6102887e96abe27)
+        ;
+
+        
+    
+    
+            var marker_e2daca225320b19cb1803d23cc3ae439 = L.marker(
+                [41.0203988, 29.03042],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_b9313bc89f0cdfb2fb15983a7695bf4e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d0104b9ead9ee551974acbe69ff78f99 = $(`<div id="html_d0104b9ead9ee551974acbe69ff78f99" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Atletik Fİtness&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; istanbul</div>`)[0];
+                popup_b9313bc89f0cdfb2fb15983a7695bf4e.setContent(html_d0104b9ead9ee551974acbe69ff78f99);
+            
+        
+
+        marker_e2daca225320b19cb1803d23cc3ae439.bindPopup(popup_b9313bc89f0cdfb2fb15983a7695bf4e)
+        ;
+
+        
+    
+    
+            var marker_d9578ee2d1e4e90f3320957e0194c60f = L.marker(
+                [41.0218156, 29.0388846],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_8230c95845fbf8a2a33c27da80e7ad1e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ae133753de56cb3a9a36459980011421 = $(`<div id="html_ae133753de56cb3a9a36459980011421" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; MACFit&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_8230c95845fbf8a2a33c27da80e7ad1e.setContent(html_ae133753de56cb3a9a36459980011421);
+            
+        
+
+        marker_d9578ee2d1e4e90f3320957e0194c60f.bindPopup(popup_8230c95845fbf8a2a33c27da80e7ad1e)
+        ;
+
+        
+    
+    
+            var marker_1610b6c9c5462abc96a4edf91f6f3ad6 = L.marker(
+                [41.0234046, 29.0276714],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_99781b36dbd455346171ddbeff8678c1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ad2edd21fb71f85a6d798c2c4e897c67 = $(`<div id="html_ad2edd21fb71f85a6d798c2c4e897c67" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Metin aydın spor salonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; istanbul</div>`)[0];
+                popup_99781b36dbd455346171ddbeff8678c1.setContent(html_ad2edd21fb71f85a6d798c2c4e897c67);
+            
+        
+
+        marker_1610b6c9c5462abc96a4edf91f6f3ad6.bindPopup(popup_99781b36dbd455346171ddbeff8678c1)
+        ;
+
+        
+    
+    
+            var marker_6603bd98bc8ca5d1a3f2d74d2a8d971d = L.marker(
+                [41.0522541, 28.9959004],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_07e99b4a2a72a37889db71801fa947be = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c4742b0d1791f2badcadce12bb871d48 = $(`<div id="html_c4742b0d1791f2badcadce12bb871d48" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Yoga8&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_07e99b4a2a72a37889db71801fa947be.setContent(html_c4742b0d1791f2badcadce12bb871d48);
+            
+        
+
+        marker_6603bd98bc8ca5d1a3f2d74d2a8d971d.bindPopup(popup_07e99b4a2a72a37889db71801fa947be)
+        ;
+
+        
+    
+    
+            var marker_9cd1b713fe1a1a98ab0817c8d61cd1fe = L.marker(
+                [40.9153256, 29.2852458],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_7a469305fddc8f6854e9002fd08fa751 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5f5e3e7957a941f0d97661cce0f32bfb = $(`<div id="html_5f5e3e7957a941f0d97661cce0f32bfb" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Naim Fitness&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_7a469305fddc8f6854e9002fd08fa751.setContent(html_5f5e3e7957a941f0d97661cce0f32bfb);
+            
+        
+
+        marker_9cd1b713fe1a1a98ab0817c8d61cd1fe.bindPopup(popup_7a469305fddc8f6854e9002fd08fa751)
+        ;
+
+        
+    
+    
+            var marker_c8a200ce05d45b67fbd32c82e4417801 = L.marker(
+                [40.9185701, 29.3036393],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_1c18892749bd7ca2aa13367d19374b1b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_01884b96efb3e1577c5584106110b24a = $(`<div id="html_01884b96efb3e1577c5584106110b24a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İK Baborry Life Club&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_1c18892749bd7ca2aa13367d19374b1b.setContent(html_01884b96efb3e1577c5584106110b24a);
+            
+        
+
+        marker_c8a200ce05d45b67fbd32c82e4417801.bindPopup(popup_1c18892749bd7ca2aa13367d19374b1b)
+        ;
+
+        
+    
+    
+            var marker_13d97b25552bfa7b8a9f73dfd2b23fc9 = L.marker(
+                [40.9930958, 28.7927656],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_634fb8901710d09fa66912df82a6392c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b75f3aa4a249736ec0e145526240a4c6 = $(`<div id="html_b75f3aa4a249736ec0e145526240a4c6" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Fit Box Fitness&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_634fb8901710d09fa66912df82a6392c.setContent(html_b75f3aa4a249736ec0e145526240a4c6);
+            
+        
+
+        marker_13d97b25552bfa7b8a9f73dfd2b23fc9.bindPopup(popup_634fb8901710d09fa66912df82a6392c)
+        ;
+
+        
+    
+    
+            var marker_65719c313f3b625cce6b020dea5e2127 = L.marker(
+                [40.8151273, 29.3054448],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_b9b3d75eac9c6cc6b1455d9b54923acf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_704099d7d6427c3be3688cda0c6e055b = $(`<div id="html_704099d7d6427c3be3688cda0c6e055b" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Atılım Fitness&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_b9b3d75eac9c6cc6b1455d9b54923acf.setContent(html_704099d7d6427c3be3688cda0c6e055b);
+            
+        
+
+        marker_65719c313f3b625cce6b020dea5e2127.bindPopup(popup_b9b3d75eac9c6cc6b1455d9b54923acf)
+        ;
+
+        
+    
+    
+            var marker_04311a53644aa8f8ee8022343a8306be = L.marker(
+                [40.9870605, 29.0282253],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_f3cf24fb0300760ed57af5b5edc81f6a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8223bbbfd419e4d94478e1037855ee18 = $(`<div id="html_8223bbbfd419e4d94478e1037855ee18" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Centro&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f3cf24fb0300760ed57af5b5edc81f6a.setContent(html_8223bbbfd419e4d94478e1037855ee18);
+            
+        
+
+        marker_04311a53644aa8f8ee8022343a8306be.bindPopup(popup_f3cf24fb0300760ed57af5b5edc81f6a)
+        ;
+
+        
+    
+    
+            var marker_db893778f413465d94b2b8f2f94a808a = L.marker(
+                [40.9830082, 29.0273517],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_7d93dd50589bf232954c723ba9c71cb3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8a6ed2af1c6a98d5876e86fe9f6c600b = $(`<div id="html_8a6ed2af1c6a98d5876e86fe9f6c600b" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Just Fit&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_7d93dd50589bf232954c723ba9c71cb3.setContent(html_8a6ed2af1c6a98d5876e86fe9f6c600b);
+            
+        
+
+        marker_db893778f413465d94b2b8f2f94a808a.bindPopup(popup_7d93dd50589bf232954c723ba9c71cb3)
+        ;
+
+        
+    
+    
+            var marker_567b8ef39d43d31e5e37fbf3d5da0ed3 = L.marker(
+                [41.0401803, 28.8121068],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_e6c8f7bce477556cd8b0990d7e681a87 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ac91b4e7695f98fbd7efefe1a2f0de64 = $(`<div id="html_ac91b4e7695f98fbd7efefe1a2f0de64" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Gymfit&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_e6c8f7bce477556cd8b0990d7e681a87.setContent(html_ac91b4e7695f98fbd7efefe1a2f0de64);
+            
+        
+
+        marker_567b8ef39d43d31e5e37fbf3d5da0ed3.bindPopup(popup_e6c8f7bce477556cd8b0990d7e681a87)
+        ;
+
+        
+    
+    
+            var marker_e3fb58f6b7d2ba6df2f10a7a043e50c9 = L.marker(
+                [41.0129305, 28.8949953],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_45d52a800b0fa1b8df05cc6181047908 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ff1857ea29e1f503a7a5f52bfa7ea289 = $(`<div id="html_ff1857ea29e1f503a7a5f52bfa7ea289" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Tozkoparan Spor Salonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_45d52a800b0fa1b8df05cc6181047908.setContent(html_ff1857ea29e1f503a7a5f52bfa7ea289);
+            
+        
+
+        marker_e3fb58f6b7d2ba6df2f10a7a043e50c9.bindPopup(popup_45d52a800b0fa1b8df05cc6181047908)
+        ;
+
+        
+    
+    
+            var marker_23a4b3ab57535661f65738506f9ebfdb = L.marker(
+                [41.0063901, 28.9734431],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_1dfeda91a6e43ecbcb13f0643c8d487d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ca804f327a5059c58cfb2645f399829a = $(`<div id="html_ca804f327a5059c58cfb2645f399829a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Sultan Osman Hamami&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_1dfeda91a6e43ecbcb13f0643c8d487d.setContent(html_ca804f327a5059c58cfb2645f399829a);
+            
+        
+
+        marker_23a4b3ab57535661f65738506f9ebfdb.bindPopup(popup_1dfeda91a6e43ecbcb13f0643c8d487d)
+        ;
+
+        
+    
+    
+            var marker_a49eb93f3fe8b493479fab49725ae8f4 = L.marker(
+                [41.0462072, 28.8045571],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_02e2ca5b11418d75bf6070605bb7abad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e24699e5fc92e87e4a40ff3c3825100d = $(`<div id="html_e24699e5fc92e87e4a40ff3c3825100d" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Pro Gold Gym&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_02e2ca5b11418d75bf6070605bb7abad.setContent(html_e24699e5fc92e87e4a40ff3c3825100d);
+            
+        
+
+        marker_a49eb93f3fe8b493479fab49725ae8f4.bindPopup(popup_02e2ca5b11418d75bf6070605bb7abad)
+        ;
+
+        
+    
+    
+            var marker_fae8ec0ae34a51e4c8c75e813dcab824 = L.marker(
+                [40.9837843, 29.0283499],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_a6349650ef5bd96e4133accefb08a982 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d3ba3d6bb76ee1e124442f9eabd08184 = $(`<div id="html_d3ba3d6bb76ee1e124442f9eabd08184" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Pilates Demet Topa&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_a6349650ef5bd96e4133accefb08a982.setContent(html_d3ba3d6bb76ee1e124442f9eabd08184);
+            
+        
+
+        marker_fae8ec0ae34a51e4c8c75e813dcab824.bindPopup(popup_a6349650ef5bd96e4133accefb08a982)
+        ;
+
+        
+    
+    
+            var marker_9ce23d42d384b91326fcd15504bb4897 = L.marker(
+                [40.9928975, 28.8934438],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_f872d898e9187d35595e439f924c2aad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e45c8c37a45091876a8d086b47202f0c = $(`<div id="html_e45c8c37a45091876a8d086b47202f0c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Ness Qwert&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f872d898e9187d35595e439f924c2aad.setContent(html_e45c8c37a45091876a8d086b47202f0c);
+            
+        
+
+        marker_9ce23d42d384b91326fcd15504bb4897.bindPopup(popup_f872d898e9187d35595e439f924c2aad)
+        ;
+
+        
+    
+    
+            var marker_5bdd60c4b2383e710e5dc53e63a60ea4 = L.marker(
+                [41.0261338, 28.9761697],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_4d36d859a8aa6e28c6a276736b9a14e1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b38772a30e3e79355add29e54356ceee = $(`<div id="html_b38772a30e3e79355add29e54356ceee" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; NOA Gym&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_4d36d859a8aa6e28c6a276736b9a14e1.setContent(html_b38772a30e3e79355add29e54356ceee);
+            
+        
+
+        marker_5bdd60c4b2383e710e5dc53e63a60ea4.bindPopup(popup_4d36d859a8aa6e28c6a276736b9a14e1)
+        ;
+
+        
+    
+    
+            var marker_2e90b511663626f8fd05d2a989de1297 = L.marker(
+                [40.9841084, 29.1146563],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_b1147e9c6fb1268bccbceab41b82f3ed = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bc4a1480aafdb695f7874b9292ce240c = $(`<div id="html_bc4a1480aafdb695f7874b9292ce240c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; HB Fitness&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_b1147e9c6fb1268bccbceab41b82f3ed.setContent(html_bc4a1480aafdb695f7874b9292ce240c);
+            
+        
+
+        marker_2e90b511663626f8fd05d2a989de1297.bindPopup(popup_b1147e9c6fb1268bccbceab41b82f3ed)
+        ;
+
+        
+    
+    
+            var marker_f971c07fe8d604d3c14ce3346f364e4a = L.marker(
+                [41.0316335, 28.6751195],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_8bcf12bd07838fbc812185a0dc18a047 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7d6fde3d2a43850c86acfea1801074bc = $(`<div id="html_7d6fde3d2a43850c86acfea1801074bc" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Ahmet Koç Gym &amp; Fitness&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; Ahmet Koç Gym &amp; Fitness&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Fatih Mahallesi</div>`)[0];
+                popup_8bcf12bd07838fbc812185a0dc18a047.setContent(html_7d6fde3d2a43850c86acfea1801074bc);
+            
+        
+
+        marker_f971c07fe8d604d3c14ce3346f364e4a.bindPopup(popup_8bcf12bd07838fbc812185a0dc18a047)
+        ;
+
+        
+    
+    
+            var marker_b33072abc56211c7a628f837e1b6122d = L.marker(
+                [41.0795491, 29.0318289],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_0b4688390180fea3b0baac54bddb7bb9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9fbd12cf60bbbfb0a8e88ba594ad595f = $(`<div id="html_9fbd12cf60bbbfb0a8e88ba594ad595f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_0b4688390180fea3b0baac54bddb7bb9.setContent(html_9fbd12cf60bbbfb0a8e88ba594ad595f);
+            
+        
+
+        marker_b33072abc56211c7a628f837e1b6122d.bindPopup(popup_0b4688390180fea3b0baac54bddb7bb9)
+        ;
+
+        
+    
+    
+            var marker_e889b4558561b1429bd08135ba567b49 = L.marker(
+                [41.0498865, 29.0020448],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_39d9a8540b265f64894497e1395a67b4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e71aa651e4b78f58ead27aa0892e6aec = $(`<div id="html_e71aa651e4b78f58ead27aa0892e6aec" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_39d9a8540b265f64894497e1395a67b4.setContent(html_e71aa651e4b78f58ead27aa0892e6aec);
+            
+        
+
+        marker_e889b4558561b1429bd08135ba567b49.bindPopup(popup_39d9a8540b265f64894497e1395a67b4)
+        ;
+
+        
+    
+    
+            var marker_1dec95a37c7509dfeced8fbde05a90f6 = L.marker(
+                [41.0333031, 28.9766848],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_2a7597b4a6b711d2ec047fe960b48a8b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_25a66d83c30f7f9247f19d3718a5beae = $(`<div id="html_25a66d83c30f7f9247f19d3718a5beae" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Flash Gym&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_2a7597b4a6b711d2ec047fe960b48a8b.setContent(html_25a66d83c30f7f9247f19d3718a5beae);
+            
+        
+
+        marker_1dec95a37c7509dfeced8fbde05a90f6.bindPopup(popup_2a7597b4a6b711d2ec047fe960b48a8b)
+        ;
+
+        
+    
+    
+            var marker_b709683adcb95cd6a930ceb81f886b03 = L.marker(
+                [40.9674907, 29.0648178],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_47742efd3f9beb0d0041d29a2b4d1d96 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_332d394ef81b76de4a53f5ec2b4d2172 = $(`<div id="html_332d394ef81b76de4a53f5ec2b4d2172" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; MACFit CKM&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_47742efd3f9beb0d0041d29a2b4d1d96.setContent(html_332d394ef81b76de4a53f5ec2b4d2172);
+            
+        
+
+        marker_b709683adcb95cd6a930ceb81f886b03.bindPopup(popup_47742efd3f9beb0d0041d29a2b4d1d96)
+        ;
+
+        
+    
+    
+            var marker_c82dc3ddfc00a2cfbc7ed4c163ec603f = L.marker(
+                [40.8760114, 29.2328565],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_d0edb24e01386f90fec890369061fe17 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b7a2c0f1451e2bc14c0695b3605ef034 = $(`<div id="html_b7a2c0f1451e2bc14c0695b3605ef034" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Pro Studio Pilates&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_d0edb24e01386f90fec890369061fe17.setContent(html_b7a2c0f1451e2bc14c0695b3605ef034);
+            
+        
+
+        marker_c82dc3ddfc00a2cfbc7ed4c163ec603f.bindPopup(popup_d0edb24e01386f90fec890369061fe17)
+        ;
+
+        
+    
+    
+            var marker_b5a70dc39de3eb03bd8ebf60fb88d253 = L.marker(
+                [41.0310467, 29.2237689],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_99b0cb039b0471bdee2d9302ee73655b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_987985d53f433da5de1051fdaac4196f = $(`<div id="html_987985d53f433da5de1051fdaac4196f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; performance gym clup&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_99b0cb039b0471bdee2d9302ee73655b.setContent(html_987985d53f433da5de1051fdaac4196f);
+            
+        
+
+        marker_b5a70dc39de3eb03bd8ebf60fb88d253.bindPopup(popup_99b0cb039b0471bdee2d9302ee73655b)
+        ;
+
+        
+    
+    
+            var marker_3f9870cd34bada18611c62389f37489c = L.marker(
+                [40.9646375, 29.0734038],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_33a5dccfaaaf3d8a4e910726c5f2caea = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3739d234f991133a662b57d8eea8fe36 = $(`<div id="html_3739d234f991133a662b57d8eea8fe36" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Level UP Pilates&amp;Personal Training Studio&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_33a5dccfaaaf3d8a4e910726c5f2caea.setContent(html_3739d234f991133a662b57d8eea8fe36);
+            
+        
+
+        marker_3f9870cd34bada18611c62389f37489c.bindPopup(popup_33a5dccfaaaf3d8a4e910726c5f2caea)
+        ;
+
+        
+    
+    
+            var marker_a015a36a59dbf66e69e630cca71ab7ab = L.marker(
+                [40.953328, 29.1007791],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_f027e745248b087d08e25c15dc99cdbb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0299a5bfb9b8efc0feee8ec018a17de5 = $(`<div id="html_0299a5bfb9b8efc0feee8ec018a17de5" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Bfit&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f027e745248b087d08e25c15dc99cdbb.setContent(html_0299a5bfb9b8efc0feee8ec018a17de5);
+            
+        
+
+        marker_a015a36a59dbf66e69e630cca71ab7ab.bindPopup(popup_f027e745248b087d08e25c15dc99cdbb)
+        ;
+
+        
+    
+    
+            var marker_1e29640040b32f739b7779cba15b6ef5 = L.marker(
+                [41.0532202, 28.910075],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_a2aceb2c0adcaf41c19dbeca36c1bad2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fec485a98c95bb6cd70a1cb143788661 = $(`<div id="html_fec485a98c95bb6cd70a1cb143788661" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; MACFit&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_a2aceb2c0adcaf41c19dbeca36c1bad2.setContent(html_fec485a98c95bb6cd70a1cb143788661);
+            
+        
+
+        marker_1e29640040b32f739b7779cba15b6ef5.bindPopup(popup_a2aceb2c0adcaf41c19dbeca36c1bad2)
+        ;
+
+        
+    
+    
+            var marker_9ee53f1672bd09853e2649b72fc49b62 = L.marker(
+                [40.8264642, 29.3191406],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_f6dd2544ab9b0fc7a48f577dc09a7e28 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f8bfee4eb102d0bb063f1be70fdfef34 = $(`<div id="html_f8bfee4eb102d0bb063f1be70fdfef34" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f6dd2544ab9b0fc7a48f577dc09a7e28.setContent(html_f8bfee4eb102d0bb063f1be70fdfef34);
+            
+        
+
+        marker_9ee53f1672bd09853e2649b72fc49b62.bindPopup(popup_f6dd2544ab9b0fc7a48f577dc09a7e28)
+        ;
+
+        
+    
+    
+            var marker_38e0a3f0a4a704e33703085cd649f886 = L.marker(
+                [40.8263925, 29.3243853],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_2a9652c0094509687ff204d448e4cc0f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c3467c41aaed0244a9e16e0883063afa = $(`<div id="html_c3467c41aaed0244a9e16e0883063afa" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_2a9652c0094509687ff204d448e4cc0f.setContent(html_c3467c41aaed0244a9e16e0883063afa);
+            
+        
+
+        marker_38e0a3f0a4a704e33703085cd649f886.bindPopup(popup_2a9652c0094509687ff204d448e4cc0f)
+        ;
+
+        
+    
+    
+            var marker_0d3ae1904c7cc8d49eb2db7a672cfafd = L.marker(
+                [40.9993675, 29.1412821],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_97136e03c69f37bce1cc8a5aef861254 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6bc34bc32bfaec866182c5a6b6c41bef = $(`<div id="html_6bc34bc32bfaec866182c5a6b6c41bef" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Oxygen Fitness&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_97136e03c69f37bce1cc8a5aef861254.setContent(html_6bc34bc32bfaec866182c5a6b6c41bef);
+            
+        
+
+        marker_0d3ae1904c7cc8d49eb2db7a672cfafd.bindPopup(popup_97136e03c69f37bce1cc8a5aef861254)
+        ;
+
+        
+    
+    
+            var marker_290fd1fd16f0d224c0a5c8aabb7a91ab = L.marker(
+                [40.9793656, 29.1093084],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_d20ba9ce678ff20a9bc158e66e8092db = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_934c1d0ac3e4d3da55d822cffe0be6ee = $(`<div id="html_934c1d0ac3e4d3da55d822cffe0be6ee" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Fitamine&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_d20ba9ce678ff20a9bc158e66e8092db.setContent(html_934c1d0ac3e4d3da55d822cffe0be6ee);
+            
+        
+
+        marker_290fd1fd16f0d224c0a5c8aabb7a91ab.bindPopup(popup_d20ba9ce678ff20a9bc158e66e8092db)
+        ;
+
+        
+    
+    
+            var marker_c98c82295d3f9ab15db63c78bffec00b = L.marker(
+                [40.9794444, 29.1140552],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_f3e67ec9a34a9042b2b3cb90d11aa7a2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6da08cb7a7c73862bc2f0945bf89502f = $(`<div id="html_6da08cb7a7c73862bc2f0945bf89502f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Luna Pilates Studio&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f3e67ec9a34a9042b2b3cb90d11aa7a2.setContent(html_6da08cb7a7c73862bc2f0945bf89502f);
+            
+        
+
+        marker_c98c82295d3f9ab15db63c78bffec00b.bindPopup(popup_f3e67ec9a34a9042b2b3cb90d11aa7a2)
+        ;
+
+        
+    
+    
+            var marker_906046d96694186ae4a82da855a400d6 = L.marker(
+                [41.0207141, 29.0441104],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_6ae73e2a973cfc14a35ab6513588b630 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e4825698c332951700bb69d876997e6f = $(`<div id="html_e4825698c332951700bb69d876997e6f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Eureko Sigorta&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_6ae73e2a973cfc14a35ab6513588b630.setContent(html_e4825698c332951700bb69d876997e6f);
+            
+        
+
+        marker_906046d96694186ae4a82da855a400d6.bindPopup(popup_6ae73e2a973cfc14a35ab6513588b630)
+        ;
+
+        
+    
+    
+            var marker_8f82cc3b4f96a74e6f3fb19318b8b6a1 = L.marker(
+                [40.9790745, 29.1180116],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_52f31b71d0b1a99f840f3130c6e551bf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_81257760186a191a3b16687f264810e6 = $(`<div id="html_81257760186a191a3b16687f264810e6" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Fit Club&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_52f31b71d0b1a99f840f3130c6e551bf.setContent(html_81257760186a191a3b16687f264810e6);
+            
+        
+
+        marker_8f82cc3b4f96a74e6f3fb19318b8b6a1.bindPopup(popup_52f31b71d0b1a99f840f3130c6e551bf)
+        ;
+
+        
+    
+    
+            var marker_23a065596f3ec4b9e47e56ef6ea31b4a = L.marker(
+                [40.9021813, 29.2268651],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_0e6e983dea960e0ecb308ed4c8bc3ece = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5471deee4ae42fd5b8b97ce49b97d3d7 = $(`<div id="html_5471deee4ae42fd5b8b97ce49b97d3d7" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Eagle Fitness Center&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_0e6e983dea960e0ecb308ed4c8bc3ece.setContent(html_5471deee4ae42fd5b8b97ce49b97d3d7);
+            
+        
+
+        marker_23a065596f3ec4b9e47e56ef6ea31b4a.bindPopup(popup_0e6e983dea960e0ecb308ed4c8bc3ece)
+        ;
+
+        
+    
+    
+            var marker_847519f657b73dfb1e527379eab02dc1 = L.marker(
+                [40.9090998, 29.2251345],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_db80d748cee9dd9ca280f05dc71513ce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_65c62dfef0a8b4edaff10b13aa200ab1 = $(`<div id="html_65c62dfef0a8b4edaff10b13aa200ab1" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Golden Life Sports &amp; Fitness&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_db80d748cee9dd9ca280f05dc71513ce.setContent(html_65c62dfef0a8b4edaff10b13aa200ab1);
+            
+        
+
+        marker_847519f657b73dfb1e527379eab02dc1.bindPopup(popup_db80d748cee9dd9ca280f05dc71513ce)
+        ;
+
+        
+    
+    
+            var marker_f38bc62a036456f15fa7c92df9ca7b45 = L.marker(
+                [41.0211987, 28.8873612],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_ffb62b2074ce2900df02d71d572b4062 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_70b8825d71c955b267bc09f8cb18f0bb = $(`<div id="html_70b8825d71c955b267bc09f8cb18f0bb" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; FLAMINGO&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_ffb62b2074ce2900df02d71d572b4062.setContent(html_70b8825d71c955b267bc09f8cb18f0bb);
+            
+        
+
+        marker_f38bc62a036456f15fa7c92df9ca7b45.bindPopup(popup_ffb62b2074ce2900df02d71d572b4062)
+        ;
+
+        
+    
+    
+            var marker_0528bb6e1b97f1b8aa703613920661e4 = L.marker(
+                [40.9342303, 29.141828],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_11bc9084ae3c116dc6fadf8c7a7b38cb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4701d210ca343f0bd7bfe6eae58ce6dc = $(`<div id="html_4701d210ca343f0bd7bfe6eae58ce6dc" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_11bc9084ae3c116dc6fadf8c7a7b38cb.setContent(html_4701d210ca343f0bd7bfe6eae58ce6dc);
+            
+        
+
+        marker_0528bb6e1b97f1b8aa703613920661e4.bindPopup(popup_11bc9084ae3c116dc6fadf8c7a7b38cb)
+        ;
+
+        
+    
+    
+            var marker_158fca4bce3b8b7bece88648ba78e9af = L.marker(
+                [40.9853272, 29.0213026],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_e779ae27203f8baf48c3e46d82bf3b4a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a56d8924effc37c799323353317667bd = $(`<div id="html_a56d8924effc37c799323353317667bd" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_e779ae27203f8baf48c3e46d82bf3b4a.setContent(html_a56d8924effc37c799323353317667bd);
+            
+        
+
+        marker_158fca4bce3b8b7bece88648ba78e9af.bindPopup(popup_e779ae27203f8baf48c3e46d82bf3b4a)
+        ;
+
+        
+    
+    
+            var marker_ba8ea4abe6e9bc7c11d56a91e8a21b70 = L.marker(
+                [40.9840767, 29.1101672],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_5f2d2a7173ab1c7392dad750b78badc8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_82d6dded931dba7f89a171c49cb33d46 = $(`<div id="html_82d6dded931dba7f89a171c49cb33d46" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Pilates in Paradise&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_5f2d2a7173ab1c7392dad750b78badc8.setContent(html_82d6dded931dba7f89a171c49cb33d46);
+            
+        
+
+        marker_ba8ea4abe6e9bc7c11d56a91e8a21b70.bindPopup(popup_5f2d2a7173ab1c7392dad750b78badc8)
+        ;
+
+        
+    
+    
+            var marker_5a615880884e70fa539e0591a594c822 = L.marker(
+                [40.9722487, 29.0837158],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_4f9c321e834d6b2a38a52e9f8ce3d0d6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e5823a4dabbf78a235b106cb38fca61f = $(`<div id="html_e5823a4dabbf78a235b106cb38fca61f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; MACFit&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_4f9c321e834d6b2a38a52e9f8ce3d0d6.setContent(html_e5823a4dabbf78a235b106cb38fca61f);
+            
+        
+
+        marker_5a615880884e70fa539e0591a594c822.bindPopup(popup_4f9c321e834d6b2a38a52e9f8ce3d0d6)
+        ;
+
+        
+    
+    
+            var marker_42c8220f4684b1191c03e1b38cd75af4 = L.marker(
+                [40.9823608, 29.1198085],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_a1efe6d8a6e1efab1860c676db2ef3f6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c4ca418ea13a7776a9644d0b2a6e97cb = $(`<div id="html_c4ca418ea13a7776a9644d0b2a6e97cb" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; My Studio Pilates&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_a1efe6d8a6e1efab1860c676db2ef3f6.setContent(html_c4ca418ea13a7776a9644d0b2a6e97cb);
+            
+        
+
+        marker_42c8220f4684b1191c03e1b38cd75af4.bindPopup(popup_a1efe6d8a6e1efab1860c676db2ef3f6)
+        ;
+
+        
+    
+    
+            var marker_7055cb4f85803f5fdd87c47204279594 = L.marker(
+                [40.998955, 28.6509984],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_4f0323cd9cd3e6d39be778921ac5380f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9fdd439690ee66955df139dbd75ced72 = $(`<div id="html_9fdd439690ee66955df139dbd75ced72" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; She Club&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_4f0323cd9cd3e6d39be778921ac5380f.setContent(html_9fdd439690ee66955df139dbd75ced72);
+            
+        
+
+        marker_7055cb4f85803f5fdd87c47204279594.bindPopup(popup_4f0323cd9cd3e6d39be778921ac5380f)
+        ;
+
+        
+    
+    
+            var marker_f77c0fdb2cf1bda6c4ddbd12157726b4 = L.marker(
+                [40.983541, 29.0260303],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_0337bb2cd093ce44a7a1469423a78631 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0b9a138c81b9e39ea89fd334053fb59b = $(`<div id="html_0b9a138c81b9e39ea89fd334053fb59b" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Maestro&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_0337bb2cd093ce44a7a1469423a78631.setContent(html_0b9a138c81b9e39ea89fd334053fb59b);
+            
+        
+
+        marker_f77c0fdb2cf1bda6c4ddbd12157726b4.bindPopup(popup_0337bb2cd093ce44a7a1469423a78631)
+        ;
+
+        
+    
+    
+            var marker_378f0fba5a63f9698ccf83e099384302 = L.marker(
+                [40.9866392, 29.0312625],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_f18583cf67d7ee33429f5c317795fd96 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_207bd20fe5f5721fa78d87b87020b9fc = $(`<div id="html_207bd20fe5f5721fa78d87b87020b9fc" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; The Moon&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f18583cf67d7ee33429f5c317795fd96.setContent(html_207bd20fe5f5721fa78d87b87020b9fc);
+            
+        
+
+        marker_378f0fba5a63f9698ccf83e099384302.bindPopup(popup_f18583cf67d7ee33429f5c317795fd96)
+        ;
+
+        
+    
+    
+            var marker_42d1e058e7ce9827e700174447ee2aff = L.marker(
+                [41.1020069, 28.8629343],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_6ae3c7f1433a9be558f259436676fb5a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aafce07b22ae823dc75f0983655e8fef = $(`<div id="html_aafce07b22ae823dc75f0983655e8fef" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Red&amp;Black Fitness&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_6ae3c7f1433a9be558f259436676fb5a.setContent(html_aafce07b22ae823dc75f0983655e8fef);
+            
+        
+
+        marker_42d1e058e7ce9827e700174447ee2aff.bindPopup(popup_6ae3c7f1433a9be558f259436676fb5a)
+        ;
+
+        
+    
+    
+            var marker_6a47057603c319f1a2aac950b4bb5abb = L.marker(
+                [41.1037229, 28.8620427],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_84158e770c5e8bb3eaa3231aa8999e44 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_70e82a01130650ec61ef95926b1bba87 = $(`<div id="html_70e82a01130650ec61ef95926b1bba87" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_84158e770c5e8bb3eaa3231aa8999e44.setContent(html_70e82a01130650ec61ef95926b1bba87);
+            
+        
+
+        marker_6a47057603c319f1a2aac950b4bb5abb.bindPopup(popup_84158e770c5e8bb3eaa3231aa8999e44)
+        ;
+
+        
+    
+    
+            var marker_fa355004196b0e82d80a220c3c0b4944 = L.marker(
+                [40.9602362, 29.0839988],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_df3e83a982b37591910e64d4c0838599 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c87fca682f8796eb3ca10547a82afbce = $(`<div id="html_c87fca682f8796eb3ca10547a82afbce" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; En Fit Body&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_df3e83a982b37591910e64d4c0838599.setContent(html_c87fca682f8796eb3ca10547a82afbce);
+            
+        
+
+        marker_fa355004196b0e82d80a220c3c0b4944.bindPopup(popup_df3e83a982b37591910e64d4c0838599)
+        ;
+
+        
+    
+    
+            var marker_3c877be2f805abd5b2eca237522fd7cf = L.marker(
+                [40.985388, 29.0322439],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_b99720ad95c614737445f4647c108b10 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_76c31c2eadb62dcbc30a49a12fffe463 = $(`<div id="html_76c31c2eadb62dcbc30a49a12fffe463" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_b99720ad95c614737445f4647c108b10.setContent(html_76c31c2eadb62dcbc30a49a12fffe463);
+            
+        
+
+        marker_3c877be2f805abd5b2eca237522fd7cf.bindPopup(popup_b99720ad95c614737445f4647c108b10)
+        ;
+
+        
+    
+    
+            var marker_927dc438b7c2e0a525753fbb8f10dbe3 = L.marker(
+                [41.0744575, 28.9343173],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_8803ca9308cef37db73c3bbb237f27c2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ae0b8a5e54ad936a4496d46d3bc172d7 = $(`<div id="html_ae0b8a5e54ad936a4496d46d3bc172d7" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Akın Fit Club&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_8803ca9308cef37db73c3bbb237f27c2.setContent(html_ae0b8a5e54ad936a4496d46d3bc172d7);
+            
+        
+
+        marker_927dc438b7c2e0a525753fbb8f10dbe3.bindPopup(popup_8803ca9308cef37db73c3bbb237f27c2)
+        ;
+
+        
+    
+    
+            var marker_1dc08ce1701f70fe8c84fea6a944b1a9 = L.marker(
+                [41.0331967, 29.1741811],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_ccdf91d744d270f0c27d55c7d73a952b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_99145602f997d69a6bdb65c6e28daddf = $(`<div id="html_99145602f997d69a6bdb65c6e28daddf" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; FitnessMax PT Studio&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_ccdf91d744d270f0c27d55c7d73a952b.setContent(html_99145602f997d69a6bdb65c6e28daddf);
+            
+        
+
+        marker_1dc08ce1701f70fe8c84fea6a944b1a9.bindPopup(popup_ccdf91d744d270f0c27d55c7d73a952b)
+        ;
+
+        
+    
+    
+            var marker_22edb4c324c5b89d4431524ecbd1f1be = L.marker(
+                [40.9768606, 28.87264],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_f3235c6385f8f433e9b3800d23512b17 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6475dc441091715ae71a7f70af847371 = $(`<div id="html_6475dc441091715ae71a7f70af847371" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f3235c6385f8f433e9b3800d23512b17.setContent(html_6475dc441091715ae71a7f70af847371);
+            
+        
+
+        marker_22edb4c324c5b89d4431524ecbd1f1be.bindPopup(popup_f3235c6385f8f433e9b3800d23512b17)
+        ;
+
+        
+    
+    
+            var marker_76dc0ad0384a0d3f8e08b8e0cde037f2 = L.marker(
+                [40.9731311, 29.0559135],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_0f4b08ce81d22253cf2f925656efa5c8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_91851a736dbc2a82db2155b8fc7708a2 = $(`<div id="html_91851a736dbc2a82db2155b8fc7708a2" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; MACFit Cadde&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_0f4b08ce81d22253cf2f925656efa5c8.setContent(html_91851a736dbc2a82db2155b8fc7708a2);
+            
+        
+
+        marker_76dc0ad0384a0d3f8e08b8e0cde037f2.bindPopup(popup_0f4b08ce81d22253cf2f925656efa5c8)
+        ;
+
+        
+    
+    
+            var marker_043d3df0533b61267848668aad277190 = L.marker(
+                [40.9785318, 29.1240568],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_19a728aa538e1fcab3103c05f88e9578 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b75e437dfea527a6eb4560affc4bce7b = $(`<div id="html_b75e437dfea527a6eb4560affc4bce7b" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; 90216 Gym&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_19a728aa538e1fcab3103c05f88e9578.setContent(html_b75e437dfea527a6eb4560affc4bce7b);
+            
+        
+
+        marker_043d3df0533b61267848668aad277190.bindPopup(popup_19a728aa538e1fcab3103c05f88e9578)
+        ;
+
+        
+    
+    
+            var marker_0e8f6320143bfc306668e8f1ec658daf = L.marker(
+                [40.9816337, 29.1150941],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_88c7f39f250349343ae55e330fa9aba8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c6f963be6b983e8654e21c249aa5dfdc = $(`<div id="html_c6f963be6b983e8654e21c249aa5dfdc" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Room&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_88c7f39f250349343ae55e330fa9aba8.setContent(html_c6f963be6b983e8654e21c249aa5dfdc);
+            
+        
+
+        marker_0e8f6320143bfc306668e8f1ec658daf.bindPopup(popup_88c7f39f250349343ae55e330fa9aba8)
+        ;
+
+        
+    
+    
+            var marker_145e96a6a0ab2fc0b39cae3bdffe9999 = L.marker(
+                [41.1011997, 28.8637101],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_f1f675cdc7e958cf9c768e5a42cb5a2b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d40537c28c8f2b40b74115f541a6576f = $(`<div id="html_d40537c28c8f2b40b74115f541a6576f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Relax Gym&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f1f675cdc7e958cf9c768e5a42cb5a2b.setContent(html_d40537c28c8f2b40b74115f541a6576f);
+            
+        
+
+        marker_145e96a6a0ab2fc0b39cae3bdffe9999.bindPopup(popup_f1f675cdc7e958cf9c768e5a42cb5a2b)
+        ;
+
+        
+    
+    
+            var marker_f945b75d3a85f90ee8df3765989c8443 = L.marker(
+                [40.8724743, 29.1224453],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_9105135652b7c94839e001d91f8ad667 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e19a672b4035da65dbbfd78470fc4175 = $(`<div id="html_e19a672b4035da65dbbfd78470fc4175" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_9105135652b7c94839e001d91f8ad667.setContent(html_e19a672b4035da65dbbfd78470fc4175);
+            
+        
+
+        marker_f945b75d3a85f90ee8df3765989c8443.bindPopup(popup_9105135652b7c94839e001d91f8ad667)
+        ;
+
+        
+    
+    
+            var marker_4705fc47a7aec89655a9695a0462865a = L.marker(
+                [40.9918736, 29.0270269],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_e389f0f88d42124a4120b326eda798e4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_61f9dabc9c6bfc6516e775114ffd99fd = $(`<div id="html_61f9dabc9c6bfc6516e775114ffd99fd" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; USA Team Fitness &amp; Fight Club&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_e389f0f88d42124a4120b326eda798e4.setContent(html_61f9dabc9c6bfc6516e775114ffd99fd);
+            
+        
+
+        marker_4705fc47a7aec89655a9695a0462865a.bindPopup(popup_e389f0f88d42124a4120b326eda798e4)
+        ;
+
+        
+    
+    
+            var marker_2793537abc4e5f387721ddaac2f72479 = L.marker(
+                [41.0289853, 29.0588582],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_1b7ec45be8ab71c7a0583e399dd05261 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_23e1b716c762a3403f2fda52271870b5 = $(`<div id="html_23e1b716c762a3403f2fda52271870b5" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_1b7ec45be8ab71c7a0583e399dd05261.setContent(html_23e1b716c762a3403f2fda52271870b5);
+            
+        
+
+        marker_2793537abc4e5f387721ddaac2f72479.bindPopup(popup_1b7ec45be8ab71c7a0583e399dd05261)
+        ;
+
+        
+    
+    
+            var marker_13155eeb72b0d87d795bb24c65870af5 = L.marker(
+                [40.9712847, 29.088559],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_fd84a22865bf05ce09bcb89d7ff3b18d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b2fcfb3a847c2bbb3ba1541743bed8d2 = $(`<div id="html_b2fcfb3a847c2bbb3ba1541743bed8d2" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Sports Factory&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_fd84a22865bf05ce09bcb89d7ff3b18d.setContent(html_b2fcfb3a847c2bbb3ba1541743bed8d2);
+            
+        
+
+        marker_13155eeb72b0d87d795bb24c65870af5.bindPopup(popup_fd84a22865bf05ce09bcb89d7ff3b18d)
+        ;
+
+        
+    
+    
+            var marker_f0af122ff24d48856805ac7d601c7a01 = L.marker(
+                [40.8297207, 29.307862],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_ad1f0cd7937e1e714b1429b258bc54c3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5740ac38c09b5417ad97164dbdfa4fe8 = $(`<div id="html_5740ac38c09b5417ad97164dbdfa4fe8" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_ad1f0cd7937e1e714b1429b258bc54c3.setContent(html_5740ac38c09b5417ad97164dbdfa4fe8);
+            
+        
+
+        marker_f0af122ff24d48856805ac7d601c7a01.bindPopup(popup_ad1f0cd7937e1e714b1429b258bc54c3)
+        ;
+
+        
+    
+    
+            var marker_e1b1de883cbe87ddb1f9effc10537dd0 = L.marker(
+                [40.8261808, 29.3119497],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_bd88b4bfe23f6c51af7afa67436a24ea = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b8ce5dc2b6fa2fba8150ef329e6f2658 = $(`<div id="html_b8ce5dc2b6fa2fba8150ef329e6f2658" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_bd88b4bfe23f6c51af7afa67436a24ea.setContent(html_b8ce5dc2b6fa2fba8150ef329e6f2658);
+            
+        
+
+        marker_e1b1de883cbe87ddb1f9effc10537dd0.bindPopup(popup_bd88b4bfe23f6c51af7afa67436a24ea)
+        ;
+
+        
+    
+    
+            var marker_b8693891733327a3c66e1d948c7e8479 = L.marker(
+                [40.9661342, 29.0866842],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_e5cd592af1ed86fefb6123769efd285f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f064b09f1fc37a2e71c86cd2f2aa9ebf = $(`<div id="html_f064b09f1fc37a2e71c86cd2f2aa9ebf" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Gym Beam&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_e5cd592af1ed86fefb6123769efd285f.setContent(html_f064b09f1fc37a2e71c86cd2f2aa9ebf);
+            
+        
+
+        marker_b8693891733327a3c66e1d948c7e8479.bindPopup(popup_e5cd592af1ed86fefb6123769efd285f)
+        ;
+
+        
+    
+    
+            var marker_514b96cf2efceed6901744757e29fae1 = L.marker(
+                [40.9123601, 29.306262],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_7fa36ed779b456006d73afa82b46679d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_92c6ea799ad2d6f683fd4f9649e0f2f9 = $(`<div id="html_92c6ea799ad2d6f683fd4f9649e0f2f9" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Hercules Fitness Center&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_7fa36ed779b456006d73afa82b46679d.setContent(html_92c6ea799ad2d6f683fd4f9649e0f2f9);
+            
+        
+
+        marker_514b96cf2efceed6901744757e29fae1.bindPopup(popup_7fa36ed779b456006d73afa82b46679d)
+        ;
+
+        
+    
+    
+            var marker_364c967daca8affd7de7f6b4c86e48c7 = L.marker(
+                [41.0238385, 28.8256282],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_5cb7e151603bf46005d3653d22a9e4ff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c7b6ea808155de14c134df8bb509bb0f = $(`<div id="html_c7b6ea808155de14c134df8bb509bb0f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Galanthus Pilates&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_5cb7e151603bf46005d3653d22a9e4ff.setContent(html_c7b6ea808155de14c134df8bb509bb0f);
+            
+        
+
+        marker_364c967daca8affd7de7f6b4c86e48c7.bindPopup(popup_5cb7e151603bf46005d3653d22a9e4ff)
+        ;
+
+        
+    
+    
+            var marker_b00498b223a1689a653eb455a76828a3 = L.marker(
+                [41.023461, 28.825437],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_07cbaaa20c1e8a59313e6fe9548f288b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1bd5cfdf5f3ca61c2c0d9b9955d0912f = $(`<div id="html_1bd5cfdf5f3ca61c2c0d9b9955d0912f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Galanthus Pilates&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_07cbaaa20c1e8a59313e6fe9548f288b.setContent(html_1bd5cfdf5f3ca61c2c0d9b9955d0912f);
+            
+        
+
+        marker_b00498b223a1689a653eb455a76828a3.bindPopup(popup_07cbaaa20c1e8a59313e6fe9548f288b)
+        ;
+
+        
+    
+    
+            var marker_d5536aa5328313d02c18eb894e902a6f = L.marker(
+                [40.9678928, 29.0658111],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_deb1d5b16397c67117d529d71ac06705 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_315d5d61524a4b364d5a7cc96f35a3f8 = $(`<div id="html_315d5d61524a4b364d5a7cc96f35a3f8" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; City&#39;s Pilates&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_deb1d5b16397c67117d529d71ac06705.setContent(html_315d5d61524a4b364d5a7cc96f35a3f8);
+            
+        
+
+        marker_d5536aa5328313d02c18eb894e902a6f.bindPopup(popup_deb1d5b16397c67117d529d71ac06705)
+        ;
+
+        
+    
+    
+            var marker_ce6494b53ace76fae7b8c33fbafa8e58 = L.marker(
+                [40.9654611, 29.0907019],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_5d8dc9beffdbe7b81bf6d18c2f051b73 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_89a2602ae353ad419e3d130ba91a1241 = $(`<div id="html_89a2602ae353ad419e3d130ba91a1241" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Garduf&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_5d8dc9beffdbe7b81bf6d18c2f051b73.setContent(html_89a2602ae353ad419e3d130ba91a1241);
+            
+        
+
+        marker_ce6494b53ace76fae7b8c33fbafa8e58.bindPopup(popup_5d8dc9beffdbe7b81bf6d18c2f051b73)
+        ;
+
+        
+    
+    
+            var marker_a74f9192b4ccc8223e604426687c51e1 = L.marker(
+                [40.9747277, 29.0957431],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_8591d9b93bdbc359926de3b226373933 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_832e19c266f22e0e204cce48ac862516 = $(`<div id="html_832e19c266f22e0e204cce48ac862516" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Songül Kara Pilates Stüdyo&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_8591d9b93bdbc359926de3b226373933.setContent(html_832e19c266f22e0e204cce48ac862516);
+            
+        
+
+        marker_a74f9192b4ccc8223e604426687c51e1.bindPopup(popup_8591d9b93bdbc359926de3b226373933)
+        ;
+
+        
+    
+    
+            var marker_ed4984d960eb8b5945166c6c25f75955 = L.marker(
+                [40.9362726, 29.3674162],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_ea96372c74a88c6af8d47043a8483dc3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fb8d5841523ffa2f646e5d6d4dcab106 = $(`<div id="html_fb8d5841523ffa2f646e5d6d4dcab106" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Jump&amp;Fly Studio&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_ea96372c74a88c6af8d47043a8483dc3.setContent(html_fb8d5841523ffa2f646e5d6d4dcab106);
+            
+        
+
+        marker_ed4984d960eb8b5945166c6c25f75955.bindPopup(popup_ea96372c74a88c6af8d47043a8483dc3)
+        ;
+
+        
+    
+    
+            var marker_721bf17bbccccd726521b1767a738d79 = L.marker(
+                [40.9281228, 29.3101426],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_82f422f1115f6a6b137508f5795f04d4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e0616b741aa5e7f3ec724b94ad6ebbf7 = $(`<div id="html_e0616b741aa5e7f3ec724b94ad6ebbf7" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Atlantis Sport Club&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_82f422f1115f6a6b137508f5795f04d4.setContent(html_e0616b741aa5e7f3ec724b94ad6ebbf7);
+            
+        
+
+        marker_721bf17bbccccd726521b1767a738d79.bindPopup(popup_82f422f1115f6a6b137508f5795f04d4)
+        ;
+
+        
+    
+    
+            var marker_40f1f8f86ac4d79ec9b3c76e6be8f8c2 = L.marker(
+                [40.9774928, 28.8709555],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_e33eab9182e10411ea325bc2a4a99d6d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6a871040669af689688649874d0647c0 = $(`<div id="html_6a871040669af689688649874d0647c0" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; FITCITY&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_e33eab9182e10411ea325bc2a4a99d6d.setContent(html_6a871040669af689688649874d0647c0);
+            
+        
+
+        marker_40f1f8f86ac4d79ec9b3c76e6be8f8c2.bindPopup(popup_e33eab9182e10411ea325bc2a4a99d6d)
+        ;
+
+        
+    
+    
+            var marker_bc87c90acf0547be278bb218d4c7b114 = L.marker(
+                [41.0479608, 29.2355088],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_b87c3713eb556facead20d0bcad591b2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f1f285ba8e41f0b3e78d91525cf02ca4 = $(`<div id="html_f1f285ba8e41f0b3e78d91525cf02ca4" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Dr. Mimar Kadir Topbaş Spor Kompleksi - Fitness Salonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_b87c3713eb556facead20d0bcad591b2.setContent(html_f1f285ba8e41f0b3e78d91525cf02ca4);
+            
+        
+
+        marker_bc87c90acf0547be278bb218d4c7b114.bindPopup(popup_b87c3713eb556facead20d0bcad591b2)
+        ;
+
+        
+    
+    
+            var marker_643d18304a6c1f596604311f6f5f1a30 = L.marker(
+                [41.0271188, 29.1250671],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_f5dbed2dd84bd2d12140fcd1f5de470f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c15e311157efa7b056e35e16e1d8d649 = $(`<div id="html_c15e311157efa7b056e35e16e1d8d649" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; MACFit&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_f5dbed2dd84bd2d12140fcd1f5de470f.setContent(html_c15e311157efa7b056e35e16e1d8d649);
+            
+        
+
+        marker_643d18304a6c1f596604311f6f5f1a30.bindPopup(popup_f5dbed2dd84bd2d12140fcd1f5de470f)
+        ;
+
+        
+    
+    
+            var marker_32067e6aa1b49bf0a9d00ba85b0de9fd = L.marker(
+                [41.0022085, 29.1410265],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_b51e26997fb0e797711887ddb4671cb6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_692d686fc7ae7fe7b615315c7bf3b8c2 = $(`<div id="html_692d686fc7ae7fe7b615315c7bf3b8c2" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_b51e26997fb0e797711887ddb4671cb6.setContent(html_692d686fc7ae7fe7b615315c7bf3b8c2);
+            
+        
+
+        marker_32067e6aa1b49bf0a9d00ba85b0de9fd.bindPopup(popup_b51e26997fb0e797711887ddb4671cb6)
+        ;
+
+        
+    
+    
+            var marker_426730d8580f37262cff9633833e9437 = L.marker(
+                [40.9164234, 29.30405],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_0fd17673121b41780a5d4a3b650ccdfe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e6adc0b5e877b39eed127fe3223375f4 = $(`<div id="html_e6adc0b5e877b39eed127fe3223375f4" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Tevetoğlu Fitness&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_0fd17673121b41780a5d4a3b650ccdfe.setContent(html_e6adc0b5e877b39eed127fe3223375f4);
+            
+        
+
+        marker_426730d8580f37262cff9633833e9437.bindPopup(popup_0fd17673121b41780a5d4a3b650ccdfe)
+        ;
+
+        
+    
+    
+            var marker_af847a2112a73d38e35e6caaf49d093b = L.marker(
+                [40.9790294, 28.7207649],
+                {
+}
+            ).addTo(map_4edc51aedeb258186351bd2330ce214e);
+        
+    
+        var popup_ccc8cf7bc01e1ec8abd34fab4406b9b5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bf0a9645c29daf7948cd242b6a94aaf2 = $(`<div id="html_bf0a9645c29daf7948cd242b6a94aaf2" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_ccc8cf7bc01e1ec8abd34fab4406b9b5.setContent(html_bf0a9645c29daf7948cd242b6a94aaf2);
+            
+        
+
+        marker_af847a2112a73d38e35e6caaf49d093b.bindPopup(popup_ccc8cf7bc01e1ec8abd34fab4406b9b5)
+        ;
+
+        
+    
+</script>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8c06ed64ac55387bf4f7146abbbedf66 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_8c06ed64ac55387bf4f7146abbbedf66" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8c06ed64ac55387bf4f7146abbbedf66 = L.map(
+                "map_8c06ed64ac55387bf4f7146abbbedf66",
+                {
+                    center: [41.029573464705884, 28.89226782941176],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_11df175221235a117fb6cd2340caa9df = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_11df175221235a117fb6cd2340caa9df.addTo(map_8c06ed64ac55387bf4f7146abbbedf66);
+        
+    
+            var marker_c747b75d0bd9a2014abb97243b9efd6c = L.marker(
+                [41.1540243, 28.6757334],
+                {
+}
+            ).addTo(map_8c06ed64ac55387bf4f7146abbbedf66);
+        
+    
+        var popup_e0cf0af86b1f6ea2466475931a285ac6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e3e898b1ebefcf0ae5b966e3cb059558 = $(`<div id="html_e3e898b1ebefcf0ae5b966e3cb059558" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Devlet baba türbesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_e0cf0af86b1f6ea2466475931a285ac6.setContent(html_e3e898b1ebefcf0ae5b966e3cb059558);
+            
+        
+
+        marker_c747b75d0bd9a2014abb97243b9efd6c.bindPopup(popup_e0cf0af86b1f6ea2466475931a285ac6)
+        ;
+
+        
+    
+    
+            var marker_c28b80e3cae3587d1aea7c36e73235b7 = L.marker(
+                [41.0187867, 28.9691768],
+                {
+}
+            ).addTo(map_8c06ed64ac55387bf4f7146abbbedf66);
+        
+    
+        var popup_85a41302a50b145e327221719c38fc19 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_20bfc5ba0fe0162d05cc60f10ad85df9 = $(`<div id="html_20bfc5ba0fe0162d05cc60f10ad85df9" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Zindan baba Türbesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_85a41302a50b145e327221719c38fc19.setContent(html_20bfc5ba0fe0162d05cc60f10ad85df9);
+            
+        
+
+        marker_c28b80e3cae3587d1aea7c36e73235b7.bindPopup(popup_85a41302a50b145e327221719c38fc19)
+        ;
+
+        
+    
+    
+            var marker_74fe6fd14c360156a9c84398e796a350 = L.marker(
+                [41.0230576, 28.9259875],
+                {
+}
+            ).addTo(map_8c06ed64ac55387bf4f7146abbbedf66);
+        
+    
+        var popup_e903ef13f6f4b5dd4791db007b1c0c28 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7445f7cd85d6ae55e2da64a44822d019 = $(`<div id="html_7445f7cd85d6ae55e2da64a44822d019" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_e903ef13f6f4b5dd4791db007b1c0c28.setContent(html_7445f7cd85d6ae55e2da64a44822d019);
+            
+        
+
+        marker_74fe6fd14c360156a9c84398e796a350.bindPopup(popup_e903ef13f6f4b5dd4791db007b1c0c28)
+        ;
+
+        
+    
+    
+            var marker_6c10257c25fdab25dd62da7aac621816 = L.marker(
+                [41.0231601, 28.9602598],
+                {
+}
+            ).addTo(map_8c06ed64ac55387bf4f7146abbbedf66);
+        
+    
+        var popup_5ce53fcf6effc3308dca83b1a4dc90c5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_01d5d014ca479e4761d9431a94938dc5 = $(`<div id="html_01d5d014ca479e4761d9431a94938dc5" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Şeyh Ahmet Buhara Türbesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_5ce53fcf6effc3308dca83b1a4dc90c5.setContent(html_01d5d014ca479e4761d9431a94938dc5);
+            
+        
+
+        marker_6c10257c25fdab25dd62da7aac621816.bindPopup(popup_5ce53fcf6effc3308dca83b1a4dc90c5)
+        ;
+
+        
+    
+    
+            var marker_b23241e00e8b7b73b5c13d0b10c6a6c8 = L.marker(
+                [41.0238481, 28.954732],
+                {
+}
+            ).addTo(map_8c06ed64ac55387bf4f7146abbbedf66);
+        
+    
+        var popup_a85a959b7b73e8737764ad29383507ec = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0ee8091abeecaf2c9e7f2b5bbae571dd = $(`<div id="html_0ee8091abeecaf2c9e7f2b5bbae571dd" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Seyyit Velayet Türbesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_a85a959b7b73e8737764ad29383507ec.setContent(html_0ee8091abeecaf2c9e7f2b5bbae571dd);
+            
+        
+
+        marker_b23241e00e8b7b73b5c13d0b10c6a6c8.bindPopup(popup_a85a959b7b73e8737764ad29383507ec)
+        ;
+
+        
+    
+    
+            var marker_de8e12e19dd5c1fd0272127e78c48d57 = L.marker(
+                [41.0147778, 28.959381],
+                {
+}
+            ).addTo(map_8c06ed64ac55387bf4f7146abbbedf66);
+        
+    
+        var popup_4e920fe8998f71cd12976dcdc523a929 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f97372fe74226313f827805aa79bce96 = $(`<div id="html_f97372fe74226313f827805aa79bce96" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Molla Hüsrev cami Turbası&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_4e920fe8998f71cd12976dcdc523a929.setContent(html_f97372fe74226313f827805aa79bce96);
+            
+        
+
+        marker_de8e12e19dd5c1fd0272127e78c48d57.bindPopup(popup_4e920fe8998f71cd12976dcdc523a929)
+        ;
+
+        
+    
+    
+            var marker_7451dba6280f5ce040836abd4a88a90b = L.marker(
+                [41.0376062, 28.9428599],
+                {
+}
+            ).addTo(map_8c06ed64ac55387bf4f7146abbbedf66);
+        
+    
+        var popup_f92c5ad36001e2896e4658b24f0e4f79 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b9ed53adef58fcbd083ab460250e75c6 = $(`<div id="html_b9ed53adef58fcbd083ab460250e75c6" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Ebuzer Gifari Türbesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_f92c5ad36001e2896e4658b24f0e4f79.setContent(html_b9ed53adef58fcbd083ab460250e75c6);
+            
+        
+
+        marker_7451dba6280f5ce040836abd4a88a90b.bindPopup(popup_f92c5ad36001e2896e4658b24f0e4f79)
+        ;
+
+        
+    
+    
+            var marker_8fc873cba4ba980cbefff8f49fb0a462 = L.marker(
+                [41.0112305, 28.9411363],
+                {
+}
+            ).addTo(map_8c06ed64ac55387bf4f7146abbbedf66);
+        
+    
+        var popup_1683f8f56e93413077a4e776f7096f27 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6d46839a5285c8b3b6b06a1ade7a13d8 = $(`<div id="html_6d46839a5285c8b3b6b06a1ade7a13d8" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Molla Gorani Hazretlerinin Kabri&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_1683f8f56e93413077a4e776f7096f27.setContent(html_6d46839a5285c8b3b6b06a1ade7a13d8);
+            
+        
+
+        marker_8fc873cba4ba980cbefff8f49fb0a462.bindPopup(popup_1683f8f56e93413077a4e776f7096f27)
+        ;
+
+        
+    
+    
+            var marker_d400ae6d1f8afdef3b3f5e865f463516 = L.marker(
+                [41.0066904, 28.9791454],
+                {
+}
+            ).addTo(map_8c06ed64ac55387bf4f7146abbbedf66);
+        
+    
+        var popup_4c380af8550da605510561ef49beb4f8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_811ce37e7643193833a2744de3b3fc0a = $(`<div id="html_811ce37e7643193833a2744de3b3fc0a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Sahabe-i Kiramdan Abdurrahman Şami Türbesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_4c380af8550da605510561ef49beb4f8.setContent(html_811ce37e7643193833a2744de3b3fc0a);
+            
+        
+
+        marker_d400ae6d1f8afdef3b3f5e865f463516.bindPopup(popup_4c380af8550da605510561ef49beb4f8)
+        ;
+
+        
+    
+    
+            var marker_50882a2058150a25774abb12f480f709 = L.marker(
+                [41.0071684, 28.9269866],
+                {
+}
+            ).addTo(map_8c06ed64ac55387bf4f7146abbbedf66);
+        
+    
+        var popup_aafa679051ec5bb107620162595293ab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_72409d8dce5e6589b70a00af41b86eab = $(`<div id="html_72409d8dce5e6589b70a00af41b86eab" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Şeyh Seyyid Seyfullah Hz.&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_aafa679051ec5bb107620162595293ab.setContent(html_72409d8dce5e6589b70a00af41b86eab);
+            
+        
+
+        marker_50882a2058150a25774abb12f480f709.bindPopup(popup_aafa679051ec5bb107620162595293ab)
+        ;
+
+        
+    
+    
+            var marker_0b792365344a5b1010954df4e6653b6e = L.marker(
+                [41.0083008, 28.9692078],
+                {
+}
+            ).addTo(map_8c06ed64ac55387bf4f7146abbbedf66);
+        
+    
+        var popup_503515db1d5b55efd0884ed98d321fc2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a1165c0c897da28430b6377737c7dbf9 = $(`<div id="html_a1165c0c897da28430b6377737c7dbf9" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Karababa Türbesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_503515db1d5b55efd0884ed98d321fc2.setContent(html_a1165c0c897da28430b6377737c7dbf9);
+            
+        
+
+        marker_0b792365344a5b1010954df4e6653b6e.bindPopup(popup_503515db1d5b55efd0884ed98d321fc2)
+        ;
+
+        
+    
+    
+            var marker_a72725099e21efc082a3ba69348cfcb2 = L.marker(
+                [41.0345631, 28.9332608],
+                {
+}
+            ).addTo(map_8c06ed64ac55387bf4f7146abbbedf66);
+        
+    
+        var popup_59c193431881f964e99ac5d96f259dc3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5506a14e24078568fda3b115640472a9 = $(`<div id="html_5506a14e24078568fda3b115640472a9" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Buharizade Mustafa Efendi (Itri)&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_59c193431881f964e99ac5d96f259dc3.setContent(html_5506a14e24078568fda3b115640472a9);
+            
+        
+
+        marker_a72725099e21efc082a3ba69348cfcb2.bindPopup(popup_59c193431881f964e99ac5d96f259dc3)
+        ;
+
+        
+    
+    
+            var marker_747a166bde6d7d8147ab1690e3cdcebc = L.marker(
+                [41.0236472, 29.0296013],
+                {
+}
+            ).addTo(map_8c06ed64ac55387bf4f7146abbbedf66);
+        
+    
+        var popup_10948535dc967ed7bef67026bc2e8c74 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7bcf769348a8a721f6b9bcf6e88ca8be = $(`<div id="html_7bcf769348a8a721f6b9bcf6e88ca8be" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Selamiali efendi mezarı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_10948535dc967ed7bef67026bc2e8c74.setContent(html_7bcf769348a8a721f6b9bcf6e88ca8be);
+            
+        
+
+        marker_747a166bde6d7d8147ab1690e3cdcebc.bindPopup(popup_10948535dc967ed7bef67026bc2e8c74)
+        ;
+
+        
+    
+    
+            var marker_88717f686caa9c587bb14ff8d499ed25 = L.marker(
+                [40.9913443, 29.0347259],
+                {
+}
+            ).addTo(map_8c06ed64ac55387bf4f7146abbbedf66);
+        
+    
+        var popup_6eb292d1b654d5b10fa6eb14ed88caf8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a960300752011706a70b49bb567cb97a = $(`<div id="html_a960300752011706a70b49bb567cb97a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Mahmut Baba Türbesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_6eb292d1b654d5b10fa6eb14ed88caf8.setContent(html_a960300752011706a70b49bb567cb97a);
+            
+        
+
+        marker_88717f686caa9c587bb14ff8d499ed25.bindPopup(popup_6eb292d1b654d5b10fa6eb14ed88caf8)
+        ;
+
+        
+    
+    
+            var marker_1d794ad26562e7c763f42dfeea3190fd = L.marker(
+                [41.1111664, 28.0675176],
+                {
+}
+            ).addTo(map_8c06ed64ac55387bf4f7146abbbedf66);
+        
+    
+        var popup_a9f25a3cfab7c1b8438f8bffb0182615 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4115708b105e2686ba4c625336211d96 = $(`<div id="html_4115708b105e2686ba4c625336211d96" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Çantaköy Tümülüsü 2&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_a9f25a3cfab7c1b8438f8bffb0182615.setContent(html_4115708b105e2686ba4c625336211d96);
+            
+        
+
+        marker_1d794ad26562e7c763f42dfeea3190fd.bindPopup(popup_a9f25a3cfab7c1b8438f8bffb0182615)
+        ;
+
+        
+    
+    
+            var marker_f8f5e275ae1248917c125014927723e1 = L.marker(
+                [41.0066029, 28.9219004],
+                {
+}
+            ).addTo(map_8c06ed64ac55387bf4f7146abbbedf66);
+        
+    
+        var popup_69b4d947359858e324730eeeed339d4c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_659f9f6399232f659d2d603d95ebde2f = $(`<div id="html_659f9f6399232f659d2d603d95ebde2f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Silivrikapı Hypogeum&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_69b4d947359858e324730eeeed339d4c.setContent(html_659f9f6399232f659d2d603d95ebde2f);
+            
+        
+
+        marker_f8f5e275ae1248917c125014927723e1.bindPopup(popup_69b4d947359858e324730eeeed339d4c)
+        ;
+
+        
+    
+    
+            var marker_338ac0cb1736cb66b6f1187424385eba = L.marker(
+                [41.0067741, 28.9769406],
+                {
+}
+            ).addTo(map_8c06ed64ac55387bf4f7146abbbedf66);
+        
+    
+        var popup_08e7174421c59763f3df15a4782ddc34 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_823e7f0479db58b1ce3b5dbd5d354133 = $(`<div id="html_823e7f0479db58b1ce3b5dbd5d354133" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Sultan Ahmet Türbesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_08e7174421c59763f3df15a4782ddc34.setContent(html_823e7f0479db58b1ce3b5dbd5d354133);
+            
+        
+
+        marker_338ac0cb1736cb66b6f1187424385eba.bindPopup(popup_08e7174421c59763f3df15a4782ddc34)
+        ;
+
+        
+    
+</script>
+</html>

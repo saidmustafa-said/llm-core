@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_dc559ce8bd182433bbe8f8b88b550b73 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_dc559ce8bd182433bbe8f8b88b550b73" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_dc559ce8bd182433bbe8f8b88b550b73 = L.map(
+                "map_dc559ce8bd182433bbe8f8b88b550b73",
+                {
+                    center: [40.986457200000004, 28.9417112],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d68b44fd168592ba1a890c5307c2f998 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d68b44fd168592ba1a890c5307c2f998.addTo(map_dc559ce8bd182433bbe8f8b88b550b73);
+        
+    
+            var marker_4090b930a15715d657d0fdeabdc92c5c = L.marker(
+                [40.9862378, 28.8318675],
+                {
+}
+            ).addTo(map_dc559ce8bd182433bbe8f8b88b550b73);
+        
+    
+        var popup_1c6f44b43b6dad1be373db9b11bbca56 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5ff245dbca3027bb5c43bf0c011f7fb5 = $(`<div id="html_5ff245dbca3027bb5c43bf0c011f7fb5" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; World Trade Center Istanbul&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_1c6f44b43b6dad1be373db9b11bbca56.setContent(html_5ff245dbca3027bb5c43bf0c011f7fb5);
+            
+        
+
+        marker_4090b930a15715d657d0fdeabdc92c5c.bindPopup(popup_1c6f44b43b6dad1be373db9b11bbca56)
+        ;
+
+        
+    
+    
+            var marker_fc976cc1892d7a979efc6cfd93d37528 = L.marker(
+                [40.9866766, 29.0515549],
+                {
+}
+            ).addTo(map_dc559ce8bd182433bbe8f8b88b550b73);
+        
+    
+        var popup_c08524ad13d9b8a8f3d7794b9041e044 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c4a6203a37d61f4ac1dc6adab8c80d89 = $(`<div id="html_c4a6203a37d61f4ac1dc6adab8c80d89" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İbrahim Üzümcü Konferans Salonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c08524ad13d9b8a8f3d7794b9041e044.setContent(html_c4a6203a37d61f4ac1dc6adab8c80d89);
+            
+        
+
+        marker_fc976cc1892d7a979efc6cfd93d37528.bindPopup(popup_c08524ad13d9b8a8f3d7794b9041e044)
+        ;
+
+        
+    
+</script>
+</html>

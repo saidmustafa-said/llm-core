@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_72fe99f7860de746ec913bf9e72911a6 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_72fe99f7860de746ec913bf9e72911a6" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_72fe99f7860de746ec913bf9e72911a6 = L.map(
+                "map_72fe99f7860de746ec913bf9e72911a6",
+                {
+                    center: [41.069150246, 29.056690013999997],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_36dbcd07d50bda546d8808e89e19a53e = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_36dbcd07d50bda546d8808e89e19a53e.addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+            var marker_a3c24c627c850b169430a05a627059b8 = L.marker(
+                [41.0729755, 29.0642242],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_5bc46ef6494d23d7582616570efe9f77 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2f101a0ac324670701879b6bd65a9c5a = $(`<div id="html_2f101a0ac324670701879b6bd65a9c5a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_5bc46ef6494d23d7582616570efe9f77.setContent(html_2f101a0ac324670701879b6bd65a9c5a);
+            
+        
+
+        marker_a3c24c627c850b169430a05a627059b8.bindPopup(popup_5bc46ef6494d23d7582616570efe9f77)
+        ;
+
+        
+    
+    
+            var marker_a02cb2a7cac3f8ac61cc6bd818bcaaa5 = L.marker(
+                [41.19171, 28.903754],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_8ff326b8983e4ac141b95903c7163525 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6e5eba5bd032d1ac2dceb86913fa5a96 = $(`<div id="html_6e5eba5bd032d1ac2dceb86913fa5a96" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_8ff326b8983e4ac141b95903c7163525.setContent(html_6e5eba5bd032d1ac2dceb86913fa5a96);
+            
+        
+
+        marker_a02cb2a7cac3f8ac61cc6bd818bcaaa5.bindPopup(popup_8ff326b8983e4ac141b95903c7163525)
+        ;
+
+        
+    
+    
+            var marker_7f5891fc95a6d6913053cdda3623a250 = L.marker(
+                [41.0793363, 28.6118414],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_271bf32559ffc4037b8d3516f764c651 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_609d2ced62ed4a1c3d6ec1a36d48211b = $(`<div id="html_609d2ced62ed4a1c3d6ec1a36d48211b" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_271bf32559ffc4037b8d3516f764c651.setContent(html_609d2ced62ed4a1c3d6ec1a36d48211b);
+            
+        
+
+        marker_7f5891fc95a6d6913053cdda3623a250.bindPopup(popup_271bf32559ffc4037b8d3516f764c651)
+        ;
+
+        
+    
+    
+            var marker_3c77e61da1876f8be31c89c2b2962072 = L.marker(
+                [41.0907732, 29.3246926],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_2d176945adf9645cafd19c1ba410580c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_63a3de39013a704d539dff5c7093fa9b = $(`<div id="html_63a3de39013a704d539dff5c7093fa9b" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_2d176945adf9645cafd19c1ba410580c.setContent(html_63a3de39013a704d539dff5c7093fa9b);
+            
+        
+
+        marker_3c77e61da1876f8be31c89c2b2962072.bindPopup(popup_2d176945adf9645cafd19c1ba410580c)
+        ;
+
+        
+    
+    
+            var marker_8e264676acd79182f2eaff8a151ae7ba = L.marker(
+                [41.0907672, 29.3246694],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_8077bbf1f0ff6973fa86b371ded60eaf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bfeb53c205094b096c1f3329aa9b1e5b = $(`<div id="html_bfeb53c205094b096c1f3329aa9b1e5b" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_8077bbf1f0ff6973fa86b371ded60eaf.setContent(html_bfeb53c205094b096c1f3329aa9b1e5b);
+            
+        
+
+        marker_8e264676acd79182f2eaff8a151ae7ba.bindPopup(popup_8077bbf1f0ff6973fa86b371ded60eaf)
+        ;
+
+        
+    
+    
+            var marker_a8ed2dc0b09bd0c8f2a3c807cf3ebaa9 = L.marker(
+                [41.0581792, 28.6861229],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_089a23e225f283d00ffd45c477334a47 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7b9e6857bde985f363ca691b4b4c6ddf = $(`<div id="html_7b9e6857bde985f363ca691b4b4c6ddf" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Aqua Club Dolphin&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_089a23e225f283d00ffd45c477334a47.setContent(html_7b9e6857bde985f363ca691b4b4c6ddf);
+            
+        
+
+        marker_a8ed2dc0b09bd0c8f2a3c807cf3ebaa9.bindPopup(popup_089a23e225f283d00ffd45c477334a47)
+        ;
+
+        
+    
+    
+            var marker_c441197b4e9cd96d78a963b1477d61e3 = L.marker(
+                [40.8141555, 29.3138295],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_488c89ab9b621794651845f18f3b36b4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0c8073271d876f30c952fcc05f12edd5 = $(`<div id="html_0c8073271d876f30c952fcc05f12edd5" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_488c89ab9b621794651845f18f3b36b4.setContent(html_0c8073271d876f30c952fcc05f12edd5);
+            
+        
+
+        marker_c441197b4e9cd96d78a963b1477d61e3.bindPopup(popup_488c89ab9b621794651845f18f3b36b4)
+        ;
+
+        
+    
+    
+            var marker_3a50c8835affd40e38a4ab08680be424 = L.marker(
+                [41.0759682, 29.0641125],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_94fb05d4303ea379a9180a587afa76e0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_591164e42a69f071d827af027dbff3a6 = $(`<div id="html_591164e42a69f071d827af027dbff3a6" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_94fb05d4303ea379a9180a587afa76e0.setContent(html_591164e42a69f071d827af027dbff3a6);
+            
+        
+
+        marker_3a50c8835affd40e38a4ab08680be424.bindPopup(popup_94fb05d4303ea379a9180a587afa76e0)
+        ;
+
+        
+    
+    
+            var marker_445c3436fcf2b2cfa6c95f41f30ecb07 = L.marker(
+                [41.0751565, 29.061172],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_84397c84fe62077d344e3adbb87d9ac4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a7418622d695334c00f48199b4b20104 = $(`<div id="html_a7418622d695334c00f48199b4b20104" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_84397c84fe62077d344e3adbb87d9ac4.setContent(html_a7418622d695334c00f48199b4b20104);
+            
+        
+
+        marker_445c3436fcf2b2cfa6c95f41f30ecb07.bindPopup(popup_84397c84fe62077d344e3adbb87d9ac4)
+        ;
+
+        
+    
+    
+            var marker_051d5e43394da64f1e669596b182f3b2 = L.marker(
+                [41.0752162, 29.0623654],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_d608fb813dbb25c743d336655157023f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1a13e4bad5203655e562b2403800232c = $(`<div id="html_1a13e4bad5203655e562b2403800232c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_d608fb813dbb25c743d336655157023f.setContent(html_1a13e4bad5203655e562b2403800232c);
+            
+        
+
+        marker_051d5e43394da64f1e669596b182f3b2.bindPopup(popup_d608fb813dbb25c743d336655157023f)
+        ;
+
+        
+    
+    
+            var marker_4a75a679ec4ffed0ec5f2c25ba0eb5d7 = L.marker(
+                [41.0744117, 29.06128],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_3580c11a82b727e018907a0258b3e392 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_530112969ff546493f2636cea77264e4 = $(`<div id="html_530112969ff546493f2636cea77264e4" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_3580c11a82b727e018907a0258b3e392.setContent(html_530112969ff546493f2636cea77264e4);
+            
+        
+
+        marker_4a75a679ec4ffed0ec5f2c25ba0eb5d7.bindPopup(popup_3580c11a82b727e018907a0258b3e392)
+        ;
+
+        
+    
+    
+            var marker_6040a1a2c89747feb525bf28a17902d7 = L.marker(
+                [41.0751626, 29.0603762],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_f6f9ad743bacb4d46ac64c0f71a4a2d2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bbc3fb924dad298781e3fae8121e13ec = $(`<div id="html_bbc3fb924dad298781e3fae8121e13ec" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f6f9ad743bacb4d46ac64c0f71a4a2d2.setContent(html_bbc3fb924dad298781e3fae8121e13ec);
+            
+        
+
+        marker_6040a1a2c89747feb525bf28a17902d7.bindPopup(popup_f6f9ad743bacb4d46ac64c0f71a4a2d2)
+        ;
+
+        
+    
+    
+            var marker_05c19bdea7e08e1d3a0e7fe7ddaa8429 = L.marker(
+                [41.0750383, 29.0601847],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_475bb5884535847996940b7b7c489e6b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0c4f82dc687e0c333b5bf671b244cf49 = $(`<div id="html_0c4f82dc687e0c333b5bf671b244cf49" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_475bb5884535847996940b7b7c489e6b.setContent(html_0c4f82dc687e0c333b5bf671b244cf49);
+            
+        
+
+        marker_05c19bdea7e08e1d3a0e7fe7ddaa8429.bindPopup(popup_475bb5884535847996940b7b7c489e6b)
+        ;
+
+        
+    
+    
+            var marker_7e1a2c4f9e7948c861eae88186ffb40e = L.marker(
+                [41.07224, 29.0625789],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_af4936b910753c9ffd124deba0fdd6d8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_000f19752d5e8472347a7c2b60683d72 = $(`<div id="html_000f19752d5e8472347a7c2b60683d72" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_af4936b910753c9ffd124deba0fdd6d8.setContent(html_000f19752d5e8472347a7c2b60683d72);
+            
+        
+
+        marker_7e1a2c4f9e7948c861eae88186ffb40e.bindPopup(popup_af4936b910753c9ffd124deba0fdd6d8)
+        ;
+
+        
+    
+    
+            var marker_c4f4199252e2beae5e24c20914073a73 = L.marker(
+                [41.0747821, 29.0597293],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_8233126dca7d762b0ef3e4a5cfdedb3b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f44bb62951ea69f579d25180814f64c6 = $(`<div id="html_f44bb62951ea69f579d25180814f64c6" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_8233126dca7d762b0ef3e4a5cfdedb3b.setContent(html_f44bb62951ea69f579d25180814f64c6);
+            
+        
+
+        marker_c4f4199252e2beae5e24c20914073a73.bindPopup(popup_8233126dca7d762b0ef3e4a5cfdedb3b)
+        ;
+
+        
+    
+    
+            var marker_903c53a3098dce24f6b31fa1cd33449e = L.marker(
+                [41.0725638, 29.0600175],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_d519d723cf62ec4d1318d40e6ec7a36f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_47c5924878ccc8506a2715b4d3e3bcf1 = $(`<div id="html_47c5924878ccc8506a2715b4d3e3bcf1" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_d519d723cf62ec4d1318d40e6ec7a36f.setContent(html_47c5924878ccc8506a2715b4d3e3bcf1);
+            
+        
+
+        marker_903c53a3098dce24f6b31fa1cd33449e.bindPopup(popup_d519d723cf62ec4d1318d40e6ec7a36f)
+        ;
+
+        
+    
+    
+            var marker_c3898c78fecc3782997e4cd92acc272c = L.marker(
+                [41.0736214, 29.0579804],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_ace53835f57caaf9cad895f43be524b7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_62f39d6cab8f3e1df4b8938d521a3e6f = $(`<div id="html_62f39d6cab8f3e1df4b8938d521a3e6f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_ace53835f57caaf9cad895f43be524b7.setContent(html_62f39d6cab8f3e1df4b8938d521a3e6f);
+            
+        
+
+        marker_c3898c78fecc3782997e4cd92acc272c.bindPopup(popup_ace53835f57caaf9cad895f43be524b7)
+        ;
+
+        
+    
+    
+            var marker_ccfd1d54f8d91fd3d5e552981299b152 = L.marker(
+                [41.0725033, 29.0608795],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_d69c52611fd62df5d0b69526570205fc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4643ed838e578421117d49fa518d89c6 = $(`<div id="html_4643ed838e578421117d49fa518d89c6" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_d69c52611fd62df5d0b69526570205fc.setContent(html_4643ed838e578421117d49fa518d89c6);
+            
+        
+
+        marker_ccfd1d54f8d91fd3d5e552981299b152.bindPopup(popup_d69c52611fd62df5d0b69526570205fc)
+        ;
+
+        
+    
+    
+            var marker_fab15349e174e9565c7267a6a0e684ff = L.marker(
+                [41.0723456, 29.0608624],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_57cd1c915e4c0d36f5d0829999b0f251 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5a36a4f662e3b0ef615161bd9807914d = $(`<div id="html_5a36a4f662e3b0ef615161bd9807914d" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_57cd1c915e4c0d36f5d0829999b0f251.setContent(html_5a36a4f662e3b0ef615161bd9807914d);
+            
+        
+
+        marker_fab15349e174e9565c7267a6a0e684ff.bindPopup(popup_57cd1c915e4c0d36f5d0829999b0f251)
+        ;
+
+        
+    
+    
+            var marker_0a4230ad18219c9f4d8d3326b0e04c70 = L.marker(
+                [41.0722171, 29.0591965],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_42f16e9af454ecf313331a3a5fbf0945 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cd8b348f8fe8b01e79729428025f96ef = $(`<div id="html_cd8b348f8fe8b01e79729428025f96ef" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_42f16e9af454ecf313331a3a5fbf0945.setContent(html_cd8b348f8fe8b01e79729428025f96ef);
+            
+        
+
+        marker_0a4230ad18219c9f4d8d3326b0e04c70.bindPopup(popup_42f16e9af454ecf313331a3a5fbf0945)
+        ;
+
+        
+    
+    
+            var marker_21270540cfef57e894d44e322b186f37 = L.marker(
+                [41.0743832, 29.0571204],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_3c264496a08e36150b74c23893282ff4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1ff8cfd903d0bf4ba7fbf1ca824b4dfa = $(`<div id="html_1ff8cfd903d0bf4ba7fbf1ca824b4dfa" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_3c264496a08e36150b74c23893282ff4.setContent(html_1ff8cfd903d0bf4ba7fbf1ca824b4dfa);
+            
+        
+
+        marker_21270540cfef57e894d44e322b186f37.bindPopup(popup_3c264496a08e36150b74c23893282ff4)
+        ;
+
+        
+    
+    
+            var marker_44b01fb8a0382e320f4f05fd1cd540eb = L.marker(
+                [41.0743471, 29.056249],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_b54b8c3d4e6f751d84dbbcbed49c2085 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_75532e930eb376b502364620a49ff874 = $(`<div id="html_75532e930eb376b502364620a49ff874" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_b54b8c3d4e6f751d84dbbcbed49c2085.setContent(html_75532e930eb376b502364620a49ff874);
+            
+        
+
+        marker_44b01fb8a0382e320f4f05fd1cd540eb.bindPopup(popup_b54b8c3d4e6f751d84dbbcbed49c2085)
+        ;
+
+        
+    
+    
+            var marker_05e3ffe9da9144e2a0c8de216d0507cc = L.marker(
+                [41.0737132, 29.0556895],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_83810400fce9606d0cc045b4df517cb9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a34954eb5a811848d0aaacb62bff259a = $(`<div id="html_a34954eb5a811848d0aaacb62bff259a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_83810400fce9606d0cc045b4df517cb9.setContent(html_a34954eb5a811848d0aaacb62bff259a);
+            
+        
+
+        marker_05e3ffe9da9144e2a0c8de216d0507cc.bindPopup(popup_83810400fce9606d0cc045b4df517cb9)
+        ;
+
+        
+    
+    
+            var marker_47c8f3a18cd657d89dd5279ae9d0ec1c = L.marker(
+                [41.0733966, 29.0555477],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_952612498242f025f3c0f91b7487f674 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4464e1a7409dc5c7eb2eecbc9f28c35e = $(`<div id="html_4464e1a7409dc5c7eb2eecbc9f28c35e" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_952612498242f025f3c0f91b7487f674.setContent(html_4464e1a7409dc5c7eb2eecbc9f28c35e);
+            
+        
+
+        marker_47c8f3a18cd657d89dd5279ae9d0ec1c.bindPopup(popup_952612498242f025f3c0f91b7487f674)
+        ;
+
+        
+    
+    
+            var marker_3c2fedb6e037c1c1bb466ff76ec7879d = L.marker(
+                [41.0721157, 29.0558083],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_6157bbca3e01d3c8a40dead3d014bcf1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_002da0b825b0d8d78291b8a2a7524267 = $(`<div id="html_002da0b825b0d8d78291b8a2a7524267" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_6157bbca3e01d3c8a40dead3d014bcf1.setContent(html_002da0b825b0d8d78291b8a2a7524267);
+            
+        
+
+        marker_3c2fedb6e037c1c1bb466ff76ec7879d.bindPopup(popup_6157bbca3e01d3c8a40dead3d014bcf1)
+        ;
+
+        
+    
+    
+            var marker_7618bd4ac24c127899df18236102aeb2 = L.marker(
+                [41.071817, 29.0590422],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_701ab3cfeefc290553c67256691648d3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_64ccc5c6a360d01c7303b1b2b192e895 = $(`<div id="html_64ccc5c6a360d01c7303b1b2b192e895" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_701ab3cfeefc290553c67256691648d3.setContent(html_64ccc5c6a360d01c7303b1b2b192e895);
+            
+        
+
+        marker_7618bd4ac24c127899df18236102aeb2.bindPopup(popup_701ab3cfeefc290553c67256691648d3)
+        ;
+
+        
+    
+    
+            var marker_1f3eea99097cd5406baeaeb7599e67de = L.marker(
+                [41.0697833, 29.0594018],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_6f9a03f7528cda65eb3365d9f09d9185 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3d6b95e4d3b5773e527b77c93f562602 = $(`<div id="html_3d6b95e4d3b5773e527b77c93f562602" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_6f9a03f7528cda65eb3365d9f09d9185.setContent(html_3d6b95e4d3b5773e527b77c93f562602);
+            
+        
+
+        marker_1f3eea99097cd5406baeaeb7599e67de.bindPopup(popup_6f9a03f7528cda65eb3365d9f09d9185)
+        ;
+
+        
+    
+    
+            var marker_2426b36fe3c79934bca1b17fc3648130 = L.marker(
+                [41.0696609, 29.0600866],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_4f6282cbd20c6005757286c0b2d194a8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e3d33e9cd6a3ab2597838ce6ea454131 = $(`<div id="html_e3d33e9cd6a3ab2597838ce6ea454131" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_4f6282cbd20c6005757286c0b2d194a8.setContent(html_e3d33e9cd6a3ab2597838ce6ea454131);
+            
+        
+
+        marker_2426b36fe3c79934bca1b17fc3648130.bindPopup(popup_4f6282cbd20c6005757286c0b2d194a8)
+        ;
+
+        
+    
+    
+            var marker_2e03d398563b429cff1c3e5101175409 = L.marker(
+                [41.0692873, 29.0599067],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_da5f7493bd2ee7717d5c6f314c44acbd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8e442ba67df26482558dd96c1e73ba8b = $(`<div id="html_8e442ba67df26482558dd96c1e73ba8b" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_da5f7493bd2ee7717d5c6f314c44acbd.setContent(html_8e442ba67df26482558dd96c1e73ba8b);
+            
+        
+
+        marker_2e03d398563b429cff1c3e5101175409.bindPopup(popup_da5f7493bd2ee7717d5c6f314c44acbd)
+        ;
+
+        
+    
+    
+            var marker_4e3a1ab363c6231e4d8cc106206c7471 = L.marker(
+                [41.0693837, 29.0587113],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_d3a3051f0cc865813053c87eafb70aa4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d84cfb3cb397691366d2e3af095f6138 = $(`<div id="html_d84cfb3cb397691366d2e3af095f6138" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_d3a3051f0cc865813053c87eafb70aa4.setContent(html_d84cfb3cb397691366d2e3af095f6138);
+            
+        
+
+        marker_4e3a1ab363c6231e4d8cc106206c7471.bindPopup(popup_d3a3051f0cc865813053c87eafb70aa4)
+        ;
+
+        
+    
+    
+            var marker_9db974901156991a9bb2d41ae563adde = L.marker(
+                [41.0697439, 29.0575227],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_2a89f43e7834cdba59df2bac333a3212 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ec6c299b3e959a7890c754f10e1ebf1f = $(`<div id="html_ec6c299b3e959a7890c754f10e1ebf1f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_2a89f43e7834cdba59df2bac333a3212.setContent(html_ec6c299b3e959a7890c754f10e1ebf1f);
+            
+        
+
+        marker_9db974901156991a9bb2d41ae563adde.bindPopup(popup_2a89f43e7834cdba59df2bac333a3212)
+        ;
+
+        
+    
+    
+            var marker_ff49af895ffb08fd524f5e66dfc92b13 = L.marker(
+                [41.0685721, 29.0585766],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_580dfde704b0438718447c256cc76012 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ff7275be6c7aeb0e1d47d5ca4e8469dd = $(`<div id="html_ff7275be6c7aeb0e1d47d5ca4e8469dd" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_580dfde704b0438718447c256cc76012.setContent(html_ff7275be6c7aeb0e1d47d5ca4e8469dd);
+            
+        
+
+        marker_ff49af895ffb08fd524f5e66dfc92b13.bindPopup(popup_580dfde704b0438718447c256cc76012)
+        ;
+
+        
+    
+    
+            var marker_66a2d28e9d6d0928b6edfbf8a91a31a4 = L.marker(
+                [41.0698142, 29.0615843],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_73e675949a61e918103472116a17be55 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5b6c94e7cf683798294c981168165991 = $(`<div id="html_5b6c94e7cf683798294c981168165991" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_73e675949a61e918103472116a17be55.setContent(html_5b6c94e7cf683798294c981168165991);
+            
+        
+
+        marker_66a2d28e9d6d0928b6edfbf8a91a31a4.bindPopup(popup_73e675949a61e918103472116a17be55)
+        ;
+
+        
+    
+    
+            var marker_e80001eed11abd7732e05d69c25a9a36 = L.marker(
+                [41.0696007, 29.0618581],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_a0a01ed9f04c446a0041afbe7fffbb08 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f61f6635ae8370ee5fbdd7865558289f = $(`<div id="html_f61f6635ae8370ee5fbdd7865558289f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_a0a01ed9f04c446a0041afbe7fffbb08.setContent(html_f61f6635ae8370ee5fbdd7865558289f);
+            
+        
+
+        marker_e80001eed11abd7732e05d69c25a9a36.bindPopup(popup_a0a01ed9f04c446a0041afbe7fffbb08)
+        ;
+
+        
+    
+    
+            var marker_6f43167fc23d24f7585293fd586bd04e = L.marker(
+                [41.0711496, 29.0635257],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_9294576bcdb38c02dd3bc5f8d3e5da9f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_19052dc317a4855fe4cd89974a6d2299 = $(`<div id="html_19052dc317a4855fe4cd89974a6d2299" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_9294576bcdb38c02dd3bc5f8d3e5da9f.setContent(html_19052dc317a4855fe4cd89974a6d2299);
+            
+        
+
+        marker_6f43167fc23d24f7585293fd586bd04e.bindPopup(popup_9294576bcdb38c02dd3bc5f8d3e5da9f)
+        ;
+
+        
+    
+    
+            var marker_6a3db8e5a1a9fd0011b330fcb8716f1b = L.marker(
+                [41.0700455, 29.0636232],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_ad39b6b8e1462eeef2668f0ca3592431 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_113a56a414d355954bc691b7e936724b = $(`<div id="html_113a56a414d355954bc691b7e936724b" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_ad39b6b8e1462eeef2668f0ca3592431.setContent(html_113a56a414d355954bc691b7e936724b);
+            
+        
+
+        marker_6a3db8e5a1a9fd0011b330fcb8716f1b.bindPopup(popup_ad39b6b8e1462eeef2668f0ca3592431)
+        ;
+
+        
+    
+    
+            var marker_decefd33cef5b089192f476dcff77a8f = L.marker(
+                [41.0711234, 29.0561611],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_56dee667fa04670fce575728f70bc19c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ca76552b915c53f547890c017f0a1dcf = $(`<div id="html_ca76552b915c53f547890c017f0a1dcf" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_56dee667fa04670fce575728f70bc19c.setContent(html_ca76552b915c53f547890c017f0a1dcf);
+            
+        
+
+        marker_decefd33cef5b089192f476dcff77a8f.bindPopup(popup_56dee667fa04670fce575728f70bc19c)
+        ;
+
+        
+    
+    
+            var marker_db72266b6763f597db6d0c6435ffe4ac = L.marker(
+                [41.0714754, 29.0560205],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_2cc12ef0f9bdd3b200004eb15dc0ade3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5b93bf9853c47460e914122cb90afa00 = $(`<div id="html_5b93bf9853c47460e914122cb90afa00" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_2cc12ef0f9bdd3b200004eb15dc0ade3.setContent(html_5b93bf9853c47460e914122cb90afa00);
+            
+        
+
+        marker_db72266b6763f597db6d0c6435ffe4ac.bindPopup(popup_2cc12ef0f9bdd3b200004eb15dc0ade3)
+        ;
+
+        
+    
+    
+            var marker_87feacb2baffb3b33db467c84dfee7ed = L.marker(
+                [41.0676475, 29.064866],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_e83d093247fab7618755ed3e73424050 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7c04da60b3dd24359c3cfd4dcc759f4f = $(`<div id="html_7c04da60b3dd24359c3cfd4dcc759f4f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_e83d093247fab7618755ed3e73424050.setContent(html_7c04da60b3dd24359c3cfd4dcc759f4f);
+            
+        
+
+        marker_87feacb2baffb3b33db467c84dfee7ed.bindPopup(popup_e83d093247fab7618755ed3e73424050)
+        ;
+
+        
+    
+    
+            var marker_1181f2c270a60a3a331eacdb0ef84660 = L.marker(
+                [41.0682631, 29.0644335],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_39207547203c98101e5c47927d238f6f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_42eafd40471ec0fb77496259b1e22b25 = $(`<div id="html_42eafd40471ec0fb77496259b1e22b25" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_39207547203c98101e5c47927d238f6f.setContent(html_42eafd40471ec0fb77496259b1e22b25);
+            
+        
+
+        marker_1181f2c270a60a3a331eacdb0ef84660.bindPopup(popup_39207547203c98101e5c47927d238f6f)
+        ;
+
+        
+    
+    
+            var marker_c2a67d26d9802c2d14cb70b9e1054d04 = L.marker(
+                [41.0692911, 29.0628462],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_952e981ed0aa6de9147022937ee9d76a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1d598edb6e94c8ff50913eb2842ecca5 = $(`<div id="html_1d598edb6e94c8ff50913eb2842ecca5" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_952e981ed0aa6de9147022937ee9d76a.setContent(html_1d598edb6e94c8ff50913eb2842ecca5);
+            
+        
+
+        marker_c2a67d26d9802c2d14cb70b9e1054d04.bindPopup(popup_952e981ed0aa6de9147022937ee9d76a)
+        ;
+
+        
+    
+    
+            var marker_d45f639e4274cac5a5f7860a56d885b5 = L.marker(
+                [41.0688589, 29.0612148],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_cf153e6d73822f835d154aea85eead26 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9ed21e6cd221edb1ab4c1fa78a7fee57 = $(`<div id="html_9ed21e6cd221edb1ab4c1fa78a7fee57" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_cf153e6d73822f835d154aea85eead26.setContent(html_9ed21e6cd221edb1ab4c1fa78a7fee57);
+            
+        
+
+        marker_d45f639e4274cac5a5f7860a56d885b5.bindPopup(popup_cf153e6d73822f835d154aea85eead26)
+        ;
+
+        
+    
+    
+            var marker_1ab3d1643a4bf5f1fec66f418d745e7f = L.marker(
+                [41.0686436, 29.0614471],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_7dfde7739974bdb89264389fc60ac028 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a99a84609252c804c893c2b03ff08503 = $(`<div id="html_a99a84609252c804c893c2b03ff08503" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_7dfde7739974bdb89264389fc60ac028.setContent(html_a99a84609252c804c893c2b03ff08503);
+            
+        
+
+        marker_1ab3d1643a4bf5f1fec66f418d745e7f.bindPopup(popup_7dfde7739974bdb89264389fc60ac028)
+        ;
+
+        
+    
+    
+            var marker_f770e5bade19bc8466d70babdd573c7d = L.marker(
+                [41.0684102, 29.062371],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_c484639ccdff27f9ad6d239848e6c3d8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_34b4c9852cb2ffa9861906a4ff3bae58 = $(`<div id="html_34b4c9852cb2ffa9861906a4ff3bae58" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c484639ccdff27f9ad6d239848e6c3d8.setContent(html_34b4c9852cb2ffa9861906a4ff3bae58);
+            
+        
+
+        marker_f770e5bade19bc8466d70babdd573c7d.bindPopup(popup_c484639ccdff27f9ad6d239848e6c3d8)
+        ;
+
+        
+    
+    
+            var marker_e322f9f4a851477d522866dc5750aa53 = L.marker(
+                [41.0683542, 29.0627712],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_dc0e3db45a899e3976728e0fb2dc2397 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f2c10ad08d6f74a91db9b3975e626779 = $(`<div id="html_f2c10ad08d6f74a91db9b3975e626779" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_dc0e3db45a899e3976728e0fb2dc2397.setContent(html_f2c10ad08d6f74a91db9b3975e626779);
+            
+        
+
+        marker_e322f9f4a851477d522866dc5750aa53.bindPopup(popup_dc0e3db45a899e3976728e0fb2dc2397)
+        ;
+
+        
+    
+    
+            var marker_455a2b9892277801b8a5581b2cdda1e4 = L.marker(
+                [41.068245, 29.063073],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_b55bd8281761f909233ef6b0ee6db961 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_196abfb0a70aba7baa260e73b61816a0 = $(`<div id="html_196abfb0a70aba7baa260e73b61816a0" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_b55bd8281761f909233ef6b0ee6db961.setContent(html_196abfb0a70aba7baa260e73b61816a0);
+            
+        
+
+        marker_455a2b9892277801b8a5581b2cdda1e4.bindPopup(popup_b55bd8281761f909233ef6b0ee6db961)
+        ;
+
+        
+    
+    
+            var marker_3f45af31958f7a1aeadcd441712f68b1 = L.marker(
+                [41.0681275, 29.0634388],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_315323de941fd3e023d7a2c0ce3676c8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e3850779efb36c9ce522cf99366b0f84 = $(`<div id="html_e3850779efb36c9ce522cf99366b0f84" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_315323de941fd3e023d7a2c0ce3676c8.setContent(html_e3850779efb36c9ce522cf99366b0f84);
+            
+        
+
+        marker_3f45af31958f7a1aeadcd441712f68b1.bindPopup(popup_315323de941fd3e023d7a2c0ce3676c8)
+        ;
+
+        
+    
+    
+            var marker_261b4fc9e2f3d41e025f5b6de75e476d = L.marker(
+                [41.0679714, 29.0636661],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_3b274e6222aa7f7495075b41850c6df2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7d70c0eacc8f9e12ee388efbbdd47ea0 = $(`<div id="html_7d70c0eacc8f9e12ee388efbbdd47ea0" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_3b274e6222aa7f7495075b41850c6df2.setContent(html_7d70c0eacc8f9e12ee388efbbdd47ea0);
+            
+        
+
+        marker_261b4fc9e2f3d41e025f5b6de75e476d.bindPopup(popup_3b274e6222aa7f7495075b41850c6df2)
+        ;
+
+        
+    
+    
+            var marker_7caca31e9b0a330ef8eac2ce48fe03ab = L.marker(
+                [41.0677789, 29.0638887],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_490e17ad79c4011a5f22317265fd85b6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6ee53aacced74e22443ab392b2a57526 = $(`<div id="html_6ee53aacced74e22443ab392b2a57526" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_490e17ad79c4011a5f22317265fd85b6.setContent(html_6ee53aacced74e22443ab392b2a57526);
+            
+        
+
+        marker_7caca31e9b0a330ef8eac2ce48fe03ab.bindPopup(popup_490e17ad79c4011a5f22317265fd85b6)
+        ;
+
+        
+    
+    
+            var marker_1ed50d2cbde831485505e41b27854000 = L.marker(
+                [41.0673844, 29.0641793],
+                {
+}
+            ).addTo(map_72fe99f7860de746ec913bf9e72911a6);
+        
+    
+        var popup_0180b7df1c80218df3e45070d5f5e912 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4b298c8c6f2cc0e91277b14a7ec6da78 = $(`<div id="html_4b298c8c6f2cc0e91277b14a7ec6da78" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_0180b7df1c80218df3e45070d5f5e912.setContent(html_4b298c8c6f2cc0e91277b14a7ec6da78);
+            
+        
+
+        marker_1ed50d2cbde831485505e41b27854000.bindPopup(popup_0180b7df1c80218df3e45070d5f5e912)
+        ;
+
+        
+    
+</script>
+</html>

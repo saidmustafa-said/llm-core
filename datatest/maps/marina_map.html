@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b2be588420f5393539cbba165f2bbe9e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_b2be588420f5393539cbba165f2bbe9e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b2be588420f5393539cbba165f2bbe9e = L.map(
+                "map_b2be588420f5393539cbba165f2bbe9e",
+                {
+                    center: [40.95950818125, 29.01168610625],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_aefe87dae8acce6e05e7accbf6309fd7 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_aefe87dae8acce6e05e7accbf6309fd7.addTo(map_b2be588420f5393539cbba165f2bbe9e);
+        
+    
+            var marker_3d30425b77aec052f12c912310b884c6 = L.marker(
+                [40.9719485, 29.0360188],
+                {
+}
+            ).addTo(map_b2be588420f5393539cbba165f2bbe9e);
+        
+    
+        var popup_2165aa11a5be89d04637ad4197bd3220 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2e1659445e4e1ec80ec1ed118596d23d = $(`<div id="html_2e1659445e4e1ec80ec1ed118596d23d" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Setur Fenerbahçe Marina&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_2165aa11a5be89d04637ad4197bd3220.setContent(html_2e1659445e4e1ec80ec1ed118596d23d);
+            
+        
+
+        marker_3d30425b77aec052f12c912310b884c6.bindPopup(popup_2165aa11a5be89d04637ad4197bd3220)
+        ;
+
+        
+    
+    
+            var marker_5a1497761b52e91430fd7aeb77c2cb7d = L.marker(
+                [40.9538886, 29.0839006],
+                {
+}
+            ).addTo(map_b2be588420f5393539cbba165f2bbe9e);
+        
+    
+        var popup_7d4d20a81d0ed5d7ef9f493f4cb36045 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1a6998e3060338b945d26f3d1c913995 = $(`<div id="html_1a6998e3060338b945d26f3d1c913995" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Bostancı Kayıkçı Limanı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_7d4d20a81d0ed5d7ef9f493f4cb36045.setContent(html_1a6998e3060338b945d26f3d1c913995);
+            
+        
+
+        marker_5a1497761b52e91430fd7aeb77c2cb7d.bindPopup(popup_7d4d20a81d0ed5d7ef9f493f4cb36045)
+        ;
+
+        
+    
+    
+            var marker_829353408c89d0cab9299259b52171f0 = L.marker(
+                [40.9763913, 29.037899],
+                {
+}
+            ).addTo(map_b2be588420f5393539cbba165f2bbe9e);
+        
+    
+        var popup_56672bb5fbe9317924a4d79e9d211a0b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_af075f73c0d591846577670d3c300fcb = $(`<div id="html_af075f73c0d591846577670d3c300fcb" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Setur Kalamış Marina&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_56672bb5fbe9317924a4d79e9d211a0b.setContent(html_af075f73c0d591846577670d3c300fcb);
+            
+        
+
+        marker_829353408c89d0cab9299259b52171f0.bindPopup(popup_56672bb5fbe9317924a4d79e9d211a0b)
+        ;
+
+        
+    
+    
+            var marker_90a6f99e3822f03116b7335c4a52a56b = L.marker(
+                [40.9711137, 28.8759343],
+                {
+}
+            ).addTo(map_b2be588420f5393539cbba165f2bbe9e);
+        
+    
+        var popup_d5c1ecfa4d8740b74b98e190213a8d6e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0078fbed413d196574419e52052bbd54 = $(`<div id="html_0078fbed413d196574419e52052bbd54" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Ataköy Marina&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_d5c1ecfa4d8740b74b98e190213a8d6e.setContent(html_0078fbed413d196574419e52052bbd54);
+            
+        
+
+        marker_90a6f99e3822f03116b7335c4a52a56b.bindPopup(popup_d5c1ecfa4d8740b74b98e190213a8d6e)
+        ;
+
+        
+    
+    
+            var marker_99c190e5d69d2d7abf9c1279416b25de = L.marker(
+                [40.871078, 29.23616],
+                {
+}
+            ).addTo(map_b2be588420f5393539cbba165f2bbe9e);
+        
+    
+        var popup_ce4c0bb147a7aab16094b0638f1aa2ea = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_45a5acf8afd16ed04638b97317450d29 = $(`<div id="html_45a5acf8afd16ed04638b97317450d29" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Marintürk İstanbul City Port&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Pendik</div>`)[0];
+                popup_ce4c0bb147a7aab16094b0638f1aa2ea.setContent(html_45a5acf8afd16ed04638b97317450d29);
+            
+        
+
+        marker_99c190e5d69d2d7abf9c1279416b25de.bindPopup(popup_ce4c0bb147a7aab16094b0638f1aa2ea)
+        ;
+
+        
+    
+    
+            var marker_0acc29dd602c069eb6335a272dd29297 = L.marker(
+                [41.1382145, 29.0559772],
+                {
+}
+            ).addTo(map_b2be588420f5393539cbba165f2bbe9e);
+        
+    
+        var popup_21b5bd97147ae8ccba248891cbd1d3a1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5f2c24bbd0cde682d4497cbb997fd78c = $(`<div id="html_5f2c24bbd0cde682d4497cbb997fd78c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Tarabya Marina&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_21b5bd97147ae8ccba248891cbd1d3a1.setContent(html_5f2c24bbd0cde682d4497cbb997fd78c);
+            
+        
+
+        marker_0acc29dd602c069eb6335a272dd29297.bindPopup(popup_21b5bd97147ae8ccba248891cbd1d3a1)
+        ;
+
+        
+    
+    
+            var marker_57e1d662ac85d7773d71b540534c0a58 = L.marker(
+                [41.113704, 29.0570585],
+                {
+}
+            ).addTo(map_b2be588420f5393539cbba165f2bbe9e);
+        
+    
+        var popup_d38305e5a6483b2211ac0a6264f74c14 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_04d62e332679672d648cbf3be1091c6c = $(`<div id="html_04d62e332679672d648cbf3be1091c6c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İstinye Marina&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_d38305e5a6483b2211ac0a6264f74c14.setContent(html_04d62e332679672d648cbf3be1091c6c);
+            
+        
+
+        marker_57e1d662ac85d7773d71b540534c0a58.bindPopup(popup_d38305e5a6483b2211ac0a6264f74c14)
+        ;
+
+        
+    
+    
+            var marker_04ef64eaf27532fca294c7dbbaf2e881 = L.marker(
+                [40.9625811, 28.6599218],
+                {
+}
+            ).addTo(map_b2be588420f5393539cbba165f2bbe9e);
+        
+    
+        var popup_af96373ca3437f77206196af15edce8d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_622c9dc53952383b1424d56d7ccce1eb = $(`<div id="html_622c9dc53952383b1424d56d7ccce1eb" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; West İstanbul Marina&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_af96373ca3437f77206196af15edce8d.setContent(html_622c9dc53952383b1424d56d7ccce1eb);
+            
+        
+
+        marker_04ef64eaf27532fca294c7dbbaf2e881.bindPopup(popup_af96373ca3437f77206196af15edce8d)
+        ;
+
+        
+    
+    
+            var marker_e0aa38bec3e1496f2b81783c3d25cf03 = L.marker(
+                [40.871703, 29.2336795],
+                {
+}
+            ).addTo(map_b2be588420f5393539cbba165f2bbe9e);
+        
+    
+        var popup_a4246597128b41a00f5538dc7a79f640 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_49921ce242006099d8c519f4551f58eb = $(`<div id="html_49921ce242006099d8c519f4551f58eb" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Pendik Marina&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_a4246597128b41a00f5538dc7a79f640.setContent(html_49921ce242006099d8c519f4551f58eb);
+            
+        
+
+        marker_e0aa38bec3e1496f2b81783c3d25cf03.bindPopup(popup_a4246597128b41a00f5538dc7a79f640)
+        ;
+
+        
+    
+    
+            var marker_9138d9f8becd06b015803e58cdd16199 = L.marker(
+                [40.9625207, 29.0675638],
+                {
+}
+            ).addTo(map_b2be588420f5393539cbba165f2bbe9e);
+        
+    
+        var popup_f7da501a8e2b39df2b843c01a427c1d7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_00f8b4b328c0b39aa8b3c99b45af59c7 = $(`<div id="html_00f8b4b328c0b39aa8b3c99b45af59c7" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Caddebostan Marina&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f7da501a8e2b39df2b843c01a427c1d7.setContent(html_00f8b4b328c0b39aa8b3c99b45af59c7);
+            
+        
+
+        marker_9138d9f8becd06b015803e58cdd16199.bindPopup(popup_f7da501a8e2b39df2b843c01a427c1d7)
+        ;
+
+        
+    
+    
+            var marker_065065e404a327b818351c7e27c91b6a = L.marker(
+                [40.8741547, 29.2349974],
+                {
+}
+            ).addTo(map_b2be588420f5393539cbba165f2bbe9e);
+        
+    
+        var popup_fb019874373860350d0a0061707c619c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c35620d7a6e63413167037f01534e121 = $(`<div id="html_c35620d7a6e63413167037f01534e121" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Pendik Balıkçı Barınağı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_fb019874373860350d0a0061707c619c.setContent(html_c35620d7a6e63413167037f01534e121);
+            
+        
+
+        marker_065065e404a327b818351c7e27c91b6a.bindPopup(popup_fb019874373860350d0a0061707c619c)
+        ;
+
+        
+    
+    
+            var marker_3544868170982ee21f41cb9b63a482f2 = L.marker(
+                [40.8156116, 29.3192583],
+                {
+}
+            ).addTo(map_b2be588420f5393539cbba165f2bbe9e);
+        
+    
+        var popup_8bcfc333e87be23c450b3addc8701241 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2d5f423adb7d68c9fdf200c2d9905be7 = $(`<div id="html_2d5f423adb7d68c9fdf200c2d9905be7" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_8bcfc333e87be23c450b3addc8701241.setContent(html_2d5f423adb7d68c9fdf200c2d9905be7);
+            
+        
+
+        marker_3544868170982ee21f41cb9b63a482f2.bindPopup(popup_8bcfc333e87be23c450b3addc8701241)
+        ;
+
+        
+    
+    
+            var marker_1a959fa3dacd5744980f7e443935eb49 = L.marker(
+                [40.9738308, 28.8774374],
+                {
+}
+            ).addTo(map_b2be588420f5393539cbba165f2bbe9e);
+        
+    
+        var popup_1d06c3bb3879140daf22a7b8a1d60ea6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2f548a86702c5df11b2a5cf3f04af312 = $(`<div id="html_2f548a86702c5df11b2a5cf3f04af312" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_1d06c3bb3879140daf22a7b8a1d60ea6.setContent(html_2f548a86702c5df11b2a5cf3f04af312);
+            
+        
+
+        marker_1a959fa3dacd5744980f7e443935eb49.bindPopup(popup_1d06c3bb3879140daf22a7b8a1d60ea6)
+        ;
+
+        
+    
+    
+            var marker_705d16dbdd65ce6bdeb9287a85481c7d = L.marker(
+                [40.9687379, 28.8705638],
+                {
+}
+            ).addTo(map_b2be588420f5393539cbba165f2bbe9e);
+        
+    
+        var popup_fdc4966509f1a6ef832d6889efb3a3b9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fbaae3be23f8b62fe05b5116518a6773 = $(`<div id="html_fbaae3be23f8b62fe05b5116518a6773" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_fdc4966509f1a6ef832d6889efb3a3b9.setContent(html_fbaae3be23f8b62fe05b5116518a6773);
+            
+        
+
+        marker_705d16dbdd65ce6bdeb9287a85481c7d.bindPopup(popup_fdc4966509f1a6ef832d6889efb3a3b9)
+        ;
+
+        
+    
+    
+            var marker_2737b08704cfefcb8ac5c9af42f7db45 = L.marker(
+                [40.9560199, 28.8235739],
+                {
+}
+            ).addTo(map_b2be588420f5393539cbba165f2bbe9e);
+        
+    
+        var popup_fa4b54f04eb4e5e63dc1ff9a872a92e4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_14221f4ad9a1a90dc344612d86e13609 = $(`<div id="html_14221f4ad9a1a90dc344612d86e13609" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Yeşilköy Marina&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_fa4b54f04eb4e5e63dc1ff9a872a92e4.setContent(html_14221f4ad9a1a90dc344612d86e13609);
+            
+        
+
+        marker_2737b08704cfefcb8ac5c9af42f7db45.bindPopup(popup_fa4b54f04eb4e5e63dc1ff9a872a92e4)
+        ;
+
+        
+    
+    
+            var marker_83063ec207537994d6b8c43af2817abf = L.marker(
+                [40.9706326, 28.7170334],
+                {
+}
+            ).addTo(map_b2be588420f5393539cbba165f2bbe9e);
+        
+    
+        var popup_9c9c112a07874122dc39f0b5dc811ea3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_353d978ebdd41fe2dfb0ab45ca3da5c2 = $(`<div id="html_353d978ebdd41fe2dfb0ab45ca3da5c2" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_9c9c112a07874122dc39f0b5dc811ea3.setContent(html_353d978ebdd41fe2dfb0ab45ca3da5c2);
+            
+        
+
+        marker_83063ec207537994d6b8c43af2817abf.bindPopup(popup_9c9c112a07874122dc39f0b5dc811ea3)
+        ;
+
+        
+    
+</script>
+</html>

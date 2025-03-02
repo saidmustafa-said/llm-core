@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_93bf19368913f074d25d76441927d57f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_93bf19368913f074d25d76441927d57f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_93bf19368913f074d25d76441927d57f = L.map(
+                "map_93bf19368913f074d25d76441927d57f",
+                {
+                    center: [41.03336766875, 28.97701468125],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_ff2050785febd6765ca6ad61f1e29ca6 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_ff2050785febd6765ca6ad61f1e29ca6.addTo(map_93bf19368913f074d25d76441927d57f);
+        
+    
+            var marker_1ae82b171dcc86611d9ab96a164c153f = L.marker(
+                [40.9809416, 28.8743693],
+                {
+}
+            ).addTo(map_93bf19368913f074d25d76441927d57f);
+        
+    
+        var popup_a26385bd54f31eda3a2b4cb7577c0a4e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3a832ff354b0deec4e4e0169c11d027e = $(`<div id="html_3a832ff354b0deec4e4e0169c11d027e" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İBB Bakırköy Ödünç Kütüphane&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_a26385bd54f31eda3a2b4cb7577c0a4e.setContent(html_3a832ff354b0deec4e4e0169c11d027e);
+            
+        
+
+        marker_1ae82b171dcc86611d9ab96a164c153f.bindPopup(popup_a26385bd54f31eda3a2b4cb7577c0a4e)
+        ;
+
+        
+    
+    
+            var marker_5271bb2169c2622bbfbe1b8067fd4b81 = L.marker(
+                [41.1082453, 29.0835867],
+                {
+}
+            ).addTo(map_93bf19368913f074d25d76441927d57f);
+        
+    
+        var popup_953376525c2886cc1b8b8b6f5b0c8069 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2e65a789f8ad5904792067c93622efc3 = $(`<div id="html_2e65a789f8ad5904792067c93622efc3" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İBB Çubuklu Silolar Kütüphanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_953376525c2886cc1b8b8b6f5b0c8069.setContent(html_2e65a789f8ad5904792067c93622efc3);
+            
+        
+
+        marker_5271bb2169c2622bbfbe1b8067fd4b81.bindPopup(popup_953376525c2886cc1b8b8b6f5b0c8069)
+        ;
+
+        
+    
+    
+            var marker_e5d6f80e249c27baf154941a997c18ad = L.marker(
+                [41.0069951, 28.9440457],
+                {
+}
+            ).addTo(map_93bf19368913f074d25d76441927d57f);
+        
+    
+        var popup_7a3a89002d21e1b9e17b561a33862990 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3c7c2650856bd35f73db6e33cf61b716 = $(`<div id="html_3c7c2650856bd35f73db6e33cf61b716" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İBB Bulgur Palas Kütüphanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_7a3a89002d21e1b9e17b561a33862990.setContent(html_3c7c2650856bd35f73db6e33cf61b716);
+            
+        
+
+        marker_e5d6f80e249c27baf154941a997c18ad.bindPopup(popup_7a3a89002d21e1b9e17b561a33862990)
+        ;
+
+        
+    
+    
+            var marker_b0844341db18ef04fec1309b6aa24ab9 = L.marker(
+                [41.0251877, 28.9727489],
+                {
+}
+            ).addTo(map_93bf19368913f074d25d76441927d57f);
+        
+    
+        var popup_0309cf913e83c9ffc2d71236d208814b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7da4131fdee7e62596451943d1c7e629 = $(`<div id="html_7da4131fdee7e62596451943d1c7e629" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_0309cf913e83c9ffc2d71236d208814b.setContent(html_7da4131fdee7e62596451943d1c7e629);
+            
+        
+
+        marker_b0844341db18ef04fec1309b6aa24ab9.bindPopup(popup_0309cf913e83c9ffc2d71236d208814b)
+        ;
+
+        
+    
+    
+            var marker_172c9e87dab6a995ae579ae4db5fbdd2 = L.marker(
+                [41.0325687, 28.9362445],
+                {
+}
+            ).addTo(map_93bf19368913f074d25d76441927d57f);
+        
+    
+        var popup_e922c688c14d64c066e2573e782da946 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_538f441963ac2c72b05c474366044028 = $(`<div id="html_538f441963ac2c72b05c474366044028" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Emin Baba Tekkesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_e922c688c14d64c066e2573e782da946.setContent(html_538f441963ac2c72b05c474366044028);
+            
+        
+
+        marker_172c9e87dab6a995ae579ae4db5fbdd2.bindPopup(popup_e922c688c14d64c066e2573e782da946)
+        ;
+
+        
+    
+    
+            var marker_ccfbe6d7e86298101853a93ddda1eae3 = L.marker(
+                [41.0136158, 29.0419533],
+                {
+}
+            ).addTo(map_93bf19368913f074d25d76441927d57f);
+        
+    
+        var popup_9eac0273a44273b0e501a6ef5f267eb0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ad6ae690776b672538eee50444d1abf0 = $(`<div id="html_ad6ae690776b672538eee50444d1abf0" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Hababam Sınıfı Müzesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_9eac0273a44273b0e501a6ef5f267eb0.setContent(html_ad6ae690776b672538eee50444d1abf0);
+            
+        
+
+        marker_ccfbe6d7e86298101853a93ddda1eae3.bindPopup(popup_9eac0273a44273b0e501a6ef5f267eb0)
+        ;
+
+        
+    
+    
+            var marker_4a9fb0e8a824680d679e4dab075039b5 = L.marker(
+                [41.0447085, 28.995223],
+                {
+}
+            ).addTo(map_93bf19368913f074d25d76441927d57f);
+        
+    
+        var popup_df30a65a67a607a4ca25284cf3a55c1e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_abbf0d74fb770b50bc2e0e08a672d038 = $(`<div id="html_abbf0d74fb770b50bc2e0e08a672d038" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Maçka Silahhanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_df30a65a67a607a4ca25284cf3a55c1e.setContent(html_abbf0d74fb770b50bc2e0e08a672d038);
+            
+        
+
+        marker_4a9fb0e8a824680d679e4dab075039b5.bindPopup(popup_df30a65a67a607a4ca25284cf3a55c1e)
+        ;
+
+        
+    
+    
+            var marker_6425d68e453104dc32254db37da305e2 = L.marker(
+                [41.0130718, 28.9832643],
+                {
+}
+            ).addTo(map_93bf19368913f074d25d76441927d57f);
+        
+    
+        var popup_2f4ba8f9ed6e9d31c6a9ce02b808e89f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d6b5c8d8c3177db299fa4bc71de210ed = $(`<div id="html_d6b5c8d8c3177db299fa4bc71de210ed" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Harem-i Hümayûn&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_2f4ba8f9ed6e9d31c6a9ce02b808e89f.setContent(html_d6b5c8d8c3177db299fa4bc71de210ed);
+            
+        
+
+        marker_6425d68e453104dc32254db37da305e2.bindPopup(popup_2f4ba8f9ed6e9d31c6a9ce02b808e89f)
+        ;
+
+        
+    
+    
+            var marker_6941f8df6b0d3787cdbbc3c001b88c7e = L.marker(
+                [41.0131608, 28.9724589],
+                {
+}
+            ).addTo(map_93bf19368913f074d25d76441927d57f);
+        
+    
+        var popup_108d4235da70710880060ce1330f6d9d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0caacf3e1f467bdd1c0fad300ea57ee7 = $(`<div id="html_0caacf3e1f467bdd1c0fad300ea57ee7" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Rüstem Paşa Medresesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_108d4235da70710880060ce1330f6d9d.setContent(html_0caacf3e1f467bdd1c0fad300ea57ee7);
+            
+        
+
+        marker_6941f8df6b0d3787cdbbc3c001b88c7e.bindPopup(popup_108d4235da70710880060ce1330f6d9d)
+        ;
+
+        
+    
+    
+            var marker_2235b79f22ae79b9c10803b27111bb0d = L.marker(
+                [41.1343562, 29.0619158],
+                {
+}
+            ).addTo(map_93bf19368913f074d25d76441927d57f);
+        
+    
+        var popup_8ed266618a26d0d9f99d191aedb2a34c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9dd5dab155a095f5d2a9dfe5f8298e65 = $(`<div id="html_9dd5dab155a095f5d2a9dfe5f8298e65" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Huber Köşkü&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_8ed266618a26d0d9f99d191aedb2a34c.setContent(html_9dd5dab155a095f5d2a9dfe5f8298e65);
+            
+        
+
+        marker_2235b79f22ae79b9c10803b27111bb0d.bindPopup(popup_8ed266618a26d0d9f99d191aedb2a34c)
+        ;
+
+        
+    
+    
+            var marker_623c59c1cec219c2febd51f9c80df959 = L.marker(
+                [41.0075896, 28.9338364],
+                {
+}
+            ).addTo(map_93bf19368913f074d25d76441927d57f);
+        
+    
+        var popup_229a2c85c5ab6e5c2573c3c6eb3411e4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6625cbc065e39606bc0435e5281b0d11 = $(`<div id="html_6625cbc065e39606bc0435e5281b0d11" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Nişancı Mehmet Paşa Medresesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_229a2c85c5ab6e5c2573c3c6eb3411e4.setContent(html_6625cbc065e39606bc0435e5281b0d11);
+            
+        
+
+        marker_623c59c1cec219c2febd51f9c80df959.bindPopup(popup_229a2c85c5ab6e5c2573c3c6eb3411e4)
+        ;
+
+        
+    
+    
+            var marker_1c7a08322b52f644ce2444d21d91ac60 = L.marker(
+                [41.0120223, 28.9812383],
+                {
+}
+            ).addTo(map_93bf19368913f074d25d76441927d57f);
+        
+    
+        var popup_37c57ff39a4178eb1a663c42431cc5a1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_70975f66b26423c0e7bb4e51b7dc82f1 = $(`<div id="html_70975f66b26423c0e7bb4e51b7dc82f1" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Çinili Köşk&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_37c57ff39a4178eb1a663c42431cc5a1.setContent(html_70975f66b26423c0e7bb4e51b7dc82f1);
+            
+        
+
+        marker_1c7a08322b52f644ce2444d21d91ac60.bindPopup(popup_37c57ff39a4178eb1a663c42431cc5a1)
+        ;
+
+        
+    
+    
+            var marker_36bae7a10a9d2d67bef691bde4d2b57f = L.marker(
+                [41.0116433, 28.9813725],
+                {
+}
+            ).addTo(map_93bf19368913f074d25d76441927d57f);
+        
+    
+        var popup_16837903d3a0d9dd6455705901aa1491 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f1d11c709191719b876748cc35440970 = $(`<div id="html_f1d11c709191719b876748cc35440970" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İstanbul Arkeoloji Müzesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_16837903d3a0d9dd6455705901aa1491.setContent(html_f1d11c709191719b876748cc35440970);
+            
+        
+
+        marker_36bae7a10a9d2d67bef691bde4d2b57f.bindPopup(popup_16837903d3a0d9dd6455705901aa1491)
+        ;
+
+        
+    
+    
+            var marker_3ee6218684490cdf17bedab7a62b9b09 = L.marker(
+                [41.0336999, 28.9404772],
+                {
+}
+            ).addTo(map_93bf19368913f074d25d76441927d57f);
+        
+    
+        var popup_f38e859f8012a8dc2ac89ae6e309e2a4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eb7f4d94aba9385a0695b6954965bf73 = $(`<div id="html_eb7f4d94aba9385a0695b6954965bf73" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_f38e859f8012a8dc2ac89ae6e309e2a4.setContent(html_eb7f4d94aba9385a0695b6954965bf73);
+            
+        
+
+        marker_3ee6218684490cdf17bedab7a62b9b09.bindPopup(popup_f38e859f8012a8dc2ac89ae6e309e2a4)
+        ;
+
+        
+    
+    
+            var marker_7032c9db11f33241e30e3f3184d2cf48 = L.marker(
+                [40.9756297, 28.8594952],
+                {
+}
+            ).addTo(map_93bf19368913f074d25d76441927d57f);
+        
+    
+        var popup_c02da3222a78d4365c57c027e5ecde88 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_485fb05dcd68338a91e84cd9df8e2305 = $(`<div id="html_485fb05dcd68338a91e84cd9df8e2305" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Baruthane Müze&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c02da3222a78d4365c57c027e5ecde88.setContent(html_485fb05dcd68338a91e84cd9df8e2305);
+            
+        
+
+        marker_7032c9db11f33241e30e3f3184d2cf48.bindPopup(popup_c02da3222a78d4365c57c027e5ecde88)
+        ;
+
+        
+    
+    
+            var marker_bb714589d1ea2953cbf0e7658ed76c75 = L.marker(
+                [41.1204464, 29.0700049],
+                {
+}
+            ).addTo(map_93bf19368913f074d25d76441927d57f);
+        
+    
+        var popup_6339b25b4cc59369840480e868e6aabc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c007ee49dc416d9560a0a6661b4e0936 = $(`<div id="html_c007ee49dc416d9560a0a6661b4e0936" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Sait Halim Paşa Yalısı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_6339b25b4cc59369840480e868e6aabc.setContent(html_c007ee49dc416d9560a0a6661b4e0936);
+            
+        
+
+        marker_bb714589d1ea2953cbf0e7658ed76c75.bindPopup(popup_6339b25b4cc59369840480e868e6aabc)
+        ;
+
+        
+    
+</script>
+</html>

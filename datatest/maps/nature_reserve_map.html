@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4aef118a91fe10feb94cef7ba275dd28 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_4aef118a91fe10feb94cef7ba275dd28" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4aef118a91fe10feb94cef7ba275dd28 = L.map(
+                "map_4aef118a91fe10feb94cef7ba275dd28",
+                {
+                    center: [41.19188877037037, 28.884263951851853],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7f7e6eaf5cd924611b73445f84eb2386 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7f7e6eaf5cd924611b73445f84eb2386.addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+            var marker_7f68b5ab409a6e7d33ed9bd0b5d2f3cd = L.marker(
+                [41.6032778, 28.1307395],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_af3d1f4ccf8b531df5d7a8e380760710 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_20d349af4e3597b58d0c7fc4983976ad = $(`<div id="html_20d349af4e3597b58d0c7fc4983976ad" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Kasatura Körfezi Doğa Koruma Alanı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_af3d1f4ccf8b531df5d7a8e380760710.setContent(html_20d349af4e3597b58d0c7fc4983976ad);
+            
+        
+
+        marker_7f68b5ab409a6e7d33ed9bd0b5d2f3cd.bindPopup(popup_af3d1f4ccf8b531df5d7a8e380760710)
+        ;
+
+        
+    
+    
+            var marker_41112887fc4909a703b63cc59967ce64 = L.marker(
+                [41.1713761, 28.9459107],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_6beb4a8a9075d608fa14779a9defc717 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1218829624ff55f530f8b4aacddec710 = $(`<div id="html_1218829624ff55f530f8b4aacddec710" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Fatih Çeşmesi Tabiat Parkı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_6beb4a8a9075d608fa14779a9defc717.setContent(html_1218829624ff55f530f8b4aacddec710);
+            
+        
+
+        marker_41112887fc4909a703b63cc59967ce64.bindPopup(popup_6beb4a8a9075d608fa14779a9defc717)
+        ;
+
+        
+    
+    
+            var marker_4c041b356d1c3bce1db7644b65a7792e = L.marker(
+                [41.1686048, 28.9599596],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_b79375f4bebb3133c14f118de7bf0622 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5d7c070a5ac8d2b0a83a6027e7fca4a5 = $(`<div id="html_5d7c070a5ac8d2b0a83a6027e7fca4a5" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Kirazlıbent Tabiat Parkı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_b79375f4bebb3133c14f118de7bf0622.setContent(html_5d7c070a5ac8d2b0a83a6027e7fca4a5);
+            
+        
+
+        marker_4c041b356d1c3bce1db7644b65a7792e.bindPopup(popup_b79375f4bebb3133c14f118de7bf0622)
+        ;
+
+        
+    
+    
+            var marker_9e77559160381c09931f15724ec5edb6 = L.marker(
+                [41.169345, 28.957607],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_39a271ee440eed0334744a92bc4191e0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a50d9363b7878f8ea07ab40f075e2dfa = $(`<div id="html_a50d9363b7878f8ea07ab40f075e2dfa" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Kirazlıbent Mesire Yeri&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_39a271ee440eed0334744a92bc4191e0.setContent(html_a50d9363b7878f8ea07ab40f075e2dfa);
+            
+        
+
+        marker_9e77559160381c09931f15724ec5edb6.bindPopup(popup_39a271ee440eed0334744a92bc4191e0)
+        ;
+
+        
+    
+    
+            var marker_8d087dec57e30cb60375e3ea75627d2b = L.marker(
+                [41.1260961, 29.0158054],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_388f48f8c42f398cf726575d69adfd72 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2aeee302e084a83f26692ea05ea09646 = $(`<div id="html_2aeee302e084a83f26692ea05ea09646" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Parkorman Tabiat Parkı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_388f48f8c42f398cf726575d69adfd72.setContent(html_2aeee302e084a83f26692ea05ea09646);
+            
+        
+
+        marker_8d087dec57e30cb60375e3ea75627d2b.bindPopup(popup_388f48f8c42f398cf726575d69adfd72)
+        ;
+
+        
+    
+    
+            var marker_218d1e38f2f4d7adf5a71dd736a9758d = L.marker(
+                [40.8824989, 29.0946595],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_9418d16741242c91d4598e484bd1e8af = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_629d79d359ea4bc510f3118d82145a08 = $(`<div id="html_629d79d359ea4bc510f3118d82145a08" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Değirmenburnu Tabiat Parkı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_9418d16741242c91d4598e484bd1e8af.setContent(html_629d79d359ea4bc510f3118d82145a08);
+            
+        
+
+        marker_218d1e38f2f4d7adf5a71dd736a9758d.bindPopup(popup_9418d16741242c91d4598e484bd1e8af)
+        ;
+
+        
+    
+    
+            var marker_01e274db08cef414d27d74680b086ba8 = L.marker(
+                [41.1399923, 29.0257192],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_f969fc7d49077734b8884289f7dc4423 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_828bc1871d24743fc1b62d2625fa92ad = $(`<div id="html_828bc1871d24743fc1b62d2625fa92ad" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Türkmenbaşı Tabiat Parkı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f969fc7d49077734b8884289f7dc4423.setContent(html_828bc1871d24743fc1b62d2625fa92ad);
+            
+        
+
+        marker_01e274db08cef414d27d74680b086ba8.bindPopup(popup_f969fc7d49077734b8884289f7dc4423)
+        ;
+
+        
+    
+    
+            var marker_8d8cac4b48891d0096cfa4960fb9904b = L.marker(
+                [41.5861465, 28.1455864],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_535e9da8d832520b9fbffa169dfc3822 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cd25880d9be0f6637ee974ede2230603 = $(`<div id="html_cd25880d9be0f6637ee974ede2230603" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Çamlıköy Tabiat Parkı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_535e9da8d832520b9fbffa169dfc3822.setContent(html_cd25880d9be0f6637ee974ede2230603);
+            
+        
+
+        marker_8d8cac4b48891d0096cfa4960fb9904b.bindPopup(popup_535e9da8d832520b9fbffa169dfc3822)
+        ;
+
+        
+    
+    
+            var marker_5c23192c5a5c7502fa3a892fe02200c6 = L.marker(
+                [41.3037256, 28.2164633],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_d9bad6bc824410d89e2cef290fa024c6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8cd13279b070e16f202f59b718e166a7 = $(`<div id="html_8cd13279b070e16f202f59b718e166a7" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Danamandıra Tabiat Parkı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_d9bad6bc824410d89e2cef290fa024c6.setContent(html_8cd13279b070e16f202f59b718e166a7);
+            
+        
+
+        marker_5c23192c5a5c7502fa3a892fe02200c6.bindPopup(popup_d9bad6bc824410d89e2cef290fa024c6)
+        ;
+
+        
+    
+    
+            var marker_d05164119d0391ff8ad2b11092897a06 = L.marker(
+                [41.124256, 29.1569399],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_a1241386f61213fe63bb049291be1dbb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4d5b422fc26336e3b8d783f526148aff = $(`<div id="html_4d5b422fc26336e3b8d783f526148aff" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İstanbul Kelebek Çiftliği&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_a1241386f61213fe63bb049291be1dbb.setContent(html_4d5b422fc26336e3b8d783f526148aff);
+            
+        
+
+        marker_d05164119d0391ff8ad2b11092897a06.bindPopup(popup_a1241386f61213fe63bb049291be1dbb)
+        ;
+
+        
+    
+    
+            var marker_646be54b954f4292b4e43b238320d573 = L.marker(
+                [41.2282055, 29.2208597],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_979755ee237d48cf232c4517f0727996 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1d3b3761deac37617a08cd7a98437bf6 = $(`<div id="html_1d3b3761deac37617a08cd7a98437bf6" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Elmasburnu Tabiat Parkı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_979755ee237d48cf232c4517f0727996.setContent(html_1d3b3761deac37617a08cd7a98437bf6);
+            
+        
+
+        marker_646be54b954f4292b4e43b238320d573.bindPopup(popup_979755ee237d48cf232c4517f0727996)
+        ;
+
+        
+    
+    
+            var marker_48c8545c0adeb0c642a596144160567e = L.marker(
+                [41.2162818, 29.2533059],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_fee9b123c12de6edf5c461710f952bc2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_99c1be7461fa3f1efad3d8f0ad98bf3d = $(`<div id="html_99c1be7461fa3f1efad3d8f0ad98bf3d" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_fee9b123c12de6edf5c461710f952bc2.setContent(html_99c1be7461fa3f1efad3d8f0ad98bf3d);
+            
+        
+
+        marker_48c8545c0adeb0c642a596144160567e.bindPopup(popup_fee9b123c12de6edf5c461710f952bc2)
+        ;
+
+        
+    
+    
+            var marker_a1507b44f664ac0230a75c07975f4f1a = L.marker(
+                [41.1980362, 28.9546228],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_bc4f4cd6d0fdcabebc3b79f2364c3232 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fa4a3618baabf5de44f9b8fa3d6c8f2d = $(`<div id="html_fa4a3618baabf5de44f9b8fa3d6c8f2d" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Bahçeköy Geyik Üretim İstasyonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_bc4f4cd6d0fdcabebc3b79f2364c3232.setContent(html_fa4a3618baabf5de44f9b8fa3d6c8f2d);
+            
+        
+
+        marker_a1507b44f664ac0230a75c07975f4f1a.bindPopup(popup_bc4f4cd6d0fdcabebc3b79f2364c3232)
+        ;
+
+        
+    
+    
+            var marker_d11a6e86555b051efba2456929b1f4bd = L.marker(
+                [40.9231535, 29.1654382],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_aad1571bbfdad8c598b0e186342d74c5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ab71ee6dd5169e0c7e685fb2cf5c1c1e = $(`<div id="html_ab71ee6dd5169e0c7e685fb2cf5c1c1e" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_aad1571bbfdad8c598b0e186342d74c5.setContent(html_ab71ee6dd5169e0c7e685fb2cf5c1c1e);
+            
+        
+
+        marker_d11a6e86555b051efba2456929b1f4bd.bindPopup(popup_aad1571bbfdad8c598b0e186342d74c5)
+        ;
+
+        
+    
+    
+            var marker_dc784c66fa1e59748165b9710d2e373e = L.marker(
+                [40.9232608, 29.1643356],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_d2652f7de5377dc985fb8c62defd1ce5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_31192a61546cc6a561450107ad397960 = $(`<div id="html_31192a61546cc6a561450107ad397960" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_d2652f7de5377dc985fb8c62defd1ce5.setContent(html_31192a61546cc6a561450107ad397960);
+            
+        
+
+        marker_dc784c66fa1e59748165b9710d2e373e.bindPopup(popup_d2652f7de5377dc985fb8c62defd1ce5)
+        ;
+
+        
+    
+    
+            var marker_c542c67f1cc4692902bef4c36ca4d54e = L.marker(
+                [41.2061729, 28.9630854],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_c9a1e3a1b78d59947a867688aa37fc15 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_87e75e8b951af24eda125f295fc26055 = $(`<div id="html_87e75e8b951af24eda125f295fc26055" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Kömürcü Bendi Tabiat Parkı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c9a1e3a1b78d59947a867688aa37fc15.setContent(html_87e75e8b951af24eda125f295fc26055);
+            
+        
+
+        marker_c542c67f1cc4692902bef4c36ca4d54e.bindPopup(popup_c9a1e3a1b78d59947a867688aa37fc15)
+        ;
+
+        
+    
+    
+            var marker_11db4cdd2c7c1db6b1433fddff89371b = L.marker(
+                [41.0339673, 28.5567361],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_deb166d0a47dbef7de17059779ed859a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9ab9df44a2816296476d00018e77e6a3 = $(`<div id="html_9ab9df44a2816296476d00018e77e6a3" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Büyükçekmece Gölü Doğal Yaşam Parkı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_deb166d0a47dbef7de17059779ed859a.setContent(html_9ab9df44a2816296476d00018e77e6a3);
+            
+        
+
+        marker_11db4cdd2c7c1db6b1433fddff89371b.bindPopup(popup_deb166d0a47dbef7de17059779ed859a)
+        ;
+
+        
+    
+    
+            var marker_ff32071b25ce336709c4fcd2a7ebc9c4 = L.marker(
+                [41.2226591, 29.077681],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_6bc00fd9f16f3b2c3b7acfeae1209aa5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d27c91658aa7465c8596f39886435510 = $(`<div id="html_d27c91658aa7465c8596f39886435510" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İstanbul Sarıyer Feneryolu Yaban Hayatı Geliştirme Sahası&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_6bc00fd9f16f3b2c3b7acfeae1209aa5.setContent(html_d27c91658aa7465c8596f39886435510);
+            
+        
+
+        marker_ff32071b25ce336709c4fcd2a7ebc9c4.bindPopup(popup_6bc00fd9f16f3b2c3b7acfeae1209aa5)
+        ;
+
+        
+    
+    
+            var marker_c3464edf89b7f2a7e39a10b45d5497c3 = L.marker(
+                [41.4900657, 28.174828],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_c30cb68ac59f8290d739e9f191d0a1c9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_743029f527aacc69d54fca4e250a1e0e = $(`<div id="html_743029f527aacc69d54fca4e250a1e0e" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İstanbul Çatalca Çilingoz Yaban Hayatı Geliştirme Sahası&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c30cb68ac59f8290d739e9f191d0a1c9.setContent(html_743029f527aacc69d54fca4e250a1e0e);
+            
+        
+
+        marker_c3464edf89b7f2a7e39a10b45d5497c3.bindPopup(popup_c30cb68ac59f8290d739e9f191d0a1c9)
+        ;
+
+        
+    
+    
+            var marker_3ed93b25a424539b8334c24880664991 = L.marker(
+                [41.1883148, 28.9909534],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_d9d57a386bd36309be2fca1d8f7351f6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_27392570b56467d98570388a2f0f113f = $(`<div id="html_27392570b56467d98570388a2f0f113f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Bentler Tabiat Parkı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_d9d57a386bd36309be2fca1d8f7351f6.setContent(html_27392570b56467d98570388a2f0f113f);
+            
+        
+
+        marker_3ed93b25a424539b8334c24880664991.bindPopup(popup_d9d57a386bd36309be2fca1d8f7351f6)
+        ;
+
+        
+    
+    
+            var marker_5e3ff74bd68d186b04971149717375bd = L.marker(
+                [41.1736371, 28.9582355],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_e02c92a7937cd6926a9d98ea8a7c7e0c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_afb432b778bac6fe566d2616dbc011fd = $(`<div id="html_afb432b778bac6fe566d2616dbc011fd" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Irmak Tabiat Parkı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_e02c92a7937cd6926a9d98ea8a7c7e0c.setContent(html_afb432b778bac6fe566d2616dbc011fd);
+            
+        
+
+        marker_5e3ff74bd68d186b04971149717375bd.bindPopup(popup_e02c92a7937cd6926a9d98ea8a7c7e0c)
+        ;
+
+        
+    
+    
+            var marker_a2d9d7d57424bec552e34e621b916abd = L.marker(
+                [41.2010477, 28.9236935],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_a4ae5fd36ab2aa6b8a1008ada793ca8a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ac3fd9318ba72e79d7b419d2c6cad074 = $(`<div id="html_ac3fd9318ba72e79d7b419d2c6cad074" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Ayvat Bendi Tabiat Parkı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_a4ae5fd36ab2aa6b8a1008ada793ca8a.setContent(html_ac3fd9318ba72e79d7b419d2c6cad074);
+            
+        
+
+        marker_a2d9d7d57424bec552e34e621b916abd.bindPopup(popup_a4ae5fd36ab2aa6b8a1008ada793ca8a)
+        ;
+
+        
+    
+    
+            var marker_fd12c8fe6306868074e86d855db39bcb = L.marker(
+                [41.1850253, 28.9675454],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_f9b9d72633913f78278f51e3b0c89aa2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_174d35672a5de8e05754483132c909dc = $(`<div id="html_174d35672a5de8e05754483132c909dc" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Neşet Suyu Tabiat Parkı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f9b9d72633913f78278f51e3b0c89aa2.setContent(html_174d35672a5de8e05754483132c909dc);
+            
+        
+
+        marker_fd12c8fe6306868074e86d855db39bcb.bindPopup(popup_f9b9d72633913f78278f51e3b0c89aa2)
+        ;
+
+        
+    
+    
+            var marker_d4cc3e98c8a878c66bd17d1e00c332f8 = L.marker(
+                [41.1919132, 28.9646608],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_e3cea1c2dba12efc943a4acd87b11a29 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3fcea0179dc23c3cb97e78193b19b218 = $(`<div id="html_3fcea0179dc23c3cb97e78193b19b218" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Fatih Rıfkı Altay Tabiat Parkı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_e3cea1c2dba12efc943a4acd87b11a29.setContent(html_3fcea0179dc23c3cb97e78193b19b218);
+            
+        
+
+        marker_d4cc3e98c8a878c66bd17d1e00c332f8.bindPopup(popup_e3cea1c2dba12efc943a4acd87b11a29)
+        ;
+
+        
+    
+    
+            var marker_d5b1ed36a0c3c74a5656546884d452c3 = L.marker(
+                [41.1969636, 28.8788128],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_0cae15e8c2d50a97036a10d750f4186c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cb7656095453530c4166085a530995ec = $(`<div id="html_cb7656095453530c4166085a530995ec" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Göktürk Göleti Tabiat Parkı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_0cae15e8c2d50a97036a10d750f4186c.setContent(html_cb7656095453530c4166085a530995ec);
+            
+        
+
+        marker_d5b1ed36a0c3c74a5656546884d452c3.bindPopup(popup_0cae15e8c2d50a97036a10d750f4186c)
+        ;
+
+        
+    
+    
+            var marker_9de8eade44f8bbb5aac17e972a13ef33 = L.marker(
+                [41.1707074, 29.0006865],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_f5e2d08755f113d7acb56520bf5da62a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6c9690c8b13cedcd7008c2a7468b30b7 = $(`<div id="html_6c9690c8b13cedcd7008c2a7468b30b7" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Mehmet Akif Ersoy Tabiat Parkı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f5e2d08755f113d7acb56520bf5da62a.setContent(html_6c9690c8b13cedcd7008c2a7468b30b7);
+            
+        
+
+        marker_9de8eade44f8bbb5aac17e972a13ef33.bindPopup(popup_f5e2d08755f113d7acb56520bf5da62a)
+        ;
+
+        
+    
+    
+            var marker_a5943277698cfd7a0d45fafa6e9d3875 = L.marker(
+                [41.1562658, 29.0102556],
+                {
+}
+            ).addTo(map_4aef118a91fe10feb94cef7ba275dd28);
+        
+    
+        var popup_2ef9beaf357ac4ad2316378833956a2f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_707be4c6e7f0e50b4ae67a9dc9826283 = $(`<div id="html_707be4c6e7f0e50b4ae67a9dc9826283" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Fatih Ormanı Tabiat Parkı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_2ef9beaf357ac4ad2316378833956a2f.setContent(html_707be4c6e7f0e50b4ae67a9dc9826283);
+            
+        
+
+        marker_a5943277698cfd7a0d45fafa6e9d3875.bindPopup(popup_2ef9beaf357ac4ad2316378833956a2f)
+        ;
+
+        
+    
+</script>
+</html>

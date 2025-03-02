@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1acd6f1d21832584b1bcc4447f04ced1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_1acd6f1d21832584b1bcc4447f04ced1" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1acd6f1d21832584b1bcc4447f04ced1 = L.map(
+                "map_1acd6f1d21832584b1bcc4447f04ced1",
+                {
+                    center: [41.02233426666667, 28.990853349999995],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6fd2ad7af9619752ee6d302f3c44a3bb = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_6fd2ad7af9619752ee6d302f3c44a3bb.addTo(map_1acd6f1d21832584b1bcc4447f04ced1);
+        
+    
+            var marker_b62d0657989a3d487f9b266c99ce3b1d = L.marker(
+                [41.0138407, 28.9631222],
+                {
+}
+            ).addTo(map_1acd6f1d21832584b1bcc4447f04ced1);
+        
+    
+        var popup_b5c8077dd1b96a26554ca9210f465ebc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_78d6c273d140a081435b70f955759f61 = $(`<div id="html_78d6c273d140a081435b70f955759f61" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İstanbul Üniversitesi Hukuk Fakültesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_b5c8077dd1b96a26554ca9210f465ebc.setContent(html_78d6c273d140a081435b70f955759f61);
+            
+        
+
+        marker_b62d0657989a3d487f9b266c99ce3b1d.bindPopup(popup_b5c8077dd1b96a26554ca9210f465ebc)
+        ;
+
+        
+    
+    
+            var marker_1e49d27818d2cd14927800ce25c9cb9d = L.marker(
+                [41.0411017, 28.9897973],
+                {
+}
+            ).addTo(map_1acd6f1d21832584b1bcc4447f04ced1);
+        
+    
+        var popup_a3045d2c862d61aa9159b63c940b4a08 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_71321c172edbaec002980fec940e0153 = $(`<div id="html_71321c172edbaec002980fec940e0153" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İTÜ Mimarlık Fakültesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_a3045d2c862d61aa9159b63c940b4a08.setContent(html_71321c172edbaec002980fec940e0153);
+            
+        
+
+        marker_1e49d27818d2cd14927800ce25c9cb9d.bindPopup(popup_a3045d2c862d61aa9159b63c940b4a08)
+        ;
+
+        
+    
+    
+            var marker_dc3ad93cb90b2676a490ec75f51558a7 = L.marker(
+                [41.1048756, 29.0261383],
+                {
+}
+            ).addTo(map_1acd6f1d21832584b1bcc4447f04ced1);
+        
+    
+        var popup_e4207996cd8c083191577cec4559a96d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d9fca11ac7f437831ee13b3037128667 = $(`<div id="html_d9fca11ac7f437831ee13b3037128667" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İstanbul Teknik Üniversitesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_e4207996cd8c083191577cec4559a96d.setContent(html_d9fca11ac7f437831ee13b3037128667);
+            
+        
+
+        marker_dc3ad93cb90b2676a490ec75f51558a7.bindPopup(popup_e4207996cd8c083191577cec4559a96d)
+        ;
+
+        
+    
+    
+            var marker_d209decb09b3894db80bcc2bda134f57 = L.marker(
+                [41.0225103, 29.0404238],
+                {
+}
+            ).addTo(map_1acd6f1d21832584b1bcc4447f04ced1);
+        
+    
+        var popup_c8d6a30fcaa82e85f69253c93cfa7ecc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cf606b67e57f72823655d6b144e320b0 = $(`<div id="html_cf606b67e57f72823655d6b144e320b0" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Üsküdar University South Campus&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c8d6a30fcaa82e85f69253c93cfa7ecc.setContent(html_cf606b67e57f72823655d6b144e320b0);
+            
+        
+
+        marker_d209decb09b3894db80bcc2bda134f57.bindPopup(popup_c8d6a30fcaa82e85f69253c93cfa7ecc)
+        ;
+
+        
+    
+    
+            var marker_c8a14508605fa128a924922b35f90e33 = L.marker(
+                [40.9917681, 28.7966744],
+                {
+}
+            ).addTo(map_1acd6f1d21832584b1bcc4447f04ced1);
+        
+    
+        var popup_e60ecd6f000ab614f3f96ef8009289c3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e55a41bb27916de3028abc538958690a = $(`<div id="html_e55a41bb27916de3028abc538958690a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İstanbul Aydın Üniversitesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_e60ecd6f000ab614f3f96ef8009289c3.setContent(html_e55a41bb27916de3028abc538958690a);
+            
+        
+
+        marker_c8a14508605fa128a924922b35f90e33.bindPopup(popup_e60ecd6f000ab614f3f96ef8009289c3)
+        ;
+
+        
+    
+    
+            var marker_2b45036631688a9b462d826be6b29df8 = L.marker(
+                [40.9599092, 29.1289641],
+                {
+}
+            ).addTo(map_1acd6f1d21832584b1bcc4447f04ced1);
+        
+    
+        var popup_89292b4abf6d89096dd5cc73e88c962f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6cf8e570875ad2f848354d7b5396c176 = $(`<div id="html_6cf8e570875ad2f848354d7b5396c176" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Marmara Üniversitesi Recep Tayyip Erdoğan Yerleşkesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_89292b4abf6d89096dd5cc73e88c962f.setContent(html_6cf8e570875ad2f848354d7b5396c176);
+            
+        
+
+        marker_2b45036631688a9b462d826be6b29df8.bindPopup(popup_89292b4abf6d89096dd5cc73e88c962f)
+        ;
+
+        
+    
+</script>
+</html>

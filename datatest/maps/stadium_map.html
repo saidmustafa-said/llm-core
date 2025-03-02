@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_96288dd70bbcec3090a572d97c318368 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_96288dd70bbcec3090a572d97c318368" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_96288dd70bbcec3090a572d97c318368 = L.map(
+                "map_96288dd70bbcec3090a572d97c318368",
+                {
+                    center: [41.06347772941177, 28.831860211764706],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_94162fbdfe892fdf4932574c87cdedc5 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_94162fbdfe892fdf4932574c87cdedc5.addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+            var marker_29499d08d963a45059c204cca4c78b01 = L.marker(
+                [40.9309211, 29.3188745],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_3a31410915a6a410ba599ed24009c96b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_05a32960688e5ed3f0f7a7e570c7664c = $(`<div id="html_05a32960688e5ed3f0f7a7e570c7664c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Erdoğan Demirören Stadı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_3a31410915a6a410ba599ed24009c96b.setContent(html_05a32960688e5ed3f0f7a7e570c7664c);
+            
+        
+
+        marker_29499d08d963a45059c204cca4c78b01.bindPopup(popup_3a31410915a6a410ba599ed24009c96b)
+        ;
+
+        
+    
+    
+            var marker_e1df5328befe6a66ff4254d0bddffb51 = L.marker(
+                [41.4826362, 28.3032393],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_164d5ef4d221ce1c2a290d9025b44f21 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c44a63c83087726ee6d0062d376885f3 = $(`<div id="html_c44a63c83087726ee6d0062d376885f3" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_164d5ef4d221ce1c2a290d9025b44f21.setContent(html_c44a63c83087726ee6d0062d376885f3);
+            
+        
+
+        marker_e1df5328befe6a66ff4254d0bddffb51.bindPopup(popup_164d5ef4d221ce1c2a290d9025b44f21)
+        ;
+
+        
+    
+    
+            var marker_71d7dbefc88477c131566ed6ce4a0f35 = L.marker(
+                [41.122793, 28.8087434],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_19a3623d00dcf9efd88af9293223a910 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3e95fa53055066e7bc3a7830b598d99a = $(`<div id="html_3e95fa53055066e7bc3a7830b598d99a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Başakşehir Fatih Terim Stadyumu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_19a3623d00dcf9efd88af9293223a910.setContent(html_3e95fa53055066e7bc3a7830b598d99a);
+            
+        
+
+        marker_71d7dbefc88477c131566ed6ce4a0f35.bindPopup(popup_19a3623d00dcf9efd88af9293223a910)
+        ;
+
+        
+    
+    
+            var marker_6a622db1bb3f57c0af315faca86b118c = L.marker(
+                [41.0539055, 28.879955],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_7ff570b0dbb93fff2c8c498b2dd28577 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b43d19a773af544390df1e96db9f674a = $(`<div id="html_b43d19a773af544390df1e96db9f674a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_7ff570b0dbb93fff2c8c498b2dd28577.setContent(html_b43d19a773af544390df1e96db9f674a);
+            
+        
+
+        marker_6a622db1bb3f57c0af315faca86b118c.bindPopup(popup_7ff570b0dbb93fff2c8c498b2dd28577)
+        ;
+
+        
+    
+    
+            var marker_b36e249f38636f6818a20dfd9977e454 = L.marker(
+                [41.0327859, 28.9723708],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_1a0134c484b3952b967d8d42fed15319 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6c70757617a519a312b98880e0a47c9f = $(`<div id="html_6c70757617a519a312b98880e0a47c9f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Recep Tayyip Erdoğan Stadyumu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_1a0134c484b3952b967d8d42fed15319.setContent(html_6c70757617a519a312b98880e0a47c9f);
+            
+        
+
+        marker_b36e249f38636f6818a20dfd9977e454.bindPopup(popup_1a0134c484b3952b967d8d42fed15319)
+        ;
+
+        
+    
+    
+            var marker_efd496fc7b4ac47fb3d283bd1f2df5ba = L.marker(
+                [40.9876317, 29.036943],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_6ef76cbf89fda8de9c47e9744b3337a6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e55b694ff227e8eb63ce82284fed6af3 = $(`<div id="html_e55b694ff227e8eb63ce82284fed6af3" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Ülker Stadyumu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_6ef76cbf89fda8de9c47e9744b3337a6.setContent(html_e55b694ff227e8eb63ce82284fed6af3);
+            
+        
+
+        marker_efd496fc7b4ac47fb3d283bd1f2df5ba.bindPopup(popup_6ef76cbf89fda8de9c47e9744b3337a6)
+        ;
+
+        
+    
+    
+            var marker_c8b59123e83bd57012122e3244baf7e1 = L.marker(
+                [41.0744735, 28.7656614],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_869ba3df9299ffdbc3bd9a50b95784a3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_77c7722e090542911daf34fe8098fd62 = $(`<div id="html_77c7722e090542911daf34fe8098fd62" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Atatürk Olimpiyat Stadyumu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_869ba3df9299ffdbc3bd9a50b95784a3.setContent(html_77c7722e090542911daf34fe8098fd62);
+            
+        
+
+        marker_c8b59123e83bd57012122e3244baf7e1.bindPopup(popup_869ba3df9299ffdbc3bd9a50b95784a3)
+        ;
+
+        
+    
+    
+            var marker_0204a0f17e7736d8c3a2d6cc76b61716 = L.marker(
+                [40.9204378, 29.1313454],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_cec2de136479cc87d4c3d898f62b6597 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e3c4094352e1b097ecb64e681af92f93 = $(`<div id="html_e3c4094352e1b097ecb64e681af92f93" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Maltepe Hasan Polat Stadyumu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_cec2de136479cc87d4c3d898f62b6597.setContent(html_e3c4094352e1b097ecb64e681af92f93);
+            
+        
+
+        marker_0204a0f17e7736d8c3a2d6cc76b61716.bindPopup(popup_cec2de136479cc87d4c3d898f62b6597)
+        ;
+
+        
+    
+    
+            var marker_760959f39023dde2632ed592c97d4770 = L.marker(
+                [40.9894838, 28.8527086],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_93c0727fc21eb74a8d9663753a6367b1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e25fc4517f2d8483c52f73b1498a0197 = $(`<div id="html_e25fc4517f2d8483c52f73b1498a0197" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Ahmet Cömert Sport Salonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_93c0727fc21eb74a8d9663753a6367b1.setContent(html_e25fc4517f2d8483c52f73b1498a0197);
+            
+        
+
+        marker_760959f39023dde2632ed592c97d4770.bindPopup(popup_93c0727fc21eb74a8d9663753a6367b1)
+        ;
+
+        
+    
+    
+            var marker_2c0da40b400afe66806f89ffec98100c = L.marker(
+                [40.9801953, 28.7916765],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_1f9ce60d92e263c1d284fe65f3b6a92c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2dd4390d16e651227e90e3dc1d80c824 = $(`<div id="html_2dd4390d16e651227e90e3dc1d80c824" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Şenlikköy Stadyumu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_1f9ce60d92e263c1d284fe65f3b6a92c.setContent(html_2dd4390d16e651227e90e3dc1d80c824);
+            
+        
+
+        marker_2c0da40b400afe66806f89ffec98100c.bindPopup(popup_1f9ce60d92e263c1d284fe65f3b6a92c)
+        ;
+
+        
+    
+    
+            var marker_05c70e6cd576787331b905a091b5b57c = L.marker(
+                [41.1398937, 29.0337224],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_10eeb3980c9b74f7149321fee0f59f06 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ac033c29c6c8ad20d353449f07f49f1a = $(`<div id="html_ac033c29c6c8ad20d353449f07f49f1a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_10eeb3980c9b74f7149321fee0f59f06.setContent(html_ac033c29c6c8ad20d353449f07f49f1a);
+            
+        
+
+        marker_05c70e6cd576787331b905a091b5b57c.bindPopup(popup_10eeb3980c9b74f7149321fee0f59f06)
+        ;
+
+        
+    
+    
+            var marker_8be1120aa1ec6e63d74524f4cc27cba6 = L.marker(
+                [41.0240721, 28.6978483],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_e1967106d989785aaf1064bb4f7d994f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fa087ed73c600db5e2a615263cce34cc = $(`<div id="html_fa087ed73c600db5e2a615263cce34cc" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Stadyum&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_e1967106d989785aaf1064bb4f7d994f.setContent(html_fa087ed73c600db5e2a615263cce34cc);
+            
+        
+
+        marker_8be1120aa1ec6e63d74524f4cc27cba6.bindPopup(popup_e1967106d989785aaf1064bb4f7d994f)
+        ;
+
+        
+    
+    
+            var marker_318953dd7cf7733027a56b6b98e3a6c0 = L.marker(
+                [41.0588521, 28.8197834],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_891aa0ad5cd294061b4c10993044e216 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f2b2aca374d3ae635fdaa052c7d2b7b8 = $(`<div id="html_f2b2aca374d3ae635fdaa052c7d2b7b8" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Bağcılar Stadyumu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_891aa0ad5cd294061b4c10993044e216.setContent(html_f2b2aca374d3ae635fdaa052c7d2b7b8);
+            
+        
+
+        marker_318953dd7cf7733027a56b6b98e3a6c0.bindPopup(popup_891aa0ad5cd294061b4c10993044e216)
+        ;
+
+        
+    
+    
+            var marker_94237e64e0580f8e01530e33a20c2727 = L.marker(
+                [40.9286847, 29.2794635],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_c8a36449790cd4df99ce6094db1dab92 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2fd8d52b269b85233c52583ea7d8d1c4 = $(`<div id="html_2fd8d52b269b85233c52583ea7d8d1c4" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Stadyum&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c8a36449790cd4df99ce6094db1dab92.setContent(html_2fd8d52b269b85233c52583ea7d8d1c4);
+            
+        
+
+        marker_94237e64e0580f8e01530e33a20c2727.bindPopup(popup_c8a36449790cd4df99ce6094db1dab92)
+        ;
+
+        
+    
+    
+            var marker_8c4b701246b55098669dba0db9d5b5f3 = L.marker(
+                [41.0138544, 28.6995383],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_2bee6d7cbb28017e310c2fbfcc17f4c9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4ab2a1405ee90c780a431e2bfa0f1b20 = $(`<div id="html_4ab2a1405ee90c780a431e2bfa0f1b20" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_2bee6d7cbb28017e310c2fbfcc17f4c9.setContent(html_4ab2a1405ee90c780a431e2bfa0f1b20);
+            
+        
+
+        marker_8c4b701246b55098669dba0db9d5b5f3.bindPopup(popup_2bee6d7cbb28017e310c2fbfcc17f4c9)
+        ;
+
+        
+    
+    
+            var marker_8832b87621be62ef53b63d8bea584430 = L.marker(
+                [41.0138605, 28.699546],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_553044203477ff3fa9e7b67f73898db5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_de111d92bab1311a48f44d95582c21e1 = $(`<div id="html_de111d92bab1311a48f44d95582c21e1" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Avcılar Stadyumu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_553044203477ff3fa9e7b67f73898db5.setContent(html_de111d92bab1311a48f44d95582c21e1);
+            
+        
+
+        marker_8832b87621be62ef53b63d8bea584430.bindPopup(popup_553044203477ff3fa9e7b67f73898db5)
+        ;
+
+        
+    
+    
+            var marker_cb7415f46031a59d59647b4261d3d3e4 = L.marker(
+                [41.1033783, 28.9909513],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_23a67862a9ca282d5d296a34dd330482 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9f110111fd85ec0f5868ae5a709cd2f0 = $(`<div id="html_9f110111fd85ec0f5868ae5a709cd2f0" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; RAMS Park&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_23a67862a9ca282d5d296a34dd330482.setContent(html_9f110111fd85ec0f5868ae5a709cd2f0);
+            
+        
+
+        marker_cb7415f46031a59d59647b4261d3d3e4.bindPopup(popup_23a67862a9ca282d5d296a34dd330482)
+        ;
+
+        
+    
+    
+            var marker_303e8d6ee7ed669636238eeba28b9d22 = L.marker(
+                [41.0371647, 28.5531012],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_bf17540f2b4c442f9379c6293015af88 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_89a5e3a9e78c0a9f4a8d83cd27368ba3 = $(`<div id="html_89a5e3a9e78c0a9f4a8d83cd27368ba3" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_bf17540f2b4c442f9379c6293015af88.setContent(html_89a5e3a9e78c0a9f4a8d83cd27368ba3);
+            
+        
+
+        marker_303e8d6ee7ed669636238eeba28b9d22.bindPopup(popup_bf17540f2b4c442f9379c6293015af88)
+        ;
+
+        
+    
+    
+            var marker_26992a11e6379aebebb9b123a9e56188 = L.marker(
+                [40.9961027, 28.598377],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_0f55df3df0a55b86f4eb014a75274f63 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fca3cc949900702245829268fb85a1f6 = $(`<div id="html_fca3cc949900702245829268fb85a1f6" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Gürpınar Stadyumu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_0f55df3df0a55b86f4eb014a75274f63.setContent(html_fca3cc949900702245829268fb85a1f6);
+            
+        
+
+        marker_26992a11e6379aebebb9b123a9e56188.bindPopup(popup_0f55df3df0a55b86f4eb014a75274f63)
+        ;
+
+        
+    
+    
+            var marker_5a22ae6f42b2675b14156db3c5b9a391 = L.marker(
+                [41.0537619, 28.8563938],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_5b3f5f422e95cc16657ba7a9e7fde593 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b4ce0c7c49ea11686a5320073d701d45 = $(`<div id="html_b4ce0c7c49ea11686a5320073d701d45" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Esenler Stadı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_5b3f5f422e95cc16657ba7a9e7fde593.setContent(html_b4ce0c7c49ea11686a5320073d701d45);
+            
+        
+
+        marker_5a22ae6f42b2675b14156db3c5b9a391.bindPopup(popup_5b3f5f422e95cc16657ba7a9e7fde593)
+        ;
+
+        
+    
+    
+            var marker_e8ac76515a2113e3245cacbab7e1d8bd = L.marker(
+                [41.0528951, 28.9783518],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_3142db3236566caa15b68dd501418578 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_644e96b01b2c1ee34223f88a44369a28 = $(`<div id="html_644e96b01b2c1ee34223f88a44369a28" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Feriköy Stadı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_3142db3236566caa15b68dd501418578.setContent(html_644e96b01b2c1ee34223f88a44369a28);
+            
+        
+
+        marker_e8ac76515a2113e3245cacbab7e1d8bd.bindPopup(popup_3142db3236566caa15b68dd501418578)
+        ;
+
+        
+    
+    
+            var marker_68e0e585c08f746f5e09982a4bbd207b = L.marker(
+                [41.0574727, 28.664175],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_c42469e6185ed508c9510b2b85160361 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a952c5d055d3d0587c8775dc225ed982 = $(`<div id="html_a952c5d055d3d0587c8775dc225ed982" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c42469e6185ed508c9510b2b85160361.setContent(html_a952c5d055d3d0587c8775dc225ed982);
+            
+        
+
+        marker_68e0e585c08f746f5e09982a4bbd207b.bindPopup(popup_c42469e6185ed508c9510b2b85160361)
+        ;
+
+        
+    
+    
+            var marker_29a734d732a38e1750bf65588ce3476c = L.marker(
+                [40.992886, 29.1048274],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_cd78bbef6b422b9ea50e5e152ff7aa51 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_86d91ed9ea8fb71a476e52105b620cdd = $(`<div id="html_86d91ed9ea8fb71a476e52105b620cdd" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Fenerbahçe Ülker Spor ve Etkinlik Salonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_cd78bbef6b422b9ea50e5e152ff7aa51.setContent(html_86d91ed9ea8fb71a476e52105b620cdd);
+            
+        
+
+        marker_29a734d732a38e1750bf65588ce3476c.bindPopup(popup_cd78bbef6b422b9ea50e5e152ff7aa51)
+        ;
+
+        
+    
+    
+            var marker_5f414c2cb05e94ac65fb43b9c7eaa18a = L.marker(
+                [41.0647017, 28.8863402],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_77998d8a6f6e20187c8784ba5421c04a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b12fdbcb57eebf63d472ee928e35fd50 = $(`<div id="html_b12fdbcb57eebf63d472ee928e35fd50" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İBB Bayrampaşa Stadı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_77998d8a6f6e20187c8784ba5421c04a.setContent(html_b12fdbcb57eebf63d472ee928e35fd50);
+            
+        
+
+        marker_5f414c2cb05e94ac65fb43b9c7eaa18a.bindPopup(popup_77998d8a6f6e20187c8784ba5421c04a)
+        ;
+
+        
+    
+    
+            var marker_79d9d536bdd161c886c9e3f7fd1903ec = L.marker(
+                [41.1236451, 29.100974],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_7374f9167d4b98812c0f9c085b6bb50e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_db1e765cc5cb9927f434b4e87996cb8c = $(`<div id="html_db1e765cc5cb9927f434b4e87996cb8c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Paşabahçe Stadyumu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_7374f9167d4b98812c0f9c085b6bb50e.setContent(html_db1e765cc5cb9927f434b4e87996cb8c);
+            
+        
+
+        marker_79d9d536bdd161c886c9e3f7fd1903ec.bindPopup(popup_7374f9167d4b98812c0f9c085b6bb50e)
+        ;
+
+        
+    
+    
+            var marker_248becfe1bafa951dc2e7c8b5df87670 = L.marker(
+                [41.0881574, 28.260145],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_0a84aa00b47cc5f6b1d5a4a3d3094796 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_50e3b230c18ded762046429d6f9f6d49 = $(`<div id="html_50e3b230c18ded762046429d6f9f6d49" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_0a84aa00b47cc5f6b1d5a4a3d3094796.setContent(html_50e3b230c18ded762046429d6f9f6d49);
+            
+        
+
+        marker_248becfe1bafa951dc2e7c8b5df87670.bindPopup(popup_0a84aa00b47cc5f6b1d5a4a3d3094796)
+        ;
+
+        
+    
+    
+            var marker_2d9ca2e885125f67b13f6f019ae58b68 = L.marker(
+                [41.0302796, 28.7875947],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_513bb122747e609b4b3d4bd38da4c717 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9371ae199d6d069333d9aae156b8ac64 = $(`<div id="html_9371ae199d6d069333d9aae156b8ac64" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İZÜ Stadyumu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_513bb122747e609b4b3d4bd38da4c717.setContent(html_9371ae199d6d069333d9aae156b8ac64);
+            
+        
+
+        marker_2d9ca2e885125f67b13f6f019ae58b68.bindPopup(popup_513bb122747e609b4b3d4bd38da4c717)
+        ;
+
+        
+    
+    
+            var marker_5d83f916865919eb70adeb0b9a65d29e = L.marker(
+                [41.0877368, 28.916436],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_abace9c595ea8aaf0d9580173b09ab3a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f9d663a83784dec0c1f8c6fa3d7ebdc8 = $(`<div id="html_f9d663a83784dec0c1f8c6fa3d7ebdc8" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Halit Kıvanç Stadyumu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_abace9c595ea8aaf0d9580173b09ab3a.setContent(html_f9d663a83784dec0c1f8c6fa3d7ebdc8);
+            
+        
+
+        marker_5d83f916865919eb70adeb0b9a65d29e.bindPopup(popup_abace9c595ea8aaf0d9580173b09ab3a)
+        ;
+
+        
+    
+    
+            var marker_10bc0344ea7f82e9f95f8454ec12b1e8 = L.marker(
+                [41.0724292, 28.2658611],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_f9f4d60d70c6f1518cdbb86e72496806 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fd6abd4f516e50f9b9433fada495effe = $(`<div id="html_fd6abd4f516e50f9b9433fada495effe" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f9f4d60d70c6f1518cdbb86e72496806.setContent(html_fd6abd4f516e50f9b9433fada495effe);
+            
+        
+
+        marker_10bc0344ea7f82e9f95f8454ec12b1e8.bindPopup(popup_f9f4d60d70c6f1518cdbb86e72496806)
+        ;
+
+        
+    
+    
+            var marker_d2d2b706ea9bf37cc366678dee9f479f = L.marker(
+                [41.2930927, 28.5195546],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_160b13a89d844a0b5370daba78255789 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9849aa890228c214d0dda54076486f48 = $(`<div id="html_9849aa890228c214d0dda54076486f48" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_160b13a89d844a0b5370daba78255789.setContent(html_9849aa890228c214d0dda54076486f48);
+            
+        
+
+        marker_d2d2b706ea9bf37cc366678dee9f479f.bindPopup(popup_160b13a89d844a0b5370daba78255789)
+        ;
+
+        
+    
+    
+            var marker_98390a39908b9fb9c61a1f3092d0d91d = L.marker(
+                [41.2928345, 28.5192261],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_85e7db319e286ab5a205675e0adbbc6c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9551fdc9670e12702bb915937e661837 = $(`<div id="html_9551fdc9670e12702bb915937e661837" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_85e7db319e286ab5a205675e0adbbc6c.setContent(html_9551fdc9670e12702bb915937e661837);
+            
+        
+
+        marker_98390a39908b9fb9c61a1f3092d0d91d.bindPopup(popup_85e7db319e286ab5a205675e0adbbc6c)
+        ;
+
+        
+    
+    
+            var marker_56ca35ed9d514753b86d1fb4da35f687 = L.marker(
+                [40.9899514, 29.2558769],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_709c0538a2b83c6a1672ea7f33d1d0a7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5b1614f98dd7a5cac91fee7b9852e792 = $(`<div id="html_5b1614f98dd7a5cac91fee7b9852e792" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_709c0538a2b83c6a1672ea7f33d1d0a7.setContent(html_5b1614f98dd7a5cac91fee7b9852e792);
+            
+        
+
+        marker_56ca35ed9d514753b86d1fb4da35f687.bindPopup(popup_709c0538a2b83c6a1672ea7f33d1d0a7)
+        ;
+
+        
+    
+    
+            var marker_fa8e015129fab5dcc68e2300e3c5a255 = L.marker(
+                [41.0278941, 28.9390552],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_64222c800212d88b6763ef5ce3ca32c8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c9b02019b63f6228b2a63698cfefa2b7 = $(`<div id="html_c9b02019b63f6228b2a63698cfefa2b7" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Vefa Stadyumu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_64222c800212d88b6763ef5ce3ca32c8.setContent(html_c9b02019b63f6228b2a63698cfefa2b7);
+            
+        
+
+        marker_fa8e015129fab5dcc68e2300e3c5a255.bindPopup(popup_64222c800212d88b6763ef5ce3ca32c8)
+        ;
+
+        
+    
+    
+            var marker_fd57a266885863f3456726caa95b5735 = L.marker(
+                [41.0393776, 28.9945861],
+                {
+}
+            ).addTo(map_96288dd70bbcec3090a572d97c318368);
+        
+    
+        var popup_5973e0d7778a9c1ce97dd1d7829cf954 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5b1e301f92293c9dafe6e6cc1ff37380 = $(`<div id="html_5b1e301f92293c9dafe6e6cc1ff37380" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Tüpraş Stadyumu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_5973e0d7778a9c1ce97dd1d7829cf954.setContent(html_5b1e301f92293c9dafe6e6cc1ff37380);
+            
+        
+
+        marker_fd57a266885863f3456726caa95b5735.bindPopup(popup_5973e0d7778a9c1ce97dd1d7829cf954)
+        ;
+
+        
+    
+</script>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0931d908c6a6651b658b499eee37fccc {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_0931d908c6a6651b658b499eee37fccc" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0931d908c6a6651b658b499eee37fccc = L.map(
+                "map_0931d908c6a6651b658b499eee37fccc",
+                {
+                    center: [41.061140716666664, 29.077287150000004],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_87ca6c993552581344b360391a6473ef = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_87ca6c993552581344b360391a6473ef.addTo(map_0931d908c6a6651b658b499eee37fccc);
+        
+    
+            var marker_8de7b5eb74e88f9c4302145590a6f094 = L.marker(
+                [41.1176631, 29.2225827],
+                {
+}
+            ).addTo(map_0931d908c6a6651b658b499eee37fccc);
+        
+    
+        var popup_1b6c82b4866c419625ea502ace5a4258 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9a79dff068d858c846552f155e22494c = $(`<div id="html_9a79dff068d858c846552f155e22494c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Polonezkoy Country Club&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_1b6c82b4866c419625ea502ace5a4258.setContent(html_9a79dff068d858c846552f155e22494c);
+            
+        
+
+        marker_8de7b5eb74e88f9c4302145590a6f094.bindPopup(popup_1b6c82b4866c419625ea502ace5a4258)
+        ;
+
+        
+    
+    
+            var marker_ec73172cd500814ae3de88ec26dea56d = L.marker(
+                [41.1359654, 29.2980796],
+                {
+}
+            ).addTo(map_0931d908c6a6651b658b499eee37fccc);
+        
+    
+        var popup_c920d3265d7db66f42b1907ab7d06932 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9ff84ebf9c0e40e5e0e2ab81746d1dac = $(`<div id="html_9ff84ebf9c0e40e5e0e2ab81746d1dac" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Saklikent Country&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c920d3265d7db66f42b1907ab7d06932.setContent(html_9ff84ebf9c0e40e5e0e2ab81746d1dac);
+            
+        
+
+        marker_ec73172cd500814ae3de88ec26dea56d.bindPopup(popup_c920d3265d7db66f42b1907ab7d06932)
+        ;
+
+        
+    
+    
+            var marker_92e0184c7718d065525c334285bc637f = L.marker(
+                [40.9694259, 29.0517551],
+                {
+}
+            ).addTo(map_0931d908c6a6651b658b499eee37fccc);
+        
+    
+        var popup_092520a7d0df916815172ab3f1aa6301 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a0c45cb5e24f605263333574ebc4c18f = $(`<div id="html_a0c45cb5e24f605263333574ebc4c18f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_092520a7d0df916815172ab3f1aa6301.setContent(html_a0c45cb5e24f605263333574ebc4c18f);
+            
+        
+
+        marker_92e0184c7718d065525c334285bc637f.bindPopup(popup_092520a7d0df916815172ab3f1aa6301)
+        ;
+
+        
+    
+    
+            var marker_2021925a486d2154d2316e328e1602f2 = L.marker(
+                [40.9786511, 28.8504204],
+                {
+}
+            ).addTo(map_0931d908c6a6651b658b499eee37fccc);
+        
+    
+        var popup_5608cbe5c44113534a034826074bc8a5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_44c10beaf30e36963ba2bfd0d01cc229 = $(`<div id="html_44c10beaf30e36963ba2bfd0d01cc229" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_5608cbe5c44113534a034826074bc8a5.setContent(html_44c10beaf30e36963ba2bfd0d01cc229);
+            
+        
+
+        marker_2021925a486d2154d2316e328e1602f2.bindPopup(popup_5608cbe5c44113534a034826074bc8a5)
+        ;
+
+        
+    
+    
+            var marker_c7974f449143b6d2e62dc391017ea488 = L.marker(
+                [41.1735786, 28.9004272],
+                {
+}
+            ).addTo(map_0931d908c6a6651b658b499eee37fccc);
+        
+    
+        var popup_961a3f9eeea8aaf9f9f9cfed2aa4aa1b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1be28b02a9e3d7b68c1501e794e6ebc7 = $(`<div id="html_1be28b02a9e3d7b68c1501e794e6ebc7" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_961a3f9eeea8aaf9f9f9cfed2aa4aa1b.setContent(html_1be28b02a9e3d7b68c1501e794e6ebc7);
+            
+        
+
+        marker_c7974f449143b6d2e62dc391017ea488.bindPopup(popup_961a3f9eeea8aaf9f9f9cfed2aa4aa1b)
+        ;
+
+        
+    
+    
+            var marker_5fe7329e9bfe7ef1c7d5b6d779220420 = L.marker(
+                [40.9915602, 29.1404579],
+                {
+}
+            ).addTo(map_0931d908c6a6651b658b499eee37fccc);
+        
+    
+        var popup_02e2deaade8d9b34c01c9781bb230437 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bdab3148e8cc6b8d62d181c7cdf55a18 = $(`<div id="html_bdab3148e8cc6b8d62d181c7cdf55a18" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Ataşehir Golf Club&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_02e2deaade8d9b34c01c9781bb230437.setContent(html_bdab3148e8cc6b8d62d181c7cdf55a18);
+            
+        
+
+        marker_5fe7329e9bfe7ef1c7d5b6d779220420.bindPopup(popup_02e2deaade8d9b34c01c9781bb230437)
+        ;
+
+        
+    
+</script>
+</html>

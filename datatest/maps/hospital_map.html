@@ -1,0 +1,3302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0a1b4128e72de149785d08332a7b4cb5 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_0a1b4128e72de149785d08332a7b4cb5" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0a1b4128e72de149785d08332a7b4cb5 = L.map(
+                "map_0a1b4128e72de149785d08332a7b4cb5",
+                {
+                    center: [41.02267784552239, 28.94917248955224],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_93f7a1cb3b5a818e1d4d53bdfaee4aa0 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_93f7a1cb3b5a818e1d4d53bdfaee4aa0.addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+            var marker_4bb218f85b162cf9aafcaf40ca230b7c = L.marker(
+                [41.0259618, 29.0218119],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_97e202206221a1c7c4e6d748d0b019a0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6bebc026a13f83a2b0073dce5cac8764 = $(`<div id="html_6bebc026a13f83a2b0073dce5cac8764" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Hospital Türk&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_97e202206221a1c7c4e6d748d0b019a0.setContent(html_6bebc026a13f83a2b0073dce5cac8764);
+            
+        
+
+        marker_4bb218f85b162cf9aafcaf40ca230b7c.bindPopup(popup_97e202206221a1c7c4e6d748d0b019a0)
+        ;
+
+        
+    
+    
+            var marker_76eacce36bb8a851cf39b5162ff88f9b = L.marker(
+                [40.8880578, 29.1822183],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_f1e0b534b385b080fb7293a95df588ce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5cbc2ed757f6827b1de4be4561a3f3a3 = $(`<div id="html_5cbc2ed757f6827b1de4be4561a3f3a3" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Kartal Yavuz Selim Devlet Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f1e0b534b385b080fb7293a95df588ce.setContent(html_5cbc2ed757f6827b1de4be4561a3f3a3);
+            
+        
+
+        marker_76eacce36bb8a851cf39b5162ff88f9b.bindPopup(popup_f1e0b534b385b080fb7293a95df588ce)
+        ;
+
+        
+    
+    
+            var marker_ad763c2b992771f771f159af3d6828ff = L.marker(
+                [41.0336496, 28.9641454],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_db35b3c55fad29e8572a4db211bacb25 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d91902a3d10ab9cfe66fbc90454b4a17 = $(`<div id="html_d91902a3d10ab9cfe66fbc90454b4a17" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_db35b3c55fad29e8572a4db211bacb25.setContent(html_d91902a3d10ab9cfe66fbc90454b4a17);
+            
+        
+
+        marker_ad763c2b992771f771f159af3d6828ff.bindPopup(popup_db35b3c55fad29e8572a4db211bacb25)
+        ;
+
+        
+    
+    
+            var marker_6d4709c8b2a31078268bf54daa10a384 = L.marker(
+                [41.0111084, 29.0190475],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_ac1bffb60c25145e175806d489d3bc8a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3e99191563807fe842a65071ddf51e85 = $(`<div id="html_3e99191563807fe842a65071ddf51e85" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_ac1bffb60c25145e175806d489d3bc8a.setContent(html_3e99191563807fe842a65071ddf51e85);
+            
+        
+
+        marker_6d4709c8b2a31078268bf54daa10a384.bindPopup(popup_ac1bffb60c25145e175806d489d3bc8a)
+        ;
+
+        
+    
+    
+            var marker_dcfe5b2bbae2c3215a249edd67c60f75 = L.marker(
+                [41.0060255, 28.7968486],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_b4fe91eaafcf5f456d3394badda1fbef = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_388669584268c9276fcebb7b73df47b3 = $(`<div id="html_388669584268c9276fcebb7b73df47b3" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Vera Tıp Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_b4fe91eaafcf5f456d3394badda1fbef.setContent(html_388669584268c9276fcebb7b73df47b3);
+            
+        
+
+        marker_dcfe5b2bbae2c3215a249edd67c60f75.bindPopup(popup_b4fe91eaafcf5f456d3394badda1fbef)
+        ;
+
+        
+    
+    
+            var marker_205bc2c0783567310de390daad005735 = L.marker(
+                [41.0964088, 29.0535611],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_b59d1298461c150e5acf229467882f15 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5a8133f38f70b1b8359077b8d2c3900c = $(`<div id="html_5a8133f38f70b1b8359077b8d2c3900c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Baltalimanı Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_b59d1298461c150e5acf229467882f15.setContent(html_5a8133f38f70b1b8359077b8d2c3900c);
+            
+        
+
+        marker_205bc2c0783567310de390daad005735.bindPopup(popup_b59d1298461c150e5acf229467882f15)
+        ;
+
+        
+    
+    
+            var marker_a4d8fc31d7ae5079feaf6ed263bf9e55 = L.marker(
+                [41.0632063, 29.0042388],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_6d84be4554deba01c96f56be58edc55f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_85601c31a6c99b3f418e7aca958090a4 = $(`<div id="html_85601c31a6c99b3f418e7aca958090a4" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Florence Nightingale&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Beşiktaş/İstanbul</div>`)[0];
+                popup_6d84be4554deba01c96f56be58edc55f.setContent(html_85601c31a6c99b3f418e7aca958090a4);
+            
+        
+
+        marker_a4d8fc31d7ae5079feaf6ed263bf9e55.bindPopup(popup_6d84be4554deba01c96f56be58edc55f)
+        ;
+
+        
+    
+    
+            var marker_5c4524665f3174e9946f1aae10913675 = L.marker(
+                [41.0396776, 29.0522183],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_519dba2a0c5aebf1ad5c8b0e4fd3afd4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a47c990517f9be6dbebdf703d5019f7f = $(`<div id="html_a47c990517f9be6dbebdf703d5019f7f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Küplüce Tıp Merkez&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_519dba2a0c5aebf1ad5c8b0e4fd3afd4.setContent(html_a47c990517f9be6dbebdf703d5019f7f);
+            
+        
+
+        marker_5c4524665f3174e9946f1aae10913675.bindPopup(popup_519dba2a0c5aebf1ad5c8b0e4fd3afd4)
+        ;
+
+        
+    
+    
+            var marker_cf984b52b856fe5c7c68a9ed5b18e3d9 = L.marker(
+                [40.8787769, 29.2368748],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_f4e8b4cbea1ae60f223f86445f3a050a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7afc1fa856ebe005fb10fbddafcd628f = $(`<div id="html_7afc1fa856ebe005fb10fbddafcd628f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Remedy Hospital&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f4e8b4cbea1ae60f223f86445f3a050a.setContent(html_7afc1fa856ebe005fb10fbddafcd628f);
+            
+        
+
+        marker_cf984b52b856fe5c7c68a9ed5b18e3d9.bindPopup(popup_f4e8b4cbea1ae60f223f86445f3a050a)
+        ;
+
+        
+    
+    
+            var marker_2c0a1880439c3e527db29a12d6f9c908 = L.marker(
+                [41.0479666, 28.8449942],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_a3349411d0e842cbd21b898c76b80453 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d5433a0b8c22e93aca9ebee21927d82c = $(`<div id="html_d5433a0b8c22e93aca9ebee21927d82c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Bağcılar Tekden Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_a3349411d0e842cbd21b898c76b80453.setContent(html_d5433a0b8c22e93aca9ebee21927d82c);
+            
+        
+
+        marker_2c0a1880439c3e527db29a12d6f9c908.bindPopup(popup_a3349411d0e842cbd21b898c76b80453)
+        ;
+
+        
+    
+    
+            var marker_48d0e306756bbd80aedd0ecf2f745408 = L.marker(
+                [40.977664, 28.8730593],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_645eebd6fc27d4f5a8b76b7c62f746a9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3d0f74296f1195cbd5f11e39402bd4c2 = $(`<div id="html_3d0f74296f1195cbd5f11e39402bd4c2" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Acıbadem Hospital&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_645eebd6fc27d4f5a8b76b7c62f746a9.setContent(html_3d0f74296f1195cbd5f11e39402bd4c2);
+            
+        
+
+        marker_48d0e306756bbd80aedd0ecf2f745408.bindPopup(popup_645eebd6fc27d4f5a8b76b7c62f746a9)
+        ;
+
+        
+    
+    
+            var marker_6809bbfc4a7ed69b98d97978f62271b2 = L.marker(
+                [41.0672214, 29.0013232],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_914435222b8c913b50dce0231da7de87 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e12f77211dde8b0ff307cd5d3ae72aae = $(`<div id="html_e12f77211dde8b0ff307cd5d3ae72aae" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Çevre Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_914435222b8c913b50dce0231da7de87.setContent(html_e12f77211dde8b0ff307cd5d3ae72aae);
+            
+        
+
+        marker_6809bbfc4a7ed69b98d97978f62271b2.bindPopup(popup_914435222b8c913b50dce0231da7de87)
+        ;
+
+        
+    
+    
+            var marker_16f5a0d995266c453e2c9e895a5159a5 = L.marker(
+                [41.0673508, 29.0013661],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_7003b44bb016b2afaa7903d32ebc2007 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_95b684bf818d85e61db95a672411158a = $(`<div id="html_95b684bf818d85e61db95a672411158a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Aksoy Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_7003b44bb016b2afaa7903d32ebc2007.setContent(html_95b684bf818d85e61db95a672411158a);
+            
+        
+
+        marker_16f5a0d995266c453e2c9e895a5159a5.bindPopup(popup_7003b44bb016b2afaa7903d32ebc2007)
+        ;
+
+        
+    
+    
+            var marker_e8587c71b522ba02e441ec0500df35a0 = L.marker(
+                [41.0112282, 28.6428053],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_d3fc7f5f72f549bf7acbd9ec57fc7cba = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a1a72244b880ff5e5f368062241df1e6 = $(`<div id="html_a1a72244b880ff5e5f368062241df1e6" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Birinci Göz Hastanesi Beylikdüzü&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_d3fc7f5f72f549bf7acbd9ec57fc7cba.setContent(html_a1a72244b880ff5e5f368062241df1e6);
+            
+        
+
+        marker_e8587c71b522ba02e441ec0500df35a0.bindPopup(popup_d3fc7f5f72f549bf7acbd9ec57fc7cba)
+        ;
+
+        
+    
+    
+            var marker_5c3e48ebe0ffb37ecc844b236634e335 = L.marker(
+                [41.019077, 28.6274846],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_ed47c3019e189f2deaf7868c990ae3b6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_046a1029d7bc790316562e86c183173a = $(`<div id="html_046a1029d7bc790316562e86c183173a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Dünya Göz Hastanesi Beykent&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_ed47c3019e189f2deaf7868c990ae3b6.setContent(html_046a1029d7bc790316562e86c183173a);
+            
+        
+
+        marker_5c3e48ebe0ffb37ecc844b236634e335.bindPopup(popup_ed47c3019e189f2deaf7868c990ae3b6)
+        ;
+
+        
+    
+    
+            var marker_9105363cf623b1ee32a42792bf696358 = L.marker(
+                [41.0533806, 28.9952948],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_dde88da99de554fc41071727ab54d532 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a0755a95390bd3547f3177aeb48752b9 = $(`<div id="html_a0755a95390bd3547f3177aeb48752b9" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Amerikan Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_dde88da99de554fc41071727ab54d532.setContent(html_a0755a95390bd3547f3177aeb48752b9);
+            
+        
+
+        marker_9105363cf623b1ee32a42792bf696358.bindPopup(popup_dde88da99de554fc41071727ab54d532)
+        ;
+
+        
+    
+    
+            var marker_c0caedd0c4f46bd71201287730ba4d43 = L.marker(
+                [41.057449, 28.9158289],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_ab8026531ec7be7b6dcb6c4f12444442 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_39d060381b18e51b39432b63ad464309 = $(`<div id="html_39d060381b18e51b39432b63ad464309" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Belde Tıp Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_ab8026531ec7be7b6dcb6c4f12444442.setContent(html_39d060381b18e51b39432b63ad464309);
+            
+        
+
+        marker_c0caedd0c4f46bd71201287730ba4d43.bindPopup(popup_ab8026531ec7be7b6dcb6c4f12444442)
+        ;
+
+        
+    
+    
+            var marker_6bbdff3cb21b4de7dfbb121cde2f0c27 = L.marker(
+                [41.0347149, 28.6806966],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_36ec438c10ce1e1a1437689198472830 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cef4c38858a283e3f76503c2b9b9955e = $(`<div id="html_cef4c38858a283e3f76503c2b9b9955e" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Alataş Polikliniği&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_36ec438c10ce1e1a1437689198472830.setContent(html_cef4c38858a283e3f76503c2b9b9955e);
+            
+        
+
+        marker_6bbdff3cb21b4de7dfbb121cde2f0c27.bindPopup(popup_36ec438c10ce1e1a1437689198472830)
+        ;
+
+        
+    
+    
+            var marker_4878eb526b4ad1a3a9e6f966eca2b068 = L.marker(
+                [41.0557195, 28.9995499],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_02a0a5b7c7d0cf7e2b11e45336145305 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f062d3c1ff88ab84e7902ee22bee0f72 = $(`<div id="html_f062d3c1ff88ab84e7902ee22bee0f72" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Acıbadem Fulya Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_02a0a5b7c7d0cf7e2b11e45336145305.setContent(html_f062d3c1ff88ab84e7902ee22bee0f72);
+            
+        
+
+        marker_4878eb526b4ad1a3a9e6f966eca2b068.bindPopup(popup_02a0a5b7c7d0cf7e2b11e45336145305)
+        ;
+
+        
+    
+    
+            var marker_9eae7b854b29d62a54ee5898bca4a892 = L.marker(
+                [41.0054462, 28.7061163],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_48c6ff5fbf20508dfe1840a609aa72ac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_73881912477377436df8851d025efc6c = $(`<div id="html_73881912477377436df8851d025efc6c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Avcılar Anadolu Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_48c6ff5fbf20508dfe1840a609aa72ac.setContent(html_73881912477377436df8851d025efc6c);
+            
+        
+
+        marker_9eae7b854b29d62a54ee5898bca4a892.bindPopup(popup_48c6ff5fbf20508dfe1840a609aa72ac)
+        ;
+
+        
+    
+    
+            var marker_f16b7caf456e62fc890e98a7d285c3e1 = L.marker(
+                [40.9947818, 28.709593],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_5c3d354495d26093186d78200b1afb77 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_76aae0b4a7296f94379ca5bcf463f592 = $(`<div id="html_76aae0b4a7296f94379ca5bcf463f592" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Avcılar Hospital&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; istanbul</div>`)[0];
+                popup_5c3d354495d26093186d78200b1afb77.setContent(html_76aae0b4a7296f94379ca5bcf463f592);
+            
+        
+
+        marker_f16b7caf456e62fc890e98a7d285c3e1.bindPopup(popup_5c3d354495d26093186d78200b1afb77)
+        ;
+
+        
+    
+    
+            var marker_d1c2b6b4dccdc5e11fbd09f783b5636d = L.marker(
+                [40.9812753, 28.7211479],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_6c299614075da8b6a23637dff424f14e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_675962ca39a46c967bb43fbd35868a42 = $(`<div id="html_675962ca39a46c967bb43fbd35868a42" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Medicana Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_6c299614075da8b6a23637dff424f14e.setContent(html_675962ca39a46c967bb43fbd35868a42);
+            
+        
+
+        marker_d1c2b6b4dccdc5e11fbd09f783b5636d.bindPopup(popup_6c299614075da8b6a23637dff424f14e)
+        ;
+
+        
+    
+    
+            var marker_32d6e91eb6ea2e71c33b8da0ac03f7e1 = L.marker(
+                [41.0554676, 28.9983966],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_3b1c49535597f15d48bcbd7738ebff28 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b882944aa46340ada26116015a9c9414 = $(`<div id="html_b882944aa46340ada26116015a9c9414" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İstanbul Tüpbebek&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_3b1c49535597f15d48bcbd7738ebff28.setContent(html_b882944aa46340ada26116015a9c9414);
+            
+        
+
+        marker_32d6e91eb6ea2e71c33b8da0ac03f7e1.bindPopup(popup_3b1c49535597f15d48bcbd7738ebff28)
+        ;
+
+        
+    
+    
+            var marker_9211eccf1f32436f19e682727f7c4107 = L.marker(
+                [41.0327835, 28.964016],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_8a1755a8535c2d0362718f5c2866e85e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f40fb37d13c95f680332154b59eb03d4 = $(`<div id="html_f40fb37d13c95f680332154b59eb03d4" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Kasım Paşa Asker Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_8a1755a8535c2d0362718f5c2866e85e.setContent(html_f40fb37d13c95f680332154b59eb03d4);
+            
+        
+
+        marker_9211eccf1f32436f19e682727f7c4107.bindPopup(popup_8a1755a8535c2d0362718f5c2866e85e)
+        ;
+
+        
+    
+    
+            var marker_94d49e64c6952ab965718ea46494ef15 = L.marker(
+                [41.06524, 28.995985],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_668e4dd5ddef4bb24db89f4424845943 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1a0e216eade99a972397db725afa9bcc = $(`<div id="html_1a0e216eade99a972397db725afa9bcc" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Mecidiyeköy KBB ve Vertigo Kliniği&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_668e4dd5ddef4bb24db89f4424845943.setContent(html_1a0e216eade99a972397db725afa9bcc);
+            
+        
+
+        marker_94d49e64c6952ab965718ea46494ef15.bindPopup(popup_668e4dd5ddef4bb24db89f4424845943)
+        ;
+
+        
+    
+    
+            var marker_8a17b2a325640d74a363954126ee0480 = L.marker(
+                [41.0789994, 28.9270647],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_c92ad75adc786a1696887c1719a20a87 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_392f7be0d9f0acc62a1cc508644d7a2b = $(`<div id="html_392f7be0d9f0acc62a1cc508644d7a2b" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Alibey Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c92ad75adc786a1696887c1719a20a87.setContent(html_392f7be0d9f0acc62a1cc508644d7a2b);
+            
+        
+
+        marker_8a17b2a325640d74a363954126ee0480.bindPopup(popup_c92ad75adc786a1696887c1719a20a87)
+        ;
+
+        
+    
+    
+            var marker_ff749dd2dfef4e3cb69f850cbeddb067 = L.marker(
+                [41.0241414, 28.9166504],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_62713370a852661106f0de9265423735 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9d05e8f1e629031f67c4c0e095cb8415 = $(`<div id="html_9d05e8f1e629031f67c4c0e095cb8415" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Koç Üniversitesi Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_62713370a852661106f0de9265423735.setContent(html_9d05e8f1e629031f67c4c0e095cb8415);
+            
+        
+
+        marker_ff749dd2dfef4e3cb69f850cbeddb067.bindPopup(popup_62713370a852661106f0de9265423735)
+        ;
+
+        
+    
+    
+            var marker_a86bc0c6053ad5f98999f5e1820a5884 = L.marker(
+                [41.0178075, 28.6608987],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_c3987ecb1b8c223bc6542418bd3b17d3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_45ddb9c62595b30eb368a41ccfa44eed = $(`<div id="html_45ddb9c62595b30eb368a41ccfa44eed" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Mediplus Tıp Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c3987ecb1b8c223bc6542418bd3b17d3.setContent(html_45ddb9c62595b30eb368a41ccfa44eed);
+            
+        
+
+        marker_a86bc0c6053ad5f98999f5e1820a5884.bindPopup(popup_c3987ecb1b8c223bc6542418bd3b17d3)
+        ;
+
+        
+    
+    
+            var marker_df2fada43686c1a1aa2e79325b039556 = L.marker(
+                [40.9970758, 28.8560596],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_019c45f13197411bd97c1bad9ea311c4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_84a1358b51b8ffb613a7685c9a02b18f = $(`<div id="html_84a1358b51b8ffb613a7685c9a02b18f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Bakırköy Dr. Sadi Konuk Eğitim ve Araştırma Hastanesi Bahçelievler Polikliniği&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_019c45f13197411bd97c1bad9ea311c4.setContent(html_84a1358b51b8ffb613a7685c9a02b18f);
+            
+        
+
+        marker_df2fada43686c1a1aa2e79325b039556.bindPopup(popup_019c45f13197411bd97c1bad9ea311c4)
+        ;
+
+        
+    
+    
+            var marker_9f6b8ae2adf3dc42a288c90f7e7bbc1f = L.marker(
+                [41.0412184, 28.9820377],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_e3ca2fcdaeded1a7d40759fbad2dd537 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4f5f0cdf4c123a6578bee547f5ede5ad = $(`<div id="html_4f5f0cdf4c123a6578bee547f5ede5ad" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_e3ca2fcdaeded1a7d40759fbad2dd537.setContent(html_4f5f0cdf4c123a6578bee547f5ede5ad);
+            
+        
+
+        marker_9f6b8ae2adf3dc42a288c90f7e7bbc1f.bindPopup(popup_e3ca2fcdaeded1a7d40759fbad2dd537)
+        ;
+
+        
+    
+    
+            var marker_9e86af47dbc6919654785fb85c2b8813 = L.marker(
+                [41.0245743, 28.9742012],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_ae26080d5be0b11d204753d568e749b4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_374725abc20872d2cf64c13681116279 = $(`<div id="html_374725abc20872d2cf64c13681116279" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Beyoğlu Göz Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_ae26080d5be0b11d204753d568e749b4.setContent(html_374725abc20872d2cf64c13681116279);
+            
+        
+
+        marker_9e86af47dbc6919654785fb85c2b8813.bindPopup(popup_ae26080d5be0b11d204753d568e749b4)
+        ;
+
+        
+    
+    
+            var marker_ee3f0e04988fcd7ca46a0d92dbfad77b = L.marker(
+                [41.0614165, 28.8016254],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_d13e6e8f54b5587a6a00f0379a7b32c3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ff132451f606b009c4b08c15afaf9566 = $(`<div id="html_ff132451f606b009c4b08c15afaf9566" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Akgün Tem Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_d13e6e8f54b5587a6a00f0379a7b32c3.setContent(html_ff132451f606b009c4b08c15afaf9566);
+            
+        
+
+        marker_ee3f0e04988fcd7ca46a0d92dbfad77b.bindPopup(popup_d13e6e8f54b5587a6a00f0379a7b32c3)
+        ;
+
+        
+    
+    
+            var marker_97d4dec311daf9178720eab8d114401a = L.marker(
+                [41.0314549, 28.974911],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_316b0fc96de5306846a21ce88f3f0404 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7490dd7ad89f96b504fe6d66631a21e8 = $(`<div id="html_7490dd7ad89f96b504fe6d66631a21e8" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Beyoglu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_316b0fc96de5306846a21ce88f3f0404.setContent(html_7490dd7ad89f96b504fe6d66631a21e8);
+            
+        
+
+        marker_97d4dec311daf9178720eab8d114401a.bindPopup(popup_316b0fc96de5306846a21ce88f3f0404)
+        ;
+
+        
+    
+    
+            var marker_d03afada20c1de508a86fdfdf54b16de = L.marker(
+                [41.0113498, 28.6451328],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_1ffa6a6e42fb6cc01b19f528def24882 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e904c60a4172994ae6591f936cef6a7a = $(`<div id="html_e904c60a4172994ae6591f936cef6a7a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_1ffa6a6e42fb6cc01b19f528def24882.setContent(html_e904c60a4172994ae6591f936cef6a7a);
+            
+        
+
+        marker_d03afada20c1de508a86fdfdf54b16de.bindPopup(popup_1ffa6a6e42fb6cc01b19f528def24882)
+        ;
+
+        
+    
+    
+            var marker_7adc9550ccd6bdae5259a898ce5147e4 = L.marker(
+                [41.0437273, 28.8796744],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_afc6816bbd2e45d00711286eb045c0f5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_61f4b606596f0e3e3895689698f1bf30 = $(`<div id="html_61f4b606596f0e3e3895689698f1bf30" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Güney Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_afc6816bbd2e45d00711286eb045c0f5.setContent(html_61f4b606596f0e3e3895689698f1bf30);
+            
+        
+
+        marker_7adc9550ccd6bdae5259a898ce5147e4.bindPopup(popup_afc6816bbd2e45d00711286eb045c0f5)
+        ;
+
+        
+    
+    
+            var marker_23df9e35581606b72f148fd606324e80 = L.marker(
+                [41.0125315, 28.9400268],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_8192093bc6941a258b93f12bb4018fde = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_92cd95cd9c2ebba3588380e83a2ad763 = $(`<div id="html_92cd95cd9c2ebba3588380e83a2ad763" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Medipol Üniversitesi Fındıkzade Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_8192093bc6941a258b93f12bb4018fde.setContent(html_92cd95cd9c2ebba3588380e83a2ad763);
+            
+        
+
+        marker_23df9e35581606b72f148fd606324e80.bindPopup(popup_8192093bc6941a258b93f12bb4018fde)
+        ;
+
+        
+    
+    
+            var marker_dc98b1e68bcf7b95f24334ca42cfaea8 = L.marker(
+                [41.0156766, 28.9507717],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_c1fccdf9762357565263d7a4ba814ac4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5a8c81ee8217f25ed78663f6cb97dee0 = $(`<div id="html_5a8c81ee8217f25ed78663f6cb97dee0" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Fatih Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_c1fccdf9762357565263d7a4ba814ac4.setContent(html_5a8c81ee8217f25ed78663f6cb97dee0);
+            
+        
+
+        marker_dc98b1e68bcf7b95f24334ca42cfaea8.bindPopup(popup_c1fccdf9762357565263d7a4ba814ac4)
+        ;
+
+        
+    
+    
+            var marker_1e08b8228fccb82ecc0cd7ee0bcd4c55 = L.marker(
+                [41.0555721, 28.9980027],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_0121c5f0571b5826968fbb0051b7dd0b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_01961130585ac500f6d1d230a10b7b57 = $(`<div id="html_01961130585ac500f6d1d230a10b7b57" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İstanbul Cerrahi Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_0121c5f0571b5826968fbb0051b7dd0b.setContent(html_01961130585ac500f6d1d230a10b7b57);
+            
+        
+
+        marker_1e08b8228fccb82ecc0cd7ee0bcd4c55.bindPopup(popup_0121c5f0571b5826968fbb0051b7dd0b)
+        ;
+
+        
+    
+    
+            var marker_8156092c5e64feddd34d170b84914857 = L.marker(
+                [41.0092457, 28.9457972],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_66cd426a8a1d73a9683b4a8486e44e00 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_59f8d8ce04f48873d3745692dff46279 = $(`<div id="html_59f8d8ce04f48873d3745692dff46279" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; istanbul Eğitim ve Araştırma Hastanesi Poliklinikleri&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_66cd426a8a1d73a9683b4a8486e44e00.setContent(html_59f8d8ce04f48873d3745692dff46279);
+            
+        
+
+        marker_8156092c5e64feddd34d170b84914857.bindPopup(popup_66cd426a8a1d73a9683b4a8486e44e00)
+        ;
+
+        
+    
+    
+            var marker_8b9fec224aa9444bd0e0a19e497e5533 = L.marker(
+                [41.0091541, 28.9432435],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_20ead4db31736125ccf16f13226d1d2a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c9f9ae83b0a63275d0e4e3b6dd92a96f = $(`<div id="html_c9f9ae83b0a63275d0e4e3b6dd92a96f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İstanbul Üniversitesi Kardiyoloji enistitusu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_20ead4db31736125ccf16f13226d1d2a.setContent(html_c9f9ae83b0a63275d0e4e3b6dd92a96f);
+            
+        
+
+        marker_8b9fec224aa9444bd0e0a19e497e5533.bindPopup(popup_20ead4db31736125ccf16f13226d1d2a)
+        ;
+
+        
+    
+    
+            var marker_2ac917a75a72d0387799f92d4cad174a = L.marker(
+                [40.9939323, 28.9146943],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_27fcd416eb26166a0cc24aa392898239 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_07c167822d19f5adda71267185612ab5 = $(`<div id="html_07c167822d19f5adda71267185612ab5" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Surp Pırgiç Ermeni Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_27fcd416eb26166a0cc24aa392898239.setContent(html_07c167822d19f5adda71267185612ab5);
+            
+        
+
+        marker_2ac917a75a72d0387799f92d4cad174a.bindPopup(popup_27fcd416eb26166a0cc24aa392898239)
+        ;
+
+        
+    
+    
+            var marker_9d933b10339cb6b6ff859d7ab08e7ad2 = L.marker(
+                [41.0301322, 28.8712404],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_c6b2a1cff606587ccdcfecc0ac130010 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5bc39893ed2ffa507482e0c156236cc9 = $(`<div id="html_5bc39893ed2ffa507482e0c156236cc9" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Bağcılar Eğitim ve Araştırma Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_c6b2a1cff606587ccdcfecc0ac130010.setContent(html_5bc39893ed2ffa507482e0c156236cc9);
+            
+        
+
+        marker_9d933b10339cb6b6ff859d7ab08e7ad2.bindPopup(popup_c6b2a1cff606587ccdcfecc0ac130010)
+        ;
+
+        
+    
+    
+            var marker_057d5e6778f220c7ac78cde144878afa = L.marker(
+                [41.0656093, 28.8999746],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_fb4141774697958764c5418ad7d64a86 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_60616c4bd8cbb114b9c88b9eb943331c = $(`<div id="html_60616c4bd8cbb114b9c88b9eb943331c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel İstanbul Şafak Hastahanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_fb4141774697958764c5418ad7d64a86.setContent(html_60616c4bd8cbb114b9c88b9eb943331c);
+            
+        
+
+        marker_057d5e6778f220c7ac78cde144878afa.bindPopup(popup_fb4141774697958764c5418ad7d64a86)
+        ;
+
+        
+    
+    
+            var marker_6043dc32364b0992b10308bc63e0e5cc = L.marker(
+                [41.0994567, 28.8633202],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_bd826c0f975082dfbf4715f71df9cac8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b6fafeb47d490cf890bc9793759a0833 = $(`<div id="html_b6fafeb47d490cf890bc9793759a0833" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Medigold Hastahanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_bd826c0f975082dfbf4715f71df9cac8.setContent(html_b6fafeb47d490cf890bc9793759a0833);
+            
+        
+
+        marker_6043dc32364b0992b10308bc63e0e5cc.bindPopup(popup_bd826c0f975082dfbf4715f71df9cac8)
+        ;
+
+        
+    
+    
+            var marker_cda6fab3d7533d5bc7f47958f6327d46 = L.marker(
+                [41.1049081, 28.8645332],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_d276c29a553b6de193c4f9ab39f4c150 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4328d8275d58f77423bba7b0410a0ae6 = $(`<div id="html_4328d8275d58f77423bba7b0410a0ae6" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel gop Yaşam Diyaliz Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_d276c29a553b6de193c4f9ab39f4c150.setContent(html_4328d8275d58f77423bba7b0410a0ae6);
+            
+        
+
+        marker_cda6fab3d7533d5bc7f47958f6327d46.bindPopup(popup_d276c29a553b6de193c4f9ab39f4c150)
+        ;
+
+        
+    
+    
+            var marker_56a3507ea1875b223669bcb610c8fe2e = L.marker(
+                [41.1034186, 28.8616773],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_120735bd089fab532554e6445de40eff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_36572a10028dc0795ea271dbd5cbf164 = $(`<div id="html_36572a10028dc0795ea271dbd5cbf164" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İstanbulum Tıp Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_120735bd089fab532554e6445de40eff.setContent(html_36572a10028dc0795ea271dbd5cbf164);
+            
+        
+
+        marker_56a3507ea1875b223669bcb610c8fe2e.bindPopup(popup_120735bd089fab532554e6445de40eff)
+        ;
+
+        
+    
+    
+            var marker_2874fb738e4523ba2bea6622fa277c31 = L.marker(
+                [41.0589817, 29.0010012],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_747d631ecc521562160b91e9715cd8f8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_41b53dea175171dcc28722dbf87b690c = $(`<div id="html_41b53dea175171dcc28722dbf87b690c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Dora Hospital&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_747d631ecc521562160b91e9715cd8f8.setContent(html_41b53dea175171dcc28722dbf87b690c);
+            
+        
+
+        marker_2874fb738e4523ba2bea6622fa277c31.bindPopup(popup_747d631ecc521562160b91e9715cd8f8)
+        ;
+
+        
+    
+    
+            var marker_9e11360752f7ce59f942297ba10875ac = L.marker(
+                [40.969457, 29.257738],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_f90a4ed9208aeca39596a5ea3f31e1eb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_be86fb535b00d154b755fb6c3e9340a1 = $(`<div id="html_be86fb535b00d154b755fb6c3e9340a1" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Saygı Hastanesi Ayak Sağlığı Birimi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_f90a4ed9208aeca39596a5ea3f31e1eb.setContent(html_be86fb535b00d154b755fb6c3e9340a1);
+            
+        
+
+        marker_9e11360752f7ce59f942297ba10875ac.bindPopup(popup_f90a4ed9208aeca39596a5ea3f31e1eb)
+        ;
+
+        
+    
+    
+            var marker_d74462f67f95e0390c2f68a0fe80c525 = L.marker(
+                [40.9697567, 29.2581715],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_fa210bf39f14b84588914401b7f13616 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1d56d406fdf25c7b2472eb975addb325 = $(`<div id="html_1d56d406fdf25c7b2472eb975addb325" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Saygı Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_fa210bf39f14b84588914401b7f13616.setContent(html_1d56d406fdf25c7b2472eb975addb325);
+            
+        
+
+        marker_d74462f67f95e0390c2f68a0fe80c525.bindPopup(popup_fa210bf39f14b84588914401b7f13616)
+        ;
+
+        
+    
+    
+            var marker_ff056894b406d693bb687f5f72cd0dea = L.marker(
+                [40.9685018, 29.2534249],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_3634277828601e92cbe5bf18c4525540 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ee9eaa29547e54121e4f97ad502bbc7c = $(`<div id="html_ee9eaa29547e54121e4f97ad502bbc7c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Sultanbeyli Dünyagöz Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; طب عيون&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_3634277828601e92cbe5bf18c4525540.setContent(html_ee9eaa29547e54121e4f97ad502bbc7c);
+            
+        
+
+        marker_ff056894b406d693bb687f5f72cd0dea.bindPopup(popup_3634277828601e92cbe5bf18c4525540)
+        ;
+
+        
+    
+    
+            var marker_13c4525c47c9addc5507703bacf4af10 = L.marker(
+                [41.0704006, 29.0200903],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_3187bae3bac900bede830d9d340f669b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eb58408fa911bde3f175cfac4cdf0540 = $(`<div id="html_eb58408fa911bde3f175cfac4cdf0540" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Neolife&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_3187bae3bac900bede830d9d340f669b.setContent(html_eb58408fa911bde3f175cfac4cdf0540);
+            
+        
+
+        marker_13c4525c47c9addc5507703bacf4af10.bindPopup(popup_3187bae3bac900bede830d9d340f669b)
+        ;
+
+        
+    
+    
+            var marker_1dbb2071e1c11118fd7e218f1b9675e4 = L.marker(
+                [40.9636827, 29.265783],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_9211f15f8b199fb05d086ec6609de77a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_232830f37a1c68c6f13c98972b5ee48a = $(`<div id="html_232830f37a1c68c6f13c98972b5ee48a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; T.C. Sağlık Bakanlığı İstanbul Tacirler Eğitim Vakfı Sultanbeyli İlçe Devlet Hastanesi Merkez Polikliniği&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_9211f15f8b199fb05d086ec6609de77a.setContent(html_232830f37a1c68c6f13c98972b5ee48a);
+            
+        
+
+        marker_1dbb2071e1c11118fd7e218f1b9675e4.bindPopup(popup_9211f15f8b199fb05d086ec6609de77a)
+        ;
+
+        
+    
+    
+            var marker_b8d11579bf9d47021f46a29ce8cb798a = L.marker(
+                [40.966572, 29.2694043],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_d7b680fb1746d314dd1059459d266ae0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_64e552873923e6a41856521ad1a1b4b2 = $(`<div id="html_64e552873923e6a41856521ad1a1b4b2" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Ersoy Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_d7b680fb1746d314dd1059459d266ae0.setContent(html_64e552873923e6a41856521ad1a1b4b2);
+            
+        
+
+        marker_b8d11579bf9d47021f46a29ce8cb798a.bindPopup(popup_d7b680fb1746d314dd1059459d266ae0)
+        ;
+
+        
+    
+    
+            var marker_ff6427ae0978d56801819c764497ebfd = L.marker(
+                [40.965177, 29.2659788],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_084e56f764be8ee8a3ebcb543629f15a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ce4a91759db55c0c79e9bb2746dce2cb = $(`<div id="html_ce4a91759db55c0c79e9bb2746dce2cb" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İstanbul Tacirler Eğitim Vakfı T.E.V. Sultanbeyli İlçe Devlet Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_084e56f764be8ee8a3ebcb543629f15a.setContent(html_ce4a91759db55c0c79e9bb2746dce2cb);
+            
+        
+
+        marker_ff6427ae0978d56801819c764497ebfd.bindPopup(popup_084e56f764be8ee8a3ebcb543629f15a)
+        ;
+
+        
+    
+    
+            var marker_8b8014a95fd75b58ce7e69805cb1ecff = L.marker(
+                [40.9670638, 29.2612337],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_b0955faf4fe668e1b36c4908d279d7d8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6f3f578617d0a1f08561bcee316665f3 = $(`<div id="html_6f3f578617d0a1f08561bcee316665f3" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Sultanbeyli Avrupa Göz Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_b0955faf4fe668e1b36c4908d279d7d8.setContent(html_6f3f578617d0a1f08561bcee316665f3);
+            
+        
+
+        marker_8b8014a95fd75b58ce7e69805cb1ecff.bindPopup(popup_b0955faf4fe668e1b36c4908d279d7d8)
+        ;
+
+        
+    
+    
+            var marker_50df7002fbfccc148c816b60710f0e24 = L.marker(
+                [40.9996039, 28.9175398],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_e8cbb98c489924067f9a730e9cd4b1c3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_50c39aaa968020656d2a14edf6bb7858 = $(`<div id="html_50c39aaa968020656d2a14edf6bb7858" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; balıklı rum hastanesi vakfı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_e8cbb98c489924067f9a730e9cd4b1c3.setContent(html_50c39aaa968020656d2a14edf6bb7858);
+            
+        
+
+        marker_50df7002fbfccc148c816b60710f0e24.bindPopup(popup_e8cbb98c489924067f9a730e9cd4b1c3)
+        ;
+
+        
+    
+    
+            var marker_a6a71bb1afd083ba290fe157fb90a9bc = L.marker(
+                [41.0021036, 28.9152374],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_0a22f9b8ad87cd6ab90d587ee7e4c242 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_421178d2a4569a806c04157ea5865bbf = $(`<div id="html_421178d2a4569a806c04157ea5865bbf" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Yedikule Göğüş Hastalıkları Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; امراض صدرية&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_0a22f9b8ad87cd6ab90d587ee7e4c242.setContent(html_421178d2a4569a806c04157ea5865bbf);
+            
+        
+
+        marker_a6a71bb1afd083ba290fe157fb90a9bc.bindPopup(popup_0a22f9b8ad87cd6ab90d587ee7e4c242)
+        ;
+
+        
+    
+    
+            var marker_2ca63e847d8cc6ca510ccea7056f8a8c = L.marker(
+                [40.9938689, 28.9152516],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_008edf10387a2337553eac95161c804d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0837fa6a93e720836ade642647c93615 = $(`<div id="html_0837fa6a93e720836ade642647c93615" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Yedikule Surp PIRGIÇ ERMENI Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_008edf10387a2337553eac95161c804d.setContent(html_0837fa6a93e720836ade642647c93615);
+            
+        
+
+        marker_2ca63e847d8cc6ca510ccea7056f8a8c.bindPopup(popup_008edf10387a2337553eac95161c804d)
+        ;
+
+        
+    
+    
+            var marker_c8899e5f453af0a10e98535727aa46e7 = L.marker(
+                [40.9956164, 28.9148279],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_7b4ead44ddadfcc74b600d64a864f941 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_72f2d116d4f507d41869abc4205d09c4 = $(`<div id="html_72f2d116d4f507d41869abc4205d09c4" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; SÜLEYMANİYE KADIN DOĞUM VE ÇOCUK HASTANESİ&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_7b4ead44ddadfcc74b600d64a864f941.setContent(html_72f2d116d4f507d41869abc4205d09c4);
+            
+        
+
+        marker_c8899e5f453af0a10e98535727aa46e7.bindPopup(popup_7b4ead44ddadfcc74b600d64a864f941)
+        ;
+
+        
+    
+    
+            var marker_1a19147b116578d96c938fee8ca43a07 = L.marker(
+                [41.048796, 28.8595084],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_f59da1d49bcf7b13be3c385d2c77e9bf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6849909920d358a60026824a407c1155 = $(`<div id="html_6849909920d358a60026824a407c1155" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; MEDILIFE HASTANESİ&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_f59da1d49bcf7b13be3c385d2c77e9bf.setContent(html_6849909920d358a60026824a407c1155);
+            
+        
+
+        marker_1a19147b116578d96c938fee8ca43a07.bindPopup(popup_f59da1d49bcf7b13be3c385d2c77e9bf)
+        ;
+
+        
+    
+    
+            var marker_9db6b3975bc6d2e55a7836cdf59508d0 = L.marker(
+                [41.0314854, 28.826181],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_5b52991b5f4e320d1f4d233d11282a4a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_00667630e349f705e7c3da1059ab4110 = $(`<div id="html_00667630e349f705e7c3da1059ab4110" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Aksa&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_5b52991b5f4e320d1f4d233d11282a4a.setContent(html_00667630e349f705e7c3da1059ab4110);
+            
+        
+
+        marker_9db6b3975bc6d2e55a7836cdf59508d0.bindPopup(popup_5b52991b5f4e320d1f4d233d11282a4a)
+        ;
+
+        
+    
+    
+            var marker_61423f5746c48f290f1fb610043c8b09 = L.marker(
+                [41.0345832, 28.8550884],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_60dafcc12467d94416a9ad9ba1954b87 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d845873838540e8f8545ed1aae8bc300 = $(`<div id="html_d845873838540e8f8545ed1aae8bc300" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Hospitalist Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_60dafcc12467d94416a9ad9ba1954b87.setContent(html_d845873838540e8f8545ed1aae8bc300);
+            
+        
+
+        marker_61423f5746c48f290f1fb610043c8b09.bindPopup(popup_60dafcc12467d94416a9ad9ba1954b87)
+        ;
+
+        
+    
+    
+            var marker_593abb1fe2083ccae756a87173b62748 = L.marker(
+                [40.9920204, 28.8813608],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_cf107ed2d3b8c183041839a985fb4936 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_92a95204609eb30fce31e0e8564d4bb9 = $(`<div id="html_92a95204609eb30fce31e0e8564d4bb9" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İstanbul Eğitim ve Araştırma Hastanesi Osmaniye Semt Poliklinği&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_cf107ed2d3b8c183041839a985fb4936.setContent(html_92a95204609eb30fce31e0e8564d4bb9);
+            
+        
+
+        marker_593abb1fe2083ccae756a87173b62748.bindPopup(popup_cf107ed2d3b8c183041839a985fb4936)
+        ;
+
+        
+    
+    
+            var marker_6e73e42c4aa31d9b813717f92588d63b = L.marker(
+                [41.0797533, 28.9066811],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_4a3cdefb073cd82f6ad7c166f6ba6e9a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_98dd5db04a022d784dada4a402890678 = $(`<div id="html_98dd5db04a022d784dada4a402890678" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Gaziosmanpaşa Özel Başarı Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_4a3cdefb073cd82f6ad7c166f6ba6e9a.setContent(html_98dd5db04a022d784dada4a402890678);
+            
+        
+
+        marker_6e73e42c4aa31d9b813717f92588d63b.bindPopup(popup_4a3cdefb073cd82f6ad7c166f6ba6e9a)
+        ;
+
+        
+    
+    
+            var marker_73d4dbf6dbb2fababd44c93393d65c98 = L.marker(
+                [41.0633215, 28.746725],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_c10d007fe5f213ea4265d4ae2d6ff6ef = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6206e39cfe5f65a4e126fbaf5902c348 = $(`<div id="html_6206e39cfe5f65a4e126fbaf5902c348" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Dayıoğlu Tıp Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c10d007fe5f213ea4265d4ae2d6ff6ef.setContent(html_6206e39cfe5f65a4e126fbaf5902c348);
+            
+        
+
+        marker_73d4dbf6dbb2fababd44c93393d65c98.bindPopup(popup_c10d007fe5f213ea4265d4ae2d6ff6ef)
+        ;
+
+        
+    
+    
+            var marker_724c9aa7efdaa99865e750b80d6a2aca = L.marker(
+                [41.0043457, 29.0257508],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_b7850e2daed8f09bc5fa73faea686406 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2d7d3c039ad1674474e4324e249aa5f3 = $(`<div id="html_2d7d3c039ad1674474e4324e249aa5f3" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Haydarpaşa Numune Eğitim ve Araştırma Hastanesi Tıbbiye Binası&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_b7850e2daed8f09bc5fa73faea686406.setContent(html_2d7d3c039ad1674474e4324e249aa5f3);
+            
+        
+
+        marker_724c9aa7efdaa99865e750b80d6a2aca.bindPopup(popup_b7850e2daed8f09bc5fa73faea686406)
+        ;
+
+        
+    
+    
+            var marker_b71f30ac8dbe316b3ca7cdd98961797c = L.marker(
+                [41.0648209, 28.9803363],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_c17e7498c45f5ff99f98bd29acc07579 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3355c0de8bbe67eb4e9193f10af81914 = $(`<div id="html_3355c0de8bbe67eb4e9193f10af81914" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c17e7498c45f5ff99f98bd29acc07579.setContent(html_3355c0de8bbe67eb4e9193f10af81914);
+            
+        
+
+        marker_b71f30ac8dbe316b3ca7cdd98961797c.bindPopup(popup_c17e7498c45f5ff99f98bd29acc07579)
+        ;
+
+        
+    
+    
+            var marker_f3e660908232aaaf45de4eba34c75829 = L.marker(
+                [40.88302, 29.2361908],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_5e67a99a8dd0cfd9a2a62fe3e6d770ce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b90786d13a565dbe2f13c67faf7935b4 = $(`<div id="html_b90786d13a565dbe2f13c67faf7935b4" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Pendik Şifa Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_5e67a99a8dd0cfd9a2a62fe3e6d770ce.setContent(html_b90786d13a565dbe2f13c67faf7935b4);
+            
+        
+
+        marker_f3e660908232aaaf45de4eba34c75829.bindPopup(popup_5e67a99a8dd0cfd9a2a62fe3e6d770ce)
+        ;
+
+        
+    
+    
+            var marker_930edab5715baa9fb8fc182d0edd6887 = L.marker(
+                [40.8788795, 29.2362412],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_b9fa6337b71011e6e1da8383f5f7784c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f40d9b480b8f0de5acd534d11ec08fe8 = $(`<div id="html_f40d9b480b8f0de5acd534d11ec08fe8" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Dünya Göz Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_b9fa6337b71011e6e1da8383f5f7784c.setContent(html_f40d9b480b8f0de5acd534d11ec08fe8);
+            
+        
+
+        marker_930edab5715baa9fb8fc182d0edd6887.bindPopup(popup_b9fa6337b71011e6e1da8383f5f7784c)
+        ;
+
+        
+    
+    
+            var marker_8de181f19dfced7268b276e87773205a = L.marker(
+                [41.0044482, 29.0227593],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_8112f63e49e1ba88217b016b3510a5dc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dce2eb45b071d151f022a5672a130506 = $(`<div id="html_dce2eb45b071d151f022a5672a130506" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Haydarpaşa Numune Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_8112f63e49e1ba88217b016b3510a5dc.setContent(html_dce2eb45b071d151f022a5672a130506);
+            
+        
+
+        marker_8de181f19dfced7268b276e87773205a.bindPopup(popup_8112f63e49e1ba88217b016b3510a5dc)
+        ;
+
+        
+    
+    
+            var marker_0fb1ac5765815d6f74298b23d127fe93 = L.marker(
+                [41.0270348, 29.0929142],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_e76dd2886f5695dcefcdff658a77c8d2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_842b7f0ef0bc25da7e0500baffb5c966 = $(`<div id="html_842b7f0ef0bc25da7e0500baffb5c966" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Tempo OSGB - İşe Giriş Sağlık Raporu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; istanbul</div>`)[0];
+                popup_e76dd2886f5695dcefcdff658a77c8d2.setContent(html_842b7f0ef0bc25da7e0500baffb5c966);
+            
+        
+
+        marker_0fb1ac5765815d6f74298b23d127fe93.bindPopup(popup_e76dd2886f5695dcefcdff658a77c8d2)
+        ;
+
+        
+    
+    
+            var marker_5ced1431ab9b5e919aaff4c914f6583d = L.marker(
+                [41.0800511, 28.8059014],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_97a56610a3e7a29faa81bb941144090a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_308e6991f79307d0b1ca069447c95f81 = $(`<div id="html_308e6991f79307d0b1ca069447c95f81" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İstanbullu OSGB&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_97a56610a3e7a29faa81bb941144090a.setContent(html_308e6991f79307d0b1ca069447c95f81);
+            
+        
+
+        marker_5ced1431ab9b5e919aaff4c914f6583d.bindPopup(popup_97a56610a3e7a29faa81bb941144090a)
+        ;
+
+        
+    
+    
+            var marker_872f002cb53c9d037b239e089f86d824 = L.marker(
+                [41.0214296, 29.0158947],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_99afae67f7d4890db60dbc279db7e799 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d3bb45cb0bac531e2a830a05caccbdad = $(`<div id="html_d3bb45cb0bac531e2a830a05caccbdad" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Üsküdar Anadolu Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_99afae67f7d4890db60dbc279db7e799.setContent(html_d3bb45cb0bac531e2a830a05caccbdad);
+            
+        
+
+        marker_872f002cb53c9d037b239e089f86d824.bindPopup(popup_99afae67f7d4890db60dbc279db7e799)
+        ;
+
+        
+    
+    
+            var marker_19504bd0e48cd9f88ce61d651fcc42a1 = L.marker(
+                [41.0624452, 28.9864126],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_fa884340d7f0770297dda4abc89d6830 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_11d1f07f0caeb490933d3050e40977f6 = $(`<div id="html_11d1f07f0caeb490933d3050e40977f6" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Doktor Levent Polikliniği&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; istanbul</div>`)[0];
+                popup_fa884340d7f0770297dda4abc89d6830.setContent(html_11d1f07f0caeb490933d3050e40977f6);
+            
+        
+
+        marker_19504bd0e48cd9f88ce61d651fcc42a1.bindPopup(popup_fa884340d7f0770297dda4abc89d6830)
+        ;
+
+        
+    
+    
+            var marker_4270f8f2d1f423a6251501868fb0969a = L.marker(
+                [41.0205828, 28.5809717],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_ea954e2c93f21fec293ac375db52dc20 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9be36fa8b1160ca06e9db8122eb0bb00 = $(`<div id="html_9be36fa8b1160ca06e9db8122eb0bb00" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel 2000 Tıp Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_ea954e2c93f21fec293ac375db52dc20.setContent(html_9be36fa8b1160ca06e9db8122eb0bb00);
+            
+        
+
+        marker_4270f8f2d1f423a6251501868fb0969a.bindPopup(popup_ea954e2c93f21fec293ac375db52dc20)
+        ;
+
+        
+    
+    
+            var marker_377afb0fc65d23187cfe6c627950ad84 = L.marker(
+                [41.0603661, 28.6760478],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_ae3e3384e8e7e7e6285ec518c1beae3b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c31593b3f42ef4ddd9e6383b23a58fa1 = $(`<div id="html_c31593b3f42ef4ddd9e6383b23a58fa1" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Elitium&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_ae3e3384e8e7e7e6285ec518c1beae3b.setContent(html_c31593b3f42ef4ddd9e6383b23a58fa1);
+            
+        
+
+        marker_377afb0fc65d23187cfe6c627950ad84.bindPopup(popup_ae3e3384e8e7e7e6285ec518c1beae3b)
+        ;
+
+        
+    
+    
+            var marker_921be6d4e0cdf97e30229aee0a87f87c = L.marker(
+                [41.0600854, 28.7739432],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_74a36662c2a3352cd188da950c468bef = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_798f592c058e1a77a722ec61ea5b61a2 = $(`<div id="html_798f592c058e1a77a722ec61ea5b61a2" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İstanbul Tema Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_74a36662c2a3352cd188da950c468bef.setContent(html_798f592c058e1a77a722ec61ea5b61a2);
+            
+        
+
+        marker_921be6d4e0cdf97e30229aee0a87f87c.bindPopup(popup_74a36662c2a3352cd188da950c468bef)
+        ;
+
+        
+    
+    
+            var marker_5ab436b87d5692404bdaed3229794373 = L.marker(
+                [41.0303249, 28.9070788],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_f8c3ce6b9e6aa771b5d0d94d8c5119f9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ebb502fb1c7bf0de49cedc5f716cb103 = $(`<div id="html_ebb502fb1c7bf0de49cedc5f716cb103" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Bayrampaşa 1 Nolu Yabancı Uyruklular Polikliniği&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_f8c3ce6b9e6aa771b5d0d94d8c5119f9.setContent(html_ebb502fb1c7bf0de49cedc5f716cb103);
+            
+        
+
+        marker_5ab436b87d5692404bdaed3229794373.bindPopup(popup_f8c3ce6b9e6aa771b5d0d94d8c5119f9)
+        ;
+
+        
+    
+    
+            var marker_0ef906ee32ed8cb6fb6ca10c380752f3 = L.marker(
+                [41.0431277, 28.8201612],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_a6a807d840cb6bef298b63243a6575c3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_de409c16ea7a8443ca304add053325e4 = $(`<div id="html_de409c16ea7a8443ca304add053325e4" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Bağcılar 28 Nolu Aile Sağlığı Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_a6a807d840cb6bef298b63243a6575c3.setContent(html_de409c16ea7a8443ca304add053325e4);
+            
+        
+
+        marker_0ef906ee32ed8cb6fb6ca10c380752f3.bindPopup(popup_a6a807d840cb6bef298b63243a6575c3)
+        ;
+
+        
+    
+    
+            var marker_5a913cb2011aa23746c88294fd2ad1d1 = L.marker(
+                [41.0028506, 28.9370757],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_57ee1876a9e416189445e2aa3cf21275 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_85b568a0577857d9b501f6101c2df20d = $(`<div id="html_85b568a0577857d9b501f6101c2df20d" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Acil Tıp Kliniği&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_57ee1876a9e416189445e2aa3cf21275.setContent(html_85b568a0577857d9b501f6101c2df20d);
+            
+        
+
+        marker_5a913cb2011aa23746c88294fd2ad1d1.bindPopup(popup_57ee1876a9e416189445e2aa3cf21275)
+        ;
+
+        
+    
+    
+            var marker_488547fb2530b4cf1c2effdc140159f3 = L.marker(
+                [41.0613263, 28.992022],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_ee816a80aba17e93d6728c3c0161e956 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b04de8ae3db64c03cc698968d0ff9c9b = $(`<div id="html_b04de8ae3db64c03cc698968d0ff9c9b" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Alpha Hair Central&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_ee816a80aba17e93d6728c3c0161e956.setContent(html_b04de8ae3db64c03cc698968d0ff9c9b);
+            
+        
+
+        marker_488547fb2530b4cf1c2effdc140159f3.bindPopup(popup_ee816a80aba17e93d6728c3c0161e956)
+        ;
+
+        
+    
+    
+            var marker_c080f7d7e99fa236437aba173fd4e374 = L.marker(
+                [41.0199922, 28.9348553],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_958b34f12fb0ee19ca7e154a627ff74e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_56ce8955dc35fd6b7bf95b3174a0c101 = $(`<div id="html_56ce8955dc35fd6b7bf95b3174a0c101" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Bezmialem Vakıf Üniversitesi Tıp Fakültesi Acil Tıp&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_958b34f12fb0ee19ca7e154a627ff74e.setContent(html_56ce8955dc35fd6b7bf95b3174a0c101);
+            
+        
+
+        marker_c080f7d7e99fa236437aba173fd4e374.bindPopup(popup_958b34f12fb0ee19ca7e154a627ff74e)
+        ;
+
+        
+    
+    
+            var marker_da96b66926c6056eadb709bb320ddf7a = L.marker(
+                [40.9306407, 29.1349981],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_5bcda4f3c026303b452094497b999ff9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dd614ca5fd767c4787155db5b815288b = $(`<div id="html_dd614ca5fd767c4787155db5b815288b" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Merkez Aile Sağlık Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_5bcda4f3c026303b452094497b999ff9.setContent(html_dd614ca5fd767c4787155db5b815288b);
+            
+        
+
+        marker_da96b66926c6056eadb709bb320ddf7a.bindPopup(popup_5bcda4f3c026303b452094497b999ff9)
+        ;
+
+        
+    
+    
+            var marker_85302fb2a58d6e60c5cb224b9f6edda1 = L.marker(
+                [41.0375948, 28.9900446],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_eb2053114fcf76f8f08298c1e8f0b9d5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_64279e7150e3530ffc3a194366c98eed = $(`<div id="html_64279e7150e3530ffc3a194366c98eed" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Şişli Hamidiye Etfal Eğitim ve Araştırma Hastanesi Gümüşsuyu Binası&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; istanbul</div>`)[0];
+                popup_eb2053114fcf76f8f08298c1e8f0b9d5.setContent(html_64279e7150e3530ffc3a194366c98eed);
+            
+        
+
+        marker_85302fb2a58d6e60c5cb224b9f6edda1.bindPopup(popup_eb2053114fcf76f8f08298c1e8f0b9d5)
+        ;
+
+        
+    
+    
+            var marker_7c8fdc98acceac3c7f0e0618bc9daabc = L.marker(
+                [40.8903861, 29.2153963],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_3137d15f901de8d108433ea478aac8fd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_feaf325ca37fc3bfe43b04ea6f10a866 = $(`<div id="html_feaf325ca37fc3bfe43b04ea6f10a866" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Kartal 10 Nolu Aile Sağlığı Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_3137d15f901de8d108433ea478aac8fd.setContent(html_feaf325ca37fc3bfe43b04ea6f10a866);
+            
+        
+
+        marker_7c8fdc98acceac3c7f0e0618bc9daabc.bindPopup(popup_3137d15f901de8d108433ea478aac8fd)
+        ;
+
+        
+    
+    
+            var marker_95a8c4a4e4eac6e7d77867bd4a3dad49 = L.marker(
+                [40.9973977, 29.0428574],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_49a1e01679186b834120e10af85e7d54 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_11860a4a8a386a4be7488d935d58b67f = $(`<div id="html_11860a4a8a386a4be7488d935d58b67f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Hasanpaşa Aile Sağlığı Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_49a1e01679186b834120e10af85e7d54.setContent(html_11860a4a8a386a4be7488d935d58b67f);
+            
+        
+
+        marker_95a8c4a4e4eac6e7d77867bd4a3dad49.bindPopup(popup_49a1e01679186b834120e10af85e7d54)
+        ;
+
+        
+    
+    
+            var marker_67e7878ecd9dd5ecde45795aab57c7d2 = L.marker(
+                [40.9785089, 28.8718638],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_c4414e252c6f7f4602a6100ba971b20e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_caedd633671950b3497e95dd7c86ae25 = $(`<div id="html_caedd633671950b3497e95dd7c86ae25" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Bakırköy 4 Nolu Aile Sağlığı Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_c4414e252c6f7f4602a6100ba971b20e.setContent(html_caedd633671950b3497e95dd7c86ae25);
+            
+        
+
+        marker_67e7878ecd9dd5ecde45795aab57c7d2.bindPopup(popup_c4414e252c6f7f4602a6100ba971b20e)
+        ;
+
+        
+    
+    
+            var marker_33a7d077816ebcaee8d3fc952c4dc33c = L.marker(
+                [40.9332716, 29.1239632],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_d9609ee72abdcfd7ff5b9ff38126364b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e0c651b75e02daa42078c4ca3a91f158 = $(`<div id="html_e0c651b75e02daa42078c4ca3a91f158" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Kartal Dr. Lütfi Kırdar Eğitim ve Araştırma Hastanesi KADİR REZZAN HAS ADATEPE POLİKLİNİĞİ&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_d9609ee72abdcfd7ff5b9ff38126364b.setContent(html_e0c651b75e02daa42078c4ca3a91f158);
+            
+        
+
+        marker_33a7d077816ebcaee8d3fc952c4dc33c.bindPopup(popup_d9609ee72abdcfd7ff5b9ff38126364b)
+        ;
+
+        
+    
+    
+            var marker_a159248ab2a28d0367c54fecc69e13ae = L.marker(
+                [41.0229665, 29.218531],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_4faad8f1fdaa8f7c47922e51fcac9b78 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_10bd49fab6f71013bcd3f175efd735b6 = $(`<div id="html_10bd49fab6f71013bcd3f175efd735b6" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; fsm tıp merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_4faad8f1fdaa8f7c47922e51fcac9b78.setContent(html_10bd49fab6f71013bcd3f175efd735b6);
+            
+        
+
+        marker_a159248ab2a28d0367c54fecc69e13ae.bindPopup(popup_4faad8f1fdaa8f7c47922e51fcac9b78)
+        ;
+
+        
+    
+    
+            var marker_7c00e8b7d4dd3821127278196b394717 = L.marker(
+                [41.0516267, 28.9910859],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_1e3fab70702a9acb8c299039423dc050 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cee8dbe07cebf1d65027f88f9d157a49 = $(`<div id="html_cee8dbe07cebf1d65027f88f9d157a49" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Op.Dr.Alper Tuncel&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İSTANBUL</div>`)[0];
+                popup_1e3fab70702a9acb8c299039423dc050.setContent(html_cee8dbe07cebf1d65027f88f9d157a49);
+            
+        
+
+        marker_7c00e8b7d4dd3821127278196b394717.bindPopup(popup_1e3fab70702a9acb8c299039423dc050)
+        ;
+
+        
+    
+    
+            var marker_a81ac5e23c294237fffac7194f2f083c = L.marker(
+                [40.9826542, 29.0927912],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_c1f8a3d380e9c80a9e1439cc40d8a962 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4c5951b4887c729fbff6774f93086ff0 = $(`<div id="html_4c5951b4887c729fbff6774f93086ff0" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Medient&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c1f8a3d380e9c80a9e1439cc40d8a962.setContent(html_4c5951b4887c729fbff6774f93086ff0);
+            
+        
+
+        marker_a81ac5e23c294237fffac7194f2f083c.bindPopup(popup_c1f8a3d380e9c80a9e1439cc40d8a962)
+        ;
+
+        
+    
+    
+            var marker_22b3d96726d1f486377bd82e1bcc9ba0 = L.marker(
+                [41.0203306, 28.5786177],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_b72091c842031997e6bf036a802e3ba7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d9ebd7de0051ddb67444e3d7784caaa5 = $(`<div id="html_d9ebd7de0051ddb67444e3d7784caaa5" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Büyükçekmece Aile Sağlığı Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_b72091c842031997e6bf036a802e3ba7.setContent(html_d9ebd7de0051ddb67444e3d7784caaa5);
+            
+        
+
+        marker_22b3d96726d1f486377bd82e1bcc9ba0.bindPopup(popup_b72091c842031997e6bf036a802e3ba7)
+        ;
+
+        
+    
+    
+            var marker_b1af2d4bdbd9bcc095678f2d10217c70 = L.marker(
+                [41.0168104, 28.6041953],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_709f8e896df9187fe118f1333aa1d1d8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f8a050115f45cc1a249ad4bb8c0430de = $(`<div id="html_f8a050115f45cc1a249ad4bb8c0430de" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Sağlık Ocağı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_709f8e896df9187fe118f1333aa1d1d8.setContent(html_f8a050115f45cc1a249ad4bb8c0430de);
+            
+        
+
+        marker_b1af2d4bdbd9bcc095678f2d10217c70.bindPopup(popup_709f8e896df9187fe118f1333aa1d1d8)
+        ;
+
+        
+    
+    
+            var marker_a4a9e9430000aeeb50a13cb2a671891c = L.marker(
+                [41.0221279, 29.0418888],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_3e040543925674ee19bf50b522103c5c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9fa1a46dd00d830265bf54a1064c2f62 = $(`<div id="html_9fa1a46dd00d830265bf54a1064c2f62" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Bahceci&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_3e040543925674ee19bf50b522103c5c.setContent(html_9fa1a46dd00d830265bf54a1064c2f62);
+            
+        
+
+        marker_a4a9e9430000aeeb50a13cb2a671891c.bindPopup(popup_3e040543925674ee19bf50b522103c5c)
+        ;
+
+        
+    
+    
+            var marker_e7e7221390229122c9e9fdb2d12e8e73 = L.marker(
+                [41.0168625, 28.9339596],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_5917a48cbf046d7e65a1cda6aa327061 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_da8179656efc0e812fa9017c823edede = $(`<div id="html_da8179656efc0e812fa9017c823edede" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İstanbul Üniversitesi Tıp Fakültesi Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_5917a48cbf046d7e65a1cda6aa327061.setContent(html_da8179656efc0e812fa9017c823edede);
+            
+        
+
+        marker_e7e7221390229122c9e9fdb2d12e8e73.bindPopup(popup_5917a48cbf046d7e65a1cda6aa327061)
+        ;
+
+        
+    
+    
+            var marker_45c5e7650f84f6083956b97529f4b1b6 = L.marker(
+                [41.0242924, 28.9743145],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_8ca6995245883624ef4d1be3017bc8e6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3f620c830a4ca01357e3ee56076973d5 = $(`<div id="html_3f620c830a4ca01357e3ee56076973d5" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Avusturya Sen Jorj Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_8ca6995245883624ef4d1be3017bc8e6.setContent(html_3f620c830a4ca01357e3ee56076973d5);
+            
+        
+
+        marker_45c5e7650f84f6083956b97529f4b1b6.bindPopup(popup_8ca6995245883624ef4d1be3017bc8e6)
+        ;
+
+        
+    
+    
+            var marker_789909f4c54ae594ac91a28aa2fcaaa0 = L.marker(
+                [41.0133418, 28.6568742],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_9fc31c75b9c9a2983caf7176a08414de = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_821e284a99b8d62cfd56869f3d715832 = $(`<div id="html_821e284a99b8d62cfd56869f3d715832" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Medihaus&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_9fc31c75b9c9a2983caf7176a08414de.setContent(html_821e284a99b8d62cfd56869f3d715832);
+            
+        
+
+        marker_789909f4c54ae594ac91a28aa2fcaaa0.bindPopup(popup_9fc31c75b9c9a2983caf7176a08414de)
+        ;
+
+        
+    
+    
+            var marker_32b4cafb5d551c5c33ccf2054ea0f166 = L.marker(
+                [40.9410585, 29.1167634],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_f6190cb84d4d322be66bb89d7c5b7667 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a1b93837b94760c4760b4b317e7bbbd7 = $(`<div id="html_a1b93837b94760c4760b4b317e7bbbd7" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Maltepe 4 Nolu Aile Hekimliği&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f6190cb84d4d322be66bb89d7c5b7667.setContent(html_a1b93837b94760c4760b4b317e7bbbd7);
+            
+        
+
+        marker_32b4cafb5d551c5c33ccf2054ea0f166.bindPopup(popup_f6190cb84d4d322be66bb89d7c5b7667)
+        ;
+
+        
+    
+    
+            var marker_708220baa693544c9f9886d9d31efc91 = L.marker(
+                [40.9227011, 29.133854],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_a94f8f0e4e63f7eef4df3a9caffa4803 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3ceef44345bf70e097172b9213af263d = $(`<div id="html_3ceef44345bf70e097172b9213af263d" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; ARES Psikolojik Danışmanlık Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; Maltepe psikolog hizmetleri, Psikoterapi hizmetleri, Uzm. Klinik Psikolog Tamer KARAOKÇU&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_a94f8f0e4e63f7eef4df3a9caffa4803.setContent(html_3ceef44345bf70e097172b9213af263d);
+            
+        
+
+        marker_708220baa693544c9f9886d9d31efc91.bindPopup(popup_a94f8f0e4e63f7eef4df3a9caffa4803)
+        ;
+
+        
+    
+    
+            var marker_7ec81b7139ecb0c065b8babff16d0b4f = L.marker(
+                [41.073873, 28.9038241],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_9e75c0c28a7f1eeee6a11526e955b646 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c4b38e27f992b9b94da37039ff5a04ec = $(`<div id="html_c4b38e27f992b9b94da37039ff5a04ec" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Asya Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_9e75c0c28a7f1eeee6a11526e955b646.setContent(html_c4b38e27f992b9b94da37039ff5a04ec);
+            
+        
+
+        marker_7ec81b7139ecb0c065b8babff16d0b4f.bindPopup(popup_9e75c0c28a7f1eeee6a11526e955b646)
+        ;
+
+        
+    
+    
+            var marker_4bc9540a6c2007db1975539b2e81e7a9 = L.marker(
+                [41.0695422, 28.9073845],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_abe793444e6f31c035fcb40e595353a5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_029a8e47b5c29fa89a7a9093af6a3607 = $(`<div id="html_029a8e47b5c29fa89a7a9093af6a3607" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Bilge Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_abe793444e6f31c035fcb40e595353a5.setContent(html_029a8e47b5c29fa89a7a9093af6a3607);
+            
+        
+
+        marker_4bc9540a6c2007db1975539b2e81e7a9.bindPopup(popup_abe793444e6f31c035fcb40e595353a5)
+        ;
+
+        
+    
+    
+            var marker_8c4b3b5cfec4ef448a0bc130142980f9 = L.marker(
+                [41.0596967, 28.9123842],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_b9499b07462e64f26582e24483eb1183 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_935ea9a2be6f38d48a6b3473e090a725 = $(`<div id="html_935ea9a2be6f38d48a6b3473e090a725" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Avrupa Özel Şafak Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_b9499b07462e64f26582e24483eb1183.setContent(html_935ea9a2be6f38d48a6b3473e090a725);
+            
+        
+
+        marker_8c4b3b5cfec4ef448a0bc130142980f9.bindPopup(popup_b9499b07462e64f26582e24483eb1183)
+        ;
+
+        
+    
+    
+            var marker_7696c4408ef633b2cda4263c1d83b9f9 = L.marker(
+                [40.9804944, 29.1255715],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_c31e72bd68f8e9be463f9ac915cb6b75 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_19bb0deed80df6cad324aa7c4807e130 = $(`<div id="html_19bb0deed80df6cad324aa7c4807e130" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Küçükbakkalköy Aile Sağlığı Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c31e72bd68f8e9be463f9ac915cb6b75.setContent(html_19bb0deed80df6cad324aa7c4807e130);
+            
+        
+
+        marker_7696c4408ef633b2cda4263c1d83b9f9.bindPopup(popup_c31e72bd68f8e9be463f9ac915cb6b75)
+        ;
+
+        
+    
+    
+            var marker_2dfedf51b2238ca3f6c756dd059e699a = L.marker(
+                [41.1047419, 28.7734946],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_6380d990448e79f5e58fd23b2a0addb1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dda62accd9b1f47aa2e79c1888b61561 = $(`<div id="html_dda62accd9b1f47aa2e79c1888b61561" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_6380d990448e79f5e58fd23b2a0addb1.setContent(html_dda62accd9b1f47aa2e79c1888b61561);
+            
+        
+
+        marker_2dfedf51b2238ca3f6c756dd059e699a.bindPopup(popup_6380d990448e79f5e58fd23b2a0addb1)
+        ;
+
+        
+    
+    
+            var marker_45d323a213807bf3af27d6d80d60552f = L.marker(
+                [41.0026384, 28.6261883],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_6a9549c94de33970dd7c8c3a6a94c4f1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_38d8a9f8af3fb0c185f4cf3de26494d9 = $(`<div id="html_38d8a9f8af3fb0c185f4cf3de26494d9" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Diş Hekimi Aygul Abubekerova&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; Русскоязычный стоматолог в Стамбуле&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Beylikdüzü/İstanbul</div>`)[0];
+                popup_6a9549c94de33970dd7c8c3a6a94c4f1.setContent(html_38d8a9f8af3fb0c185f4cf3de26494d9);
+            
+        
+
+        marker_45d323a213807bf3af27d6d80d60552f.bindPopup(popup_6a9549c94de33970dd7c8c3a6a94c4f1)
+        ;
+
+        
+    
+    
+            var marker_7a36adf97ba2463b523e036fb6147629 = L.marker(
+                [41.0025741, 28.6261789],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_8fdba9969df0eaf196c5ccbf600000ab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7e9259c3b6d82fb4d649f2c33b47ac13 = $(`<div id="html_7e9259c3b6d82fb4d649f2c33b47ac13" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; NGY Med Dental Clinic&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Beylikdüzü/İstanbul</div>`)[0];
+                popup_8fdba9969df0eaf196c5ccbf600000ab.setContent(html_7e9259c3b6d82fb4d649f2c33b47ac13);
+            
+        
+
+        marker_7a36adf97ba2463b523e036fb6147629.bindPopup(popup_8fdba9969df0eaf196c5ccbf600000ab)
+        ;
+
+        
+    
+    
+            var marker_e979ef428d31fa9d8f556dd1ca334a54 = L.marker(
+                [41.0517202, 28.9910831],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_53780c656737ef6c3e676efbddc2dfec = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_57310568257fb33ab40a1e3f54622d20 = $(`<div id="html_57310568257fb33ab40a1e3f54622d20" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Op.Dr.Alper TUNCEL&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; Estetik Plastik ve Rekonstrüktif Cerrahi Uzmanı&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_53780c656737ef6c3e676efbddc2dfec.setContent(html_57310568257fb33ab40a1e3f54622d20);
+            
+        
+
+        marker_e979ef428d31fa9d8f556dd1ca334a54.bindPopup(popup_53780c656737ef6c3e676efbddc2dfec)
+        ;
+
+        
+    
+    
+            var marker_c13a88967a743120b6e8cfbc7b4fff44 = L.marker(
+                [41.0276144, 29.1157001],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_10bf8faca821accec7d934f880a441aa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_671a2c51c663fc6d2c88937cf3e078b2 = $(`<div id="html_671a2c51c663fc6d2c88937cf3e078b2" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Üsküdar Üniversitesi Diş Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_10bf8faca821accec7d934f880a441aa.setContent(html_671a2c51c663fc6d2c88937cf3e078b2);
+            
+        
+
+        marker_c13a88967a743120b6e8cfbc7b4fff44.bindPopup(popup_10bf8faca821accec7d934f880a441aa)
+        ;
+
+        
+    
+    
+            var marker_8c8c77fdd313863b9a06b7389ad4e124 = L.marker(
+                [40.9823877, 29.0713318],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_651df53bf3971ef103667c183f1e6c78 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_773e098c69f9464e97fde982278438aa = $(`<div id="html_773e098c69f9464e97fde982278438aa" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Medipoint Tıp Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_651df53bf3971ef103667c183f1e6c78.setContent(html_773e098c69f9464e97fde982278438aa);
+            
+        
+
+        marker_8c8c77fdd313863b9a06b7389ad4e124.bindPopup(popup_651df53bf3971ef103667c183f1e6c78)
+        ;
+
+        
+    
+    
+            var marker_32564d4cf59907441ac2b3bc6470ec9f = L.marker(
+                [41.0492903, 28.9909873],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_2bb8a52ed4f37f7ae659fa71dd750e0b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_715cf05a21f15947f4c19ad402dd28cf = $(`<div id="html_715cf05a21f15947f4c19ad402dd28cf" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Dr Ezgi Özkur&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_2bb8a52ed4f37f7ae659fa71dd750e0b.setContent(html_715cf05a21f15947f4c19ad402dd28cf);
+            
+        
+
+        marker_32564d4cf59907441ac2b3bc6470ec9f.bindPopup(popup_2bb8a52ed4f37f7ae659fa71dd750e0b)
+        ;
+
+        
+    
+    
+            var marker_2af681d4a663589ca36fe39de3c8d459 = L.marker(
+                [41.1797497, 28.8860229],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_1aa3a3febd9233b5089396b2a4cf6710 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_98c9b47b316cadb2c540fc0d1195e51d = $(`<div id="html_98c9b47b316cadb2c540fc0d1195e51d" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Acıbadem&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_1aa3a3febd9233b5089396b2a4cf6710.setContent(html_98c9b47b316cadb2c540fc0d1195e51d);
+            
+        
+
+        marker_2af681d4a663589ca36fe39de3c8d459.bindPopup(popup_1aa3a3febd9233b5089396b2a4cf6710)
+        ;
+
+        
+    
+    
+            var marker_1fd0a4c3b6f9039d7a0be2104f7eaab0 = L.marker(
+                [40.8829325, 29.2367531],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_76ff193657c58560e8b81ab1d3ea3d2f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0eaf1920b3c230c9bd093856940d7cbd = $(`<div id="html_0eaf1920b3c230c9bd093856940d7cbd" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Baydent Ağız ve Diş Sağlığı Polikliniği&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_76ff193657c58560e8b81ab1d3ea3d2f.setContent(html_0eaf1920b3c230c9bd093856940d7cbd);
+            
+        
+
+        marker_1fd0a4c3b6f9039d7a0be2104f7eaab0.bindPopup(popup_76ff193657c58560e8b81ab1d3ea3d2f)
+        ;
+
+        
+    
+    
+            var marker_42ddb2a01523e30dc50d12f0fab7bf1a = L.marker(
+                [41.0730408, 29.0179686],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_2a352e52dc7a326b8ab24145d3a44637 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_14787ea75958ce5ebe5ff2c618656319 = $(`<div id="html_14787ea75958ce5ebe5ff2c618656319" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Bayındır Levent Tıp Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_2a352e52dc7a326b8ab24145d3a44637.setContent(html_14787ea75958ce5ebe5ff2c618656319);
+            
+        
+
+        marker_42ddb2a01523e30dc50d12f0fab7bf1a.bindPopup(popup_2a352e52dc7a326b8ab24145d3a44637)
+        ;
+
+        
+    
+    
+            var marker_bedcf352fc789132d40ee5c5f6f33f76 = L.marker(
+                [41.0726109, 29.0183816],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_e38949e0bbf6077f6455713a07dd4ba8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5e9f15c043c30525eca748bd390aea0e = $(`<div id="html_5e9f15c043c30525eca748bd390aea0e" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Etiler Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_e38949e0bbf6077f6455713a07dd4ba8.setContent(html_5e9f15c043c30525eca748bd390aea0e);
+            
+        
+
+        marker_bedcf352fc789132d40ee5c5f6f33f76.bindPopup(popup_e38949e0bbf6077f6455713a07dd4ba8)
+        ;
+
+        
+    
+    
+            var marker_89ce9e0bfb10fc99edf00546425bf14d = L.marker(
+                [40.9307338, 29.1444794],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_c538d3a651c0f39cba1b7254300c05ca = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_390b385cc585d31e5563421314a6873a = $(`<div id="html_390b385cc585d31e5563421314a6873a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Marmara Mobil Sağlık&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c538d3a651c0f39cba1b7254300c05ca.setContent(html_390b385cc585d31e5563421314a6873a);
+            
+        
+
+        marker_89ce9e0bfb10fc99edf00546425bf14d.bindPopup(popup_c538d3a651c0f39cba1b7254300c05ca)
+        ;
+
+        
+    
+    
+            var marker_3504f055d7ecd0dc2029125ba55e3590 = L.marker(
+                [41.003674, 28.9383347],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_2e4eda726d4ee08b9af42416158c25ba = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bf4fb235feadc7d7bd3e896c2ab8dd5c = $(`<div id="html_bf4fb235feadc7d7bd3e896c2ab8dd5c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Patológia&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_2e4eda726d4ee08b9af42416158c25ba.setContent(html_bf4fb235feadc7d7bd3e896c2ab8dd5c);
+            
+        
+
+        marker_3504f055d7ecd0dc2029125ba55e3590.bindPopup(popup_2e4eda726d4ee08b9af42416158c25ba)
+        ;
+
+        
+    
+    
+            var marker_5d9608f49ca9cba13ecd690d46ca731f = L.marker(
+                [41.0230164, 29.0174216],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_691d2baf66dc288b8a95002bd8dc81bb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9c5c4b762853badb9c656d6b36be8f83 = $(`<div id="html_9c5c4b762853badb9c656d6b36be8f83" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Aktif International Hospital&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_691d2baf66dc288b8a95002bd8dc81bb.setContent(html_9c5c4b762853badb9c656d6b36be8f83);
+            
+        
+
+        marker_5d9608f49ca9cba13ecd690d46ca731f.bindPopup(popup_691d2baf66dc288b8a95002bd8dc81bb)
+        ;
+
+        
+    
+    
+            var marker_9010459af1630897ecdcbdc2a488082d = L.marker(
+                [40.9840765, 29.0584553],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_3fcf2a64bd895a011c924c72d05b33fe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7930cc93d1e556abbd16d5fa58aa25e3 = $(`<div id="html_7930cc93d1e556abbd16d5fa58aa25e3" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Marmara Tıp Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; Ağız ve Diş Sağlığı, İç Hastalıkları, Göz, Enfeksiyon Hastalıkları, KBB, Genel Cerrahi, Kadın Doğum, Ortopedi, Cildiye, Nöroloji, Psikiyatri, Akupunktur, Diyetisyen, Psikolog, Check-up, Evde Sağlık Hizmeti, Ultrason, Doppler, Epilasyon, Botoks, Dolgu&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_3fcf2a64bd895a011c924c72d05b33fe.setContent(html_7930cc93d1e556abbd16d5fa58aa25e3);
+            
+        
+
+        marker_9010459af1630897ecdcbdc2a488082d.bindPopup(popup_3fcf2a64bd895a011c924c72d05b33fe)
+        ;
+
+        
+    
+    
+            var marker_e81b1f8e51c4b146af6069ec8e5725f7 = L.marker(
+                [41.0554262, 28.3671171],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_0cc8534469555e93c29a235de4083b90 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eee6e4a95ff818358417d483cf0e9c12 = $(`<div id="html_eee6e4a95ff818358417d483cf0e9c12" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Selimpaşa Aile Sağlığı Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_0cc8534469555e93c29a235de4083b90.setContent(html_eee6e4a95ff818358417d483cf0e9c12);
+            
+        
+
+        marker_e81b1f8e51c4b146af6069ec8e5725f7.bindPopup(popup_0cc8534469555e93c29a235de4083b90)
+        ;
+
+        
+    
+    
+            var marker_c8e286e903f825e16bbe718397e5852d = L.marker(
+                [40.9759692, 28.8550292],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_26d76bfe1e153a977b91faff6e0f300c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ae89b14dba62ba215d798adc2b24d1f3 = $(`<div id="html_ae89b14dba62ba215d798adc2b24d1f3" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Medicana 2&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_26d76bfe1e153a977b91faff6e0f300c.setContent(html_ae89b14dba62ba215d798adc2b24d1f3);
+            
+        
+
+        marker_c8e286e903f825e16bbe718397e5852d.bindPopup(popup_26d76bfe1e153a977b91faff6e0f300c)
+        ;
+
+        
+    
+    
+            var marker_4c51a051d1aa8d2c81becda22d468d95 = L.marker(
+                [41.0714522, 29.0151774],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_908761a36c9ba2511f1692d444f094a3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6f2a54fbb230dc4fa9546f14803927b8 = $(`<div id="html_6f2a54fbb230dc4fa9546f14803927b8" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Medicana Zincirlikuyu Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_908761a36c9ba2511f1692d444f094a3.setContent(html_6f2a54fbb230dc4fa9546f14803927b8);
+            
+        
+
+        marker_4c51a051d1aa8d2c81becda22d468d95.bindPopup(popup_908761a36c9ba2511f1692d444f094a3)
+        ;
+
+        
+    
+    
+            var marker_c3919d3c393d193fe01bc5fb690d1bb4 = L.marker(
+                [41.021568, 29.1198759],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_99f6f079dd3c66133dec27f4158f267d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5d596158f018dbd3984e77ecce7e5240 = $(`<div id="html_5d596158f018dbd3984e77ecce7e5240" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Erdem Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_99f6f079dd3c66133dec27f4158f267d.setContent(html_5d596158f018dbd3984e77ecce7e5240);
+            
+        
+
+        marker_c3919d3c393d193fe01bc5fb690d1bb4.bindPopup(popup_99f6f079dd3c66133dec27f4158f267d)
+        ;
+
+        
+    
+    
+            var marker_098333f6fd1375b5da51598a0f348535 = L.marker(
+                [41.159064, 28.91162],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_c597377a4de9f54917133cdf8f15b85d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5dcf5c35af594234f75c49043a69ee62 = $(`<div id="html_5dcf5c35af594234f75c49043a69ee62" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Eyüp Kemerburgaz Aile Sağlığı Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c597377a4de9f54917133cdf8f15b85d.setContent(html_5dcf5c35af594234f75c49043a69ee62);
+            
+        
+
+        marker_098333f6fd1375b5da51598a0f348535.bindPopup(popup_c597377a4de9f54917133cdf8f15b85d)
+        ;
+
+        
+    
+    
+            var marker_22a5ec6951ce40f6dd30fc0c247fd801 = L.marker(
+                [41.0254232, 28.8487524],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_897a54de03d803f25fdd472383e93afc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8caeae4faec3d207f4b2ab8ebf152f4a = $(`<div id="html_8caeae4faec3d207f4b2ab8ebf152f4a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Bağcılar İşitme Engelli Rehabilitasyon Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_897a54de03d803f25fdd472383e93afc.setContent(html_8caeae4faec3d207f4b2ab8ebf152f4a);
+            
+        
+
+        marker_22a5ec6951ce40f6dd30fc0c247fd801.bindPopup(popup_897a54de03d803f25fdd472383e93afc)
+        ;
+
+        
+    
+    
+            var marker_7ceaa352956cab13154d28ca7f67437e = L.marker(
+                [41.0373376, 29.2352315],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_3a3a29c6599e5881318058d088d34a2e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ee170005da694f8272f718da9e0d733c = $(`<div id="html_ee170005da694f8272f718da9e0d733c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Çekmeköy Devlet Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_3a3a29c6599e5881318058d088d34a2e.setContent(html_ee170005da694f8272f718da9e0d733c);
+            
+        
+
+        marker_7ceaa352956cab13154d28ca7f67437e.bindPopup(popup_3a3a29c6599e5881318058d088d34a2e)
+        ;
+
+        
+    
+    
+            var marker_4cfea217cef4f45e06dc976bf2cb408c = L.marker(
+                [41.0378066, 29.2351897],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_a0be8b7240704407c915c1dea953fafc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1ce7ea9e7b77c6dd6fa4731c84ca11fe = $(`<div id="html_1ce7ea9e7b77c6dd6fa4731c84ca11fe" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Şehit Prof. İlhan Varank Eğitim ve Araştırma Hastanesi - Çekmeköy Ek Hizmet Binası&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_a0be8b7240704407c915c1dea953fafc.setContent(html_1ce7ea9e7b77c6dd6fa4731c84ca11fe);
+            
+        
+
+        marker_4cfea217cef4f45e06dc976bf2cb408c.bindPopup(popup_a0be8b7240704407c915c1dea953fafc)
+        ;
+
+        
+    
+    
+            var marker_d524282f1d200ed9e2cc1b4ed954f213 = L.marker(
+                [41.0252986, 28.845519],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_fcf090f9d554492e96136d874ef934b7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3bb12c60492eef4dabdfcd29a1466b93 = $(`<div id="html_3bb12c60492eef4dabdfcd29a1466b93" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Aile Sağlığı Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_fcf090f9d554492e96136d874ef934b7.setContent(html_3bb12c60492eef4dabdfcd29a1466b93);
+            
+        
+
+        marker_d524282f1d200ed9e2cc1b4ed954f213.bindPopup(popup_fcf090f9d554492e96136d874ef934b7)
+        ;
+
+        
+    
+    
+            var marker_6d4afa513fa57d879f6cffca25ea216e = L.marker(
+                [41.0567006, 28.9153423],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_a3638764a6713fde8411ae9f9d08689b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_73fc5d6a50e8e387c581b7b1eb50c182 = $(`<div id="html_73fc5d6a50e8e387c581b7b1eb50c182" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Belde Tıp Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_a3638764a6713fde8411ae9f9d08689b.setContent(html_73fc5d6a50e8e387c581b7b1eb50c182);
+            
+        
+
+        marker_6d4afa513fa57d879f6cffca25ea216e.bindPopup(popup_a3638764a6713fde8411ae9f9d08689b)
+        ;
+
+        
+    
+    
+            var marker_4c4b0296c40a85be9e31eb658ce413a9 = L.marker(
+                [41.0525054, 28.959974],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_946d4a3343c6d149db53d1b36ccfb26f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8684d43575b10597bf23e6902f7f891e = $(`<div id="html_8684d43575b10597bf23e6902f7f891e" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Okmeydanı hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_946d4a3343c6d149db53d1b36ccfb26f.setContent(html_8684d43575b10597bf23e6902f7f891e);
+            
+        
+
+        marker_4c4b0296c40a85be9e31eb658ce413a9.bindPopup(popup_946d4a3343c6d149db53d1b36ccfb26f)
+        ;
+
+        
+    
+    
+            var marker_2486cfd67756fd45019b32b97934fba4 = L.marker(
+                [41.0550656, 28.9852615],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_7d5888589a955db28b4a703729aeee35 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_be46c0d3be65fecc6ddd30f7121e2afb = $(`<div id="html_be46c0d3be65fecc6ddd30f7121e2afb" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; ENT Clinic-Dr. Selcuk Guney&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_7d5888589a955db28b4a703729aeee35.setContent(html_be46c0d3be65fecc6ddd30f7121e2afb);
+            
+        
+
+        marker_2486cfd67756fd45019b32b97934fba4.bindPopup(popup_7d5888589a955db28b4a703729aeee35)
+        ;
+
+        
+    
+    
+            var marker_65cf7b7ab9009e9c7decd642f8c7eee8 = L.marker(
+                [41.0122162, 29.0408363],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_cc4341f44166c725480dedcf68bf43d8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d94e3baba745e2c023b199c3dc268923 = $(`<div id="html_d94e3baba745e2c023b199c3dc268923" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Validebağ Devlet Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Üsküdar/İstanbul</div>`)[0];
+                popup_cc4341f44166c725480dedcf68bf43d8.setContent(html_d94e3baba745e2c023b199c3dc268923);
+            
+        
+
+        marker_65cf7b7ab9009e9c7decd642f8c7eee8.bindPopup(popup_cc4341f44166c725480dedcf68bf43d8)
+        ;
+
+        
+    
+    
+            var marker_5ecaeba45780bfc349dadb96a53610df = L.marker(
+                [41.1552143, 28.6194859],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_643c9c8261ddb830925d99fb746f7c9b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8b765f625c53baa041a30d3e0b00bdf6 = $(`<div id="html_8b765f625c53baa041a30d3e0b00bdf6" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Hadımköy Dr. İsmail Niyazi Kurtulmuş Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; İstanbul</div>`)[0];
+                popup_643c9c8261ddb830925d99fb746f7c9b.setContent(html_8b765f625c53baa041a30d3e0b00bdf6);
+            
+        
+
+        marker_5ecaeba45780bfc349dadb96a53610df.bindPopup(popup_643c9c8261ddb830925d99fb746f7c9b)
+        ;
+
+        
+    
+    
+            var marker_e14659d61dda8499f589bda09cd2e1fc = L.marker(
+                [41.0901207, 28.9819751],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_9920da990ef0bf8f3dade3524f5dc978 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_59bfed6a7283af5405f7aa2c2856bc5c = $(`<div id="html_59bfed6a7283af5405f7aa2c2856bc5c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Orion Surgery Center&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_9920da990ef0bf8f3dade3524f5dc978.setContent(html_59bfed6a7283af5405f7aa2c2856bc5c);
+            
+        
+
+        marker_e14659d61dda8499f589bda09cd2e1fc.bindPopup(popup_9920da990ef0bf8f3dade3524f5dc978)
+        ;
+
+        
+    
+    
+            var marker_f9b51c8643118e0aa9909d0a45d6012a = L.marker(
+                [40.9837641, 28.8728374],
+                {
+}
+            ).addTo(map_0a1b4128e72de149785d08332a7b4cb5);
+        
+    
+        var popup_4333cc42f17af07fa922c91a91a03ee4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_94f1b4a3170caa70729dd6becf19a657 = $(`<div id="html_94f1b4a3170caa70729dd6becf19a657" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Özel Yaşar Hastanesi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Bakırköy/İstanbul</div>`)[0];
+                popup_4333cc42f17af07fa922c91a91a03ee4.setContent(html_94f1b4a3170caa70729dd6becf19a657);
+            
+        
+
+        marker_f9b51c8643118e0aa9909d0a45d6012a.bindPopup(popup_4333cc42f17af07fa922c91a91a03ee4)
+        ;
+
+        
+    
+</script>
+</html>

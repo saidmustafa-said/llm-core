@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5b58d1fb68841cdd2573361483882e8c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_5b58d1fb68841cdd2573361483882e8c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5b58d1fb68841cdd2573361483882e8c = L.map(
+                "map_5b58d1fb68841cdd2573361483882e8c",
+                {
+                    center: [41.05368981269841, 28.90689757619047],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2b6ae7e851feacb58da712134893c4aa = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_2b6ae7e851feacb58da712134893c4aa.addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+            var marker_f0aab90c0e6941d736b9965f2aef1e38 = L.marker(
+                [41.2085999, 29.022675],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_6d4b352e1a8a06d6c58ead73962e21c8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_41ce9c38ea8f2327dbcebf44d5c58d2d = $(`<div id="html_41ce9c38ea8f2327dbcebf44d5c58d2d" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Zekeriyaköy Garaj Voltrun Şarj İstasyonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_6d4b352e1a8a06d6c58ead73962e21c8.setContent(html_41ce9c38ea8f2327dbcebf44d5c58d2d);
+            
+        
+
+        marker_f0aab90c0e6941d736b9965f2aef1e38.bindPopup(popup_6d4b352e1a8a06d6c58ead73962e21c8)
+        ;
+
+        
+    
+    
+            var marker_1b8f4ddc3c968c8bf91384910f44b168 = L.marker(
+                [41.23708, 28.8546118],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_c8b059867db6c1d0e1a1dbc58f10cdb4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dbf1fe57ed48e047bb8fadf6ddb9e439 = $(`<div id="html_dbf1fe57ed48e047bb8fadf6ddb9e439" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Park Inn By Radisson Voltrun Şarj İstasyonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c8b059867db6c1d0e1a1dbc58f10cdb4.setContent(html_dbf1fe57ed48e047bb8fadf6ddb9e439);
+            
+        
+
+        marker_1b8f4ddc3c968c8bf91384910f44b168.bindPopup(popup_c8b059867db6c1d0e1a1dbc58f10cdb4)
+        ;
+
+        
+    
+    
+            var marker_e45ca17cb3803b128187b84655aefa26 = L.marker(
+                [40.9963545, 28.6252346],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_a2d41f5505a6c436df9893658a230693 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_174a5692edb6c5a09821f0d61f561966 = $(`<div id="html_174a5692edb6c5a09821f0d61f561966" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Alpet Gürpınar Voltrun Şarj İstasyonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_a2d41f5505a6c436df9893658a230693.setContent(html_174a5692edb6c5a09821f0d61f561966);
+            
+        
+
+        marker_e45ca17cb3803b128187b84655aefa26.bindPopup(popup_a2d41f5505a6c436df9893658a230693)
+        ;
+
+        
+    
+    
+            var marker_1b2091fe7c04f241ca0a378c0f6df633 = L.marker(
+                [41.0931213, 28.7750945],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_88c9709969ea118dd6c49b8cdfc64550 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cd079c1c29c724dafe0d9a20b8820590 = $(`<div id="html_cd079c1c29c724dafe0d9a20b8820590" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Nidapark Başakşehir Voltrun Şarj İstasyonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_88c9709969ea118dd6c49b8cdfc64550.setContent(html_cd079c1c29c724dafe0d9a20b8820590);
+            
+        
+
+        marker_1b2091fe7c04f241ca0a378c0f6df633.bindPopup(popup_88c9709969ea118dd6c49b8cdfc64550)
+        ;
+
+        
+    
+    
+            var marker_72154ffa7f5e7cd4753706ab634c7f99 = L.marker(
+                [41.039806, 28.8106289],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_de42d4b5eac48860105b339efe862fec = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fbcb6562bcde84bad0b7ae55895a4f64 = $(`<div id="html_fbcb6562bcde84bad0b7ae55895a4f64" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Oasis Designer Outlet Voltrun Şarj İstasyonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_de42d4b5eac48860105b339efe862fec.setContent(html_fbcb6562bcde84bad0b7ae55895a4f64);
+            
+        
+
+        marker_72154ffa7f5e7cd4753706ab634c7f99.bindPopup(popup_de42d4b5eac48860105b339efe862fec)
+        ;
+
+        
+    
+    
+            var marker_a3c9a9cc3a1b095622797af42643cd04 = L.marker(
+                [41.1094092, 28.9925122],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_fb4425277733c120f99a7187dedb5cbb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6f1f199fed2da7ed3c1c9e2f0f3014dc = $(`<div id="html_6f1f199fed2da7ed3c1c9e2f0f3014dc" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Seba Office Boulevard Voltrun Şarj İstasyonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_fb4425277733c120f99a7187dedb5cbb.setContent(html_6f1f199fed2da7ed3c1c9e2f0f3014dc);
+            
+        
+
+        marker_a3c9a9cc3a1b095622797af42643cd04.bindPopup(popup_fb4425277733c120f99a7187dedb5cbb)
+        ;
+
+        
+    
+    
+            var marker_51705909228aaaa5759e3bd14710e59b = L.marker(
+                [41.1066405, 28.9996201],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_4039e162c6c3e26c9664e9a491c84da6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_603d0b861e085036d7ab05a135583911 = $(`<div id="html_603d0b861e085036d7ab05a135583911" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Nidapark Seyrantepe Voltrun Şarj İstasyonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_4039e162c6c3e26c9664e9a491c84da6.setContent(html_603d0b861e085036d7ab05a135583911);
+            
+        
+
+        marker_51705909228aaaa5759e3bd14710e59b.bindPopup(popup_4039e162c6c3e26c9664e9a491c84da6)
+        ;
+
+        
+    
+    
+            var marker_4bba6ff504110a50a562a34a847eaf35 = L.marker(
+                [41.0852446, 28.980504],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_542d0b476d5822885ef8795f82051969 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5c0ef9c0d6763b1154ca264df7eae059 = $(`<div id="html_5c0ef9c0d6763b1154ca264df7eae059" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Güney Plaza Voltrun Şarj İstasyonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_542d0b476d5822885ef8795f82051969.setContent(html_5c0ef9c0d6763b1154ca264df7eae059);
+            
+        
+
+        marker_4bba6ff504110a50a562a34a847eaf35.bindPopup(popup_542d0b476d5822885ef8795f82051969)
+        ;
+
+        
+    
+    
+            var marker_91bdd2bce663548b89df77b122c0b969 = L.marker(
+                [41.0795958, 29.0104562],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_d2c8e7a695d025098886bc8a3994ce98 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a5c418a0097ce4b29cf0c47a8907141a = $(`<div id="html_a5c418a0097ce4b29cf0c47a8907141a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Nidakule Levent Voltrun Şarj İstasyonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_d2c8e7a695d025098886bc8a3994ce98.setContent(html_a5c418a0097ce4b29cf0c47a8907141a);
+            
+        
+
+        marker_91bdd2bce663548b89df77b122c0b969.bindPopup(popup_d2c8e7a695d025098886bc8a3994ce98)
+        ;
+
+        
+    
+    
+            var marker_4e314f9916590ec8cdc46eb5f00024b7 = L.marker(
+                [41.0761626, 29.0111428],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_1fcf675dc33392b14082f33745debd12 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9ec6b712748a5ca390f96646df5fdbae = $(`<div id="html_9ec6b712748a5ca390f96646df5fdbae" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; MetroCity Residence Voltrun Şarj İstasyonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_1fcf675dc33392b14082f33745debd12.setContent(html_9ec6b712748a5ca390f96646df5fdbae);
+            
+        
+
+        marker_4e314f9916590ec8cdc46eb5f00024b7.bindPopup(popup_1fcf675dc33392b14082f33745debd12)
+        ;
+
+        
+    
+    
+            var marker_f5f3fd24fee5ef615741f0815c81f0be = L.marker(
+                [41.0680015, 28.9864719],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_25408904707a0f7a15412ec29fcef886 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_305cc3ad65d0b208dae4af6b1defd663 = $(`<div id="html_305cc3ad65d0b208dae4af6b1defd663" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Nurol Tower Voltrun Şarj İstasyonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_25408904707a0f7a15412ec29fcef886.setContent(html_305cc3ad65d0b208dae4af6b1defd663);
+            
+        
+
+        marker_f5f3fd24fee5ef615741f0815c81f0be.bindPopup(popup_25408904707a0f7a15412ec29fcef886)
+        ;
+
+        
+    
+    
+            var marker_25c98ef91e5b1f407fc37c95b7533a88 = L.marker(
+                [41.0321098, 28.9749169],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_92a50ec167b0160668d13040dc9d8407 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a3969a96d6e071c90d4edf33060263c3 = $(`<div id="html_a3969a96d6e071c90d4edf33060263c3" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; İSO Odakule&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_92a50ec167b0160668d13040dc9d8407.setContent(html_a3969a96d6e071c90d4edf33060263c3);
+            
+        
+
+        marker_25c98ef91e5b1f407fc37c95b7533a88.bindPopup(popup_92a50ec167b0160668d13040dc9d8407)
+        ;
+
+        
+    
+    
+            var marker_2e645e41fbc5c673aa32d5f8bdc5b33d = L.marker(
+                [41.0041725, 29.0721946],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_88e54f1e26b67967f5a592256ed769d6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_143cdc7a7a3e40409ce048d6db29432c = $(`<div id="html_143cdc7a7a3e40409ce048d6db29432c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Emaar Square Residence Voltrun Şarj Noktası&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_88e54f1e26b67967f5a592256ed769d6.setContent(html_143cdc7a7a3e40409ce048d6db29432c);
+            
+        
+
+        marker_2e645e41fbc5c673aa32d5f8bdc5b33d.bindPopup(popup_88e54f1e26b67967f5a592256ed769d6)
+        ;
+
+        
+    
+    
+            var marker_787612edbbbabe3fbe9f7119a8d15922 = L.marker(
+                [41.0048098, 29.0722355],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_f73f8cb1445c413071dff28a7e994d10 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e8bd3357a263b3c5eef7a5ad715fa05d = $(`<div id="html_e8bd3357a263b3c5eef7a5ad715fa05d" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Emaar Square Mall Voltrun Şarj Noktası&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f73f8cb1445c413071dff28a7e994d10.setContent(html_e8bd3357a263b3c5eef7a5ad715fa05d);
+            
+        
+
+        marker_787612edbbbabe3fbe9f7119a8d15922.bindPopup(popup_f73f8cb1445c413071dff28a7e994d10)
+        ;
+
+        
+    
+    
+            var marker_8a94143704d7d88d3319d85b333ae761 = L.marker(
+                [40.9570159, 29.0815662],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_870e8a039e59fbed80fce71a80892b0c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_961247d163c99930e81572a338b70ab0 = $(`<div id="html_961247d163c99930e81572a338b70ab0" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Teknik Yapı Suadiye Sahil&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_870e8a039e59fbed80fce71a80892b0c.setContent(html_961247d163c99930e81572a338b70ab0);
+            
+        
+
+        marker_8a94143704d7d88d3319d85b333ae761.bindPopup(popup_870e8a039e59fbed80fce71a80892b0c)
+        ;
+
+        
+    
+    
+            var marker_5a2c9d96590333148f1ffc5cd5d469d5 = L.marker(
+                [40.978918, 29.1201773],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_6c3c17b0396d4384f2028d57aa5a35a2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1c344a5e1eca8724e2fa725c7b8fee68 = $(`<div id="html_1c344a5e1eca8724e2fa725c7b8fee68" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Garaj Oto&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_6c3c17b0396d4384f2028d57aa5a35a2.setContent(html_1c344a5e1eca8724e2fa725c7b8fee68);
+            
+        
+
+        marker_5a2c9d96590333148f1ffc5cd5d469d5.bindPopup(popup_6c3c17b0396d4384f2028d57aa5a35a2)
+        ;
+
+        
+    
+    
+            var marker_891d3fd67970914fe59e8bdb23edb22a = L.marker(
+                [40.8658063, 29.2752921],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_e0bb661276f8f91afaf9c5e1795dfba3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6e8b816900687413675f70da74801096 = $(`<div id="html_6e8b816900687413675f70da74801096" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Pendorya Alışveriş Merkezi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_e0bb661276f8f91afaf9c5e1795dfba3.setContent(html_6e8b816900687413675f70da74801096);
+            
+        
+
+        marker_891d3fd67970914fe59e8bdb23edb22a.bindPopup(popup_e0bb661276f8f91afaf9c5e1795dfba3)
+        ;
+
+        
+    
+    
+            var marker_a61b7011305aba4db6ca8ebc56865462 = L.marker(
+                [40.9174192, 29.1783116],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_aec54e6994fa59b5d5a6fe011730d456 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ed7e18cf57ce1d23b991cb750c0903da = $(`<div id="html_ed7e18cf57ce1d23b991cb750c0903da" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Asf Otomotiv&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_aec54e6994fa59b5d5a6fe011730d456.setContent(html_ed7e18cf57ce1d23b991cb750c0903da);
+            
+        
+
+        marker_a61b7011305aba4db6ca8ebc56865462.bindPopup(popup_aec54e6994fa59b5d5a6fe011730d456)
+        ;
+
+        
+    
+    
+            var marker_1386a9e841aa74fd6c76dbce6158ed74 = L.marker(
+                [40.9194648, 29.1645479],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_a2cbdeb466ee785b7ee76462c4fad2ac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2360684b70214e1f700836d9e1d95112 = $(`<div id="html_2360684b70214e1f700836d9e1d95112" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Maltepe Park Avm&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_a2cbdeb466ee785b7ee76462c4fad2ac.setContent(html_2360684b70214e1f700836d9e1d95112);
+            
+        
+
+        marker_1386a9e841aa74fd6c76dbce6158ed74.bindPopup(popup_a2cbdeb466ee785b7ee76462c4fad2ac)
+        ;
+
+        
+    
+    
+            var marker_e09fd1729ab0d4bbdaff912ceb3eff08 = L.marker(
+                [40.9933281, 28.630447],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_390aabc652458b9b08630d5db4e4a4cd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8c863efe6e3be083599064281a44b950 = $(`<div id="html_8c863efe6e3be083599064281a44b950" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Sharz - Energy Beylikdüzü&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_390aabc652458b9b08630d5db4e4a4cd.setContent(html_8c863efe6e3be083599064281a44b950);
+            
+        
+
+        marker_e09fd1729ab0d4bbdaff912ceb3eff08.bindPopup(popup_390aabc652458b9b08630d5db4e4a4cd)
+        ;
+
+        
+    
+    
+            var marker_c67cb1d40b3d16eeaf53e9471c86f777 = L.marker(
+                [41.0173475, 28.5624701],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_2ced2a7001fd8aa9791257cb12c8a0e6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_064f63164d50452b1d9d88da958ec303 = $(`<div id="html_064f63164d50452b1d9d88da958ec303" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Sharz - Shell Mimarsinan&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_2ced2a7001fd8aa9791257cb12c8a0e6.setContent(html_064f63164d50452b1d9d88da958ec303);
+            
+        
+
+        marker_c67cb1d40b3d16eeaf53e9471c86f777.bindPopup(popup_2ced2a7001fd8aa9791257cb12c8a0e6)
+        ;
+
+        
+    
+    
+            var marker_0076bc5af573f996604f1544c0acdc99 = L.marker(
+                [41.0144383, 28.5460094],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_efb9e9594da4bb7380816d942419f853 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0c59212ef109fe0a7cb0683a2a13d23d = $(`<div id="html_0c59212ef109fe0a7cb0683a2a13d23d" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Sharz - Sinanoba&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_efb9e9594da4bb7380816d942419f853.setContent(html_0c59212ef109fe0a7cb0683a2a13d23d);
+            
+        
+
+        marker_0076bc5af573f996604f1544c0acdc99.bindPopup(popup_efb9e9594da4bb7380816d942419f853)
+        ;
+
+        
+    
+    
+            var marker_d46209db5d58f220566a4d690ea8c426 = L.marker(
+                [41.0497436, 28.3907908],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_45372fc3b2f1eae2ab24490858f66178 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_99915af29fc012a26f0123eb3b6cf0be = $(`<div id="html_99915af29fc012a26f0123eb3b6cf0be" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Sharz - Selimpaşa Energy (Istanbul Yönü)&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_45372fc3b2f1eae2ab24490858f66178.setContent(html_99915af29fc012a26f0123eb3b6cf0be);
+            
+        
+
+        marker_d46209db5d58f220566a4d690ea8c426.bindPopup(popup_45372fc3b2f1eae2ab24490858f66178)
+        ;
+
+        
+    
+    
+            var marker_4ac6534037bb45e465925f11f009c773 = L.marker(
+                [41.03263, 29.0403801],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_06bf62bb94bd81824ff813be064a492c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_54c0560209879a30734c75fcaa58edbf = $(`<div id="html_54c0560209879a30734c75fcaa58edbf" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; SHARZ Nakkaş Kebap&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; ÜSKÜDAR</div>`)[0];
+                popup_06bf62bb94bd81824ff813be064a492c.setContent(html_54c0560209879a30734c75fcaa58edbf);
+            
+        
+
+        marker_4ac6534037bb45e465925f11f009c773.bindPopup(popup_06bf62bb94bd81824ff813be064a492c)
+        ;
+
+        
+    
+    
+            var marker_6eab69db3a0a60c533aa2c7bc8551f2c = L.marker(
+                [41.0427988, 28.9492851],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_09591e98d89f978d5a7d8d0eef8f9422 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9bdf491a5738d1341959cc02e74816e9 = $(`<div id="html_9bdf491a5738d1341959cc02e74816e9" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; SHARZ Kasımpaşa Deniz Otopark&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; BEYOĞLU</div>`)[0];
+                popup_09591e98d89f978d5a7d8d0eef8f9422.setContent(html_9bdf491a5738d1341959cc02e74816e9);
+            
+        
+
+        marker_6eab69db3a0a60c533aa2c7bc8551f2c.bindPopup(popup_09591e98d89f978d5a7d8d0eef8f9422)
+        ;
+
+        
+    
+    
+            var marker_6a6409e760980db71462466962261cca = L.marker(
+                [40.990142, 29.175971],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_5a0d00df53ee28953a63661da28ecfbc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0187967cb54dbd9fc0f6780f2ff08715 = $(`<div id="html_0187967cb54dbd9fc0f6780f2ff08715" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; SHARZ Ferhatpaşa Lukoil&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; ATAŞEHİR</div>`)[0];
+                popup_5a0d00df53ee28953a63661da28ecfbc.setContent(html_0187967cb54dbd9fc0f6780f2ff08715);
+            
+        
+
+        marker_6a6409e760980db71462466962261cca.bindPopup(popup_5a0d00df53ee28953a63661da28ecfbc)
+        ;
+
+        
+    
+    
+            var marker_371e385d5eb23f678e133ec3bae0a339 = L.marker(
+                [40.965546, 28.7980679],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_327757fb0d9a1775fa7b5601c62b2e84 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1c7562b8e663779ba17c70258116e4b1 = $(`<div id="html_1c7562b8e663779ba17c70258116e4b1" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; SHARZ Aqua Florya&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; BAKIRKÖY</div>`)[0];
+                popup_327757fb0d9a1775fa7b5601c62b2e84.setContent(html_1c7562b8e663779ba17c70258116e4b1);
+            
+        
+
+        marker_371e385d5eb23f678e133ec3bae0a339.bindPopup(popup_327757fb0d9a1775fa7b5601c62b2e84)
+        ;
+
+        
+    
+    
+            var marker_5baf2e2312686ea23fea3719835b99ee = L.marker(
+                [41.1834805, 28.7346361],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_b2c5663db17f3b983e5787aa49baf164 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bfae1d140fbbebb33a3ec0447dfff925 = $(`<div id="html_bfae1d140fbbebb33a3ec0447dfff925" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; SHARZ Avlu34 AVM&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; ARNAVUTKÖY</div>`)[0];
+                popup_b2c5663db17f3b983e5787aa49baf164.setContent(html_bfae1d140fbbebb33a3ec0447dfff925);
+            
+        
+
+        marker_5baf2e2312686ea23fea3719835b99ee.bindPopup(popup_b2c5663db17f3b983e5787aa49baf164)
+        ;
+
+        
+    
+    
+            var marker_3a99ce44a2953896e49cf8605cedf5d2 = L.marker(
+                [41.0847012, 28.0373184],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_955c573d77150de78daa866484bcad58 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_73336cd893cc0d34c6ff810a946af47c = $(`<div id="html_73336cd893cc0d34c6ff810a946af47c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; SHARZ Çantaköy Enerji&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; SİLİVRİ</div>`)[0];
+                popup_955c573d77150de78daa866484bcad58.setContent(html_73336cd893cc0d34c6ff810a946af47c);
+            
+        
+
+        marker_3a99ce44a2953896e49cf8605cedf5d2.bindPopup(popup_955c573d77150de78daa866484bcad58)
+        ;
+
+        
+    
+    
+            var marker_73867124a945458d6bd7b53c425dbc1f = L.marker(
+                [41.0467339, 29.2528973],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_916b5e4ee3bcb36eeb53fee4eebccc15 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ef5faea48b3e979f1585b604718f1a66 = $(`<div id="html_ef5faea48b3e979f1585b604718f1a66" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; SHARZ Kerte Gusto&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; ÇEKMEKÖY</div>`)[0];
+                popup_916b5e4ee3bcb36eeb53fee4eebccc15.setContent(html_ef5faea48b3e979f1585b604718f1a66);
+            
+        
+
+        marker_73867124a945458d6bd7b53c425dbc1f.bindPopup(popup_916b5e4ee3bcb36eeb53fee4eebccc15)
+        ;
+
+        
+    
+    
+            var marker_6c71b6b38bf9055af89dfba5f5cb2f63 = L.marker(
+                [41.0773612, 29.011635],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_ca6b52cf144e51ad4944eb5834bdc1ef = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4b7ae8928f995a7c91b176cfde106b76 = $(`<div id="html_4b7ae8928f995a7c91b176cfde106b76" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; SHARZ Özdilek Park İstanbul AVM&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; ŞİŞLİ</div>`)[0];
+                popup_ca6b52cf144e51ad4944eb5834bdc1ef.setContent(html_4b7ae8928f995a7c91b176cfde106b76);
+            
+        
+
+        marker_6c71b6b38bf9055af89dfba5f5cb2f63.bindPopup(popup_ca6b52cf144e51ad4944eb5834bdc1ef)
+        ;
+
+        
+    
+    
+            var marker_6850771e2ea014500067efecce0a8d74 = L.marker(
+                [40.997294, 29.096849],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_7ea68442b690c6912918b15c3612c8be = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d6f80e2edb1ffaff6a151a82808f998d = $(`<div id="html_d6f80e2edb1ffaff6a151a82808f998d" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; SHARZ Watergarden AVM&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; ATAŞEHİR</div>`)[0];
+                popup_7ea68442b690c6912918b15c3612c8be.setContent(html_d6f80e2edb1ffaff6a151a82808f998d);
+            
+        
+
+        marker_6850771e2ea014500067efecce0a8d74.bindPopup(popup_7ea68442b690c6912918b15c3612c8be)
+        ;
+
+        
+    
+    
+            var marker_c18e8f824df6ecad3580e788c3851e79 = L.marker(
+                [41.0692118, 29.0104054],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_13ee7e57a281af5ed7492231c4dbe878 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cf4a1da42e00413d6d7cb34a558b30cd = $(`<div id="html_cf4a1da42e00413d6d7cb34a558b30cd" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; SHARZ Avis Otopark Zincirlikuyu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; ŞİŞLİ</div>`)[0];
+                popup_13ee7e57a281af5ed7492231c4dbe878.setContent(html_cf4a1da42e00413d6d7cb34a558b30cd);
+            
+        
+
+        marker_c18e8f824df6ecad3580e788c3851e79.bindPopup(popup_13ee7e57a281af5ed7492231c4dbe878)
+        ;
+
+        
+    
+    
+            var marker_d563afc096397a5f76d84b01421ea011 = L.marker(
+                [41.0711131, 28.9832235],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_4eb61e96303c03d645c735fdcfd80307 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0b511d68cf11cae1fe3ad77898578fef = $(`<div id="html_0b511d68cf11cae1fe3ad77898578fef" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; SHARZ Çağlayan Otopark&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; KAĞITHANE</div>`)[0];
+                popup_4eb61e96303c03d645c735fdcfd80307.setContent(html_0b511d68cf11cae1fe3ad77898578fef);
+            
+        
+
+        marker_d563afc096397a5f76d84b01421ea011.bindPopup(popup_4eb61e96303c03d645c735fdcfd80307)
+        ;
+
+        
+    
+    
+            var marker_d19ef08fd1ea8aa7769e38f633025bc4 = L.marker(
+                [41.1155567, 29.120936],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_504fa210c840bc69229f12ef7c7518a3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_16e04c948f9bdf4ad62eb036bdac1a35 = $(`<div id="html_16e04c948f9bdf4ad62eb036bdac1a35" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; SHARZ Beykoz Konakları&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; BEYKOZ</div>`)[0];
+                popup_504fa210c840bc69229f12ef7c7518a3.setContent(html_16e04c948f9bdf4ad62eb036bdac1a35);
+            
+        
+
+        marker_d19ef08fd1ea8aa7769e38f633025bc4.bindPopup(popup_504fa210c840bc69229f12ef7c7518a3)
+        ;
+
+        
+    
+    
+            var marker_0a8018c9521a4e080ff9434e2276d90b = L.marker(
+                [41.0419159, 28.9174466],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_7ecf24d73a941ff1f8676f37c63e7259 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_53994eaa892b7a62fe4941b041d803db = $(`<div id="html_53994eaa892b7a62fe4941b041d803db" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; SHARZ Bağcılar TP NFM&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; EYÜP</div>`)[0];
+                popup_7ecf24d73a941ff1f8676f37c63e7259.setContent(html_53994eaa892b7a62fe4941b041d803db);
+            
+        
+
+        marker_0a8018c9521a4e080ff9434e2276d90b.bindPopup(popup_7ecf24d73a941ff1f8676f37c63e7259)
+        ;
+
+        
+    
+    
+            var marker_648210ec21d8e9b68a6554a46cf8cd97 = L.marker(
+                [41.049627, 28.3871063],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_e122ee6b84f5e3542d9f96a1230aba7e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_46fd76c30982c9385500d645043e635c = $(`<div id="html_46fd76c30982c9385500d645043e635c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; SHARZ Selimpaşa Petrol&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; SİLİVRİ</div>`)[0];
+                popup_e122ee6b84f5e3542d9f96a1230aba7e.setContent(html_46fd76c30982c9385500d645043e635c);
+            
+        
+
+        marker_648210ec21d8e9b68a6554a46cf8cd97.bindPopup(popup_e122ee6b84f5e3542d9f96a1230aba7e)
+        ;
+
+        
+    
+    
+            var marker_19107119b8fb791c94668991cdaf3a6e = L.marker(
+                [41.0974915, 28.9022165],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_aa4776fe301d03a2a445648d0229db5d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_846c47201042bd048feb111297d3ccab = $(`<div id="html_846c47201042bd048feb111297d3ccab" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; SHARZ Lüleburgaz Petrol&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; SULTANGAZİ</div>`)[0];
+                popup_aa4776fe301d03a2a445648d0229db5d.setContent(html_846c47201042bd048feb111297d3ccab);
+            
+        
+
+        marker_19107119b8fb791c94668991cdaf3a6e.bindPopup(popup_aa4776fe301d03a2a445648d0229db5d)
+        ;
+
+        
+    
+    
+            var marker_63762438a90e8259d2013bb97c807057 = L.marker(
+                [41.053982, 28.8529353],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_a0e7a188d955abf2974540d9a733adf7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c5cd851aa51b0d312dddc277b9cf0bcd = $(`<div id="html_c5cd851aa51b0d312dddc277b9cf0bcd" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; SHARZ Edirnepet Akaryakıt 1&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; BAĞCILAR</div>`)[0];
+                popup_a0e7a188d955abf2974540d9a733adf7.setContent(html_c5cd851aa51b0d312dddc277b9cf0bcd);
+            
+        
+
+        marker_63762438a90e8259d2013bb97c807057.bindPopup(popup_a0e7a188d955abf2974540d9a733adf7)
+        ;
+
+        
+    
+    
+            var marker_ec0616db1b8d2c125d206e972b6baed4 = L.marker(
+                [41.0609416, 28.9990285],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_e808de47213a69980118641c1ac00d06 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b0727968ad7065287ec6005e713d39a0 = $(`<div id="html_b0727968ad7065287ec6005e713d39a0" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; SHARZ Keşan Petrol (Fulya)&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; BEŞİKTAŞ</div>`)[0];
+                popup_e808de47213a69980118641c1ac00d06.setContent(html_b0727968ad7065287ec6005e713d39a0);
+            
+        
+
+        marker_ec0616db1b8d2c125d206e972b6baed4.bindPopup(popup_e808de47213a69980118641c1ac00d06)
+        ;
+
+        
+    
+    
+            var marker_61bb615fb9157ff427c31bb0f6a6a22e = L.marker(
+                [41.0459486, 28.8276949],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_a6769d4f59c4bf3afa3bbc19f31ecc36 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_26f1dc6cae4627e9e795f7a53cd9d09c = $(`<div id="html_26f1dc6cae4627e9e795f7a53cd9d09c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; SHARZ Beş Canlar Petrol&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; BAĞCILAR</div>`)[0];
+                popup_a6769d4f59c4bf3afa3bbc19f31ecc36.setContent(html_26f1dc6cae4627e9e795f7a53cd9d09c);
+            
+        
+
+        marker_61bb615fb9157ff427c31bb0f6a6a22e.bindPopup(popup_a6769d4f59c4bf3afa3bbc19f31ecc36)
+        ;
+
+        
+    
+    
+            var marker_9c536b3b4e44cf8e7d68d3ae8d6a52f5 = L.marker(
+                [40.8943546, 29.2594362],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_62f950479cfd17cf9e050c5fac05a866 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5c8b0382f2b5affe0eeb8a51e9c102c5 = $(`<div id="html_5c8b0382f2b5affe0eeb8a51e9c102c5" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; SHARZ Babaeski Petrol 1&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; PENDİK</div>`)[0];
+                popup_62f950479cfd17cf9e050c5fac05a866.setContent(html_5c8b0382f2b5affe0eeb8a51e9c102c5);
+            
+        
+
+        marker_9c536b3b4e44cf8e7d68d3ae8d6a52f5.bindPopup(popup_62f950479cfd17cf9e050c5fac05a866)
+        ;
+
+        
+    
+    
+            var marker_839a8671dc9bd2d111828819f76aa6dd = L.marker(
+                [41.0998174, 28.766472],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_81a5fe99a50b97173c77f018ebf2a907 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b299bfc811a82567622159b3bc949310 = $(`<div id="html_b299bfc811a82567622159b3bc949310" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; SHARZ Zengin Petrol San ve Tic A.ş.&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; BAŞAKŞEHİR</div>`)[0];
+                popup_81a5fe99a50b97173c77f018ebf2a907.setContent(html_b299bfc811a82567622159b3bc949310);
+            
+        
+
+        marker_839a8671dc9bd2d111828819f76aa6dd.bindPopup(popup_81a5fe99a50b97173c77f018ebf2a907)
+        ;
+
+        
+    
+    
+            var marker_597515cbd843a510b9eb7662609f9a51 = L.marker(
+                [41.0018758, 28.9562649],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_ce5f582631655c3af7524cb2e7023aaf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d4cbad3b354d6a2b7f7b8620d0995fec = $(`<div id="html_d4cbad3b354d6a2b7f7b8620d0995fec" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_ce5f582631655c3af7524cb2e7023aaf.setContent(html_d4cbad3b354d6a2b7f7b8620d0995fec);
+            
+        
+
+        marker_597515cbd843a510b9eb7662609f9a51.bindPopup(popup_ce5f582631655c3af7524cb2e7023aaf)
+        ;
+
+        
+    
+    
+            var marker_8cd66ed567260bc66a7f24e281e1bff4 = L.marker(
+                [41.0119851, 29.1068681],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_59d5b73c55bf50aabda623cf1284d5cc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b4bf18d579bbfc651b5ce7d17c6ea781 = $(`<div id="html_b4bf18d579bbfc651b5ce7d17c6ea781" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; ZES - Oğuşlar Otomotiv Bosch 22kw AC&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_59d5b73c55bf50aabda623cf1284d5cc.setContent(html_b4bf18d579bbfc651b5ce7d17c6ea781);
+            
+        
+
+        marker_8cd66ed567260bc66a7f24e281e1bff4.bindPopup(popup_59d5b73c55bf50aabda623cf1284d5cc)
+        ;
+
+        
+    
+    
+            var marker_949cd782b5c08e0090312ccea6cff618 = L.marker(
+                [40.9020329, 29.2286427],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_b2808de00b58696730be89987deac275 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_132b7a6f0220ea216b702c0ac55f3842 = $(`<div id="html_132b7a6f0220ea216b702c0ac55f3842" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Tekerlekli Sandalye Şarj istasyonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_b2808de00b58696730be89987deac275.setContent(html_132b7a6f0220ea216b702c0ac55f3842);
+            
+        
+
+        marker_949cd782b5c08e0090312ccea6cff618.bindPopup(popup_b2808de00b58696730be89987deac275)
+        ;
+
+        
+    
+    
+            var marker_042ee0e7eedb450a9970329020ded129 = L.marker(
+                [41.196105, 28.8260789],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_b09b7b4fac7bf45131ea884bad9171bd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_534c034c23c2b750971effa9f7919e41 = $(`<div id="html_534c034c23c2b750971effa9f7919e41" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; EŞARJ&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_b09b7b4fac7bf45131ea884bad9171bd.setContent(html_534c034c23c2b750971effa9f7919e41);
+            
+        
+
+        marker_042ee0e7eedb450a9970329020ded129.bindPopup(popup_b09b7b4fac7bf45131ea884bad9171bd)
+        ;
+
+        
+    
+    
+            var marker_9ac428ba9b17e8118ebf8d5757fc88b0 = L.marker(
+                [41.1956919, 28.8255587],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_86581045eaab1c71d93e7dc1a6ff4c0a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_184071c99485e82936bfdc8aa166af6a = $(`<div id="html_184071c99485e82936bfdc8aa166af6a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; ZES - ICA Fenertepe Dinlenme Tesisi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_86581045eaab1c71d93e7dc1a6ff4c0a.setContent(html_184071c99485e82936bfdc8aa166af6a);
+            
+        
+
+        marker_9ac428ba9b17e8118ebf8d5757fc88b0.bindPopup(popup_86581045eaab1c71d93e7dc1a6ff4c0a)
+        ;
+
+        
+    
+    
+            var marker_fceb9eacd23bb1c4e1dc057b34a03b98 = L.marker(
+                [41.197978, 28.8224883],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_0037100653543571d1de63cfeb167e59 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_88d309b43bde9618e362c12247d835ab = $(`<div id="html_88d309b43bde9618e362c12247d835ab" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; ZES - ICA Fenertepe Dinlenme Tesisi&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_0037100653543571d1de63cfeb167e59.setContent(html_88d309b43bde9618e362c12247d835ab);
+            
+        
+
+        marker_fceb9eacd23bb1c4e1dc057b34a03b98.bindPopup(popup_0037100653543571d1de63cfeb167e59)
+        ;
+
+        
+    
+    
+            var marker_559632119e6c590044a3bd54ad4fceba = L.marker(
+                [41.1987248, 28.822542],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_82f7adc726799d952e55bba0bb9cacc7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4d236170a26b1d3329d0ba6ff27fcad6 = $(`<div id="html_4d236170a26b1d3329d0ba6ff27fcad6" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; ESARJ - Shell Bi&#39; Mola Fenertepe&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_82f7adc726799d952e55bba0bb9cacc7.setContent(html_4d236170a26b1d3329d0ba6ff27fcad6);
+            
+        
+
+        marker_559632119e6c590044a3bd54ad4fceba.bindPopup(popup_82f7adc726799d952e55bba0bb9cacc7)
+        ;
+
+        
+    
+    
+            var marker_f6df340d75691b5e347868f37dd9c6f9 = L.marker(
+                [41.1054884, 28.9916564],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_c097d4ed4cdc513dae984e486360ca89 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_87bc12ff6ea0a312b7d8be2cc965060d = $(`<div id="html_87bc12ff6ea0a312b7d8be2cc965060d" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Voltrun Şarj İstasyonu&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c097d4ed4cdc513dae984e486360ca89.setContent(html_87bc12ff6ea0a312b7d8be2cc965060d);
+            
+        
+
+        marker_f6df340d75691b5e347868f37dd9c6f9.bindPopup(popup_c097d4ed4cdc513dae984e486360ca89)
+        ;
+
+        
+    
+    
+            var marker_5908b6f0daef44b789c1fe2a41b1dfa2 = L.marker(
+                [41.1057289, 28.9909027],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_bda9f9e93fa0079c5b1dea96a3f5805e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c26bfa38e055d217a76fff005e1c59a3 = $(`<div id="html_c26bfa38e055d217a76fff005e1c59a3" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Sharz.net Charging Station&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_bda9f9e93fa0079c5b1dea96a3f5805e.setContent(html_c26bfa38e055d217a76fff005e1c59a3);
+            
+        
+
+        marker_5908b6f0daef44b789c1fe2a41b1dfa2.bindPopup(popup_bda9f9e93fa0079c5b1dea96a3f5805e)
+        ;
+
+        
+    
+    
+            var marker_6a9de796a9a185418890deaac60a3f24 = L.marker(
+                [41.0037399, 29.0712518],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_430a9984be7ee306152a2bcd75e536f8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aa173c696f95d758663ee1800b4f5735 = $(`<div id="html_aa173c696f95d758663ee1800b4f5735" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Tesla Supercharger&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_430a9984be7ee306152a2bcd75e536f8.setContent(html_aa173c696f95d758663ee1800b4f5735);
+            
+        
+
+        marker_6a9de796a9a185418890deaac60a3f24.bindPopup(popup_430a9984be7ee306152a2bcd75e536f8)
+        ;
+
+        
+    
+    
+            var marker_7686268c85764b4ed09797f600aa4b99 = L.marker(
+                [41.1941244, 28.5714521],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_c041c6667f09405b04d96e6643c69049 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c2a452626d2576251087037a59c5c00e = $(`<div id="html_c2a452626d2576251087037a59c5c00e" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Togg Trugo&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c041c6667f09405b04d96e6643c69049.setContent(html_c2a452626d2576251087037a59c5c00e);
+            
+        
+
+        marker_7686268c85764b4ed09797f600aa4b99.bindPopup(popup_c041c6667f09405b04d96e6643c69049)
+        ;
+
+        
+    
+    
+            var marker_86e94e5580c6e6498a67d5cc70d006a3 = L.marker(
+                [40.9274178, 29.4388565],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_71646e6e74b9e66c46d223c40f7cb2e5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_716b8d0ffb46fcfe630fd8891f84722f = $(`<div id="html_716b8d0ffb46fcfe630fd8891f84722f" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Togg Trugo&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_71646e6e74b9e66c46d223c40f7cb2e5.setContent(html_716b8d0ffb46fcfe630fd8891f84722f);
+            
+        
+
+        marker_86e94e5580c6e6498a67d5cc70d006a3.bindPopup(popup_71646e6e74b9e66c46d223c40f7cb2e5)
+        ;
+
+        
+    
+    
+            var marker_ec8ffda8020743aaca8025597ea7d139 = L.marker(
+                [40.929877, 29.4365025],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_c9ae1cc05b15b1fce44e42144b29783f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c3c3bc41fc0919c8a970d73c1045ec6a = $(`<div id="html_c3c3bc41fc0919c8a970d73c1045ec6a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Togg Trugo&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_c9ae1cc05b15b1fce44e42144b29783f.setContent(html_c3c3bc41fc0919c8a970d73c1045ec6a);
+            
+        
+
+        marker_ec8ffda8020743aaca8025597ea7d139.bindPopup(popup_c9ae1cc05b15b1fce44e42144b29783f)
+        ;
+
+        
+    
+    
+            var marker_f8816f764b295cfe9455ee97f1fad648 = L.marker(
+                [40.9564668, 29.0803559],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_8354dbd0140291b0493e1edf4d54d95b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1878906b31ce04bb8397f40ea55e1908 = $(`<div id="html_1878906b31ce04bb8397f40ea55e1908" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Togg Trugo&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_8354dbd0140291b0493e1edf4d54d95b.setContent(html_1878906b31ce04bb8397f40ea55e1908);
+            
+        
+
+        marker_f8816f764b295cfe9455ee97f1fad648.bindPopup(popup_8354dbd0140291b0493e1edf4d54d95b)
+        ;
+
+        
+    
+    
+            var marker_71e631762aeca93d62e43c90ef689521 = L.marker(
+                [41.1944503, 28.5697933],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_fd2c1ca21ec53924c8331f1d47d8123e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_865772c4629d5e1f7227477ec8746a2c = $(`<div id="html_865772c4629d5e1f7227477ec8746a2c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Togg Trugo&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_fd2c1ca21ec53924c8331f1d47d8123e.setContent(html_865772c4629d5e1f7227477ec8746a2c);
+            
+        
+
+        marker_71e631762aeca93d62e43c90ef689521.bindPopup(popup_fd2c1ca21ec53924c8331f1d47d8123e)
+        ;
+
+        
+    
+    
+            var marker_0bab342f07d5934ec8dc9b2dcbd9cb0e = L.marker(
+                [41.039878, 28.4290646],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_efdd28b1f5ba65e33da5f579ccf1c68b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f43e7bb760b56e3b25e222d968c16e37 = $(`<div id="html_f43e7bb760b56e3b25e222d968c16e37" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; HES Hybrid Energy Stations&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_efdd28b1f5ba65e33da5f579ccf1c68b.setContent(html_f43e7bb760b56e3b25e222d968c16e37);
+            
+        
+
+        marker_0bab342f07d5934ec8dc9b2dcbd9cb0e.bindPopup(popup_efdd28b1f5ba65e33da5f579ccf1c68b)
+        ;
+
+        
+    
+    
+            var marker_707f0c7c05265aadd06b5167c6d141e3 = L.marker(
+                [40.9504664, 29.3918867],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_68a1089fb5e59266e558a5a40a8863e9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ba63d7c86e74d0d0da3064416b8f87fb = $(`<div id="html_ba63d7c86e74d0d0da3064416b8f87fb" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Solarşarj&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_68a1089fb5e59266e558a5a40a8863e9.setContent(html_ba63d7c86e74d0d0da3064416b8f87fb);
+            
+        
+
+        marker_707f0c7c05265aadd06b5167c6d141e3.bindPopup(popup_68a1089fb5e59266e558a5a40a8863e9)
+        ;
+
+        
+    
+    
+            var marker_bc6c725f93e7a800975947ab2087b1b0 = L.marker(
+                [41.2563647, 28.0364326],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_4a0fad9e8cf66a95cbeca73a22911ade = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a29216a941a6365069d44e0bab028dbd = $(`<div id="html_a29216a941a6365069d44e0bab028dbd" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Shell Recharge&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_4a0fad9e8cf66a95cbeca73a22911ade.setContent(html_a29216a941a6365069d44e0bab028dbd);
+            
+        
+
+        marker_bc6c725f93e7a800975947ab2087b1b0.bindPopup(popup_4a0fad9e8cf66a95cbeca73a22911ade)
+        ;
+
+        
+    
+    
+            var marker_05cbdd10bd4e8485d6c31273898968e9 = L.marker(
+                [41.0755065, 28.6224103],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_ef30c3db2f139b4a4ed4f15f4da0f85c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3fb7e4b2bd2de3ccf7fc93d5a7bf0317 = $(`<div id="html_3fb7e4b2bd2de3ccf7fc93d5a7bf0317" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Beeful&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_ef30c3db2f139b4a4ed4f15f4da0f85c.setContent(html_3fb7e4b2bd2de3ccf7fc93d5a7bf0317);
+            
+        
+
+        marker_05cbdd10bd4e8485d6c31273898968e9.bindPopup(popup_ef30c3db2f139b4a4ed4f15f4da0f85c)
+        ;
+
+        
+    
+    
+            var marker_27b88a8c41e8425ad9055c7462a9186e = L.marker(
+                [41.0633181, 28.6536858],
+                {
+}
+            ).addTo(map_5b58d1fb68841cdd2573361483882e8c);
+        
+    
+        var popup_0878d7582c8fe131306b8a501cd256b1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f34c8448536c87f25415f7306d75c6c2 = $(`<div id="html_f34c8448536c87f25415f7306d75c6c2" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_0878d7582c8fe131306b8a501cd256b1.setContent(html_f34c8448536c87f25415f7306d75c6c2);
+            
+        
+
+        marker_27b88a8c41e8425ad9055c7462a9186e.bindPopup(popup_0878d7582c8fe131306b8a501cd256b1)
+        ;
+
+        
+    
+</script>
+</html>

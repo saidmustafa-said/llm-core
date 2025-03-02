@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f420744e2b59b155c2fb59f321e53e56 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f420744e2b59b155c2fb59f321e53e56" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f420744e2b59b155c2fb59f321e53e56 = L.map(
+                "map_f420744e2b59b155c2fb59f321e53e56",
+                {
+                    center: [41.01900869615385, 28.946129153846154],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_88a881b9f6cb8578131d43f1af28c139 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_88a881b9f6cb8578131d43f1af28c139.addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+            var marker_0663fef15089001919374b5990ce400b = L.marker(
+                [41.033162, 28.9818585],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_419c23a8ed409a674b27183b0f933b4d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4825231684d8fd90a43d412457307d97 = $(`<div id="html_4825231684d8fd90a43d412457307d97" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Ağa Hamamı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_419c23a8ed409a674b27183b0f933b4d.setContent(html_4825231684d8fd90a43d412457307d97);
+            
+        
+
+        marker_0663fef15089001919374b5990ce400b.bindPopup(popup_419c23a8ed409a674b27183b0f933b4d)
+        ;
+
+        
+    
+    
+            var marker_4635367022be0239bd405a47e301826d = L.marker(
+                [41.0194143, 28.9604523],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_190ce467a44e67db6132c06720ed6dd1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d21e1325538ed68e86fb7582f93eaede = $(`<div id="html_d21e1325538ed68e86fb7582f93eaede" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Hacı Kadın Hamami&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_190ce467a44e67db6132c06720ed6dd1.setContent(html_d21e1325538ed68e86fb7582f93eaede);
+            
+        
+
+        marker_4635367022be0239bd405a47e301826d.bindPopup(popup_190ce467a44e67db6132c06720ed6dd1)
+        ;
+
+        
+    
+    
+            var marker_36e96601ba7424b34c8549f1db9a8c35 = L.marker(
+                [41.0324084, 28.981367],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_35906f1e9fe9d038967a9181a4c60d46 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_115d25584733f1fa6cb5f88bdf94a6ac = $(`<div id="html_115d25584733f1fa6cb5f88bdf94a6ac" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Cihangir Sauna&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_35906f1e9fe9d038967a9181a4c60d46.setContent(html_115d25584733f1fa6cb5f88bdf94a6ac);
+            
+        
+
+        marker_36e96601ba7424b34c8549f1db9a8c35.bindPopup(popup_35906f1e9fe9d038967a9181a4c60d46)
+        ;
+
+        
+    
+    
+            var marker_793390b0bb3bda8f5a4d7e58602d5ed8 = L.marker(
+                [41.0083203, 28.9754745],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_e04e27809b4b68f379c5260dfc98a82a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bff21da782227ae4b44abae3ca923053 = $(`<div id="html_bff21da782227ae4b44abae3ca923053" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_e04e27809b4b68f379c5260dfc98a82a.setContent(html_bff21da782227ae4b44abae3ca923053);
+            
+        
+
+        marker_793390b0bb3bda8f5a4d7e58602d5ed8.bindPopup(popup_e04e27809b4b68f379c5260dfc98a82a)
+        ;
+
+        
+    
+    
+            var marker_6a9e269804b1ea17491ffb6471a85f52 = L.marker(
+                [41.0255132, 28.9691698],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_8f81e6ee3805bdbd03c24eb19b36d0f9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4fa52382a933290d72b8486ae3fcf77d = $(`<div id="html_4fa52382a933290d72b8486ae3fcf77d" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Şıfa Hamamı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_8f81e6ee3805bdbd03c24eb19b36d0f9.setContent(html_4fa52382a933290d72b8486ae3fcf77d);
+            
+        
+
+        marker_6a9e269804b1ea17491ffb6471a85f52.bindPopup(popup_8f81e6ee3805bdbd03c24eb19b36d0f9)
+        ;
+
+        
+    
+    
+            var marker_3216e3388f5eda7ade2c1ca1bf7c68da = L.marker(
+                [41.0798988, 28.2312612],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_1ca8ecfeec9546f7aa3b3f92be14a6c6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_02ec27bf705a684ae6182172f270fff9 = $(`<div id="html_02ec27bf705a684ae6182172f270fff9" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_1ca8ecfeec9546f7aa3b3f92be14a6c6.setContent(html_02ec27bf705a684ae6182172f270fff9);
+            
+        
+
+        marker_3216e3388f5eda7ade2c1ca1bf7c68da.bindPopup(popup_1ca8ecfeec9546f7aa3b3f92be14a6c6)
+        ;
+
+        
+    
+    
+            var marker_3280c035e2138236530cd2fe668c37e9 = L.marker(
+                [41.0124428, 28.9674257],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_28176e87e112d6e5a2048fc3348c72fe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d1ea25ffb60055e3b998e6cf1f96e974 = $(`<div id="html_d1ea25ffb60055e3b998e6cf1f96e974" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Örücüler Hamamı Turkish Bath and Sauna&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_28176e87e112d6e5a2048fc3348c72fe.setContent(html_d1ea25ffb60055e3b998e6cf1f96e974);
+            
+        
+
+        marker_3280c035e2138236530cd2fe668c37e9.bindPopup(popup_28176e87e112d6e5a2048fc3348c72fe)
+        ;
+
+        
+    
+    
+            var marker_48b9e52f5e5d8e3ebd3279833990f014 = L.marker(
+                [41.0587896, 28.9840784],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_751d16a955b07dda77e01d23e0301440 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8096061194f58edc93b5a020a887548c = $(`<div id="html_8096061194f58edc93b5a020a887548c" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Sankurt Sauna&amp;Spa&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_751d16a955b07dda77e01d23e0301440.setContent(html_8096061194f58edc93b5a020a887548c);
+            
+        
+
+        marker_48b9e52f5e5d8e3ebd3279833990f014.bindPopup(popup_751d16a955b07dda77e01d23e0301440)
+        ;
+
+        
+    
+    
+            var marker_1dbc53cf2e00c3579d37ba21bfb0e625 = L.marker(
+                [41.0334805, 28.968406],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_43141d6af2932903470ee25ad26846fa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_28565fefecf068e296e2a52a3f22d5f7 = $(`<div id="html_28565fefecf068e296e2a52a3f22d5f7" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Buyuk Hamam&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_43141d6af2932903470ee25ad26846fa.setContent(html_28565fefecf068e296e2a52a3f22d5f7);
+            
+        
+
+        marker_1dbc53cf2e00c3579d37ba21bfb0e625.bindPopup(popup_43141d6af2932903470ee25ad26846fa)
+        ;
+
+        
+    
+    
+            var marker_581425e39c1258bee94c9e6567194431 = L.marker(
+                [41.0114351, 28.9507691],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_8cbeb2b2842396255e0665ff71e3ffcd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c222e222a9fbe207137726c9f58c37fd = $(`<div id="html_c222e222a9fbe207137726c9f58c37fd" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_8cbeb2b2842396255e0665ff71e3ffcd.setContent(html_c222e222a9fbe207137726c9f58c37fd);
+            
+        
+
+        marker_581425e39c1258bee94c9e6567194431.bindPopup(popup_8cbeb2b2842396255e0665ff71e3ffcd)
+        ;
+
+        
+    
+    
+            var marker_08e6474375247be7f08ee2dd5de18acc = L.marker(
+                [41.0159031, 28.9656606],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_296c8db08814670eb15544204281248d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_df9d1ae35e66fecc200130b1a07fde28 = $(`<div id="html_df9d1ae35e66fecc200130b1a07fde28" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Süleymaniye Hamamı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_296c8db08814670eb15544204281248d.setContent(html_df9d1ae35e66fecc200130b1a07fde28);
+            
+        
+
+        marker_08e6474375247be7f08ee2dd5de18acc.bindPopup(popup_296c8db08814670eb15544204281248d)
+        ;
+
+        
+    
+    
+            var marker_c73bbb7e0cf5092c0156e152b3ab7dbb = L.marker(
+                [40.9984376, 28.9074438],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_3f8fe7be72b6c603da577d6777622b54 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e3ebdc6df0df5db55df56cf082c18210 = $(`<div id="html_e3ebdc6df0df5db55df56cf082c18210" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Beştelsiz Hamamı Havuz Sauna&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_3f8fe7be72b6c603da577d6777622b54.setContent(html_e3ebdc6df0df5db55df56cf082c18210);
+            
+        
+
+        marker_c73bbb7e0cf5092c0156e152b3ab7dbb.bindPopup(popup_3f8fe7be72b6c603da577d6777622b54)
+        ;
+
+        
+    
+    
+            var marker_9d1d2a5db673b1fdedb1d7ee9af979ab = L.marker(
+                [40.9940338, 28.9015429],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_80c33a9c3b4c25dc29de6718d871f4e3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_df78448331167c874d2cd67c84f5a058 = $(`<div id="html_df78448331167c874d2cd67c84f5a058" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Yeşiltepe Hamamı Havuz Duş Sauna&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Istanbul</div>`)[0];
+                popup_80c33a9c3b4c25dc29de6718d871f4e3.setContent(html_df78448331167c874d2cd67c84f5a058);
+            
+        
+
+        marker_9d1d2a5db673b1fdedb1d7ee9af979ab.bindPopup(popup_80c33a9c3b4c25dc29de6718d871f4e3)
+        ;
+
+        
+    
+    
+            var marker_5cbd6f6c081a5ea0eab1ce6b8042d747 = L.marker(
+                [41.024425, 29.0123693],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_5b12f1958a3a6ffb0d61c8f4cefc8016 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c9b3be5b3422a78bd4c4b01940a86cd2 = $(`<div id="html_c9b3be5b3422a78bd4c4b01940a86cd2" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Şifa Hamamı Üsküdar&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_5b12f1958a3a6ffb0d61c8f4cefc8016.setContent(html_c9b3be5b3422a78bd4c4b01940a86cd2);
+            
+        
+
+        marker_5cbd6f6c081a5ea0eab1ce6b8042d747.bindPopup(popup_5b12f1958a3a6ffb0d61c8f4cefc8016)
+        ;
+
+        
+    
+    
+            var marker_27140cd3c437386de98b246d0448afd9 = L.marker(
+                [41.0239644, 29.0354383],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_589b4a41be0888394bdb1c58f4bf01d4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ce2f0f81e907e73047cdd09a9cb6e17e = $(`<div id="html_ce2f0f81e907e73047cdd09a9cb6e17e" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Kral sauna&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; istanbul</div>`)[0];
+                popup_589b4a41be0888394bdb1c58f4bf01d4.setContent(html_ce2f0f81e907e73047cdd09a9cb6e17e);
+            
+        
+
+        marker_27140cd3c437386de98b246d0448afd9.bindPopup(popup_589b4a41be0888394bdb1c58f4bf01d4)
+        ;
+
+        
+    
+    
+            var marker_442ee966dfecf90e2f8475a41348b854 = L.marker(
+                [41.0042273, 28.9755264],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_aea0f41dc73788f31f2c2ac6b28f582a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b184e35b34ff1a7012209661dd9a4b2e = $(`<div id="html_b184e35b34ff1a7012209661dd9a4b2e" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Sifa hamami&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_aea0f41dc73788f31f2c2ac6b28f582a.setContent(html_b184e35b34ff1a7012209661dd9a4b2e);
+            
+        
+
+        marker_442ee966dfecf90e2f8475a41348b854.bindPopup(popup_aea0f41dc73788f31f2c2ac6b28f582a)
+        ;
+
+        
+    
+    
+            var marker_1989fd901e6ea4a9689348e30875c090 = L.marker(
+                [40.890075, 29.2627252],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_54a673a3effbf8a4b3400c18fb1af698 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_105d6b1de1d926b2c40d60e9d8b8b249 = $(`<div id="html_105d6b1de1d926b2c40d60e9d8b8b249" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Hamam&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_54a673a3effbf8a4b3400c18fb1af698.setContent(html_105d6b1de1d926b2c40d60e9d8b8b249);
+            
+        
+
+        marker_1989fd901e6ea4a9689348e30875c090.bindPopup(popup_54a673a3effbf8a4b3400c18fb1af698)
+        ;
+
+        
+    
+    
+            var marker_499aa46147f4a39f5f03ef2e074830a4 = L.marker(
+                [41.0317647, 28.980562],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_8bc21b235a40f72d4c3107c398d669f8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cd4d8a389fe053f07349e88ca078d775 = $(`<div id="html_cd4d8a389fe053f07349e88ca078d775" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Çukurcuma Hamami&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_8bc21b235a40f72d4c3107c398d669f8.setContent(html_cd4d8a389fe053f07349e88ca078d775);
+            
+        
+
+        marker_499aa46147f4a39f5f03ef2e074830a4.bindPopup(popup_8bc21b235a40f72d4c3107c398d669f8)
+        ;
+
+        
+    
+    
+            var marker_99e2ab8ece43ee11b7c1bf0b134dcf03 = L.marker(
+                [41.0317481, 28.9805987],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_cc51ead68926bbd1e0c56a5e56317b48 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e0f4768f7cb2acbae3bfdf03a9ef811a = $(`<div id="html_e0f4768f7cb2acbae3bfdf03a9ef811a" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_cc51ead68926bbd1e0c56a5e56317b48.setContent(html_e0f4768f7cb2acbae3bfdf03a9ef811a);
+            
+        
+
+        marker_99e2ab8ece43ee11b7c1bf0b134dcf03.bindPopup(popup_cc51ead68926bbd1e0c56a5e56317b48)
+        ;
+
+        
+    
+    
+            var marker_38e1001e7d7f91bea262d044f59bc89d = L.marker(
+                [41.0112305, 28.9613329],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_f5e9720ffd4b2552b330f51fc8c71e24 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b71e9b332c894c4c7e8d885fc1c49738 = $(`<div id="html_b71e9b332c894c4c7e8d885fc1c49738" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f5e9720ffd4b2552b330f51fc8c71e24.setContent(html_b71e9b332c894c4c7e8d885fc1c49738);
+            
+        
+
+        marker_38e1001e7d7f91bea262d044f59bc89d.bindPopup(popup_f5e9720ffd4b2552b330f51fc8c71e24)
+        ;
+
+        
+    
+    
+            var marker_0435de5aa29c068fefbb824b0501bc6b = L.marker(
+                [41.0487924, 28.9614955],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_bf81830e0761c0b56a8be181636fc6a5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_98044d3f8da6b7d30a6dc37ce9f17ab3 = $(`<div id="html_98044d3f8da6b7d30a6dc37ce9f17ab3" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Unknown Place&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_bf81830e0761c0b56a8be181636fc6a5.setContent(html_98044d3f8da6b7d30a6dc37ce9f17ab3);
+            
+        
+
+        marker_0435de5aa29c068fefbb824b0501bc6b.bindPopup(popup_bf81830e0761c0b56a8be181636fc6a5)
+        ;
+
+        
+    
+    
+            var marker_eeb5ed291c5795bfa64867aecafadaca = L.marker(
+                [41.0636345, 28.6678979],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_19150fe2dc2445ddee3d24ea7d49e1f5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_312d02a99a50bb6344a536a526fcf2fa = $(`<div id="html_312d02a99a50bb6344a536a526fcf2fa" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Altınkese Spa &amp; Hamam&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_19150fe2dc2445ddee3d24ea7d49e1f5.setContent(html_312d02a99a50bb6344a536a526fcf2fa);
+            
+        
+
+        marker_eeb5ed291c5795bfa64867aecafadaca.bindPopup(popup_19150fe2dc2445ddee3d24ea7d49e1f5)
+        ;
+
+        
+    
+    
+            var marker_d78d6ce82e23c24d705f971b200a9288 = L.marker(
+                [40.9800339, 29.1124775],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_1341915a0e3055785204ddd824ba0cb3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e9ff3b23062b58158316ea77d8d44548 = $(`<div id="html_e9ff3b23062b58158316ea77d8d44548" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Güneş Sauna &amp; Hamam&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_1341915a0e3055785204ddd824ba0cb3.setContent(html_e9ff3b23062b58158316ea77d8d44548);
+            
+        
+
+        marker_d78d6ce82e23c24d705f971b200a9288.bindPopup(popup_1341915a0e3055785204ddd824ba0cb3)
+        ;
+
+        
+    
+    
+            var marker_f013f536c54ece6cc35a0f0094bb6030 = L.marker(
+                [41.0056119, 28.9614958],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_408696d9053a4bffbb76485963af5e80 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_54f3309194527f91984a46576b90cf46 = $(`<div id="html_54f3309194527f91984a46576b90cf46" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Tarihi Nişanca Hamamı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_408696d9053a4bffbb76485963af5e80.setContent(html_54f3309194527f91984a46576b90cf46);
+            
+        
+
+        marker_f013f536c54ece6cc35a0f0094bb6030.bindPopup(popup_408696d9053a4bffbb76485963af5e80)
+        ;
+
+        
+    
+    
+            var marker_5c71703cc1dd3be5776fe2813e509069 = L.marker(
+                [41.0313277, 28.9698449],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_f6d15989a3f7602dc016aed22c11f548 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f5b64fa97bcd06c727194d0c41b328e3 = $(`<div id="html_f5b64fa97bcd06c727194d0c41b328e3" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Catma Mescit Istanbul Hamam&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_f6d15989a3f7602dc016aed22c11f548.setContent(html_f5b64fa97bcd06c727194d0c41b328e3);
+            
+        
+
+        marker_5c71703cc1dd3be5776fe2813e509069.bindPopup(popup_f6d15989a3f7602dc016aed22c11f548)
+        ;
+
+        
+    
+    
+            var marker_cd6726d785c8e790eed57088a089cbd5 = L.marker(
+                [41.0241512, 28.9726838],
+                {
+}
+            ).addTo(map_f420744e2b59b155c2fb59f321e53e56);
+        
+    
+        var popup_b9d586f99e1ca43882461efe0e54cb0e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_92dfc02ce979aad16fd683c516a1d073 = $(`<div id="html_92dfc02ce979aad16fd683c516a1d073" style="width: 100.0%; height: 100.0%;">&lt;b&gt;Name:&lt;/b&gt; Tarihi Çeşme Hamamı&lt;br&gt;&lt;b&gt;Description:&lt;/b&gt; No description available&lt;br&gt;&lt;b&gt;Location:&lt;/b&gt; Türkiye/İstanbul</div>`)[0];
+                popup_b9d586f99e1ca43882461efe0e54cb0e.setContent(html_92dfc02ce979aad16fd683c516a1d073);
+            
+        
+
+        marker_cd6726d785c8e790eed57088a089cbd5.bindPopup(popup_b9d586f99e1ca43882461efe0e54cb0e)
+        ;
+
+        
+    
+</script>
+</html>
