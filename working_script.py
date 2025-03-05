@@ -1,17 +1,36 @@
 
 import math
 import networkx as nx
-import osmnx as ox
+# import osmnx as ox
+from osmnx import graph_from_point, distance
 import json
 import re
 import os
 import pandas as pd
 from llamaapi import LlamaAPI
+import time
+from functools import lru_cache
+from dotenv import load_dotenv
 
 # Initialize the LlamaAPI SDK
-llama = LlamaAPI("2048ca26-30cc-4c2e-ad95-fe45e7e1b482")
+load_dotenv()
+
+api_key = os.getenv("apiKey")
+
+llama = LlamaAPI(api_key)
 
 
+def timing_decorator(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        print(f"{func.__name__} süresi: {end_time - start_time:.6f} saniye")
+        return result
+    return wrapper
+
+
+@timing_decorator
 def retrieve_tags():
     """
     Retrieves tags from the CSV file (tags.csv) and returns them as a formatted string.
@@ -30,6 +49,7 @@ def retrieve_tags():
         return "None"
 
 
+@timing_decorator
 def llm_api(prompt):
     """
     Interacts with the Llama API to send a prompt and retrieve tags based on the user's input.
@@ -101,6 +121,7 @@ def llm_api(prompt):
     return None
 
 
+@timing_decorator
 def compute_bounding_box(lat, lon, radius_m):
     """
     Compute an approximate bounding box around a point (lat, lon) with a given radius (in meters).
@@ -113,6 +134,7 @@ def compute_bounding_box(lat, lon, radius_m):
     return lat - delta_lat, lat + delta_lat, lon - delta_lon, lon + delta_lon
 
 
+@timing_decorator
 def filter_by_bounding_box_and_tag(df, user_lat, user_lon, radius_m, search_tag):
     """
     Quickly filter POIs that fall within a bounding box around the user's location
@@ -134,35 +156,57 @@ def filter_by_bounding_box_and_tag(df, user_lat, user_lon, radius_m, search_tag)
 # ---------------------------
 # Routing Functions using OSMnx & NetworkX
 # ---------------------------
+cached_graph = {}
+
+
+@timing_decorator
 def get_network_graph(user_lat, user_lon, radius_m, travel_mode='drive'):
-    """
-    Download a street network graph centered on the user's location.
-    Supports multiple travel modes like 'drive' and 'walk'.
-    """
-    graph_dist = radius_m * 2
+    graph_key = (user_lat, user_lon, radius_m, travel_mode)
+
+    # Önbellekte varsa, döndür
+    if graph_key in cached_graph:
+        print("Returning cached graph")
+        return cached_graph[graph_key]
+
+    # Önbellekte yoksa, veriyi al
     try:
-        return ox.graph_from_point((user_lat, user_lon), dist=graph_dist, network_type=travel_mode)
+        graph_dist = radius_m * 2
+        graph = graph_from_point(
+            (user_lat, user_lon), dist=graph_dist, network_type=travel_mode)
+        cached_graph[graph_key] = graph  # Önbelleğe kaydet
+        return graph
     except Exception as e:
         print(f"Error retrieving network graph for {travel_mode}:", e)
         return None
 
 
+@lru_cache(maxsize=128)
+def get_node_for_coords(graph, lat, lon):
+    return distance.nearest_nodes(graph, lon, lat)
+
+
+@timing_decorator
 def get_route_distance(graph, user_lat, user_lon, candidate_lat, candidate_lon):
     """
     Compute the route (network) distance between the user's location and the candidate's location.
     Returns distance in meters.
     """
     try:
-        user_node = ox.distance.nearest_nodes(graph, user_lon, user_lat)
-        candidate_node = ox.distance.nearest_nodes(
-            graph, candidate_lon, candidate_lat)
+        # Önbelleğe alınmış node hesaplamalarını kullan
+        user_node = get_node_for_coords(graph, user_lat, user_lon)
+        candidate_node = get_node_for_coords(
+            graph, candidate_lat, candidate_lon)
+
+        # Kısa yolu hesapla
         return nx.shortest_path_length(graph, user_node, candidate_node, weight='length')
+
     except Exception as e:
         print(
             f"Error computing route for candidate at ({candidate_lat}, {candidate_lon}):", e)
         return float('inf')
 
 
+@timing_decorator
 def get_top_n_by_route_distance_for_all_modes(candidates, user_lat, user_lon, radius_m, n=5):
     """
     Compute route distances for all candidates using both driving and walking modes.
@@ -192,6 +236,7 @@ def get_top_n_by_route_distance_for_all_modes(candidates, user_lat, user_lon, ra
 # ---------------------------
 # Data Connection Function
 # ---------------------------
+@timing_decorator
 def get_poi_data(user_lat, user_lon, radius_m, search_tag):
     """
     Connect to the data source and retrieve POI data.
@@ -212,6 +257,7 @@ def get_poi_data(user_lat, user_lon, radius_m, search_tag):
 # ---------------------------
 # Main Query Function
 # ---------------------------
+@timing_decorator
 def find_top_candidates(user_lat, user_lon, radius_m, search_tag, n=5):
     """
     Find the top candidate POIs given user parameters.
@@ -240,6 +286,7 @@ def find_top_candidates(user_lat, user_lon, radius_m, search_tag, n=5):
     return top_candidates
 
 
+@timing_decorator
 def format_top_candidates(top_candidates):
     # print(top_candidates)
 
@@ -263,10 +310,8 @@ def format_top_candidates(top_candidates):
                 f"No locations found within the specified route distance for {mode} mode.")
     return "\n\n".join(lines)
 
-# Initialize the LlamaAPI SDK
-llama = LlamaAPI("2048ca26-30cc-4c2e-ad95-fe45e7e1b482")
 
-
+@timing_decorator
 def get_location_advice(context_text, prompt):
     """
     Sends a request to the Llama API with the provided context information and user prompt.

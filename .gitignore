@@ -9,3 +9,4 @@ local_llama3
 /venv/
 .DS_Store
 /cache/
+.env
