@@ -6,7 +6,8 @@ local_llama3
 # data2
 # data_less
 # scrapper
-/venv/
+/.venv/
 .DS_Store
 /cache/
+/__pycache__/
 .env
