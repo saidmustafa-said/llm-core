@@ -50,6 +50,36 @@ def retrieve_tags():
 
 
 @timing_decorator
+def extract_json(response):
+    response_data = response.json()
+    print("response:", response_data)
+
+    content = response_data['choices'][0]['message']['content']
+
+    # Try direct JSON parsing first
+    try:
+        result = json.loads(content)
+        print("✅ Direct JSON parsing successful.")
+        return result
+    except json.JSONDecodeError:
+        print("❌ Direct JSON parsing failed. Trying regex extraction...")
+
+    # Try regex extraction if direct parsing fails
+    match = re.search(r'\{.*\}', content, re.DOTALL)
+    if match:
+        json_str = match.group(0).strip()  # Extract JSON portion
+        try:
+            result = json.loads(json_str)
+            print("✅ Regex JSON extraction successful.")
+            return result
+        except json.JSONDecodeError:
+            print("❌ Regex JSON extraction also failed.")
+
+    print("❌ No valid JSON found.")
+    return None
+
+
+@timing_decorator
 def llm_api(prompt):
     """
     Interacts with the Llama API to send a prompt and retrieve tags based on the user's input.
@@ -111,14 +141,14 @@ def llm_api(prompt):
     }
 
     response = llama.run(api_request_json)
-    response_data = response.json()
-    content = response_data['choices'][0]['message']['content']
+    parsed_json = extract_json(response)
 
-    match = re.search(r'```json\s*(\{.*\})\s*```', content, re.DOTALL)
-    if match:
-        json_str = match.group(1)
-        return json.loads(json_str)
-    return None
+    if parsed_json:
+        print("🎯 Final extracted JSON:", parsed_json)
+        return parsed_json
+    else:
+        print("🚨 Failed to extract JSON.")
+        return None  # Explicitly return None if extraction fails
 
 
 @timing_decorator
