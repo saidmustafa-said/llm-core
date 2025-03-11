@@ -1,4 +1,4 @@
-from utils import timing_decorator
+from src.utils import timing_decorator
 from osmnx import graph_from_point, distance
 import networkx as nx
 from functools import lru_cache

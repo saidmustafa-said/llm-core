@@ -1,15 +1,17 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-import json
 from typing import List, Dict, Any
 
-# Var olan kodları buraya ekleyebilirsin
-from working_script import llm_api, find_top_candidates, format_top_candidates, get_location_advice
+# Importing updated functions
+from src.llamarequest import llm_api
+from src.poi_filter import get_poi_data
+from src.get_top_candidates import find_top_candidates
+from src.get_location_advice import get_location_advice
 
-# FastAPI uygulamasını başlat
+# Initialize FastAPI app
 app = FastAPI()
 
-# API için giriş modeli
+# Request model
 
 
 class QueryRequest(BaseModel):
@@ -17,9 +19,10 @@ class QueryRequest(BaseModel):
     latitude: float
     longitude: float
     radius: int
-    num_results: int = 5  # Varsayılan olarak 5 sonuç döndürülsün
+    num_results: int = 5  # Default to 5 results
 
-# Yanıt formatı
+
+# Response model
 
 
 class QueryResponse(BaseModel):
@@ -30,26 +33,25 @@ class QueryResponse(BaseModel):
 @app.post("/query", response_model=QueryResponse)
 async def query_location(data: QueryRequest):
     """
-    Kullanıcının girdiği `prompt`, konum (latitude, longitude) ve çap (radius) bilgilerine göre 
-    en iyi lokasyonları bulur ve tavsiye verir.
+    Processes user input prompt, location data (latitude, longitude), and search radius to find the best locations and provide advice.
     """
-    # 1. Prompt'tan etiketleri çıkar
+    # Step 1: Extract tags from prompt
     result = llm_api(data.prompt)
     if not result or not result.get('existed_tags'):
         return {"message": "No tags found for the given prompt."}
 
     search_tag = result['existed_tags'][0]
 
-    # 2. En iyi lokasyonları bul
+    # Step 2: Fetch candidate POIs
+    candidates = get_poi_data(
+        data.latitude, data.longitude, data.radius, search_tag)
+
+    # Step 3: Find top candidates
     top_candidates = find_top_candidates(
-        data.latitude, data.longitude, data.radius, search_tag, data.num_results
-    )
+        candidates, data.latitude, data.longitude, data.radius, search_tag, data.num_results)
 
-    # 3. Verileri okunabilir formatta hazırla
-    formatted_candidates = format_top_candidates(top_candidates)
-
-    # 4. LLM API kullanarak tavsiye oluştur
-    location_advice = get_location_advice(formatted_candidates, data.prompt)
+    # Step 4: Generate location advice using LLM
+    location_advice = get_location_advice(top_candidates, data.prompt)
 
     return QueryResponse(
         location_advice=location_advice,

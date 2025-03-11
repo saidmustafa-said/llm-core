@@ -1,7 +1,8 @@
-from utils import timing_decorator
-import os
+from src.utils import timing_decorator
 import pandas as pd
 import math
+from config import DATASET
+
 
 @timing_decorator
 def compute_bounding_box(lat, lon, radius_m):
@@ -42,12 +43,13 @@ def get_poi_data(user_lat, user_lon, radius_m, search_tag):
 
     Defaults to reading from a CSV file. Can be modified to fetch from a database.
     """
-    data_source = os.path.join("datatest", "filtered", "filtered_tags.csv")
+    # data_source = os.path.join(ROOT_DIR, "data", "filtered_tags.csv")
+    # print(data_source)
 
     try:
-        df = pd.read_csv(data_source)
+        df = pd.read_csv(DATASET)
     except Exception as e:
-        print(f"Error reading data from {data_source}: {e}")
+        print(f"Error reading data from {DATASET}: {e}")
         return []
 
     return filter_by_bounding_box_and_tag(df, user_lat, user_lon, radius_m, search_tag)

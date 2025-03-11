@@ -378,34 +378,34 @@ def get_location_advice(context_text, prompt):
     return response_data['choices'][0]['message']['content']
 
 
-if __name__ == "__main__":
-    # Step 1: Define a test prompt for the language model
-    test_prompt = "i want to go to somewhere with a great view where i can also drink something"
+# if __name__ == "__main__":
+#     # Step 1: Define a test prompt for the language model
+#     test_prompt = "i want to go to somewhere with a great view where i can also drink something"
 
-    # Call llm_api to process the test prompt and display the result
-    result = llm_api(test_prompt)
-    # print("LLM API Result:")
-    # print(json.dumps(result, indent=2))
+#     # Call llm_api to process the test prompt and display the result
+#     result = llm_api(test_prompt)
+#     # print("LLM API Result:")
+#     # print(json.dumps(result, indent=2))
 
-    # Step 2: Simulated user query parameters (for top candidates search)
-    user_lat = 40.985660      # Example: Istanbul city center latitude
-    user_lon = 29.027361      # Example: Istanbul city center longitude
-    radius_m = 5000           # 5 km search radius
-    # only takes the first existed tag, we can change it later to taking a list
-    search_tag = result['existed_tags'][0]
+#     # Step 2: Simulated user query parameters (for top candidates search)
+#     user_lat = 40.985660      # Example: Istanbul city center latitude
+#     user_lon = 29.027361      # Example: Istanbul city center longitude
+#     radius_m = 5000           # 5 km search radius
+#     # only takes the first existed tag, we can change it later to taking a list
+#     search_tag = result['existed_tags'][0]
 
-    # Step 3: Retrieve top candidates based on the query parameters (both for drive and walk modes)
-    top_candidates = find_top_candidates(
-        user_lat, user_lon, radius_m, search_tag, n=5)
+#     # Step 3: Retrieve top candidates based on the query parameters (both for drive and walk modes)
+#     top_candidates = find_top_candidates(
+#         user_lat, user_lon, radius_m, search_tag, n=5)
 
-    # Step 4: Display formatted information for each candidate along with route distances for both modes
-    # print("Top Candidates Information:")
-    formatted_candidates = format_top_candidates(top_candidates)
-    # print(formatted_candidates)
+#     # Step 4: Display formatted information for each candidate along with route distances for both modes
+#     # print("Top Candidates Information:")
+#     formatted_candidates = format_top_candidates(top_candidates)
+#     # print(formatted_candidates)
 
-    # Step 5: Use the result from the formatted candidates and test prompt to get location advice
-    location_advice = get_location_advice(formatted_candidates, test_prompt)
+#     # Step 5: Use the result from the formatted candidates and test prompt to get location advice
+#     location_advice = get_location_advice(formatted_candidates, test_prompt)
 
-    # Step 6: Print the location advice result
-    print("Location Advice:")
-    print(location_advice)
+#     # Step 6: Print the location advice result
+#     print("Location Advice:")
+#     print(location_advice)

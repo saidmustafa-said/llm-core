@@ -1,17 +1,9 @@
-from utils import timing_decorator
-from llamaapi import LlamaAPI
-from dotenv import load_dotenv
+from src.utils import timing_decorator
 import os
 import pandas as pd
 import json
 import re
-
-
-# Initialize the LlamaAPI SDK
-load_dotenv()
-api_key = os.getenv("apiKey")
-
-llama = LlamaAPI(api_key)
+from config import TAGS_LIST, LLAMA_API
 
 
 @timing_decorator
@@ -19,12 +11,11 @@ def retrieve_tags():
     """
     Retrieves tags from the CSV file (tags.csv) and returns them as a formatted string.
     """
-    tags_file = os.path.join("great_data", "tags.csv")
 
-    if not os.path.exists(tags_file):
+    if not os.path.exists(TAGS_LIST):
         return "None"
 
-    tags_df = pd.read_csv(tags_file)
+    tags_df = pd.read_csv(TAGS_LIST)
 
     if 'tags' in tags_df.columns:
         tags_list = tags_df['tags'].dropna().tolist()
@@ -124,7 +115,7 @@ def llm_api(prompt):
         "stream": False
     }
 
-    response = llama.run(api_request_json)
+    response = LLAMA_API.run(api_request_json)
     parsed_json = extract_json(response)
 
     if parsed_json:

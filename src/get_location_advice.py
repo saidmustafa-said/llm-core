@@ -1,14 +1,5 @@
-from utils import timing_decorator
-from llamaapi import LlamaAPI
-from dotenv import load_dotenv
-import os
-
-# Initialize the LlamaAPI SDK
-load_dotenv()
-
-api_key = os.getenv("apiKey")
-
-llama = LlamaAPI(api_key)
+from src.utils import timing_decorator
+from config import LLAMA_API
 
 
 @timing_decorator
@@ -43,7 +34,7 @@ def get_location_advice(top_candidates, prompt):
     The system prompt instructs the AI to base its answer solely on the shared drive and walk mode data,
     and provide advice (e.g. suggesting taxi or walking) without revealing any extra data.
     """
-    
+
     context_text = format_top_candidates(top_candidates)
     system_prompt = (
         "You are an AI assistant specialized in providing location suggestions. "
@@ -53,6 +44,7 @@ def get_location_advice(top_candidates, prompt):
         f"{context_text}\n\n"
         "Please advise the user accordingly. For example, if no driving locations are available, suggest using a taxi, car, or walking if possible."
         "Give short answers, without any extra information. always give Name, Cordinate which is latitude and longitude, Distance, Tags"
+        "Unless there is a single suggestion, give a list of suggestions in a sentence format"
     )
 
     api_request_json = {
@@ -69,7 +61,7 @@ def get_location_advice(top_candidates, prompt):
         "stream": False
     }
 
-    response = llama.run(api_request_json)
+    response = LLAMA_API.run(api_request_json)
     response_data = response.json()
     # Return the plain text answer provided by the API
     return response_data['choices'][0]['message']['content']
