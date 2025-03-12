@@ -83,7 +83,7 @@ def get_top_n_by_route_distance_for_all_modes(candidates, user_lat, user_lon, ra
 
 
 @timing_decorator
-def find_top_candidates(candidates, user_lat, user_lon, radius_m, search_tag, n=5):
+def find_top_candidates(candidates, user_lat, user_lon, radius_m, n=5):
     """
     Find the top candidate POIs given user parameters.
 

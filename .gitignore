@@ -1,11 +1,4 @@
-# model
 local_llama3
-# fine-tuining
-# new_data
-# data
-# data2
-# data_less
-# scrapper
 /.venv/
 .DS_Store
 /cache/

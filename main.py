@@ -48,7 +48,7 @@ async def query_location(data: QueryRequest):
 
     # Step 3: Find top candidates
     top_candidates = find_top_candidates(
-        candidates, data.latitude, data.longitude, data.radius, search_tag, data.num_results)
+        candidates, data.latitude, data.longitude, data.radius, data.num_results)
 
     # Step 4: Generate location advice using LLM
     location_advice = get_location_advice(top_candidates, data.prompt)
