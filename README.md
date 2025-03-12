@@ -2,6 +2,34 @@
 
 ## Python Version: Python 3.10.0
 
+Python env for Mac:
+
+Create
+
+```bash
+python3 -m venv venv
+```
+
+Activate
+
+```bash
+.\venv\Scripts\Activate
+```
+
+Python env for Windows:
+
+Create
+
+```bash
+python -m venv venv
+```
+
+Activate
+
+```bash
+.\venv\Scripts\Activate
+```
+
 Install Libraries:
 
 ```bash
