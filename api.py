@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import List, Dict, Any
-
-# Importing updated functions
+from fastapi.middleware.cors import CORSMiddleware
 from src.llamarequest import llm_api
 from src.poi_filter import get_poi_data
 from src.get_top_candidates import find_top_candidates
@@ -11,9 +10,16 @@ from src.get_location_advice import get_location_advice
 # Initialize FastAPI app
 app = FastAPI()
 
+# Enable CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins, restrict in production
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods
+    allow_headers=["*"],  # Allow all headers
+)
+
 # Request model
-
-
 class QueryRequest(BaseModel):
     prompt: str
     latitude: float
@@ -23,8 +29,6 @@ class QueryRequest(BaseModel):
 
 
 # Response model
-
-
 class QueryResponse(BaseModel):
     location_advice: str
     candidates: Dict[str, List[Dict[str, Any]]]

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            background: #121212;
+            color: white;
+        }
+
+        #menu {
+            width: 250px;
+            background: #1e1e1e;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 15px;
+            box-shadow: 4px 0 8px rgba(0, 0, 0, 0.3);
+            position: absolute;
+            top: 0;
+            left: -250px;
+            height: 100%;
+            transition: left 0.3s ease;
+        }
+
+        #menu.open {
+            left: 0;
+        }
+
+        #menu button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #chat-container {
+            margin-left: 250px;
+            width: calc(100% - 250px);
+            height: 100%;
+            background: #1e1e1e;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 8px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+
+        .user {
+            background: #007bff;
+            color: white;
+            align-self: flex-end;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .bot {
+            background: #333;
+            color: white;
+            align-self: flex-start;
+            display: flex;
+            align-items: center;
+        }
+
+        .message img {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        #input-container {
+            display: flex;
+            padding-top: 10px;
+        }
+
+        input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            background: #222;
+            color: white;
+        }
+
+        button {
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #toggle-menu {
+            background: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .menu-item {
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="toggle-menu" onclick="toggleMenu()">☰</div>
+
+    <div id="menu">
+        <div>
+            <div class="menu-item">Previous Chats</div>
+            <div class="menu-item">Settings</div>
+            <div class="menu-item">Help</div>
+        </div>
+        <button onclick="toggleMenu()">Close Menu</button>
+    </div>
+
+    <div id="chat-container">
+        <div id="messages"></div>
+        <div id="input-container">
+            <input type="text" id="userInput" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        let menuOpen = false;
+
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                menu.classList.add("open");
+            } else {
+                menu.classList.remove("open");
+            }
+        }
+
+        async function sendMessage() {
+            let input = document.getElementById("userInput");
+            let message = input.value.trim();
+            if (!message) return;
+
+            let chatBox = document.getElementById("messages");
+            let userMessage = document.createElement("div");
+            userMessage.classList.add("message", "user");
+            userMessage.innerHTML = `<img src="https://via.placeholder.com/30" alt="User Icon"> ${message}`;
+            chatBox.appendChild(userMessage);
+            input.value = "";
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            try {
+                let response = await fetch("http://localhost:8000/query", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({
+                        prompt: message,
+                        latitude: 40.985660,
+                        longitude: 29.027361,
+                        radius: 5000,
+                        num_results: 5
+                    })
+                });
+
+                if (!response.ok) throw new Error("API request failed");
+
+                let data = await response.json();
+                let places = [...(data.candidates?.walk || []), ...(data.candidates?.drive || [])];
+                let reply = places.length ? places.map(r => `${r.name} (${r.location})`).join("\n") : "No results found.";
+
+                let botMessage = document.createElement("div");
+                botMessage.classList.add("message", "bot");
+                botMessage.innerHTML = `<img src="https://via.placeholder.com/30" alt="Bot Icon"> ${reply}`;
+                chatBox.appendChild(botMessage);
+                chatBox.scrollTop = chatBox.scrollHeight;
+            } catch (error) {
+                let botMessage = document.createElement("div");
+                botMessage.classList.add("message", "bot");
+                botMessage.innerText = `Error: ${error.message}`;
+                chatBox.appendChild(botMessage);
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+        }
+    </script>
+</body>
+
+</html>
