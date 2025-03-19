@@ -9,7 +9,7 @@ user_prompt = "i want to go to somewhere with a great view where i can also drin
 latitude = 41.064108
 longitude = 29.031473
 search_radius = 2000
-num_candidates = 5
+num_candidates = 2
 
 # Step 1: Extract tags from prompt
 result = llm_api(user_prompt)
