@@ -2,13 +2,13 @@ from src.utils import timing_decorator
 import pandas as pd
 import math
 from config import DATASET
+import re
 
 
 @timing_decorator
 def compute_bounding_box(lat, lon, radius_m):
     """
-    Compute an approximate bounding box around a point (lat, lon) with a given radius (in meters).
-    Returns (min_lat, max_lat, min_lon, max_lon).
+    Compute a bounding box (min/max latitude and longitude) given a central point and radius in meters.
     """
     R = 6371000  # Earth's radius in meters
     lat_rad = math.radians(lat)
@@ -18,38 +18,48 @@ def compute_bounding_box(lat, lon, radius_m):
 
 
 @timing_decorator
-def filter_by_bounding_box_and_tag(df, user_lat, user_lon, radius_m, search_tag):
+def filter_by_bounding_box_and_subcategory(df, user_lat, user_lon, radius_m, search_subcategories):
     """
-    Quickly filter POIs that fall within a bounding box around the user's location
-    and contain the specified tag.
+    Filters locations by geographic bounding box and a list of subcategories.
     """
     min_lat, max_lat, min_lon, max_lon = compute_bounding_box(
         user_lat, user_lon, radius_m)
+
+    # Ensure required columns exist
+    required_columns = {'latitude', 'longitude', 'subcategory'}
+    missing_columns = required_columns - set(df.columns)
+    if missing_columns:
+        print(f"Error: Missing required columns in dataset: {missing_columns}")
+        print("Available columns:", df.columns)
+        return []
+
+    # Filter by geographic bounding box
     filtered_df = df[
-        (df['coordinates.latitude'] >= min_lat) &
-        (df['coordinates.latitude'] <= max_lat) &
-        (df['coordinates.longitude'] >= min_lon) &
-        (df['coordinates.longitude'] <= max_lon)
+        (df['latitude'] >= min_lat) & (df['latitude'] <= max_lat) &
+        (df['longitude'] >= min_lon) & (df['longitude'] <= max_lon)
     ]
-    filtered_df = filtered_df[filtered_df['tags'].str.contains(
-        search_tag, case=False, na=False)]
+
+    # Filter by multiple subcategories
+    if search_subcategories:
+        # Escape to avoid regex errors
+        pattern = "|".join(map(re.escape, search_subcategories))
+        filtered_df = filtered_df[filtered_df['subcategory'].str.contains(
+            pattern, case=False, na=False)]
+
     return filtered_df.to_dict(orient='records')
 
 
 @timing_decorator
-def get_poi_data(user_lat, user_lon, radius_m, search_tag):
+def get_poi_data(user_lat, user_lon, radius_m, search_subcategories):
     """
-    Connect to the data source and retrieve POI data.
-
-    Defaults to reading from a CSV file. Can be modified to fetch from a database.
+    Retrieves Points of Interest (POI) data filtered by location and multiple subcategories.
     """
-    # data_source = os.path.join(ROOT_DIR, "data", "filtered_tags.csv")
-    # print(data_source)
-
     try:
         df = pd.read_csv(DATASET)
+        print("Columns in dataset:", df.columns)
+
+        return filter_by_bounding_box_and_subcategory(df, user_lat, user_lon, radius_m, search_subcategories)
+
     except Exception as e:
         print(f"Error reading data from {DATASET}: {e}")
         return []
-
-    return filter_by_bounding_box_and_tag(df, user_lat, user_lon, radius_m, search_tag)

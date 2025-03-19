@@ -1,0 +1,48 @@
+[
+    {
+        "lat": 41.0119062,
+        "lon": 28.9659891,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "blacksmith",
+            "mobile": null,
+            "addr:street": "Fuat paşa caddesi",
+            "cuisine": null,
+            "name": "Atalay",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "اتالاي"
+        }
+    },
+    {
+        "lat": 41.0121341,
+        "lon": 28.9659427,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "blacksmith",
+            "mobile": null,
+            "addr:street": "Fuat paşa caddesi",
+            "cuisine": null,
+            "name": "Özdemir kardesler",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "اوزدمير كارديشلر"
+        }
+    }
+]

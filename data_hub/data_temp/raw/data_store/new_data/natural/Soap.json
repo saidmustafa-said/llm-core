@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 41.033323,
+        "lon": 28.946273,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "\"Handmade Organic Soap by pudKA\", Our handmade soaps, crafted by the artisans of Anatolia, are made from 100% natural, plant-based, and organic ingredients, reflecting the rich cultural heritage of the region. Every soap is meticulously handcrafted using",
+            "opening_hours": null,
+            "phone": "0850 840 2949",
+            "branch": "ORYOX'un Kozmetik ve Tekstil Markası",
+            "amenity": "Soap",
+            "mobile": null,
+            "addr:street": "Lavanta Sokağı",
+            "cuisine": null,
+            "name": "pudKA | Handmade Natural Soap & Cosmetics Store",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

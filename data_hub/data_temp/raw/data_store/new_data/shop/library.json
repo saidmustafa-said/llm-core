@@ -1,0 +1,94 @@
+[
+    {
+        "lat": 41.0130968,
+        "lon": 28.9748026,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "library",
+            "mobile": null,
+            "addr:street": "Çakaloğlu ykş",
+            "cuisine": null,
+            "name": "Serhend kitabevi",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "سرهند كتاب ايفي"
+        }
+    },
+    {
+        "lat": 41.0103895,
+        "lon": 28.9399575,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "library",
+            "mobile": null,
+            "addr:street": "Tevfik fikret Sokak",
+            "cuisine": null,
+            "name": "Sembol",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "سيمبول"
+        }
+    },
+    {
+        "lat": 41.0074346,
+        "lon": 28.9387043,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "library",
+            "mobile": null,
+            "addr:street": "Hekimoğlu ali paşa Caddesi",
+            "cuisine": null,
+            "name": "NAR",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "نار"
+        }
+    },
+    {
+        "lat": 41.000337,
+        "lon": 28.9289136,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": "02125897315",
+            "branch": null,
+            "amenity": "library",
+            "mobile": null,
+            "addr:street": "Hacı Kadın Caddesi",
+            "cuisine": null,
+            "name": "Semih Kırtasiye",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "سميح للقرطاسية"
+        }
+    }
+]

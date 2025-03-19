@@ -1,0 +1,71 @@
+[
+    {
+        "lat": 40.9257542,
+        "lon": 29.2920687,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": "Pendik",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "dog_park",
+            "mobile": null,
+            "addr:street": "Kardelen Sokak",
+            "cuisine": null,
+            "name": "Neşeli Patiler Köpek Eğitim Parkı",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9711354,
+        "lon": 29.113593,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "dog_park",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": null,
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0944445,
+        "lon": 28.3600286,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": "+90 744 80 45",
+            "branch": null,
+            "amenity": "dog_park",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Can Dostum Köpek Üretim ve Satış Çiftliği",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

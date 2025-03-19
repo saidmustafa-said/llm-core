@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 40.9888252,
+        "lon": 29.0255188,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": "Mo-Su 11:30-22:30",
+            "phone": null,
+            "branch": null,
+            "amenity": "cafe",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Goblin Oyun Kulübü",
+            "name:en": "Goblin Club",
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

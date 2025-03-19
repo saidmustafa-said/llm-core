@@ -1,0 +1,163 @@
+[
+    {
+        "lat": 40.9869281,
+        "lon": 28.8098526,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "hill",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": null,
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9803996,
+        "lon": 28.8079848,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "hill",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": null,
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9907822,
+        "lon": 28.8072226,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "hill",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": null,
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9859584,
+        "lon": 28.8072332,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "hill",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": null,
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9836173,
+        "lon": 28.809781,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "hill",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": null,
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.992954,
+        "lon": 28.8100573,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "hill",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": null,
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9758096,
+        "lon": 28.8100561,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "hill",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": null,
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

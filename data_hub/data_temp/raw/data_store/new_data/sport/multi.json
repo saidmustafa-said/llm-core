@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 40.9937842,
+        "lon": 28.9020862,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Zeytinburnu",
+            "description": "",
+            "opening_hours": "Mo-Sa 09:00-18:00",
+            "phone": null,
+            "branch": null,
+            "amenity": "multi",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Zafer Spor Kulübü",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "نادي زافار الرياضي"
+        }
+    }
+]

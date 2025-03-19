@@ -1,0 +1,48 @@
+[
+    {
+        "lat": 40.8275216,
+        "lon": 29.3248995,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "military_surplus",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Yıldız Askeri Mlazeme & Outdoor",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.8274132,
+        "lon": 29.325034,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "military_surplus",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Şanlı Piyade",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

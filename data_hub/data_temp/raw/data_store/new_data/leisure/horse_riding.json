@@ -1,0 +1,48 @@
+[
+    {
+        "lat": 41.1275961,
+        "lon": 28.7529959,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": "Başakşehir",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "horse_riding",
+            "mobile": null,
+            "addr:street": "Yazıcı Sokak",
+            "cuisine": null,
+            "name": "Rahvan At Binicilik Eğitimi",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.2293582,
+        "lon": 28.1153132,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": "+90531 217 18 58",
+            "branch": null,
+            "amenity": "horse_riding",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Müslüm Baba At Çiftliği",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

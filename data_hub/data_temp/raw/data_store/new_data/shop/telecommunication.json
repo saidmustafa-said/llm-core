@@ -1,0 +1,48 @@
+[
+    {
+        "lat": 40.9920656,
+        "lon": 28.8944129,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Zeytinburnu",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "telecommunication",
+            "mobile": null,
+            "addr:street": "Turan Güneş Caddesi",
+            "cuisine": null,
+            "name": "Kablo",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "كابلو"
+        }
+    },
+    {
+        "lat": 41.0600805,
+        "lon": 28.969197,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Şişli",
+            "description": "A Blok 5. katta, 164 numaralı iç kapı numarasında bulabilirsiniz.",
+            "opening_hours": "Mo-Fr 09:00-18:00",
+            "phone": "+90 212 221 24 34;+90 212 221 35 00",
+            "branch": null,
+            "amenity": "telecommunication",
+            "mobile": "+90 532 241 21 21;+90 532 664 81 33",
+            "addr:street": "Yüzer Havuz Sokağı",
+            "cuisine": null,
+            "name": "İstanbul Telekomünikasyon ve Bilgisayar Pazarlama",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

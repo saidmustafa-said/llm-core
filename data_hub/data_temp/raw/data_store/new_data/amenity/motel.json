@@ -1,0 +1,48 @@
+[
+    {
+        "lat": 41.0264413,
+        "lon": 28.9560733,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "motel",
+            "mobile": null,
+            "addr:street": "Kara Sarıklı Sokak",
+            "cuisine": null,
+            "name": "Yılmazlar Hotel",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "اوتيل يلمزلار"
+        }
+    },
+    {
+        "lat": 41.0131346,
+        "lon": 28.9769244,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": "+90 212 513 35 70",
+            "branch": null,
+            "amenity": "motel",
+            "mobile": null,
+            "addr:street": "Saffeti Paşa Sokak",
+            "cuisine": null,
+            "name": "Haman Sauna Otel",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

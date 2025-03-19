@@ -1,0 +1,94 @@
+[
+    {
+        "lat": 40.878235,
+        "lon": 29.2346686,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "religion",
+            "mobile": null,
+            "addr:street": "Ortanca Caddesi",
+            "cuisine": null,
+            "name": "Nur Safa Hac Malzemeleri",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0471177,
+        "lon": 28.9329243,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "religion",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Hac & Umre Malzemeleri Toptan & Perakende",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0239651,
+        "lon": 29.0889734,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "religion",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Hayrât Neşriyat",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": "Hayrât Neşriyat",
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0256391,
+        "lon": 29.086842,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "religion",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Tesbih Dede",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": "Tesbih Dede",
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

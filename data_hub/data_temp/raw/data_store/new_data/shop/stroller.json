@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 40.9901858,
+        "lon": 29.1414632,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "stroller",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Opera İstanbul",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

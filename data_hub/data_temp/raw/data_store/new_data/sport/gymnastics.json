@@ -1,0 +1,117 @@
+[
+    {
+        "lat": 40.9418711,
+        "lon": 29.1273797,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "gymnastics",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Club Aydınoğlu",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9629535,
+        "lon": 29.0683402,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "gymnastics",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": null,
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9802744,
+        "lon": 29.0297836,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "gymnastics",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": null,
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.2079819,
+        "lon": 29.0233621,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "gymnastics",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "bfit",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0404517,
+        "lon": 28.9882405,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "gymnastics",
+            "mobile": null,
+            "addr:street": "Taşkışla Cad. Grand Hyatt İstanbul",
+            "cuisine": null,
+            "name": "Gaia Spa & Fitness Center",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

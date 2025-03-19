@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 41.1085896,
+        "lon": 29.0106977,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "Forbidden to enter",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "fort",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Süvari Birliği Nalbanthanesi",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

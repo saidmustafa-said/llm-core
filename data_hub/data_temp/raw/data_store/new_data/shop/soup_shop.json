@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 41.0148991,
+        "lon": 28.966242,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "soup_shop",
+            "mobile": null,
+            "addr:street": "İsmetiye Caddesi",
+            "cuisine": null,
+            "name": "Troy Soapun",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "تروي سوابون للصابون"
+        }
+    }
+]

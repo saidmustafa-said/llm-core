@@ -1,0 +1,140 @@
+[
+    {
+        "lat": 41.0251877,
+        "lon": 28.9727489,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "building",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": null,
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0325687,
+        "lon": 28.9362445,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "building",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Emin Baba Tekkesi",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0136158,
+        "lon": 29.0419533,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "building",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Hababam Sınıfı Müzesi",
+            "name:en": "Hababam School Museum",
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9809416,
+        "lon": 28.8743693,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": "Bakırköy",
+            "description": "",
+            "opening_hours": "Mo-Sa 10:00-18:00",
+            "phone": null,
+            "branch": null,
+            "amenity": "library",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "İBB Bakırköy Ödünç Kütüphane",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.1082453,
+        "lon": 29.0835867,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": "Beykoz",
+            "description": "",
+            "opening_hours": "Mo-Su 10:00-22:00",
+            "phone": null,
+            "branch": null,
+            "amenity": "library",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "İBB Çubuklu Silolar Kütüphanesi",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0069951,
+        "lon": 28.9440457,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "library",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "İBB Bulgur Palas Kütüphanesi",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

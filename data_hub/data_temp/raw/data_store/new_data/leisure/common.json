@@ -1,0 +1,94 @@
+[
+    {
+        "lat": 41.0132183,
+        "lon": 29.1341372,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "common",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": null,
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0241315,
+        "lon": 29.1578986,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "common",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": null,
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9369858,
+        "lon": 29.3067819,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "common",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "İNCİ SİTESİ",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9923784,
+        "lon": 29.1498182,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "common",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "TCK Lojmanları",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

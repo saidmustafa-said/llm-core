@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 41.0150911,
+        "lon": 29.1311265,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "safety_training",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Stil-Do Savunma Sporları",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

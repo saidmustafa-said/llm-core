@@ -1,0 +1,48 @@
+[
+    {
+        "lat": 41.0149337,
+        "lon": 28.9666202,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "umbrella",
+            "mobile": null,
+            "addr:street": "Tacirhane Sokağı",
+            "cuisine": null,
+            "name": "Türkler Şemsiye",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "توركلار شمسييه للمظلات"
+        }
+    },
+    {
+        "lat": 41.0141832,
+        "lon": 28.9668523,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "umbrella",
+            "mobile": null,
+            "addr:street": "Tacirhane Sokağı",
+            "cuisine": null,
+            "name": "Öner Sem Voys",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "أونير سيم فويس للمظلات"
+        }
+    }
+]

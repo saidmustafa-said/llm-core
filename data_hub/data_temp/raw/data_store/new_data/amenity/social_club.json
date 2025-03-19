@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 40.9638696,
+        "lon": 29.0686566,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": "Kadıköy",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "social_club",
+            "mobile": null,
+            "addr:street": "Erenköy Camii Sokağı",
+            "cuisine": null,
+            "name": "Marmara Yelken Kulübü",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

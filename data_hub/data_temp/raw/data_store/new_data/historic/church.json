@@ -1,0 +1,71 @@
+[
+    {
+        "lat": 41.0001135,
+        "lon": 28.9219792,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "place_of_worship",
+            "mobile": null,
+            "addr:street": "Hacı hamza mektebi sokağı",
+            "cuisine": null,
+            "name": "Panayia Belgradu Kilisesi",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "كنيسة الروم الأورثودوكس"
+        }
+    },
+    {
+        "lat": 41.1568456,
+        "lon": 28.1709931,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "church",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": null,
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.1223229,
+        "lon": 28.8837706,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "church",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Cebeci Köyü Rum Kilisesi Kalıntıları",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

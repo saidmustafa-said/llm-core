@@ -2,108 +2,208 @@ from src.utils import timing_decorator
 from osmnx import graph_from_point, distance
 import networkx as nx
 from functools import lru_cache
+from collections import OrderedDict
+import concurrent.futures
+import numpy as np
 
-cached_graph = {}
+# Limited-size cache for graphs
+MAX_CACHE_SIZE = 50
+cached_graph = OrderedDict()
+
+# Enhanced cache for node coordinates
 
 
-@lru_cache(maxsize=128)
+@lru_cache(maxsize=256)
 def get_node_for_coords(graph, lat, lon):
+    """Finds the nearest node in the graph for given coordinates."""
     return distance.nearest_nodes(graph, lon, lat)
+
 
 @timing_decorator
 def get_route_distance(graph, user_lat, user_lon, candidate_lat, candidate_lon):
-    """
-    Compute the route (network) distance between the user's location and the candidate's location.
-    Returns distance in meters.
-    """
+    """Computes the network distance between user and candidate."""
     try:
-        # Önbelleğe alınmış node hesaplamalarını kullan
         user_node = get_node_for_coords(graph, user_lat, user_lon)
         candidate_node = get_node_for_coords(
             graph, candidate_lat, candidate_lon)
 
-        # Kısa yolu hesapla
-        return nx.shortest_path_length(graph, user_node, candidate_node, weight='length')
+        # Check if nodes exist and are connected before running expensive algorithms
+        if user_node not in graph or candidate_node not in graph:
+            return float('inf')
+
+        # Quick check if user and candidate are the same node
+        if user_node == candidate_node:
+            return 0.0
+
+        # Use A* algorithm which is typically faster than Dijkstra for point-to-point
+        try:
+            path_length = nx.astar_path_length(
+                graph, user_node, candidate_node, weight='length')
+            return path_length
+        except nx.NetworkXNoPath:
+            return float('inf')
 
     except Exception as e:
         print(
-            f"Error computing route for candidate at ({candidate_lat}, {candidate_lon}):", e)
+            f"Error computing route for ({candidate_lat}, {candidate_lon}):", e)
         return float('inf')
+
+
+def cache_graph(graph_key, graph):
+    """Manages graph cache with a limited size."""
+    if len(cached_graph) >= MAX_CACHE_SIZE:
+        cached_graph.popitem(last=False)  # Remove oldest entry
+    cached_graph[graph_key] = graph
 
 
 @timing_decorator
 def get_network_graph(user_lat, user_lon, radius_m, travel_mode='drive'):
+    """Retrieves or builds a network graph for the given location and mode."""
     graph_key = (user_lat, user_lon, radius_m, travel_mode)
 
-    # Önbellekte varsa, döndür
     if graph_key in cached_graph:
         print("Returning cached graph")
         return cached_graph[graph_key]
 
-    # Önbellekte yoksa, veriyi al
     try:
-        graph_dist = radius_m * 2
+        # Use smaller graph radius for walking mode
+        if travel_mode == 'walk':
+            # Walking usually needs smaller area
+            graph_dist = min(radius_m * 1.5, 2000)
+        else:
+            # Limit maximum size for driving
+            graph_dist = min(radius_m * 2, 5000)
+
+        # Use lower simplify setting for walking and higher for driving
+        simplify = travel_mode != 'walk'
+
         graph = graph_from_point(
-            (user_lat, user_lon), dist=graph_dist, network_type=travel_mode)
-        cached_graph[graph_key] = graph  # Önbelleğe kaydet
+            (user_lat, user_lon),
+            dist=graph_dist,
+            network_type=travel_mode,
+            simplify=simplify
+        )
+
+        # Extract the largest connected component
+        if nx.is_directed(graph):
+            largest_component = max(
+                nx.strongly_connected_components(graph), key=len)
+        else:
+            largest_component = max(nx.connected_components(
+                graph.to_undirected()), key=len)
+
+        graph = graph.subgraph(largest_component).copy()
+
+        cache_graph(graph_key, graph)
         return graph
+
     except Exception as e:
         print(f"Error retrieving network graph for {travel_mode}:", e)
         return None
 
 
+def process_candidate(args):
+    """Process a single candidate - used for parallel processing."""
+    graph, user_lat, user_lon, poi, travel_mode, radius_m = args
+    try:
+        candidate_lat = poi["latitude"]
+        candidate_lon = poi["longitude"]
 
+        route_distance = get_route_distance(
+            graph, user_lat, user_lon, candidate_lat, candidate_lon)
+
+        if route_distance == float('inf') or route_distance > radius_m:
+            return None
+
+        poi_copy = poi.copy()
+        poi_copy[f"{travel_mode}_route_distance_m"] = route_distance
+        return poi_copy
+    except KeyError as e:
+        print(f"KeyError: Missing column {e} in candidate POI data.")
+        return None
 
 
 @timing_decorator
 def get_top_n_by_route_distance_for_all_modes(candidates, user_lat, user_lon, radius_m, n=5):
-    """
-    Compute route distances for all candidates using both driving and walking modes.
-    """
+    """Computes route distances for all candidates for both driving and walking modes."""
     modes = ['drive', 'walk']
     all_results = {}
+
     for mode in modes:
         graph = get_network_graph(
             user_lat, user_lon, radius_m, travel_mode=mode)
         if graph is None:
             print(
-                f"Failed to retrieve the network graph for {mode}. Skipping this mode.")
+                f"Failed to retrieve the network graph for {mode}. Skipping.")
             continue
-        for poi in candidates:
-            candidate_lat = poi["coordinates.latitude"]
-            candidate_lon = poi["coordinates.longitude"]
-            poi[f"{mode}_route_distance_m"] = get_route_distance(
-                graph, user_lat, user_lon, candidate_lat, candidate_lon)
-        candidates_within_radius = [
-            poi for poi in candidates if poi[f"{mode}_route_distance_m"] <= radius_m]
-        candidates_within_radius.sort(
-            key=lambda x: x[f"{mode}_route_distance_m"])
-        all_results[mode] = candidates_within_radius[:n]
+
+        # Prepare arguments for parallel processing
+        args_list = [(graph, user_lat, user_lon, poi, mode, radius_m)
+                     for poi in candidates]
+
+        # Use ThreadPoolExecutor for parallelization
+        valid_candidates = []
+        with concurrent.futures.ThreadPoolExecutor(max_workers=min(32, len(candidates))) as executor:
+            for result in executor.map(process_candidate, args_list):
+                if result is not None:
+                    valid_candidates.append(result)
+
+        # Sort and select the top N candidates
+        valid_candidates.sort(key=lambda x: x[f"{mode}_route_distance_m"])
+        all_results[mode] = valid_candidates[:n]
+
     return all_results
 
 
 @timing_decorator
 def find_top_candidates(candidates, user_lat, user_lon, radius_m, n=5):
-    """
-    Find the top candidate POIs given user parameters.
-
-    Parameters:
-      user_lat (float): User's latitude.
-      user_lon (float): User's longitude.
-      radius_m (int): Search radius in meters.
-      search_tag (str): Tag to filter POIs.
-      n (int): Number of top candidates to return for each travel mode.
-
-    Returns:
-      Dictionary with 'drive' and 'walk' keys containing the top candidates with all their info.
-
-
-    """
-
+    """Finds the top candidate POIs based on route distance."""
     if not candidates:
-        print("No candidates found after initial filtering.")
+        print("No candidates found.")
         return {}
 
-    top_candidates = get_top_n_by_route_distance_for_all_modes(
-        candidates, user_lat, user_lon, radius_m, n)
-    return top_candidates
+    # If there are too many candidates, pre-filter using Euclidean distance
+    if len(candidates) > 50:
+        prefiltered_candidates = prefilter_candidates_by_distance(
+            candidates, user_lat, user_lon, radius_m * 1.5)
+        return get_top_n_by_route_distance_for_all_modes(
+            prefiltered_candidates, user_lat, user_lon, radius_m, n)
+
+    return get_top_n_by_route_distance_for_all_modes(candidates, user_lat, user_lon, radius_m, n)
+
+
+def prefilter_candidates_by_distance(candidates, user_lat, user_lon, max_distance_m):
+    """Pre-filter candidates using Euclidean distance to reduce computation."""
+    from math import radians, sin, cos, sqrt, atan2
+
+    # Define the Haversine formula for distance calculation
+    def haversine_distance(lat1, lon1, lat2, lon2):
+        R = 6371000  # Earth radius in meters
+
+        lat1_rad = radians(lat1)
+        lon1_rad = radians(lon1)
+        lat2_rad = radians(lat2)
+        lon2_rad = radians(lon2)
+
+        dlat = lat2_rad - lat1_rad
+        dlon = lon2_rad - lon1_rad
+
+        a = sin(dlat/2)**2 + cos(lat1_rad) * cos(lat2_rad) * sin(dlon/2)**2
+        c = 2 * atan2(sqrt(a), sqrt(1-a))
+
+        return R * c
+
+    # Calculate distances and filter
+    filtered_candidates = []
+    for poi in candidates:
+        try:
+            distance = haversine_distance(
+                user_lat, user_lon, poi["latitude"], poi["longitude"])
+            if distance <= max_distance_m:
+                filtered_candidates.append(poi)
+        except KeyError:
+            continue
+
+    print(
+        f"Pre-filtered from {len(candidates)} to {len(filtered_candidates)} candidates")
+    return filtered_candidates

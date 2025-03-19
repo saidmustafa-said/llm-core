@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 40.9406462,
+        "lon": 29.1069197,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": "+90 532 287 70 45",
+            "branch": null,
+            "amenity": "dive_centre",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "MSM - diving club boat dock",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

@@ -1,0 +1,94 @@
+[
+    {
+        "lat": 40.9806552,
+        "lon": 29.1133102,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "boutique",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Smnr Butik",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9805574,
+        "lon": 29.1127961,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "boutique",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Gonca Butik",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.074419,
+        "lon": 28.2435289,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "boutique",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Flamingo Butik",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9630219,
+        "lon": 29.0751239,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "boutique",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "La Poudre",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

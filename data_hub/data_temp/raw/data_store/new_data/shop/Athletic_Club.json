@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 41.00502,
+        "lon": 28.9698367,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "Athletic_Club",
+            "mobile": null,
+            "addr:street": "Kadırga Meydanı Sokak",
+            "cuisine": null,
+            "name": "Kadirga SporKulübü",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "كاديرغا سبور كلوبو"
+        }
+    }
+]

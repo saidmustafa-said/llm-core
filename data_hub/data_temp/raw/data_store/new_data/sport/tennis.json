@@ -1,0 +1,71 @@
+[
+    {
+        "lat": 41.1119639,
+        "lon": 29.035782,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": "+90 02127056080",
+            "branch": null,
+            "amenity": "tennis",
+            "mobile": null,
+            "addr:street": "İstinye Bayırı Caddesi",
+            "cuisine": null,
+            "name": "Enka Sadi Gülcelik Spor Tesisi",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.1710824,
+        "lon": 29.6336339,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "tennis",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": null,
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.2098016,
+        "lon": 29.3570932,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "tennis",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": null,
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

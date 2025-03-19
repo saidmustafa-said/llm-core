@@ -1,0 +1,48 @@
+[
+    {
+        "lat": 41.0938121,
+        "lon": 29.0889419,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "restaurant",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Planet Bilardo",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0683002,
+        "lon": 29.008089,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "billiards",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Bilbord",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

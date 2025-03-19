@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 41.0106361,
+        "lon": 28.9592274,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "foreign_trade",
+            "mobile": null,
+            "addr:street": "Büyük Reşitpaşa Caddesi",
+            "cuisine": null,
+            "name": "Alşahba dış ticaret",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "مكتب الشهباء للتجارة"
+        }
+    }
+]

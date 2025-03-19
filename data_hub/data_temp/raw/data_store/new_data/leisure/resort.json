@@ -1,0 +1,71 @@
+[
+    {
+        "lat": 41.1547941,
+        "lon": 29.7312882,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": "Şile",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "resort",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Woodyville Tree Houses and Cowboy City",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.1541687,
+        "lon": 29.7301048,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "resort",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Dreamweaver Village",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.16532,
+        "lon": 29.0545936,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "resort",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Six Senses Kocatas",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

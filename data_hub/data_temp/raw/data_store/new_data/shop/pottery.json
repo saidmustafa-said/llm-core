@@ -1,0 +1,140 @@
+[
+    {
+        "lat": 40.8475081,
+        "lon": 29.3009095,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "pottery",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Ege Seramik",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0247153,
+        "lon": 28.9790035,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "pottery",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Pitane",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9633352,
+        "lon": 29.0871344,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": "Kadıköy",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "pottery",
+            "mobile": null,
+            "addr:street": "Yusufçavuş Sokağı",
+            "cuisine": null,
+            "name": "B.iz Seramik",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9801414,
+        "lon": 29.0412647,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": "Kadıköy",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "pottery",
+            "mobile": null,
+            "addr:street": "Fener Kalamış Caddesi",
+            "cuisine": null,
+            "name": "Ceramic Concept",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0254289,
+        "lon": 28.9742747,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "pottery",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Hars",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9164234,
+        "lon": 29.3041962,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "pottery",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Kütahya Seramik",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

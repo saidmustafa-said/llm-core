@@ -1,0 +1,117 @@
+[
+    {
+        "lat": 41.019461,
+        "lon": 28.9640164,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "dessert",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Turko baba",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "توركو بابا"
+        }
+    },
+    {
+        "lat": 41.0084639,
+        "lon": 28.9719269,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "dessert",
+            "mobile": null,
+            "addr:street": "Vezirhan Caddesi",
+            "cuisine": null,
+            "name": "Baklavacı Muhammed Said",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0089896,
+        "lon": 28.971341,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "dessert",
+            "mobile": null,
+            "addr:street": "Vezirhan Caddesi",
+            "cuisine": null,
+            "name": "Acemoğlu Baklavaları",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0095757,
+        "lon": 28.9680649,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "dessert",
+            "mobile": null,
+            "addr:street": "İskender Boğazı Sokak",
+            "cuisine": null,
+            "name": "Tarihi Kapalı Çarsı Day Day Pastanesi",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "تاريهي كابالي تشارشي داي داي باستانيسي"
+        }
+    },
+    {
+        "lat": 41.0184993,
+        "lon": 28.9665274,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "dessert",
+            "mobile": null,
+            "addr:street": "Kıble Çeşme Caddesi",
+            "cuisine": null,
+            "name": "Türkan Lokum",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

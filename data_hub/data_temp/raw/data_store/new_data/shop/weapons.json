@@ -1,0 +1,94 @@
+[
+    {
+        "lat": 41.0669466,
+        "lon": 28.8274884,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Bağcılar",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "weapons",
+            "mobile": null,
+            "addr:street": "3.Yol sokak",
+            "cuisine": null,
+            "name": "Men group",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "مين غروب"
+        }
+    },
+    {
+        "lat": 41.0368257,
+        "lon": 28.9910903,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "weapons",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Sarsilmaz",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0368595,
+        "lon": 28.991274,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "weapons",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Sarsilmaz",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0202424,
+        "lon": 28.579587,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "weapons",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Marmara Silah Evi",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

@@ -1,0 +1,48 @@
+[
+    {
+        "lat": 40.9937368,
+        "lon": 29.0267108,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": "Kadıköy",
+            "description": "",
+            "opening_hours": "12:00 - 22:00",
+            "phone": null,
+            "branch": null,
+            "amenity": "climbing",
+            "mobile": null,
+            "addr:street": "Nüshetefendi",
+            "cuisine": null,
+            "name": "Boulder İstanbul",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0884203,
+        "lon": 29.005803,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "climbing",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Boulderhane",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

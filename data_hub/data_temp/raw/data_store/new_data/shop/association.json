@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 40.9625956,
+        "lon": 29.269767,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Sultanbeyli",
+            "description": "",
+            "opening_hours": "Mo-Fr 07:00-13:30; Mo-Fr 17:00-20:00",
+            "phone": "444 4 469",
+            "branch": null,
+            "amenity": "association",
+            "mobile": null,
+            "addr:street": "Ziya-ül hak caddise",
+            "cuisine": null,
+            "name": "Gönüllü kardeşler yardimlaşma derneği",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "مركز العيادات السنية للاجئين"
+        }
+    }
+]

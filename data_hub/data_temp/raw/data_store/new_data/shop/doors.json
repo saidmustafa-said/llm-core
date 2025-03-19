@@ -1,0 +1,163 @@
+[
+    {
+        "lat": 41.0279969,
+        "lon": 28.8293844,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Bağcılar",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "doors",
+            "mobile": null,
+            "addr:street": "Atatürk Caddesi",
+            "cuisine": null,
+            "name": "Tuğra Çalik Kapı",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "أبواب حديدية تورا"
+        }
+    },
+    {
+        "lat": 41.0721698,
+        "lon": 28.2546591,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "doors",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "FD Çelik Kapı",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9816069,
+        "lon": 29.1111405,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "doors",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Sima Kapı Sistemleri",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.048983,
+        "lon": 28.897905,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "doors",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Can Tem",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0721019,
+        "lon": 28.9409367,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "doors",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Çelik Kapı",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0769224,
+        "lon": 28.9369684,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "doors",
+            "mobile": "+905374137413",
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Çelik Kapı",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0799041,
+        "lon": 28.9443625,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "doors",
+            "mobile": "+905322063291",
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Erduan",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

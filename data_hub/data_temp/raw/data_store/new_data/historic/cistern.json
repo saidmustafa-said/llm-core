@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 41.0084029,
+        "lon": 28.9779226,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": "Mo-Su 09:00-19:00",
+            "phone": "+90 212 522 12 59",
+            "branch": null,
+            "amenity": "cistern",
+            "mobile": null,
+            "addr:street": "Yerebatan Caddesi",
+            "cuisine": null,
+            "name": "Yerebatan Sarnıcı",
+            "name:en": "Basilica Cistern (Exit)",
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": "Yerebatan Sarnıcı اب انبار",
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

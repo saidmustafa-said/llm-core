@@ -1,0 +1,71 @@
+[
+    {
+        "lat": 41.1005352,
+        "lon": 29.3992398,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "nature_reserve",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Avcıkoru Tabiat Parkı",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.1921866,
+        "lon": 28.9609963,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "nature_reserve",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Falih Rıfkı Atay Tabiat Parkı",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.1926798,
+        "lon": 28.9610888,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": "24/7",
+            "phone": null,
+            "branch": null,
+            "amenity": "nature_reserve",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Falih Rıfkı Atay",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

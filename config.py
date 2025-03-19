@@ -10,7 +10,8 @@ ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
 
 # Define the path to the CSV file
 TAGS_LIST = os.path.join(ROOT_DIR, "data", "tags.csv")
-DATASET = os.path.join(ROOT_DIR, "data", "filtered_tags.csv")
+CATEGORY_SUBCATEGORY_LIST = os.path.join(ROOT_DIR, "data", "category_subcategory.csv")
+DATASET = os.path.join(ROOT_DIR, "data", "dataset.csv")
 
 
 # Initialize the LlamaAPI SDK

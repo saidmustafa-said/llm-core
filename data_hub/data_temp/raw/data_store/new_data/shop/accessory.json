@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 40.9910319,
+        "lon": 28.8966325,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Zeytinburnu",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "accessory",
+            "mobile": null,
+            "addr:street": "24. sokak",
+            "cuisine": null,
+            "name": "lara",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "لارا"
+        }
+    }
+]

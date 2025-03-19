@@ -1,0 +1,48 @@
+[
+    {
+        "lat": 41.0753811,
+        "lon": 28.741493,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "cave_entrance",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Yarımburgaz Mağarası",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0390121,
+        "lon": 28.8763841,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "cave_entrance",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Saraykur AVM",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 41.0085471,
+        "lon": 29.0978947,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "yes",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Kırmızıgül Düğün Salonu",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

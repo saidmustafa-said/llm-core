@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 41.00716,
+        "lon": 28.9364959,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "motors",
+            "mobile": null,
+            "addr:street": "Kızılelma Caddesi",
+            "cuisine": null,
+            "name": "Paşa Motors",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "باشا للميتورات"
+        }
+    }
+]

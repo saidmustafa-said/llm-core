@@ -1,0 +1,71 @@
+[
+    {
+        "lat": 41.0193499,
+        "lon": 28.9646521,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "safe_vault_shop",
+            "mobile": null,
+            "addr:street": "Ragıp Gümüşpala Caddesi",
+            "cuisine": null,
+            "name": "DOĞU KİLİT",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0182607,
+        "lon": 28.9666615,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "safe_vault_shop",
+            "mobile": null,
+            "addr:street": "Kantarcılar Caddesi",
+            "cuisine": null,
+            "name": "Açar Çelik",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0182142,
+        "lon": 28.9667929,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "safe_vault_shop",
+            "mobile": null,
+            "addr:street": "Kantarcılar Caddesi",
+            "cuisine": null,
+            "name": "Tuzcuoğlu Ticaret",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

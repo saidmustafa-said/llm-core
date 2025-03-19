@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 40.9771324,
+        "lon": 28.873944,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": "Bakırköy",
+            "description": "",
+            "opening_hours": "Mo-Sa 08:00-18:00",
+            "phone": null,
+            "branch": null,
+            "amenity": "hobby",
+            "mobile": null,
+            "addr:street": "Taşevler Sokağı",
+            "cuisine": null,
+            "name": "Hobili Yaşam",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

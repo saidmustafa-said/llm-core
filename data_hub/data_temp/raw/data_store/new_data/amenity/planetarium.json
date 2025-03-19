@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 41.033108,
+        "lon": 28.8561654,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "planetarium",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Bağcılar Belediyesi 8D Sinema Planetaryum",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

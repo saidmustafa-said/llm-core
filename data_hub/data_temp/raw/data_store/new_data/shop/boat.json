@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 40.982756,
+        "lon": 28.8934079,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Zeytinburnu",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "boat",
+            "mobile": null,
+            "addr:street": "Turan Güneş Caddesi",
+            "cuisine": null,
+            "name": "Ship Art",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "شيب آرت"
+        }
+    }
+]

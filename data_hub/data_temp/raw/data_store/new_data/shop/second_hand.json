@@ -1,0 +1,163 @@
+[
+    {
+        "lat": 41.0143345,
+        "lon": 28.9273633,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "second_hand",
+            "mobile": null,
+            "addr:street": "Küçük Saray Meydanı Caddesi",
+            "cuisine": null,
+            "name": "Uslu Spot",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "متجر المستعمل أوسلو سبوت"
+        }
+    },
+    {
+        "lat": 40.9861992,
+        "lon": 28.9045406,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Zeytinburnu",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "second_hand",
+            "mobile": null,
+            "addr:street": "58 Blv caddesi",
+            "cuisine": null,
+            "name": "Cix Home",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "جيكس هوم"
+        }
+    },
+    {
+        "lat": 40.9761467,
+        "lon": 29.0507326,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "second_hand",
+            "mobile": null,
+            "addr:street": "Bağdat Caddesi",
+            "cuisine": null,
+            "name": "Bağdat Antika",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9898866,
+        "lon": 29.0272418,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "second_hand",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Spotçu",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9880209,
+        "lon": 29.0261989,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "second_hand",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Çiftçioğulları Mobilya",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0139335,
+        "lon": 28.7980755,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "second_hand",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Mert Spot 2. El Eşya",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9957957,
+        "lon": 29.0291971,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "second_hand",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Thrift",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

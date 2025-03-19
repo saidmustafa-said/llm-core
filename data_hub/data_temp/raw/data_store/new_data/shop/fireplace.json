@@ -1,0 +1,48 @@
+[
+    {
+        "lat": 41.0471061,
+        "lon": 28.8366393,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Bağcılar",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "fireplace",
+            "mobile": null,
+            "addr:street": "Bağcılar Asf. Caddesi",
+            "cuisine": null,
+            "name": "Delta",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "دلتا"
+        }
+    },
+    {
+        "lat": 41.0510894,
+        "lon": 28.8412642,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Bağcılar",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "fireplace",
+            "mobile": null,
+            "addr:street": "Velioğlu caddesi",
+            "cuisine": null,
+            "name": "Netmak",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "نيتماك"
+        }
+    }
+]

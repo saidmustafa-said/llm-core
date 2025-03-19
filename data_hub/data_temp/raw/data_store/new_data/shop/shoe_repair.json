@@ -1,0 +1,117 @@
+[
+    {
+        "lat": 40.9870421,
+        "lon": 29.0258646,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": "+905347482538",
+            "branch": null,
+            "amenity": "shoe_repair",
+            "mobile": null,
+            "addr:street": "Moda Caddesi",
+            "cuisine": null,
+            "name": "Kuzay Kundura",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9790206,
+        "lon": 28.8749093,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "shoe_repair",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Uğur Lostra",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9662439,
+        "lon": 29.0820892,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "shoe_repair",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Nurullah Kundura",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9847297,
+        "lon": 29.0270899,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "shoe_repair",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Moda Lostra",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.979361,
+        "lon": 29.1140091,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "shoe_repair",
+            "mobile": null,
+            "addr:street": "Hasan Paşa Sokağı",
+            "cuisine": null,
+            "name": "Yılmaz Ayakkabı Tamiri",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

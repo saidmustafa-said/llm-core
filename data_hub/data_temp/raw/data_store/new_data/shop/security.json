@@ -1,0 +1,163 @@
+[
+    {
+        "lat": 40.9890947,
+        "lon": 28.8936237,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Zeytinburnu",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "security",
+            "mobile": null,
+            "addr:street": "Turan Güneş Caddesi",
+            "cuisine": null,
+            "name": "Wolt Tech",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "وولت تيتش"
+        }
+    },
+    {
+        "lat": 40.9915075,
+        "lon": 28.8943414,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Zeytinburnu",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "security",
+            "mobile": null,
+            "addr:street": "Tarıkcan Kozmetik",
+            "cuisine": null,
+            "name": "dateb",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "داتيب"
+        }
+    },
+    {
+        "lat": 40.9791311,
+        "lon": 29.1144529,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "security",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Dorax",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9797291,
+        "lon": 29.1063874,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "security",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Parkzon",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9808791,
+        "lon": 29.0732218,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": "Kadıköy",
+            "description": "",
+            "opening_hours": null,
+            "phone": "+90 216 3865472",
+            "branch": null,
+            "amenity": "security",
+            "mobile": null,
+            "addr:street": "Fahrettin Kerim Gökay Caddesi",
+            "cuisine": null,
+            "name": "Dilaver Kasa",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 41.0233317,
+        "lon": 29.1110991,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "security",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Nokta Güvenlik",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9819888,
+        "lon": 29.0693718,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": "Kadıköy",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "security",
+            "mobile": null,
+            "addr:street": "Günaydın Sokağı",
+            "cuisine": null,
+            "name": "Beast Güvenlik Teknolojileri",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

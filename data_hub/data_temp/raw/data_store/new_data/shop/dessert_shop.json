@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 41.0082707,
+        "lon": 28.974289,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "dessert_shop",
+            "mobile": null,
+            "addr:street": "Divan Yolu Caddesi",
+            "cuisine": null,
+            "name": "Asi Künefeleri Sultanahmet",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 41.0035975,
+        "lon": 28.9308332,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "Package_shop",
+            "mobile": null,
+            "addr:street": "Koca Mustafapaşa Caddesi",
+            "cuisine": null,
+            "name": "Altan Ambalaj",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "التان امبلاج"
+        }
+    }
+]

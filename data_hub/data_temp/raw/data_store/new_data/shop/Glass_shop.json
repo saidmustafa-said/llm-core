@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 41.0038275,
+        "lon": 28.9295212,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "Glass_shop",
+            "mobile": null,
+            "addr:street": "Koca Mustafapaşa Caddesi",
+            "cuisine": null,
+            "name": "Zümrüt Züccaciye",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "زومورت زوجاجيات"
+        }
+    }
+]

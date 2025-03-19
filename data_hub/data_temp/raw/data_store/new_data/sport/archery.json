@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 40.9274438,
+        "lon": 29.3194353,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "archery",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Tekno Poligon Atış ve Okçuluk Kulübü",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 41.0123139,
+        "lon": 28.9322601,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": "+90 212 585 67 67",
+            "branch": null,
+            "amenity": "pickle",
+            "mobile": null,
+            "addr:street": "Ahmet Vefik Paşa Caddesi",
+            "cuisine": null,
+            "name": "Dededen Toruna Fatih Turşucusu",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

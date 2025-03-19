@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 40.9803493,
+        "lon": 29.1079664,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": "Ataşehir",
+            "description": "",
+            "opening_hours": "Mo-Fr 12:00-20:00",
+            "phone": "+90 551 260 17 18",
+            "branch": null,
+            "amenity": "fencing",
+            "mobile": null,
+            "addr:street": "Ali Ay Sokağı",
+            "cuisine": null,
+            "name": "Ataşehir Eskrim Kulübü",
+            "name:en": "Ataşehir Fencing Club",
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

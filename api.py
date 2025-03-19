@@ -13,22 +13,21 @@ app = FastAPI()
 # Enable CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins, restrict in production
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["*"],  # Allow all HTTP methods
-    allow_headers=["*"],  # Allow all headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
-# Request model
+
 class QueryRequest(BaseModel):
     prompt: str
     latitude: float
     longitude: float
     radius: int
-    num_results: int = 5  # Default to 5 results
+    num_results: int = 5
 
 
-# Response model
 class QueryResponse(BaseModel):
     location_advice: str
     candidates: Dict[str, List[Dict[str, Any]]]
@@ -39,22 +38,18 @@ async def query_location(data: QueryRequest):
     """
     Processes user input prompt, location data (latitude, longitude), and search radius to find the best locations and provide advice.
     """
-    # Step 1: Extract tags from prompt
+
     result = llm_api(data.prompt)
-    if not result or not result.get('existed_tags'):
-        return {"message": "No tags found for the given prompt."}
 
-    search_tag = result['existed_tags'][0]
+    search_subcategory = result['subcategories']['findings']
+    search_tag = result['tags']['existed']
 
-    # Step 2: Fetch candidate POIs
     candidates = get_poi_data(
-        data.latitude, data.longitude, data.radius, search_tag)
+        data.latitude, data.longitude, data.radius, search_subcategory)
 
-    # Step 3: Find top candidates
     top_candidates = find_top_candidates(
         candidates, data.latitude, data.longitude, data.radius, data.num_results)
 
-    # Step 4: Generate location advice using LLM
     location_advice = get_location_advice(top_candidates, data.prompt)
 
     return QueryResponse(

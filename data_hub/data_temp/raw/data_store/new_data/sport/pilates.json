@@ -1,0 +1,94 @@
+[
+    {
+        "lat": 41.0583743,
+        "lon": 28.9700185,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": "Şişli",
+            "description": "",
+            "opening_hours": null,
+            "phone": "05467132101",
+            "branch": null,
+            "amenity": "pilates",
+            "mobile": null,
+            "addr:street": "Mercan Sokak",
+            "cuisine": null,
+            "name": "Hayat Pilateste",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9942185,
+        "lon": 29.1026173,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": "Ataşehir",
+            "description": "",
+            "opening_hours": "Mo-Su 08:00-22:00",
+            "phone": null,
+            "branch": null,
+            "amenity": "pilates",
+            "mobile": null,
+            "addr:street": "Menekşe Sokak",
+            "cuisine": null,
+            "name": "West Pilates",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9646375,
+        "lon": 29.0734038,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": "Kadıköy",
+            "description": "",
+            "opening_hours": null,
+            "phone": "02163636292",
+            "branch": null,
+            "amenity": "pilates",
+            "mobile": null,
+            "addr:street": "Bağdat Caddesi",
+            "cuisine": null,
+            "name": "Level UP Pilates&Personal Training Studio",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    },
+    {
+        "lat": 40.9807488,
+        "lon": 29.0240941,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "pilates",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Pilates Chi",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

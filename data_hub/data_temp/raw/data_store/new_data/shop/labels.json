@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 40.8473558,
+        "lon": 29.2996007,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": "Tuzla",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "labels",
+            "mobile": null,
+            "addr:street": "Bektaş Sk.",
+            "cuisine": null,
+            "name": "Kodmark",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

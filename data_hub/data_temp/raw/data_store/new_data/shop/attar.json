@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 41.0105424,
+        "lon": 28.938462,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Turkey",
+            "description": "",
+            "opening_hours": "08:00-20:30",
+            "phone": "02125884467",
+            "branch": null,
+            "amenity": "attar",
+            "mobile": null,
+            "addr:street": "KIZILELMA CADDESİ",
+            "cuisine": null,
+            "name": "SHIFFA HOME",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "شفاء هوم"
+        }
+    }
+]

@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 40.9924809,
+        "lon": 28.8977402,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Zeytinburnu",
+            "description": "",
+            "opening_hours": "Mo-Su 09:00-18:00",
+            "phone": "0212 415 37 99",
+            "branch": null,
+            "amenity": "water_point",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Arsu",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "مياه ارسو"
+        }
+    }
+]

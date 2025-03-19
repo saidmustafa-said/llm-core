@@ -1,0 +1,140 @@
+[
+    {
+        "lat": 41.0138518,
+        "lon": 28.9673732,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "hunting_gear_shop",
+            "mobile": null,
+            "addr:street": "Uzun Çarşı Caddesi",
+            "cuisine": null,
+            "name": "Zoraki",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "زوراكي للوازم الصيد"
+        }
+    },
+    {
+        "lat": 41.0138878,
+        "lon": 28.9673604,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "hunting_gear_shop",
+            "mobile": null,
+            "addr:street": "Uzun Çarşı Caddesi",
+            "cuisine": null,
+            "name": "Sarsılmaz",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "سارسلماز للوازم الصيد"
+        }
+    },
+    {
+        "lat": 41.0139707,
+        "lon": 28.9673654,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "hunting_gear_shop",
+            "mobile": null,
+            "addr:street": "Uzun Çarşı Caddesi",
+            "cuisine": null,
+            "name": "Efe Ticaret Av Malzemeleri",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "إيفي تيجاري أفجيليك ملزمالاري للوازم الصيد"
+        }
+    },
+    {
+        "lat": 41.0144202,
+        "lon": 28.9673386,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "hunting_gear_shop",
+            "mobile": null,
+            "addr:street": "Uzun Çarşı Caddesi",
+            "cuisine": null,
+            "name": "Barbaros Ticaret",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "بارباروس تيجاريت للوازم الصيد"
+        }
+    },
+    {
+        "lat": 41.0147143,
+        "lon": 28.9673704,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "hunting_gear_shop",
+            "mobile": null,
+            "addr:street": "Uzun Çarşı Caddesi",
+            "cuisine": null,
+            "name": "Gürel AV Pazarı",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "غوريل أف بازاري للوازم الصيد"
+        }
+    },
+    {
+        "lat": 41.0148965,
+        "lon": 28.9673639,
+        "tags": {
+            "addr:city": "Istanbul",
+            "addr:district": "Fatih",
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "hunting_gear_shop",
+            "mobile": null,
+            "addr:street": "Uzun Çarşı Caddesi",
+            "cuisine": null,
+            "name": "Meydan AV",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": "مايدان أف للوازم الصيد"
+        }
+    }
+]

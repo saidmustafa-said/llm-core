@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 41.0320901,
+        "lon": 28.9820191,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "pickle specialists since 1913",
+            "opening_hours": "Mo-Sa 09:00-20:30; Su 12:00-20:00",
+            "phone": "+90 0212 244 47 24",
+            "branch": null,
+            "amenity": "pickles",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Asri Turşucu",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]

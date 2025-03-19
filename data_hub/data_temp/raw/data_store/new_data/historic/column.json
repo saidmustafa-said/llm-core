@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 41.0056649,
+        "lon": 28.9751101,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "column",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Yılanlı Sütun",
+            "name:en": "Serpent Column",
+            "name:uk": null,
+            "name:de": "Schlangensäule",
+            "name:tr": "Yılanlı Sütun",
+            "name:ru": "Змеиная колонна",
+            "name:ar": "يلانلِ سوتون"
+        }
+    }
+]

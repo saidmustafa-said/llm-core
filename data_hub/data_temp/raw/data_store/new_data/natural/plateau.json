@@ -1,0 +1,25 @@
+[
+    {
+        "lat": 40.9240699,
+        "lon": 29.2443282,
+        "tags": {
+            "addr:city": "İstanbul",
+            "addr:district": null,
+            "description": "",
+            "opening_hours": null,
+            "phone": null,
+            "branch": null,
+            "amenity": "plateau",
+            "mobile": null,
+            "addr:street": null,
+            "cuisine": null,
+            "name": "Aydos Ovası",
+            "name:en": null,
+            "name:uk": null,
+            "name:de": null,
+            "name:tr": null,
+            "name:ru": null,
+            "name:ar": null
+        }
+    }
+]
