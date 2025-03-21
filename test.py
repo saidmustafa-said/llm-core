@@ -1,8 +1,9 @@
-from src.history_manager import History
+from src.history_manager import HistoryManager
 from src.llamarequest import llm_api
 from src.poi_filter import get_poi_data
 from src.get_top_candidates import find_top_candidates
 from src.get_location_advice import get_location_advice
+import os
 
 
 def get_llm_response(user_prompt, user_context):
@@ -55,8 +56,6 @@ def candidates_process(candidates, latitude, longitude, search_radius, num_candi
 
 def get_location_advice_for_prompt(top_candidates, user_prompt, previous_messages, latitude, longitude, search_radius):
     try:
-        print("DEBUG: Top Candidates before giving location advice:", top_candidates)
-
         location_advice = get_location_advice(
             user_prompt, previous_messages, top_candidates, latitude, longitude, search_radius)
         return location_advice
@@ -65,75 +64,128 @@ def get_location_advice_for_prompt(top_candidates, user_prompt, previous_message
         return {}
 
 
-def save_conversation_history(history_manager, conversation_id, user_prompt, response_text, top_candidates, continuation):
-    try:
-        history_manager.save_history(
-            conversation_id,
-            user_prompt,
-            response_text,
-            top_candidates if not continuation else top_candidates  # corrected this line
-        )
-    except Exception as e:
-        print(f"Error saving history: {e}")
-
-
 def main():
-    history_manager = History()
-    conversation_id = input("Enter conversation ID: ")
+    # Initialize the history manager
+    history_manager = HistoryManager()
 
-    previous_messages = history_manager.get_conversation(conversation_id)
-    for msg in previous_messages:
-        print(f"User: {msg['user']}")
-        print(f"Bot: {msg['response']}")
+    # Get or create conversation ID
+    conversation_id_input = input(
+        "Enter conversation ID (leave blank for new conversation): ")
 
+    if conversation_id_input.strip():
+        conversation_id = conversation_id_input
+        # Check if conversation exists
+        if not os.path.exists(history_manager.get_history_file_path(conversation_id)):
+            print(f"Creating new conversation with ID: {conversation_id}")
+            history_manager.create_conversation(conversation_id)
+    else:
+        conversation_id = history_manager.create_conversation()
+        print(f"Created new conversation with ID: {conversation_id}")
+
+    # Display conversation history
+    messages = history_manager.get_messages(conversation_id)
+    if messages:
+        print("\n--- Conversation History ---")
+        for msg in messages:
+            role = msg.get("role", "")
+            content = msg.get("content", "")
+            if role == "user":
+                print(f"User: {content}")
+            elif role == "assistant":
+                print(f"Bot: {content}")
+        print("--- End of History ---\n")
+    else:
+        print("No previous messages in this conversation.")
+
+    # Set default location parameters
     latitude = 41.064108
     longitude = 29.031473
     search_radius = 2000
     num_candidates = 2
 
     while True:
-        stored_top_candidates = history_manager.get_top_candidates(
+        # Get the most recent top candidates from history
+        top_candidates = history_manager.get_top_candidates(conversation_id)
+
+        # Get user input
+        user_prompt = input("\nEnter your prompt (or type 'exit' to quit): ")
+        if user_prompt.lower() == 'exit':
+            break
+
+        # Get formatted history for context
+        formatted_history = history_manager.get_formatted_history(
             conversation_id)
-        top_candidates = {}
 
-        if not stored_top_candidates:
-            user_prompt = input("Enter your prompt (or type 'exit' to quit): ")
-            if user_prompt.lower() == 'exit':
-                break
+        # If we don't have top candidates yet, we need to get them
+        if not top_candidates:
+            # Call LLM API to get categories
+            llm_response = llm_api(
+                prompt=user_prompt,
+                user_context=formatted_history,
+                conversation_id=conversation_id,
+                history_manager=history_manager
+            )
 
-            user_context = [
-                f"{msg['user']} {msg['response']}" for msg in previous_messages]
-
-            llm_response = get_llm_response(user_prompt, user_context)
-            if llm_response is None:
+            if llm_response is None or 'error' in llm_response:
+                print("Error in LLM processing. Please try again.")
                 continue
 
-            candidates = poi_process(
-                llm_response, latitude, longitude, search_radius)
+            # Handle clarification if needed
+            clarification_needed = llm_response.get("clarification", None)
+            if clarification_needed:
+                print("Clarification Needed:", clarification_needed)
+                additional_input = input("Provide clarification: ")
+                user_prompt += " " + additional_input
+
+                # Add clarification to history
+                history_manager.add_user_message(
+                    conversation_id, additional_input, {"clarification": True})
+
+                # Get updated response
+                llm_response = llm_api(
+                    prompt=user_prompt,
+                    user_context=formatted_history,
+                    conversation_id=conversation_id,
+                    history_manager=history_manager
+                )
+
+            # Get POI data
+            candidates = get_poi_data(
+                latitude, longitude, search_radius, llm_response.get(
+                    "categories", [])
+            )
+
             if not candidates:
+                print("No POIs found based on your criteria.")
                 continue
 
-            top_candidates = candidates_process(
-                candidates, latitude, longitude, search_radius, num_candidates)
+            # Process candidates
+            top_candidates = find_top_candidates(
+                candidates, latitude, longitude, search_radius, num_candidates
+            )
 
-        else:
-            top_candidates = stored_top_candidates
-            user_prompt = input("Enter your prompt (or type 'exit' to quit): ")
-            if user_prompt.lower() == 'exit':
-                break
+            # Format for dictionary if needed
+            if not isinstance(top_candidates, dict):
+                top_candidates = {"default": top_candidates}
 
-        location_advice = get_location_advice_for_prompt(
-            top_candidates, user_prompt, previous_messages, latitude, longitude, search_radius)
+        # Get location advice based on top candidates
+        location_advice = get_location_advice(
+            prompt=user_prompt,
+            history=formatted_history,
+            top_candidates=top_candidates,
+            latitude=latitude,
+            longitude=longitude,
+            search_radius=search_radius,
+            conversation_id=conversation_id,
+            history_manager=history_manager
+        )
+
+        # Print the response
         response_text = location_advice.get(
             "response", "No response received.")
         print("\nLocation Advice:", response_text)
 
-        continuation = location_advice.get("continuation", False)
-        if isinstance(continuation, str):
-            continuation = continuation.lower() == "true"
-
-        save_conversation_history(history_manager, conversation_id,
-                                  user_prompt, response_text, top_candidates, continuation)
+        # We don't need to save history here as it's done in the API functions
 
 
 if __name__ == "__main__":
