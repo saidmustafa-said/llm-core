@@ -3,6 +3,9 @@ import pandas as pd
 import math
 from config import DATASET
 import re
+from src.data_types import POIData
+from typing import List
+from src.utils import validate_poi_data
 
 
 @timing_decorator
@@ -18,7 +21,7 @@ def compute_bounding_box(lat, lon, radius_m):
 
 
 @timing_decorator
-def filter_by_bounding_box_and_subcategory(df, user_lat, user_lon, radius_m, search_subcategories):
+def filter_by_bounding_box_and_subcategory(df, user_lat, user_lon, radius_m, search_subcategories) -> List[POIData]:
     """
     Filters locations by geographic bounding box and a list of subcategories.
     """
@@ -46,11 +49,12 @@ def filter_by_bounding_box_and_subcategory(df, user_lat, user_lon, radius_m, sea
         filtered_df = filtered_df[filtered_df['subcategory'].str.contains(
             pattern, case=False, na=False)]
 
-    return filtered_df.to_dict(orient='records')
+    return [validate_poi_data(poi) for poi in filtered_df.to_dict(orient='records')]
 
 
 @timing_decorator
-def get_poi_data(user_lat, user_lon, radius_m, search_subcategories):
+def get_poi_data(user_lat: float, user_lon: float,
+                 radius_m: int, search_subcategories: List[str]) -> List[POIData]:
     """
     Retrieves Points of Interest (POI) data filtered by location and multiple subcategories.
     """

@@ -1,28 +1,18 @@
-from config import LLAMA_API
-import numpy as np
-from config import TAGS_LIST, LLAMA_API, CATEGORY_SUBCATEGORY_LIST
-import re
-import json
-import pandas as pd
 import os
-import uuid
 import time
-from src.utils import timing_decorator
+import uuid
+import json
+import re
+import pandas as pd
+import logging
 from src.history_manager import HistoryManager
+from config import LLAMA_API, TAGS_LIST, CATEGORY_SUBCATEGORY_LIST
+from src.utils import count_tokens, extract_json_from_text, timing_decorator
+from src.data_types import LLMResponse, LLMRequest
+from typing import List,Optional
 
-
-def count_tokens(text):
-    """
-    Approximate token counter - actual implementation would depend on the tokenizer
-    This is a simple approximation based on whitespace and punctuation
-    """
-    # Split by whitespace
-    tokens = text.split()
-    # Account for punctuation
-    token_count = len(tokens)
-    # Add estimated tokens for punctuation and special characters
-    punctuation_count = sum(1 for char in text if char in '.,;:!?()[]{}"\'')
-    return token_count + punctuation_count
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
 
 
 @timing_decorator
@@ -44,11 +34,8 @@ def retrieve_tags():
     if os.path.exists(CATEGORY_SUBCATEGORY_LIST):
         subcategory_df = pd.read_csv(CATEGORY_SUBCATEGORY_LIST)
         if 'category' in subcategory_df.columns and 'subcategory' in subcategory_df.columns:
-            # Group by 'category' and aggregate the subcategories into a comma-separated string
             grouped = subcategory_df.groupby('category')['subcategory'].apply(
                 lambda x: ",".join(x)).reset_index()
-
-            # Format the string as Category: subcat,subcat,...
             subcategory_string = "\n".join(
                 [f"{row['category']}: {row['subcategory']}" for _, row in grouped.iterrows()])
             subcategory_string = subcategory_string if subcategory_string else "None"
@@ -58,43 +45,41 @@ def retrieve_tags():
 
 @timing_decorator
 def extract_json(response):
-    response_data = response.json()
-    print("response:", response_data)
-
-    content = response_data['choices'][0]['message']['content']
-
+    """
+    Extract JSON from the API response using direct parsing and fallback to regex.
+    """
+    try:
+        content = response.json()['choices'][0]['message']['content']
+    except Exception as e:
+        logger.error("Error parsing response JSON: %s", e)
+        return {}
     try:
         result = json.loads(content)
-        print("✅ Direct JSON parsing successful.")
+        logger.info("Direct JSON parsing successful.")
         return result
     except json.JSONDecodeError:
-        print("❌ Direct JSON parsing failed. Trying regex extraction...")
-
+        logger.warning(
+            "Direct JSON parsing failed. Trying regex extraction...")
     match = re.search(r'\{.*\}', content, re.DOTALL)
     if match:
         json_str = match.group(0).strip()
         try:
             result = json.loads(json_str)
-            print("✅ Regex JSON extraction successful.")
+            logger.info("Regex JSON extraction successful.")
             return result
         except json.JSONDecodeError:
-            print("❌ Regex JSON extraction also failed.")
-
-    print("❌ No valid JSON found.")
-    return None
+            logger.error("Regex JSON extraction also failed.")
+    logger.error("No valid JSON found.")
+    return {}
 
 
 def save_request_data(conversation_id, request_type, prompt, context, system_content, response, token_counts):
     """
-    Save request data to a JSON file
+    Save request and response data to a JSON file for logging/debugging purposes.
     """
-    # Create a directory for requests if it doesn't exist
     os.makedirs("requests", exist_ok=True)
-
-    # Create a unique filename
     timestamp = int(time.time())
     filename = f"requests/{conversation_id}_{request_type}_{timestamp}.json"
-
     data = {
         "conversation_id": conversation_id,
         "request_type": request_type,
@@ -105,55 +90,35 @@ def save_request_data(conversation_id, request_type, prompt, context, system_con
         "response": response,
         "token_counts": token_counts
     }
-
     try:
         with open(filename, 'w') as f:
             json.dump(data, f, indent=2)
-        print(f"Request saved to {filename}")
+        logger.info("Request saved to %s", filename)
     except Exception as e:
-        print(f"Error saving request data: {e}")
+        logger.error("Error saving request data: %s", e)
 
 
-@timing_decorator
-def llm_api(prompt, user_context=None, conversation_id=None, history_manager=None):
+def build_api_request(prompt: str, user_context: str, existing_subcategories: str, existing_tags: str, system_overview: str) -> dict:
     """
-    LLM function that extracts subcategories and descriptive tags.
-    If multiple subcategories are found, the LLM itself will ask for more detail.
+    Build the API request payload.
     """
-    # Generate a temporary conversation ID if none provided
-    if conversation_id is None:
-        conversation_id = str(uuid.uuid4())
-
-    # Create a history manager if not provided
-    if history_manager is None:
-        history_manager = HistoryManager()
-
-    existing_tags_str, existing_subcategories_str = retrieve_tags()
-    user_history = "\n".join(user_context) if user_context else "None"
-
     system_content = (
         "You are an AI specializing in location classification. "
-        f"Existing subcategories: {existing_subcategories_str}. "
-        f"Existing descriptive tags: {existing_tags_str}. "
-        f"User conversation history: {user_history}. "
+        f"Existing subcategories: {existing_subcategories}. "
+        f"Existing descriptive tags: {existing_tags}. "
+        f"User conversation history: {user_context}. "
+        f"{system_overview} "
         "Analyze the user's prompt to determine which subcategories (only subcategory names, not categories) it fits into and which descriptive tags apply. "
         "Return the matching subcategories and descriptive tags. "
         "If the prompt does not exactly match any existing tag, generate new ones that better capture its essence. "
-        "Return both subcategories and descriptive tags."
+        "Return both subcategories and descriptive tags. "
         "If multiple valid subcategories exist and the intent is unclear, return a clarification question."
     )
-
-    api_request_json = {
+    return {
         "model": "llama3.1-70b",
         "messages": [
-            {
-                "role": "system",
-                "content": system_content
-            },
-            {
-                "role": "user",
-                "content": f"Analyze this prompt: '{prompt}'"
-            }
+            {"role": "system", "content": system_content},
+            {"role": "user", "content": f"Analyze this prompt: '{prompt}'"}
         ],
         "functions": [
             {
@@ -162,7 +127,7 @@ def llm_api(prompt, user_context=None, conversation_id=None, history_manager=Non
                     "Extract the most relevant subcategories and descriptive tags from the user's prompt based on the provided context. "
                     "For subcategories, compare the prompt with the existing list and return the relevant matches. "
                     "For descriptive tags, do the same by returning matched tags or generating new descriptive words that capture the location's nuances. "
-                    "Ensure both subcategories and tags are unique, non-redundant, and appropriately capture the nuances of the location described in the prompt."
+                    "Ensure both subcategories and tags are unique, non-redundant, and appropriately capture the nuances of the location described in the prompt. "
                     "If multiple subcategories are found and the intent is unclear, generate a clarification question."
                 ),
                 "parameters": {
@@ -213,23 +178,33 @@ def llm_api(prompt, user_context=None, conversation_id=None, history_manager=Non
         "temperature": 0.2,
     }
 
-    # Count tokens in request
-    input_tokens = count_tokens(system_content) + count_tokens(prompt)
 
-    # Make API request
+@timing_decorator
+def llm_api(prompt: str, user_context: Optional[List[str]] = None,
+    conversation_id: Optional[str] = None,
+    history_manager: Optional[HistoryManager] = None) -> LLMResponse:
+    """
+    LLM API function that prepares the request, sends it to the LLAMA_API, processes the response,
+    and saves the complete interaction to history.
+    """
+
+    existing_tags_str, existing_subcategories_str = retrieve_tags()
+    user_history = "\n".join(user_context) if user_context else "None"
+    system_overview = ""  # Add additional system instructions if needed
+
+    api_request_json = build_api_request(
+        prompt, user_history, existing_subcategories_str, existing_tags_str, system_overview)
+    input_tokens = count_tokens(
+        api_request_json["messages"][0]["content"]) + count_tokens(prompt)
     response = LLAMA_API.run(api_request_json)
-
-    # Extract response content
     response_data = response.json()
-    response_content = response_data['choices'][0]['message']['content']
-
-    # Count tokens in response
+    try:
+        response_content = response_data['choices'][0]['message']['content']
+    except Exception as e:
+        logger.error("Error extracting response content: %s", e)
+        response_content = ""
     output_tokens = count_tokens(response_content)
-
-    # Calculate total tokens
     total_tokens = input_tokens + output_tokens
-
-    # Token counts dictionary
     token_counts = {
         "input_tokens": input_tokens,
         "output_tokens": output_tokens,
@@ -237,17 +212,11 @@ def llm_api(prompt, user_context=None, conversation_id=None, history_manager=Non
     }
 
     parsed_json = extract_json(response)
-
-    result = {}
     if parsed_json:
-        # Get clarification if needed
-        clarification_question = parsed_json['clarification'][
-            'question'] if parsed_json['clarification']['needed'] else None
-
-        # Categories and tags
-        categories = parsed_json['subcategories']
-        tags = parsed_json['tags']['existed']
-
+        clarification_question = parsed_json.get('clarification', {}).get(
+            'question') if parsed_json.get('clarification', {}).get('needed') else None
+        categories = parsed_json.get('subcategories', [])
+        tags = parsed_json.get('tags', {}).get('existed', [])
         result = {
             "clarification": clarification_question,
             "categories": categories,
@@ -256,24 +225,26 @@ def llm_api(prompt, user_context=None, conversation_id=None, history_manager=Non
     else:
         result = {"error": "Failed to extract JSON"}
 
-    # Create a full request data dictionary for history
     request_data = {
         "request_type": "llm_classification",
         "timestamp": int(time.time()),
         "prompt": prompt,
         "context": user_context,
-        "system_content": system_content,
+        "system_content": api_request_json["messages"][0]["content"],
         "api_request": api_request_json,
         "api_response": response_data,
         "token_counts": token_counts
     }
-
-    # Save to history
     history_manager.add_llm_interaction(
         conversation_id=conversation_id,
         prompt=prompt,
         response=result,
         request_data=request_data
     )
-
-    return result
+    save_request_data(conversation_id, 
+                      "llm_classification", 
+                      prompt, user_context,
+                      api_request_json["messages"][0]["content"], 
+                      response_data, 
+                      token_counts)
+    return LLMResponse(result)

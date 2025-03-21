@@ -5,6 +5,9 @@ from functools import lru_cache
 from collections import OrderedDict
 import concurrent.futures
 import numpy as np
+from src.data_types import POIData, TopCandidates
+from typing import List
+from src.utils import validate_poi_data, validate_top_candidates
 
 # Limited-size cache for graphs
 MAX_CACHE_SIZE = 50
@@ -117,7 +120,10 @@ def process_candidate(args):
 
         poi_copy = poi.copy()
         poi_copy[f"{travel_mode}_route_distance_m"] = route_distance
-        return poi_copy
+
+        if poi_copy:
+            return validate_poi_data(poi_copy)
+        return None
     except KeyError as e:
         print(f"KeyError: Missing column {e} in candidate POI data.")
         return None
@@ -156,7 +162,8 @@ def get_top_n_by_route_distance_for_all_modes(candidates, user_lat, user_lon, ra
 
 
 @timing_decorator
-def find_top_candidates(candidates, user_lat, user_lon, radius_m, n=5):
+def find_top_candidates(candidates: List[POIData], user_lat: float, user_lon: float,
+                        radius_m: int, n: int = 5) -> TopCandidates:
     """Finds the top candidate POIs based on route distance."""
     if not candidates:
         print("No candidates found.")
@@ -169,7 +176,9 @@ def find_top_candidates(candidates, user_lat, user_lon, radius_m, n=5):
         return get_top_n_by_route_distance_for_all_modes(
             prefiltered_candidates, user_lat, user_lon, radius_m, n)
 
-    return get_top_n_by_route_distance_for_all_modes(candidates, user_lat, user_lon, radius_m, n)
+    all_results = get_top_n_by_route_distance_for_all_modes(
+        candidates, user_lat, user_lon, radius_m, n)
+    return validate_top_candidates(all_results)
 
 
 def prefilter_candidates_by_distance(candidates, user_lat, user_lon, max_distance_m):
