@@ -54,7 +54,7 @@ def main():
     # Default location parameters
     latitude = 41.064108
     longitude = 29.031473
-    search_radius = 2000
+    search_radius = 5000
     num_candidates = 2
 
     while True:
@@ -75,6 +75,9 @@ def main():
                 conversation_id=conversation_id,
                 history_manager=history_manager
             )
+            print(llm_response)
+            print(llm_response.get(
+                "categories", []))
             if llm_response is None or 'error' in llm_response:
                 print("Error in LLM processing. Please try again.")
                 continue
@@ -87,7 +90,9 @@ def main():
                 conversation_id=conversation_id,
                 history_manager=history_manager
             )
-
+            print("LLM Response after clarification:", llm_response)
+            print("LLM Response result:", llm_response.get(
+                "categories", []))
             candidates = get_poi_data(
                 latitude, longitude, search_radius, llm_response.get(
                     "categories", [])

@@ -6,7 +6,15 @@ import re
 from src.data_types import POIData
 from typing import List
 from src.utils import validate_poi_data
+from src.data_types import POIData
+from typing import Dict
 
+def validate_poi_data(poi: Dict) -> POIData:
+    required_keys = {'latitude', 'longitude', 'subcategory'}
+    if not required_keys.issubset(poi.keys()):
+        missing = required_keys - poi.keys()
+        raise ValueError(f"Invalid POI data, missing keys: {missing}")
+    return POIData(poi)
 
 @timing_decorator
 def compute_bounding_box(lat, lon, radius_m):
@@ -59,6 +67,7 @@ def get_poi_data(user_lat: float, user_lon: float,
     Retrieves Points of Interest (POI) data filtered by location and multiple subcategories.
     """
     try:
+        print("Categories to search for:", search_subcategories)
         df = pd.read_csv(DATASET)
         print("Columns in dataset:", df.columns)
 
