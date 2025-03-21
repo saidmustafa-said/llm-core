@@ -1,0 +1,13 @@
+>>website
+> website long/lat and radius retrival
+> Map on the side where it shows the process of the data calculation to find the options
+> Prompt disappears after switching tabs to another tab or some kind of bug
+> chat history panal should store chat history rather texts
+> add radius button,scrollbar,textfield, whatever looks good
+> options for automatic and manual insertion of long/lat/
+> control fields before unblocking chat input field
+
+>>chatbot
+> use agent so not all request go to calculation if not needed
+> chat history for chatbot so past conversation can be held and used as context
+

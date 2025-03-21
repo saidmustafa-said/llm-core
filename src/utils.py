@@ -6,6 +6,6 @@ def timing_decorator(func):
         start_time = time.time()
         result = func(*args, **kwargs)
         end_time = time.time()
-        print(f"{func.__name__} süresi: {end_time - start_time:.6f} saniye")
+        # print(f"{func.__name__} süresi: {end_time - start_time:.6f} saniye")
         return result
     return wrapper

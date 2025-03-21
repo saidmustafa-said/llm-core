@@ -1,0 +1,535 @@
+llm_api function
+
+Input:
+prompt: User's query (e.g., "Find a place with good food and entertainment").
+user_context (Optional): List of previous conversations.
+Output:
+Clarification:
+{ "clarification": "Can you clarify if you're looking for a restaurant or a bar?" }
+Successful classification:
+{ "categories": ["Restaurant", "Bar"], "tags": ["Vegan", "Outdoor Seating"] }
+Error:
+{ "error": "Failed to extract JSON" }
+get_poi_data function
+
+Input:
+user_lat, user_lon: User's location.
+radius_m: Search radius.
+search_subcategories: List of subcategories.
+Output:
+POIs found:
+[ { "id": 1, "name": "Best Restaurant", "subcategory": "Restaurant" }, { "id": 2, "name": "Tasty Cafe", "subcategory": "Cafe" } ]
+No matches:
+[]
+Error:
+{ "error": "Error reading data from dataset.csv" }
+find_top_candidates function
+
+Input:
+candidates: List of POIs.
+user_lat, user_lon: User's location.
+radius_m: Max distance.
+n: Number of candidates to return.
+Output:
+Top candidates:
+{ "drive": [ { "id": 1, "name": "Best Restaurant", "drive_route_distance_m": 300.5 } ], "walk": [ { "id": 1, "name": "Best Restaurant", "walk_route_distance_m": 100.0 } ] }
+Error:
+{ "error": "Failed to compute route distances" }
+get_location_advice function
+
+Input:
+prompt: User's query (e.g., "Can you recommend a good restaurant nearby?").
+history: List of previous conversations.
+top_candidates: List of top location candidates.
+latitude: User's latitude.
+longitude: User's longitude.
+search_radius: Radius for the search in meters.
+Output:
+If continuation:
+{ "continuation": true, "response": "Here's a quick follow-up response." }
+If not a continuation:
+{ "continuation": false, "response": "Based on your location, here are a few recommendations..." }
+Error:
+{ "error": "Failed to process response" }
+
+
+this is the flow: 
+### **Flow of Logic (Revised)**
+
+#### **1. Initialization and History Management**
+- **History Class**: Manages the storage and retrieval of conversation history (previous prompts, responses, and top candidates).
+  - **load_history(conversation_id)**: Loads the stored conversation history.
+  - **save_history(conversation_id, user_prompt, response, top_candidates)**: Saves the user prompt, response, and POI results (top candidates) to a file.
+
+#### **2. Main Interaction Loop**
+
+##### **Step 1: Start of Conversation**
+- The script begins by prompting for a **conversation_id** and loads any existing conversation history for this ID.
+- The initial parameters (latitude, longitude, search_radius, and num_candidates) are set.
+- The conversation loop starts.
+
+##### **Step 2: User Prompt**
+- **User Input**: The script prompts the user for their query (e.g., “I want to go somewhere with a great view where I can also drink something”).
+- If the user enters exit, the conversation ends.
+
+##### **Step 3: Get Previous Conversation Context**
+- **Check History**: The script loads any existing conversation history for the given conversation_id:
+  - **previous_messages**: Contains the past user prompts and responses.
+  - **stored_top_candidates**: The previously fetched POIs or candidates (if any).
+  
+##### **Step 4: API Request and Clarification Handling**
+1. **Prepare the User Prompt**: 
+   - If there’s prior conversation, it includes the context of previous messages in the **user prompt**.
+   - The prompt is sent to the **llm_api** along with this context (if any).
+
+2. **First LLM API Call**:
+   - The LLM API processes the user's input, tries to extract **categories** and **tags** (e.g., “natural”, “cafe”, “great view”).
+   - If **clarification is needed**, the API will return a flag (clarification[needed] = true) and provide a **clarification question** (e.g., “Are you looking for a natural location with a great view or a leisure venue that serves drinks?”).
+
+3. **Clarification Loop**:
+   - If clarification is needed:
+     - The script prompts the user for the required clarification (e.g., "Provide clarification: natural location in cafe").
+     - The **user’s additional input** is appended to the original prompt.
+     - The updated prompt is sent to **llm_api** again.
+   - This process repeats until:
+     - **clarification[needed] is false** (i.e., the user has provided enough information).
+     - **Categories and tags** are extracted from the LLM response.
+
+4. **Exit Clarification Loop**: Once clarification is no longer needed, the script proceeds to the next step.
+
+##### **Step 5: Category and Tag Extraction**
+- After the LLM response contains **valid categories** (e.g., “natural”, “cafe”) and **tags** (e.g., “great view”), the script:
+  - **Extracts the categories and tags**.
+  - Proceeds to the next step: **Fetching POIs**.
+
+##### **Step 6: POI Fetching and Top Candidate Selection**
+- **Fetching POIs**:
+  - The script calls **get_poi_data** with the following parameters:
+    - Latitude, longitude, and search radius.
+    - The extracted categories (e.g., “natural”) and tags (e.g., “great view”).
+  - The function returns a list of potential Points of Interest (POIs).
+  
+- **Selecting Top Candidates**:
+  - The script then uses **find_top_candidates** to filter and rank the fetched POIs based on their relevance (e.g., distance, category, and tags).
+  - The top candidates are selected and stored in a dictionary format (e.g., { "default": top_candidates }).
+
+##### **Step 7: Get Location Advice**
+- **Location Advice Generation**:
+  - The script then calls **get_location_advice**, passing the following:
+    - **Top candidates** (fetched in the previous step).
+    - **User prompt**: This is used to provide context for the advice.
+    - **Conversation history** (to maintain context).
+    - **Location parameters**: Latitude, longitude, search radius.
+  
+- **Continuation Check**:
+  - **If continuation is true**: This indicates that the conversation should continue based on the current context (using the same context of top candidates and the user’s previous prompt).
+    - The script will **not run the LLM API** or **fetch new POIs**. Instead, it will simply provide advice based on the current stored candidates.
+    - The conversation continues with the stored context, using the same response and avoiding redundant steps.
+  
+  - **If continuation is false**: This indicates that the conversation is ending or the context needs to be updated.
+    - The **current user prompt** (not the previous response) will be used to extract **new categories and tags** for POIs.
+    - The process of fetching new POIs (using get_poi_data and find_top_candidates) will run again based on the new categories/tags.
+
+##### **Step 8: Save History**
+- **Saving the Conversation**:
+  - After location advice is generated (or continued), the script saves the updated conversation:
+    - **User prompt**, **response**, and **top candidates** (if not a continuation) are stored.
+  
+  - The **conversation history** is updated to reflect any changes (e.g., new candidates or responses).
+
+##### **Step 9: Continue or Exit**
+- The user is prompted to either continue the conversation (by entering a new prompt) or type exit to end the conversation.
+
+---
+
+### **Flow Chart Overview**
+1. **User Input** → (API Call) → **Clarification Loop** (if needed)
+2. **Clarification Completed** → **Category and Tag Extraction**
+3. **POI Fetching** → **Top Candidate Selection**
+4. **Get Location Advice** → **Continuation Check**
+   - If continuation = true → **Continue** (skip steps related to fetching POIs and LLM API)
+   - If continuation = false → **Fetch New POIs** and **Get New Location Advice**
+5. **Save History**
+6. **Continue/Exit Loop**
+
+---
+
+### **Key Flow Conditions**
+
+1. **Clarification**:
+   - If the LLM suggests clarification (e.g., asking for more context), the loop will repeat until clarification is **not needed** and valid categories/tags are extracted.
+   - If clarification is given, the system appends the user’s additional input and sends the updated prompt to the LLM API for processing.
+
+2. **Continuation Flag**:
+   - If continuation = true, the system **reuses the stored top candidates** and **does not run the LLM API** or fetch new POIs. The context is continued from the previous conversation.
+   - If continuation = false, the system **fetches new POIs** and **generates updated location advice** based on the new categories/tags.
+
+3. **Saving History**:
+   - Every response, user prompt, and POI result is saved to maintain continuity in future steps.
+
+---
+
+### **Example Scenario**
+
+**User Input**: "I want to go somewhere with a great view where I can also drink something."
+
+- **API Call**: The LLM receives the prompt and returns clarification: "Are you looking for a natural location with a great view or a leisure venue that serves drinks?"
+  
+**User Clarification**: "Natural location in a cafe."
+
+- **API Call (Second)**: The LLM processes the updated prompt and returns valid categories ("natural", "cafe") and tags ("great view").
+
+- **POI Fetching**: The system fetches POIs based on these categories and tags.
+
+- **Top Candidates**: POIs are ranked, and the top candidates are selected.
+
+- **Location Advice**: The system calls get_location_advice and generates location suggestions based on the top candidates.
+
+- **Continuation Check**: 
+  - If the continuation flag is **true**, the system **continues** the conversation using the same context.
+  - If the flag is **false**, it fetches **new POIs** and **generates updated advice** based on the new prompt.
+
+my code :
+
+from src.llamarequest import llm_api
+from src.poi_filter import get_poi_data
+from src.get_top_candidates import find_top_candidates
+from src.get_location_advice import get_location_advice
+import json
+import os
+import numpy as np
+
+
+# Helper function to convert NumPy values to native Python types for JSON serialization
+def convert_numpy_to_native(obj):
+    if isinstance(obj, dict):
+        return {k: convert_numpy_to_native(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [convert_numpy_to_native(item) for item in obj]
+    elif isinstance(obj, np.integer):
+        return int(obj)
+    elif isinstance(obj, np.floating):
+        return float(obj)
+    elif isinstance(obj, np.ndarray):
+        return convert_numpy_to_native(obj.tolist())
+    else:
+        return obj
+
+
+class History:
+    def __init__(self, history_dir="history"):
+        self.history_dir = history_dir
+        os.makedirs(self.history_dir, exist_ok=True)
+
+    def get_history_file(self, conversation_id):
+        return os.path.join(self.history_dir, f"{conversation_id}.json")
+
+    def load_history(self, conversation_id):
+        history_file = self.get_history_file(conversation_id)
+        if os.path.exists(history_file):
+            try:
+                with open(history_file, "r", encoding="utf-8") as file:
+                    return json.load(file)
+            except json.JSONDecodeError:
+                print(f"Warning: Could not decode JSON from {history_file}")
+                return {"conversation_id": conversation_id, "messages": [], "top_candidates": {}}
+        return {"conversation_id": conversation_id, "messages": [], "top_candidates": {}}
+
+    def save_history(self, conversation_id, user_prompt, response, top_candidates):
+        history = self.load_history(conversation_id)
+        history["messages"].append({"user": user_prompt, "response": response})
+
+        # Convert top_candidates to native Python types before serialization
+        if top_candidates:
+            history["top_candidates"] = convert_numpy_to_native(top_candidates)
+        else:
+            # Ensure we're storing an empty dictionary, not an empty list
+            history["top_candidates"] = {}
+
+        history_file = self.get_history_file(conversation_id)
+        try:
+            with open(history_file, "w", encoding="utf-8") as file:
+                json.dump(history, file, indent=4)
+                print(f"DEBUG: Successfully saved history to {history_file}")
+        except Exception as e:
+            print(f"ERROR: Failed to save history: {e}")
+
+    def get_conversation(self, conversation_id):
+        history = self.load_history(conversation_id)
+        return history.get("messages", [])
+
+    def get_top_candidates(self, conversation_id):
+        history = self.load_history(conversation_id)
+        return history.get("top_candidates", {})
+
+# Helper function to print a truncated version of large data
+
+
+def print_truncated(data, max_length=50):
+    if isinstance(data, (dict, list)):
+        data_str = str(data)  # Convert to string
+        print(data_str[:max_length] +
+              ('...' if len(data_str) > max_length else ''))
+    else:
+        print(data)
+
+# Main interaction loop
+
+
+def main():
+    history_manager = History()
+    conversation_id = input("Enter conversation ID: ")
+
+    latitude = 41.064108
+    longitude = 29.031473
+    search_radius = 2000
+    num_candidates = 2
+
+    while True:
+        previous_messages = history_manager.get_conversation(conversation_id)
+        stored_top_candidates = history_manager.get_top_candidates(
+            conversation_id)
+        top_candidates = {}  # Initialize as empty dictionary, not list
+
+        print("\nDEBUG: Previous Messages:", previous_messages)
+        print("DEBUG: Stored Top Candidates:")
+        print_truncated(stored_top_candidates)  # Print truncated version
+
+        # Check if stored_top_candidates is empty (using dictionary check)
+        if not stored_top_candidates:
+            user_prompt = input("Enter your prompt (or type 'exit' to quit): ")
+            if user_prompt.lower() == 'exit':
+                print("Exiting the conversation...")
+                break
+
+            user_context = [
+                f"{msg['user']} {msg['response']}" for msg in previous_messages]
+            print("DEBUG: User Context:", user_context)
+
+            try:
+                # First call to LLM API with context to get clarification or categories/tags
+                print("DEBUG: Calling LLM API with user_prompt:", user_prompt)
+                llm_response = llm_api(user_prompt, user_context)
+                print("DEBUG: LLM Response:", llm_response)
+
+                # Clarification handling loop
+                while "clarification" in llm_response:
+                    clarification_question = llm_response["clarification"]
+                    print("Clarification Needed:", clarification_question)
+                    additional_input = input("Provide clarification: ")
+                    user_prompt += " " + additional_input
+                    print("DEBUG: Updated User Prompt:", user_prompt)
+                    llm_response = llm_api(user_prompt, user_context)
+                    print("DEBUG: Updated LLM Response:", llm_response)
+
+                # Once we have categories and tags, proceed with POI fetching
+                search_categories = []
+                search_tags = []
+
+                if "categories" in llm_response:
+                    search_categories = llm_response["categories"]
+                    print("DEBUG: Search Categories:", search_categories)
+                else:
+                    print("Warning: No categories found in LLM response.")
+
+                if "tags" in llm_response:
+                    # Ensure we have a list of tags, even if empty
+                    search_tags = llm_response["tags"] if llm_response["tags"] else [
+                    ]
+                    print("DEBUG: Search Tags:", search_tags)
+                else:
+                    print("Warning: No tags found in LLM response.")
+
+                # Proceed only if we have valid categories
+                if search_categories:
+                    # Fetch POI candidates based on categories
+                    candidates = get_poi_data(
+                        latitude, longitude, search_radius, search_categories)
+                    print("DEBUG: POI Candidates:")
+                    print_truncated(candidates)  # Print truncated version
+
+                    # If no POIs are found, inform the user and continue
+                    if not candidates:
+                        print("No POIs found based on your criteria.")
+                        continue
+
+                    # Filter and rank POIs based on relevance
+                    candidate_results = find_top_candidates(
+                        candidates, latitude, longitude, search_radius, num_candidates)
+                    print("DEBUG: Top Candidates after filtering and ranking:")
+                    # Print truncated version
+                    print_truncated(candidate_results)
+
+                    # Ensure top_candidates is a dictionary
+                    top_candidates = {"default": candidate_results} if not isinstance(
+                        candidate_results, dict) else candidate_results
+                else:
+                    print("Failed to extract valid categories from LLM response.")
+                    continue
+
+            except Exception as e:
+                print(f"Error during API request or POI fetching: {e}")
+                continue
+        else:
+            # Use stored candidates from previous interaction
+            top_candidates = stored_top_candidates
+            user_prompt = input("Enter your prompt (or type 'exit' to quit): ")
+            if user_prompt.lower() == 'exit':
+                print("Exiting the conversation...")
+                break
+            print("DEBUG: Using Stored Top Candidates:")
+            print_truncated(top_candidates)  # Print truncated version
+
+        # Get location advice based on top candidates
+        try:
+            location_advice = get_location_advice(
+                top_candidates, user_prompt, previous_messages, latitude, longitude, search_radius)
+            print("DEBUG: Location Advice Response:", location_advice)
+
+            # Check if continuation is required
+            # Parse string 'true'/'false' to boolean if needed
+            if isinstance(location_advice.get("continuation", False), str):
+                continuation = location_advice.get(
+                    "continuation", "false").lower() == "true"
+            else:
+                continuation = location_advice.get("continuation", False)
+
+            response_text = location_advice.get(
+                "response", "No response received.")
+            print("DEBUG: Continuation:", continuation)
+            print("DEBUG: Response Text:", response_text)
+
+            # Save conversation history with the top candidates
+            # If continuation is True, keep the existing top_candidates
+            history_manager.save_history(
+                conversation_id,
+                user_prompt,
+                response_text,
+                top_candidates if not continuation else stored_top_candidates
+            )
+
+            print("\nLocation Advice:", response_text)
+
+            if continuation:
+                print("Continuing conversation with stored context...")
+            else:
+                print("New search completed. Type 'exit' to end or ask a new question.")
+        except Exception as e:
+            print(f"Error during location advice processing: {e}")
+            continue
+
+
+if __name__ == "__main__":
+    main()
+
+
+logs:
+
+(venv) ➜  fine-tuning-custom-LLM git:(main) ✗ /opt/anaconda3/envs/venv/bin/python /Users/saidmustafa/Documents/Projects/fine-tuning-custom-LLM/test.py
+Enter conversation ID: 10
+
+DEBUG: Previous Messages: []
+DEBUG: Stored Top Candidates:
+{}
+Enter your prompt (or type 'exit' to quit):  want to go to somewhere with a great view where i can also drink cafe with natural view
+DEBUG: User Context: []
+DEBUG: Calling LLM API with user_prompt:  want to go to somewhere with a great view where i can also drink cafe with natural view
+retrieve_tags süresi: 0.029980 saniye
+response: {'created': 1742509522, 'model': 'llama3.1-70b', 'usage': {'prompt_tokens': 1699, 'completion_tokens': 80, 'total_tokens': 1779}, 'choices': [{'finish_reason': 'stop', 'index': 0, 'logprobs': None, 'message': {'content': '<function=extract_location_info>{"subcategories": ["cafe", "natural view"], "tags": {"existed": [], "new": ["great view", "natural view"]}, "clarification": {"needed": true, "question": "Are you looking for a cafe with a natural view or a place with a great view where you can also get a cafe?"}}</function>', 'refusal': None, 'role': 'assistant', 'audio': None, 'function_call': None, 'tool_calls': None}}]}
+❌ Direct JSON parsing failed. Trying regex extraction...
+✅ Regex JSON extraction successful.
+extract_json süresi: 0.000305 saniye
+llm_api süresi: 1.556381 saniye
+DEBUG: LLM Response: {'clarification': 'Are you looking for a cafe with a natural view or a place with a great view where you can also get a cafe?'}
+Clarification Needed: Are you looking for a cafe with a natural view or a place with a great view where you can also get a cafe?
+Provide clarification: cafe with a natural view 
+DEBUG: Updated User Prompt:  want to go to somewhere with a great view where i can also drink cafe with natural view cafe with a natural view 
+retrieve_tags süresi: 0.016810 saniye
+response: {'created': 1742509541, 'model': 'llama3.1-70b', 'usage': {'prompt_tokens': 1704, 'completion_tokens': 55, 'total_tokens': 1759}, 'choices': [{'finish_reason': 'stop', 'index': 0, 'logprobs': None, 'message': {'content': '<function=extract_location_info>{"subcategories": ["cafe", "natural view"], "tags": {"existed": [], "new": ["great view", "natural view"]}, "clarification": {"needed": false, "question": ""}}</function>', 'refusal': None, 'role': 'assistant', 'audio': None, 'function_call': None, 'tool_calls': None}}]}
+❌ Direct JSON parsing failed. Trying regex extraction...
+✅ Regex JSON extraction successful.
+extract_json süresi: 0.000415 saniye
+llm_api süresi: 1.430820 saniye
+DEBUG: Updated LLM Response: {'categories': ['cafe', 'natural view'], 'tags': []}
+DEBUG: Search Categories: ['cafe', 'natural view']
+DEBUG: Search Tags: []
+Columns in dataset: Index(['latitude', 'longitude', 'city', 'district', 'street', 'branch',
+       'phone_number', 'description', 'opening_hours', 'amenity', 'cuisine',
+       'name', 'name_en', 'name_uk', 'name_de', 'name_tr', 'name_ru',
+       'name_ar', 'category', 'subcategory', 'address'],
+      dtype='object')
+compute_bounding_box süresi: 0.000063 saniye
+filter_by_bounding_box_and_subcategory süresi: 0.007320 saniye
+get_poi_data süresi: 0.165301 saniye
+DEBUG: POI Candidates:
+[{'latitude': 41.050052, 'longitude': 29.0129935, ...
+Pre-filtered from 90 to 90 candidates
+get_network_graph süresi: 4.408649 saniye
+get_route_distance süresi: 0.342942 saniye
+get_route_distance süresi: 0.319132 saniye
+get_route_distance süresi: 0.191194 saniye.....
+get_route_distance süresi: 0.183367 saniye
+get_route_distance süresi: 0.247683 saniye
+get_route_distance süresi: 0.266403 saniye
+get_top_n_by_route_distance_for_all_modes süresi: 12.109344 saniye
+find_top_candidates süresi: 12.109436 saniye
+DEBUG: Top Candidates after filtering and ranking:
+{'drive': [{'latitude': 41.0593763, 'longitude': 2...
+format_top_candidates süresi: 0.000004 saniye
+response: {'created': 1742509554, 'model': 'llama3.1-70b', 'usage': {'prompt_tokens': 1774, 'completion_tokens': 48, 'total_tokens': 1822}, 'choices': [{'finish_reason': 'stop', 'index': 0, 'logprobs': None, 'message': {'content': '<function=analyze_location_request>{"continuation": "false", "response": "I found a few cafes near you. Would you like me to recommend one? Nilly and Assk Cafe are within walking distance."}</function>', 'refusal': None, 'role': 'assistant', 'audio': None, 'function_call': None, 'tool_calls': None}}]}
+❌ Direct JSON parsing failed. Trying regex extraction...
+✅ Regex JSON extraction successful.
+extract_json süresi: 0.000636 saniye
+get_location_advice süresi: 2.325187 saniye
+DEBUG: Location Advice Response: {'continuation': 'false', 'response': 'I found a few cafes near you. Would you like me to recommend one? Nilly and Assk Cafe are within walking distance.'}
+DEBUG: Continuation: False
+DEBUG: Response Text: I found a few cafes near you. Would you like me to recommend one? Nilly and Assk Cafe are within walking distance.
+DEBUG: Successfully saved history to history/10.json
+
+Location Advice: I found a few cafes near you. Would you like me to recommend one? Nilly and Assk Cafe are within walking distance.
+New search completed. Type 'exit' to end or ask a new question.
+
+DEBUG: Previous Messages: [{'user': ' want to go to somewhere with a great view where i can also drink cafe with natural view cafe with a natural view ', 'response': 'I found a few cafes near you. Would you like me to recommend one? Nilly and Assk Cafe are within walking distance.'}]
+DEBUG: Stored Top Candidates:
+{'drive': [{'latitude': 41.0593763, 'longitude': 2...
+Enter your prompt (or type 'exit' to quit): can you share their address
+DEBUG: Using Stored Top Candidates:
+{'drive': [{'latitude': 41.0593763, 'longitude': 2...
+format_top_candidates süresi: 0.000612 saniye
+response: {'created': 1742509800, 'model': 'llama3.1-70b', 'usage': {'prompt_tokens': 1672, 'completion_tokens': 78, 'total_tokens': 1750}, 'choices': [{'finish_reason': 'stop', 'index': 0, 'logprobs': None, 'message': {'content': '<function=analyze_location_request>{"continuation": "true", "response": "Based on your previous message, I understand that you are looking for a cafe with a great view where you can also drink coffee with a natural view. I found a few cafes near you. Would you like me to recommend one? Nilly and Assk Cafe are within walking distance."}</function>', 'refusal': None, 'role': 'assistant', 'audio': None, 'function_call': None, 'tool_calls': None}}]}
+❌ Direct JSON parsing failed. Trying regex extraction...
+✅ Regex JSON extraction successful.
+extract_json süresi: 0.000274 saniye
+get_location_advice süresi: 1.455507 saniye
+DEBUG: Location Advice Response: {'continuation': 'true', 'response': 'Based on your previous message, I understand that you are looking for a cafe with a great view where you can also drink coffee with a natural view. I found a few cafes near you. Would you like me to recommend one? Nilly and Assk Cafe are within walking distance.'}
+DEBUG: Continuation: True
+DEBUG: Response Text: Based on your previous message, I understand that you are looking for a cafe with a great view where you can also drink coffee with a natural view. I found a few cafes near you. Would you like me to recommend one? Nilly and Assk Cafe are within walking distance.
+DEBUG: Successfully saved history to history/10.json
+
+Location Advice: Based on your previous message, I understand that you are looking for a cafe with a great view where you can also drink coffee with a natural view. I found a few cafes near you. Would you like me to recommend one? Nilly and Assk Cafe are within walking distance.
+Continuing conversation with stored context...
+
+DEBUG: Previous Messages: [{'user': ' want to go to somewhere with a great view where i can also drink cafe with natural view cafe with a natural view ', 'response': 'I found a few cafes near you. Would you like me to recommend one? Nilly and Assk Cafe are within walking distance.'}, {'user': 'can you share their address', 'response': 'Based on your previous message, I understand that you are looking for a cafe with a great view where you can also drink coffee with a natural view. I found a few cafes near you. Would you like me to recommend one? Nilly and Assk Cafe are within walking distance.'}]
+DEBUG: Stored Top Candidates:
+{'drive': [{'latitude': 41.0593763, 'longitude': 2...
+Enter your prompt (or type 'exit' to quit): yes but can you share it address 
+DEBUG: Using Stored Top Candidates:
+{'drive': [{'latitude': 41.0593763, 'longitude': 2...
+format_top_candidates süresi: 0.000286 saniye
+response: {'created': 1742510012, 'model': 'llama3.1-70b', 'usage': {'prompt_tokens': 1750, 'completion_tokens': 21, 'total_tokens': 1771}, 'choices': [{'finish_reason': 'stop', 'index': 0, 'logprobs': None, 'message': {'content': '<function=analyze_location_request>{"continuation": "true", "response": ""}</function>', 'refusal': None, 'role': 'assistant', 'audio': None, 'function_call': None, 'tool_calls': None}}]}
+❌ Direct JSON parsing failed. Trying regex extraction...
+✅ Regex JSON extraction successful.
+extract_json süresi: 0.000394 saniye
+get_location_advice süresi: 1.286201 saniye
+DEBUG: Location Advice Response: {'continuation': 'true', 'response': ''}
+DEBUG: Continuation: True
+DEBUG: Response Text: 
+DEBUG: Successfully saved history to history/10.json
+
+Location Advice: 
+Continuing conversation with stored context...
+
+DEBUG: Previous Messages: [{'user': ' want to go to somewhere with a great view where i can also drink cafe with natural view cafe with a natural view ', 'response': 'I found a few cafes near you. Would you like me to recommend one? Nilly and Assk Cafe are within walking distance.'}, {'user': 'can you share their address', 'response': 'Based on your previous message, I understand that you are looking for a cafe with a great view where you can also drink coffee with a natural view. I found a few cafes near you. Would you like me to recommend one? Nilly and Assk Cafe are within walking distance.'}, {'user': 'yes but can you share it address ', 'response': ''}]
+DEBUG: Stored Top Candidates:
+{'drive': [{'latitude': 41.0593763, 'longitude': 2...
+Enter your prompt (or type 'exit' to quit): 
