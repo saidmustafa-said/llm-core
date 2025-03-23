@@ -1,10 +1,12 @@
-import os
-from src.history_manager import HistoryManager
-from src.llamarequest import llm_api
-from src.poi_filter import get_poi_data
-from src.get_top_candidates import find_top_candidates
-from src.get_location_advice import get_location_advice
+
 from src.data_types import LLMResponse, TopCandidates
+from src.get_location_advice import get_location_advice
+from src.get_top_candidates import find_top_candidates
+from src.poi_filter import get_poi_data
+from src.llamarequest import llm_api
+from src.history_manager import HistoryManager
+import os
+from src.logger_setup import logger_instance
 
 
 def handle_clarification(llm_response: LLMResponse, prompt: str, formatted_history: str, conversation_id: str, history_manager: HistoryManager) -> str:
@@ -90,7 +92,11 @@ def process_new_query(user_prompt: str, formatted_history: str, conversation_id:
 
 
 def main():
-    # Initialize shared history manager
+    user_id = "test_user"
+    logger_instance.initialize_logging_context(user_id, 'api_execution')
+    logger = logger_instance.get_logger()
+    logger.info("Logging setup completed")
+
     history_manager = HistoryManager()
 
     conversation_id_input = input(

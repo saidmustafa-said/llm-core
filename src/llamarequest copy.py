@@ -11,25 +11,39 @@ from src.data_types import LLMResponse
 from typing import List, Optional
 from datetime import datetime
 from src.function_api_builder import create_classification_request
-from src.logger_setup import logger_instance
 
 
+def setup_logging(script_name: str) -> logging.Logger:
+    log_directory = f'logs/{script_name}'
+    os.makedirs(log_directory, exist_ok=True)
+    timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+    log_filename = os.path.join(log_directory, f"log_{timestamp}.log")
+
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler(log_filename),
+            logging.StreamHandler()
+        ]
+    )
+    return logging.getLogger(script_name)
 
 
+script_name = os.path.splitext(os.path.basename(__file__))[0]
+logger = setup_logging(script_name)
 
 
 @timing_decorator
 def retrieve_tags():
-    logger = logger_instance.get_logger()
-    logger.info("[retrieve_tags] Function called")
-    tags_string, subcategory_string = "None", "None"
+    tags_string = "None"
+    subcategory_string = "None"
 
     if os.path.exists(TAGS_LIST):
         tags_df = pd.read_csv(TAGS_LIST)
         if 'tags' in tags_df.columns:
             tags_list = tags_df['tags'].dropna().tolist()
             tags_string = ", ".join(tags_list) if tags_list else "None"
-            logger.debug(f"[retrieve_tags] Retrieved tags: {tags_list}")
 
     if os.path.exists(CATEGORY_SUBCATEGORY_LIST):
         subcategory_df = pd.read_csv(CATEGORY_SUBCATEGORY_LIST)
@@ -38,80 +52,59 @@ def retrieve_tags():
                 lambda x: ",".join(x)).reset_index()
             subcategory_string = "\n".join(
                 [f"{row['category']}: {row['subcategory']}" for _, row in grouped.iterrows()])
-            logger.debug(
-                f"[retrieve_tags] Retrieved subcategories: {subcategory_string}")
+            subcategory_string = subcategory_string if subcategory_string else "None"
 
-    logger.info(
-        f"[retrieve_tags] Output - Tags: {tags_string}, Subcategories: {subcategory_string}")
     return tags_string, subcategory_string
 
 
 @timing_decorator
 def extract_json(response):
-    logger = logger_instance.get_logger()
-    logger.info("[extract_json] Function called")
     try:
-        response_data = response.json()
-        content = response_data.get('choices', [{}])[0].get(
-            'message', {}).get('content', "")
-        logger.debug(f"[extract_json] Extracted response content: {content}")
+        content = response.json()['choices'][0]['message']['content']
     except Exception as e:
-        logger.error(f"[extract_json] Error parsing response JSON: {e}")
+        logger.error("Error parsing response JSON: %s", e)
         return {}
-
     try:
         result = json.loads(content)
-        logger.info("[extract_json] Successfully parsed JSON directly")
+        logger.info("Direct JSON parsing successful.")
         return result
     except json.JSONDecodeError:
         logger.warning(
-            "[extract_json] Direct JSON parsing failed, attempting regex extraction")
-
+            "Direct JSON parsing failed. Trying regex extraction...")
     match = re.search(r'\{.*\}', content, re.DOTALL)
     if match:
         json_str = match.group(0).strip()
         try:
             result = json.loads(json_str)
-            logger.info(
-                "[extract_json] Successfully extracted JSON using regex")
+            logger.info("Regex JSON extraction successful.")
             return result
         except json.JSONDecodeError:
-            logger.error("[extract_json] Regex JSON extraction failed")
-
-    logger.error("[extract_json] No valid JSON found in response")
+            logger.error("Regex JSON extraction also failed.")
+    logger.error("No valid JSON found.")
     return {}
+
+
 
 
 @timing_decorator
 def llm_api(prompt: str, user_context: Optional[List[str]] = None,
             conversation_id: Optional[str] = None,
             history_manager: Optional[HistoryManager] = None) -> LLMResponse:
-    logger = logger_instance.get_logger()
-    logger.info(
-        f"[llm_api] Called with prompt: {prompt}, conversation_id: {conversation_id}")
     existing_tags_str, existing_subcategories_str = retrieve_tags()
     user_history = "\n".join(user_context) if user_context else "None"
-    system_overview = ""
+    system_overview = ""  # Add additional system instructions if needed
 
     api_request_json = create_classification_request(
         prompt, user_history, existing_subcategories_str, existing_tags_str, system_overview)
-
-    logger.debug(
-        f"[llm_api] API Request JSON: {json.dumps(api_request_json, indent=2)}")
-
     input_tokens = count_tokens(
         api_request_json["messages"][0]["content"]) + count_tokens(prompt)
     response = LLAMA_API.run(api_request_json)
     response_data = response.json()
-    logger.debug(
-        f"[llm_api] API Response JSON: {json.dumps(response_data, indent=2)}")
-
     try:
         response_content = response_data['choices'][0]['message']['content']
     except Exception as e:
-        logger.error(f"[llm_api] Error extracting response content: {e}")
+        logger.error("Error extracting response content: %s", e)
         response_content = ""
-
     output_tokens = count_tokens(response_content)
     total_tokens = input_tokens + output_tokens
     token_counts = {
@@ -121,12 +114,18 @@ def llm_api(prompt: str, user_context: Optional[List[str]] = None,
     }
 
     parsed_json = extract_json(response)
-
-    result = {
-        "clarification": parsed_json.get('clarification', {}).get('question') if parsed_json.get('clarification', {}).get('needed') else None,
-        "categories": parsed_json.get('subcategories', []),
-        "tags": parsed_json.get('tags', {}).get('existed', [])
-    } if parsed_json else {"error": "Failed to extract JSON"}
+    if parsed_json:
+        clarification_question = parsed_json.get('clarification', {}).get(
+            'question') if parsed_json.get('clarification', {}).get('needed') else None
+        categories = parsed_json.get('subcategories', [])
+        tags = parsed_json.get('tags', {}).get('existed', [])
+        result = {
+            "clarification": clarification_question,
+            "categories": categories,
+            "tags": tags
+        }
+    else:
+        result = {"error": "Failed to extract JSON"}
 
     request_data = {
         "request_type": "llm_classification",
@@ -145,6 +144,4 @@ def llm_api(prompt: str, user_context: Optional[List[str]] = None,
             response=result,
             request_data=request_data
         )
-
-    logger.info(f"[llm_api] Returning result: {json.dumps(result, indent=2)}")
     return LLMResponse(result)
