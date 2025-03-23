@@ -7,12 +7,55 @@ import pandas as pd
 import logging
 from src.history_manager import HistoryManager
 from config import LLAMA_API, TAGS_LIST, CATEGORY_SUBCATEGORY_LIST
-from src.utils import count_tokens, extract_json_from_text, timing_decorator
-from src.data_types import LLMResponse, LLMRequest
-from typing import List,Optional
+from src.utils import count_tokens, timing_decorator
+from src.data_types import LLMResponse
+from typing import List, Optional
 
-logger = logging.getLogger(__name__)
-logging.basicConfig(level=logging.INFO)
+import os
+import logging
+from datetime import datetime
+
+
+def setup_logging(script_name: str) -> logging.Logger:
+    """
+    Set up logging to create a unique log file based on the script name and timestamp.
+
+    Parameters:
+    - script_name: Name of the script (used to create the log folder).
+
+    Returns:
+    - logger: Configured logger instance.
+    """
+    # Create the log directory based on the script name
+    log_directory = f'logs/{script_name}'
+    os.makedirs(log_directory, exist_ok=True)
+
+    # Generate a unique log filename based on the current timestamp
+    timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+    log_filename = os.path.join(log_directory, f"log_{timestamp}.log")
+
+    # Set up logging to both the console and the log file
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler(log_filename),  # Log to the generated log file
+            logging.StreamHandler()  # Also log to the console
+        ]
+    )
+
+    # Return the logger instance
+    return logging.getLogger(script_name)
+
+
+# Get the script name (without the .py extension) to pass to the logging setup
+script_name = os.path.splitext(os.path.basename(__file__))[0]
+
+# Set up logging using the script name
+logger = setup_logging(script_name)
+
+# Now you can use the logger as usual
+logger.info("This is an informational message.")
 
 
 @timing_decorator
@@ -181,8 +224,8 @@ def build_api_request(prompt: str, user_context: str, existing_subcategories: st
 
 @timing_decorator
 def llm_api(prompt: str, user_context: Optional[List[str]] = None,
-    conversation_id: Optional[str] = None,
-    history_manager: Optional[HistoryManager] = None) -> LLMResponse:
+            conversation_id: Optional[str] = None,
+            history_manager: Optional[HistoryManager] = None) -> LLMResponse:
     """
     LLM API function that prepares the request, sends it to the LLAMA_API, processes the response,
     and saves the complete interaction to history.
@@ -235,16 +278,17 @@ def llm_api(prompt: str, user_context: Optional[List[str]] = None,
         "api_response": response_data,
         "token_counts": token_counts
     }
-    history_manager.add_llm_interaction(
-        conversation_id=conversation_id,
-        prompt=prompt,
-        response=result,
-        request_data=request_data
-    )
-    save_request_data(conversation_id, 
-                      "llm_classification", 
+
+    if result.get("clarification"):
+        history_manager.add_llm_interaction(
+            conversation_id=conversation_id,
+            response=result,
+            request_data=request_data
+        )
+    save_request_data(conversation_id,
+                      "llm_classification",
                       prompt, user_context,
-                      api_request_json["messages"][0]["content"], 
-                      response_data, 
+                      api_request_json["messages"][0]["content"],
+                      response_data,
                       token_counts)
     return LLMResponse(result)

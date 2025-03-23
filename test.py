@@ -11,35 +11,31 @@ def handle_clarification(llm_response: LLMResponse, prompt: str, formatted_histo
     clarification = llm_response.get("clarification")
     if clarification:
         if isinstance(clarification, str):
-            additional_input = input(
-                f"Clarification Needed: {clarification}\nProvide clarification: ")
+            question = clarification
         else:
-            additional_input = input(
-                f"Clarification Needed: {clarification.get('question', '')}\nProvide clarification: ")
+            question = clarification.get('question', '')
 
-        # Append user input to the prompt
-        prompt = f"{prompt} {additional_input}"
+        additional_input = input(
+            f"Clarification Needed: {question}\nProvide clarification: ")
 
-        # Re-run the llm_api call to get updated LLM response after clarification
+        # Add the user's clarification as a new message
+        history_manager.add_user_message(conversation_id, additional_input)
+
+        # Fetch updated history including the new message
+        updated_history = history_manager.get_formatted_history(
+            conversation_id)
+
+        # Re-run the llm_api with the new input and updated history
         llm_response = llm_api(
-            prompt=prompt,
-            user_context=formatted_history,
+            prompt=additional_input,  # Use the new input as the prompt
+            user_context=updated_history,
             conversation_id=conversation_id,
             history_manager=history_manager
         )
 
-        print("LLM Response after clarification:", llm_response)
-        print("LLM Response result:", llm_response.get("categories", []))
-
-        # Check for errors in the LLM response after clarification
-        if llm_response is None or 'error' in llm_response:
-            print("Error in LLM processing. Please try again.")
-            return prompt  # Return the original prompt if an error occurs
-
-        # Check if we need further clarification
+        # Check for further clarification recursively
         if llm_response.get("clarification"):
-            # Recursive call to handle additional clarification
-            return handle_clarification(llm_response, prompt, formatted_history, conversation_id, history_manager)
+            return handle_clarification(llm_response, additional_input, updated_history, conversation_id, history_manager)
 
     return prompt
 
@@ -48,6 +44,8 @@ def process_new_query(user_prompt: str, formatted_history: str, conversation_id:
                       history_manager: HistoryManager, latitude: float, longitude: float,
                       search_radius: int, num_candidates: int) -> TopCandidates:
     """Process a new user query to get new top candidates."""
+    # Add the user message to history before processing
+    history_manager.add_user_message(conversation_id, user_prompt)
     # Get initial LLM classification response
     llm_response = llm_api(
         prompt=user_prompt,
@@ -123,7 +121,7 @@ def main():
     # Default location parameters
     latitude = 41.064108
     longitude = 29.031473
-    search_radius = 5000
+    search_radius = 2000
     num_candidates = 2
 
     top_candidates = None
@@ -144,6 +142,7 @@ def main():
 
         formatted_history = history_manager.get_formatted_history(
             conversation_id)
+        print("\nFormatted History:", formatted_history)
 
         # If we don't have top candidates yet, process a new query
         if not top_candidates:
@@ -173,15 +172,56 @@ def main():
         response_text = location_advice.get(
             "response", "No response received.")
         print("\nLocation Advice:", response_text)
-        print("Continuation:", location_advice)
-        continuation = location_advice.get("continuation", "false")
 
-        while continuation.lower() == "true":
+        # Ask for follow-up input regardless of the continuation value
+        user_prompt = input(
+            "\nEnter follow-up question (or type 'new' to start new search): ")
+        if user_prompt.lower() == 'exit':
+            break
+
+        # Add the follow-up question to history and refresh formatted_history
+        history_manager.add_user_message(conversation_id, user_prompt)
+        formatted_history = history_manager.get_formatted_history(
+            conversation_id)
+
+        # Get second location advice with the follow-up question
+        try:
+            location_advice = get_location_advice(
+                prompt=user_prompt,
+                history=formatted_history,
+                top_candidates=top_candidates,
+                latitude=latitude,
+                longitude=longitude,
+                search_radius=search_radius,
+                conversation_id=conversation_id,
+                history_manager=history_manager
+            )
+        except Exception as e:
+            print(f"Error during location advice processing: {e}")
+            continue
+
+        # Check if continuation is a string and handle accordingly
+        continuation = str(location_advice.get(
+            "continuation", "false")).lower()
+        response_text = location_advice.get(
+            "response", "No response received.")
+        print("\nLocation Advice:", response_text)
+
+        if continuation == "false":
+            break
+
+        # Now check if we should enter the continuation loop
+        while continuation == "true":
             user_prompt = input(
                 "\nEnter your prompt (or type 'exit' to quit): ")
             if user_prompt.lower() == 'exit':
                 break
             last_prompt = user_prompt  # Update the last prompt
+
+            # Add the follow-up question to history and refresh formatted_history
+            history_manager.add_user_message(conversation_id, user_prompt)
+            formatted_history = history_manager.get_formatted_history(
+                conversation_id)
 
             try:
                 location_advice = get_location_advice(
@@ -198,18 +238,21 @@ def main():
                 print(f"Error during location advice processing: {e}")
                 continue
 
-            continuation = location_advice.get("continuation", "false")
+            continuation = str(location_advice.get(
+                "continuation", "false")).lower()
             response_text = location_advice.get(
                 "response", "No response received.")
+            print("\nLocation Advice:", response_text)
 
-            if continuation.lower() == "false":
+            if continuation == "false":
                 break
-            else:
-                print("\nLocation Advice:", response_text)
 
-        if continuation.lower() == "false":
+        if continuation == "false":
             # If continuation is false, clear top_candidates to get new ones on next iteration
             print("Starting new recommendation context with the same prompt.")
             top_candidates = None
             reuse_prompt = True  # Flag to reuse the last prompt
-            # Continue to restart the loop with the same prompt
+
+
+if __name__ == "__main__":
+    main()

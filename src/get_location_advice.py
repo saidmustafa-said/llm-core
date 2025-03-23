@@ -11,8 +11,51 @@ from src.utils import timing_decorator, count_tokens
 from src.history_manager import HistoryManager
 from src.data_types import TopCandidates, LocationAdviceResponse
 
-logger = logging.getLogger(__name__)
-logging.basicConfig(level=logging.INFO)
+import os
+import logging
+from datetime import datetime
+
+
+def setup_logging(script_name: str) -> logging.Logger:
+    """
+    Set up logging to create a unique log file based on the script name and timestamp.
+
+    Parameters:
+    - script_name: Name of the script (used to create the log folder).
+
+    Returns:
+    - logger: Configured logger instance.
+    """
+    # Create the log directory based on the script name
+    log_directory = f'logs/{script_name}'
+    os.makedirs(log_directory, exist_ok=True)
+
+    # Generate a unique log filename based on the current timestamp
+    timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+    log_filename = os.path.join(log_directory, f"log_{timestamp}.log")
+
+    # Set up logging to both the console and the log file
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler(log_filename),  # Log to the generated log file
+            logging.StreamHandler()  # Also log to the console
+        ]
+    )
+
+    # Return the logger instance
+    return logging.getLogger(script_name)
+
+
+# Get the script name (without the .py extension) to pass to the logging setup
+script_name = os.path.splitext(os.path.basename(__file__))[0]
+
+# Set up logging using the script name
+logger = setup_logging(script_name)
+
+# Now you can use the logger as usual
+logger.info("This is an informational message.")
 
 
 @timing_decorator
@@ -225,11 +268,12 @@ def get_location_advice(prompt: str, history: List[str], top_candidates: TopCand
         "token_counts": token_counts
     }
 
+    # In get_location_advice.py, fix the history recording:
     history_manager.add_llm_interaction(
         conversation_id=conversation_id,
-        prompt=prompt,
-        response=request_data,
-        request_data=request_data
+        response=result,
+        request_data=request_data,
+        top_candidates=top_candidates
     )
     save_request_data(
         conversation_id,
@@ -241,6 +285,6 @@ def get_location_advice(prompt: str, history: List[str], top_candidates: TopCand
         token_counts
     )
     return LocationAdviceResponse(
-        continuation=result.get("continuation", False),
-        response=result.get("response", "No recommendation generated")
+        continuation=result.get("continuation"),
+        response=result.get("response")
     )

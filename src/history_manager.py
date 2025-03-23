@@ -54,15 +54,21 @@ class HistoryManager:
         conversation = self.get_conversation(conversation_id)
         return conversation.get("messages", [])
 
-    def get_formatted_history(self, conversation_id: str) -> List[str]:
+
+    def get_formatted_history(self, conversation_id: str) -> str:
+        """Returns conversation history in a format suitable for context."""
         messages = self.get_messages(conversation_id)
+        if not messages:
+            return ""  # Return empty string instead of "No previous conversation"
+
         formatted = []
         for msg in messages:
             if msg.get("role") == "user":
                 formatted.append(f"User: {msg.get('content', '')}")
             elif msg.get("role") == "assistant":
                 formatted.append(f"Assistant: {msg.get('content', '')}")
-        return formatted
+
+        return "\n".join(formatted)
 
     def add_message(self, conversation_id: str, role: str, content: str,
                     metadata: Optional[Dict[str, Any]] = None) -> None:
@@ -88,21 +94,28 @@ class HistoryManager:
         self.add_message(conversation_id, "assistant", content, metadata)
 
     def add_llm_interaction(self, conversation_id: str,
-                           prompt: str,
-                           response: LLMResponse,
-                           request_data: Dict,
-                           top_candidates: Optional[TopCandidates] = None) -> None:
-        # Add user prompt and assistant response with full metadata to history.
-        self.add_user_message(conversation_id, prompt)
-        response_text = response.get("response", str(response)) if isinstance(
-            response, dict) else str(response)
+                            response: Any,
+                            request_data: Dict,
+                            top_candidates: Optional[TopCandidates] = None) -> None:
+        # Extract response text
+        if isinstance(response, dict):
+            response_text = response.get("response", "")
+            if not response_text and "error" in response:
+                response_text = f"Error: {response['error']}"
+        else:
+            response_text = str(response)
+
+        # Create metadata
         metadata = {
-            "full_request": request_data,
-            "full_response": response,
-            "timestamp": int(time.time())
+            "request_type": request_data.get("request_type", "unknown"),
+            "timestamp": request_data.get("timestamp", int(time.time())),
+            "tokens": request_data.get("token_counts", {})
         }
+
         if top_candidates:
             metadata["top_candidates"] = top_candidates
+
+        # Add assistant response with metadata
         self.add_assistant_message(conversation_id, response_text, metadata)
 
     def get_top_candidates(self, conversation_id: str) -> TopCandidates:
