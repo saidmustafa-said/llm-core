@@ -8,3 +8,4 @@ __pycache__/
 /venv/
 /chat_history/
 /requests/
+/logs/

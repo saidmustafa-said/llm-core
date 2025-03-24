@@ -48,17 +48,17 @@ def retrieve_tags():
 
 
 @timing_decorator
-def llm_api(prompt: str, user_context: Optional[List[str]] = None) -> LLMResponse:
+def llm_api(prompt: str, history) -> LLMResponse:
     logger = logger_instance.get_logger()
     logger.info("Calling LLM API with the provided prompt.")
 
     existing_tags_str, existing_subcategories_str = retrieve_tags()
-    user_history = "\n".join(user_context) if user_context else "None"
+    user_history = history if history else "No previous conversation"
     system_overview = ""
 
     logger.debug(f"Existing tags: {existing_tags_str}")
     logger.debug(f"Existing subcategories: {existing_subcategories_str}")
-    logger.debug(f"User history: {user_history}")
+    logger.debug("User history: %s", user_history.replace('\n', ' || '))
 
     # Prepare the API request
     api_request_json = create_classification_request(

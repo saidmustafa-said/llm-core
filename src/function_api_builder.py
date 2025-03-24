@@ -68,7 +68,7 @@ def create_classification_request(
                             "properties": {
                                 "needed": {
                                     "type": "boolean",
-                                    "description": "True if clarification is needed, False if the classification is certain."
+                                    "description": "True if clarification is needed, False if the classification is certain. None if conversation has ended"
                                 },
                                 "question": {
                                     "type": "string",
