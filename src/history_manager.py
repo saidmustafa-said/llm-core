@@ -66,13 +66,17 @@ class HistoryManager:
 
     def add_message(self, user_id: str, conversation_id: str, role: str, content: str,
                     metadata: Optional[Dict[str, Any]] = None) -> None:
+        # Ensure content is a string
+        if not isinstance(content, str):
+            content = str(content)
+        # Rest of the method remains the same
         conversation_file = self.get_conversation_file_path(
             user_id, conversation_id)
         conversation = self.get_conversation(user_id, conversation_id)
 
         message = {
             "role": role,
-            "content": content,
+            "content": content,  # Now guaranteed to be a string
             "timestamp": int(time.time())
         }
 
@@ -99,6 +103,9 @@ class HistoryManager:
         for msg in messages:
             role = msg.get("role", "").capitalize()
             content = msg.get("content", "")
+            # Handle cases where content might be a list (due to data issues)
+            if isinstance(content, list):
+                content = " ".join(content)
             formatted_history.append(f"{role}: {content}")
         return "\n".join(formatted_history)
 

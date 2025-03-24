@@ -95,10 +95,12 @@ def build_location_request(prompt, context_text, user_history, latitude, longitu
     system_content = (
         "You are a friendly location recommendation assistant. "
         f"User coordinates: ({latitude}, {longitude}), Search radius: {search_radius}m\n"
-        f"Conversation history:\n{user_history}\n\n"
+        "In users radius these are the only ones found, if asked if there is more, say these are the only ones in the radius user have chosen in that longitude and latitude"
         f"Context data:\n{context_text}\n\n"
+        f"Conversation history:\n{user_history}\n\n"
         "Engage in a conversational manner, answering questions based on history and context. "
-        "Keep the conversation natural and fluid, providing recommendations with details like addresses and directions when available."
+        "Keep the conversation natural and fluid, providing recommendations with details like addresses, directions, opening hours, or amenities when available. "
+        "Ensure that responses always contain useful information, even if context is limited."
     )
 
     api_request = {
@@ -113,18 +115,30 @@ def build_location_request(prompt, context_text, user_history, latitude, longitu
                 "description": (
                     "Determines if the prompt is a continuation of the conversation or a new request. "
                     "If it's a continuation, return continuation: true. Otherwise, return continuation: false and "
-                    "generate a conversational response that answers the user's question based on history and context."
+                    "generate a conversational response that answers the user's question based on history and context. "
+                    "Always provide a response even during continuations. "
+                    "If descriptions are missing, use default responses to ensure the conversation continues smoothly. "
+                    "Make sure the response is full, even if not all details are available. Always provide details like address, hours, and amenities when possible."
+                    "Answer only based on the context data, if not in context data then set continuation to false"
                 ),
                 "parameters": {
                     "type": "object",
                     "properties": {
-                        "continuation": {
-                            "type": "boolean",
-                            "description": "True if the query is a continuation, False if it's a new request."
-                        },
                         "response": {
                             "type": "string",
-                            "description": "A natural and engaging response that keeps the conversation going, answering the user's question using context and history."
+                            "description": (
+                                "A natural and engaging response that keeps the conversation going, answering the user's question using context and history. "
+                                "MUST always provide a response, even if context is limited. The response should be informative, with as much detail as possible, "
+                                "including address, hours, amenities, or directions if available."
+                                "Always answer the users prompt in full"
+                                "Answer only based on the context data, if not in context data then set continuation to false"
+                            )
+                        },
+                        "continuation": {
+                            "type": "boolean",
+                            "description": (
+                                "True if the query is a continuation, False if it's a new request."
+                            )
                         }
                     },
                     "required": ["continuation", "response"]
@@ -133,7 +147,7 @@ def build_location_request(prompt, context_text, user_history, latitude, longitu
         ],
         "function_call": "analyze_location_request",
         "max_tokens": 7000,
-        "temperature": 0.2
+        "temperature": 0.2,
     }
 
     return api_request

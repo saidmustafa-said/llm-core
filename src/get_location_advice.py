@@ -55,22 +55,17 @@ def format_top_candidates(top_candidates: TopCandidates) -> str:
 
 
 @timing_decorator
-def get_location_advice(prompt: str, history: List[str], top_candidates: TopCandidates,
-                        latitude: float, longitude: float, search_radius: int,
-                        conversation_id: Optional[str] = None) -> LocationAdviceResponse:
+def get_location_advice(prompt, history, top_candidates: TopCandidates,
+                        latitude, longitude, search_radius) -> LocationAdviceResponse:
     logger = logger_instance.get_logger()
     """Main function to get location advice with structured response handling"""
 
-    # Initialize conversation and history
-    conversation_id = conversation_id or str(uuid.uuid4())
-    logger.info("Started a new conversation with ID: %s", conversation_id)
-
     # Format context and history
     formatted_candidates = format_top_candidates(top_candidates)
-    user_history = "\n".join(
-        history) if history else "No previous conversation"
+    # Handle history - now expecting pre-formatted string
+    user_history = history if history else "No previous conversation"
 
-    logger.debug("Formatted user history: %s", user_history)
+    logger.debug("User history: %s", user_history.replace('\n', ' || '))
     logger.debug("Formatted candidates: %s", formatted_candidates)
 
     # Build API request

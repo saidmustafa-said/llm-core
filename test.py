@@ -181,15 +181,13 @@ def main():
             "response", "No response received.")
         history_manager.add_assistant_message(
             user_id, conversation_id, response_text)
-        print("\nLocation Advice:", response_text)
-
-        if continuation == "false":
-            break
+        if continuation == "true":
+            print("\nLocation Advice:", response_text)
 
         # Now check if we should enter the continuation loop
         while continuation == "true":
             user_prompt = input(
-                "\nEnter your prompt (or type 'exit' to quit): ")
+                "\nEnter your follow up question2 (or type 'exit' to quit): ")
             if user_prompt.lower() == 'exit':
                 break
             last_prompt = user_prompt  # Update the last prompt
@@ -213,9 +211,10 @@ def main():
                 "response", "No response received.")
             history_manager.add_assistant_message(
                 user_id, conversation_id, response_text)
-            print("\nLocation Advice:", response_text)
 
-            if continuation == "false":
+            if continuation == "true":
+                print("\nLocation Advice:", response_text)
+            else:
                 break
 
         if continuation == "false":
