@@ -5,9 +5,8 @@ from config import DATASET
 import re
 from src.data_types import POIData
 from typing import List
-from src.utils import validate_poi_data
-from src.data_types import POIData
 from typing import Dict
+
 
 def validate_poi_data(poi: Dict) -> POIData:
     required_keys = {'latitude', 'longitude', 'subcategory'}
@@ -16,7 +15,7 @@ def validate_poi_data(poi: Dict) -> POIData:
         raise ValueError(f"Invalid POI data, missing keys: {missing}")
     return POIData(poi)
 
-@timing_decorator
+
 def compute_bounding_box(lat, lon, radius_m):
     """
     Compute a bounding box (min/max latitude and longitude) given a central point and radius in meters.
@@ -28,7 +27,6 @@ def compute_bounding_box(lat, lon, radius_m):
     return lat - delta_lat, lat + delta_lat, lon - delta_lon, lon + delta_lon
 
 
-@timing_decorator
 def filter_by_bounding_box_and_subcategory(df, user_lat, user_lon, radius_m, search_subcategories) -> List[POIData]:
     """
     Filters locations by geographic bounding box and a list of subcategories.

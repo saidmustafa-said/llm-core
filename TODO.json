@@ -1,10 +1,16 @@
 {
   "todo": [
     {
-      "id": 11190,
-      "text": "remove request after fixing logs",
+      "id": 18498,
+      "text": "meta in api files logged",
       "priority": 1,
-      "created": "2025-03-23T11:08:09.025Z"
+      "created": "2025-03-23T19:57:25.499Z"
+    },
+    {
+      "id": 10320,
+      "text": "problem with answers after follow-up",
+      "priority": 1,
+      "created": "2025-03-23T18:51:17.938Z"
     },
     {
       "id": 17314,
@@ -25,5 +31,18 @@
       "created": "2025-03-23T11:08:46.317Z"
     }
   ],
-  "completed": []
+  "completed": [
+    {
+      "id": 12013,
+      "text": "merge clarification to prompt and then send to llmrequest",
+      "priority": 1,
+      "created": "2025-03-23T16:23:56.287Z"
+    },
+    {
+      "id": 11190,
+      "text": "remove request after fixing logs",
+      "priority": 1,
+      "created": "2025-03-23T11:08:09.025Z"
+    }
+  ]
 }

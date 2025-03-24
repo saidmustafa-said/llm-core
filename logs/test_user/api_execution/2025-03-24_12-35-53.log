@@ -1,0 +1,155 @@
+2025-03-24 12:35:53,498 - INFO - Logging setup completed
+2025-03-24 12:35:59,795 - INFO - Calling LLM API with the provided prompt.
+2025-03-24 12:35:59,795 - INFO - Retrieving tags and subcategories from CSV files.
+2025-03-24 12:35:59,796 - DEBUG - Reading tags from file: /Users/saidmustafa/Documents/Projects/fine-tuning-custom-LLM/data/tags.csv
+2025-03-24 12:35:59,802 - INFO - Tags retrieved: None
+2025-03-24 12:35:59,802 - DEBUG - Reading subcategories from file: /Users/saidmustafa/Documents/Projects/fine-tuning-custom-LLM/data/category_subcategory.csv
+2025-03-24 12:35:59,809 - INFO - Subcategories retrieved: amenity: bar,bbq,cafe,cinema,dancing_school,dive_centre,events_venue,exhibition_centre,fast_food,food_court,guest_house,hookah_lounge,ice_cream,internet_cafe,library,motel,nightclub,planetarium,pub,public_bath,restaurant,social_centre,social_club,theatre,vending_machine
+historic: archaeological_site,boundary_stone,building,castle,cemetery,church,cistern,city_gate,column,drinking_fountain,fort,fountain,memorial,monument,ruins,tomb,tower,uncategorized
+leisure: adult_gaming_centre,amusement_arcade,bath,beach_resort,bowling_alley,common,dance,dog_park,fitness_centre,fitness_station,garden,golf_course,horse_riding,indoor_play,marina,miniature_golf,nature_reserve,outdoor_seating,park,picnic_table,pitch,playground,resort,sauna,slipway,sports_centre,sports_hall,stadium,swimming_pool,tanning_salon,tree_garden,turkish_bath,uncategorized
+natural: bay,beach,cape,cave_entrance,hill,hot_spring,peak,plateau,reef,shrub,sinkhole,Soap,spring,tree,wood,uncategorized
+shop: accessories,accessory,advertising,agrarian,alcohol,animal_food,anime,antiques,appliance,art,association,Athletic_Club,attar,baby_goods,bag,Bag_shop,bakery,bathroom_furnishing,beauty,beauty_supply,bed,beverages,bicycle,billiard_shop,blacksmith,boat,bookmaker,books,boutique,building_materials,butcher,car,carpet,carpet_store,car_parts,car_repair,cheese,chemist,chocolate,cleaning,clothes,coffee,collector,computer,confectionery,convenience,copyshop,cosmetics,craft,curtain,dairy,deli,department_store,dessert,dessert_shop,doityourself,doors,dormitory,Dorms,dry_cleaning,electrical,electrics,electronics,erotic,estate_agent,fabric,farm,fashion_accessories,fireplace,fishing,flooring,florist,food,foreign_trade,frame,fuel,funeral_directors,furniture,games,garden_centre,garden_furniture,gas,general,gift,glass_bottles_shop,Glass_shop,glaziery,greengrocer,grocery,hairdresser,hairdresser_supply,hardware,health_food,hearing_aids,herbalist,hifi,hobby,home_good_store,hookah,household_items_shop,household_linen,houseware,hunting,hunting_gear_shop,hvac,ice_cream,IMPORT_EXPORT,interior_decoration,internet,jewelry,key_cutter,kiosk,kitchen,labels,laundry,leather,library,lighting,locksmith,lottery,mall,mannequin,massage,medical,medical_supply,military_surplus,mobile_phone,mobilya,model,motorcycle,motorcycle_repair,motors,music,musical_instrument,Natural_stones,nature,Navking,newsagent,Novelty_store,nutrition_supplements,nuts,office_supplies,optician,outdoor,outpost,Package_shop,paint,party,pasta,pastry,pawnbroker,perfumery,pet,pet_grooming,photo,photography,photo_studio,piano_shop,pickle,pickles,plumber,plumbing,pottery,power_equipment,printer_ink,radiotechnics,religion,rental,repair,restaurant,safe_vault_shop,scuba_diving,seafood,second_hand,security,sewing,shipment,shoes,shoe_repair,shopping_mall,slaughterhouse,soup_shop,spices,sports,stationery,stores_shopping_site,stroller,supermarket,tailor,tattoo,tea,telecommunication,textiles,ticket,tiles,tobacco,toys,trade,travel_agency,turkish_bath,tyres,umbrella,vacant,variety_store,video,video_games,watches,water,water_delivery,water_supplier,weapons,wheelchair,wholesale,wigs,window_blind,wine,uncategorized
+sport: archery,basketball,billiards,chess,climbing,fencing,fitness,football,golf,gymnastics,ice_hockey,karate,karting,multi,pelota,pilates,safety_training,scuba_diving,shooting,skateboard,soccer,swimming,table_tennis,taekwondo,tennis,wrestling,yoga
+2025-03-24 12:35:59,809 - DEBUG - Existing tags: None
+2025-03-24 12:35:59,809 - DEBUG - Existing subcategories: amenity: bar,bbq,cafe,cinema,dancing_school,dive_centre,events_venue,exhibition_centre,fast_food,food_court,guest_house,hookah_lounge,ice_cream,internet_cafe,library,motel,nightclub,planetarium,pub,public_bath,restaurant,social_centre,social_club,theatre,vending_machine
+historic: archaeological_site,boundary_stone,building,castle,cemetery,church,cistern,city_gate,column,drinking_fountain,fort,fountain,memorial,monument,ruins,tomb,tower,uncategorized
+leisure: adult_gaming_centre,amusement_arcade,bath,beach_resort,bowling_alley,common,dance,dog_park,fitness_centre,fitness_station,garden,golf_course,horse_riding,indoor_play,marina,miniature_golf,nature_reserve,outdoor_seating,park,picnic_table,pitch,playground,resort,sauna,slipway,sports_centre,sports_hall,stadium,swimming_pool,tanning_salon,tree_garden,turkish_bath,uncategorized
+natural: bay,beach,cape,cave_entrance,hill,hot_spring,peak,plateau,reef,shrub,sinkhole,Soap,spring,tree,wood,uncategorized
+shop: accessories,accessory,advertising,agrarian,alcohol,animal_food,anime,antiques,appliance,art,association,Athletic_Club,attar,baby_goods,bag,Bag_shop,bakery,bathroom_furnishing,beauty,beauty_supply,bed,beverages,bicycle,billiard_shop,blacksmith,boat,bookmaker,books,boutique,building_materials,butcher,car,carpet,carpet_store,car_parts,car_repair,cheese,chemist,chocolate,cleaning,clothes,coffee,collector,computer,confectionery,convenience,copyshop,cosmetics,craft,curtain,dairy,deli,department_store,dessert,dessert_shop,doityourself,doors,dormitory,Dorms,dry_cleaning,electrical,electrics,electronics,erotic,estate_agent,fabric,farm,fashion_accessories,fireplace,fishing,flooring,florist,food,foreign_trade,frame,fuel,funeral_directors,furniture,games,garden_centre,garden_furniture,gas,general,gift,glass_bottles_shop,Glass_shop,glaziery,greengrocer,grocery,hairdresser,hairdresser_supply,hardware,health_food,hearing_aids,herbalist,hifi,hobby,home_good_store,hookah,household_items_shop,household_linen,houseware,hunting,hunting_gear_shop,hvac,ice_cream,IMPORT_EXPORT,interior_decoration,internet,jewelry,key_cutter,kiosk,kitchen,labels,laundry,leather,library,lighting,locksmith,lottery,mall,mannequin,massage,medical,medical_supply,military_surplus,mobile_phone,mobilya,model,motorcycle,motorcycle_repair,motors,music,musical_instrument,Natural_stones,nature,Navking,newsagent,Novelty_store,nutrition_supplements,nuts,office_supplies,optician,outdoor,outpost,Package_shop,paint,party,pasta,pastry,pawnbroker,perfumery,pet,pet_grooming,photo,photography,photo_studio,piano_shop,pickle,pickles,plumber,plumbing,pottery,power_equipment,printer_ink,radiotechnics,religion,rental,repair,restaurant,safe_vault_shop,scuba_diving,seafood,second_hand,security,sewing,shipment,shoes,shoe_repair,shopping_mall,slaughterhouse,soup_shop,spices,sports,stationery,stores_shopping_site,stroller,supermarket,tailor,tattoo,tea,telecommunication,textiles,ticket,tiles,tobacco,toys,trade,travel_agency,turkish_bath,tyres,umbrella,vacant,variety_store,video,video_games,watches,water,water_delivery,water_supplier,weapons,wheelchair,wholesale,wigs,window_blind,wine,uncategorized
+sport: archery,basketball,billiards,chess,climbing,fencing,fitness,football,golf,gymnastics,ice_hockey,karate,karting,multi,pelota,pilates,safety_training,scuba_diving,shooting,skateboard,soccer,swimming,table_tennis,taekwondo,tennis,wrestling,yoga
+2025-03-24 12:35:59,809 - DEBUG - User history: None
+2025-03-24 12:35:59,809 - DEBUG - API request JSON from create_classification_request: {'model': 'llama3.1-70b', 'messages': [{'role': 'system', 'content': "You are an AI specializing in location classification. Existing subcategories: amenity: bar,bbq,cafe,cinema,dancing_school,dive_centre,events_venue,exhibition_centre,fast_food,food_court,guest_house,hookah_lounge,ice_cream,internet_cafe,library,motel,nightclub,planetarium,pub,public_bath,restaurant,social_centre,social_club,theatre,vending_machine\nhistoric: archaeological_site,boundary_stone,building,castle,cemetery,church,cistern,city_gate,column,drinking_fountain,fort,fountain,memorial,monument,ruins,tomb,tower,uncategorized\nleisure: adult_gaming_centre,amusement_arcade,bath,beach_resort,bowling_alley,common,dance,dog_park,fitness_centre,fitness_station,garden,golf_course,horse_riding,indoor_play,marina,miniature_golf,nature_reserve,outdoor_seating,park,picnic_table,pitch,playground,resort,sauna,slipway,sports_centre,sports_hall,stadium,swimming_pool,tanning_salon,tree_garden,turkish_bath,uncategorized\nnatural: bay,beach,cape,cave_entrance,hill,hot_spring,peak,plateau,reef,shrub,sinkhole,Soap,spring,tree,wood,uncategorized\nshop: accessories,accessory,advertising,agrarian,alcohol,animal_food,anime,antiques,appliance,art,association,Athletic_Club,attar,baby_goods,bag,Bag_shop,bakery,bathroom_furnishing,beauty,beauty_supply,bed,beverages,bicycle,billiard_shop,blacksmith,boat,bookmaker,books,boutique,building_materials,butcher,car,carpet,carpet_store,car_parts,car_repair,cheese,chemist,chocolate,cleaning,clothes,coffee,collector,computer,confectionery,convenience,copyshop,cosmetics,craft,curtain,dairy,deli,department_store,dessert,dessert_shop,doityourself,doors,dormitory,Dorms,dry_cleaning,electrical,electrics,electronics,erotic,estate_agent,fabric,farm,fashion_accessories,fireplace,fishing,flooring,florist,food,foreign_trade,frame,fuel,funeral_directors,furniture,games,garden_centre,garden_furniture,gas,general,gift,glass_bottles_shop,Glass_shop,glaziery,greengrocer,grocery,hairdresser,hairdresser_supply,hardware,health_food,hearing_aids,herbalist,hifi,hobby,home_good_store,hookah,household_items_shop,household_linen,houseware,hunting,hunting_gear_shop,hvac,ice_cream,IMPORT_EXPORT,interior_decoration,internet,jewelry,key_cutter,kiosk,kitchen,labels,laundry,leather,library,lighting,locksmith,lottery,mall,mannequin,massage,medical,medical_supply,military_surplus,mobile_phone,mobilya,model,motorcycle,motorcycle_repair,motors,music,musical_instrument,Natural_stones,nature,Navking,newsagent,Novelty_store,nutrition_supplements,nuts,office_supplies,optician,outdoor,outpost,Package_shop,paint,party,pasta,pastry,pawnbroker,perfumery,pet,pet_grooming,photo,photography,photo_studio,piano_shop,pickle,pickles,plumber,plumbing,pottery,power_equipment,printer_ink,radiotechnics,religion,rental,repair,restaurant,safe_vault_shop,scuba_diving,seafood,second_hand,security,sewing,shipment,shoes,shoe_repair,shopping_mall,slaughterhouse,soup_shop,spices,sports,stationery,stores_shopping_site,stroller,supermarket,tailor,tattoo,tea,telecommunication,textiles,ticket,tiles,tobacco,toys,trade,travel_agency,turkish_bath,tyres,umbrella,vacant,variety_store,video,video_games,watches,water,water_delivery,water_supplier,weapons,wheelchair,wholesale,wigs,window_blind,wine,uncategorized\nsport: archery,basketball,billiards,chess,climbing,fencing,fitness,football,golf,gymnastics,ice_hockey,karate,karting,multi,pelota,pilates,safety_training,scuba_diving,shooting,skateboard,soccer,swimming,table_tennis,taekwondo,tennis,wrestling,yoga. Existing descriptive tags: None. User conversation history: None.  Analyze the user's prompt to determine which subcategories (only subcategory names, not categories) it fits into and which descriptive tags apply. Return the matching subcategories and descriptive tags. If the prompt does not exactly match any existing tag, generate new ones that better capture its essence. Return both subcategories and descriptive tags. If multiple valid subcategories exist and the intent is unclear, return a clarification question."}, {'role': 'user', 'content': "Analyze this prompt: 'cafe near by'"}], 'functions': [{'name': 'extract_location_info', 'description': "Extract the most relevant subcategories and descriptive tags from the user's prompt based on the provided context. For subcategories, compare the prompt with the existing list and return the relevant matches. For descriptive tags, do the same by returning matched tags or generating new descriptive words that capture the location's nuances. Ensure both subcategories and tags are unique, non-redundant, and appropriately capture the nuances of the location described in the prompt. If multiple subcategories are found and the intent is unclear, generate a clarification question.", 'parameters': {'type': 'object', 'properties': {'subcategories': {'type': 'array', 'items': {'type': 'string'}, 'description': 'List of top 3 matching subcategories.'}, 'tags': {'type': 'object', 'properties': {'existed': {'type': 'array', 'items': {'type': 'string'}, 'description': 'Top 3 descriptive tags that match existing ones.'}, 'new': {'type': 'array', 'items': {'type': 'string'}, 'description': 'New descriptive tags generated from the prompt.'}}, 'required': ['existed', 'new']}, 'clarification': {'type': 'object', 'properties': {'needed': {'type': 'boolean', 'description': 'True if clarification is needed, False if the classification is certain.'}, 'question': {'type': 'string', 'description': 'Clarification question to ask the user if needed.'}}, 'required': ['needed', 'question']}}, 'required': ['subcategories', 'tags', 'clarification']}}], 'function_call': 'extract_location_info', 'max_tokens': 5000, 'temperature': 0.2}
+2025-03-24 12:36:01,089 - INFO - Received response from LLAMA API.
+2025-03-24 12:36:01,089 - INFO - Extracting JSON content from the response.
+2025-03-24 12:36:01,089 - DEBUG - {'created': 1742808960, 'model': 'llama3.1-70b', 'usage': {'prompt_tokens': 1879, 'completion_tokens': 47, 'total_tokens': 1926}, 'choices': [{'finish_reason': 'stop', 'index': 0, 'logprobs': None, 'message': {'content': '<function=extract_location_info>{"subcategories": ["cafe"], "tags": {"existed": [], "new": ["nearby"]}, "clarification": {"needed": false, "question": ""}}</function>', 'refusal': None, 'role': 'assistant', 'audio': None, 'function_call': None, 'tool_calls': None}}]}
+2025-03-24 12:36:01,089 - INFO - Successfully extracted content from the response.
+2025-03-24 12:36:01,089 - WARNING - Failed to decode JSON from content.
+2025-03-24 12:36:01,090 - DEBUG - Parsed JSON from regex match: {'subcategories': ['cafe'], 'tags': {'existed': [], 'new': ['nearby']}, 'clarification': {'needed': False, 'question': ''}}
+2025-03-24 12:36:01,090 - INFO - API result: {'clarification': None, 'categories': ['cafe'], 'tags': []}
+2025-03-24 12:36:13,255 - INFO - Started a new conversation with ID: 4381d577-38d2-4687-af17-8ad13a7cc25f
+2025-03-24 12:36:13,255 - DEBUG - Formatted top candidates: Drive Mode:
+
+Mode: Drive
+Latitude: 41.0593763
+Longitude: 29.0363774
+City: İstanbul
+Amenity: cafe
+Name: Nilly
+Category: amenity
+Subcategory: cafe
+Address: Nilly, Arnavutköy Kuruçeşme Caddesi, Kuruçeşme Mahallesi, Beşiktaş, İstanbul, Marmara Bölgesi, 34345, Türkiye
+Drive_route_distance_m: 1218.625896238385
+
+Mode: Drive
+Latitude: 41.0583138
+Longitude: 29.036182
+City: İstanbul
+District: Beşiktaş
+Street: Muallim Naci Caddesi
+Phone_number: +902122654734
+Description: Bu mekan evcil hayvan dostudur.Bu mekanda vale hizmeti bulunmaktadır. Çocuklar için uygun bir mekandır.
+Opening_hours: Mo-Su 09:00-01:00
+Amenity: cafe
+Name_en: Assk Cafe
+Name_ar: مقهى Aşşk Kahve
+Category: amenity
+Subcategory: cafe
+Address: مقهى Aşşk Kahve, 64, Muallim Naci Caddesi, Kuruçeşme Mahallesi, Beşiktaş, İstanbul, Marmara Bölgesi, 34330, Türkiye
+Drive_route_distance_m: 1308.0303687548126
+
+Walk Mode:
+
+Mode: Walk
+Latitude: 41.0593763
+Longitude: 29.0363774
+City: İstanbul
+Amenity: cafe
+Name: Nilly
+Category: amenity
+Subcategory: cafe
+Address: Nilly, Arnavutköy Kuruçeşme Caddesi, Kuruçeşme Mahallesi, Beşiktaş, İstanbul, Marmara Bölgesi, 34345, Türkiye
+Walk_route_distance_m: 932.4623549332073
+
+Mode: Walk
+Latitude: 41.0583138
+Longitude: 29.036182
+City: İstanbul
+District: Beşiktaş
+Street: Muallim Naci Caddesi
+Phone_number: +902122654734
+Description: Bu mekan evcil hayvan dostudur.Bu mekanda vale hizmeti bulunmaktadır. Çocuklar için uygun bir mekandır.
+Opening_hours: Mo-Su 09:00-01:00
+Amenity: cafe
+Name_en: Assk Cafe
+Name_ar: مقهى Aşşk Kahve
+Category: amenity
+Subcategory: cafe
+Address: مقهى Aşşk Kahve, 64, Muallim Naci Caddesi, Kuruçeşme Mahallesi, Beşiktaş, İstanbul, Marmara Bölgesi, 34330, Türkiye
+Walk_route_distance_m: 946.2668418369761
+2025-03-24 12:36:13,255 - DEBUG - Formatted user history: No previous conversation
+2025-03-24 12:36:13,255 - DEBUG - Formatted candidates: Drive Mode:
+
+Mode: Drive
+Latitude: 41.0593763
+Longitude: 29.0363774
+City: İstanbul
+Amenity: cafe
+Name: Nilly
+Category: amenity
+Subcategory: cafe
+Address: Nilly, Arnavutköy Kuruçeşme Caddesi, Kuruçeşme Mahallesi, Beşiktaş, İstanbul, Marmara Bölgesi, 34345, Türkiye
+Drive_route_distance_m: 1218.625896238385
+
+Mode: Drive
+Latitude: 41.0583138
+Longitude: 29.036182
+City: İstanbul
+District: Beşiktaş
+Street: Muallim Naci Caddesi
+Phone_number: +902122654734
+Description: Bu mekan evcil hayvan dostudur.Bu mekanda vale hizmeti bulunmaktadır. Çocuklar için uygun bir mekandır.
+Opening_hours: Mo-Su 09:00-01:00
+Amenity: cafe
+Name_en: Assk Cafe
+Name_ar: مقهى Aşşk Kahve
+Category: amenity
+Subcategory: cafe
+Address: مقهى Aşşk Kahve, 64, Muallim Naci Caddesi, Kuruçeşme Mahallesi, Beşiktaş, İstanbul, Marmara Bölgesi, 34330, Türkiye
+Drive_route_distance_m: 1308.0303687548126
+
+Walk Mode:
+
+Mode: Walk
+Latitude: 41.0593763
+Longitude: 29.0363774
+City: İstanbul
+Amenity: cafe
+Name: Nilly
+Category: amenity
+Subcategory: cafe
+Address: Nilly, Arnavutköy Kuruçeşme Caddesi, Kuruçeşme Mahallesi, Beşiktaş, İstanbul, Marmara Bölgesi, 34345, Türkiye
+Walk_route_distance_m: 932.4623549332073
+
+Mode: Walk
+Latitude: 41.0583138
+Longitude: 29.036182
+City: İstanbul
+District: Beşiktaş
+Street: Muallim Naci Caddesi
+Phone_number: +902122654734
+Description: Bu mekan evcil hayvan dostudur.Bu mekanda vale hizmeti bulunmaktadır. Çocuklar için uygun bir mekandır.
+Opening_hours: Mo-Su 09:00-01:00
+Amenity: cafe
+Name_en: Assk Cafe
+Name_ar: مقهى Aşşk Kahve
+Category: amenity
+Subcategory: cafe
+Address: مقهى Aşşk Kahve, 64, Muallim Naci Caddesi, Kuruçeşme Mahallesi, Beşiktaş, İstanbul, Marmara Bölgesi, 34330, Türkiye
+Walk_route_distance_m: 946.2668418369761
+2025-03-24 12:36:13,255 - DEBUG - API request JSON from build_location_request: {'model': 'llama3.1-70b', 'messages': [{'role': 'system', 'content': 'You are a friendly location recommendation assistant. User coordinates: (41.064108, 29.031473), Search radius: 2000m\nConversation history:\nNo previous conversation\n\nContext data:\nDrive Mode:\n\nMode: Drive\nLatitude: 41.0593763\nLongitude: 29.0363774\nCity: İstanbul\nAmenity: cafe\nName: Nilly\nCategory: amenity\nSubcategory: cafe\nAddress: Nilly, Arnavutköy Kuruçeşme Caddesi, Kuruçeşme Mahallesi, Beşiktaş, İstanbul, Marmara Bölgesi, 34345, Türkiye\nDrive_route_distance_m: 1218.625896238385\n\nMode: Drive\nLatitude: 41.0583138\nLongitude: 29.036182\nCity: İstanbul\nDistrict: Beşiktaş\nStreet: Muallim Naci Caddesi\nPhone_number: +902122654734\nDescription: Bu mekan evcil hayvan dostudur.Bu mekanda vale hizmeti bulunmaktadır. Çocuklar için uygun bir mekandır.\nOpening_hours: Mo-Su 09:00-01:00\nAmenity: cafe\nName_en: Assk Cafe\nName_ar: مقهى Aşşk Kahve\nCategory: amenity\nSubcategory: cafe\nAddress: مقهى Aşşk Kahve, 64, Muallim Naci Caddesi, Kuruçeşme Mahallesi, Beşiktaş, İstanbul, Marmara Bölgesi, 34330, Türkiye\nDrive_route_distance_m: 1308.0303687548126\n\nWalk Mode:\n\nMode: Walk\nLatitude: 41.0593763\nLongitude: 29.0363774\nCity: İstanbul\nAmenity: cafe\nName: Nilly\nCategory: amenity\nSubcategory: cafe\nAddress: Nilly, Arnavutköy Kuruçeşme Caddesi, Kuruçeşme Mahallesi, Beşiktaş, İstanbul, Marmara Bölgesi, 34345, Türkiye\nWalk_route_distance_m: 932.4623549332073\n\nMode: Walk\nLatitude: 41.0583138\nLongitude: 29.036182\nCity: İstanbul\nDistrict: Beşiktaş\nStreet: Muallim Naci Caddesi\nPhone_number: +902122654734\nDescription: Bu mekan evcil hayvan dostudur.Bu mekanda vale hizmeti bulunmaktadır. Çocuklar için uygun bir mekandır.\nOpening_hours: Mo-Su 09:00-01:00\nAmenity: cafe\nName_en: Assk Cafe\nName_ar: مقهى Aşşk Kahve\nCategory: amenity\nSubcategory: cafe\nAddress: مقهى Aşşk Kahve, 64, Muallim Naci Caddesi, Kuruçeşme Mahallesi, Beşiktaş, İstanbul, Marmara Bölgesi, 34330, Türkiye\nWalk_route_distance_m: 946.2668418369761\n\nEngage in a conversational manner, answering questions based on history and context. Keep the conversation natural and fluid, providing recommendations with details like addresses and directions when available.'}, {'role': 'user', 'content': 'cafe near by'}], 'functions': [{'name': 'analyze_location_request', 'description': "Determines if the prompt is a continuation of the conversation or a new request. If it's a continuation, return continuation: true. Otherwise, return continuation: false and generate a conversational response that answers the user's question based on history and context.", 'parameters': {'type': 'object', 'properties': {'continuation': {'type': 'boolean', 'description': "True if the query is a continuation, False if it's a new request."}, 'response': {'type': 'string', 'description': "A natural and engaging response that keeps the conversation going, answering the user's question using context and history."}}, 'required': ['continuation', 'response']}}], 'function_call': 'analyze_location_request', 'max_tokens': 7000, 'temperature': 0.2}
+2025-03-24 12:36:15,452 - INFO - API call executed successfully.
+2025-03-24 12:36:15,452 - DEBUG - {'created': 1742808974, 'model': 'llama3.1-70b', 'usage': {'prompt_tokens': 1099, 'completion_tokens': 108, 'total_tokens': 1207}, 'choices': [{'finish_reason': 'stop', 'index': 0, 'logprobs': None, 'message': {'content': '<function=analyze_location_request>{"continuation": "false", "response": "Based on your location, I recommend Nilly cafe, which is approximately 932 meters away from you. It is located at Nilly, Arnavutköy Kuruçeşme Caddesi, Kuruçeşme Mahallesi, Beşiktaş, İstanbul, Marmara Bölgesi, 34345, Türkiye. Would you like to know more about this cafe or would you like me to suggest another one?"}</function>', 'refusal': None, 'role': 'assistant', 'audio': None, 'function_call': None, 'tool_calls': None}}]}
+2025-03-24 12:36:15,453 - INFO - Successfully extracted content from the response.
+2025-03-24 12:36:15,453 - WARNING - Direct JSON parsing failed. Trying regex extraction...
+2025-03-24 12:36:15,453 - INFO - Regex JSON extraction successful.
+2025-03-24 12:36:15,453 - DEBUG - API response processed with continuation: false, response: Based on your location, I recommend Nilly cafe, which is approximately 932 meters away from you. It is located at Nilly, Arnavutköy Kuruçeşme Caddesi, Kuruçeşme Mahallesi, Beşiktaş, İstanbul, Marmara Bölgesi, 34345, Türkiye. Would you like to know more about this cafe or would you like me to suggest another one?

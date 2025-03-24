@@ -88,3 +88,52 @@ def create_classification_request(
     }
 
     return api_request
+
+
+def build_location_request(prompt, context_text, user_history, latitude, longitude, search_radius):
+    """Builds the API request payload for location recommendations."""
+    system_content = (
+        "You are a friendly location recommendation assistant. "
+        f"User coordinates: ({latitude}, {longitude}), Search radius: {search_radius}m\n"
+        f"Conversation history:\n{user_history}\n\n"
+        f"Context data:\n{context_text}\n\n"
+        "Engage in a conversational manner, answering questions based on history and context. "
+        "Keep the conversation natural and fluid, providing recommendations with details like addresses and directions when available."
+    )
+
+    api_request = {
+        "model": "llama3.1-70b",
+        "messages": [
+            {"role": "system", "content": system_content},
+            {"role": "user", "content": prompt}
+        ],
+        "functions": [
+            {
+                "name": "analyze_location_request",
+                "description": (
+                    "Determines if the prompt is a continuation of the conversation or a new request. "
+                    "If it's a continuation, return continuation: true. Otherwise, return continuation: false and "
+                    "generate a conversational response that answers the user's question based on history and context."
+                ),
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "continuation": {
+                            "type": "boolean",
+                            "description": "True if the query is a continuation, False if it's a new request."
+                        },
+                        "response": {
+                            "type": "string",
+                            "description": "A natural and engaging response that keeps the conversation going, answering the user's question using context and history."
+                        }
+                    },
+                    "required": ["continuation", "response"]
+                }
+            }
+        ],
+        "function_call": "analyze_location_request",
+        "max_tokens": 7000,
+        "temperature": 0.2
+    }
+
+    return api_request

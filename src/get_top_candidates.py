@@ -4,10 +4,8 @@ import networkx as nx
 from functools import lru_cache
 from collections import OrderedDict
 import concurrent.futures
-import numpy as np
 from src.data_types import POIData, TopCandidates
-from typing import List
-from src.utils import validate_poi_data, validate_top_candidates
+from typing import List, Dict
 
 # Limited-size cache for graphs
 MAX_CACHE_SIZE = 50
@@ -16,13 +14,28 @@ cached_graph = OrderedDict()
 # Enhanced cache for node coordinates
 
 
+def validate_poi_data(poi: Dict) -> POIData:
+    required_keys = {'latitude', 'longitude', 'subcategory'}
+    if not required_keys.issubset(poi.keys()):
+        missing = required_keys - poi.keys()
+        raise ValueError(f"Invalid POI data, missing keys: {missing}")
+    return POIData(poi)
+
+
+def validate_top_candidates(candidates: Dict) -> TopCandidates:
+    valid_modes = {'drive', 'walk'}
+    return TopCandidates({
+        mode: [validate_poi_data(poi) for poi in candidates.get(mode, [])]
+        for mode in valid_modes
+    })
+
+
 @lru_cache(maxsize=256)
 def get_node_for_coords(graph, lat, lon):
     """Finds the nearest node in the graph for given coordinates."""
     return distance.nearest_nodes(graph, lon, lat)
 
 
-@timing_decorator
 def get_route_distance(graph, user_lat, user_lon, candidate_lat, candidate_lon):
     """Computes the network distance between user and candidate."""
     try:
@@ -60,7 +73,7 @@ def cache_graph(graph_key, graph):
 
 
 @timing_decorator
-def get_network_graph(user_lat, user_lon, radius_m, travel_mode='drive'):
+def get_network_graph(user_lat, user_lon, radius_m, travel_mode):
     """Retrieves or builds a network graph for the given location and mode."""
     graph_key = (user_lat, user_lon, radius_m, travel_mode)
 
@@ -129,7 +142,6 @@ def process_candidate(args):
         return None
 
 
-@timing_decorator
 def get_top_n_by_route_distance_for_all_modes(candidates, user_lat, user_lon, radius_m, n=5):
     """Computes route distances for all candidates for both driving and walking modes."""
     modes = ['drive', 'walk']

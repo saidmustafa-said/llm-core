@@ -1,57 +1,56 @@
-from functools import wraps
-import logging
 import re
 import json
 import time
-from src.data_types import POIData, TopCandidates, LLMResponse
-from typing import Dict
-
-
-def validate_poi_data(poi: Dict) -> POIData:
-    required_keys = {'latitude', 'longitude', 'subcategory'}
-    if not required_keys.issubset(poi.keys()):
-        missing = required_keys - poi.keys()
-        raise ValueError(f"Invalid POI data, missing keys: {missing}")
-    return POIData(poi)
-
-
-def validate_top_candidates(candidates: Dict) -> TopCandidates:
-    valid_modes = {'drive', 'walk', 'default'}
-    return TopCandidates({
-        mode: [validate_poi_data(poi) for poi in candidates.get(mode, [])]
-        for mode in valid_modes
-    })
+from src.logger_setup import logger_instance
 
 
 def timing_decorator(func):
     def wrapper(*args, **kwargs):
+        logger = logger_instance.get_logger()
         start_time = time.time()
         result = func(*args, **kwargs)
         end_time = time.time()
-        # print(f"{func.__name__} süresi: {end_time - start_time:.6f} saniye")
+        logger.debug(
+            f"{func.__name__} execution time: {end_time - start_time:.4f} seconds")
         return result
     return wrapper
 
 
-# utils.py
+def extract_json_from_response(response):
+    """
+    Extract JSON content from the response using multiple methods: direct parsing and regex extraction.
+    This function attempts to parse the JSON directly, and if it fails, it falls back to using a regex to extract a valid JSON string.
+    """
+    logger = logger_instance.get_logger()
+    logger.info("Extracting JSON content from the response.")
 
-logging.basicConfig(level=logging.INFO)
-
-
-def count_tokens(text: str) -> int:
-    tokens = text.split()
-    punctuation_count = sum(1 for char in text if char in '.,;:!?()[]{}"\'')
-    return len(tokens) + punctuation_count
-
-
-def extract_json_from_text(text: str) -> dict:
+    # Try direct JSON parsing
     try:
-        return json.loads(text)
+        content = response.json()['choices'][0]['message']['content']
+        logger.debug(f"Response JSON content: {content}")
+    except Exception as e:
+        logger.error(f"Error extracting content from response: {e}")
+        return {}
+
+    # Try direct JSON parsing
+    try:
+        result = json.loads(content)
+        logger.info("Direct JSON parsing successful.")
+        return result
     except json.JSONDecodeError:
-        match = re.search(r'\{.*\}', text, re.DOTALL)
-        if match:
-            try:
-                return json.loads(match.group(0).strip())
-            except json.JSONDecodeError:
-                logging.error("Regex JSON extraction failed.")
+        logger.warning(
+            "Direct JSON parsing failed. Trying regex extraction...")
+
+    # Regex extraction as a fallback
+    match = re.search(r'\{.*\}', content, re.DOTALL)
+    if match:
+        json_str = match.group(0).strip()
+        try:
+            result = json.loads(json_str)
+            logger.info("Regex JSON extraction successful.")
+            return result
+        except json.JSONDecodeError:
+            logger.error("Regex JSON extraction failed.")
+
+    logger.error("No valid JSON found in response content.")
     return {}

@@ -1,150 +1,92 @@
 import os
-import time
-import json
-import re
 import pandas as pd
-import logging
-from src.history_manager import HistoryManager
 from config import LLAMA_API, TAGS_LIST, CATEGORY_SUBCATEGORY_LIST
-from src.utils import count_tokens, timing_decorator
+from src.utils import timing_decorator, extract_json_from_response
 from src.data_types import LLMResponse
 from typing import List, Optional
-from datetime import datetime
 from src.function_api_builder import create_classification_request
 from src.logger_setup import logger_instance
-
-
-
-
 
 
 @timing_decorator
 def retrieve_tags():
     logger = logger_instance.get_logger()
-    logger.info("[retrieve_tags] Function called")
+    logger.info("Retrieving tags and subcategories from CSV files.")
+
     tags_string, subcategory_string = "None", "None"
 
+    # Check if the tags list file exists and process it
     if os.path.exists(TAGS_LIST):
-        tags_df = pd.read_csv(TAGS_LIST)
-        if 'tags' in tags_df.columns:
-            tags_list = tags_df['tags'].dropna().tolist()
-            tags_string = ", ".join(tags_list) if tags_list else "None"
-            logger.debug(f"[retrieve_tags] Retrieved tags: {tags_list}")
+        logger.debug(f"Reading tags from file: {TAGS_LIST}")
+        try:
+            tags_df = pd.read_csv(TAGS_LIST)
+            if 'tags' in tags_df.columns:
+                tags_list = tags_df['tags'].dropna().tolist()
+                tags_string = ", ".join(tags_list) if tags_list else "None"
+                logger.info(f"Tags retrieved: {tags_string}")
+        except Exception as e:
+            logger.error(f"Error reading tags from {TAGS_LIST}: {e}")
 
+    # Check if the category and subcategory list file exists and process it
     if os.path.exists(CATEGORY_SUBCATEGORY_LIST):
-        subcategory_df = pd.read_csv(CATEGORY_SUBCATEGORY_LIST)
-        if 'category' in subcategory_df.columns and 'subcategory' in subcategory_df.columns:
-            grouped = subcategory_df.groupby('category')['subcategory'].apply(
-                lambda x: ",".join(x)).reset_index()
-            subcategory_string = "\n".join(
-                [f"{row['category']}: {row['subcategory']}" for _, row in grouped.iterrows()])
-            logger.debug(
-                f"[retrieve_tags] Retrieved subcategories: {subcategory_string}")
+        logger.debug(
+            f"Reading subcategories from file: {CATEGORY_SUBCATEGORY_LIST}")
+        try:
+            subcategory_df = pd.read_csv(CATEGORY_SUBCATEGORY_LIST)
+            if 'category' in subcategory_df.columns and 'subcategory' in subcategory_df.columns:
+                grouped = subcategory_df.groupby('category')['subcategory'].apply(
+                    lambda x: ",".join(x)).reset_index()
+                subcategory_string = "\n".join(
+                    [f"{row['category']}: {row['subcategory']}" for _, row in grouped.iterrows()])
+                subcategory_string = subcategory_string if subcategory_string else "None"
+                logger.info(f"Subcategories retrieved: {subcategory_string}")
+        except Exception as e:
+            logger.error(
+                f"Error reading subcategories from {CATEGORY_SUBCATEGORY_LIST}: {e}")
 
-    logger.info(
-        f"[retrieve_tags] Output - Tags: {tags_string}, Subcategories: {subcategory_string}")
     return tags_string, subcategory_string
 
 
 @timing_decorator
-def extract_json(response):
+def llm_api(prompt: str, user_context: Optional[List[str]] = None) -> LLMResponse:
     logger = logger_instance.get_logger()
-    logger.info("[extract_json] Function called")
-    try:
-        response_data = response.json()
-        content = response_data.get('choices', [{}])[0].get(
-            'message', {}).get('content', "")
-        logger.debug(f"[extract_json] Extracted response content: {content}")
-    except Exception as e:
-        logger.error(f"[extract_json] Error parsing response JSON: {e}")
-        return {}
+    logger.info("Calling LLM API with the provided prompt.")
 
-    try:
-        result = json.loads(content)
-        logger.info("[extract_json] Successfully parsed JSON directly")
-        return result
-    except json.JSONDecodeError:
-        logger.warning(
-            "[extract_json] Direct JSON parsing failed, attempting regex extraction")
-
-    match = re.search(r'\{.*\}', content, re.DOTALL)
-    if match:
-        json_str = match.group(0).strip()
-        try:
-            result = json.loads(json_str)
-            logger.info(
-                "[extract_json] Successfully extracted JSON using regex")
-            return result
-        except json.JSONDecodeError:
-            logger.error("[extract_json] Regex JSON extraction failed")
-
-    logger.error("[extract_json] No valid JSON found in response")
-    return {}
-
-
-@timing_decorator
-def llm_api(prompt: str, user_context: Optional[List[str]] = None,
-            conversation_id: Optional[str] = None,
-            history_manager: Optional[HistoryManager] = None) -> LLMResponse:
-    logger = logger_instance.get_logger()
-    logger.info(
-        f"[llm_api] Called with prompt: {prompt}, conversation_id: {conversation_id}")
     existing_tags_str, existing_subcategories_str = retrieve_tags()
     user_history = "\n".join(user_context) if user_context else "None"
     system_overview = ""
 
+    logger.debug(f"Existing tags: {existing_tags_str}")
+    logger.debug(f"Existing subcategories: {existing_subcategories_str}")
+    logger.debug(f"User history: {user_history}")
+
+    # Prepare the API request
     api_request_json = create_classification_request(
         prompt, user_history, existing_subcategories_str, existing_tags_str, system_overview)
-
     logger.debug(
-        f"[llm_api] API Request JSON: {json.dumps(api_request_json, indent=2)}")
+        f"API request JSON from create_classification_request: {api_request_json}")
 
-    input_tokens = count_tokens(
-        api_request_json["messages"][0]["content"]) + count_tokens(prompt)
-    response = LLAMA_API.run(api_request_json)
-    response_data = response.json()
-    logger.debug(
-        f"[llm_api] API Response JSON: {json.dumps(response_data, indent=2)}")
-
+    # Call the LLAMA API
     try:
-        response_content = response_data['choices'][0]['message']['content']
+        response = LLAMA_API.run(api_request_json)
+        logger.info("Received response from LLAMA API.")
     except Exception as e:
-        logger.error(f"[llm_api] Error extracting response content: {e}")
-        response_content = ""
+        logger.error(f"Error calling LLAMA API: {e}")
+        return LLMResponse({"error": "Failed to call LLAMA API"})
 
-    output_tokens = count_tokens(response_content)
-    total_tokens = input_tokens + output_tokens
-    token_counts = {
-        "input_tokens": input_tokens,
-        "output_tokens": output_tokens,
-        "total_tokens": total_tokens
-    }
+    # Extract and parse JSON from the response
+    parsed_json = extract_json_from_response(response)
 
-    parsed_json = extract_json(response)
+    # Prepare the result
+    if parsed_json:
+        result = {
+            "clarification": parsed_json.get('clarification', {}).get('question') if parsed_json.get('clarification', {}).get('needed') else None,
+            "categories": parsed_json.get('subcategories', []),
+            "tags": parsed_json.get('tags', {}).get('existed', [])
+        }
+        logger.info(f"API result: {result}")
+    else:
+        result = {"error": "Failed to extract JSON"}
+        logger.error(f"Failed to extract valid JSON from the response.")
 
-    result = {
-        "clarification": parsed_json.get('clarification', {}).get('question') if parsed_json.get('clarification', {}).get('needed') else None,
-        "categories": parsed_json.get('subcategories', []),
-        "tags": parsed_json.get('tags', {}).get('existed', [])
-    } if parsed_json else {"error": "Failed to extract JSON"}
-
-    request_data = {
-        "request_type": "llm_classification",
-        "timestamp": int(time.time()),
-        "prompt": prompt,
-        "context": user_context,
-        "system_content": api_request_json["messages"][0]["content"],
-        "api_request": api_request_json,
-        "api_response": response_data,
-        "token_counts": token_counts
-    }
-
-    if result.get("clarification"):
-        history_manager.add_llm_interaction(
-            conversation_id=conversation_id,
-            response=result,
-            request_data=request_data
-        )
-
-    logger.info(f"[llm_api] Returning result: {json.dumps(result, indent=2)}")
     return LLMResponse(result)

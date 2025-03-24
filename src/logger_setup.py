@@ -28,6 +28,7 @@ class Logger:
         self.file_group = file_group
         self._setup_user_logger()
 
+
     def _setup_user_logger(self):
         """Set up a logger for the current thread's user_id and file group."""
         if not self.user_id or not self.file_group:
@@ -42,19 +43,30 @@ class Logger:
         log_filename = os.path.join(user_log_dir, f"{timestamp}.log")
 
         # Setup logger
-        logger = logging.getLogger(f"user_{self.user_id}_{self.file_group}")
+        logger_name = f"user_{self.user_id}_{self.file_group}"
+        logger = logging.getLogger(logger_name)
         logger.setLevel(logging.DEBUG)
+
+        # 🔹 Remove all handlers (including root logger handlers)
+        if logger.hasHandlers():
+            logger.handlers.clear()
+
+        # 🔹 Disable propagation to prevent logs from appearing in the root logger
+        logger.propagate = False
 
         # Create a file handler that logs to the timestamped file
         file_handler = logging.FileHandler(log_filename)
         file_handler.setFormatter(logging.Formatter(
             '%(asctime)s - %(levelname)s - %(message)s'))
 
-        if not logger.handlers:
-            logger.addHandler(file_handler)
+        logger.addHandler(file_handler)
 
         # Store logger in the thread-local context
         self.thread_local.logger = logger
+
+        # 🔹 Ensure the root logger does NOT send logs to the console
+        logging.getLogger().handlers.clear()
+
 
     def get_logger(self):
         """Get the logger for the current thread."""
