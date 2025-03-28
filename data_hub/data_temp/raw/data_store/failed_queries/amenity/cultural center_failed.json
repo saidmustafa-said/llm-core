@@ -1,6 +1,0 @@
-{
-    "sitetype": "amenity",
-    "amenity": "cultural center",
-    "status_code": 400,
-    "query": "\n    [out:json][timeout:60];\n    area[\"name\"=\"İstanbul\"]->.searchArea;\n    (\n      node[amenity=cultural center](area.searchArea);\n    );\n    out body;\n    "
-}
