@@ -68,11 +68,11 @@ def create_classification_request(
                             "properties": {
                                 "needed": {
                                     "type": "boolean",
-                                    "description": "True if clarification is needed, False if the classification is certain. None if conversation has ended"
+                                    "description": "True if clarification is needed, False if the classification is certain. None if conversation has ended or user does not need assistance anymore."
                                 },
                                 "question": {
                                     "type": "string",
-                                    "description": "Clarification question to ask the user if needed."
+                                    "description": "Clarification question to ask the user for more details if needed."
                                 }
                             },
                             "required": ["needed", "question"]

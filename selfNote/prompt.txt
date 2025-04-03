@@ -1,0 +1,127 @@
+
+import os
+import json
+from config import LLAMA_API
+
+
+def build_location_request(prompt, context_text, user_history, latitude, longitude, search_radius):
+    """Builds the API request payload for location recommendations without function calling."""
+    system_content = (
+        "You are a friendly location recommendation assistant. "
+        f"User coordinates: ({latitude}, {longitude}), Search radius: {search_radius}m\n"
+        "In users radius these are the only ones found, if asked if there is more, say these are the only ones in the radius user have chosen.\n"
+        f"Context data:\n{context_text}\n\n"
+        f"Conversation history:\n{user_history}\n\n"
+        "ALWAYS respond with a JSON object wrapped in Δ{}Δ delimiters. The JSON must include:\n"
+        "- 'response': A natural conversational answer with details (address, hours, amenities etc.)\n"
+        "- 'continuation': Boolean indicating if this continues the previous conversation\n"
+        "Example response format: Δ{{\"response\": \"...\", \"continuation\": false}}Δ\n\n"
+        "Rules:\n"
+        "1. Only recommend locations from the context data\n"
+        "2. If information is missing, say so politely\n"
+        "3. Always include the Δ delimiters around your JSON response\n"
+        "4. Keep responses informative and conversational"
+    )
+
+    api_request = {
+        "model": "llama3.1-70b",
+        "messages": [
+            {"role": "system", "content": system_content},
+            {"role": "user", "content": prompt}
+        ],
+        "max_tokens": 7000,
+        "temperature": 0.2,
+        "response_format": {"type": "json_object"}  # Encourages JSON output
+    }
+
+    return api_request
+
+
+def extract_json():
+    """
+    Reads and returns the JSON content of 'tempshold.json' as a JSON string.
+    """
+    filename = "tempshold.json"
+
+    if os.path.exists(filename):
+        with open(filename, "r", encoding="utf-8") as file:
+            try:
+                data = json.load(file)
+                return json.dumps(data, indent=4)
+            except json.JSONDecodeError:
+                return "{}"
+    return "{}"
+
+
+json_output = extract_json()  # This is a JSON string
+parsed_output = json.loads(json_output)  # Convert it to a dictionary
+
+
+prompt = parsed_output['prompt']
+context_text = parsed_output['context_text']
+user_history = parsed_output['user_history']
+latitude = parsed_output['latitude']
+longitude = parsed_output['longitude']
+search_radius = parsed_output['search_radius']
+
+
+api_request = build_location_request(
+    prompt, context_text, user_history, latitude, longitude, search_radius)
+
+print(api_request)
+response = LLAMA_API.run(api_request)
+
+print(response.json())
+
+
+
+
+response is : 
+
+{
+	"created": 1743606435,
+	"model": "llama3.1-70b",
+	"usage": {
+		"prompt_tokens": 795,
+		"completion_tokens": 120,
+		"total_tokens": 915
+	},
+	"choices": [
+		{
+			"finish_reason": "stop",
+			"index": 0,
+			"logprobs": "None",
+			"message": {
+				"content": "{\"response\": \"I found a restaurant with a great view of the Bosperus, it\\'s called Ulus 29. It\\'s about a 4-minute walk from your location. They serve regional cuisine and have a lovely view. They are open for lunch from Monday to Friday, 12:00-15:00, and for dinner from 18:30 onwards. You can find them at Ahmet Adnan Saygun Caddesi, Ulus, Kuruçeşme Mahallesi, Beşiktaş, İstanbul. Would you like more information?\", \"continuation\": false}",
+				"refusal": "None",
+				"role": "assistant",
+				"audio": "None",
+				"function_call": "None",
+				"tool_calls": "None"
+			}
+		}
+	]
+}
+
+
+as you can see there is no delta around the json in content, i want to make system prompt more clear and also agent based so we can do this:
+
+
+we can set up this framework i think which can be very clean and personalized.
+
+so it in the system prompt we can do this: either it will respond to the user using the context if possible and if not then instad of continuation we will implment 2 agents and this is how it will work
+
+
+we have 1 agents which is classification agent and what it does is find locations based on prompts for example if the user needs a cafe near himself, we need to call the action classification_agent which takes long/lat of the user, or lets say the user want a parking next to the cafe it previously suggested so we will give the long lat and then a prompt that explains what the user needs near that lon/lat and in what radius  the way to call it is to do this:
+
+    Δ{{
+    "action": "classification_agent",
+"prompt":....
+"longitude": ....,
+  "latitude" : ...,
+"radius": ....,
+
+    }}Δ
+
+
+which will handle the calls if lets say the user wants to talk on new data or find new places then we will do this according to the users location or the conext location such as a parking spot near location A then the ai has to write the Location A Lon/lat and then radius and prompt 

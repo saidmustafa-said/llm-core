@@ -6,6 +6,7 @@ from src.data_types import LLMResponse
 from typing import List, Optional
 from src.function_api_builder import create_classification_request
 from src.logger_setup import logger_instance
+from src.generate_test_env_data import save_args_to_json
 
 
 @timing_decorator
@@ -39,7 +40,7 @@ def retrieve_tags():
                 subcategory_string = "\n".join(
                     [f"{row['category']}: {row['subcategory']}" for _, row in grouped.iterrows()])
                 subcategory_string = subcategory_string if subcategory_string else "None"
-                logger.info(f"Subcategories retrieved: {subcategory_string}")
+                # logger.info(f"Subcategories retrieved: {subcategory_string}")
         except Exception as e:
             logger.error(
                 f"Error reading subcategories from {CATEGORY_SUBCATEGORY_LIST}: {e}")
@@ -70,23 +71,30 @@ def llm_api(prompt: str, history) -> LLMResponse:
     try:
         response = LLAMA_API.run(api_request_json)
         logger.info("Received response from LLAMA API.")
+        logger.debug(f"Response: {response.json()}")
     except Exception as e:
         logger.error(f"Error calling LLAMA API: {e}")
         return LLMResponse({"error": "Failed to call LLAMA API"})
 
     # Extract and parse JSON from the response
     parsed_json = extract_json_from_response(response)
+    print(parsed_json)
 
-    # Prepare the result
     if parsed_json:
+        clarification_data = clarification_data = parsed_json.get(
+            "clarification")
+        subcategories_data = parsed_json.get('subcategories', {})
+        tags_data = parsed_json.get('tags', False)
+
         result = {
-            "clarification": parsed_json.get('clarification', {}).get('question') if parsed_json.get('clarification', {}).get('needed') else None,
-            "categories": parsed_json.get('subcategories', []),
-            "tags": parsed_json.get('tags', {}).get('existed', [])
+            "clarification": clarification_data,
+            "subcategories": subcategories_data,
+            "tags": tags_data
         }
         logger.info(f"API result: {result}")
     else:
         result = {"error": "Failed to extract JSON"}
-        logger.error(f"Failed to extract valid JSON from the response.")
-
+        logger.error("Failed to extract valid JSON from the response.")
+    save_args_to_json('dummy_data/llamarequeset.json', prompt=prompt, user_history=user_history,
+                      subcategories=subcategories_data, tags=tags_data, result=result)
     return LLMResponse(result)

@@ -8,56 +8,67 @@ import os
 from src.logger_setup import logger_instance
 
 
-import sys
-
-
-def handle_clarification(llm_response: LLMResponse, prompt: str, formatted_history: str, conversation_id: str, user_id: str, history_manager: HistoryManager) -> str:
+def handle_clarification(llm_response: LLMResponse, prompt: str, formatted_history: str, conversation_id: str, user_id: str, history_manager: HistoryManager) -> tuple:
+    """
+    Handles any clarification needed from the LLM response in a while loop.
+    Returns a tuple of (updated_prompt, updated_llm_response)
+    """
     logger = logger_instance.get_logger()
-    clarification = llm_response.get("clarification")
+    logger.info("Handling clarification")
 
-    if clarification is None:
-        logger.info(
-            f"No clarification needed for conversation {conversation_id}. Exiting process.")
-        history_manager.save_conversation(
-            user_id, conversation_id)  # Ensure history is saved
-        sys.exit(0)  # Exit the script safely
+    while True:
+        clarification_value = llm_response.get("clarification")
+        normalized_clarification = None
+        if clarification_value is not None:
+            if isinstance(clarification_value, dict) and "needed" in clarification_value:
+                normalized_clarification = str(
+                    clarification_value.get("needed")).strip().lower()
+            else:
+                normalized_clarification = str(
+                    clarification_value).strip().lower()
 
-    if clarification:
-        logger.info(
-            f"Clarification requested for conversation {conversation_id}")
+        # Exit the loop if no clarification is needed (or clarification is 'false')
+        if normalized_clarification is None or normalized_clarification == 'false':
+            logger.info("No clarification needed - continuing process")
+            break
 
-        if isinstance(clarification, str):
-            question = clarification
-        else:
-            question = clarification.get('question', '')
+        if normalized_clarification == 'true':
+            logger.info(
+                f"Clarification requested for conversation {conversation_id}")
 
-        logger.debug(f"Clarification question: {question}")
-        additional_input = input(
-            f"Clarification Needed: {question}\nProvide clarification: ")
-        logger.info(f"User provided clarification input")
+            # Extract the clarification question
+            question = ""
+            if isinstance(clarification_value, str):
+                question = clarification_value
+            elif isinstance(clarification_value, dict):
+                question = clarification_value.get('question', '')
 
-        # Save the user's clarification to history
-        history_manager.add_user_message(
-            user_id, conversation_id, additional_input)
-        logger.debug("Clarification added to conversation history")
+            logger.debug(f"Clarification question: {question}")
 
-        # Fetch updated history including the new message
-        updated_history = history_manager.get_formatted_history(
-            user_id, conversation_id)
-        logger.debug("Retrieved updated conversation history")
+            # Prompt for user input and wait for it
+            additional_input = input(
+                f"Clarification Needed: {question}\nProvide clarification: ")
+            logger.info("User provided clarification input")
 
-        # Re-run the llm_api with the new input and updated history
-        logger.info("Re-running LLM API with clarification")
-        llm_response = llm_api(additional_input, updated_history)
+            # Save the user's clarification to history
+            history_manager.add_user_message(
+                user_id, conversation_id, additional_input)
+            logger.debug("Clarification added to conversation history")
 
-        logger.debug(f"Clarification received: {llm_response}")
+            # Fetch updated history including the new message
+            formatted_history = history_manager.get_formatted_history(
+                user_id, conversation_id)
+            logger.debug("Retrieved updated conversation history")
 
-        # Check for further clarification recursively
-        if llm_response.get("clarification"):
-            logger.info("Recursive clarification needed")
-            return handle_clarification(llm_response, additional_input, updated_history, conversation_id, user_id, history_manager)
+            # Re-run the LLM API with the new input and updated history
+            logger.info("Re-running LLM API with clarification")
+            llm_response = llm_api(additional_input, formatted_history)
+            logger.debug(f"Clarification response received: {llm_response}")
 
-    return prompt
+            # Update the prompt to reflect the new input
+            prompt = additional_input
+    logger.info("Clarification handling complete")
+    return prompt, llm_response
 
 
 def process_new_query(user_prompt: str, formatted_history: str, conversation_id: str,
@@ -81,19 +92,22 @@ def process_new_query(user_prompt: str, formatted_history: str, conversation_id:
         print("Error in LLM processing. Please try again.")
         return None
 
-    # Handle any clarification request from the LLM
+    # Handle any clarification request from the LLM iteratively
     logger.info("Checking for clarification needs")
-    user_prompt = handle_clarification(
+    user_prompt, llm_response = handle_clarification(
         llm_response, user_prompt, formatted_history, conversation_id, user_id, history_manager)
+
     if not user_prompt:
         logger.warning("Empty prompt after clarification handling")
         return None  # If there's an error, return None
 
-    categories = llm_response.get("categories", [])
-    logger.info(f"Identified categories: {categories}")
+    # Use the potentially updated categories from the clarification response
+    subcategories = llm_response.get("subcategories", [])
+    logger.info(f"Identified subcategories: {subcategories}")
 
     logger.info("Fetching POI data from API")
-    candidates = get_poi_data(latitude, longitude, search_radius, categories)
+    candidates = get_poi_data(
+        latitude, longitude, search_radius, subcategories)
     if not candidates:
         logger.warning("No POIs found for given criteria")
         print("No POIs found based on your criteria.")
@@ -121,19 +135,26 @@ def main():
     logger.debug("History manager initialized")
 
     conversation_id_input = input(
-        "Enter conversation ID (leave blank for new conversation): ")
-    if conversation_id_input.strip():
-        conversation_id = conversation_id_input.strip()
-        logger.info(f"Using existing conversation ID: {conversation_id}")
-        if not os.path.exists(history_manager.get_conversation_file_path(user_id, conversation_id)):
-            logger.info(
-                f"Creating new conversation with ID: {conversation_id}")
-            print(f"Creating new conversation with ID: {conversation_id}")
-            history_manager.create_conversation(user_id, conversation_id)
-    else:
+        "Enter conversation ID (or '0' for a new conversation): ").strip()
+
+    if conversation_id_input == "0":
+        # Create a new conversation
         conversation_id = history_manager.create_conversation(user_id)
         logger.info(f"Created new conversation: {conversation_id}")
-        print(f"Created new conversation with ID: {conversation_id}")
+    else:
+        # Use an existing conversation ID
+        conversation_id = conversation_id_input
+
+        if os.path.exists(history_manager.get_conversation_file_path(user_id, conversation_id)):
+            logger.info(
+                f"Using existing conversation with ID: {conversation_id}")
+            print(f"Using existing conversation with ID: {conversation_id}")
+        else:
+            logger.warning(
+                f"Conversation ID {conversation_id} not found. Creating a new one.")
+            print(
+                f"Conversation ID {conversation_id} not found. Creating a new one.")
+            conversation_id = history_manager.create_conversation(user_id)
 
     messages = history_manager.get_messages(user_id, conversation_id)
     if messages:

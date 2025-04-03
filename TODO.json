@@ -1,6 +1,18 @@
 {
   "todo": [
     {
+      "id": 13756,
+      "text": "clarification response not added to chat history",
+      "priority": 1,
+      "created": "2025-03-25T06:05:50.733Z"
+    },
+    {
+      "id": 11483,
+      "text": "Clarification and exiting problem",
+      "priority": 1,
+      "created": "2025-03-24T16:09:16.515Z"
+    },
+    {
       "id": 15778,
       "text": "clean the code and fucntion naming",
       "priority": 2,

@@ -74,3 +74,5 @@ def get_poi_data(user_lat: float, user_lon: float,
     except Exception as e:
         print(f"Error reading data from {DATASET}: {e}")
         return []
+
+

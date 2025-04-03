@@ -1,0 +1,19 @@
+{
+    "prompt": "cafe with nice view closeby",
+    "context_text": "Drive Mode:\n\nMode: Drive\nLatitude: 41.0645058\nLongitude: 29.031933\nCity: \u0130stanbul\nStreet: Ahmet Adnan Saygun Caddesi\nPhone_number: +902123582929\nDescription: Amazing view over Bosperus\nOpening_hours: 18:30+ \"Dinner\"; Mo-Fr 12:00-15:00 \"Lunch\"\nAmenity: restaurant\nCuisine: regional\nName: Ulus 29\nCategory: amenity\nSubcategory: restaurant\nAddress: Ulus 29, 71, Ahmet Adnan Saygun Caddesi, Ulus, Kuru\u00e7e\u015fme Mahallesi, Ulus Mahallesi, Be\u015fikta\u015f, \u0130stanbul, Marmara B\u00f6lgesi, 34345, T\u00fcrkiye\nDrive_route_distance_m: 199.6154176795041\n\nMode: Drive\nLatitude: 41.0647564\nLongitude: 29.0282265\nCity: \u0130stanbul\nDistrict: Be\u015fikta\u015f\nStreet: \u00d6ztopuz Caddesi\nAmenity: supermarket\nName: Ayan B\u00fcfe\nCategory: shop\nSubcategory: supermarket\nAddress: Ayan B\u00fcfe, 9A, \u00d6ztopuz Caddesi, Ulus, Ulus Mahallesi, Be\u015fikta\u015f, \u0130stanbul, Marmara B\u00f6lgesi, 34340, T\u00fcrkiye\nDrive_route_distance_m: 315.0623827475169\n\nWalk Mode:\n\nMode: Walk\nLatitude: 41.0640804\nLongitude: 29.0331316\nCity: \u0130stanbul\nAmenity: restaurant\nName: Sunset\nCategory: amenity\nSubcategory: restaurant\nAddress: Sunset, Yol Soka\u011f\u0131, Kuru\u00e7e\u015fme Mahallesi, Be\u015fikta\u015f, \u0130stanbul, Marmara B\u00f6lgesi, 34345, T\u00fcrkiye\nWalk_route_distance_m: 359.76879292123306\n\nMode: Walk\nLatitude: 41.0645058\nLongitude: 29.031933\nCity: \u0130stanbul\nStreet: Ahmet Adnan Saygun Caddesi\nPhone_number: +902123582929\nDescription: Amazing view over Bosperus\nOpening_hours: 18:30+ \"Dinner\"; Mo-Fr 12:00-15:00 \"Lunch\"\nAmenity: restaurant\nCuisine: regional\nName: Ulus 29\nCategory: amenity\nSubcategory: restaurant\nAddress: Ulus 29, 71, Ahmet Adnan Saygun Caddesi, Ulus, Kuru\u00e7e\u015fme Mahallesi, Ulus Mahallesi, Be\u015fikta\u015f, \u0130stanbul, Marmara B\u00f6lgesi, 34345, T\u00fcrkiye\nWalk_route_distance_m: 444.40440036484375",
+    "user_history": [
+    {
+      "role": "user",
+      "content": "i need a restaurant nearby with a nice view",
+      "timestamp": 1743655646
+    },
+    {
+      "role": "assistant",
+      "content": "I can recommend a restaurant with a nice view. There are two options in your area: Ulus 29 and Sunset. Both are in Istanbul and have great views. Ulus 29 has an amazing view over the Bosperus and is open for dinner from 18:30 and lunch from 12:00-15:00 from Monday to Friday. Sunset also has a great view, but I couldn",
+      "timestamp": 1743655661
+    }
+  ],
+    "latitude": 41.064108,
+    "longitude": 29.031473,
+    "search_radius": 2000
+}

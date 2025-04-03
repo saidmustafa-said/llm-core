@@ -9,6 +9,7 @@ from src.utils import timing_decorator, extract_json_from_response
 from src.data_types import TopCandidates, LocationAdviceResponse
 from src.function_api_builder import build_location_request
 from src.logger_setup import logger_instance
+from src.generate_test_env_data import save_args_to_json
 
 
 def format_top_candidates(top_candidates: TopCandidates) -> str:
@@ -79,7 +80,8 @@ def get_location_advice(prompt, history, top_candidates: TopCandidates,
     try:
         # Execute API call
         response = LLAMA_API.run(api_request)
-        logger.info("API call executed successfully.")
+        logger.info("Received response from LLAMA API.")
+        logger.debug(f"Response: {response.json()}")
 
         # Process response
         result = extract_json_from_response(response)
@@ -93,6 +95,9 @@ def get_location_advice(prompt, history, top_candidates: TopCandidates,
 
     logger.debug("API response processed with continuation: %s, response: %s",
                  result.get("continuation"), result.get("response"))
+
+    save_args_to_json(filename='dummy_data/get_location_advice.json',         continuation=result.get("continuation"),
+                      response=result.get("response"))
 
     return LocationAdviceResponse(
         continuation=result.get("continuation"),

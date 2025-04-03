@@ -1,0 +1,13 @@
+wizlot.com
+wizloot
+wizlop
+wizlap
+
+
+git submodule add git@github.com:wizlop/application.git application
+git submodule add git@github.com:wizlop/llm-engine.git llm-engine
+git submodule add git@github.com:wizlop/fine-tuning.git fine-tuning
+git commit -m "Added submodules for application, llm-engine, and fine-tuning"
+git push origin main
+
+git submodule update --remote llm-engine

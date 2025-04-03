@@ -28,9 +28,9 @@ class HistoryManager:
         user_folder = self.get_user_folder_path(user_id)
         return os.path.join(user_folder, f"{conversation_id}.json")
 
-    def create_conversation(self, user_id: str, conversation_id: Optional[str] = None) -> str:
-        if conversation_id is None:
-            conversation_id = str(uuid.uuid4())
+    def create_conversation(self, user_id: str) -> str:
+        """Generate a unique conversation ID and create a conversation file."""
+        conversation_id = f"{int(time.time())}_{uuid.uuid4().hex[:8]}"  # Unique ID: timestamp + short UUID
 
         conversation_file = self.get_conversation_file_path(
             user_id, conversation_id)
@@ -43,6 +43,10 @@ class HistoryManager:
 
         with open(conversation_file, 'w') as f:
             json.dump(initial_data, f, indent=2)
+
+        logger.info(
+            f"Created new conversation for user {user_id}: {conversation_id}")
+        print(f"Created new conversation with ID: {conversation_id}")
 
         return conversation_id
 

@@ -13,7 +13,7 @@ python3 -m venv venv
 Activate
 
 ```bash
-.\venv\Scripts\Activate
+source venv/bin/activate
 ```
 
 Python env for Windows:
@@ -34,6 +34,18 @@ Install Libraries:
 
 ```bash
 pip install -r requirements.txt
+```
+
+or
+
+```list
+llamaapi
+numpy
+osmnx
+networkx
+pandas
+dotenv
+scikit-learn
 ```
 
 Start the api:
