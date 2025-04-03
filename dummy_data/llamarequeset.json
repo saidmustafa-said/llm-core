@@ -1,8 +1,8 @@
 {
-    "prompt": "i need a restaurant nearby with a nice view",
+    "prompt": "i want a cafe with a nice view nearby",
     "user_history": "No previous conversation",
     "subcategories": [
-        "restaurant"
+        "cafe"
     ],
     "tags": {
         "existed": [],
@@ -11,17 +11,13 @@
         ]
     },
     "result": {
-        "clarification": {
-            "needed": "false",
-            "question": ""
-        },
         "subcategories": [
-            "restaurant"
+            "parking"
         ],
         "tags": {
             "existed": [],
             "new": [
-                "nice view"
+                "nearby"
             ]
         }
     }

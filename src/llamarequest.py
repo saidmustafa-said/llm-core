@@ -7,6 +7,7 @@ from typing import List, Optional
 from src.function_api_builder import create_classification_request
 from src.logger_setup import logger_instance
 from src.generate_test_env_data import save_args_to_json
+import json
 
 
 @timing_decorator
@@ -48,6 +49,22 @@ def retrieve_tags():
     return tags_string, subcategory_string
 
 
+def extract_content(response):
+    """Extracts the JSON content from the response's 'content' field."""
+    try:
+        # Navigate to the content field
+        content_str = response.get("choices", [{}])[0].get(
+            "message", {}).get("content", "")
+
+        # Parse the JSON
+        extracted_json = json.loads(content_str)
+
+        return extracted_json
+    except (json.JSONDecodeError, IndexError, KeyError) as e:
+        print(f"Error extracting content: {e}")
+        return None
+
+
 @timing_decorator
 def llm_api(prompt: str, history) -> LLMResponse:
     logger = logger_instance.get_logger()
@@ -61,6 +78,8 @@ def llm_api(prompt: str, history) -> LLMResponse:
     logger.debug(f"Existing subcategories: {existing_subcategories_str}")
     logger.debug("User history: %s", user_history.replace('\n', ' || '))
 
+    save_args_to_json(
+        filename='dummy_data/prellamarequest.json', prompt=prompt, user_context=user_history, existing_subcategories=existing_subcategories_str, existing_tags=existing_tags_str, system_overview=system_overview)
     # Prepare the API request
     api_request_json = create_classification_request(
         prompt, user_history, existing_subcategories_str, existing_tags_str, system_overview)
@@ -77,24 +96,8 @@ def llm_api(prompt: str, history) -> LLMResponse:
         return LLMResponse({"error": "Failed to call LLAMA API"})
 
     # Extract and parse JSON from the response
-    parsed_json = extract_json_from_response(response)
-    print(parsed_json)
+    extracted_json = extract_content(response.json())
 
-    if parsed_json:
-        clarification_data = clarification_data = parsed_json.get(
-            "clarification")
-        subcategories_data = parsed_json.get('subcategories', {})
-        tags_data = parsed_json.get('tags', False)
+    save_args_to_json('dummy_data/llamarequeset.json', result=extracted_json)
 
-        result = {
-            "clarification": clarification_data,
-            "subcategories": subcategories_data,
-            "tags": tags_data
-        }
-        logger.info(f"API result: {result}")
-    else:
-        result = {"error": "Failed to extract JSON"}
-        logger.error("Failed to extract valid JSON from the response.")
-    save_args_to_json('dummy_data/llamarequeset.json', prompt=prompt, user_history=user_history,
-                      subcategories=subcategories_data, tags=tags_data, result=result)
-    return LLMResponse(result)
+    return extracted_json

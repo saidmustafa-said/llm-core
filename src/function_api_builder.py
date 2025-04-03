@@ -5,149 +5,161 @@ def create_classification_request(
     existing_tags,
     system_overview
 ):
-    """
-    Builds the API request payload for location classification.
-    """
+    """Builds the API request payload for location classification without function calling."""
 
     system_content = (
-        "You are an AI specializing in location classification. "
-        f"Existing subcategories: {existing_subcategories}. "
-        f"Existing descriptive tags: {existing_tags}. "
-        f"User conversation history: {user_context}. "
-        f"{system_overview} "
-        "Analyze the user's prompt to determine which subcategories (only subcategory names, not categories) "
-        "it fits into and which descriptive tags apply. "
-        "Return the matching subcategories and descriptive tags. "
-        "If the prompt does not exactly match any existing tag, generate new ones that better capture its essence. "
-        "Return both subcategories and descriptive tags. "
-        "If multiple valid subcategories exist and the intent is unclear, return a clarification question."
+        "You are a Location Classification AI. Your task is to analyze user input and determine relevant subcategories and descriptive tags.\n\n"
+
+        "CURRENT CONTEXT:\n"
+        f"Existing subcategories: {existing_subcategories}\n"
+        f"Existing descriptive tags: {existing_tags}\n"
+        f"User conversation history:\n{user_context}\n\n"
+        f"{system_overview}\n\n"
+
+        "CLASSIFICATION RULES:\n"
+        "1. Match the user’s prompt to relevant subcategories (return only subcategory names, not general categories)\n"
+        "2. Identify existing descriptive tags that fit, and create new ones if needed\n"
+        "3. If the user intent is unclear, return a clarification question **instead** of classification\n\n"
+
+        "RESPONSE FORMATS:\n"
+        "If classification is clear:\n"
+        "   Δ{{\n"
+        "     \"subcategories\": [\"subcategory1\", \"subcategory2\"],\n"
+        "     \"tags\": {\"existed\": [\"tag1\", \"tag2\"], \"new\": [\"new_tag1\"]}\n"
+        "   }}Δ\n\n"
+
+        "If clarification is needed:\n"
+        "   Δ{{\n"
+        "     \"clarification\": \"Do you mean X or Y?\"\n"
+        "   }}Δ\n\n"
+
+        "STRICT RULES:\n"
+        "- ALWAYS wrap JSON responses in Δ delimiters\n"
+        "- Provide either `subcategories` & `tags`, OR `clarification`—NEVER both\n"
+        "- Responses must be concise and relevant, avoiding redundancy\n"
     )
 
     api_request = {
         "model": "llama3.1-70b",
         "messages": [
             {"role": "system", "content": system_content},
-            {"role": "user", "content": f"Analyze this prompt: '{prompt}'"}
+            {"role": "user", "content": f"Classify this request: '{prompt}'"}
         ],
-        "functions": [
-            {
-                "name": "extract_location_info",
-                "description": (
-                    "Extract the most relevant subcategories and descriptive tags from the user's prompt based on the provided context. "
-                    "For subcategories, compare the prompt with the existing list and return the relevant matches. "
-                    "For descriptive tags, do the same by returning matched tags or generating new descriptive words that capture the location's nuances. "
-                    "Ensure both subcategories and tags are unique, non-redundant, and appropriately capture the nuances of the location described in the prompt. "
-                    "If multiple subcategories are found and the intent is unclear, generate a clarification question."
-                ),
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "subcategories": {
-                            "type": "array",
-                            "items": {"type": "string"},
-                            "description": "List of top 3 matching subcategories."
-                        },
-                        "tags": {
-                            "type": "object",
-                            "properties": {
-                                "existed": {
-                                    "type": "array",
-                                    "items": {"type": "string"},
-                                    "description": "Top 3 descriptive tags that match existing ones."
-                                },
-                                "new": {
-                                    "type": "array",
-                                    "items": {"type": "string"},
-                                    "description": "New descriptive tags generated from the prompt."
-                                }
-                            },
-                            "required": ["existed", "new"]
-                        },
-                        "clarification": {
-                            "type": "object",
-                            "properties": {
-                                "needed": {
-                                    "type": "boolean",
-                                    "description": "True if clarification is needed, False if the classification is certain. None if conversation has ended or user does not need assistance anymore."
-                                },
-                                "question": {
-                                    "type": "string",
-                                    "description": "Clarification question to ask the user for more details if needed."
-                                }
-                            },
-                            "required": ["needed", "question"]
-                        }
-                    },
-                    "required": ["subcategories", "tags", "clarification"]
-                }
-            }
-        ],
-        "function_call": "extract_location_info",
         "max_tokens": 5000,
         "temperature": 0.2,
+        # Ensures structured JSON output
+        "response_format": {"type": "json_object"}
     }
 
     return api_request
 
 
 def build_location_request(prompt, context_text, user_history, latitude, longitude, search_radius):
-    """Builds the API request payload for location recommendations."""
-    system_content = (
-        "You are a friendly location recommendation assistant. "
-        f"User coordinates: ({latitude}, {longitude}), Search radius: {search_radius}m\n"
-        "In users radius these are the only ones found, if asked if there is more, say these are the only ones in the radius user have chosen in that longitude and latitude"
-        f"Context data:\n{context_text}\n\n"
-        f"Conversation history:\n{user_history}\n\n"
-        "Engage in a conversational manner, answering questions based on history and context. "
-        "Keep the conversation natural and fluid, providing recommendations with details like addresses, directions, opening hours, or amenities when available. "
-        "Ensure that responses always contain useful information, even if context is limited."
-    )
+    """Builds the API request payload for location recommendations without function calling."""
 
+    # system_content = (
+    #     "You are a Location Intelligence Assistant. You have two response modes:\n\n"
+    #     "CURRENT CONTEXT:\n"
+    #     f"User coordinates: ({latitude}, {longitude})\n"
+    #     f"Search radius: {search_radius}m\n"
+    #     f"Available locations:\n{context_text}\n\n"
+    #     f"Conversation history:\n{user_history}\n\n"
+
+    #     "RESPONSE RULES:\n"
+    #     "1. If query can be answered with current context:\n"
+    #     "   - Respond with location details using Δ{{\"response\": \"...\", \"continuation\": bool}}Δ\n"
+    #     "   - Include address, hours, distance, and key amenities\n\n"
+
+    #     "2. If needing new data search (user asks for different location type/radius/near specific place):\n"
+    #     "   - Use classification_agent action format:\n"
+    #     "     Δ{{\n"
+    #     "       \"action\": \"classification_agent\",\n"
+    #     "       \"prompt\": \"Detailed search description including place types and requirements\",\n"
+    #     "       \"longitude\": ...,\n"
+    #     "       \"latitude\": ...,\n"
+    #     "       \"radius\": ...\n"
+    #     "     }}Δ\n\n"
+
+    #     "COORDINATE HANDLING:\n"
+    #     "- For 'near [previous place]' queries: Use that place's coordinates from context\n"
+    #     "- Default to user's current coordinates otherwise\n\n"
+
+    #     "EXAMPLE RESPONSES:\n"
+    #     "Context answer: Δ{{\n"
+    #     "  \"response\": \"The closest parking to X location is at XYZ Garage (3min walk). Open 24/7, €5/h.\",\n"
+    #     "  \"continuation\": true\n}}Δ\n\n"
+
+    #     "Action required: Δ{{\n"
+    #     "  \"action\": \"classification_agent\",\n"
+    #     "  \"prompt\": \"Find pet-friendly cafes with outdoor seating within 500m of X location\",\n"
+    #     "  \"longitude\": 00.000000,\n"
+    #     "  \"latitude\": 00.000000,\n"
+    #     "  \"radius\": 500\n}}Δ\n\n"
+
+    #     "STRICT RULES:\n"
+    #     "- ALWAYS wrap JSON in Δ delimiters\n"
+    #     "- Use either 'response' or 'action' never both\n"
+    #     "- Include exact coordinates from context when referencing specific places\n"
+    #     "- If context lacks required info, trigger classification_agent\n"
+    #     "- Maintain natural conversation flow in responses"
+    # )
+    system_content = (
+        "You are a Location Intelligence Assistant. You have two response modes:\n\n"
+        "CURRENT CONTEXT:\n"
+        f"User coordinates: ({latitude}, {longitude})\n"
+        f"Search radius: {search_radius}m\n"
+        f"Available locations:\n{context_text}\n\n"
+        f"Conversation history:\n{user_history}\n\n"
+
+        "RESPONSE RULES:\n"
+        "1. If query can be answered with current context:\n"
+        "   - IMPORTANT: If asking for more details about places mentioned in context, DO NOT trigger new searches\n"
+        "   - Respond with location details using Δ{{\"response\": \"...\", \"continuation\": bool}}Δ\n"
+        "   - Include all available information like address, hours, distance, and key amenities\n\n"
+
+        "2. If needing new data search (ONLY when user asks for entirely new location types/radius/places NOT in current context):\n"
+        "   - Use classification_agent action format:\n"
+        "     Δ{{\n"
+        "       \"action\": \"classification_agent\",\n"
+        "       \"prompt\": \"Detailed search description including place types and requirements\",\n"
+        "       \"longitude\": ...,\n"
+        "       \"latitude\": ...,\n"
+        "       \"radius\": ...\n"
+        "     }}Δ\n\n"
+
+        "COORDINATE HANDLING:\n"
+        "- For 'near [previous place]' queries: Use that place's coordinates from context\n"
+        "- Default to user's current coordinates otherwise\n\n"
+
+        "EXAMPLE RESPONSES:\n"
+        "Context answer (when asking about existing places): Δ{{\n"
+        "  \"response\": \"Nilly cafe is located at Arnavutköy Kuruçeşme Caddesi. Based on available information, it's 932m away on foot. The cafe is known for its [any details from context]. Would you like directions or information about another place?\",\n"
+        "  \"continuation\": true\n}}Δ\n\n"
+
+        "Action required (ONLY for new searches): Δ{{\n"
+        "  \"action\": \"classification_agent\",\n"
+        "  \"prompt\": \"Find pet-friendly cafes with outdoor seating within 500m of X location\",\n"
+        "  \"longitude\": 00.000000,\n"
+        "  \"latitude\": 00.000000,\n"
+        "  \"radius\": 500\n}}Δ\n\n"
+
+        "STRICT RULES:\n"
+        "- ALWAYS wrap JSON in Δ delimiters\n"
+        "- Use either 'response' or 'action' never both\n"
+        "- Include exact coordinates from context when referencing specific places\n"
+        "- If asking for more details about places ALREADY in context, use 'response' format with existing data\n"
+        "- ONLY trigger classification_agent for ENTIRELY NEW location queries not covered in context\n"
+        "- Maintain natural conversation flow in responses"
+    )
     api_request = {
         "model": "llama3.1-70b",
         "messages": [
             {"role": "system", "content": system_content},
             {"role": "user", "content": prompt}
         ],
-        "functions": [
-            {
-                "name": "analyze_location_request",
-                "description": (
-                    "Determines if the prompt is a continuation of the conversation or a new request. "
-                    "If it's a continuation, return continuation: true. Otherwise, return continuation: false and "
-                    "generate a conversational response that answers the user's question based on history and context. "
-                    "Always provide a response even during continuations. "
-                    "If descriptions are missing, use default responses to ensure the conversation continues smoothly. "
-                    "Make sure the response is full, even if not all details are available. Always provide details like address, hours, and amenities when possible."
-                    "Answer only based on the context data, if not in context data then set continuation to false"
-                ),
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "response": {
-                            "type": "string",
-                            "description": (
-                                "A natural and engaging response that keeps the conversation going, answering the user's question using context and history. "
-                                "MUST always provide a response, even if context is limited. The response should be informative, with as much detail as possible, "
-                                "including address, hours, amenities, or directions if available."
-                                "Always answer the users prompt in full"
-                                "Answer only based on the context data, if not in context data then set continuation to false"
-                            )
-                        },
-                        "continuation": {
-                            "type": "boolean",
-                            "description": (
-                                "True if the query is a continuation, False if it's a new request."
-                            )
-                        }
-                    },
-                    "required": ["continuation", "response"]
-                }
-            }
-        ],
-        "function_call": "analyze_location_request",
         "max_tokens": 7000,
         "temperature": 0.2,
+        "response_format": {"type": "json_object"}  # Encourages JSON output
     }
 
     return api_request

@@ -55,6 +55,22 @@ def format_top_candidates(top_candidates: TopCandidates) -> str:
     return "\n\n".join(lines) if lines else "No location data available."
 
 
+def extract_content(response):
+    """Extracts the JSON content from the response's 'content' field."""
+    try:
+        # Navigate to the content field
+        content_str = response.get("choices", [{}])[0].get(
+            "message", {}).get("content", "")
+
+        # Parse the JSON
+        extracted_json = json.loads(content_str)
+
+        return extracted_json
+    except (json.JSONDecodeError, IndexError, KeyError) as e:
+        print(f"Error extracting content: {e}")
+        return None
+
+
 @timing_decorator
 def get_location_advice(prompt, history, top_candidates: TopCandidates,
                         latitude, longitude, search_radius) -> LocationAdviceResponse:
@@ -63,6 +79,7 @@ def get_location_advice(prompt, history, top_candidates: TopCandidates,
 
     # Format context and history
     formatted_candidates = format_top_candidates(top_candidates)
+
     # Handle history - now expecting pre-formatted string
     user_history = history if history else "No previous conversation"
 
@@ -84,22 +101,14 @@ def get_location_advice(prompt, history, top_candidates: TopCandidates,
         logger.debug(f"Response: {response.json()}")
 
         # Process response
-        result = extract_json_from_response(response)
+        extracted_json = extract_content(response.json())
 
     except Exception as e:
-        logger.error("API call failed: %s", e)
-        result = LocationAdviceResponse(
-            response="I couldn't process your request properly.",
-            error=str(e)
-        )
+        logger.error("Location Advice API failed: %s", e)
 
-    logger.debug("API response processed with continuation: %s, response: %s",
-                 result.get("continuation"), result.get("response"))
+    logger.debug("API response processed with result: %s", extracted_json)
 
-    save_args_to_json(filename='dummy_data/get_location_advice.json',         continuation=result.get("continuation"),
-                      response=result.get("response"))
+    save_args_to_json(
+        filename='dummy_data/get_location_advice.json', result=extracted_json)
 
-    return LocationAdviceResponse(
-        continuation=result.get("continuation"),
-        response=result.get("response")
-    )
+    return extracted_json

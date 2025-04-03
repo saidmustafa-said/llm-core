@@ -8,121 +8,173 @@ import os
 from src.logger_setup import logger_instance
 
 
-def handle_clarification(llm_response: LLMResponse, prompt: str, formatted_history: str, conversation_id: str, user_id: str, history_manager: HistoryManager) -> tuple:
+def handle_clarification_loop(prompt: str, formatted_history: str, conversation_id: str, user_id: str, history_manager: HistoryManager) -> tuple:
     """
     Handles any clarification needed from the LLM response in a while loop.
-    Returns a tuple of (updated_prompt, updated_llm_response)
+    Returns a tuple of (updated_prompt, extracted_json)
     """
     logger = logger_instance.get_logger()
-    logger.info("Handling clarification")
+    logger.info("Initiating LLM API call")
 
-    while True:
-        clarification_value = llm_response.get("clarification")
-        normalized_clarification = None
-        if clarification_value is not None:
-            if isinstance(clarification_value, dict) and "needed" in clarification_value:
-                normalized_clarification = str(
-                    clarification_value.get("needed")).strip().lower()
-            else:
-                normalized_clarification = str(
-                    clarification_value).strip().lower()
+    # Initial LLM call
+    extracted_json = llm_api(prompt, formatted_history)
+    logger.debug(f"LLM response received: {extracted_json}")
 
-        # Exit the loop if no clarification is needed (or clarification is 'false')
-        if normalized_clarification is None or normalized_clarification == 'false':
-            logger.info("No clarification needed - continuing process")
-            break
+    # Enter clarification loop if needed
+    while "clarification" in extracted_json:
+        clarification_value = extracted_json.get("clarification")
 
-        if normalized_clarification == 'true':
-            logger.info(
-                f"Clarification requested for conversation {conversation_id}")
+        # Handle different clarification formats
+        question = ""
+        if isinstance(clarification_value, str):
+            question = clarification_value
+        elif isinstance(clarification_value, dict) and "question" in clarification_value:
+            question = clarification_value.get("question", "")
+        else:
+            question = "Please provide more information"
 
-            # Extract the clarification question
-            question = ""
-            if isinstance(clarification_value, str):
-                question = clarification_value
-            elif isinstance(clarification_value, dict):
-                question = clarification_value.get('question', '')
+        logger.info(
+            f"Clarification requested for conversation {conversation_id}: {question}")
+        print(f"\nClarification Needed: {question}")
 
-            logger.debug(f"Clarification question: {question}")
+        # Get user clarification input
+        additional_input = input("Provide clarification: ")
+        logger.info("User provided clarification input")
 
-            # Prompt for user input and wait for it
-            additional_input = input(
-                f"Clarification Needed: {question}\nProvide clarification: ")
-            logger.info("User provided clarification input")
+        # Save the user's clarification to history
+        history_manager.add_user_message(
+            user_id, conversation_id, additional_input)
+        logger.debug("Clarification added to conversation history")
 
-            # Save the user's clarification to history
-            history_manager.add_user_message(
-                user_id, conversation_id, additional_input)
-            logger.debug("Clarification added to conversation history")
+        # Fetch updated history including the new message
+        formatted_history = history_manager.get_formatted_history(
+            user_id, conversation_id)
+        logger.debug("Retrieved updated conversation history")
 
-            # Fetch updated history including the new message
-            formatted_history = history_manager.get_formatted_history(
-                user_id, conversation_id)
-            logger.debug("Retrieved updated conversation history")
+        # Re-run the LLM API with the new input and updated history
+        logger.info("Re-running LLM API with clarification")
+        extracted_json = llm_api(additional_input, formatted_history)
+        logger.debug(f"Clarification response received: {extracted_json}")
 
-            # Re-run the LLM API with the new input and updated history
-            logger.info("Re-running LLM API with clarification")
-            llm_response = llm_api(additional_input, formatted_history)
-            logger.debug(f"Clarification response received: {llm_response}")
+        # Update the prompt to reflect the new input
+        prompt = additional_input
 
-            # Update the prompt to reflect the new input
-            prompt = additional_input
     logger.info("Clarification handling complete")
-    return prompt, llm_response
+    return prompt, extracted_json
 
 
-def process_new_query(user_prompt: str, formatted_history: str, conversation_id: str,
-                      user_id: str, history_manager: HistoryManager, latitude: float, longitude: float,
-                      search_radius: int, num_candidates: int) -> TopCandidates:
-    """Process a new user query to get new top candidates."""
+def process_classification(user_prompt: str, formatted_history: str, conversation_id: str,
+                           user_id: str, history_manager: HistoryManager,
+                           latitude: float, longitude: float, search_radius: int,
+                           num_candidates: int) -> tuple:
+    """
+    Process a classification request to get candidates.
+    Returns a tuple of (top_candidates, updated_prompt, extracted_json)
+    """
     logger = logger_instance.get_logger()
     logger.info(f"Processing new query for conversation {conversation_id}")
 
-    # Save the user message to history before processing
+    # Save the user message to history
     history_manager.add_user_message(user_id, conversation_id, user_prompt)
     logger.debug("User message added to history")
 
-    # Get initial LLM classification response
-    logger.info("Initiating LLM API call")
-    llm_response = llm_api(user_prompt, formatted_history)
-    logger.debug(f"LLM response received: {llm_response}")
+    # Handle LLM API call with clarification loop
+    updated_prompt, extracted_json = handle_clarification_loop(
+        user_prompt, formatted_history, conversation_id, user_id, history_manager)
 
-    if llm_response is None or 'error' in llm_response:
+    if not extracted_json or "error" in extracted_json:
         logger.error("LLM processing error occurred")
         print("Error in LLM processing. Please try again.")
-        return None
+        return None, updated_prompt, extracted_json
 
-    # Handle any clarification request from the LLM iteratively
-    logger.info("Checking for clarification needs")
-    user_prompt, llm_response = handle_clarification(
-        llm_response, user_prompt, formatted_history, conversation_id, user_id, history_manager)
+    # Check if we have subcategories for POI search
+    if "subcategories" in extracted_json and "tags" in extracted_json:
+        subcategories = extracted_json.get("subcategories", [])
+        logger.info(f"Identified subcategories: {subcategories}")
 
-    if not user_prompt:
-        logger.warning("Empty prompt after clarification handling")
-        return None  # If there's an error, return None
+        logger.info("Fetching POI data from API")
+        candidates = get_poi_data(
+            latitude, longitude, search_radius, subcategories)
+        if not candidates:
+            logger.warning("No POIs found for given criteria")
+            print("No POIs found based on your criteria.")
+            return None, updated_prompt, extracted_json
 
-    # Use the potentially updated categories from the clarification response
-    subcategories = llm_response.get("subcategories", [])
-    logger.info(f"Identified subcategories: {subcategories}")
+        logger.debug(f"Found {len(candidates)} POI candidates")
 
-    logger.info("Fetching POI data from API")
-    candidates = get_poi_data(
-        latitude, longitude, search_radius, subcategories)
-    if not candidates:
-        logger.warning("No POIs found for given criteria")
-        print("No POIs found based on your criteria.")
-        return None
-    logger.debug(f"Found {len(candidates)} POI candidates")
+        logger.info("Selecting top candidates")
+        top_candidates = find_top_candidates(
+            candidates, latitude, longitude, search_radius, num_candidates)
+        if not isinstance(top_candidates, dict):
+            logger.debug("Converting top candidates to default format")
+            top_candidates = {"default": top_candidates}
 
-    logger.info("Selecting top candidates")
-    top_candidates = find_top_candidates(
-        candidates, latitude, longitude, search_radius, num_candidates)
-    if not isinstance(top_candidates, dict):
-        logger.debug("Converting top candidates to default format")
-        top_candidates = {"default": top_candidates}
+        logger.info(f"Returning {len(top_candidates)} top candidates")
+        return top_candidates, updated_prompt, extracted_json
+    else:
+        logger.warning("No subcategories found in LLM response")
+        print("Could not identify search categories from your query.")
+        return None, updated_prompt, extracted_json
 
-    logger.info(f"Returning {len(top_candidates)} top candidates")
-    return top_candidates
+
+def handle_location_advice_loop(user_prompt: str, formatted_history: str, top_candidates: TopCandidates,
+                                latitude: float, longitude: float, search_radius: int,
+                                conversation_id: str, user_id: str, history_manager: HistoryManager) -> tuple:
+    """
+    Handle the location advice loop, including continuations.
+    Returns a tuple of (continue_current_flow, new_parameters) where new_parameters might contain
+    new location parameters if a new classification agent action is triggered.
+    """
+    logger = logger_instance.get_logger()
+
+    try:
+        logger.info("Generating location advice")
+        extracted_json = get_location_advice(user_prompt, formatted_history, top_candidates,
+                                             latitude, longitude, search_radius)
+        logger.debug(f"Location advice received: {extracted_json}")
+    except Exception as e:
+        logger.error(f"Location advice error: {str(e)}")
+        print(f"Error during location advice processing: {e}")
+        return True, None
+
+    # Check for action type in response
+    if "response" in extracted_json:
+        # It's a continuation response
+        response_text = extracted_json.get("response")
+        continuation = str(extracted_json.get(
+            "continuation", "false")).lower() == "true"
+
+        # Save and display the response
+        history_manager.add_assistant_message(
+            user_id, conversation_id, response_text)
+        logger.info("Assistant response added to history")
+        print("\nLocation Advice:", response_text)
+
+        if continuation:
+            # Continue the current advice flow
+            return True, None
+        else:
+            # End the current flow, start new search with same prompt
+            return False, None
+
+    elif "action" in extracted_json and extracted_json["action"] == "classification_agent":
+        # It's a new search request with specific parameters
+        logger.info("New classification request with parameters")
+
+        # Extract the new parameters
+        new_parameters = {
+            "prompt": extracted_json.get("prompt", user_prompt),
+            "longitude": extracted_json.get("longitude", longitude),
+            "latitude": extracted_json.get("latitude", latitude),
+            "radius": extracted_json.get("radius", search_radius)
+        }
+
+        # End current flow and start new search with new parameters
+        return False, new_parameters
+    else:
+        logger.warning("Unknown response format")
+        print("Received an unknown response format. Starting new search.")
+        return False, None
 
 
 def main():
@@ -173,144 +225,89 @@ def main():
         print("No previous messages in this conversation.")
 
     # Default location parameters
-    latitude = 41.064108
     longitude = 29.031473
+    latitude = 41.064108
     search_radius = 2000
     num_candidates = 2
     logger.info(
         f"Using default location: {latitude},{longitude} with radius {search_radius}m")
 
-    top_candidates = None
-    reuse_prompt = False
-    last_prompt = ""
+    # Flag to indicate if we need to get user input or use the existing one
+    need_user_input = True
+    user_prompt = ""
 
     while True:
-        if not reuse_prompt:
+        # Get user prompt only if needed
+        if need_user_input:
             user_prompt = input(
                 "\nEnter your prompt (or type 'exit' to quit): ")
             if user_prompt.lower() == 'exit':
                 logger.info("User initiated exit")
                 break
-            last_prompt = user_prompt
             logger.debug(f"User input received: {user_prompt}")
-        else:
-            user_prompt = last_prompt
-            reuse_prompt = False
-            logger.info(f"Reusing previous prompt: {user_prompt}")
-            print(f"\nReusing last prompt: {user_prompt}")
+            need_user_input = False  # Reset the flag after getting input
 
+        # Get formatted history
         formatted_history = history_manager.get_formatted_history(
             user_id, conversation_id)
         logger.debug("Formatted history retrieved")
 
-        # If we don't have top candidates yet, process a new query
+        # Process new query to get classification and candidates
+        top_candidates, user_prompt, extracted_json = process_classification(
+            user_prompt, formatted_history, conversation_id, user_id, history_manager,
+            latitude, longitude, search_radius, num_candidates)
+
         if not top_candidates:
-            logger.info("Initiating new query processing")
-            top_candidates = process_new_query(user_prompt, formatted_history, conversation_id,
-                                               user_id, history_manager, latitude, longitude, search_radius, num_candidates)
-            if not top_candidates:
-                logger.warning("Query processing failed, continuing loop")
-                continue
-
-        # Get location advice based on the top candidates
-        try:
-            logger.info("Generating location advice")
-            location_advice = get_location_advice(user_prompt, formatted_history, top_candidates,
-                                                  latitude, longitude, search_radius)
-            logger.debug(f"Location advice received: {location_advice}")
-        except Exception as e:
-            logger.error(f"Location advice error: {str(e)}")
-            print(f"Error during location advice processing: {e}")
+            logger.warning("Classification processing failed, continuing loop")
+            need_user_input = True  # Need new input since this one failed
             continue
 
-        response_text = location_advice.get(
-            "response", "No response received.")
-        # Save the assistant's response to history
-        history_manager.add_assistant_message(
-            user_id, conversation_id, response_text)
-        logger.info("Assistant response added to history")
-        print("\nLocation Advice:", response_text)
-
-        # Ask for follow-up input regardless of the continuation value
-        user_prompt = input(
-            "\nEnter follow-up question (or type 'new' to start new search): ")
-        if user_prompt.lower() == 'exit':
-            logger.info("User exited during follow-up")
-            break
-        logger.debug(f"Follow-up input: {user_prompt}")
-
-        # Save follow-up question and refresh history
-        history_manager.add_user_message(user_id, conversation_id, user_prompt)
-        formatted_history = history_manager.get_formatted_history(
-            user_id, conversation_id)
-        logger.debug("Updated history with follow-up question")
-
-        # Get second location advice with the follow-up question
-        try:
-            logger.info("Processing follow-up location advice")
-            location_advice = get_location_advice(user_prompt, formatted_history, top_candidates,
-                                                  latitude, longitude, search_radius)
-        except Exception as e:
-            logger.error(f"Follow-up processing error: {str(e)}")
-            print(f"Error during location advice processing: {e}")
-            continue
-
-        continuation = str(location_advice.get(
-            "continuation", "false")).lower()
-        response_text = location_advice.get(
-            "response", "No response received.")
-        history_manager.add_assistant_message(
-            user_id, conversation_id, response_text)
-        logger.info("Follow-up response added to history")
-        if continuation == "true":
-            print("\nLocation Advice:", response_text)
-
-        # Now check if we should enter the continuation loop
-        while continuation == "true":
-            logger.info("Entering continuation loop")
-            user_prompt = input(
-                "\nEnter your follow up question2 (or type 'exit' to quit): ")
-            if user_prompt.lower() == 'exit':
-                logger.info("User exited during continuation loop")
-                break
-            last_prompt = user_prompt  # Update the last prompt
-            logger.debug(f"Continuation input: {user_prompt}")
-
-            # Save the new prompt and refresh history
-            history_manager.add_user_message(
-                user_id, conversation_id, user_prompt)
+        # Enter the location advice loop
+        continue_current_flow = True
+        while continue_current_flow:
+            # Get formatted history again as it might have been updated
             formatted_history = history_manager.get_formatted_history(
                 user_id, conversation_id)
-            logger.debug("Updated history with continuation question")
 
-            try:
-                logger.info("Processing continuation request")
-                location_advice = get_location_advice(user_prompt, formatted_history, top_candidates,
-                                                      latitude, longitude, search_radius)
-            except Exception as e:
-                logger.error(f"Continuation processing error: {str(e)}")
-                print(f"Error during location advice processing: {e}")
-                continue
+            # Process location advice
+            continue_current_flow, new_parameters = handle_location_advice_loop(
+                user_prompt, formatted_history, top_candidates,
+                latitude, longitude, search_radius,
+                conversation_id, user_id, history_manager)
 
-            continuation = str(location_advice.get(
-                "continuation", "false")).lower()
-            response_text = location_advice.get(
-                "response", "No response received.")
-            history_manager.add_assistant_message(
-                user_id, conversation_id, response_text)
-            logger.info("Continuation response added to history")
+            if continue_current_flow:
+                # Get next user prompt for continuation
+                user_prompt = input(
+                    "\nEnter follow-up question (or type 'exit' to quit): ")
+                if user_prompt.lower() == 'exit':
+                    logger.info("User exited during follow-up")
+                    continue_current_flow = False
+                    need_user_input = True  # Reset flag for next iteration
+                    break
 
-            if continuation == "true":
-                print("\nLocation Advice:", response_text)
-            else:
-                logger.info("Continuation loop ending")
-                break
+                # Save the new prompt to history
+                history_manager.add_user_message(
+                    user_id, conversation_id, user_prompt)
+                logger.debug(f"Follow-up input saved: {user_prompt}")
 
-        if continuation == "false":
-            logger.info("Resetting candidates for new context")
-            print("Starting new recommendation context with the same prompt.")
-            top_candidates = None
-            reuse_prompt = True
+        # Check if we have new parameters for the next search
+        if new_parameters:
+            logger.info("Updating parameters for new search")
+            user_prompt = new_parameters.get("prompt")
+            latitude = new_parameters.get("latitude")
+            longitude = new_parameters.get("longitude")
+            search_radius = new_parameters.get("radius")
+
+            logger.info(
+                f"New parameters: prompt='{user_prompt}', lat={latitude}, lon={longitude}, radius={search_radius}")
+            print(
+                f"\nStarting new search with coordinates: {latitude}, {longitude} and radius: {search_radius}m")
+
+            # We already have a prompt from the LLM, don't ask for user input
+            need_user_input = False
+        else:
+            # No new parameters, get fresh user input in the next iteration
+            need_user_input = True
 
     logger.info("Application shutdown")
 

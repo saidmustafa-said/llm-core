@@ -1,13 +1,12 @@
-
 from src.logger_setup import logger_instance
 from src.poi_filter import get_poi_data
 
 logger_instance.initialize_logging_context("test_user", 'api_execution')
 # Define test parameters
-latitude = 41.064108
-longitude = 29.031473
-search_radius = 2000
-search_subcategories = []
+latitude = 41.0645058
+longitude = 29.031933
+search_radius = 5000
+search_subcategories = ['parking']
 
 
 # Run the function and print results
