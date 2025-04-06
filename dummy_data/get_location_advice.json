@@ -7,10 +7,7 @@
     "existing_tags": "None",
     "system_overview": "",
     "result": {
-        "action": "classification_agent",
-        "prompt": "Find parking spots near Ulus 29, 71, Ahmet Adnan Saygun Caddesi, Ulus, Kuru\u00e7e\u015fme Mahallesi, Ulus Mahallesi, Be\u015fikta\u015f, \u0130stanbul, Marmara B\u00f6lgesi, 34345, T\u00fcrkiye",
-        "longitude": 29.031933,
-        "latitude": 41.0645058,
-        "radius": 2000
+        "response": "There are two cafes close by. BELTUR mini is 672m away on foot and is located at Ye\u015filk\u00f6y Halkal\u0131 Caddesi, Florya, \u015eenlikk\u00f6y Mahallesi, Bak\u0131rk\u00f6y, \u0130stanbul. Mizu is 987m away on foot and is located at 93/48, Ye\u015filk\u00f6y Halkal\u0131 Caddesi, Florya, \u015eenlikk\u00f6y Mahallesi, Bak\u0131rk\u00f6y, \u0130stanbul. Mizu offers Italian, pizza, burger, coffee shop, and pasta options and is open from 10:00 to 00:00 every day. Would you like more information or directions to one of these cafes?",
+        "continuation": true
     }
 }

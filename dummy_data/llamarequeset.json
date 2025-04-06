@@ -12,10 +12,9 @@
     },
     "result": {
         "subcategories": [
-            "parking"
+            "cafe"
         ],
         "tags": {
-            "existed": [],
             "new": [
                 "nearby"
             ]

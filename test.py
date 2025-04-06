@@ -1,14 +1,16 @@
 from src.data_types import LLMResponse, TopCandidates
 from src.get_location_advice import get_location_advice
 from src.get_top_candidates import find_top_candidates
-from src.poi_filter import get_poi_data
+from src.poi_filter import POIManager
 from src.llamarequest import llm_api
 from src.history_manager import HistoryManager
 import os
 from src.logger_setup import logger_instance
 
+poi_manager = POIManager()
 
-def handle_clarification_loop(prompt: str, formatted_history: str, conversation_id: str, user_id: str, history_manager: HistoryManager) -> tuple:
+
+def handle_clarification_loop(prompt: str, formatted_history: str, conversation_id: str, user_id: str, history_manager: HistoryManager, user_lat, user_lon, search_radius) -> tuple:
     """
     Handles any clarification needed from the LLM response in a while loop.
     Returns a tuple of (updated_prompt, extracted_json)
@@ -16,8 +18,10 @@ def handle_clarification_loop(prompt: str, formatted_history: str, conversation_
     logger = logger_instance.get_logger()
     logger.info("Initiating LLM API call")
 
+    subcategories = poi_manager.get_poi_data(
+        user_lat, user_lon, search_radius)
     # Initial LLM call
-    extracted_json = llm_api(prompt, formatted_history)
+    extracted_json = llm_api(prompt, formatted_history, subcategories)
     logger.debug(f"LLM response received: {extracted_json}")
 
     # Enter clarification loop if needed
@@ -53,7 +57,11 @@ def handle_clarification_loop(prompt: str, formatted_history: str, conversation_
 
         # Re-run the LLM API with the new input and updated history
         logger.info("Re-running LLM API with clarification")
-        extracted_json = llm_api(additional_input, formatted_history)
+
+        subcategories = poi_manager.get_poi_data(
+            user_lat, user_lon, search_radius)
+        extracted_json = llm_api(
+            additional_input, formatted_history, subcategories)
         logger.debug(f"Clarification response received: {extracted_json}")
 
         # Update the prompt to reflect the new input
@@ -80,7 +88,7 @@ def process_classification(user_prompt: str, formatted_history: str, conversatio
 
     # Handle LLM API call with clarification loop
     updated_prompt, extracted_json = handle_clarification_loop(
-        user_prompt, formatted_history, conversation_id, user_id, history_manager)
+        user_prompt, formatted_history, conversation_id, user_id, history_manager, latitude, longitude, search_radius)
 
     if not extracted_json or "error" in extracted_json:
         logger.error("LLM processing error occurred")
@@ -93,7 +101,7 @@ def process_classification(user_prompt: str, formatted_history: str, conversatio
         logger.info(f"Identified subcategories: {subcategories}")
 
         logger.info("Fetching POI data from API")
-        candidates = get_poi_data(
+        candidates = poi_manager.get_poi_data(
             latitude, longitude, search_radius, subcategories)
         if not candidates:
             logger.warning("No POIs found for given criteria")
@@ -225,10 +233,10 @@ def main():
         print("No previous messages in this conversation.")
 
     # Default location parameters
-    longitude = 29.031473
-    latitude = 41.064108
-    search_radius = 2000
-    num_candidates = 2
+    longitude = 28.793878
+    latitude = 40.971255
+    search_radius = 1000
+    num_candidates = 4
     logger.info(
         f"Using default location: {latitude},{longitude} with radius {search_radius}m")
 

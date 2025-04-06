@@ -2,8 +2,7 @@ def create_classification_request(
     prompt,
     user_context,
     existing_subcategories,
-    existing_tags,
-    system_overview
+    existing_tags
 ):
     """Builds the API request payload for location classification without function calling."""
 
@@ -14,7 +13,6 @@ def create_classification_request(
         f"Existing subcategories: {existing_subcategories}\n"
         f"Existing descriptive tags: {existing_tags}\n"
         f"User conversation history:\n{user_context}\n\n"
-        f"{system_overview}\n\n"
 
         "CLASSIFICATION RULES:\n"
         "1. Match the user’s prompt to relevant subcategories (return only subcategory names, not general categories)\n"
@@ -56,53 +54,6 @@ def create_classification_request(
 
 def build_location_request(prompt, context_text, user_history, latitude, longitude, search_radius):
     """Builds the API request payload for location recommendations without function calling."""
-
-    # system_content = (
-    #     "You are a Location Intelligence Assistant. You have two response modes:\n\n"
-    #     "CURRENT CONTEXT:\n"
-    #     f"User coordinates: ({latitude}, {longitude})\n"
-    #     f"Search radius: {search_radius}m\n"
-    #     f"Available locations:\n{context_text}\n\n"
-    #     f"Conversation history:\n{user_history}\n\n"
-
-    #     "RESPONSE RULES:\n"
-    #     "1. If query can be answered with current context:\n"
-    #     "   - Respond with location details using Δ{{\"response\": \"...\", \"continuation\": bool}}Δ\n"
-    #     "   - Include address, hours, distance, and key amenities\n\n"
-
-    #     "2. If needing new data search (user asks for different location type/radius/near specific place):\n"
-    #     "   - Use classification_agent action format:\n"
-    #     "     Δ{{\n"
-    #     "       \"action\": \"classification_agent\",\n"
-    #     "       \"prompt\": \"Detailed search description including place types and requirements\",\n"
-    #     "       \"longitude\": ...,\n"
-    #     "       \"latitude\": ...,\n"
-    #     "       \"radius\": ...\n"
-    #     "     }}Δ\n\n"
-
-    #     "COORDINATE HANDLING:\n"
-    #     "- For 'near [previous place]' queries: Use that place's coordinates from context\n"
-    #     "- Default to user's current coordinates otherwise\n\n"
-
-    #     "EXAMPLE RESPONSES:\n"
-    #     "Context answer: Δ{{\n"
-    #     "  \"response\": \"The closest parking to X location is at XYZ Garage (3min walk). Open 24/7, €5/h.\",\n"
-    #     "  \"continuation\": true\n}}Δ\n\n"
-
-    #     "Action required: Δ{{\n"
-    #     "  \"action\": \"classification_agent\",\n"
-    #     "  \"prompt\": \"Find pet-friendly cafes with outdoor seating within 500m of X location\",\n"
-    #     "  \"longitude\": 00.000000,\n"
-    #     "  \"latitude\": 00.000000,\n"
-    #     "  \"radius\": 500\n}}Δ\n\n"
-
-    #     "STRICT RULES:\n"
-    #     "- ALWAYS wrap JSON in Δ delimiters\n"
-    #     "- Use either 'response' or 'action' never both\n"
-    #     "- Include exact coordinates from context when referencing specific places\n"
-    #     "- If context lacks required info, trigger classification_agent\n"
-    #     "- Maintain natural conversation flow in responses"
-    # )
     system_content = (
         "You are a Location Intelligence Assistant. You have two response modes:\n\n"
         "CURRENT CONTEXT:\n"

@@ -66,23 +66,24 @@ def extract_content(response):
 
 
 @timing_decorator
-def llm_api(prompt: str, history) -> LLMResponse:
+def llm_api(prompt: str, history, subcategories) -> LLMResponse:
     logger = logger_instance.get_logger()
     logger.info("Calling LLM API with the provided prompt.")
 
     existing_tags_str, existing_subcategories_str = retrieve_tags()
     user_history = history if history else "No previous conversation"
-    system_overview = ""
+    existing_subcategories_str = subcategories
+    print(existing_subcategories_str)
 
     logger.debug(f"Existing tags: {existing_tags_str}")
     logger.debug(f"Existing subcategories: {existing_subcategories_str}")
     logger.debug("User history: %s", user_history.replace('\n', ' || '))
 
     save_args_to_json(
-        filename='dummy_data/prellamarequest.json', prompt=prompt, user_context=user_history, existing_subcategories=existing_subcategories_str, existing_tags=existing_tags_str, system_overview=system_overview)
+        filename='dummy_data/prellamarequest.json', prompt=prompt, user_context=user_history, existing_subcategories=existing_subcategories_str, existing_tags=existing_tags_str)
     # Prepare the API request
     api_request_json = create_classification_request(
-        prompt, user_history, existing_subcategories_str, existing_tags_str, system_overview)
+        prompt, user_history, existing_subcategories_str, existing_tags_str, )
     logger.debug(
         f"API request JSON from create_classification_request: {api_request_json}")
 
