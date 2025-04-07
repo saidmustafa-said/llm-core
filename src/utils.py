@@ -1,12 +1,12 @@
 import re
 import json
 import time
-from src.logger_setup import logger_instance
+from src.logger_setup import get_logger
 
 
 def timing_decorator(func):
     def wrapper(*args, **kwargs):
-        logger = logger_instance.get_logger()
+        logger = get_logger()
         start_time = time.time()
         result = func(*args, **kwargs)
         end_time = time.time()

@@ -6,7 +6,7 @@ import time
 from typing import Dict, List, Any, Optional
 
 from .history_manager import HistoryManager
-from src.logger_setup import logger_instance
+from src.logger_setup import get_logger
 
 
 class JSONHistoryManager(HistoryManager):
@@ -24,7 +24,7 @@ class JSONHistoryManager(HistoryManager):
         """
         self.history_dir = history_dir
         os.makedirs(self.history_dir, exist_ok=True)
-        self.logger = logger_instance.get_logger()
+        self.logger = get_logger()
 
     def _get_user_folder_path(self, user_id: str) -> str:
         """Get the folder path for a user and create if not exists."""

@@ -1,78 +1,76 @@
 # src/logger_setup.py
-
 import logging
 import threading
 import os
-from datetime import datetime
+from pathlib import Path
+from typing import Optional
 
 
-class Logger:
-    _instance = None  # Singleton instance
-    _initialized = False  # Ensure initialization happens only once
+class SessionLogger:
+    """Centralized per-session logging with thread-safe initialization"""
+    _instance = None
+    _lock = threading.Lock()
 
-    def __new__(cls, *args, **kwargs):
-        if cls._instance is None:
-            cls._instance = super().__new__(cls)
+    def __new__(cls):
+        with cls._lock:
+            if cls._instance is None:
+                cls._instance = super().__new__(cls)
+                cls._instance._setup()
         return cls._instance
 
-    def __init__(self, user_id=None, file_group=None):
-        if not self._initialized:
-            self.user_id = user_id
-            self.file_group = file_group
-            self.thread_local = threading.local()
-            self._initialized = True
+    def _setup(self):
+        """Initialize base logger configuration"""
+        self._local = threading.local()
+        self._log_dir = Path("logs")
+        # Ensure base logs directory exists
+        self._log_dir.mkdir(exist_ok=True, parents=True)
+        # Configure root logger to prevent unwanted outputs
+        logging.getLogger().handlers = []
 
-    def initialize_logging_context(self, user_id: str, file_group: str):
-        """Initialize the logging context for the current thread."""
-        self.user_id = user_id
-        self.file_group = file_group
-        self._setup_user_logger()
+    def start_session(self, user_id: str, session_id: str):
+        """Initialize a new logging session"""
+        # Create user-specific directory (with parents if needed)
+        user_dir = self._log_dir / user_id
+        user_dir.mkdir(exist_ok=True, parents=True)
 
-    def _setup_user_logger(self):
-        """Set up a logger for the current thread's user_id and file group."""
-        if not self.user_id or not self.file_group:
-            raise ValueError("User ID and File Group must be set.")
+        # Single log file per session
+        log_file = user_dir / f"{session_id}.log"
 
-        # Create directories if they don't exist
-        user_log_dir = os.path.join('logs', str(self.user_id), self.file_group)
-        os.makedirs(user_log_dir, exist_ok=True)
-
-        # Generate a unique log filename based on the timestamp
-        timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
-        log_filename = os.path.join(user_log_dir, f"{timestamp}.log")
-
-        # Setup logger
-        logger_name = f"user_{self.user_id}_{self.file_group}"
-        logger = logging.getLogger(logger_name)
+        # Configure logger
+        logger = logging.getLogger(f"user.{user_id}.session.{session_id}")
         logger.setLevel(logging.DEBUG)
 
-        # 🔹 Remove all handlers (including root logger handlers)
-        if logger.hasHandlers():
-            logger.handlers.clear()
+        # Clear existing handlers
+        for handler in logger.handlers[:]:
+            logger.removeHandler(handler)
 
-        # 🔹 Disable propagation to prevent logs from appearing in the root logger
-        logger.propagate = False
-
-        # Create a file handler that logs to the timestamped file
-        file_handler = logging.FileHandler(log_filename)
+        # File handler
+        file_handler = logging.FileHandler(log_file)
         file_handler.setFormatter(logging.Formatter(
-            '%(asctime)s - %(levelname)s - %(message)s'))
-
+            '%(asctime)s | %(levelname)-8s | %(message)s'
+        ))
         logger.addHandler(file_handler)
 
-        # Store logger in the thread-local context
-        self.thread_local.logger = logger
+        # Store in thread-local storage
+        self._local.logger = logger
 
-        # 🔹 Ensure the root logger does NOT send logs to the console
-        logging.getLogger().handlers.clear()
+    def get_logger(self) -> logging.Logger:
+        """Get the current session's logger"""
+        if not hasattr(self._local, 'logger'):
+            # Fallback to system logger if no session initialized
+            system_logger = logging.getLogger("system")
+            if not system_logger.handlers:
+                system_logger.addHandler(logging.StreamHandler())
+                system_logger.setLevel(logging.WARNING)
+            return system_logger
+        return self._local.logger
 
-    def get_logger(self):
-        """Get the logger for the current thread."""
-        if not hasattr(self.thread_local, 'logger'):
-            raise ValueError(
-                "Logger not initialized. Call initialize_logging_context first.")
-        return self.thread_local.logger
+
+# Global instance
+session_logger = SessionLogger()
+
+# Shortcut for cleaner imports
 
 
-# Singleton instance of the Logger class
-logger_instance = Logger()
+def get_logger() -> logging.Logger:
+    return session_logger.get_logger()

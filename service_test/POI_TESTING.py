@@ -1,4 +1,4 @@
-from src.logger_setup import logger_instance
+from src.logger_setup import get_logger
 from src.poi_filter import get_poi_data
 
 logger_instance.initialize_logging_context("test_user", 'api_execution')

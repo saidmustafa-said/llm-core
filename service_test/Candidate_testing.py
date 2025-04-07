@@ -1,4 +1,4 @@
-from src.logger_setup import logger_instance
+from src.logger_setup import get_logger
 from src.poi_filter import get_poi_data
 
 # Assuming the find_top_candidates function and required classes are imported

@@ -1,5 +1,4 @@
 # api.py
-
 from fastapi import FastAPI, HTTPException, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
@@ -8,9 +7,8 @@ import uuid
 import time
 from src.config_manager import ConfigManager
 from main import process_request, create_session, get_session_history, get_session_messages
-from src.logger_setup import logger_instance
+from src.logger_setup import session_logger, get_logger
 
-logger_instance.initialize_logging_context("system", "startup")
 # Initialize FastAPI app
 app = FastAPI(
     title="Location Advice API",
@@ -21,7 +19,7 @@ app = FastAPI(
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, replace with specific origins
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -29,8 +27,6 @@ app.add_middleware(
 
 # Initialize config manager
 config_manager = ConfigManager()
-
-# Request and response models
 
 
 class UserMessageRequest(BaseModel):
@@ -64,20 +60,22 @@ async def logging_middleware(request: Request, call_next):
     """Middleware for request logging"""
     request_id = str(uuid.uuid4())
 
-    # Extract user ID from request if available
+    # Extract user ID and session ID from request if available
     user_id = "unknown"
+    session_id = request_id  # Default to request_id if session_id not found
     if request.method == "POST":
         try:
             body = await request.json()
             user_id = body.get("user_id", "unknown")
+            # Use session_id from request body if available
+            if "session_id" in body:
+                session_id = body.get("session_id")
         except:
             pass
 
-    # Set logging context first
-    logger_instance.initialize_logging_context(user_id, request_id)
-
-    # Then get the logger
-    logger = logger_instance.get_logger()
+    # Initialize session logging
+    session_logger.start_session(user_id, session_id)
+    logger = get_logger()
 
     # Log request
     logger.info(f"Request: {request.method} {request.url.path}")
@@ -92,22 +90,14 @@ async def logging_middleware(request: Request, call_next):
 
     return response
 
-
 @app.post("/message", response_model=MessageResponse)
 async def process_message(request: UserMessageRequest):
-    """
-    Process a user message and return a response
-    """
-    logger = logger_instance.get_logger()
+    """Process a user message and return a response"""
+    logger = get_logger()
     logger.info(
         f"Processing message for user {request.user_id}, session {request.session_id}")
 
-    # Get state and history managers from config
-    state_manager = config_manager.get_state_manager()
-    history_manager = config_manager.get_history_manager()
-
     try:
-        # Process the request
         response = process_request(
             request.user_id,
             request.session_id,
@@ -115,8 +105,8 @@ async def process_message(request: UserMessageRequest):
             request.latitude,
             request.longitude,
             request.search_radius,
-            state_manager,
-            history_manager
+            config_manager.get_state_manager(),
+            config_manager.get_history_manager()
         )
 
         return MessageResponse(
@@ -133,39 +123,30 @@ async def process_message(request: UserMessageRequest):
 
 @app.post("/session", response_model=SessionResponse)
 async def create_new_session(request: CreateSessionRequest):
-    """
-    Create a new session for a user
-    """
-    logger = logger_instance.get_logger()
-    logger.info(f"Creating new session for user {request.user_id}")
+    """Create a new session for a user"""
+    # Create a new session_id
+    session_id = create_session(
+        request.user_id, config_manager.get_state_manager())
 
-    # Get state manager from config
-    state_manager = config_manager.get_state_manager()
+    # Initialize logging for this new session
+    session_logger.start_session(request.user_id, session_id)
+    logger = get_logger()
+    logger.info(f"Created new session {session_id} for user {request.user_id}")
 
-    try:
-        # Create new session
-        session_id = create_session(request.user_id, state_manager)
-        return SessionResponse(session_id=session_id)
-    except Exception as e:
-        logger.error(f"Error creating session: {str(e)}")
-        raise HTTPException(
-            status_code=500, detail=f"Error creating session: {str(e)}")
+    return SessionResponse(session_id=session_id)
 
 
 @app.get("/session/{user_id}/{session_id}/history")
 async def get_history(user_id: str, session_id: str):
-    """
-    Get the conversation history for a session
-    """
-    logger = logger_instance.get_logger()
+    """Get the conversation history for a session"""
+    # Initialize session logging for this existing session
+    session_logger.start_session(user_id, session_id)
+    logger = get_logger()
     logger.info(f"Getting history for user {user_id}, session {session_id}")
 
-    # Get history manager from config
-    history_manager = config_manager.get_history_manager()
-
     try:
-        # Get session history
-        history = get_session_history(user_id, session_id, history_manager)
+        history = get_session_history(
+            user_id, session_id, config_manager.get_history_manager())
         return {"history": history}
     except Exception as e:
         logger.error(f"Error getting history: {str(e)}")
@@ -175,18 +156,13 @@ async def get_history(user_id: str, session_id: str):
 
 @app.get("/session/{user_id}/{session_id}/messages")
 async def get_messages(user_id: str, session_id: str):
-    """
-    Get the raw messages for a session
-    """
-    logger = logger_instance.get_logger()
+    """Get the raw messages for a session"""
+    logger = get_logger()
     logger.info(f"Getting messages for user {user_id}, session {session_id}")
 
-    # Get history manager from config
-    history_manager = config_manager.get_history_manager()
-
     try:
-        # Get session messages
-        messages = get_session_messages(user_id, session_id, history_manager)
+        messages = get_session_messages(
+            user_id, session_id, config_manager.get_history_manager())
         return {"messages": messages}
     except Exception as e:
         logger.error(f"Error getting messages: {str(e)}")
@@ -196,7 +172,5 @@ async def get_messages(user_id: str, session_id: str):
 
 @app.get("/health")
 async def health_check():
-    """
-    Health check endpoint
-    """
+    """Health check endpoint"""
     return {"status": "healthy"}

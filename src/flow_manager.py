@@ -8,7 +8,7 @@ from src.get_location_advice import get_location_advice
 from src.get_top_candidates import find_top_candidates
 from src.poi_filter import POIManager
 from src.llamarequest import llm_api
-from src.logger_setup import logger_instance
+from src.logger_setup import get_logger
 
 
 class FlowManager:
@@ -28,7 +28,7 @@ class FlowManager:
         self.state_manager = state_manager
         self.history_manager = history_manager
         self.poi_manager = POIManager()
-        self.logger = logger_instance.get_logger()
+        self.logger = get_logger()
 
     def process_user_input(self, user_id: str, session_id: str, user_input: str,
                            latitude: float = 40.971255, longitude: float = 28.793878,

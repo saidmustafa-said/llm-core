@@ -7,7 +7,7 @@ import uuid
 from typing import Dict, Any, Optional
 
 from .state_manager import StateManager
-from src.logger_setup import logger_instance
+from src.logger_setup import get_logger
 
 
 class JSONStateManager(StateManager):
@@ -19,13 +19,13 @@ class JSONStateManager(StateManager):
     def __init__(self, sessions_dir="sessions"):
         """
         Initialize JSONStateManager with the directory to store session files.
-        
+
         Args:
             sessions_dir: Directory to store session files
         """
         self.sessions_dir = sessions_dir
         os.makedirs(self.sessions_dir, exist_ok=True)
-        self.logger = logger_instance.get_logger()
+        self.logger = get_logger()
 
     def _get_user_folder_path(self, user_id: str) -> str:
         """Get the folder path for a user and create if not exists."""

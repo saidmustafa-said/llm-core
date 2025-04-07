@@ -4,7 +4,7 @@ from typing import Dict, Any, Optional, Tuple
 from src.managers.state.state_manager import StateManager
 from src.managers.history.history_manager import HistoryManager
 from src.flow_manager import FlowManager
-from src.logger_setup import logger_instance
+from src.logger_setup import get_logger
 
 
 def process_request(user_id: str, session_id: str, user_input: str,
@@ -30,7 +30,7 @@ def process_request(user_id: str, session_id: str, user_input: str,
     Returns:
         Dict containing response and any additional action information
     """
-    logger = logger_instance.get_logger()
+    logger = get_logger()
     logger.info(f"Processing request for user {user_id}, session {session_id}")
 
     # If managers are not provided, use default JSON implementations
@@ -79,7 +79,7 @@ def create_session(user_id: str, state_manager: Optional[StateManager] = None) -
     Returns:
         New session ID
     """
-    logger = logger_instance.get_logger()
+    logger = get_logger()
     logger.info(f"Creating new session for user {user_id}")
 
     # If state manager is not provided, use default JSON implementation
@@ -94,7 +94,10 @@ def create_session(user_id: str, state_manager: Optional[StateManager] = None) -
     flow_manager = FlowManager(state_manager, history_manager)
 
     # Create new session
-    return flow_manager.create_new_session(user_id)
+    session_id = flow_manager.create_new_session(user_id)
+    logger.info(f"Created session ID: {session_id} for user: {user_id}")
+
+    return session_id
 
 
 def get_session_history(user_id: str, session_id: str, history_manager: Optional[HistoryManager] = None) -> str:
@@ -109,7 +112,7 @@ def get_session_history(user_id: str, session_id: str, history_manager: Optional
     Returns:
         Formatted history string
     """
-    logger = logger_instance.get_logger()
+    logger = get_logger()
     logger.info(f"Getting history for user {user_id}, session {session_id}")
 
     # If history manager is not provided, use default JSON implementation
@@ -133,7 +136,7 @@ def get_session_messages(user_id: str, session_id: str, history_manager: Optiona
     Returns:
         List of message dictionaries
     """
-    logger = logger_instance.get_logger()
+    logger = get_logger()
     logger.info(f"Getting messages for user {user_id}, session {session_id}")
 
     # If history manager is not provided, use default JSON implementation
@@ -149,7 +152,7 @@ def get_session_messages(user_id: str, session_id: str, history_manager: Optiona
 # if __name__ == "__main__":
 #     user_id = "test_user"
 #     logger_instance.initialize_logging_context(user_id, 'cli_execution')
-#     logger = logger_instance.get_logger()
+#     logger = get_logger()
 
 #     # Create managers
 #     from src.managers.state.json_state_manager import JSONStateManager
