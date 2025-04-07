@@ -6,7 +6,6 @@ from src.data_types import LLMResponse
 from typing import List, Optional
 from src.function_api_builder import create_classification_request
 from src.logger_setup import logger_instance
-from src.generate_test_env_data import save_args_to_json
 import json
 
 
@@ -79,8 +78,7 @@ def llm_api(prompt: str, history, subcategories) -> LLMResponse:
     logger.debug(f"Existing subcategories: {existing_subcategories_str}")
     logger.debug("User history: %s", user_history.replace('\n', ' || '))
 
-    save_args_to_json(
-        filename='dummy_data/prellamarequest.json', prompt=prompt, user_context=user_history, existing_subcategories=existing_subcategories_str, existing_tags=existing_tags_str)
+
     # Prepare the API request
     api_request_json = create_classification_request(
         prompt, user_history, existing_subcategories_str, existing_tags_str, )
@@ -99,6 +97,5 @@ def llm_api(prompt: str, history, subcategories) -> LLMResponse:
     # Extract and parse JSON from the response
     extracted_json = extract_content(response.json())
 
-    save_args_to_json('dummy_data/llamarequeset.json', result=extracted_json)
 
     return extracted_json

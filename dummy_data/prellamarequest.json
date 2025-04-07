@@ -1,7 +1,0 @@
-{
-    "prompt": "cafe close by",
-    "user_context": "No previous conversation",
-    "existing_subcategories": "amenity: cafe, cinema, fast_food, restaurant\nleisure: fitness_station, picnic_table, playground\nnatural: tree\nshop: department_store\nsport: fitness",
-    "existing_tags": "None",
-    "system_overview": ""
-}
