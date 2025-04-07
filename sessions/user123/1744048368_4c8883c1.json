@@ -1,0 +1,101 @@
+{
+  "session_id": "1744048368_4c8883c1",
+  "user_id": "user123",
+  "created_at": 1744048368,
+  "current_state": "providing_advice",
+  "data": {
+    "prompt": "Hello, is there a cafe close by.",
+    "top_candidates": {
+      "walk": [
+        {
+          "latitude": 40.9684729,
+          "longitude": 28.7936791,
+          "city": "\u0130stanbul",
+          "district": NaN,
+          "street": NaN,
+          "branch": NaN,
+          "phone_number": NaN,
+          "description": NaN,
+          "opening_hours": NaN,
+          "amenity": "cafe",
+          "cuisine": NaN,
+          "name": "BELTUR mini",
+          "name_en": NaN,
+          "name_uk": NaN,
+          "name_de": NaN,
+          "name_tr": NaN,
+          "name_ru": NaN,
+          "name_ar": NaN,
+          "category": "amenity",
+          "subcategory": "cafe",
+          "address": "BELTUR mini, Ye\u015filk\u00f6y Halkal\u0131 Caddesi, Florya, \u015eenlikk\u00f6y Mahallesi, Bak\u0131rk\u00f6y, \u0130stanbul, Marmara B\u00f6lgesi, 34153, T\u00fcrkiye",
+          "walk_route_distance_m": 672.1289955835821
+        },
+        {
+          "latitude": 40.9660828,
+          "longitude": 28.7965283,
+          "city": "\u0130stanbul",
+          "district": "Bak\u0131rk\u00f6y",
+          "street": "Ye\u015filk\u00f6y Halkal\u0131 Caddesi",
+          "branch": NaN,
+          "phone_number": "+902129161212",
+          "description": NaN,
+          "opening_hours": "Mo-Su 10:00-00:00",
+          "amenity": "cafe",
+          "cuisine": "italian;pizza;burger;coffee_shop;pasta",
+          "name": "Mizu",
+          "name_en": NaN,
+          "name_uk": NaN,
+          "name_de": NaN,
+          "name_tr": NaN,
+          "name_ru": NaN,
+          "name_ar": NaN,
+          "category": "amenity",
+          "subcategory": "cafe",
+          "address": "Mizu, 93/48, Ye\u015filk\u00f6y Halkal\u0131 Caddesi, Florya, \u015eenlikk\u00f6y Mahallesi, Bak\u0131rk\u00f6y, \u0130stanbul, Marmara B\u00f6lgesi, 34153, T\u00fcrkiye",
+          "walk_route_distance_m": 987.0280472569353
+        }
+      ],
+      "drive": [
+        {
+          "latitude": 40.97927,
+          "longitude": 28.7928752,
+          "city": "\u0130stanbul",
+          "district": NaN,
+          "street": NaN,
+          "branch": NaN,
+          "phone_number": NaN,
+          "description": NaN,
+          "opening_hours": NaN,
+          "amenity": "cafe",
+          "cuisine": NaN,
+          "name": "Desterhan Restoran",
+          "name_en": NaN,
+          "name_uk": NaN,
+          "name_de": NaN,
+          "name_tr": NaN,
+          "name_ru": NaN,
+          "name_ar": "\u0645\u0642\u0647\u0649",
+          "category": "amenity",
+          "subcategory": "cafe",
+          "address": "Desterhan Restoran, Florya Caddesi, \u015eenlikk\u00f6y Mahallesi, Bak\u0131rk\u00f6y, \u0130stanbul, Marmara B\u00f6lgesi, 34153, T\u00fcrkiye",
+          "drive_route_distance_m": 980.4094926260352
+        }
+      ]
+    },
+    "extracted_json": {
+      "subcategories": [
+        "cafe"
+      ],
+      "tags": {
+        "existed": [],
+        "new": [
+          "nearby"
+        ]
+      }
+    },
+    "latitude": 40.971255,
+    "longitude": 28.793878,
+    "search_radius": 1000
+  }
+}

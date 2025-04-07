@@ -10,6 +10,7 @@ from src.config_manager import ConfigManager
 from main import process_request, create_session, get_session_history, get_session_messages
 from src.logger_setup import logger_instance
 
+logger_instance.initialize_logging_context("system", "startup")
 # Initialize FastAPI app
 app = FastAPI(
     title="Location Advice API",
@@ -62,7 +63,6 @@ class MessageResponse(BaseModel):
 async def logging_middleware(request: Request, call_next):
     """Middleware for request logging"""
     request_id = str(uuid.uuid4())
-    logger = logger_instance.get_logger()
 
     # Extract user ID from request if available
     user_id = "unknown"
@@ -73,8 +73,11 @@ async def logging_middleware(request: Request, call_next):
         except:
             pass
 
-    # Set logging context
+    # Set logging context first
     logger_instance.initialize_logging_context(user_id, request_id)
+
+    # Then get the logger
+    logger = logger_instance.get_logger()
 
     # Log request
     logger.info(f"Request: {request.method} {request.url.path}")

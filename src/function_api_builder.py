@@ -78,6 +78,11 @@ def build_location_request(prompt, context_text, user_history, latitude, longitu
         "       \"radius\": ...\n"
         "     }}Δ\n\n"
 
+        "PROMPT HANDLING:\n"
+        "- When prompting for new location, use subcategories such as:\n"
+        "User prompt: okay is there a restaurant close to Mizu, can you check"
+        "your generated prompt: Find restaurants close by\n\n"
+
         "COORDINATE HANDLING:\n"
         "- For 'near [previous place]' queries: Use that place's coordinates from context\n"
         "- Default to user's current coordinates otherwise\n\n"

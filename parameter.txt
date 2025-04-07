@@ -1,0 +1,22 @@
+GET:
+http://127.0.0.1:8000/health
+
+http://127.0.0.1:8000/session/user123/1744037736_56e9313d/history
+
+http://127.0.0.1:8000/session/user123/1744037736_56e9313d/messages
+
+POST:
+http://127.0.0.1:8000/session
+{
+    "user_id": "user1234"
+}
+
+http://127.0.0.1:8000/message
+{
+    "user_id": "user123",
+    "session_id": "1744037736_56e9313d",
+    "message": "Hello, is there a cafe close by.",
+    "latitude": 40.971255,
+    "longitude": 28.793878,
+    "search_radius": 1000
+}

@@ -28,7 +28,6 @@ class Logger:
         self.file_group = file_group
         self._setup_user_logger()
 
-
     def _setup_user_logger(self):
         """Set up a logger for the current thread's user_id and file group."""
         if not self.user_id or not self.file_group:
@@ -66,7 +65,6 @@ class Logger:
 
         # 🔹 Ensure the root logger does NOT send logs to the console
         logging.getLogger().handlers.clear()
-
 
     def get_logger(self):
         """Get the logger for the current thread."""
