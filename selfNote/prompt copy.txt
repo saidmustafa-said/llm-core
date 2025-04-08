@@ -1,12 +1,424 @@
-in the old code, the flow is different, like after change of topic where we need to search for new candidates, it does not ask for input and uses the lon.lat.radius we got from llm rather in new code, it asks for prompt again.
+this is what i asked: 
 
-new code for main.py: # main.py
+i want you to clean this code while keeping its functionality
+
+this is how i want my flow of my chats to be:
+
+StepCurrent SystemCorrect System After new classification detectedSends immediate "Starting search..." responseDO NOT send any message yet Search executionDoesn't happenTrigger search immediately Advice generationDoesn't happenGenerate advice after search User experienceConfusing ("starting search" message)Smooth and helpful ("here are restaurants")
+
+currently after classification_agent detection it returns: new_parameters = { "prompt": advice_result.get("prompt", user_input), "longitude": advice_result.get("longitude", longitude), "latitude": advice_result.get("latitude", latitude), "radius": advice_result.get("radius", search_radius) }
+
+but rather than returning, it will go back to use the prompt for classification and then use the "longitude": advice_result.get("longitude", longitude), "latitude": advice_result.get("latitude", latitude), "radius": advice_result.get("radius", search_radius) for the poi and then find the top candidate and then finally give it it llm_advice and then it returns a response for the user
+
+but that does not solve the problem it is having with recursive loop, the solution might be something else, or is it calling the wrong *handle*classification since there is 2 ? and if we do Recursion Control: it does not stop it falling in that trap again and will run 3 times and then stop, does not provide a solution for this api system
+
+this is what you have previously said: 
+
+I see the issue. The classification agent handling is causing a recursive loop because when a classification_agent action is detected, it's calling _handle_classification which might again return a classification_agent action, potentially causing an infinite recursion.
+
+Let me fix this loop issue by adding a recursion limiter:
+
+{code block}{code block}
+
+Key Changes to Fix the Infinite Loop Issue
+
+Added Recursion Control:
+
+Implemented a recursion depth counter and maximum recursion limit (set to 3)
+
+This prevents the system from getting stuck in an infinite loop when classification_agent keeps triggering new classifications
+
+Changed Function Call Structure:
+
+When the system detects a classification_agent action, it now calls the top-level process_user_input with an incremented recursion depth instead of calling _handle_classification directly
+
+This ensures proper tracking of recursion depth
+
+Added Recursion Depth Parameter:
+
+Added recursion_depth parameter to all handler methods
+
+Each time a recursive call is made, the depth is incremented
+
+Early Termination on Max Recursion:
+
+Added a check at the beginning of process_user_input to detect if maximum recursion depth has been reached
+
+Returns a user-friendly message asking for more specific information when the recursion limit is hit
+
+Smart Message Logging:
+
+Only logs user messages on the initial call (recursion_depth = 0), not in recursive calls
+
+These changes ensure the system can handle redirects and refinements from the classification agent without getting stuck in infinite loops. If a conversation gets too complex with multiple redirections, the system will gracefully exit and ask the user for more specific information.
+
+
+
+flow_manager.py:
+# flow_manager.py
+
+from typing import Dict, Any, Optional, Tuple
+from src.managers.state.state_manager import StateManager
+from src.managers.history.history_manager import HistoryManager
+from src.data_types import TopCandidates
+from src.get_location_advice import get_location_advice
+from src.get_top_candidates import find_top_candidates
+from src.poi_filter import POIManager
+from src.llamarequest import llm_api
+from src.logger_setup import get_logger
+
+
+class FlowManager:
+    """
+    Controls the user journey flow through the application,
+    managing state transitions and history logging.
+    """
+
+    def __init__(self, state_manager: StateManager, history_manager: HistoryManager):
+        """
+        Initialize the FlowManager with state and history managers.
+
+        Args:
+            state_manager: Manager for storing and retrieving session state
+            history_manager: Manager for logging conversation history
+        """
+        self.state_manager = state_manager
+        self.history_manager = history_manager
+        self.poi_manager = POIManager()
+        self.logger = get_logger()
+
+    def process_user_input(self, user_id: str, session_id: str, user_input: str,
+                           latitude: float = 40.971255, longitude: float = 28.793878,
+                           search_radius: int = 1000) -> Dict[str, Any]:
+        """
+        Process a user input message and return the appropriate response.
+
+        Args:
+            user_id: Unique identifier for the user
+            session_id: Unique identifier for the current session
+            user_input: Text message from the user
+            latitude: User's current latitude
+            longitude: User's current longitude
+            search_radius: Search radius in meters for POIs
+
+        Returns:
+            Dict containing response and any additional action information
+        """
+        # Log the user message
+        self.history_manager.log_user_message(user_id, session_id, user_input)
+
+        # Get or create a session state
+        session = self.state_manager.get_session(user_id, session_id)
+        if not session:
+            self.logger.warning(
+                f"Session {session_id} not found, creating new session")
+            session_id = self.state_manager.create_session(user_id)
+            session = self.state_manager.get_session(user_id, session_id)
+
+        # Get current state from session
+        current_state = session.get("current_state", "initial")
+        session_data = session.get("data", {})
+
+        # Get conversation history
+        formatted_history = self.history_manager.get_formatted_history(
+            user_id, session_id)
+
+        # Process based on current state
+        if current_state == "initial" or current_state == "new_query":
+            return self._handle_classification(user_id, session_id, user_input, formatted_history,
+                                               latitude, longitude, search_radius, session)
+        elif current_state == "providing_advice":
+            return self._handle_advice_continuation(user_id, session_id, user_input, formatted_history,
+                                                    session_data, session)
+        elif current_state == "clarification_needed":
+            return self._handle_clarification(user_id, session_id, user_input, formatted_history,
+                                              session_data, session)
+        else:
+            # Unknown state, reset to initial
+            self.logger.warning(
+                f"Unknown state: {current_state}, resetting to initial")
+            session["current_state"] = "initial"
+            self.state_manager.save_session(user_id, session_id, session)
+            return {
+                "response": "I seem to have lost track of our conversation. Let's start over. What can I help you find?",
+                "status": "reset"
+            }
+
+    def _handle_classification(self, user_id: str, session_id: str, user_input: str,
+                               formatted_history: str, latitude: float, longitude: float,
+                               search_radius: int, session: Dict[str, Any]) -> Dict[str, Any]:
+        """Handle the classification state for a new query"""
+        self.logger.info(f"Processing classification for session {session_id}")
+
+        # Get POI subcategories for LLM context
+        subcategories = self.poi_manager.get_poi_data(
+            latitude, longitude, search_radius)
+
+        # Call LLM for classification
+        extracted_json = llm_api(user_input, formatted_history, subcategories)
+
+        # Check if clarification is needed
+        if "clarification" in extracted_json:
+            clarification_value = extracted_json.get("clarification")
+
+            # Handle different clarification formats
+            question = ""
+            if isinstance(clarification_value, str):
+                question = clarification_value
+            elif isinstance(clarification_value, dict) and "question" in clarification_value:
+                question = clarification_value.get("question", "")
+            else:
+                question = "Please provide more information"
+
+            # Update session state for clarification
+            session["current_state"] = "clarification_needed"
+            session["data"] = {
+                "original_prompt": user_input,
+                "clarification_question": question,
+                "latitude": latitude,
+                "longitude": longitude,
+                "search_radius": search_radius
+            }
+            self.state_manager.save_session(user_id, session_id, session)
+
+            # Log assistant's clarification request
+            self.history_manager.log_assistant_message(
+                user_id, session_id, question)
+
+            return {
+                "response": question,
+                "status": "clarification_needed"
+            }
+
+        # Check for subcategories to search
+        if "subcategories" in extracted_json and "tags" in extracted_json:
+            subcategories = extracted_json.get("subcategories", [])
+            self.logger.info(f"Identified subcategories: {subcategories}")
+
+            # Get POI data for identified subcategories
+            candidates = self.poi_manager.get_poi_data(
+                latitude, longitude, search_radius, subcategories)
+
+            if not candidates:
+                self.logger.warning("No POIs found for given criteria")
+                # Update session state
+                session["current_state"] = "new_query"
+                self.state_manager.save_session(user_id, session_id, session)
+
+                response_text = "I couldn't find any places matching your criteria. Could you try with different criteria or a wider search radius?"
+                self.history_manager.log_assistant_message(
+                    user_id, session_id, response_text)
+
+                return {
+                    "response": response_text,
+                    "status": "no_results"
+                }
+
+            # Find top candidates
+            num_candidates = 4  # Default value
+            top_candidates = find_top_candidates(
+                candidates, latitude, longitude, search_radius, num_candidates)
+
+            if not isinstance(top_candidates, dict):
+                top_candidates = {"default": top_candidates}
+
+            # Get location advice for top candidates
+            try:
+                advice_result = get_location_advice(user_input, formatted_history, top_candidates,
+                                                    latitude, longitude, search_radius)
+
+                # Update session state
+                session["current_state"] = "providing_advice"
+                session["data"] = {
+                    "prompt": user_input,
+                    "top_candidates": top_candidates,
+                    "extracted_json": extracted_json,
+                    "latitude": latitude,
+                    "longitude": longitude,
+                    "search_radius": search_radius
+                }
+                self.state_manager.save_session(user_id, session_id, session)
+
+                # Check advice result format
+                if "response" in advice_result:
+                    # Standard response
+                    response_text = advice_result.get("response")
+                    continuation = str(advice_result.get(
+                        "continuation", "false")).lower() == "true"
+
+                    # Log assistant response
+                    self.history_manager.log_assistant_message(
+                        user_id, session_id, response_text)
+
+                    return {
+                        "response": response_text,
+                        "status": "advice_provided",
+                        "continuation": continuation
+                    }
+                elif "action" in advice_result and advice_result["action"] == "classification_agent":
+                    # Special case: new classification request
+                    new_parameters = {
+                        "prompt": advice_result.get("prompt", user_input),
+                        "longitude": advice_result.get("longitude", longitude),
+                        "latitude": advice_result.get("latitude", latitude),
+                        "radius": advice_result.get("radius", search_radius)
+                    }
+
+                    # Update state for new query
+                    session["current_state"] = "new_query"
+                    session["data"] = new_parameters
+                    self.state_manager.save_session(
+                        user_id, session_id, session)
+
+                    return {
+                        "response": f"Starting new search with coordinates: {new_parameters['latitude']}, {new_parameters['longitude']} and radius: {new_parameters['radius']}m",
+                        "status": "new_classification",
+                        "parameters": new_parameters
+                    }
+                else:
+                    self.logger.warning(
+                        "Unknown response format from location advice")
+                    return {
+                        "response": "I couldn't process your request properly. Let's try again with a new query.",
+                        "status": "error"
+                    }
+
+            except Exception as e:
+                self.logger.error(f"Location advice error: {str(e)}")
+                session["current_state"] = "new_query"
+                self.state_manager.save_session(user_id, session_id, session)
+
+                return {
+                    "response": f"I encountered an error while processing your request: {str(e)}. Let's try again.",
+                    "status": "error"
+                }
+        else:
+            self.logger.warning("No subcategories found in LLM response")
+            session["current_state"] = "new_query"
+            self.state_manager.save_session(user_id, session_id, session)
+
+            response_text = "I couldn't identify what you're looking for. Could you be more specific about the type of place you want to find?"
+            self.history_manager.log_assistant_message(
+                user_id, session_id, response_text)
+
+            return {
+                "response": response_text,
+                "status": "no_subcategories"
+            }
+
+    def _handle_clarification(self, user_id: str, session_id: str, user_input: str,
+                              formatted_history: str, session_data: Dict[str, Any],
+                              session: Dict[str, Any]) -> Dict[str, Any]:
+        """Handle the clarification state when LLM needs more information"""
+        self.logger.info(f"Processing clarification for session {session_id}")
+
+        # Get stored parameters
+        latitude = session_data.get("latitude", 40.971255)
+        longitude = session_data.get("longitude", 28.793878)
+        search_radius = session_data.get("search_radius", 1000)
+
+        # Set state back to new_query to re-process with clarification
+        session["current_state"] = "new_query"
+        self.state_manager.save_session(user_id, session_id, session)
+
+        # Process with the clarification input as a new query
+        return self._handle_classification(user_id, session_id, user_input, formatted_history,
+                                           latitude, longitude, search_radius, session)
+
+    def _handle_advice_continuation(self, user_id: str, session_id: str, user_input: str,
+                                    formatted_history: str, session_data: Dict[str, Any],
+                                    session: Dict[str, Any]) -> Dict[str, Any]:
+        """Handle continuations when user asks follow-up questions about locations"""
+        self.logger.info(
+            f"Processing advice continuation for session {session_id}")
+
+        # Get stored parameters
+        top_candidates = session_data.get("top_candidates", {})
+        latitude = session_data.get("latitude", 40.971255)
+        longitude = session_data.get("longitude", 28.793878)
+        search_radius = session_data.get("search_radius", 1000)
+
+        try:
+            # Get follow-up advice
+            advice_result = get_location_advice(user_input, formatted_history, top_candidates,
+                                                latitude, longitude, search_radius)
+
+            # Check advice result format
+            if "response" in advice_result:
+                # Standard response
+                response_text = advice_result.get("response")
+                continuation = str(advice_result.get(
+                    "continuation", "false")).lower() == "true"
+
+                # Log assistant response
+                self.history_manager.log_assistant_message(
+                    user_id, session_id, response_text)
+
+                # If not continuing, set state back to new_query
+                if not continuation:
+                    session["current_state"] = "new_query"
+                    self.state_manager.save_session(
+                        user_id, session_id, session)
+
+                return {
+                    "response": response_text,
+                    "status": "advice_provided",
+                    "continuation": continuation
+                }
+            elif "action" in advice_result and advice_result["action"] == "classification_agent":
+                # Special case: new classification request
+                new_parameters = {
+                    "prompt": advice_result.get("prompt", user_input),
+                    "longitude": advice_result.get("longitude", longitude),
+                    "latitude": advice_result.get("latitude", latitude),
+                    "radius": advice_result.get("radius", search_radius)
+                }
+
+                # Update state for new query
+                session["current_state"] = "new_query"
+                session["data"] = new_parameters
+                self.state_manager.save_session(user_id, session_id, session)
+
+                return {
+                    "response": f"Starting new search with coordinates: {new_parameters['latitude']}, {new_parameters['longitude']} and radius: {new_parameters['radius']}m",
+                    "status": "new_classification",
+                    "parameters": new_parameters
+                }
+            else:
+                self.logger.warning(
+                    "Unknown response format from location advice")
+                session["current_state"] = "new_query"
+                self.state_manager.save_session(user_id, session_id, session)
+
+                return {
+                    "response": "I couldn't process your request properly. Let's try again with a new query.",
+                    "status": "error"
+                }
+
+        except Exception as e:
+            self.logger.error(f"Location advice error: {str(e)}")
+            session["current_state"] = "new_query"
+            self.state_manager.save_session(user_id, session_id, session)
+
+            return {
+                "response": f"I encountered an error while processing your request: {str(e)}. Let's try again.",
+                "status": "error"
+            }
+
+    def create_new_session(self, user_id: str) -> str:
+        """Create a new session and return the session ID"""
+        self.logger.info(f"Creating new session for user {user_id}")
+        return self.state_manager.create_session(user_id)
+
+
+main.py: 
+# main.py
 
 from typing import Dict, Any, Optional, Tuple
 from src.managers.state.state_manager import StateManager
 from src.managers.history.history_manager import HistoryManager
 from src.flow_manager import FlowManager
-from src.logger_setup import logger_instance
+from src.logger_setup import session_logger, get_logger
 
 
 def process_request(user_id: str, session_id: str, user_input: str,
@@ -32,7 +444,7 @@ def process_request(user_id: str, session_id: str, user_input: str,
     Returns:
         Dict containing response and any additional action information
     """
-    logger = logger_instance.get_logger()
+    logger = get_logger()
     logger.info(f"Processing request for user {user_id}, session {session_id}")
 
     # If managers are not provided, use default JSON implementations
@@ -81,7 +493,7 @@ def create_session(user_id: str, state_manager: Optional[StateManager] = None) -
     Returns:
         New session ID
     """
-    logger = logger_instance.get_logger()
+    logger = get_logger()
     logger.info(f"Creating new session for user {user_id}")
 
     # If state manager is not provided, use default JSON implementation
@@ -96,7 +508,10 @@ def create_session(user_id: str, state_manager: Optional[StateManager] = None) -
     flow_manager = FlowManager(state_manager, history_manager)
 
     # Create new session
-    return flow_manager.create_new_session(user_id)
+    session_id = flow_manager.create_new_session(user_id)
+    logger.info(f"Created session ID: {session_id} for user: {user_id}")
+
+    return session_id
 
 
 def get_session_history(user_id: str, session_id: str, history_manager: Optional[HistoryManager] = None) -> str:
@@ -111,7 +526,7 @@ def get_session_history(user_id: str, session_id: str, history_manager: Optional
     Returns:
         Formatted history string
     """
-    logger = logger_instance.get_logger()
+    logger = get_logger()
     logger.info(f"Getting history for user {user_id}, session {session_id}")
 
     # If history manager is not provided, use default JSON implementation
@@ -135,7 +550,7 @@ def get_session_messages(user_id: str, session_id: str, history_manager: Optiona
     Returns:
         List of message dictionaries
     """
-    logger = logger_instance.get_logger()
+    logger = get_logger()
     logger.info(f"Getting messages for user {user_id}, session {session_id}")
 
     # If history manager is not provided, use default JSON implementation
@@ -145,409 +560,3 @@ def get_session_messages(user_id: str, session_id: str, history_manager: Optiona
         logger.debug("Created default JSONHistoryManager")
 
     return history_manager.get_history(user_id, session_id)
-
-
-# Command line interface for testing (will be replaced by API)
-if __name__ == "__main__":
-    user_id = "test_user"
-    logger_instance.initialize_logging_context(user_id, 'cli_execution')
-    logger = logger_instance.get_logger()
-
-    # Create managers
-    from src.managers.state.json_state_manager import JSONStateManager
-    from src.managers.history.json_history_manager import JSONHistoryManager
-    state_manager = JSONStateManager()
-    history_manager = JSONHistoryManager()
-
-    # Create flow manager
-    flow_manager = FlowManager(state_manager, history_manager)
-
-    # Get or create session
-    conversation_id_input = input(
-        "Enter session ID (or '0' for a new session): ").strip()
-
-    if conversation_id_input == "0":
-        # Create a new session
-        session_id = flow_manager.create_new_session(user_id)
-        print(f"Created new session with ID: {session_id}")
-    else:
-        # Use existing session
-        session_id = conversation_id_input
-        session = state_manager.get_session(user_id, session_id)
-        if session:
-            print(f"Using existing session with ID: {session_id}")
-        else:
-            print(f"Session ID {session_id} not found. Creating a new one.")
-            session_id = flow_manager.create_new_session(user_id)
-
-    # Show history
-    messages = history_manager.get_history(user_id, session_id)
-    if messages:
-        print("\n--- Conversation History ---")
-        for msg in messages:
-            event_type = msg.get("type", "unknown")
-            content = msg.get("content", "")
-
-            if event_type == "user_message":
-                print(f"User: {content}")
-            elif event_type == "assistant_message":
-                print(f"Bot: {content}")
-        print("--- End of History ---\n")
-    else:
-        print("No previous messages in this session.")
-
-    # Default parameters
-    latitude = 40.971255
-    longitude = 28.793878
-    search_radius = 1000
-
-    # Main interaction loop
-    while True:
-        user_input = input("\nEnter your prompt (or type 'exit' to quit): ")
-        if user_input.lower() == 'exit':
-            break
-
-        # Process request
-        response = flow_manager.process_user_input(
-            user_id, session_id, user_input, latitude, longitude, search_radius
-        )
-
-        # Print response
-        print(f"\nResponse: {response.get('response', 'No response')}")
-
-        # Handle parameter changes
-        if response.get("status") == "new_classification" and "parameters" in response:
-            params = response["parameters"]
-            latitude = params.get("latitude", latitude)
-            longitude = params.get("longitude", longitude)
-            search_radius = params.get("radius", search_radius)
-            print(
-                f"Updated parameters: lat={latitude}, lon={longitude}, radius={search_radius}")
-
-
-
-old code for main.py:
-from src.data_types import LLMResponse, TopCandidates
-from src.get_location_advice import get_location_advice
-from src.get_top_candidates import find_top_candidates
-from src.poi_filter import POIManager
-from src.llamarequest import llm_api
-from src.history_manager import HistoryManager
-import os
-from src.logger_setup import logger_instance
-
-poi_manager = POIManager()
-
-
-def handle_clarification_loop(prompt: str, formatted_history: str, conversation_id: str, user_id: str, history_manager: HistoryManager, user_lat, user_lon, search_radius) -> tuple:
-    """
-    Handles any clarification needed from the LLM response in a while loop.
-    Returns a tuple of (updated_prompt, extracted_json)
-    """
-    logger = logger_instance.get_logger()
-    logger.info("Initiating LLM API call")
-
-    subcategories = poi_manager.get_poi_data(
-        user_lat, user_lon, search_radius)
-    # Initial LLM call
-    extracted_json = llm_api(prompt, formatted_history, subcategories)
-    logger.debug(f"LLM response received: {extracted_json}")
-
-    # Enter clarification loop if needed
-    while "clarification" in extracted_json:
-        clarification_value = extracted_json.get("clarification")
-
-        # Handle different clarification formats
-        question = ""
-        if isinstance(clarification_value, str):
-            question = clarification_value
-        elif isinstance(clarification_value, dict) and "question" in clarification_value:
-            question = clarification_value.get("question", "")
-        else:
-            question = "Please provide more information"
-
-        logger.info(
-            f"Clarification requested for conversation {conversation_id}: {question}")
-        print(f"\nClarification Needed: {question}")
-
-        # Get user clarification input
-        additional_input = input("Provide clarification: ")
-        logger.info("User provided clarification input")
-
-        # Save the user's clarification to history
-        history_manager.add_user_message(
-            user_id, conversation_id, additional_input)
-        logger.debug("Clarification added to conversation history")
-
-        # Fetch updated history including the new message
-        formatted_history = history_manager.get_formatted_history(
-            user_id, conversation_id)
-        logger.debug("Retrieved updated conversation history")
-
-        # Re-run the LLM API with the new input and updated history
-        logger.info("Re-running LLM API with clarification")
-
-        subcategories = poi_manager.get_poi_data(
-            user_lat, user_lon, search_radius)
-        extracted_json = llm_api(
-            additional_input, formatted_history, subcategories)
-        logger.debug(f"Clarification response received: {extracted_json}")
-
-        # Update the prompt to reflect the new input
-        prompt = additional_input
-
-    logger.info("Clarification handling complete")
-    return prompt, extracted_json
-
-
-def process_classification(user_prompt: str, formatted_history: str, conversation_id: str,
-                           user_id: str, history_manager: HistoryManager,
-                           latitude: float, longitude: float, search_radius: int,
-                           num_candidates: int) -> tuple:
-    """
-    Process a classification request to get candidates.
-    Returns a tuple of (top_candidates, updated_prompt, extracted_json)
-    """
-    logger = logger_instance.get_logger()
-    logger.info(f"Processing new query for conversation {conversation_id}")
-
-    # Save the user message to history
-    history_manager.add_user_message(user_id, conversation_id, user_prompt)
-    logger.debug("User message added to history")
-
-    # Handle LLM API call with clarification loop
-    updated_prompt, extracted_json = handle_clarification_loop(
-        user_prompt, formatted_history, conversation_id, user_id, history_manager, latitude, longitude, search_radius)
-
-    if not extracted_json or "error" in extracted_json:
-        logger.error("LLM processing error occurred")
-        print("Error in LLM processing. Please try again.")
-        return None, updated_prompt, extracted_json
-
-    # Check if we have subcategories for POI search
-    if "subcategories" in extracted_json and "tags" in extracted_json:
-        subcategories = extracted_json.get("subcategories", [])
-        logger.info(f"Identified subcategories: {subcategories}")
-
-        logger.info("Fetching POI data from API")
-        candidates = poi_manager.get_poi_data(
-            latitude, longitude, search_radius, subcategories)
-        if not candidates:
-            logger.warning("No POIs found for given criteria")
-            print("No POIs found based on your criteria.")
-            return None, updated_prompt, extracted_json
-
-        logger.debug(f"Found {len(candidates)} POI candidates")
-
-        logger.info("Selecting top candidates")
-        top_candidates = find_top_candidates(
-            candidates, latitude, longitude, search_radius, num_candidates)
-        if not isinstance(top_candidates, dict):
-            logger.debug("Converting top candidates to default format")
-            top_candidates = {"default": top_candidates}
-
-        logger.info(f"Returning {len(top_candidates)} top candidates")
-        return top_candidates, updated_prompt, extracted_json
-    else:
-        logger.warning("No subcategories found in LLM response")
-        print("Could not identify search categories from your query.")
-        return None, updated_prompt, extracted_json
-
-
-def handle_location_advice_loop(user_prompt: str, formatted_history: str, top_candidates: TopCandidates,
-                                latitude: float, longitude: float, search_radius: int,
-                                conversation_id: str, user_id: str, history_manager: HistoryManager) -> tuple:
-    """
-    Handle the location advice loop, including continuations.
-    Returns a tuple of (continue_current_flow, new_parameters) where new_parameters might contain
-    new location parameters if a new classification agent action is triggered.
-    """
-    logger = logger_instance.get_logger()
-
-    try:
-        logger.info("Generating location advice")
-        extracted_json = get_location_advice(user_prompt, formatted_history, top_candidates,
-                                             latitude, longitude, search_radius)
-        logger.debug(f"Location advice received: {extracted_json}")
-    except Exception as e:
-        logger.error(f"Location advice error: {str(e)}")
-        print(f"Error during location advice processing: {e}")
-        return True, None
-
-    # Check for action type in response
-    if "response" in extracted_json:
-        # It's a continuation response
-        response_text = extracted_json.get("response")
-        continuation = str(extracted_json.get(
-            "continuation", "false")).lower() == "true"
-
-        # Save and display the response
-        history_manager.add_assistant_message(
-            user_id, conversation_id, response_text)
-        logger.info("Assistant response added to history")
-        print("\nLocation Advice:", response_text)
-
-        if continuation:
-            # Continue the current advice flow
-            return True, None
-        else:
-            # End the current flow, start new search with same prompt
-            return False, None
-
-    elif "action" in extracted_json and extracted_json["action"] == "classification_agent":
-        # It's a new search request with specific parameters
-        logger.info("New classification request with parameters")
-
-        # Extract the new parameters
-        new_parameters = {
-            "prompt": extracted_json.get("prompt", user_prompt),
-            "longitude": extracted_json.get("longitude", longitude),
-            "latitude": extracted_json.get("latitude", latitude),
-            "radius": extracted_json.get("radius", search_radius)
-        }
-
-        # End current flow and start new search with new parameters
-        return False, new_parameters
-    else:
-        logger.warning("Unknown response format")
-        print("Received an unknown response format. Starting new search.")
-        return False, None
-
-
-def main():
-    user_id = "test_user"  # Default user id for history tracking
-    logger_instance.initialize_logging_context(user_id, 'api_execution')
-    logger = logger_instance.get_logger()
-    logger.info("Application startup")
-
-    history_manager = HistoryManager()
-    logger.debug("History manager initialized")
-
-    conversation_id_input = input(
-        "Enter conversation ID (or '0' for a new conversation): ").strip()
-
-    if conversation_id_input == "0":
-        # Create a new conversation
-        conversation_id = history_manager.create_conversation(user_id)
-        logger.info(f"Created new conversation: {conversation_id}")
-    else:
-        # Use an existing conversation ID
-        conversation_id = conversation_id_input
-
-        if os.path.exists(history_manager.get_conversation_file_path(user_id, conversation_id)):
-            logger.info(
-                f"Using existing conversation with ID: {conversation_id}")
-            print(f"Using existing conversation with ID: {conversation_id}")
-        else:
-            logger.warning(
-                f"Conversation ID {conversation_id} not found. Creating a new one.")
-            print(
-                f"Conversation ID {conversation_id} not found. Creating a new one.")
-            conversation_id = history_manager.create_conversation(user_id)
-
-    messages = history_manager.get_messages(user_id, conversation_id)
-    if messages:
-        logger.debug(f"Found {len(messages)} historical messages")
-        print("\n--- Conversation History ---")
-        for msg in messages:
-            role = msg.get("role", "")
-            content = msg.get("content", "")
-            if role == "user":
-                print(f"User: {content}")
-            elif role == "assistant":
-                print(f"Bot: {content}")
-        print("--- End of History ---\n")
-    else:
-        logger.debug("No conversation history found")
-        print("No previous messages in this conversation.")
-
-    # Default location parameters
-    longitude = 28.793878
-    latitude = 40.971255
-    search_radius = 1000
-    num_candidates = 4
-    logger.info(
-        f"Using default location: {latitude},{longitude} with radius {search_radius}m")
-
-    # Flag to indicate if we need to get user input or use the existing one
-    need_user_input = True
-    user_prompt = ""
-
-    while True:
-        # Get user prompt only if needed
-        if need_user_input:
-            user_prompt = input(
-                "\nEnter your prompt (or type 'exit' to quit): ")
-            if user_prompt.lower() == 'exit':
-                logger.info("User initiated exit")
-                break
-            logger.debug(f"User input received: {user_prompt}")
-            need_user_input = False  # Reset the flag after getting input
-
-        # Get formatted history
-        formatted_history = history_manager.get_formatted_history(
-            user_id, conversation_id)
-        logger.debug("Formatted history retrieved")
-
-        # Process new query to get classification and candidates
-        top_candidates, user_prompt, extracted_json = process_classification(
-            user_prompt, formatted_history, conversation_id, user_id, history_manager,
-            latitude, longitude, search_radius, num_candidates)
-
-        if not top_candidates:
-            logger.warning("Classification processing failed, continuing loop")
-            need_user_input = True  # Need new input since this one failed
-            continue
-
-        # Enter the location advice loop
-        continue_current_flow = True
-        while continue_current_flow:
-            # Get formatted history again as it might have been updated
-            formatted_history = history_manager.get_formatted_history(
-                user_id, conversation_id)
-
-            # Process location advice
-            continue_current_flow, new_parameters = handle_location_advice_loop(
-                user_prompt, formatted_history, top_candidates,
-                latitude, longitude, search_radius,
-                conversation_id, user_id, history_manager)
-
-            if continue_current_flow:
-                # Get next user prompt for continuation
-                user_prompt = input(
-                    "\nEnter follow-up question (or type 'exit' to quit): ")
-                if user_prompt.lower() == 'exit':
-                    logger.info("User exited during follow-up")
-                    continue_current_flow = False
-                    need_user_input = True  # Reset flag for next iteration
-                    break
-
-                # Save the new prompt to history
-                history_manager.add_user_message(
-                    user_id, conversation_id, user_prompt)
-                logger.debug(f"Follow-up input saved: {user_prompt}")
-
-        # Check if we have new parameters for the next search
-        if new_parameters:
-            logger.info("Updating parameters for new search")
-            user_prompt = new_parameters.get("prompt")
-            latitude = new_parameters.get("latitude")
-            longitude = new_parameters.get("longitude")
-            search_radius = new_parameters.get("radius")
-
-            logger.info(
-                f"New parameters: prompt='{user_prompt}', lat={latitude}, lon={longitude}, radius={search_radius}")
-            print(
-                f"\nStarting new search with coordinates: {latitude}, {longitude} and radius: {search_radius}m")
-
-            # We already have a prompt from the LLM, don't ask for user input
-            need_user_input = False
-        else:
-            # No new parameters, get fresh user input in the next iteration
-            need_user_input = True
-
-    logger.info("Application shutdown")
-
-
-if __name__ == "__main__":
-    main()

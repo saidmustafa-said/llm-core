@@ -1,9 +1,9 @@
 GET:
 http://127.0.0.1:8000/health
 
-http://127.0.0.1:8000/session/user123/1744037736_56e9313d/history
+http://127.0.0.1:8000/session/said/1744089428_df0fa1df/history
 
-http://127.0.0.1:8000/session/user123/1744037736_56e9313d/messages
+http://127.0.0.1:8000/session/said/1744089428_df0fa1df/messages
 
 POST:
 http://127.0.0.1:8000/session

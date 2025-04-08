@@ -68,8 +68,9 @@ class FlowManager:
 
         # Process based on current state
         if current_state == "initial" or current_state == "new_query":
-            return self._handle_classification(user_id, session_id, user_input, formatted_history,
-                                               latitude, longitude, search_radius, session)
+            response = self._process_query(user_id, session_id, user_input, formatted_history,
+                                           latitude, longitude, search_radius, session)
+            return response
         elif current_state == "providing_advice":
             return self._handle_advice_continuation(user_id, session_id, user_input, formatted_history,
                                                     session_data, session)
@@ -87,18 +88,18 @@ class FlowManager:
                 "status": "reset"
             }
 
-    def _handle_classification(self, user_id: str, session_id: str, user_input: str,
-                               formatted_history: str, latitude: float, longitude: float,
-                               search_radius: int, session: Dict[str, Any]) -> Dict[str, Any]:
-        """Handle the classification state for a new query"""
-        self.logger.info(f"Processing classification for session {session_id}")
+    def _process_query(self, user_id: str, session_id: str, user_input: str,
+                       formatted_history: str, latitude: float, longitude: float,
+                       search_radius: int, session: Dict[str, Any]) -> Dict[str, Any]:
+        """Process a new query, including handling classification and location search"""
 
-        # Get POI subcategories for LLM context
-        subcategories = self.poi_manager.get_poi_data(
+        self.logger.info(f"Processing new query for session {session_id}")
+
+        # Step 1: Get text classification from LLM
+        subcategories_for_context = self.poi_manager.get_poi_data(
             latitude, longitude, search_radius)
-
-        # Call LLM for classification
-        extracted_json = llm_api(user_input, formatted_history, subcategories)
+        extracted_json = llm_api(
+            user_input, formatted_history, subcategories_for_context)
 
         # Check if clarification is needed
         if "clarification" in extracted_json:
@@ -138,7 +139,7 @@ class FlowManager:
             subcategories = extracted_json.get("subcategories", [])
             self.logger.info(f"Identified subcategories: {subcategories}")
 
-            # Get POI data for identified subcategories
+            # Step 2: Get POI data for identified subcategories
             candidates = self.poi_manager.get_poi_data(
                 latitude, longitude, search_radius, subcategories)
 
@@ -157,7 +158,7 @@ class FlowManager:
                     "status": "no_results"
                 }
 
-            # Find top candidates
+            # Step 3: Find top candidates
             num_candidates = 4  # Default value
             top_candidates = find_top_candidates(
                 candidates, latitude, longitude, search_radius, num_candidates)
@@ -165,22 +166,10 @@ class FlowManager:
             if not isinstance(top_candidates, dict):
                 top_candidates = {"default": top_candidates}
 
-            # Get location advice for top candidates
+            # Step 4: Get location advice for top candidates
             try:
                 advice_result = get_location_advice(user_input, formatted_history, top_candidates,
                                                     latitude, longitude, search_radius)
-
-                # Update session state
-                session["current_state"] = "providing_advice"
-                session["data"] = {
-                    "prompt": user_input,
-                    "top_candidates": top_candidates,
-                    "extracted_json": extracted_json,
-                    "latitude": latitude,
-                    "longitude": longitude,
-                    "search_radius": search_radius
-                }
-                self.state_manager.save_session(user_id, session_id, session)
 
                 # Check advice result format
                 if "response" in advice_result:
@@ -193,31 +182,46 @@ class FlowManager:
                     self.history_manager.log_assistant_message(
                         user_id, session_id, response_text)
 
+                    # Update session state
+                    session["current_state"] = "providing_advice"
+                    session["data"] = {
+                        "prompt": user_input,
+                        "top_candidates": top_candidates,
+                        "extracted_json": extracted_json,
+                        "latitude": latitude,
+                        "longitude": longitude,
+                        "search_radius": search_radius
+                    }
+                    self.state_manager.save_session(
+                        user_id, session_id, session)
+
                     return {
                         "response": response_text,
                         "status": "advice_provided",
                         "continuation": continuation
                     }
                 elif "action" in advice_result and advice_result["action"] == "classification_agent":
-                    # Special case: new classification request
-                    new_parameters = {
-                        "prompt": advice_result.get("prompt", user_input),
-                        "longitude": advice_result.get("longitude", longitude),
-                        "latitude": advice_result.get("latitude", latitude),
-                        "radius": advice_result.get("radius", search_radius)
-                    }
+                    # Handle location-based redirection by directly processing with new parameters
+                    new_prompt = advice_result.get("prompt", user_input)
+                    new_latitude = advice_result.get("latitude", latitude)
+                    new_longitude = advice_result.get("longitude", longitude)
+                    new_radius = advice_result.get("radius", search_radius)
 
-                    # Update state for new query
-                    session["current_state"] = "new_query"
-                    session["data"] = new_parameters
-                    self.state_manager.save_session(
-                        user_id, session_id, session)
+                    self.logger.info(
+                        f"Using refined search parameters: lat={new_latitude}, lon={new_longitude}, radius={new_radius}")
 
-                    return {
-                        "response": f"Starting new search with coordinates: {new_parameters['latitude']}, {new_parameters['longitude']} and radius: {new_parameters['radius']}m",
-                        "status": "new_classification",
-                        "parameters": new_parameters
-                    }
+                    # Call directly with new coordinates - this is the key change to prevent recursion issues
+                    # but still maintain the seamless flow without intermediate message
+                    return self._direct_location_search(
+                        user_id,
+                        session_id,
+                        new_prompt,
+                        new_latitude,
+                        new_longitude,
+                        new_radius,
+                        session,
+                        formatted_history
+                    )
                 else:
                     self.logger.warning(
                         "Unknown response format from location advice")
@@ -249,6 +253,96 @@ class FlowManager:
                 "status": "no_subcategories"
             }
 
+    def _direct_location_search(self, user_id: str, session_id: str, search_prompt: str,
+                                latitude: float, longitude: float, search_radius: int,
+                                session: Dict[str, Any], formatted_history: str) -> Dict[str, Any]:
+        """
+        Directly perform location search without classification step
+        This handles the case where we've already identified a location to search near
+        """
+        self.logger.info(
+            f"Directly searching for locations with coordinates: {latitude}, {longitude}")
+
+        # For location search, we already know we're looking for restaurants
+        # So we'll directly search with 'restaurant' as the subcategory
+        # This is hard-coded but could be determined from the prompt
+        subcategories = ["restaurant"]
+
+        # Get POI data for restaurants
+        candidates = self.poi_manager.get_poi_data(
+            latitude, longitude, search_radius, subcategories)
+
+        if not candidates:
+            self.logger.warning("No POIs found near specified location")
+            session["current_state"] = "new_query"
+            self.state_manager.save_session(user_id, session_id, session)
+
+            response_text = "I couldn't find any restaurants near that location. Could you try a different location or a wider search radius?"
+            self.history_manager.log_assistant_message(
+                user_id, session_id, response_text)
+
+            return {
+                "response": response_text,
+                "status": "no_results"
+            }
+
+        # Find top candidates
+        num_candidates = 4  # Default value
+        top_candidates = find_top_candidates(
+            candidates, latitude, longitude, search_radius, num_candidates)
+
+        if not isinstance(top_candidates, dict):
+            top_candidates = {"default": top_candidates}
+
+        # Get location advice for top candidates
+        try:
+            advice_result = get_location_advice(search_prompt, formatted_history, top_candidates,
+                                                latitude, longitude, search_radius)
+
+            # Standard response - we expect this to have resolved the classification agent redirection
+            if "response" in advice_result:
+                response_text = advice_result.get("response")
+                continuation = str(advice_result.get(
+                    "continuation", "false")).lower() == "true"
+
+                # Log assistant response
+                self.history_manager.log_assistant_message(
+                    user_id, session_id, response_text)
+
+                # Update session state
+                session["current_state"] = "providing_advice"
+                session["data"] = {
+                    "prompt": search_prompt,
+                    "top_candidates": top_candidates,
+                    "latitude": latitude,
+                    "longitude": longitude,
+                    "search_radius": search_radius
+                }
+                self.state_manager.save_session(user_id, session_id, session)
+
+                return {
+                    "response": response_text,
+                    "status": "advice_provided",
+                    "continuation": continuation
+                }
+            else:
+                self.logger.warning(
+                    "Unexpected response format after direct location search")
+                return {
+                    "response": "I found some restaurants in that area, but I'm having trouble providing specific recommendations. Could you clarify what type of restaurant you're looking for?",
+                    "status": "error"
+                }
+
+        except Exception as e:
+            self.logger.error(f"Direct location search error: {str(e)}")
+            session["current_state"] = "new_query"
+            self.state_manager.save_session(user_id, session_id, session)
+
+            return {
+                "response": f"I encountered an error while searching for restaurants: {str(e)}. Let's try again.",
+                "status": "error"
+            }
+
     def _handle_clarification(self, user_id: str, session_id: str, user_input: str,
                               formatted_history: str, session_data: Dict[str, Any],
                               session: Dict[str, Any]) -> Dict[str, Any]:
@@ -265,8 +359,8 @@ class FlowManager:
         self.state_manager.save_session(user_id, session_id, session)
 
         # Process with the clarification input as a new query
-        return self._handle_classification(user_id, session_id, user_input, formatted_history,
-                                           latitude, longitude, search_radius, session)
+        return self._process_query(user_id, session_id, user_input, formatted_history,
+                                   latitude, longitude, search_radius, session)
 
     def _handle_advice_continuation(self, user_id: str, session_id: str, user_input: str,
                                     formatted_history: str, session_data: Dict[str, Any],
@@ -309,24 +403,23 @@ class FlowManager:
                     "continuation": continuation
                 }
             elif "action" in advice_result and advice_result["action"] == "classification_agent":
-                # Special case: new classification request
-                new_parameters = {
-                    "prompt": advice_result.get("prompt", user_input),
-                    "longitude": advice_result.get("longitude", longitude),
-                    "latitude": advice_result.get("latitude", latitude),
-                    "radius": advice_result.get("radius", search_radius)
-                }
+                # Handle new search with specific location
+                new_prompt = advice_result.get("prompt", user_input)
+                new_latitude = advice_result.get("latitude", latitude)
+                new_longitude = advice_result.get("longitude", longitude)
+                new_radius = advice_result.get("radius", search_radius)
 
-                # Update state for new query
-                session["current_state"] = "new_query"
-                session["data"] = new_parameters
-                self.state_manager.save_session(user_id, session_id, session)
-
-                return {
-                    "response": f"Starting new search with coordinates: {new_parameters['latitude']}, {new_parameters['longitude']} and radius: {new_parameters['radius']}m",
-                    "status": "new_classification",
-                    "parameters": new_parameters
-                }
+                # Directly search with the new location parameters
+                return self._direct_location_search(
+                    user_id,
+                    session_id,
+                    new_prompt,
+                    new_latitude,
+                    new_longitude,
+                    new_radius,
+                    session,
+                    formatted_history
+                )
             else:
                 self.logger.warning(
                     "Unknown response format from location advice")

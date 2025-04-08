@@ -4,7 +4,7 @@ from typing import Dict, Any, Optional, Tuple
 from src.managers.state.state_manager import StateManager
 from src.managers.history.history_manager import HistoryManager
 from src.flow_manager import FlowManager
-from src.logger_setup import get_logger
+from src.logger_setup import session_logger, get_logger
 
 
 def process_request(user_id: str, session_id: str, user_input: str,
@@ -47,25 +47,10 @@ def process_request(user_id: str, session_id: str, user_input: str,
     # Create flow manager
     flow_manager = FlowManager(state_manager, history_manager)
 
-    # Process the request
-    response = flow_manager.process_user_input(
+    # Process the request - all logic now handled in flow_manager
+    return flow_manager.process_user_input(
         user_id, session_id, user_input, latitude, longitude, search_radius
     )
-
-    # Handle special parameter change case
-    if response.get("status") == "new_classification" and "parameters" in response:
-        params = response["parameters"]
-        # Re-process with new parameters
-        return flow_manager.process_user_input(
-            user_id,
-            session_id,
-            params.get("prompt", user_input),
-            params.get("latitude", latitude),
-            params.get("longitude", longitude),
-            params.get("radius", search_radius)
-        )
-
-    return response
 
 
 def create_session(user_id: str, state_manager: Optional[StateManager] = None) -> str:
@@ -151,8 +136,6 @@ def get_session_messages(user_id: str, session_id: str, history_manager: Optiona
 # # Command line interface for testing (will be replaced by API)
 # if __name__ == "__main__":
 #     user_id = "test_user"
-#     logger_instance.initialize_logging_context(user_id, 'cli_execution')
-#     logger = get_logger()
 
 #     # Create managers
 #     from src.managers.state.json_state_manager import JSONStateManager
@@ -180,7 +163,8 @@ def get_session_messages(user_id: str, session_id: str, history_manager: Optiona
 #         else:
 #             print(f"Session ID {session_id} not found. Creating a new one.")
 #             session_id = flow_manager.create_new_session(user_id)
-
+#     session_logger.start_session(user_id, session_id)
+#     logger = get_logger()
 #     # Show history
 #     messages = history_manager.get_history(user_id, session_id)
 #     if messages:

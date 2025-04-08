@@ -33,9 +33,9 @@ class UserMessageRequest(BaseModel):
     user_id: str = Field(..., description="User identifier")
     session_id: str = Field(..., description="Session identifier")
     message: str = Field(..., description="User message")
-    latitude: float = Field(40.971255, description="User latitude")
-    longitude: float = Field(28.793878, description="User longitude")
-    search_radius: int = Field(1000, description="Search radius in meters")
+    latitude: float = Field(..., description="User latitude")
+    longitude: float = Field(..., description="User longitude")
+    search_radius: int = Field(..., description="Search radius in meters")
 
 
 class CreateSessionRequest(BaseModel):
