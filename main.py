@@ -8,8 +8,8 @@ from src.logger_setup import session_logger, get_logger
 
 
 def process_request(user_id: str, session_id: str, user_input: str,
-                    latitude: float = 40.971255, longitude: float = 28.793878,
-                    search_radius: int = 1000,
+                    latitude: float, longitude: float,
+                    search_radius: int,
                     state_manager: Optional[StateManager] = None,
                     history_manager: Optional[HistoryManager] = None) -> Dict[str, Any]:
     """
@@ -131,7 +131,6 @@ def get_session_messages(user_id: str, session_id: str, history_manager: Optiona
         logger.debug("Created default JSONHistoryManager")
 
     return history_manager.get_history(user_id, session_id)
-
 
 # # Command line interface for testing (will be replaced by API)
 # if __name__ == "__main__":

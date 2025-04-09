@@ -10,45 +10,6 @@ from src.logger_setup import get_logger
 import json
 
 
-@timing_decorator
-def retrieve_tags():
-    logger = get_logger()
-    logger.info("Retrieving tags and subcategories from CSV files.")
-
-    tags_string, subcategory_string = "None", "None"
-
-    # Check if the tags list file exists and process it
-    if os.path.exists(TAGS_LIST):
-        logger.debug(f"Reading tags from file: {TAGS_LIST}")
-        try:
-            tags_df = pd.read_csv(TAGS_LIST)
-            if 'tags' in tags_df.columns:
-                tags_list = tags_df['tags'].dropna().tolist()
-                tags_string = ", ".join(tags_list) if tags_list else "None"
-                logger.info(f"Tags retrieved: {tags_string}")
-        except Exception as e:
-            logger.error(f"Error reading tags from {TAGS_LIST}: {e}")
-
-    # Check if the category and subcategory list file exists and process it
-    if os.path.exists(CATEGORY_SUBCATEGORY_LIST):
-        logger.debug(
-            f"Reading subcategories from file: {CATEGORY_SUBCATEGORY_LIST}")
-        try:
-            subcategory_df = pd.read_csv(CATEGORY_SUBCATEGORY_LIST)
-            if 'category' in subcategory_df.columns and 'subcategory' in subcategory_df.columns:
-                grouped = subcategory_df.groupby('category')['subcategory'].apply(
-                    lambda x: ",".join(x)).reset_index()
-                subcategory_string = "\n".join(
-                    [f"{row['category']}: {row['subcategory']}" for _, row in grouped.iterrows()])
-                subcategory_string = subcategory_string if subcategory_string else "None"
-                # logger.info(f"Subcategories retrieved: {subcategory_string}")
-        except Exception as e:
-            logger.error(
-                f"Error reading subcategories from {CATEGORY_SUBCATEGORY_LIST}: {e}")
-
-    return tags_string, subcategory_string
-
-
 def extract_content(response):
     """Extracts the JSON content from the response's 'content' field."""
     try:
@@ -66,22 +27,20 @@ def extract_content(response):
 
 
 @timing_decorator
-def llm_api(prompt: str, history, subcategories) -> LLMResponse:
+def llm_api(prompt: str, subcategories) -> LLMResponse:
     logger = get_logger()
     logger.info("Calling LLM API with the provided prompt.")
 
-    existing_tags_str, existing_subcategories_str = retrieve_tags()
-    user_history = history if history else "No previous conversation"
+    # user_history = history if history else "No previous conversation"
     existing_subcategories_str = subcategories
     print(existing_subcategories_str)
 
-    logger.debug(f"Existing tags: {existing_tags_str}")
     logger.debug(f"Existing subcategories: {existing_subcategories_str}")
-    logger.debug("User history: %s", user_history.replace('\n', ' || '))
+    # logger.debug("User history: %s", user_history.replace('\n', ' || '))
 
     # Prepare the API request
     api_request_json = create_classification_request(
-        prompt, user_history, existing_subcategories_str, existing_tags_str, )
+        prompt, existing_subcategories_str, )
     logger.debug(
         f"API request JSON from create_classification_request: {api_request_json}")
 

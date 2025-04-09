@@ -1,8 +1,6 @@
 def create_classification_request(
     prompt,
-    user_context,
     existing_subcategories,
-    existing_tags
 ):
     """Builds the API request payload for location classification without function calling."""
 
@@ -11,13 +9,13 @@ def create_classification_request(
 
         "CURRENT CONTEXT:\n"
         f"Existing subcategories: {existing_subcategories}\n"
-        f"Existing descriptive tags: {existing_tags}\n"
-        f"User conversation history:\n{user_context}\n\n"
 
         "CLASSIFICATION RULES:\n"
         "1. Match the user’s prompt to relevant subcategories (return only subcategory names, not general categories)\n"
         "2. Identify existing descriptive tags that fit, and create new ones if needed\n"
         "3. If the user intent is unclear, return a clarification question **instead** of classification\n\n"
+        "4. If the user intent does not match a subcategory, return a clarification question saying there is no such place close to you, try increasing the radius\n\n"
+
 
         "RESPONSE FORMATS:\n"
         "If classification is clear:\n"

@@ -1,9 +1,8 @@
 # flow_manager.py
 
-from typing import Dict, Any, Optional, Tuple
+from typing import Dict, Any
 from src.managers.state.state_manager import StateManager
 from src.managers.history.history_manager import HistoryManager
-from src.data_types import TopCandidates
 from src.get_location_advice import get_location_advice
 from src.get_top_candidates import find_top_candidates
 from src.poi_filter import POIManager
@@ -98,9 +97,10 @@ class FlowManager:
         # Step 1: Get text classification from LLM
         subcategories_for_context = self.poi_manager.get_poi_data(
             latitude, longitude, search_radius)
+        print("Subcategories for context:", subcategories_for_context)
         extracted_json = llm_api(
-            user_input, formatted_history, subcategories_for_context)
-
+            user_input, subcategories_for_context)
+        print("Extracted JSON:", extracted_json)
         # Check if clarification is needed
         if "clarification" in extracted_json:
             clarification_value = extracted_json.get("clarification")
@@ -135,7 +135,7 @@ class FlowManager:
             }
 
         # Check for subcategories to search
-        if "subcategories" in extracted_json and "tags" in extracted_json:
+        if "subcategories" in extracted_json:
             subcategories = extracted_json.get("subcategories", [])
             self.logger.info(f"Identified subcategories: {subcategories}")
 
@@ -162,10 +162,10 @@ class FlowManager:
             num_candidates = 4  # Default value
             top_candidates = find_top_candidates(
                 candidates, latitude, longitude, search_radius, num_candidates)
-
+            print("Top candidates1:", top_candidates)
             if not isinstance(top_candidates, dict):
                 top_candidates = {"default": top_candidates}
-
+            print("Top candidates2:", top_candidates)
             # Step 4: Get location advice for top candidates
             try:
                 advice_result = get_location_advice(user_input, formatted_history, top_candidates,
@@ -262,17 +262,24 @@ class FlowManager:
         """
         self.logger.info(
             f"Directly searching for locations with coordinates: {latitude}, {longitude}")
+        print(
+            f"Directly searching for locations with coordinates: {latitude}, {longitude}")
 
-        # For location search, we already know we're looking for restaurants
-        # So we'll directly search with 'restaurant' as the subcategory
-        # This is hard-coded but could be determined from the prompt
-        subcategories = ["restaurant"]
+        subcategories_for_context = self.poi_manager.get_poi_data(
+            latitude, longitude, search_radius)
+        print("Subcategories search for context:", subcategories_for_context)
+        extracted_json = llm_api(
+            search_prompt, subcategories_for_context)
+        subcategories = extracted_json.get("subcategories", [])
+        print("Extracted JSON search:", subcategories)
 
         # Get POI data for restaurants
         candidates = self.poi_manager.get_poi_data(
             latitude, longitude, search_radius, subcategories)
+        print("Candidates search:", candidates)
 
         if not candidates:
+            print("No POIs found near specified location")
             self.logger.warning("No POIs found near specified location")
             session["current_state"] = "new_query"
             self.state_manager.save_session(user_id, session_id, session)
@@ -290,7 +297,7 @@ class FlowManager:
         num_candidates = 4  # Default value
         top_candidates = find_top_candidates(
             candidates, latitude, longitude, search_radius, num_candidates)
-
+        print("Top candidates search:", top_candidates)
         if not isinstance(top_candidates, dict):
             top_candidates = {"default": top_candidates}
 
@@ -350,9 +357,9 @@ class FlowManager:
         self.logger.info(f"Processing clarification for session {session_id}")
 
         # Get stored parameters
-        latitude = session_data.get("latitude", 40.971255)
-        longitude = session_data.get("longitude", 28.793878)
-        search_radius = session_data.get("search_radius", 1000)
+        latitude = session_data.get("latitude")
+        longitude = session_data.get("longitude")
+        search_radius = session_data.get("search_radius")
 
         # Set state back to new_query to re-process with clarification
         session["current_state"] = "new_query"
