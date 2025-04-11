@@ -7,7 +7,7 @@ from config import LLAMA_API
 from src.utils import timing_decorator
 
 from src.data_types import TopCandidates, LocationAdviceResponse
-from src.function_api_builder import build_location_request
+from src.function_api_builder import build_location_request, build_location_request_search
 from src.logger_setup import get_logger
 
 
@@ -72,7 +72,7 @@ def extract_content(response):
 
 @timing_decorator
 def get_location_advice(prompt, history, top_candidates: TopCandidates,
-                        latitude, longitude, search_radius) -> LocationAdviceResponse:
+                        latitude, longitude, search_radius, flag = False) -> LocationAdviceResponse:
     """Main function to get location advice with structured response handling
 
     Returns:
@@ -96,11 +96,18 @@ def get_location_advice(prompt, history, top_candidates: TopCandidates,
     logger.debug("User history: %s", user_history.replace('\n', ' || '))
     logger.debug("Formatted candidates: %s", formatted_candidates)
 
-    # Build API request
-    api_request = build_location_request(
-        prompt, formatted_candidates, user_history,
-        latitude, longitude, search_radius
-    )
+    if flag == True:
+        # Build API request
+        api_request = build_location_request_search(
+            prompt, formatted_candidates, user_history,
+            latitude, longitude, search_radius
+        )
+    else:
+        # Build API request
+        api_request = build_location_request(
+            prompt, formatted_candidates, user_history,
+            latitude, longitude, search_radius
+        )
     logger.debug(
         f"API request JSON from build_location_request: {api_request}")
 

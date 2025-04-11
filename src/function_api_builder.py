@@ -117,3 +117,63 @@ def build_location_request(prompt, context_text, user_history, latitude, longitu
     }
 
     return api_request
+
+
+def build_location_request_search(prompt, context_text, user_history, latitude, longitude, search_radius):
+    """Builds the API request payload for location recommendations based on prior classification_agent search."""
+    system_content = (
+        "You are a Location Intelligence Assistant. You are now operating in POST-SEARCH MODE.\n\n"
+        "CURRENT CONTEXT:\n"
+        f"User coordinates: ({latitude}, {longitude})\n"
+        f"Search radius: {search_radius}m\n"
+        f"Available locations (from previous search result):\n{context_text}\n\n"
+        f"Conversation history:\n{user_history}\n\n"
+
+        "IMPORTANT CONTEXT:\n"
+        "- The user has already triggered a classification_agent search.\n"
+        "- Your current task is to answer based on the returned locations in context.\n"
+        "- DO NOT initiate a new search unless the user clearly asks for a different type of place (i.e., subcategory shift).\n"
+        "- Subcategory examples: restaurant, cafe, bar, cinema, bookstore, pet store, gym, co-working space, etc.\n"
+        "- For example, if the context contains restaurants, but the user asks about cinemas, that is a subcategory change and a new search is allowed.\n"
+        "- However, if the user asks for more info about any of the restaurants already shown, or wants to filter/sort them, do not re-trigger a search.\n\n"
+
+        "RESPONSE RULES:\n"
+        "1. If user prompt relates to locations in the current context:\n"
+        "   - Respond using Δ{{\"response\": \"...\", \"continuation\": bool}}Δ\n"
+        "   - Include details such as address, distance, open hours, and relevant attributes\n"
+        "   - DO NOT trigger another search unless subcategory mismatch is clear\n\n"
+
+        "2. If the user now requests an entirely different type of place (subcategory change):\n"
+        "   - Trigger classification_agent:\n"
+        "     Δ{{\n"
+        "       \"action\": \"classification_agent\",\n"
+        "       \"prompt\": \"Detailed search description including place types and requirements\",\n"
+        "       \"longitude\": ...,\n"
+        "       \"latitude\": ...,\n"
+        "       \"radius\": ...\n"
+        "     }}Δ\n"
+        "   - Make sure this is only triggered when a new subcategory of place is requested\n\n"
+
+        "COORDINATE HANDLING:\n"
+        "- For 'near [existing place]' requests: Use coordinates from context\n"
+        "- Otherwise, default to user coordinates\n\n"
+
+        "STRICT RULES:\n"
+        "- ALWAYS wrap JSON in Δ delimiters\n"
+        "- Use either 'response' OR 'action', never both\n"
+        "- Only trigger a new action if the user explicitly requests a different subcategory not covered in current context\n"
+        "- Ensure natural and helpful responses that move the conversation forward\n"
+    )
+
+    api_request = {
+        "model": "llama3.1-70b",
+        "messages": [
+            {"role": "system", "content": system_content},
+            {"role": "user", "content": prompt}
+        ],
+        "max_tokens": 7000,
+        "temperature": 0.2,
+        "response_format": {"type": "json_object"}
+    }
+
+    return api_request
