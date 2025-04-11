@@ -11,7 +11,8 @@ def process_request(user_id: str, session_id: str, user_input: str,
                     latitude: float, longitude: float,
                     search_radius: int,
                     state_manager: Optional[StateManager] = None,
-                    history_manager: Optional[HistoryManager] = None) -> Dict[str, Any]:
+                    history_manager: Optional[HistoryManager] = None,
+                    num_candidates: int = 4) -> Dict[str, Any]:
     """
     Process a user request through the system.
 
@@ -26,9 +27,14 @@ def process_request(user_id: str, session_id: str, user_input: str,
         search_radius: Search radius in meters for POIs
         state_manager: Optional state manager instance (if not provided, one will be created)
         history_manager: Optional history manager instance (if not provided, one will be created)
+        num_candidates: Number of top candidates to return (default: 4)
 
     Returns:
-        Dict containing response and any additional action information
+        Dict containing:
+        - response: str - The text response to the user
+        - status: str - The current state of the conversation
+        - continuation: bool - Whether the conversation should continue
+        - top_candidates: Dict[str, List[POIData]] - The top candidates found for the query
     """
     logger = get_logger()
     logger.info(f"Processing request for user {user_id}, session {session_id}")
@@ -45,7 +51,7 @@ def process_request(user_id: str, session_id: str, user_input: str,
         logger.debug("Created default JSONHistoryManager")
 
     # Create flow manager
-    flow_manager = FlowManager(state_manager, history_manager)
+    flow_manager = FlowManager(state_manager, history_manager, num_candidates)
 
     # Process the request - all logic now handled in flow_manager
     return flow_manager.process_user_input(
@@ -131,100 +137,3 @@ def get_session_messages(user_id: str, session_id: str, history_manager: Optiona
         logger.debug("Created default JSONHistoryManager")
 
     return history_manager.get_history(user_id, session_id)
-
-# # Command line interface for testing (will be replaced by API)
-# if __name__ == "__main__":
-#     user_id = "test_user"
-
-#     # Create managers
-#     from src.managers.state.json_state_manager import JSONStateManager
-#     from src.managers.history.json_history_manager import JSONHistoryManager
-#     state_manager = JSONStateManager()
-#     history_manager = JSONHistoryManager()
-
-#     # Create flow manager
-#     flow_manager = FlowManager(state_manager, history_manager)
-
-#     # Get or create session
-#     conversation_id_input = input(
-#         "Enter session ID (or '0' for a new session): ").strip()
-
-#     if conversation_id_input == "0":
-#         # Create a new session
-#         session_id = flow_manager.create_new_session(user_id)
-#         print(f"Created new session with ID: {session_id}")
-#     else:
-#         # Use existing session
-#         session_id = conversation_id_input
-#         session = state_manager.get_session(user_id, session_id)
-#         if session:
-#             print(f"Using existing session with ID: {session_id}")
-#         else:
-#             print(f"Session ID {session_id} not found. Creating a new one.")
-#             session_id = flow_manager.create_new_session(user_id)
-#     session_logger.start_session(user_id, session_id)
-#     logger = get_logger()
-#     # Show history
-#     messages = history_manager.get_history(user_id, session_id)
-#     if messages:
-#         print("\n--- Conversation History ---")
-#         for msg in messages:
-#             event_type = msg.get("type", "unknown")
-#             content = msg.get("content", "")
-
-#             if event_type == "user_message":
-#                 print(f"User: {content}")
-#             elif event_type == "assistant_message":
-#                 print(f"Bot: {content}")
-#         print("--- End of History ---\n")
-#     else:
-#         print("No previous messages in this session.")
-
-#     # Default parameters
-#     latitude = 40.971255
-#     longitude = 28.793878
-#     search_radius = 1000
-
-#     # Add flag to track if we need user input
-#     need_user_input = True
-#     user_input = ""
-
-#     # Main interaction loop
-#     while True:
-#         # Get user input only if needed
-#         if need_user_input:
-#             user_input = input(
-#                 "\nEnter your prompt (or type 'exit' to quit): ")
-#             if user_input.lower() == 'exit':
-#                 break
-#             need_user_input = True  # Reset flag for next loop
-
-#         # Process request
-#         response = flow_manager.process_user_input(
-#             user_id, session_id, user_input, latitude, longitude, search_radius
-#         )
-
-#         # Print response
-#         print(f"\nResponse: {response.get('response', 'No response')}")
-
-#         # Handle parameter changes and determine if we need new input
-#         if response.get("status") == "new_classification" and "parameters" in response:
-#             params = response["parameters"]
-#             # Update parameters for new search
-#             user_input = params.get("prompt", user_input)
-#             latitude = params.get("latitude", latitude)
-#             longitude = params.get("longitude", longitude)
-#             search_radius = params.get("radius", search_radius)
-
-#             print(
-#                 f"Updated parameters: lat={latitude}, lon={longitude}, radius={search_radius}")
-#             print(f"Starting new search with prompt: '{user_input}'")
-
-#             # Don't ask for new input since we're using the prompt from the LLM
-#             need_user_input = False
-
-#             # Continue the loop to process with new parameters
-#             continue
-
-#         # For next iteration, get new user input (unless overridden by parameter change)
-#         need_user_input = True

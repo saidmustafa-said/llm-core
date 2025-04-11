@@ -176,7 +176,23 @@ def get_top_n_by_route_distance_for_all_modes(candidates, user_lat, user_lon, ra
 @timing_decorator
 def find_top_candidates(candidates: List[POIData], user_lat: float, user_lon: float,
                         radius_m: int, n: int = 5) -> TopCandidates:
-    """Finds the top candidate POIs based on route distance."""
+    """Finds the top candidate POIs based on route distance.
+
+    Returns:
+        Dict containing:
+        - drive: List[POIData] - Top candidates for driving mode
+        - walk: List[POIData] - Top candidates for walking mode
+        - default: List[POIData] - Top candidates for default mode
+        Each POIData contains:
+        - name: Optional[str] - Name of the POI
+        - latitude: float - Latitude coordinate
+        - longitude: float - Longitude coordinate
+        - subcategory: str - Category of the POI
+        - address: Optional[str] - Address of the POI
+        - score: Optional[float] - Relevance score
+        - drive_route_distance_m: Optional[float] - Driving distance in meters
+        - walk_route_distance_m: Optional[float] - Walking distance in meters
+    """
     if not candidates:
         print("No candidates found.")
         return {}

@@ -1,7 +1,7 @@
 {
-  "environment": "development",
-  "state_backend": "json",
-  "history_backend": "json",
-  "sessions_dir": "sessions",
-  "history_dir": "chat_history"
+	"environment": "development",
+	"state_backend": "json",
+	"history_backend": "json",
+	"sessions_dir": "sessions",
+	"history_dir": "chat_history"
 }

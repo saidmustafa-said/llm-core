@@ -8,6 +8,7 @@ from src.get_top_candidates import find_top_candidates
 from src.poi_filter import POIManager
 from src.llamarequest import llm_api
 from src.logger_setup import get_logger
+from src.utils import convert_nan_to_none
 
 
 class FlowManager:
@@ -16,18 +17,20 @@ class FlowManager:
     managing state transitions and history logging.
     """
 
-    def __init__(self, state_manager: StateManager, history_manager: HistoryManager):
+    def __init__(self, state_manager: StateManager, history_manager: HistoryManager, num_candidates: int = 4):
         """
         Initialize the FlowManager with state and history managers.
 
         Args:
             state_manager: Manager for storing and retrieving session state
             history_manager: Manager for logging conversation history
+            num_candidates: Number of top candidates to return (default: 4)
         """
         self.state_manager = state_manager
         self.history_manager = history_manager
         self.poi_manager = POIManager()
         self.logger = get_logger()
+        self.num_candidates = num_candidates
 
     def process_user_input(self, user_id: str, session_id: str, user_input: str,
                            latitude: float = 40.971255, longitude: float = 28.793878,
@@ -131,7 +134,8 @@ class FlowManager:
 
             return {
                 "response": question,
-                "status": "clarification_needed"
+                "status": "clarification_needed",
+                "top_candidates": {}
             }
 
         # Check for subcategories to search
@@ -155,13 +159,13 @@ class FlowManager:
 
                 return {
                     "response": response_text,
-                    "status": "no_results"
+                    "status": "no_results",
+                    "top_candidates": {}
                 }
 
             # Step 3: Find top candidates
-            num_candidates = 4  # Default value
             top_candidates = find_top_candidates(
-                candidates, latitude, longitude, search_radius, num_candidates)
+                candidates, latitude, longitude, search_radius, self.num_candidates)
             print("Top candidates1:", top_candidates)
             if not isinstance(top_candidates, dict):
                 top_candidates = {"default": top_candidates}
@@ -195,11 +199,12 @@ class FlowManager:
                     self.state_manager.save_session(
                         user_id, session_id, session)
 
-                    return {
+                    return convert_nan_to_none({
                         "response": response_text,
                         "status": "advice_provided",
-                        "continuation": continuation
-                    }
+                        "continuation": continuation,
+                        "top_candidates": top_candidates
+                    })
                 elif "action" in advice_result and advice_result["action"] == "classification_agent":
                     # Handle location-based redirection by directly processing with new parameters
                     new_prompt = advice_result.get("prompt", user_input)
@@ -225,20 +230,22 @@ class FlowManager:
                 else:
                     self.logger.warning(
                         "Unknown response format from location advice")
-                    return {
+                    return convert_nan_to_none({
                         "response": "I couldn't process your request properly. Let's try again with a new query.",
-                        "status": "error"
-                    }
+                        "status": "error",
+                        "top_candidates": {}
+                    })
 
             except Exception as e:
                 self.logger.error(f"Location advice error: {str(e)}")
                 session["current_state"] = "new_query"
                 self.state_manager.save_session(user_id, session_id, session)
 
-                return {
+                return convert_nan_to_none({
                     "response": f"I encountered an error while processing your request: {str(e)}. Let's try again.",
-                    "status": "error"
-                }
+                    "status": "error",
+                    "top_candidates": {}
+                })
         else:
             self.logger.warning("No subcategories found in LLM response")
             session["current_state"] = "new_query"
@@ -248,10 +255,11 @@ class FlowManager:
             self.history_manager.log_assistant_message(
                 user_id, session_id, response_text)
 
-            return {
+            return convert_nan_to_none({
                 "response": response_text,
-                "status": "no_subcategories"
-            }
+                "status": "no_subcategories",
+                "top_candidates": {}
+            })
 
     def _direct_location_search(self, user_id: str, session_id: str, search_prompt: str,
                                 latitude: float, longitude: float, search_radius: int,
@@ -265,15 +273,18 @@ class FlowManager:
         print(
             f"Directly searching for locations with coordinates: {latitude}, {longitude}")
 
+        # First get categories and subcategories for context
         subcategories_for_context = self.poi_manager.get_poi_data(
             latitude, longitude, search_radius)
         print("Subcategories search for context:", subcategories_for_context)
+
+        # Get subcategories from LLM
         extracted_json = llm_api(
             search_prompt, subcategories_for_context)
         subcategories = extracted_json.get("subcategories", [])
         print("Extracted JSON search:", subcategories)
 
-        # Get POI data for restaurants
+        # Get POI data for the identified subcategories
         candidates = self.poi_manager.get_poi_data(
             latitude, longitude, search_radius, subcategories)
         print("Candidates search:", candidates)
@@ -284,19 +295,19 @@ class FlowManager:
             session["current_state"] = "new_query"
             self.state_manager.save_session(user_id, session_id, session)
 
-            response_text = "I couldn't find any restaurants near that location. Could you try a different location or a wider search radius?"
+            response_text = "I couldn't find any places near that location. Could you try a different location or a wider search radius?"
             self.history_manager.log_assistant_message(
                 user_id, session_id, response_text)
 
             return {
                 "response": response_text,
-                "status": "no_results"
+                "status": "no_results",
+                "top_candidates": {}
             }
 
         # Find top candidates
-        num_candidates = 4  # Default value
         top_candidates = find_top_candidates(
-            candidates, latitude, longitude, search_radius, num_candidates)
+            candidates, latitude, longitude, search_radius, self.num_candidates)
         print("Top candidates search:", top_candidates)
         if not isinstance(top_candidates, dict):
             top_candidates = {"default": top_candidates}
@@ -306,7 +317,37 @@ class FlowManager:
             advice_result = get_location_advice(search_prompt, formatted_history, top_candidates,
                                                 latitude, longitude, search_radius)
 
-            # Standard response - we expect this to have resolved the classification agent redirection
+            # Check if we need to redirect to classification agent
+            if "action" in advice_result and advice_result["action"] == "classification_agent":
+                # Extract new search parameters
+                new_prompt = advice_result.get("prompt", search_prompt)
+                new_latitude = advice_result.get("latitude", latitude)
+                new_longitude = advice_result.get("longitude", longitude)
+                new_radius = advice_result.get("radius", search_radius)
+
+                # Update session state
+                session["current_state"] = "new_query"
+                session["data"] = {
+                    "prompt": new_prompt,
+                    "latitude": new_latitude,
+                    "longitude": new_longitude,
+                    "search_radius": new_radius
+                }
+                self.state_manager.save_session(user_id, session_id, session)
+
+                # Directly search with new parameters without going through _process_query
+                return self._direct_location_search(
+                    user_id,
+                    session_id,
+                    new_prompt,
+                    new_latitude,
+                    new_longitude,
+                    new_radius,
+                    session,
+                    formatted_history
+                )
+
+            # Standard response
             if "response" in advice_result:
                 response_text = advice_result.get("response")
                 continuation = str(advice_result.get(
@@ -327,28 +368,31 @@ class FlowManager:
                 }
                 self.state_manager.save_session(user_id, session_id, session)
 
-                return {
+                return convert_nan_to_none({
                     "response": response_text,
                     "status": "advice_provided",
-                    "continuation": continuation
-                }
+                    "continuation": continuation,
+                    "top_candidates": top_candidates
+                })
             else:
                 self.logger.warning(
                     "Unexpected response format after direct location search")
-                return {
-                    "response": "I found some restaurants in that area, but I'm having trouble providing specific recommendations. Could you clarify what type of restaurant you're looking for?",
-                    "status": "error"
-                }
+                return convert_nan_to_none({
+                    "response": "I found some places in that area, but I'm having trouble providing specific recommendations. Could you clarify what type of place you're looking for?",
+                    "status": "error",
+                    "top_candidates": {}
+                })
 
         except Exception as e:
             self.logger.error(f"Direct location search error: {str(e)}")
             session["current_state"] = "new_query"
             self.state_manager.save_session(user_id, session_id, session)
 
-            return {
-                "response": f"I encountered an error while searching for restaurants: {str(e)}. Let's try again.",
-                "status": "error"
-            }
+            return convert_nan_to_none({
+                "response": f"I encountered an error while searching for places: {str(e)}. Let's try again.",
+                "status": "error",
+                "top_candidates": {}
+            })
 
     def _handle_clarification(self, user_id: str, session_id: str, user_input: str,
                               formatted_history: str, session_data: Dict[str, Any],
@@ -404,11 +448,12 @@ class FlowManager:
                     self.state_manager.save_session(
                         user_id, session_id, session)
 
-                return {
+                return convert_nan_to_none({
                     "response": response_text,
                     "status": "advice_provided",
-                    "continuation": continuation
-                }
+                    "continuation": continuation,
+                    "top_candidates": top_candidates
+                })
             elif "action" in advice_result and advice_result["action"] == "classification_agent":
                 # Handle new search with specific location
                 new_prompt = advice_result.get("prompt", user_input)
@@ -433,20 +478,22 @@ class FlowManager:
                 session["current_state"] = "new_query"
                 self.state_manager.save_session(user_id, session_id, session)
 
-                return {
+                return convert_nan_to_none({
                     "response": "I couldn't process your request properly. Let's try again with a new query.",
-                    "status": "error"
-                }
+                    "status": "error",
+                    "top_candidates": {}
+                })
 
         except Exception as e:
             self.logger.error(f"Location advice error: {str(e)}")
             session["current_state"] = "new_query"
             self.state_manager.save_session(user_id, session_id, session)
 
-            return {
+            return convert_nan_to_none({
                 "response": f"I encountered an error while processing your request: {str(e)}. Let's try again.",
-                "status": "error"
-            }
+                "status": "error",
+                "top_candidates": {}
+            })
 
     def create_new_session(self, user_id: str) -> str:
         """Create a new session and return the session ID"""

@@ -1,0 +1,105 @@
+API Flows with Detailed Function Calls
+=====================================
+
+POST /message
+----------------
+api{process_message} 
+→ main{process_request} 
+→ src.flow_manager{FlowManager.process_user_input}
+    ├── src.managers.history.history_manager{HistoryManager.log_user_message}
+    ├── src.managers.state.state_manager{StateManager.get_session}
+    ├── src.managers.state.state_manager{StateManager.create_session} (if session not found)
+    ├── src.managers.history.history_manager{HistoryManager.get_formatted_history}
+    │
+    ├── If state is "initial" or "new_query":
+    │   → _process_query
+    │       ├── src.poi_manager{POIManager.get_poi_data}
+    │       ├── src.llamarequest{llm_api}
+    │       │
+    │       ├── If clarification needed:
+    │       │   ├── src.managers.history.history_manager{HistoryManager.log_assistant_message}
+    │       │   └── src.managers.state.state_manager{StateManager.save_session}
+    │       │
+    │       ├── If subcategories found:
+    │       │   ├── src.poi_manager{POIManager.get_poi_data} (with subcategories)
+    │       │   ├── src.get_top_candidates{find_top_candidates}
+    │       │   ├── src.get_location_advice{get_location_advice}
+    │       │   ├── src.managers.history.history_manager{HistoryManager.log_assistant_message}
+    │       │   └── src.managers.state.state_manager{StateManager.save_session}
+    │       │
+    │       └── If location redirection needed:
+    │           → _direct_location_search
+    │               ├── src.poi_manager{POIManager.get_poi_data}
+    │               ├── src.llamarequest{llm_api}
+    │               ├── src.poi_manager{POIManager.get_poi_data} (with subcategories)
+    │               ├── src.get_top_candidates{find_top_candidates}
+    │               ├── src.get_location_advice{get_location_advice}
+    │               ├── src.managers.history.history_manager{HistoryManager.log_assistant_message}
+    │               └── src.managers.state.state_manager{StateManager.save_session}
+    │
+    ├── If state is "providing_advice":
+    │   → _handle_advice_continuation
+    │       ├── src.get_location_advice{get_location_advice}
+    │       ├── src.managers.history.history_manager{HistoryManager.log_assistant_message}
+    │       └── src.managers.state.state_manager{StateManager.save_session}
+    │
+    └── If state is "clarification_needed":
+        → _handle_clarification
+            └── (recursively calls _process_query with new input)
+
+
+POST /session
+----------------
+api{create_new_session} 
+→ main{create_session} 
+→ src.flow_manager{FlowManager.create_new_session}
+    └── src.managers.state.state_manager{StateManager.create_session}
+
+
+GET /session/{user_id}/{session_id}/history
+----------------
+api{get_history} 
+→ main{get_session_history} 
+→ src.managers.history.history_manager{HistoryManager.get_formatted_history}
+
+
+GET /session/{user_id}/{session_id}/messages
+----------------
+api{get_messages} 
+→ main{get_session_messages} 
+→ src.managers.history.history_manager{HistoryManager.get_history}
+
+
+Middleware (every request)
+----------------
+api{logging_middleware} 
+→ src.logger_setup{session_logger.start_session} 
++ src.logger_setup{get_logger}
+
+
+GET /health
+----------------
+api{health_check}
+
+
+Key Function Dependencies
+========================
+
+1. State Management:
+   - StateManager.get_session
+   - StateManager.create_session
+   - StateManager.save_session
+
+2. History Management:
+   - HistoryManager.log_user_message
+   - HistoryManager.log_assistant_message
+   - HistoryManager.get_formatted_history
+   - HistoryManager.get_history
+
+3. Location Services:
+   - POIManager.get_poi_data
+   - find_top_candidates
+   - get_location_advice
+
+4. LLM Integration:
+   - llm_api

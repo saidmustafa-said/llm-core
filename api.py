@@ -75,6 +75,8 @@ async def process_message(request: Request):
     latitude = body.get("latitude")
     longitude = body.get("longitude")
     search_radius = body.get("search_radius")
+    # Default to 4 if not provided
+    num_candidates = body.get("num_candidates", 4)
 
     logger.info(
         f"Processing message for user {user_id}, session {session_id}")
@@ -88,14 +90,15 @@ async def process_message(request: Request):
             longitude,
             search_radius,
             config_manager.get_state_manager(),
-            config_manager.get_history_manager()
+            config_manager.get_history_manager(),
+            num_candidates
         )
 
         return {
             "response": response.get("response", ""),
             "status": response.get("status", "unknown"),
             "continuation": response.get("continuation", False),
-            "parameters": response.get("parameters")
+            "top_candidates": response.get("top_candidates", {})
         }
     except Exception as e:
         logger.error(f"Error processing message: {str(e)}")

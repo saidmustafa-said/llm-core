@@ -1,28 +1,22 @@
 {
   "todo": [
     {
-      "id": 13756,
-      "text": "clarification response not added to chat history",
+      "id": 11354,
+      "text": "delete api",
       "priority": 1,
-      "created": "2025-03-25T06:05:50.733Z"
+      "created": "2025-04-11T12:01:37.901Z"
     },
     {
-      "id": 11483,
-      "text": "Clarification and exiting problem",
+      "id": 17764,
+      "text": "data return for all ",
       "priority": 1,
-      "created": "2025-03-24T16:09:16.515Z"
+      "created": "2025-04-11T12:01:30.377Z"
     },
     {
       "id": 15778,
       "text": "clean the code and fucntion naming",
       "priority": 2,
       "created": "2025-03-23T11:08:31.375Z"
-    },
-    {
-      "id": 14987,
-      "text": "connect to the api",
-      "priority": 3,
-      "created": "2025-03-23T11:08:46.317Z"
     }
   ],
   "completed": [
@@ -55,6 +49,24 @@
       "text": "fix logs",
       "priority": 1,
       "created": "2025-03-23T11:07:56.942Z"
+    },
+    {
+      "id": 13756,
+      "text": "clarification response not added to chat history",
+      "priority": 1,
+      "created": "2025-03-25T06:05:50.733Z"
+    },
+    {
+      "id": 11483,
+      "text": "Clarification and exiting problem",
+      "priority": 1,
+      "created": "2025-03-24T16:09:16.515Z"
+    },
+    {
+      "id": 14987,
+      "text": "connect to the api",
+      "priority": 3,
+      "created": "2025-03-23T11:08:46.317Z"
     }
   ]
 }

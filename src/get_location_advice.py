@@ -1,4 +1,3 @@
-
 from typing import List, Optional, Dict
 import re
 import json
@@ -74,6 +73,17 @@ def extract_content(response):
 @timing_decorator
 def get_location_advice(prompt, history, top_candidates: TopCandidates,
                         latitude, longitude, search_radius) -> LocationAdviceResponse:
+    """Main function to get location advice with structured response handling
+
+    Returns:
+        Dict containing:
+        - response: str - The text response to the user
+        - continuation: bool - Whether the conversation should continue
+        - recommendations: List[Dict[str, str]] - List of recommended locations with details
+        - error: Optional[str] - Error message if any
+        - token_counts: Dict[str, int] - Token usage statistics
+        - conversation_id: str - Unique identifier for the conversation
+    """
     logger = get_logger()
     """Main function to get location advice with structured response handling"""
 
