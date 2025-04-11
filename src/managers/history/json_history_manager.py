@@ -145,3 +145,13 @@ class JSONHistoryManager(HistoryManager):
         conversation = self._get_conversation(user_id, session_id)
         conversation["messages"] = []
         return self._save_conversation(user_id, session_id, conversation)
+
+    def delete_history(self, user_id: str, session_id: str) -> None:
+        """Rename the history file with REMOVED prefix instead of deleting"""
+        file_path = self._get_history_file_path(user_id, session_id)
+        if os.path.exists(file_path):
+            dir_path = os.path.dirname(file_path)
+            file_name = os.path.basename(file_path)
+            new_path = os.path.join(dir_path, f"REMOVED_{file_name}")
+            os.rename(file_path, new_path)
+            self.logger.info(f"Marked history as removed: {new_path}")

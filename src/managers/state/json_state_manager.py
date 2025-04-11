@@ -69,7 +69,7 @@ class JSONStateManager(StateManager):
             return False
 
     def delete_session(self, user_id: str, session_id: str) -> bool:
-        """Delete a session JSON file."""
+        """Rename the session file with REMOVED prefix instead of deleting"""
         session_file = self._get_session_file_path(user_id, session_id)
 
         if not os.path.exists(session_file):
@@ -78,9 +78,12 @@ class JSONStateManager(StateManager):
             return False
 
         try:
-            os.remove(session_file)
+            dir_path = os.path.dirname(session_file)
+            file_name = os.path.basename(session_file)
+            new_path = os.path.join(dir_path, f"REMOVED_{file_name}")
+            os.rename(session_file, new_path)
             self.logger.info(
-                f"Session deleted: {session_id} for user {user_id}")
+                f"Marked session as removed: {new_path}")
             return True
         except Exception as e:
             self.logger.error(f"Error deleting session {session_id}: {str(e)}")

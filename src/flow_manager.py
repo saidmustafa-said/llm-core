@@ -499,3 +499,36 @@ class FlowManager:
         """Create a new session and return the session ID"""
         self.logger.info(f"Creating new session for user {user_id}")
         return self.state_manager.create_session(user_id)
+
+    def delete_session(self, user_id: str, session_id: str) -> Dict[str, Any]:
+        """
+        Delete a session by marking its history and state files as removed.
+
+        Args:
+            user_id: Unique identifier for the user
+            session_id: Unique identifier for the session to delete
+
+        Returns:
+            Dict containing:
+            - status: str - "success" or "error"
+            - message: str - Description of the result
+        """
+        try:
+            # Delete history
+            self.history_manager.delete_history(user_id, session_id)
+
+            # Delete session state
+            self.state_manager.delete_session(user_id, session_id)
+
+            self.logger.info(
+                f"Successfully marked session {session_id} as removed for user {user_id}")
+            return {
+                "status": "success",
+                "message": f"Session {session_id} has been marked as removed"
+            }
+        except Exception as e:
+            self.logger.error(f"Error marking session as removed: {str(e)}")
+            return {
+                "status": "error",
+                "message": f"Failed to mark session as removed: {str(e)}"
+            }

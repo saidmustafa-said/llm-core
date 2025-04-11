@@ -15,14 +15,14 @@ class HistoryManager(ABC):
                   content: str, metadata: Optional[Dict[str, Any]] = None) -> bool:
         """
         Log an event to the conversation history.
-        
+
         Args:
             user_id: The ID of the user
             session_id: The ID of the session/conversation
             event_type: Type of event (e.g., 'user_message', 'assistant_message')
             content: The content of the event
             metadata: Optional additional data about the event
-            
+
         Returns:
             True if successful, False otherwise
         """
@@ -32,12 +32,12 @@ class HistoryManager(ABC):
     def get_history(self, user_id: str, session_id: str, limit: Optional[int] = None) -> List[Dict[str, Any]]:
         """
         Retrieve the conversation history for a session.
-        
+
         Args:
             user_id: The ID of the user
             session_id: The ID of the session/conversation
             limit: Optional maximum number of events to return
-            
+
         Returns:
             List of event dictionaries
         """
@@ -47,12 +47,12 @@ class HistoryManager(ABC):
     def get_formatted_history(self, user_id: str, session_id: str, limit: Optional[int] = None) -> str:
         """
         Get the conversation history formatted as a string.
-        
+
         Args:
             user_id: The ID of the user
             session_id: The ID of the session/conversation
             limit: Optional maximum number of events to return
-            
+
         Returns:
             Formatted history string
         """
@@ -63,13 +63,13 @@ class HistoryManager(ABC):
                          metadata: Optional[Dict[str, Any]] = None) -> bool:
         """
         Log a user message to history.
-        
+
         Args:
             user_id: The ID of the user
             session_id: The ID of the session/conversation
             content: The message content
             metadata: Optional additional data
-            
+
         Returns:
             True if successful, False otherwise
         """
@@ -80,13 +80,13 @@ class HistoryManager(ABC):
                               metadata: Optional[Dict[str, Any]] = None) -> bool:
         """
         Log an assistant message to history.
-        
+
         Args:
             user_id: The ID of the user
             session_id: The ID of the session/conversation
             content: The message content
             metadata: Optional additional data
-            
+
         Returns:
             True if successful, False otherwise
         """
@@ -96,12 +96,17 @@ class HistoryManager(ABC):
     def clear_history(self, user_id: str, session_id: str) -> bool:
         """
         Clear the history for a session.
-        
+
         Args:
             user_id: The ID of the user
             session_id: The ID of the session/conversation
-            
+
         Returns:
             True if successful, False otherwise
         """
+        pass
+
+    @abstractmethod
+    def delete_history(self, user_id: str, session_id: str) -> None:
+        """Delete or mark as deleted the history for a session"""
         pass

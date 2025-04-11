@@ -6,6 +6,7 @@ from typing import Dict, Any, Optional
 from src.config_manager import ConfigManager
 from main import process_request, create_session, get_session_history, get_session_messages
 from src.logger_setup import session_logger, get_logger
+from src.flow_manager import FlowManager
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -156,6 +157,48 @@ async def get_messages(user_id: str, session_id: str):
         logger.error(f"Error getting messages: {str(e)}")
         raise HTTPException(
             status_code=500, detail=f"Error getting messages: {str(e)}")
+
+
+@app.post("/delete")
+async def delete_session(request: Request):
+    """Delete a session by marking its files as removed"""
+    logger = get_logger()
+    body = await request.json()
+
+    user_id = body.get("user_id")
+    session_id = body.get("session_id")
+
+    if not user_id or not session_id:
+        raise HTTPException(
+            status_code=400,
+            detail="Both user_id and session_id are required"
+        )
+
+    logger.info(f"Deleting session {session_id} for user {user_id}")
+
+    try:
+        # Get the flow manager from config
+        flow_manager = FlowManager(
+            config_manager.get_state_manager(),
+            config_manager.get_history_manager()
+        )
+
+        # Delete the session
+        result = flow_manager.delete_session(user_id, session_id)
+
+        if result["status"] == "error":
+            raise HTTPException(
+                status_code=500,
+                detail=result["message"]
+            )
+
+        return result
+    except Exception as e:
+        logger.error(f"Error deleting session: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error deleting session: {str(e)}"
+        )
 
 
 @app.get("/health")
