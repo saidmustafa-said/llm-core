@@ -58,9 +58,13 @@ async def logging_middleware(request: Request, call_next):
         except:
             pass
 
-    # Initialize session logging
-    session_logger.start_session(user_id, session_id)
+    # Get the logger without reinitializing the session
     logger = get_logger()
+
+    # Only initialize session if we don't have a logger yet
+    if not logger.handlers:
+        session_logger.start_session(user_id, session_id)
+        logger = get_logger()
 
     # Log request
     logger.info(f"Request: {request.method} {request.url.path}")
@@ -140,8 +144,7 @@ async def create_new_session(request: Request):
 @app.get("/session/{user_id}/{session_id}/history")
 async def get_history(user_id: str, session_id: str):
     """Get the conversation history for a session"""
-    # Initialize session logging for this existing session
-    session_logger.start_session(user_id, session_id)
+    # Get the logger without reinitializing the session
     logger = get_logger()
     logger.info(f"Getting history for user {user_id}, session {session_id}")
 
@@ -158,6 +161,7 @@ async def get_history(user_id: str, session_id: str):
 @app.get("/session/{user_id}/{session_id}/messages")
 async def get_messages(user_id: str, session_id: str):
     """Get the raw messages for a session"""
+    # Get the logger without reinitializing the session
     logger = get_logger()
     logger.info(f"Getting messages for user {user_id}, session {session_id}")
 

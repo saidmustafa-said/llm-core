@@ -4,11 +4,12 @@ from typing import Dict, Any
 from src.managers.state.state_manager import StateManager
 from src.managers.history.history_manager import HistoryManager
 from src.get_location_advice import get_location_advice
-from src.get_top_candidates import find_top_candidates
-from src.poi_filter import POIManager
+from src.get_top_candidates import create_top_candidates_finder
+from src.poi_filter import create_poi_manager, IPOIManager
 from src.llamarequest import llm_api
 from src.utils import convert_nan_to_none
 from src.managers.flow.handlers.base_handler import BaseHandler
+from src.interfaces.top_candidates import ITopCandidatesFinder
 
 
 class QueryHandler(BaseHandler):
@@ -26,7 +27,8 @@ class QueryHandler(BaseHandler):
             num_candidates: Number of top candidates to return (default: 4)
         """
         super().__init__(state_manager, history_manager)
-        self.poi_manager = POIManager()
+        self.poi_manager: IPOIManager = create_poi_manager()
+        self.top_candidates_finder: ITopCandidatesFinder = create_top_candidates_finder()
         self.num_candidates = num_candidates
 
     def process_query(self, user_id: str, session_id: str, user_input: str,
@@ -51,7 +53,7 @@ class QueryHandler(BaseHandler):
         self.logger.info(f"Processing new query for session {session_id}")
 
         # Step 1: Get text classification from LLM
-        subcategories_for_context = self.poi_manager.get_poi_data(
+        subcategories_for_context = self.poi_manager.get_available_categories(
             latitude, longitude, search_radius)
         print("Subcategories for context:", subcategories_for_context)
         extracted_json = llm_api(
@@ -98,7 +100,7 @@ class QueryHandler(BaseHandler):
             self.logger.info(f"Identified subcategories: {subcategories}")
 
             # Step 2: Get POI data for identified subcategories
-            candidates = self.poi_manager.get_poi_data(
+            candidates = self.poi_manager.get_poi_by_subcategories(
                 latitude, longitude, search_radius, subcategories)
 
             if not candidates:
@@ -118,7 +120,7 @@ class QueryHandler(BaseHandler):
                 }
 
             # Step 3: Find top candidates
-            top_candidates = find_top_candidates(
+            top_candidates = self.top_candidates_finder.find_top_candidates(
                 candidates, latitude, longitude, search_radius, self.num_candidates)
             print("Top candidates1:", top_candidates)
             if not isinstance(top_candidates, dict):
@@ -243,7 +245,7 @@ class QueryHandler(BaseHandler):
             f"Directly searching for locations with coordinates: {latitude}, {longitude}")
 
         # First get categories and subcategories for context
-        subcategories_for_context = self.poi_manager.get_poi_data(
+        subcategories_for_context = self.poi_manager.get_available_categories(
             latitude, longitude, search_radius)
         print("Subcategories search for context:", subcategories_for_context)
 
@@ -254,7 +256,7 @@ class QueryHandler(BaseHandler):
         print("Extracted JSON search:", subcategories)
 
         # Get POI data for the identified subcategories
-        candidates = self.poi_manager.get_poi_data(
+        candidates = self.poi_manager.get_poi_by_subcategories(
             latitude, longitude, search_radius, subcategories)
 
         if not candidates:
@@ -274,7 +276,7 @@ class QueryHandler(BaseHandler):
             }
 
         # Find top candidates
-        top_candidates = find_top_candidates(
+        top_candidates = self.top_candidates_finder.find_top_candidates(
             candidates, latitude, longitude, search_radius, self.num_candidates)
         if not isinstance(top_candidates, dict):
             top_candidates = {"default": top_candidates}

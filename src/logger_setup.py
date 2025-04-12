@@ -62,16 +62,14 @@ class SessionLogger:
         logger = logging.getLogger(f"user.{user_id}.session.{session_id}")
         logger.setLevel(logging.DEBUG)
 
-        # Clear existing handlers
-        for handler in logger.handlers[:]:
-            logger.removeHandler(handler)
-
-        # File handler
-        file_handler = logging.FileHandler(log_file)
-        file_handler.setFormatter(logging.Formatter(
-            '%(asctime)s | %(levelname)-8s | %(message)s'
-        ))
-        logger.addHandler(file_handler)
+        # Only clear handlers and add new file handler if the logger doesn't have any handlers
+        if not logger.handlers:
+            # File handler
+            file_handler = logging.FileHandler(log_file)
+            file_handler.setFormatter(logging.Formatter(
+                '%(asctime)s | %(levelname)-8s | %(message)s'
+            ))
+            logger.addHandler(file_handler)
 
         # Store in thread-local storage
         self._local.logger = logger

@@ -1,6 +1,6 @@
 import pandas as pd
 from unittest.mock import patch, MagicMock
-from src.poi_filter import POIManager
+from src.poi_filter import create_poi_manager
 
 
 def test_poi_manager():
@@ -13,12 +13,12 @@ def test_poi_manager():
     radius_m = 1000
     search_subcategories = ['Restaurant', 'Cafe']
 
-    # Create a POIManager instance
-    poi_manager = POIManager(dataset="Data/dataset.csv")
+    # Create a POIManager instance using the factory function
+    poi_manager = create_poi_manager(dataset="Data/dataset.csv")
 
     # Test 1: With subcategories - should return FULL ROWS
     print("\nTest 1: Get POI data WITH subcategories (should return full rows)")
-    results = poi_manager.get_poi_data(
+    results = poi_manager.get_poi_by_subcategories(
         user_lat=user_lat,
         user_lon=user_lon,
         radius_m=radius_m,
@@ -33,8 +33,8 @@ def test_poi_manager():
 
     print("------------------------")
     # Test 2: Without subcategories - should return formatted string
-    print("\nTest 2: Get POI data WITHOUT subcategories (should return string)")
-    result_string = poi_manager.get_poi_data(
+    print("\nTest 2: Get available categories (should return string)")
+    result_string = poi_manager.get_available_categories(
         user_lat=user_lat,
         user_lon=user_lon,
         radius_m=radius_m

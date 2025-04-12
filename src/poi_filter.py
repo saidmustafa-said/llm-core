@@ -5,6 +5,7 @@ import re
 from src.data_types import POIData
 from typing import List, Dict, Optional
 from src.config_manager import ConfigManager
+from src.interfaces.poi_manager import IPOIManager
 
 
 class POIManager:
@@ -83,57 +84,70 @@ class POIManager:
         return [self.validate_poi_data(poi) for poi in filtered_df.to_dict(orient='records')]
 
     @timing_decorator
-    def get_poi_data(self, user_lat: float, user_lon: float, radius_m: int,
-                     search_subcategories: Optional[List[str]] = None):
+    def get_poi_by_subcategories(self, user_lat: float, user_lon: float, radius_m: int,
+                                 search_subcategories: List[str]) -> List[POIData]:
         """
-        Retrieves Points of Interest (POI) data filtered by location.
+        Retrieves Points of Interest (POI) data filtered by location and subcategories.
+        Returns a list of POIData objects.
+        """
+        self.load_data()
+        print("Categories to search for:", search_subcategories)
+        return self.filter_by_bounding_box_and_subcategory(user_lat, user_lon, radius_m, search_subcategories)
 
-        - If `search_subcategories` is provided, it returns filtered POI objects.
-        - If `search_subcategories` is omitted, it returns a formatted string that maps each category to its
-        unique subcategories, where all values are strings.
+    @timing_decorator
+    def get_available_categories(self, user_lat: float, user_lon: float, radius_m: int) -> str:
+        """
+        Retrieves available categories and subcategories within the specified radius.
+        Returns a formatted string mapping categories to their subcategories.
         """
         self.load_data()
 
-        # When specific subcategories are provided, filter and return POI objects.
-        if search_subcategories:
-            print("Categories to search for:", search_subcategories)
-            return self.filter_by_bounding_box_and_subcategory(user_lat, user_lon, radius_m, search_subcategories)
-        else:
-            # Ensure the dataset has the required columns for mapping.
-            required_columns = {'latitude',
-                                'longitude', 'subcategory', 'category'}
-            missing_columns = required_columns - set(self.df.columns)
-            if missing_columns:
-                print(
-                    f"Error: Missing required columns in dataset: {missing_columns}")
-                print("Available columns:", self.df.columns)
-                return ""
+        # Ensure the dataset has the required columns for mapping.
+        required_columns = {'latitude', 'longitude', 'subcategory', 'category'}
+        missing_columns = required_columns - set(self.df.columns)
+        if missing_columns:
+            print(
+                f"Error: Missing required columns in dataset: {missing_columns}")
+            print("Available columns:", self.df.columns)
+            return ""
 
-            min_lat, max_lat, min_lon, max_lon = self.compute_bounding_box(
-                user_lat, user_lon, radius_m)
-            filtered_df = self.df[
-                (self.df['latitude'] >= min_lat) & (self.df['latitude'] <= max_lat) &
-                (self.df['longitude'] >= min_lon) & (
-                    self.df['longitude'] <= max_lon)
-            ]
+        min_lat, max_lat, min_lon, max_lon = self.compute_bounding_box(
+            user_lat, user_lon, radius_m)
+        filtered_df = self.df[
+            (self.df['latitude'] >= min_lat) & (self.df['latitude'] <= max_lat) &
+            (self.df['longitude'] >= min_lon) & (
+                self.df['longitude'] <= max_lon)
+        ]
 
-            # Build a dictionary where each key is a category and the value is a set of subcategories
-            category_to_subcategories = {}
-            for _, row in filtered_df.iterrows():
-                category = str(row['category']).strip()
-                subcategory = str(row['subcategory']).strip()
-                if not category or not subcategory:
-                    continue
-                if category not in category_to_subcategories:
-                    category_to_subcategories[category] = set()
-                category_to_subcategories[category].add(subcategory)
+        # Build a dictionary where each key is a category and the value is a set of subcategories
+        category_to_subcategories = {}
+        for _, row in filtered_df.iterrows():
+            category = str(row['category']).strip()
+            subcategory = str(row['subcategory']).strip()
+            if not category or not subcategory:
+                continue
+            if category not in category_to_subcategories:
+                category_to_subcategories[category] = set()
+            category_to_subcategories[category].add(subcategory)
 
-            # Build the final multi-line string
-            result_lines = []
-            for category, subcategories in category_to_subcategories.items():
-                # Sort the subcategories alphabetically for consistency
-                subcategories_list = ", ".join(sorted(subcategories))
-                result_lines.append(f"{category}: {subcategories_list}")
+        # Build the final multi-line string
+        result_lines = []
+        for category, subcategories in category_to_subcategories.items():
+            # Sort the subcategories alphabetically for consistency
+            subcategories_list = ", ".join(sorted(subcategories))
+            result_lines.append(f"{category}: {subcategories_list}")
 
-            final_result = "\n".join(result_lines)
-            return final_result
+        return "\n".join(result_lines)
+
+
+def create_poi_manager(dataset: str = None) -> IPOIManager:
+    """
+    Factory function to create a POIManager instance.
+
+    Args:
+        dataset: Optional path to the dataset file. If not provided, uses the default from ConfigManager.
+
+    Returns:
+        An instance of POIManager implementing the IPOIManager interface.
+    """
+    return POIManager(dataset=dataset)

@@ -6,6 +6,8 @@ from collections import OrderedDict
 import concurrent.futures
 from src.data_types import POIData, TopCandidates
 from typing import List, Dict
+from src.interfaces.top_candidates import ITopCandidatesFinder
+import numpy as np
 
 # Limited-size cache for graphs
 MAX_CACHE_SIZE = 50
@@ -244,3 +246,72 @@ def prefilter_candidates_by_distance(candidates, user_lat, user_lon, max_distanc
     print(
         f"Pre-filtered from {len(candidates)} to {len(filtered_candidates)} candidates")
     return filtered_candidates
+
+
+class TopCandidatesFinder:
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def calculate_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
+        """
+        Calculate the Haversine distance between two points in meters.
+        """
+        R = 6371000  # Earth's radius in meters
+        phi1 = np.radians(lat1)
+        phi2 = np.radians(lat2)
+        delta_phi = np.radians(lat2 - lat1)
+        delta_lambda = np.radians(lon2 - lon1)
+
+        a = np.sin(delta_phi/2)**2 + np.cos(phi1) * \
+            np.cos(phi2) * np.sin(delta_lambda/2)**2
+        c = 2 * np.arctan2(np.sqrt(a), np.sqrt(1-a))
+        return R * c
+
+    @timing_decorator
+    def find_top_candidates(self, candidates: List[POIData], user_lat: float, user_lon: float,
+                            radius_m: int, n: int = 4) -> TopCandidates:
+        """
+        Find the top n candidates from a list of POIs based on various criteria.
+
+        Args:
+            candidates: List of POI data to filter
+            user_lat: User's latitude
+            user_lon: User's longitude
+            radius_m: Search radius in meters
+            n: Number of top candidates to return (default: 4)
+
+        Returns:
+            TopCandidates object containing lists of POIs for different modes
+        """
+        if not candidates:
+            return TopCandidates(drive=[], walk=[], default=[])
+
+        # Calculate distances for all candidates
+        for candidate in candidates:
+            distance = self.calculate_distance(
+                user_lat, user_lon, candidate['latitude'], candidate['longitude'])
+            candidate['distance_m'] = distance
+
+        # Sort candidates by distance
+        sorted_candidates = sorted(candidates, key=lambda x: x['distance_m'])
+
+        # Take top n candidates
+        top_candidates = sorted_candidates[:n]
+
+        # Create TopCandidates object
+        return TopCandidates(
+            drive=top_candidates,
+            walk=top_candidates,
+            default=top_candidates
+        )
+
+
+def create_top_candidates_finder() -> ITopCandidatesFinder:
+    """
+    Factory function to create a TopCandidatesFinder instance.
+
+    Returns:
+        An instance of TopCandidatesFinder implementing the ITopCandidatesFinder interface.
+    """
+    return TopCandidatesFinder()
