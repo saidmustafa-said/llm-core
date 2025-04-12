@@ -87,9 +87,19 @@ class POIManager:
     def get_poi_by_subcategories(self, user_lat: float, user_lon: float, radius_m: int,
                                  search_subcategories: List[str]) -> List[POIData]:
         """
-        Retrieves Points of Interest (POI) data filtered by location and subcategories.
-        Returns a list of POIData objects.
+        Finds and returns POIs (Points of Interest) that match the specified subcategories
+        and are located within a geographic radius from the user's coordinates.
+
+        Args:
+            user_lat (float): User's latitude.
+            user_lon (float): User's longitude.
+            radius_m (int): Search radius in meters.
+            search_subcategories (List[str]): Subcategories to filter by (e.g., ['cafe', 'museum']).
+
+        Returns:
+            List[POIData]: List of matching POIs as POIData objects.
         """
+
         self.load_data()
         print("Categories to search for:", search_subcategories)
         return self.filter_by_bounding_box_and_subcategory(user_lat, user_lon, radius_m, search_subcategories)
@@ -97,9 +107,18 @@ class POIManager:
     @timing_decorator
     def get_available_categories(self, user_lat: float, user_lon: float, radius_m: int) -> str:
         """
-        Retrieves available categories and subcategories within the specified radius.
-        Returns a formatted string mapping categories to their subcategories.
+        Scans all POIs within a specified radius from the user's location and summarizes
+        which categories and subcategories are available.
+
+        Args:
+            user_lat (float): User's latitude.
+            user_lon (float): User's longitude.
+            radius_m (int): Search radius in meters.
+
+        Returns:
+            str: A multi-line string mapping categories to subcategories (e.g., "Food: Cafe, Bakery").
         """
+
         self.load_data()
 
         # Ensure the dataset has the required columns for mapping.

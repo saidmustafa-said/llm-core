@@ -44,10 +44,10 @@ class AdviceHandler(BaseHandler):
             f"Processing advice continuation for session {session_id}")
 
         # Get stored parameters
-        top_candidates = session_data.get("top_candidates", {})
-        latitude = session_data.get("latitude", 40.971255)
-        longitude = session_data.get("longitude", 28.793878)
-        search_radius = session_data.get("search_radius", 1000)
+        top_candidates = session_data.get("top_candidates")
+        latitude = session_data.get("latitude")
+        longitude = session_data.get("longitude")
+        search_radius = session_data.get("search_radius")
 
         try:
             # Get follow-up advice

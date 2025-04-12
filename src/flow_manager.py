@@ -36,8 +36,8 @@ class FlowManager:
             state_manager, history_manager)
 
     def process_user_input(self, user_id: str, session_id: str, user_input: str,
-                           latitude: float = 40.971255, longitude: float = 28.793878,
-                           search_radius: int = 1000) -> Dict[str, Any]:
+                           latitude: float, longitude: float,
+                           search_radius: int) -> Dict[str, Any]:
         """
         Process a user input message and return the appropriate response.
 
