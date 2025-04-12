@@ -13,10 +13,17 @@ http://127.0.0.1:8000/session
 
 http://127.0.0.1:8000/message
 {
-    "user_id": "user123",
-    "session_id": "1744037736_56e9313d",
-    "message": "Hello, is there a cafe close by.",
+    "user_id": "said1",
+    "session_id": "1744446476_ee8182be",
+    "message": "is there a cafe close by",
     "latitude": 40.971255,
     "longitude": 28.793878,
-    "search_radius": 1000
+    "search_radius": 1000,
+    "num_candidates": 2
+}
+
+http://127.0.0.1:8000/delete
+{
+    "user_id": "user1234",
+    "session_id": "1744446476_ee8182be"
 }

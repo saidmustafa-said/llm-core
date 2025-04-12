@@ -27,6 +27,28 @@ class SessionLogger:
         # Configure root logger to prevent unwanted outputs
         logging.getLogger().handlers = []
 
+        # Setup health check logger
+        self._setup_health_check_logger()
+
+    def _setup_health_check_logger(self):
+        """Setup dedicated logger for health checks"""
+        health_check_logger = logging.getLogger("health_check")
+        health_check_logger.setLevel(logging.INFO)
+
+        # Clear existing handlers
+        for handler in health_check_logger.handlers[:]:
+            health_check_logger.removeHandler(handler)
+
+        # Create health check log file
+        health_check_file = self._log_dir / "health_checks.log"
+        file_handler = logging.FileHandler(health_check_file)
+        file_handler.setFormatter(logging.Formatter(
+            '%(asctime)s | %(levelname)-8s | %(message)s'
+        ))
+        health_check_logger.addHandler(file_handler)
+
+        self.health_check_logger = health_check_logger
+
     def start_session(self, user_id: str, session_id: str):
         """Initialize a new logging session"""
         # Create user-specific directory (with parents if needed)
@@ -65,6 +87,10 @@ class SessionLogger:
             return system_logger
         return self._local.logger
 
+    def get_health_check_logger(self) -> logging.Logger:
+        """Get the dedicated health check logger"""
+        return self.health_check_logger
+
 
 # Global instance
 session_logger = SessionLogger()
@@ -74,3 +100,7 @@ session_logger = SessionLogger()
 
 def get_logger() -> logging.Logger:
     return session_logger.get_logger()
+
+
+def get_health_check_logger() -> logging.Logger:
+    return session_logger.get_health_check_logger()

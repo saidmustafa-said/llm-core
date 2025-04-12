@@ -5,7 +5,7 @@ import time
 from typing import Dict, Any, Optional
 from src.config_manager import ConfigManager
 from main import process_request, create_session, get_session_history, get_session_messages
-from src.logger_setup import session_logger, get_logger
+from src.logger_setup import session_logger, get_logger, get_health_check_logger
 from src.flow_manager import FlowManager
 
 # Initialize FastAPI app
@@ -32,6 +32,18 @@ config_manager = ConfigManager()
 async def logging_middleware(request: Request, call_next):
     """Middleware for request logging"""
     request_id = str(uuid.uuid4())
+
+    # Handle health check requests differently
+    if request.url.path == "/health":
+        logger = get_health_check_logger()
+        logger.info(f"Health check request received")
+        response = await call_next(request)
+        logger.info(f"Health check response: {response.status_code}")
+        return response
+
+    # Skip logging initialization for /session endpoint
+    if request.url.path == "/session":
+        return await call_next(request)
 
     # Extract user ID and session ID from request if available
     user_id = "unknown"

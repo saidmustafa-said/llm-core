@@ -1,24 +1,5 @@
 {
-  "todo": [
-    {
-      "id": 11354,
-      "text": "delete api",
-      "priority": 1,
-      "created": "2025-04-11T12:01:37.901Z"
-    },
-    {
-      "id": 17764,
-      "text": "data return for all ",
-      "priority": 1,
-      "created": "2025-04-11T12:01:30.377Z"
-    },
-    {
-      "id": 15778,
-      "text": "clean the code and fucntion naming",
-      "priority": 2,
-      "created": "2025-03-23T11:08:31.375Z"
-    }
-  ],
+  "todo": [],
   "completed": [
     {
       "id": 12013,
@@ -67,6 +48,24 @@
       "text": "connect to the api",
       "priority": 3,
       "created": "2025-03-23T11:08:46.317Z"
+    },
+    {
+      "id": 11354,
+      "text": "delete api",
+      "priority": 1,
+      "created": "2025-04-11T12:01:37.901Z"
+    },
+    {
+      "id": 17764,
+      "text": "data return for all ",
+      "priority": 1,
+      "created": "2025-04-11T12:01:30.377Z"
+    },
+    {
+      "id": 15778,
+      "text": "clean the code and fucntion naming",
+      "priority": 2,
+      "created": "2025-03-23T11:08:31.375Z"
     }
   ]
 }
