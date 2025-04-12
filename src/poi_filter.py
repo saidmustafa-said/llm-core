@@ -2,14 +2,17 @@ from src.utils import timing_decorator
 import pandas as pd
 import math
 import re
-from config import DATASET
 from src.data_types import POIData
 from typing import List, Dict, Optional
+from src.config_manager import ConfigManager
 
 
 class POIManager:
-    def __init__(self, dataset: str = DATASET):
-        self.dataset = dataset
+    def __init__(self, dataset: str = None):
+        # Initialize ConfigManager inside the constructor
+        self.config = ConfigManager()
+        # Use the dataset path from ConfigManager if not provided
+        self.dataset = dataset if dataset is not None else self.config.dataset_path
         self.df = None
 
     def load_data(self):

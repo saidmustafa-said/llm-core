@@ -1,14 +1,17 @@
+# src/get_location_advice.py
+
 from typing import List, Optional, Dict
 import re
 import json
 import numpy as np
 import uuid
-from config import LLAMA_API
+# from config import LLAMA_API
 from src.utils import timing_decorator
 
 from src.data_types import TopCandidates, LocationAdviceResponse
 from src.function_api_builder import build_location_request, build_location_request_search
 from src.logger_setup import get_logger
+from src.config_manager import ConfigManager
 
 
 def format_top_candidates(top_candidates: TopCandidates) -> str:
@@ -72,7 +75,7 @@ def extract_content(response):
 
 @timing_decorator
 def get_location_advice(prompt, history, top_candidates: TopCandidates,
-                        latitude, longitude, search_radius, flag = False) -> LocationAdviceResponse:
+                        latitude, longitude, search_radius, flag=False) -> LocationAdviceResponse:
     """Main function to get location advice with structured response handling
 
     Returns:
@@ -84,6 +87,9 @@ def get_location_advice(prompt, history, top_candidates: TopCandidates,
         - token_counts: Dict[str, int] - Token usage statistics
         - conversation_id: str - Unique identifier for the conversation
     """
+    config = ConfigManager()
+
+    LLAMA_API = config.get_llama_api()
     logger = get_logger()
     """Main function to get location advice with structured response handling"""
 

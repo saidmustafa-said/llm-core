@@ -1,766 +1,195 @@
-dont change the code at all, the structure or anything else, we will just do this :
-
-1) we will not do this in flow_manager.py and other files: """Returns:   Dict containing response and any additional action information     """ in functions, we will write what it is exactly return in comment before every return 
+this 2 files send api request to the llama api and get a response. they are similar so i want to build a interface and then inside the interface we can write the common functions that will be used in both files. In testing it is kinda expensive to always send a new request to the api. So we can cache the response and use it again. cache it into a file.json or what other pyc or something so when the input is the same we can just read the file and return from there. do you have a better idea? and then in prod we can easily turn off the caching system or even upgrade the caching system to a more better one so we can even build a class for that. give me your thoughts
 
 
-for example if it is returning dict, we will do this: #returns {name,age...}... and so on
+# src/llamarequest.py
+import os
+import pandas as pd
+from config import LLAMA_API, TAGS_LIST, CATEGORY_SUBCATEGORY_LIST
+from src.utils import timing_decorator
+from src.data_types import LLMResponse
+from typing import List, Optional
+from src.function_api_builder import create_classification_request
+from src.logger_setup import get_logger
+import json
 
 
-2) we will ask for num_candidates from main and that will ask from api, since that is a changing number
+def extract_content(response):
+    """Extracts the JSON content from the response's 'content' field."""
+    try:
+        # Navigate to the content field
+        content_str = response.get("choices", [{}])[0].get(
+            "message", {}).get("content", "")
 
-3) we will return the top_candidaates with the other data too ebcause it is needed.
+        # Parse the JSON
+        extracted_json = json.loads(content_str)
 
-4) there is a problem here with the data return "parameters": response.get("parameters") is always empty or is there a data that comes to that
+        return extracted_json
+    except (json.JSONDecodeError, IndexError, KeyError) as e:
+        print(f"Error extracting content: {e}")
+        return None
 
-# flow_manager.py
 
-from typing import Dict, Any
-from src.managers.state.state_manager import StateManager
-from src.managers.history.history_manager import HistoryManager
-from src.get_location_advice import get_location_advice
-from src.get_top_candidates import find_top_candidates
-from src.poi_filter import POIManager
-from src.llamarequest import llm_api
+@timing_decorator
+def llm_api(prompt: str, subcategories) -> LLMResponse:
+    logger = get_logger()
+    logger.info("Calling LLM API with the provided prompt.")
+
+    # user_history = history if history else "No previous conversation"
+    existing_subcategories_str = subcategories
+    print(existing_subcategories_str)
+
+    logger.debug(f"Existing subcategories: {existing_subcategories_str}")
+    # logger.debug("User history: %s", user_history.replace('\n', ' || '))
+
+    # Prepare the API request
+    api_request_json = create_classification_request(
+        prompt, existing_subcategories_str, )
+    logger.debug(
+        f"API request JSON from create_classification_request: {api_request_json}")
+
+    # Call the LLAMA API
+    try:
+        response = LLAMA_API.run(api_request_json)
+        print("Response from LLAMA API:", response.json())
+        logger.info("Received response from LLAMA API.")
+        logger.debug(f"Response: {response.json()}")
+    except Exception as e:
+        logger.error(f"Error calling LLAMA API: {e}")
+        return LLMResponse({"error": "Failed to call LLAMA API"})
+
+    # Extract and parse JSON from the response
+    extracted_json = extract_content(response.json())
+
+    return extracted_json
+
+
+# src/get_location_advice.py
+
+from typing import List, Optional, Dict
+import re
+import json
+import numpy as np
+import uuid
+from config import LLAMA_API
+from src.utils import timing_decorator
+
+from src.data_types import TopCandidates, LocationAdviceResponse
+from src.function_api_builder import build_location_request, build_location_request_search
 from src.logger_setup import get_logger
 
 
-class FlowManager:
+def format_top_candidates(top_candidates: TopCandidates) -> str:
     """
-    Controls the user journey flow through the application,
-    managing state transitions and history logging.
+    Format top candidate points of interest into a readable string.
+    Handles numpy types and None values properly.
     """
+    logger = get_logger()
+    lines = []
 
-    def __init__(self, state_manager: StateManager, history_manager: HistoryManager):
-        """
-        Initialize the FlowManager with state and history managers.
+    for mode, candidates in top_candidates.items():
+        lines.append(f"{mode.capitalize()} Mode:")
 
-        Args:
-            state_manager: Manager for storing and retrieving session state
-            history_manager: Manager for logging conversation history
-        """
-        self.state_manager = state_manager
-        self.history_manager = history_manager
-        self.poi_manager = POIManager()
-        self.logger = get_logger()
+        if candidates and len(candidates) > 0:
+            for poi in candidates:
+                details = [f"Mode: {mode.capitalize()}"]
 
-    def process_user_input(self, user_id: str, session_id: str, user_input: str,
-                           latitude: float = 40.971255, longitude: float = 28.793878,
-                           search_radius: int = 1000) -> Dict[str, Any]:
-        """
-        Process a user input message and return the appropriate response.
+                for key, value in poi.items():
+                    # Convert numpy types to Python native types
+                    if isinstance(value, np.generic):
+                        value = value.item()  # Replaced np.asscalar with .item()
 
-        Args:
-            user_id: Unique identifier for the user
-            session_id: Unique identifier for the current session
-            user_input: Text message from the user
-            latitude: User's current latitude
-            longitude: User's current longitude
-            search_radius: Search radius in meters for POIs
+                    if value is None or (isinstance(value, float) and np.isnan(value)):
+                        continue
 
-        Returns:
-            Dict containing response and any additional action information
-        """
-        # Log the user message
-        self.history_manager.log_user_message(user_id, session_id, user_input)
+                    if isinstance(value, dict):
+                        for sub_key, sub_value in value.items():
+                            if isinstance(sub_value, np.generic):
+                                sub_value = sub_value.item()  # Replaced np.asscalar with .item()
+                            if sub_value is None or (isinstance(sub_value, float) and np.isnan(sub_value)):
+                                continue
+                            details.append(
+                                f"{sub_key.capitalize()}: {sub_value}")
+                    else:
+                        details.append(f"{key.capitalize()}: {value}")
 
-        # Get or create a session state
-        session = self.state_manager.get_session(user_id, session_id)
-        if not session:
-            self.logger.warning(
-                f"Session {session_id} not found, creating new session")
-            session_id = self.state_manager.create_session(user_id)
-            session = self.state_manager.get_session(user_id, session_id)
-
-        # Get current state from session
-        current_state = session.get("current_state", "initial")
-        session_data = session.get("data", {})
-
-        # Get conversation history
-        formatted_history = self.history_manager.get_formatted_history(
-            user_id, session_id)
-
-        # Process based on current state
-        if current_state == "initial" or current_state == "new_query":
-            response = self._process_query(user_id, session_id, user_input, formatted_history,
-                                           latitude, longitude, search_radius, session)
-            return response
-        elif current_state == "providing_advice":
-            return self._handle_advice_continuation(user_id, session_id, user_input, formatted_history,
-                                                    session_data, session)
-        elif current_state == "clarification_needed":
-            return self._handle_clarification(user_id, session_id, user_input, formatted_history,
-                                              session_data, session)
+                lines.append("\n".join(details))
         else:
-            # Unknown state, reset to initial
-            self.logger.warning(
-                f"Unknown state: {current_state}, resetting to initial")
-            session["current_state"] = "initial"
-            self.state_manager.save_session(user_id, session_id, session)
-            return {
-                "response": "I seem to have lost track of our conversation. Let's start over. What can I help you find?",
-                "status": "reset"
-            }
+            lines.append(
+                f"No locations found within the specified route distance for {mode} mode.")
 
-    def _process_query(self, user_id: str, session_id: str, user_input: str,
-                       formatted_history: str, latitude: float, longitude: float,
-                       search_radius: int, session: Dict[str, Any]) -> Dict[str, Any]:
-        """Process a new query, including handling classification and location search"""
+    logger.debug("Formatted top candidates: %s", "\n\n".join(lines))
+    return "\n\n".join(lines) if lines else "No location data available."
 
-        self.logger.info(f"Processing new query for session {session_id}")
 
-        # Step 1: Get text classification from LLM
-        subcategories_for_context = self.poi_manager.get_poi_data(
-            latitude, longitude, search_radius)
-        print("Subcategories for context:", subcategories_for_context)
-        extracted_json = llm_api(
-            user_input, subcategories_for_context)
-        print("Extracted JSON:", extracted_json)
-        # Check if clarification is needed
-        if "clarification" in extracted_json:
-            clarification_value = extracted_json.get("clarification")
-
-            # Handle different clarification formats
-            question = ""
-            if isinstance(clarification_value, str):
-                question = clarification_value
-            elif isinstance(clarification_value, dict) and "question" in clarification_value:
-                question = clarification_value.get("question", "")
-            else:
-                question = "Please provide more information"
-
-            # Update session state for clarification
-            session["current_state"] = "clarification_needed"
-            session["data"] = {
-                "original_prompt": user_input,
-                "clarification_question": question,
-                "latitude": latitude,
-                "longitude": longitude,
-                "search_radius": search_radius
-            }
-            self.state_manager.save_session(user_id, session_id, session)
-
-            # Log assistant's clarification request
-            self.history_manager.log_assistant_message(
-                user_id, session_id, question)
-
-            return {
-                "response": question,
-                "status": "clarification_needed"
-            }
-
-        # Check for subcategories to search
-        if "subcategories" in extracted_json:
-            subcategories = extracted_json.get("subcategories", [])
-            self.logger.info(f"Identified subcategories: {subcategories}")
-
-            # Step 2: Get POI data for identified subcategories
-            candidates = self.poi_manager.get_poi_data(
-                latitude, longitude, search_radius, subcategories)
-
-            if not candidates:
-                self.logger.warning("No POIs found for given criteria")
-                # Update session state
-                session["current_state"] = "new_query"
-                self.state_manager.save_session(user_id, session_id, session)
-
-                response_text = "I couldn't find any places matching your criteria. Could you try with different criteria or a wider search radius?"
-                self.history_manager.log_assistant_message(
-                    user_id, session_id, response_text)
-
-                return {
-                    "response": response_text,
-                    "status": "no_results"
-                }
-
-            # Step 3: Find top candidates
-            num_candidates = 4  # Default value
-            top_candidates = find_top_candidates(
-                candidates, latitude, longitude, search_radius, num_candidates)
-            print("Top candidates1:", top_candidates)
-            if not isinstance(top_candidates, dict):
-                top_candidates = {"default": top_candidates}
-            print("Top candidates2:", top_candidates)
-            # Step 4: Get location advice for top candidates
-            try:
-                advice_result = get_location_advice(user_input, formatted_history, top_candidates,
-                                                    latitude, longitude, search_radius)
-
-                # Check advice result format
-                if "response" in advice_result:
-                    # Standard response
-                    response_text = advice_result.get("response")
-                    continuation = str(advice_result.get(
-                        "continuation", "false")).lower() == "true"
-
-                    # Log assistant response
-                    self.history_manager.log_assistant_message(
-                        user_id, session_id, response_text)
-
-                    # Update session state
-                    session["current_state"] = "providing_advice"
-                    session["data"] = {
-                        "prompt": user_input,
-                        "top_candidates": top_candidates,
-                        "extracted_json": extracted_json,
-                        "latitude": latitude,
-                        "longitude": longitude,
-                        "search_radius": search_radius
-                    }
-                    self.state_manager.save_session(
-                        user_id, session_id, session)
-
-                    return {
-                        "response": response_text,
-                        "status": "advice_provided",
-                        "continuation": continuation
-                    }
-                elif "action" in advice_result and advice_result["action"] == "classification_agent":
-                    # Handle location-based redirection by directly processing with new parameters
-                    new_prompt = advice_result.get("prompt", user_input)
-                    new_latitude = advice_result.get("latitude", latitude)
-                    new_longitude = advice_result.get("longitude", longitude)
-                    new_radius = advice_result.get("radius", search_radius)
-
-                    self.logger.info(
-                        f"Using refined search parameters: lat={new_latitude}, lon={new_longitude}, radius={new_radius}")
-
-                    # Call directly with new coordinates - this is the key change to prevent recursion issues
-                    # but still maintain the seamless flow without intermediate message
-                    return self._direct_location_search(
-                        user_id,
-                        session_id,
-                        new_prompt,
-                        new_latitude,
-                        new_longitude,
-                        new_radius,
-                        session,
-                        formatted_history
-                    )
-                else:
-                    self.logger.warning(
-                        "Unknown response format from location advice")
-                    return {
-                        "response": "I couldn't process your request properly. Let's try again with a new query.",
-                        "status": "error"
-                    }
-
-            except Exception as e:
-                self.logger.error(f"Location advice error: {str(e)}")
-                session["current_state"] = "new_query"
-                self.state_manager.save_session(user_id, session_id, session)
-
-                return {
-                    "response": f"I encountered an error while processing your request: {str(e)}. Let's try again.",
-                    "status": "error"
-                }
-        else:
-            self.logger.warning("No subcategories found in LLM response")
-            session["current_state"] = "new_query"
-            self.state_manager.save_session(user_id, session_id, session)
-
-            response_text = "I couldn't identify what you're looking for. Could you be more specific about the type of place you want to find?"
-            self.history_manager.log_assistant_message(
-                user_id, session_id, response_text)
-
-            return {
-                "response": response_text,
-                "status": "no_subcategories"
-            }
-
-    def _direct_location_search(self, user_id: str, session_id: str, search_prompt: str,
-                                latitude: float, longitude: float, search_radius: int,
-                                session: Dict[str, Any], formatted_history: str) -> Dict[str, Any]:
-        """
-        Directly perform location search without classification step
-        This handles the case where we've already identified a location to search near
-        """
-        self.logger.info(
-            f"Directly searching for locations with coordinates: {latitude}, {longitude}")
-        print(
-            f"Directly searching for locations with coordinates: {latitude}, {longitude}")
-
-        subcategories_for_context = self.poi_manager.get_poi_data(
-            latitude, longitude, search_radius)
-        print("Subcategories search for context:", subcategories_for_context)
-        extracted_json = llm_api(
-            search_prompt, subcategories_for_context)
-        subcategories = extracted_json.get("subcategories", [])
-        print("Extracted JSON search:", subcategories)
-
-        # Get POI data for restaurants
-        candidates = self.poi_manager.get_poi_data(
-            latitude, longitude, search_radius, subcategories)
-        print("Candidates search:", candidates)
-
-        if not candidates:
-            print("No POIs found near specified location")
-            self.logger.warning("No POIs found near specified location")
-            session["current_state"] = "new_query"
-            self.state_manager.save_session(user_id, session_id, session)
-
-            response_text = "I couldn't find any restaurants near that location. Could you try a different location or a wider search radius?"
-            self.history_manager.log_assistant_message(
-                user_id, session_id, response_text)
-
-            return {
-                "response": response_text,
-                "status": "no_results"
-            }
-
-        # Find top candidates
-        num_candidates = 4  # Default value
-        top_candidates = find_top_candidates(
-            candidates, latitude, longitude, search_radius, num_candidates)
-        print("Top candidates search:", top_candidates)
-        if not isinstance(top_candidates, dict):
-            top_candidates = {"default": top_candidates}
-
-        # Get location advice for top candidates
-        try:
-            advice_result = get_location_advice(search_prompt, formatted_history, top_candidates,
-                                                latitude, longitude, search_radius)
-
-            # Standard response - we expect this to have resolved the classification agent redirection
-            if "response" in advice_result:
-                response_text = advice_result.get("response")
-                continuation = str(advice_result.get(
-                    "continuation", "false")).lower() == "true"
-
-                # Log assistant response
-                self.history_manager.log_assistant_message(
-                    user_id, session_id, response_text)
-
-                # Update session state
-                session["current_state"] = "providing_advice"
-                session["data"] = {
-                    "prompt": search_prompt,
-                    "top_candidates": top_candidates,
-                    "latitude": latitude,
-                    "longitude": longitude,
-                    "search_radius": search_radius
-                }
-                self.state_manager.save_session(user_id, session_id, session)
-
-                return {
-                    "response": response_text,
-                    "status": "advice_provided",
-                    "continuation": continuation
-                }
-            else:
-                self.logger.warning(
-                    "Unexpected response format after direct location search")
-                return {
-                    "response": "I found some restaurants in that area, but I'm having trouble providing specific recommendations. Could you clarify what type of restaurant you're looking for?",
-                    "status": "error"
-                }
-
-        except Exception as e:
-            self.logger.error(f"Direct location search error: {str(e)}")
-            session["current_state"] = "new_query"
-            self.state_manager.save_session(user_id, session_id, session)
-
-            return {
-                "response": f"I encountered an error while searching for restaurants: {str(e)}. Let's try again.",
-                "status": "error"
-            }
-
-    def _handle_clarification(self, user_id: str, session_id: str, user_input: str,
-                              formatted_history: str, session_data: Dict[str, Any],
-                              session: Dict[str, Any]) -> Dict[str, Any]:
-        """Handle the clarification state when LLM needs more information"""
-        self.logger.info(f"Processing clarification for session {session_id}")
-
-        # Get stored parameters
-        latitude = session_data.get("latitude")
-        longitude = session_data.get("longitude")
-        search_radius = session_data.get("search_radius")
-
-        # Set state back to new_query to re-process with clarification
-        session["current_state"] = "new_query"
-        self.state_manager.save_session(user_id, session_id, session)
-
-        # Process with the clarification input as a new query
-        return self._process_query(user_id, session_id, user_input, formatted_history,
-                                   latitude, longitude, search_radius, session)
-
-    def _handle_advice_continuation(self, user_id: str, session_id: str, user_input: str,
-                                    formatted_history: str, session_data: Dict[str, Any],
-                                    session: Dict[str, Any]) -> Dict[str, Any]:
-        """Handle continuations when user asks follow-up questions about locations"""
-        self.logger.info(
-            f"Processing advice continuation for session {session_id}")
-
-        # Get stored parameters
-        top_candidates = session_data.get("top_candidates", {})
-        latitude = session_data.get("latitude", 40.971255)
-        longitude = session_data.get("longitude", 28.793878)
-        search_radius = session_data.get("search_radius", 1000)
-
-        try:
-            # Get follow-up advice
-            advice_result = get_location_advice(user_input, formatted_history, top_candidates,
-                                                latitude, longitude, search_radius)
-
-            # Check advice result format
-            if "response" in advice_result:
-                # Standard response
-                response_text = advice_result.get("response")
-                continuation = str(advice_result.get(
-                    "continuation", "false")).lower() == "true"
-
-                # Log assistant response
-                self.history_manager.log_assistant_message(
-                    user_id, session_id, response_text)
-
-                # If not continuing, set state back to new_query
-                if not continuation:
-                    session["current_state"] = "new_query"
-                    self.state_manager.save_session(
-                        user_id, session_id, session)
-
-                return {
-                    "response": response_text,
-                    "status": "advice_provided",
-                    "continuation": continuation
-                }
-            elif "action" in advice_result and advice_result["action"] == "classification_agent":
-                # Handle new search with specific location
-                new_prompt = advice_result.get("prompt", user_input)
-                new_latitude = advice_result.get("latitude", latitude)
-                new_longitude = advice_result.get("longitude", longitude)
-                new_radius = advice_result.get("radius", search_radius)
-
-                # Directly search with the new location parameters
-                return self._direct_location_search(
-                    user_id,
-                    session_id,
-                    new_prompt,
-                    new_latitude,
-                    new_longitude,
-                    new_radius,
-                    session,
-                    formatted_history
-                )
-            else:
-                self.logger.warning(
-                    "Unknown response format from location advice")
-                session["current_state"] = "new_query"
-                self.state_manager.save_session(user_id, session_id, session)
-
-                return {
-                    "response": "I couldn't process your request properly. Let's try again with a new query.",
-                    "status": "error"
-                }
-
-        except Exception as e:
-            self.logger.error(f"Location advice error: {str(e)}")
-            session["current_state"] = "new_query"
-            self.state_manager.save_session(user_id, session_id, session)
-
-            return {
-                "response": f"I encountered an error while processing your request: {str(e)}. Let's try again.",
-                "status": "error"
-            }
-
-    def create_new_session(self, user_id: str) -> str:
-        """Create a new session and return the session ID"""
-        self.logger.info(f"Creating new session for user {user_id}")
-        return self.state_manager.create_session(user_id)
-
-# main.py
-
-from typing import Dict, Any, Optional, Tuple
-from src.managers.state.state_manager import StateManager
-from src.managers.history.history_manager import HistoryManager
-from src.flow_manager import FlowManager
-from src.logger_setup import session_logger, get_logger
-
-
-def process_request(user_id: str, session_id: str, user_input: str,
-                    latitude: float, longitude: float,
-                    search_radius: int,
-                    state_manager: Optional[StateManager] = None,
-                    history_manager: Optional[HistoryManager] = None) -> Dict[str, Any]:
-    """
-    Process a user request through the system.
-
-    This is the main entry point for the application logic.
-
-    Args:
-        user_id: Unique identifier for the user
-        session_id: Unique identifier for the current session
-        user_input: Text message from the user
-        latitude: User's current latitude
-        longitude: User's current longitude
-        search_radius: Search radius in meters for POIs
-        state_manager: Optional state manager instance (if not provided, one will be created)
-        history_manager: Optional history manager instance (if not provided, one will be created)
-
-    Returns:
-        Dict containing response and any additional action information
-    """
-    logger = get_logger()
-    logger.info(f"Processing request for user {user_id}, session {session_id}")
-
-    # If managers are not provided, use default JSON implementations
-    if state_manager is None:
-        from src.managers.state.json_state_manager import JSONStateManager
-        state_manager = JSONStateManager()
-        logger.debug("Created default JSONStateManager")
-
-    if history_manager is None:
-        from src.managers.history.json_history_manager import JSONHistoryManager
-        history_manager = JSONHistoryManager()
-        logger.debug("Created default JSONHistoryManager")
-
-    # Create flow manager
-    flow_manager = FlowManager(state_manager, history_manager)
-
-    # Process the request - all logic now handled in flow_manager
-    return flow_manager.process_user_input(
-        user_id, session_id, user_input, latitude, longitude, search_radius
-    )
-
-
-def create_session(user_id: str, state_manager: Optional[StateManager] = None) -> str:
-    """
-    Create a new session for a user.
-
-    Args:
-        user_id: Unique identifier for the user
-        state_manager: Optional state manager instance (if not provided, one will be created)
-
-    Returns:
-        New session ID
-    """
-    logger = get_logger()
-    logger.info(f"Creating new session for user {user_id}")
-
-    # If state manager is not provided, use default JSON implementation
-    if state_manager is None:
-        from src.managers.state.json_state_manager import JSONStateManager
-        state_manager = JSONStateManager()
-        logger.debug("Created default JSONStateManager")
-
-    # Create flow manager
-    from src.managers.history.json_history_manager import JSONHistoryManager
-    history_manager = JSONHistoryManager()
-    flow_manager = FlowManager(state_manager, history_manager)
-
-    # Create new session
-    session_id = flow_manager.create_new_session(user_id)
-    logger.info(f"Created session ID: {session_id} for user: {user_id}")
-
-    return session_id
-
-
-def get_session_history(user_id: str, session_id: str, history_manager: Optional[HistoryManager] = None) -> str:
-    """
-    Get formatted history for a session.
-
-    Args:
-        user_id: Unique identifier for the user
-        session_id: Unique identifier for the session
-        history_manager: Optional history manager instance (if not provided, one will be created)
-
-    Returns:
-        Formatted history string
-    """
-    logger = get_logger()
-    logger.info(f"Getting history for user {user_id}, session {session_id}")
-
-    # If history manager is not provided, use default JSON implementation
-    if history_manager is None:
-        from src.managers.history.json_history_manager import JSONHistoryManager
-        history_manager = JSONHistoryManager()
-        logger.debug("Created default JSONHistoryManager")
-
-    return history_manager.get_formatted_history(user_id, session_id)
-
-
-def get_session_messages(user_id: str, session_id: str, history_manager: Optional[HistoryManager] = None) -> list:
-    """
-    Get raw messages for a session.
-
-    Args:
-        user_id: Unique identifier for the user
-        session_id: Unique identifier for the session
-        history_manager: Optional history manager instance (if not provided, one will be created)
-
-    Returns:
-        List of message dictionaries
-    """
-    logger = get_logger()
-    logger.info(f"Getting messages for user {user_id}, session {session_id}")
-
-    # If history manager is not provided, use default JSON implementation
-    if history_manager is None:
-        from src.managers.history.json_history_manager import JSONHistoryManager
-        history_manager = JSONHistoryManager()
-        logger.debug("Created default JSONHistoryManager")
-
-    return history_manager.get_history(user_id, session_id)
-
-# api.py
-
-from fastapi import FastAPI, HTTPException, Depends, Request
-from fastapi.middleware.cors import CORSMiddleware
-import uuid
-import time
-from typing import Dict, Any, Optional
-from src.config_manager import ConfigManager
-from main import process_request, create_session, get_session_history, get_session_messages
-from src.logger_setup import session_logger, get_logger
-
-# Initialize FastAPI app
-app = FastAPI(
-    title="Location Advice API",
-    description="API for location-based advice and recommendations",
-    version="1.0.0"
-)
-
-# Add CORS middleware
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# Initialize config manager
-config_manager = ConfigManager()
-
-
-@app.middleware("http")
-async def logging_middleware(request: Request, call_next):
-    """Middleware for request logging"""
-    request_id = str(uuid.uuid4())
-
-    # Extract user ID and session ID from request if available
-    user_id = "unknown"
-    session_id = request_id  # Default to request_id if session_id not found
-    if request.method == "POST":
-        try:
-            body = await request.json()
-            user_id = body.get("user_id", "unknown")
-            # Use session_id from request body if available
-            if "session_id" in body:
-                session_id = body.get("session_id")
-        except:
-            pass
-
-    # Initialize session logging
-    session_logger.start_session(user_id, session_id)
-    logger = get_logger()
-
-    # Log request
-    logger.info(f"Request: {request.method} {request.url.path}")
-
-    # Process request
-    start_time = time.time()
-    response = await call_next(request)
-    process_time = time.time() - start_time
-
-    # Log response
-    logger.info(f"Response: {response.status_code} ({process_time:.3f}s)")
-
-    return response
-
-
-@app.post("/message")
-async def process_message(request: Request):
-    """Process a user message and return a response"""
-    logger = get_logger()
-    body = await request.json()
-
-    user_id = body.get("user_id")
-    session_id = body.get("session_id")
-    message = body.get("message")
-    latitude = body.get("latitude")
-    longitude = body.get("longitude")
-    search_radius = body.get("search_radius")
-
-    logger.info(
-        f"Processing message for user {user_id}, session {session_id}")
-
+def extract_content(response):
+    """Extracts the JSON content from the response's 'content' field."""
     try:
-        response = process_request(
-            user_id,
-            session_id,
-            message,
-            latitude,
-            longitude,
-            search_radius,
-            config_manager.get_state_manager(),
-            config_manager.get_history_manager()
+        # Navigate to the content field
+        content_str = response.get("choices", [{}])[0].get(
+            "message", {}).get("content", "")
+
+        # Parse the JSON
+        extracted_json = json.loads(content_str)
+
+        return extracted_json
+    except (json.JSONDecodeError, IndexError, KeyError) as e:
+        print(f"Error extracting content: {e}")
+        return None
+
+
+@timing_decorator
+def get_location_advice(prompt, history, top_candidates: TopCandidates,
+                        latitude, longitude, search_radius, flag = False) -> LocationAdviceResponse:
+    """Main function to get location advice with structured response handling
+
+    Returns:
+        Dict containing:
+        - response: str - The text response to the user
+        - continuation: bool - Whether the conversation should continue
+        - recommendations: List[Dict[str, str]] - List of recommended locations with details
+        - error: Optional[str] - Error message if any
+        - token_counts: Dict[str, int] - Token usage statistics
+        - conversation_id: str - Unique identifier for the conversation
+    """
+    logger = get_logger()
+    """Main function to get location advice with structured response handling"""
+
+    # Format context and history
+    formatted_candidates = format_top_candidates(top_candidates)
+
+    # Handle history - now expecting pre-formatted string
+    user_history = history if history else "No previous conversation"
+
+    logger.debug("User history: %s", user_history.replace('\n', ' || '))
+    logger.debug("Formatted candidates: %s", formatted_candidates)
+
+    if flag == True:
+        # Build API request
+        api_request = build_location_request_search(
+            prompt, formatted_candidates, user_history,
+            latitude, longitude, search_radius
         )
-
-        return {
-            "response": response.get("response", ""),
-            "status": response.get("status", "unknown"),
-            "continuation": response.get("continuation", False),
-            "parameters": response.get("parameters")
-        }
-    except Exception as e:
-        logger.error(f"Error processing message: {str(e)}")
-        raise HTTPException(
-            status_code=500, detail=f"Error processing message: {str(e)}")
-
-
-@app.post("/session")
-async def create_new_session(request: Request):
-    """Create a new session for a user"""
-    body = await request.json()
-    user_id = body.get("user_id")
-
-    # Create a new session_id
-    session_id = create_session(
-        user_id, config_manager.get_state_manager())
-
-    # Initialize logging for this new session
-    session_logger.start_session(user_id, session_id)
-    logger = get_logger()
-    logger.info(f"Created new session {session_id} for user {user_id}")
-
-    return {"session_id": session_id}
-
-
-@app.get("/session/{user_id}/{session_id}/history")
-async def get_history(user_id: str, session_id: str):
-    """Get the conversation history for a session"""
-    # Initialize session logging for this existing session
-    session_logger.start_session(user_id, session_id)
-    logger = get_logger()
-    logger.info(f"Getting history for user {user_id}, session {session_id}")
+    else:
+        # Build API request
+        api_request = build_location_request(
+            prompt, formatted_candidates, user_history,
+            latitude, longitude, search_radius
+        )
+    logger.debug(
+        f"API request JSON from build_location_request: {api_request}")
 
     try:
-        history = get_session_history(
-            user_id, session_id, config_manager.get_history_manager())
-        return {"history": history}
+        # Execute API call
+        response = LLAMA_API.run(api_request)
+        logger.info("Received response from LLAMA API.")
+        logger.debug(f"Response: {response.json()}")
+
+        # Process response
+        extracted_json = extract_content(response.json())
+
     except Exception as e:
-        logger.error(f"Error getting history: {str(e)}")
-        raise HTTPException(
-            status_code=500, detail=f"Error getting history: {str(e)}")
+        logger.error("Location Advice API failed: %s", e)
 
+    logger.debug("API response processed with result: %s", extracted_json)
 
-@app.get("/session/{user_id}/{session_id}/messages")
-async def get_messages(user_id: str, session_id: str):
-    """Get the raw messages for a session"""
-    logger = get_logger()
-    logger.info(f"Getting messages for user {user_id}, session {session_id}")
-
-    try:
-        messages = get_session_messages(
-            user_id, session_id, config_manager.get_history_manager())
-        return {"messages": messages}
-    except Exception as e:
-        logger.error(f"Error getting messages: {str(e)}")
-        raise HTTPException(
-            status_code=500, detail=f"Error getting messages: {str(e)}")
-
-
-@app.get("/health")
-async def health_check():
-    """Health check endpoint"""
-    return {"status": "healthy"}
+    return extracted_json

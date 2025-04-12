@@ -1,646 +1,174 @@
-🛠️ Full Detailed Plan 
-🎯 Main Goal
-Move your current local main.py loop/step-based system into a modular API structure.
+i wan to centralize the config files and make it easier to manage. so we will remove the config.py file and replace it with a config_manager.py file and save its data to the json. we will do this : ROOT_DIR = os.path.abspath(os.path.dirname(__file__)) in the config_manager.py file but pull its path from config.json file.
 
-Separate flow control, state tracking, and history logging into independent, swappable pieces.
+such as print(ROOT_DIR)
 
-Design interfaces so the technology (JSON → Redis/Postgres) can change in the future without touching the app logic.
+# Define the path to the CSV file
+TAGS_LIST = os.path.join(ROOT_DIR, "data", "tags.csv")
 
-Keep the architecture clean, testable, and microservice-ready.
+and in the config.json file we will add data/tags.csv and pull it. we will also add method in the class to retrieve these variables
 
-📚 Concept Overview
-Layer	Responsibility
-API Layer (api.py)	Receives user requests and starts the flow.
-Main Logic Layer (main.py)	Contains the main function (no more steps or input loops).
-Flow Management Layer (flow_manager.py)	Controls the user journey, moving between states.
-State Management Layer (state_manager.py)	Tracks and updates what state (step) the user is currently in.
-History Management Layer (history_manager.py)	Records everything the user does and the system responds with.
-Config Layer (config_manager.py)	Dynamically selects whether to use JSON, Redis, Postgres, etc. based on environment settings.
-🛤️ Step-by-Step Detailed Plan
-1. Design Interfaces
-Purpose: Define "what must be done" without saying "how to do it."
 
-Files:
+# src/config_manager.py
 
-state_manager.py → Interface for session management (current step/state)
-
-history_manager.py → Interface for history logging (event storage)
-
-Interfaces should have methods like:
-
-StateManager: get_session(), save_session(), delete_session()
-
-HistoryManager: log_event(), get_history()
-
-2. Build JSON-based Implementations
-Purpose: Create first working versions of managers using simple JSON files.
-
-Files:
-
-json_state_manager.py → Saves session (state) data to sessions.json
-
-json_history_manager.py → Logs interaction history to history.json
-
-Storage Approach:
-
-Sessions are stored by session_id in a dictionary (in a file).
-
-History is stored as a list of events per session_id (in another file).
-
-Reason: Easy to debug, no extra dependencies during early development.
-
-3. Setup Config Manager
-Purpose: Load environment-specific settings and choose appropriate managers.
-
-File: config_manager.py
-
-Behavior:
-
-Reads environment (e.g., DEV or PROD) from a config file or environment variable.
-
-Instantiates and provides either JSON-based or future Redis/Postgres managers.
-
-Reason: Switching from JSON to Redis/Postgres will not require code changes elsewhere.
-
-4. Create the Flow Manager
-Purpose: Core logic that controls the user's journey through steps.
-
-File: flow_manager.py
-
-Behavior:
-
-Receives session id and user input.
-
-Checks current state via StateManager.
-
-Decides next action based on the current state and user input.
-
-Updates the state after moving to the next step.
-
-Logs every action in HistoryManager.
-
-Important:
-
-FlowManager knows only about the interfaces, not the actual backend (JSON, Redis, etc.).
-
-5. Resilient Session Recovery
-Purpose: Rebuild sessions if short-term memory (StateManager) is lost.
-
-Behavior:
-
-If session state is missing (session expired or deleted), FlowManager can:
-
-Replay history from HistoryManager to rebuild the session.
-
-Result: System is resilient against crashes or storage loss.
-
-6. Setup API Entry Point
-Purpose: Receive API calls from the outside world (clients/users).
-
-File: api.py
-
-Behavior:
-
-API receives a request (likely containing session_id, user_input).
-
-Calls the main app function inside main.py.
-
-Main app function calls FlowManager to process and respond.
-
-7. Refactor Main.py into a Function
-Purpose: Convert current main.py (which uses loops and input calls) into a clean function.
-
-File: main.py
-
-Behavior:
-
-Define a main(session_id, user_input) function.
-
-This function will use the FlowManager to process the request.
-
-Important: No direct input() or print() inside — only function arguments and return values.
-
-8. Write Mock Managers for Testing
-Purpose: Allow unit testing without depending on real storage (files or database).
-
-Files: e.g., mock_state_manager.py, mock_history_manager.py
-
-Behavior:
-
-Mock versions of StateManager and HistoryManager that just store data in memory.
-
-Reason: Makes tests super fast and independent from storage layers.
-
-9. (Later) Build Redis and Postgres Implementations
-Purpose: Swap from JSON to faster, production-ready storage.
-
-Files:
-
-redis_state_manager.py → Sessions in Redis with TTLs.
-
-postgres_history_manager.py → History logs in PostgreSQL.
-
-Behavior:
-
-Same methods as JSON managers, but talk to databases.
-
-Reason: Scale for real-world usage without changing flow logic.
-
-10. Testing Strategy
-Unit Tests: Test FlowManager logic with mock managers.
-
-Integration Tests: Test JSON managers with real files; later Redis/Postgres with real databases.
-
-Recovery Tests: Simulate session loss and verify session rebuild from history.
-
-📦 Recommended Folder Structure
-pgsql
-Copy
-Edit
-/managers
-    /state
-        state_manager.py          (interface)
-        json_state_manager.py     (JSON file-based sessions)
-        redis_state_manager.py    (later, Redis sessions)
-    /history
-        history_manager.py        (interface)
-        json_history_manager.py   (JSON file-based history)
-        postgres_history_manager.py (later, Postgres logs)
-config_manager.py                (dynamic backend selection)
-flow_manager.py                  (controls user flow)
-main.py                           (contains main() function)
-api.py                            (entry point for API)
-sessions.json                     (short-term memory file)
-history.json                      (long-term memory file)
-config.json                       (optional: environment settings)
-✨ Bonus Best Practices
-Keep FlowManager Dumb: It shouldn't know storage details — only how to "ask for state" and "log history."
-
-Small Interfaces: Keep StateManager and HistoryManager interfaces very minimal.
-
-Fail Safe: If storage is down, FlowManager should return friendly errors, not crash.
-
-Easy Switching: Make backend switching (JSON → Redis/Postgres) require no app code change, only config.
-
-current code:
-
-main.py:
-
-from src.data_types import LLMResponse, TopCandidates
-from src.get_location_advice import get_location_advice
-from src.get_top_candidates import find_top_candidates
-from src.poi_filter import POIManager
-from src.llamarequest import llm_api
-from src.history_manager import HistoryManager
 import os
-from src.logger_setup import logger_instance
-
-poi_manager = POIManager()
-
-
-def handle_clarification_loop(prompt: str, formatted_history: str, conversation_id: str, user_id: str, history_manager: HistoryManager, user_lat, user_lon, search_radius) -> tuple:
-    """
-    Handles any clarification needed from the LLM response in a while loop.
-    Returns a tuple of (updated_prompt, extracted_json)
-    """
-    logger = logger_instance.get_logger()
-    logger.info("Initiating LLM API call")
-
-    subcategories = poi_manager.get_poi_data(
-        user_lat, user_lon, search_radius)
-    # Initial LLM call
-    extracted_json = llm_api(prompt, formatted_history, subcategories)
-    logger.debug(f"LLM response received: {extracted_json}")
-
-    # Enter clarification loop if needed
-    while "clarification" in extracted_json:
-        clarification_value = extracted_json.get("clarification")
-
-        # Handle different clarification formats
-        question = ""
-        if isinstance(clarification_value, str):
-            question = clarification_value
-        elif isinstance(clarification_value, dict) and "question" in clarification_value:
-            question = clarification_value.get("question", "")
-        else:
-            question = "Please provide more information"
-
-        logger.info(
-            f"Clarification requested for conversation {conversation_id}: {question}")
-        print(f"\nClarification Needed: {question}")
-
-        # Get user clarification input
-        additional_input = input("Provide clarification: ")
-        logger.info("User provided clarification input")
-
-        # Save the user's clarification to history
-        history_manager.add_user_message(
-            user_id, conversation_id, additional_input)
-        logger.debug("Clarification added to conversation history")
-
-        # Fetch updated history including the new message
-        formatted_history = history_manager.get_formatted_history(
-            user_id, conversation_id)
-        logger.debug("Retrieved updated conversation history")
-
-        # Re-run the LLM API with the new input and updated history
-        logger.info("Re-running LLM API with clarification")
-
-        subcategories = poi_manager.get_poi_data(
-            user_lat, user_lon, search_radius)
-        extracted_json = llm_api(
-            additional_input, formatted_history, subcategories)
-        logger.debug(f"Clarification response received: {extracted_json}")
-
-        # Update the prompt to reflect the new input
-        prompt = additional_input
-
-    logger.info("Clarification handling complete")
-    return prompt, extracted_json
-
-
-def process_classification(user_prompt: str, formatted_history: str, conversation_id: str,
-                           user_id: str, history_manager: HistoryManager,
-                           latitude: float, longitude: float, search_radius: int,
-                           num_candidates: int) -> tuple:
-    """
-    Process a classification request to get candidates.
-    Returns a tuple of (top_candidates, updated_prompt, extracted_json)
-    """
-    logger = logger_instance.get_logger()
-    logger.info(f"Processing new query for conversation {conversation_id}")
-
-    # Save the user message to history
-    history_manager.add_user_message(user_id, conversation_id, user_prompt)
-    logger.debug("User message added to history")
-
-    # Handle LLM API call with clarification loop
-    updated_prompt, extracted_json = handle_clarification_loop(
-        user_prompt, formatted_history, conversation_id, user_id, history_manager, latitude, longitude, search_radius)
-
-    if not extracted_json or "error" in extracted_json:
-        logger.error("LLM processing error occurred")
-        print("Error in LLM processing. Please try again.")
-        return None, updated_prompt, extracted_json
-
-    # Check if we have subcategories for POI search
-    if "subcategories" in extracted_json and "tags" in extracted_json:
-        subcategories = extracted_json.get("subcategories", [])
-        logger.info(f"Identified subcategories: {subcategories}")
-
-        logger.info("Fetching POI data from API")
-        candidates = poi_manager.get_poi_data(
-            latitude, longitude, search_radius, subcategories)
-        if not candidates:
-            logger.warning("No POIs found for given criteria")
-            print("No POIs found based on your criteria.")
-            return None, updated_prompt, extracted_json
-
-        logger.debug(f"Found {len(candidates)} POI candidates")
-
-        logger.info("Selecting top candidates")
-        top_candidates = find_top_candidates(
-            candidates, latitude, longitude, search_radius, num_candidates)
-        if not isinstance(top_candidates, dict):
-            logger.debug("Converting top candidates to default format")
-            top_candidates = {"default": top_candidates}
-
-        logger.info(f"Returning {len(top_candidates)} top candidates")
-        return top_candidates, updated_prompt, extracted_json
-    else:
-        logger.warning("No subcategories found in LLM response")
-        print("Could not identify search categories from your query.")
-        return None, updated_prompt, extracted_json
-
-
-def handle_location_advice_loop(user_prompt: str, formatted_history: str, top_candidates: TopCandidates,
-                                latitude: float, longitude: float, search_radius: int,
-                                conversation_id: str, user_id: str, history_manager: HistoryManager) -> tuple:
-    """
-    Handle the location advice loop, including continuations.
-    Returns a tuple of (continue_current_flow, new_parameters) where new_parameters might contain
-    new location parameters if a new classification agent action is triggered.
-    """
-    logger = logger_instance.get_logger()
-
-    try:
-        logger.info("Generating location advice")
-        extracted_json = get_location_advice(user_prompt, formatted_history, top_candidates,
-                                             latitude, longitude, search_radius)
-        logger.debug(f"Location advice received: {extracted_json}")
-    except Exception as e:
-        logger.error(f"Location advice error: {str(e)}")
-        print(f"Error during location advice processing: {e}")
-        return True, None
-
-    # Check for action type in response
-    if "response" in extracted_json:
-        # It's a continuation response
-        response_text = extracted_json.get("response")
-        continuation = str(extracted_json.get(
-            "continuation", "false")).lower() == "true"
-
-        # Save and display the response
-        history_manager.add_assistant_message(
-            user_id, conversation_id, response_text)
-        logger.info("Assistant response added to history")
-        print("\nLocation Advice:", response_text)
-
-        if continuation:
-            # Continue the current advice flow
-            return True, None
-        else:
-            # End the current flow, start new search with same prompt
-            return False, None
-
-    elif "action" in extracted_json and extracted_json["action"] == "classification_agent":
-        # It's a new search request with specific parameters
-        logger.info("New classification request with parameters")
-
-        # Extract the new parameters
-        new_parameters = {
-            "prompt": extracted_json.get("prompt", user_prompt),
-            "longitude": extracted_json.get("longitude", longitude),
-            "latitude": extracted_json.get("latitude", latitude),
-            "radius": extracted_json.get("radius", search_radius)
-        }
-
-        # End current flow and start new search with new parameters
-        return False, new_parameters
-    else:
-        logger.warning("Unknown response format")
-        print("Received an unknown response format. Starting new search.")
-        return False, None
-
-
-def main():
-    user_id = "test_user"  # Default user id for history tracking
-    logger_instance.initialize_logging_context(user_id, 'api_execution')
-    logger = logger_instance.get_logger()
-    logger.info("Application startup")
-
-    history_manager = HistoryManager()
-    logger.debug("History manager initialized")
-
-    conversation_id_input = input(
-        "Enter conversation ID (or '0' for a new conversation): ").strip()
-
-    if conversation_id_input == "0":
-        # Create a new conversation
-        conversation_id = history_manager.create_conversation(user_id)
-        logger.info(f"Created new conversation: {conversation_id}")
-    else:
-        # Use an existing conversation ID
-        conversation_id = conversation_id_input
-
-        if os.path.exists(history_manager.get_conversation_file_path(user_id, conversation_id)):
-            logger.info(
-                f"Using existing conversation with ID: {conversation_id}")
-            print(f"Using existing conversation with ID: {conversation_id}")
-        else:
-            logger.warning(
-                f"Conversation ID {conversation_id} not found. Creating a new one.")
-            print(
-                f"Conversation ID {conversation_id} not found. Creating a new one.")
-            conversation_id = history_manager.create_conversation(user_id)
-
-    messages = history_manager.get_messages(user_id, conversation_id)
-    if messages:
-        logger.debug(f"Found {len(messages)} historical messages")
-        print("\n--- Conversation History ---")
-        for msg in messages:
-            role = msg.get("role", "")
-            content = msg.get("content", "")
-            if role == "user":
-                print(f"User: {content}")
-            elif role == "assistant":
-                print(f"Bot: {content}")
-        print("--- End of History ---\n")
-    else:
-        logger.debug("No conversation history found")
-        print("No previous messages in this conversation.")
-
-    # Default location parameters
-    longitude = 28.793878
-    latitude = 40.971255
-    search_radius = 1000
-    num_candidates = 4
-    logger.info(
-        f"Using default location: {latitude},{longitude} with radius {search_radius}m")
-
-    # Flag to indicate if we need to get user input or use the existing one
-    need_user_input = True
-    user_prompt = ""
-
-    while True:
-        # Get user prompt only if needed
-        if need_user_input:
-            user_prompt = input(
-                "\nEnter your prompt (or type 'exit' to quit): ")
-            if user_prompt.lower() == 'exit':
-                logger.info("User initiated exit")
-                break
-            logger.debug(f"User input received: {user_prompt}")
-            need_user_input = False  # Reset the flag after getting input
-
-        # Get formatted history
-        formatted_history = history_manager.get_formatted_history(
-            user_id, conversation_id)
-        logger.debug("Formatted history retrieved")
-
-        # Process new query to get classification and candidates
-        top_candidates, user_prompt, extracted_json = process_classification(
-            user_prompt, formatted_history, conversation_id, user_id, history_manager,
-            latitude, longitude, search_radius, num_candidates)
-
-        if not top_candidates:
-            logger.warning("Classification processing failed, continuing loop")
-            need_user_input = True  # Need new input since this one failed
-            continue
-
-        # Enter the location advice loop
-        continue_current_flow = True
-        while continue_current_flow:
-            # Get formatted history again as it might have been updated
-            formatted_history = history_manager.get_formatted_history(
-                user_id, conversation_id)
-
-            # Process location advice
-            continue_current_flow, new_parameters = handle_location_advice_loop(
-                user_prompt, formatted_history, top_candidates,
-                latitude, longitude, search_radius,
-                conversation_id, user_id, history_manager)
-
-            if continue_current_flow:
-                # Get next user prompt for continuation
-                user_prompt = input(
-                    "\nEnter follow-up question (or type 'exit' to quit): ")
-                if user_prompt.lower() == 'exit':
-                    logger.info("User exited during follow-up")
-                    continue_current_flow = False
-                    need_user_input = True  # Reset flag for next iteration
-                    break
-
-                # Save the new prompt to history
-                history_manager.add_user_message(
-                    user_id, conversation_id, user_prompt)
-                logger.debug(f"Follow-up input saved: {user_prompt}")
-
-        # Check if we have new parameters for the next search
-        if new_parameters:
-            logger.info("Updating parameters for new search")
-            user_prompt = new_parameters.get("prompt")
-            latitude = new_parameters.get("latitude")
-            longitude = new_parameters.get("longitude")
-            search_radius = new_parameters.get("radius")
-
-            logger.info(
-                f"New parameters: prompt='{user_prompt}', lat={latitude}, lon={longitude}, radius={search_radius}")
-            print(
-                f"\nStarting new search with coordinates: {latitude}, {longitude} and radius: {search_radius}m")
-
-            # We already have a prompt from the LLM, don't ask for user input
-            need_user_input = False
-        else:
-            # No new parameters, get fresh user input in the next iteration
-            need_user_input = True
-
-    logger.info("Application shutdown")
-
-
-if __name__ == "__main__":
-    main()
-
-
-
-src/history_manager.py
-
-# history_manager.py
 import json
-import os
-import time
-import uuid
-import logging
-from typing import Dict, List, Any, Optional
+from typing import Dict, Any, Optional
 
-logger = logging.getLogger(__name__)
-logging.basicConfig(level=logging.INFO)
+from src.managers.state.state_manager import StateManager
+from src.managers.state.json_state_manager import JSONStateManager
+from src.managers.history.history_manager import HistoryManager
+from src.managers.history.json_history_manager import JSONHistoryManager
 
 
-class HistoryManager:
+class ConfigManager:
     """
-    Centralized history manager to store conversation data by user and conversation.
+    Manages application configuration and selects appropriate backend implementations.
     """
 
-    def __init__(self, history_dir="chat_history"):
-        self.history_dir = history_dir
-        os.makedirs(self.history_dir, exist_ok=True)
+    def __init__(self, config_file: str = "config.json"):
+        """
+        Initialize the ConfigManager.
 
-    def get_user_folder_path(self, user_id: str) -> str:
-        user_folder = os.path.join(self.history_dir, user_id)
-        os.makedirs(user_folder, exist_ok=True)
-        return user_folder
+        Args:
+            config_file: Path to the configuration file
+        """
+        self.config_file = config_file
+        self.config = self._load_config()
+        # self.logger = get_logger()
 
-    def get_conversation_file_path(self, user_id: str, conversation_id: str) -> str:
-        user_folder = self.get_user_folder_path(user_id)
-        return os.path.join(user_folder, f"{conversation_id}.json")
-
-    def create_conversation(self, user_id: str) -> str:
-        """Generate a unique conversation ID and create a conversation file."""
-        conversation_id = f"{int(time.time())}_{uuid.uuid4().hex[:8]}"  # Unique ID: timestamp + short UUID
-
-        conversation_file = self.get_conversation_file_path(
-            user_id, conversation_id)
-
-        initial_data = {
-            "conversation_id": conversation_id,
-            "created_at": int(time.time()),
-            "messages": []
+    def _load_config(self) -> Dict[str, Any]:
+        """Load configuration from file or use defaults."""
+        default_config = {
+            "environment": "development",
+            "state_backend": "json",
+            "history_backend": "json",
+            "sessions_dir": "sessions",
+            "history_dir": "chat_history",
         }
 
-        with open(conversation_file, 'w') as f:
-            json.dump(initial_data, f, indent=2)
+        # Try to load from file
+        if os.path.exists(self.config_file):
+            try:
+                with open(self.config_file, 'r') as f:
+                    return {**default_config, **json.load(f)}
+            except Exception as e:
+                print(f"Error loading config file: {str(e)}")
+                return default_config
+        else:
+            # Create default config file
+            try:
+                with open(self.config_file, 'w') as f:
+                    json.dump(default_config, f, indent=2)
+            except Exception as e:
+                print(f"Error creating default config file: {str(e)}")
 
-        logger.info(
-            f"Created new conversation for user {user_id}: {conversation_id}")
-        print(f"Created new conversation with ID: {conversation_id}")
+            return default_config
 
-        return conversation_id
+    def get_state_manager(self) -> StateManager:
+        """
+        Get the appropriate StateManager implementation based on configuration.
 
-    def get_conversation(self, user_id: str, conversation_id: str) -> Dict:
-        conversation_file = self.get_conversation_file_path(
-            user_id, conversation_id)
+        Returns:
+            An instance of StateManager
+        """
+        backend = self.config.get("state_backend", "json")
 
-        if not os.path.exists(conversation_file):
-            return {"conversation_id": conversation_id, "created_at": int(time.time()), "messages": []}
+        if backend == "json":
+            return JSONStateManager(self.config.get("sessions_dir", "sessions"))
+        elif backend == "redis":
+            # For future implementation
+            # self.logger.warning(
+            #     "Redis state manager not implemented yet, falling back to JSON")
+            return JSONStateManager(self.config.get("sessions_dir", "sessions"))
+        else:
+            # self.logger.warning(
+            #     f"Unknown state backend: {backend}, using JSON")
+            return JSONStateManager(self.config.get("sessions_dir", "sessions"))
+
+    def get_history_manager(self) -> HistoryManager:
+        """
+        Get the appropriate HistoryManager implementation based on configuration.
+
+        Returns:
+            An instance of HistoryManager
+        """
+        backend = self.config.get("history_backend", "json")
+
+        if backend == "json":
+            return JSONHistoryManager(self.config.get("history_dir", "chat_history"))
+        elif backend == "postgres":
+            # For future implementation
+            # self.logger.warning(
+            #     "Postgres history manager not implemented yet, falling back to JSON")
+            return JSONHistoryManager(self.config.get("history_dir", "chat_history"))
+        else:
+            # self.logger.warning(
+            #     f"Unknown history backend: {backend}, using JSON")
+            return JSONHistoryManager(self.config.get("history_dir", "chat_history"))
+
+    def get_config_value(self, key: str, default: Any = None) -> Any:
+        """
+        Get a configuration value by key.
+
+        Args:
+            key: Configuration key
+            default: Default value if key not found
+
+        Returns:
+            Configuration value
+        """
+        return self.config.get(key, default)
+
+    def update_config(self, updates: Dict[str, Any]) -> bool:
+        """
+        Update configuration values.
+
+        Args:
+            updates: Dictionary of configuration updates
+
+        Returns:
+            True if successful, False otherwise
+        """
+        self.config.update(updates)
 
         try:
-            with open(conversation_file, 'r') as f:
-                return json.load(f)
-        except json.JSONDecodeError:
-            logger.error("JSON decode error in file: %s", conversation_file)
-            return {"conversation_id": conversation_id, "created_at": int(time.time()), "messages": []}
+            with open(self.config_file, 'w') as f:
+                json.dump(self.config, f, indent=2)
+            return True
+        except Exception as e:
+            # self.logger.error(f"Error updating config file: {str(e)}")
+            return False
 
-    def get_messages(self, user_id: str, conversation_id: str) -> List[Dict]:
-        conversation = self.get_conversation(user_id, conversation_id)
-        return conversation.get("messages", [])
+# config.py
 
-    def add_message(self, user_id: str, conversation_id: str, role: str, content: str,
-                    metadata: Optional[Dict[str, Any]] = None) -> None:
-        # Ensure content is a string
-        if not isinstance(content, str):
-            content = str(content)
-        # Rest of the method remains the same
-        conversation_file = self.get_conversation_file_path(
-            user_id, conversation_id)
-        conversation = self.get_conversation(user_id, conversation_id)
+from llamaapi import LlamaAPI
+from dotenv import load_dotenv
+import os
 
-        message = {
-            "role": role,
-            "content": content,  # Now guaranteed to be a string
-            "timestamp": int(time.time())
-        }
+# Define the root directory
+ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
+print(ROOT_DIR)
 
-        if metadata:
-            message["metadata"] = metadata
+# Define the path to the CSV file
+TAGS_LIST = os.path.join(ROOT_DIR, "data", "tags.csv")
+CATEGORY_SUBCATEGORY_LIST = os.path.join(
+    ROOT_DIR, "data", "category_subcategory.csv")
+DATASET = os.path.join(ROOT_DIR, "data", "dataset.csv")
 
-        conversation["messages"].append(message)
 
-        with open(conversation_file, 'w') as f:
-            json.dump(conversation, f, indent=2)
+# Initialize the LlamaAPI SDK
+load_dotenv()
+api_key = os.getenv("apiKey")
 
-    def add_user_message(self, user_id: str, conversation_id: str, content: str,
-                         metadata: Optional[Dict[str, Any]] = None) -> None:
-        self.add_message(user_id, conversation_id, "user", content, metadata)
 
-    def add_assistant_message(self, user_id: str, conversation_id: str, content: str,
-                              metadata: Optional[Dict[str, Any]] = None) -> None:
-        self.add_message(user_id, conversation_id,
-                         "assistant", content, metadata)
+LLAMA_API = LlamaAPI(api_key)
 
-    def get_formatted_history(self, user_id: str, conversation_id: str) -> str:
-        messages = self.get_messages(user_id, conversation_id)
-        formatted_history = []
-        for msg in messages:
-            role = msg.get("role", "").capitalize()
-            content = msg.get("content", "")
-            # Handle cases where content might be a list (due to data issues)
-            if isinstance(content, list):
-                content = " ".join(content)
-            formatted_history.append(f"{role}: {content}")
-        return "\n".join(formatted_history)
 
-    def add_llm_interaction(self, user_id: str, conversation_id: str,
-                            response: Any, request_data: Dict,
-                            top_candidates: Optional[Dict] = None) -> None:
-        response_text = str(response) if isinstance(
-            response, dict) else response.get("response", "")
-        metadata = {
-            "request_type": request_data.get("request_type", "unknown"),
-            "timestamp": request_data.get("timestamp", int(time.time())),
-            "tokens": request_data.get("token_counts", {})
-        }
-        if top_candidates:
-            metadata["top_candidates"] = top_candidates
-        self.add_assistant_message(
-            user_id, conversation_id, response_text, metadata)
+// config.json
+{
+	"environment": "development",
+	"state_backend": "json",
+	"history_backend": "json",
+	"sessions_dir": "sessions",
+	"history_dir": "chat_history"
+}

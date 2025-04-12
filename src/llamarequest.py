@@ -1,13 +1,14 @@
-
+# src/llamarequest.py
 import os
 import pandas as pd
-from config import LLAMA_API, TAGS_LIST, CATEGORY_SUBCATEGORY_LIST
 from src.utils import timing_decorator
 from src.data_types import LLMResponse
 from typing import List, Optional
 from src.function_api_builder import create_classification_request
 from src.logger_setup import get_logger
 import json
+
+from src.config_manager import ConfigManager
 
 
 def extract_content(response):
@@ -28,6 +29,9 @@ def extract_content(response):
 
 @timing_decorator
 def llm_api(prompt: str, subcategories) -> LLMResponse:
+    config = ConfigManager()
+    LLAMA_API = config.get_llama_api()
+
     logger = get_logger()
     logger.info("Calling LLM API with the provided prompt.")
 

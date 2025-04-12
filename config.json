@@ -3,5 +3,12 @@
 	"state_backend": "json",
 	"history_backend": "json",
 	"sessions_dir": "sessions",
-	"history_dir": "chat_history"
+	"history_dir": "chat_history",
+	"project_root_dir": "/Users/saidmustafa/Documents/Projects/wizlop/llm-engine",
+	"data_paths": {
+		"tags_list": "data/tags.csv",
+		"category_subcategory_list": "data/category_subcategory.csv",
+		"dataset": "data/dataset.csv"
+	},
+	"api_key_env_var": "apiKey"
 }
