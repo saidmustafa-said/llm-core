@@ -8,6 +8,8 @@ from src.managers.state.state_manager import StateManager
 from src.managers.state.json_state_manager import JSONStateManager
 from src.managers.history.history_manager import HistoryManager
 from src.managers.history.json_history_manager import JSONHistoryManager
+from src.managers.cache.cache_manager import CacheManager
+from src.managers.cache.joblib_cache_manager import JoblibCacheManager
 
 
 class ConfigManager:
@@ -58,7 +60,6 @@ class ConfigManager:
 
             # Mark as initialized
             self._is_initialized = True
-            # self.logger = get_logger()
 
     def _load_config(self) -> Dict[str, Any]:
         """Load configuration from file or use defaults."""
@@ -66,8 +67,11 @@ class ConfigManager:
             "environment": "development",
             "state_backend": "json",
             "history_backend": "json",
+            "cache_backend": "joblib",
+            "cache_enabled": True,
             "sessions_dir": "sessions",
             "history_dir": "chat_history",
+            "cache_dir": "cache",
             "project_root_dir": os.path.abspath(os.path.dirname(__file__)),
             "data_paths": {
                 "tags_list": "data/tags.csv",
@@ -108,12 +112,8 @@ class ConfigManager:
             return JSONStateManager(self.config.get("sessions_dir", "sessions"))
         elif backend == "redis":
             # For future implementation
-            # self.logger.warning(
-            #     "Redis state manager not implemented yet, falling back to JSON")
             return JSONStateManager(self.config.get("sessions_dir", "sessions"))
         else:
-            # self.logger.warning(
-            #     f"Unknown state backend: {backend}, using JSON")
             return JSONStateManager(self.config.get("sessions_dir", "sessions"))
 
     def get_history_manager(self) -> HistoryManager:
@@ -129,13 +129,36 @@ class ConfigManager:
             return JSONHistoryManager(self.config.get("history_dir", "chat_history"))
         elif backend == "postgres":
             # For future implementation
-            # self.logger.warning(
-            #     "Postgres history manager not implemented yet, falling back to JSON")
             return JSONHistoryManager(self.config.get("history_dir", "chat_history"))
         else:
-            # self.logger.warning(
-            #     f"Unknown history backend: {backend}, using JSON")
             return JSONHistoryManager(self.config.get("history_dir", "chat_history"))
+
+    def get_cache_manager(self) -> CacheManager:
+        """
+        Get the appropriate CacheManager implementation based on configuration.
+
+        Returns:
+            An instance of CacheManager
+        """
+        backend = self.config.get("cache_backend", "joblib")
+        enabled = self.config.get("cache_enabled", True)
+
+        if backend == "joblib":
+            return JoblibCacheManager(
+                self.config.get("cache_dir", "cache"),
+                enabled=enabled
+            )
+        elif backend == "redis":
+            # For future implementation
+            return JoblibCacheManager(
+                self.config.get("cache_dir", "cache"),
+                enabled=enabled
+            )
+        else:
+            return JoblibCacheManager(
+                self.config.get("cache_dir", "cache"),
+                enabled=enabled
+            )
 
     def get_config_value(self, key: str, default: Any = None) -> Any:
         """
@@ -167,7 +190,6 @@ class ConfigManager:
                 json.dump(self.config, f, indent=2)
             return True
         except Exception as e:
-            # self.logger.error(f"Error updating config file: {str(e)}")
             return False
 
     # Path management methods
@@ -198,6 +220,15 @@ class ConfigManager:
         """Get the API key from environment variables."""
         env_var = self.config.get("api_key_env_var", "apiKey")
         return os.getenv(env_var)
+
+    def is_caching_enabled(self) -> bool:
+        """Check if caching is enabled."""
+        return self.config.get("cache_enabled", True)
+
+    def enable_caching(self, enabled: bool = True) -> None:
+        """Enable or disable caching."""
+        self.config["cache_enabled"] = enabled
+        self.update_config({"cache_enabled": enabled})
 
     # Convenience methods for common paths
     def get_tags_list_path(self) -> str:
