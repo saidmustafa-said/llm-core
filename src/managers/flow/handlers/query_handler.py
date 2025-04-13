@@ -132,6 +132,9 @@ class QueryHandler(BaseHandler):
                 user_input, formatted_history, top_candidates,
                 latitude, longitude, search_radius)
 
+            # Store advice process information
+            last_message["processes"]["hidden"]["get_location_advice_result"] = advice_result
+
             # Update the response in the history
             self.history_manager.log_assistant_message(
                 user_id, session_id, advice_result.get("response", ""),
@@ -145,6 +148,14 @@ class QueryHandler(BaseHandler):
             # Update session state
             if advice_result.get("continuation", False):
                 session["current_state"] = "providing_advice"
+                session["data"] = {
+                    "prompt": user_input,
+                    "top_candidates": top_candidates,
+                    "extracted_json": extracted_json,
+                    "latitude": latitude,
+                    "longitude": longitude,
+                    "search_radius": search_radius
+                }
             else:
                 session["current_state"] = "new_query"
             self.state_manager.save_session(user_id, session_id, session)

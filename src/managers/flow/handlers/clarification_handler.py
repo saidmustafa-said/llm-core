@@ -53,16 +53,16 @@ class ClarificationHandler(BaseHandler):
         longitude = session_data.get("longitude")
         search_radius = session_data.get("search_radius")
 
-        # Set state back to new_query to re-process with clarification
-        session["current_state"] = "new_query"
-        self.state_manager.save_session(user_id, session_id, session)
-
         # Store clarification process information
         last_message["processes"]["hidden"]["clarification_response"] = {
             "original_prompt": session_data.get("original_prompt"),
             "clarification_question": session_data.get("clarification_question"),
             "user_response": user_input
         }
+
+        # Set state back to new_query to re-process with clarification
+        session["current_state"] = "new_query"
+        self.state_manager.save_session(user_id, session_id, session)
 
         # Import the query handler here to avoid circular imports
         from src.managers.flow.handlers.query_handler import QueryHandler

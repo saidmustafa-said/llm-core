@@ -53,6 +53,19 @@ def process_request(user_id: str, session_id: str, user_input: str,
     # Create flow manager
     flow_manager = FlowManager(state_manager, history_manager, num_candidates)
 
+    # Log the user message with metadata
+    history_manager.log_user_message(
+        user_id,
+        session_id,
+        user_input,
+        {
+            "latitude": latitude,
+            "longitude": longitude,
+            "search_radius": search_radius,
+            "num_candidates": num_candidates
+        }
+    )
+
     # Process the request - all logic now handled in flow_manager
     return flow_manager.process_user_input(
         user_id, session_id, user_input, latitude, longitude, search_radius

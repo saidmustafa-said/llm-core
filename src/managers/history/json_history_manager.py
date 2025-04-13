@@ -142,11 +142,21 @@ class JSONHistoryManager(HistoryManager):
         """Log a user message to history."""
         # Prepare hidden metadata
         hidden_metadata = metadata or {}
+
+        # Ensure latitude, longitude, and search_radius are in the hidden fields
         if "latitude" in hidden_metadata and "longitude" in hidden_metadata:
+            hidden_metadata["latitude"] = hidden_metadata.get("latitude")
+            hidden_metadata["longitude"] = hidden_metadata.get("longitude")
             hidden_metadata["search_radius"] = hidden_metadata.get(
                 "search_radius", 1000)
             hidden_metadata["num_candidates"] = hidden_metadata.get(
                 "num_candidates", 4)
+        else:
+            # If not provided, use default values
+            hidden_metadata["latitude"] = 0.0
+            hidden_metadata["longitude"] = 0.0
+            hidden_metadata["search_radius"] = 1000
+            hidden_metadata["num_candidates"] = 4
 
         return self.log_event(user_id, session_id, "user_message", content, hidden_metadata)
 

@@ -106,3 +106,7 @@ Key changes from the previous structure:
      - `get_top_candidates.py`
      - `function_api_builder.py`
      - `data_types.py`
+
+
+
+before returning and saving it to the hsitory, can we replace the NaN to normal json format, can we do this in a way so when later when we change the database from csv to postgres or something else, it won't affect the program and we don't have to edit to fit the new database, make sure to respect the type and flow of existing code and to be careful before changing.

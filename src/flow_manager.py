@@ -52,9 +52,6 @@ class FlowManager:
         Returns:
             Dict containing response and any additional action information
         """
-        # Log the user message
-        self.history_manager.log_user_message(user_id, session_id, user_input)
-
         # Get or create a session state
         session = self.state_manager.get_session(user_id, session_id)
         if not session:
