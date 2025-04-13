@@ -148,15 +148,15 @@ class JSONHistoryManager(HistoryManager):
             hidden_metadata["latitude"] = hidden_metadata.get("latitude")
             hidden_metadata["longitude"] = hidden_metadata.get("longitude")
             hidden_metadata["search_radius"] = hidden_metadata.get(
-                "search_radius", 1000)
+                "search_radius")
             hidden_metadata["num_candidates"] = hidden_metadata.get(
-                "num_candidates", 4)
+                "num_candidates")
         else:
-            # If not provided, use default values
-            hidden_metadata["latitude"] = 0.0
-            hidden_metadata["longitude"] = 0.0
-            hidden_metadata["search_radius"] = 1000
-            hidden_metadata["num_candidates"] = 4
+            # If not provided, use null values
+            hidden_metadata["latitude"] = None
+            hidden_metadata["longitude"] = None
+            hidden_metadata["search_radius"] = None
+            hidden_metadata["num_candidates"] = None
 
         return self.log_event(user_id, session_id, "user_message", content, hidden_metadata)
 

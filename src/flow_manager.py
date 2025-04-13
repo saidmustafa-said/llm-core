@@ -1,6 +1,6 @@
 # src/managers/flow/flow_manager.py
 
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 from src.managers.state.state_manager import StateManager
 from src.managers.history.history_manager import HistoryManager
 from src.managers.flow.handlers.query_handler import QueryHandler
@@ -15,18 +15,19 @@ class FlowManager:
     managing state transitions and history logging.
     """
 
-    def __init__(self, state_manager: StateManager, history_manager: HistoryManager, num_candidates: int = 4):
+    def __init__(self, state_manager: StateManager, history_manager: HistoryManager, num_candidates: Optional[int] = None):
         """
         Initialize the FlowManager with state and history managers.
 
         Args:
             state_manager: Manager for storing and retrieving session state
             history_manager: Manager for logging conversation history
-            num_candidates: Number of top candidates to return (default: 4)
+            num_candidates: Optional number of top candidates to return
         """
         self.state_manager = state_manager
         self.history_manager = history_manager
         self.logger = get_logger()
+        self.num_candidates = num_candidates
 
         # Initialize handlers with shared references
         self.query_handler = QueryHandler(
@@ -61,7 +62,9 @@ class FlowManager:
             session = self.state_manager.get_session(user_id, session_id)
 
         # Get current state from session
-        current_state = session.get("current_state", "initial")
+        current_state = session.get("current_state")
+        if current_state is None:
+            current_state = "initial"
         session_data = session.get("data", {})
 
         # Get conversation history

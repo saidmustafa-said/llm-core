@@ -10,9 +10,9 @@ from src.logger_setup import get_logger
 def process_request(user_id: str, session_id: str, user_input: str,
                     latitude: float, longitude: float,
                     search_radius: int,
+                    num_candidates: int,
                     state_manager: Optional[StateManager] = None,
-                    history_manager: Optional[HistoryManager] = None,
-                    num_candidates: int = 4) -> Dict[str, Any]:
+                    history_manager: Optional[HistoryManager] = None) -> Dict[str, Any]:
     """
     Process a user request through the system.
 
@@ -25,9 +25,9 @@ def process_request(user_id: str, session_id: str, user_input: str,
         latitude: User's current latitude
         longitude: User's current longitude
         search_radius: Search radius in meters for POIs
+        num_candidates: Number of top candidates to return
         state_manager: Optional state manager instance (if not provided, one will be created)
         history_manager: Optional history manager instance (if not provided, one will be created)
-        num_candidates: Number of top candidates to return (default: 4)
 
     Returns:
         Dict containing:

@@ -1,6 +1,6 @@
 # src/managers/flow/handlers/query_handler.py
 
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 from src.managers.state.state_manager import StateManager
 from src.managers.history.history_manager import HistoryManager
 from src.get_location_advice import get_location_advice
@@ -17,14 +17,14 @@ class QueryHandler(BaseHandler):
     Handler for processing new queries and location searches.
     """
 
-    def __init__(self, state_manager: StateManager, history_manager: HistoryManager, num_candidates: int = 4):
+    def __init__(self, state_manager: StateManager, history_manager: HistoryManager, num_candidates: Optional[int] = None):
         """
         Initialize the query handler.
 
         Args:
             state_manager: Manager for storing and retrieving session state
             history_manager: Manager for logging conversation history
-            num_candidates: Number of top candidates to return (default: 4)
+            num_candidates: Optional number of top candidates to return
         """
         super().__init__(state_manager, history_manager)
         self.poi_manager: IPOIManager = create_poi_manager()
@@ -120,9 +120,36 @@ class QueryHandler(BaseHandler):
             # Store POI process information
             last_message["processes"]["hidden"]["get_poi_by_subcategories_result"] = poi_data
 
+            if not poi_data:
+                print("No POIs found for the identified subcategories")
+                self.logger.warning(
+                    "No POIs found for the identified subcategories")
+                session["current_state"] = "new_query"
+                self.state_manager.save_session(user_id, session_id, session)
+
+                response_text = "I couldn't find any places matching your request. Could you try a different search term or a wider search radius?"
+                self.history_manager.log_assistant_message(
+                    user_id, session_id, response_text)
+
+                return {
+                    "response": response_text,
+                    "status": "no_results",
+                    "top_candidates": {}
+                }
+
             # Find top candidates
+            if self.num_candidates is None:
+                # If num_candidates is not specified, use a default value of 4
+                num_candidates = 4
+            else:
+                num_candidates = self.num_candidates
+
             top_candidates = self.top_candidates_finder.find_top_candidates(
-                poi_data, latitude, longitude, search_radius, self.num_candidates)
+                poi_data, latitude, longitude, search_radius, num_candidates)
+            if not isinstance(top_candidates, dict):
+                # If top_candidates is not a dict, create a dict with both drive and walk modes
+                top_candidates = {
+                    "drive": top_candidates, "walk": top_candidates}
 
             # Store top candidates in process information
             last_message["processes"]["hidden"]["top_candidates_result"] = top_candidates
@@ -239,8 +266,14 @@ class QueryHandler(BaseHandler):
             }
 
         # Find top candidates
+        if self.num_candidates is None:
+            # If num_candidates is not specified, use a default value of 4
+            num_candidates = 4
+        else:
+            num_candidates = self.num_candidates
+
         top_candidates = self.top_candidates_finder.find_top_candidates(
-            candidates, latitude, longitude, search_radius, self.num_candidates)
+            candidates, latitude, longitude, search_radius, num_candidates)
         if not isinstance(top_candidates, dict):
             # If top_candidates is not a dict, create a dict with both drive and walk modes
             top_candidates = {"drive": top_candidates, "walk": top_candidates}

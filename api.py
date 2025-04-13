@@ -86,14 +86,37 @@ async def process_message(request: Request):
     logger = get_logger()
     body = await request.json()
 
+    # Get required parameters from request body
     user_id = body.get("user_id")
     session_id = body.get("session_id")
     message = body.get("message")
     latitude = body.get("latitude")
     longitude = body.get("longitude")
     search_radius = body.get("search_radius")
-    # Default to 4 if not provided
-    num_candidates = body.get("num_candidates", 4)
+    num_candidates = body.get("num_candidates")
+
+    # Validate required parameters
+    if not all([user_id, session_id, message, latitude, longitude, search_radius, num_candidates]):
+        missing_params = []
+        if not user_id:
+            missing_params.append("user_id")
+        if not session_id:
+            missing_params.append("session_id")
+        if not message:
+            missing_params.append("message")
+        if not latitude:
+            missing_params.append("latitude")
+        if not longitude:
+            missing_params.append("longitude")
+        if not search_radius:
+            missing_params.append("search_radius")
+        if not num_candidates:
+            missing_params.append("num_candidates")
+
+        raise HTTPException(
+            status_code=400,
+            detail=f"Missing required parameters: {', '.join(missing_params)}"
+        )
 
     logger.info(
         f"Processing message for user {user_id}, session {session_id}")
@@ -106,9 +129,9 @@ async def process_message(request: Request):
             latitude,
             longitude,
             search_radius,
+            num_candidates,
             config_manager.get_state_manager(),
-            config_manager.get_history_manager(),
-            num_candidates
+            config_manager.get_history_manager()
         )
 
         return {

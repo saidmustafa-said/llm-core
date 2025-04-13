@@ -177,7 +177,7 @@ def get_top_n_by_route_distance_for_all_modes(candidates, user_lat, user_lon, ra
 
 @timing_decorator
 def find_top_candidates(candidates: List[POIData], user_lat: float, user_lon: float,
-                        radius_m: int, n: int = 5) -> TopCandidates:
+                        radius_m: int, n: int) -> TopCandidates:
     """Finds the top candidate POIs based on route distance.
 
     Returns:
