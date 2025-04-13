@@ -1,4 +1,5 @@
 from typing import Dict, Any
+from src.utils import convert_nan_to_none
 
 
 class ClassificationAgent:
@@ -27,7 +28,7 @@ class ClassificationAgent:
 
         # Update processes.hidden with classification results
         conversation["processes"]["hidden"].update({
-            "classification": classification_result
+            "classification": convert_nan_to_none(classification_result)
         })
 
         # Save updated conversation
@@ -62,7 +63,7 @@ class ClassificationAgent:
 
         # Update processes.hidden with search results
         conversation["processes"]["hidden"].update({
-            "search_results": search_results
+            "search_results": convert_nan_to_none(search_results)
         })
 
         # Save updated conversation

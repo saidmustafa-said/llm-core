@@ -7,7 +7,7 @@ from src.get_location_advice import get_location_advice
 from src.get_top_candidates import create_top_candidates_finder
 from src.poi_filter import create_poi_manager, IPOIManager
 from src.llamarequest import llm_api
-from src.utils import convert_nan_to_none
+from src.utils import convert_nan_to_none, serialize_for_json
 from src.managers.flow.handlers.base_handler import BaseHandler
 from src.interfaces.top_candidates import ITopCandidatesFinder
 
@@ -66,7 +66,8 @@ class QueryHandler(BaseHandler):
         print("Subcategories for context:", subcategories_for_context)
 
         # Store process information
-        last_message["processes"]["hidden"]["get_available_categories"] = subcategories_for_context
+        last_message["processes"]["hidden"]["get_available_categories"] = convert_nan_to_none(
+            subcategories_for_context)
         # Save the conversation after updating process information
         self.history_manager._save_conversation(
             user_id, session_id, conversation)
@@ -75,7 +76,8 @@ class QueryHandler(BaseHandler):
         print("Extracted JSON:", extracted_json)
 
         # Store LLM process information
-        last_message["processes"]["hidden"]["llamarequest_result"] = extracted_json
+        last_message["processes"]["hidden"]["llamarequest_result"] = convert_nan_to_none(
+            extracted_json)
         # Save the conversation after updating process information
         self.history_manager._save_conversation(
             user_id, session_id, conversation)
@@ -124,7 +126,8 @@ class QueryHandler(BaseHandler):
                 latitude, longitude, search_radius, subcategories)
 
             # Store POI process information
-            last_message["processes"]["hidden"]["get_poi_by_subcategories_result"] = poi_data
+            last_message["processes"]["hidden"]["get_poi_by_subcategories_result"] = convert_nan_to_none(
+                poi_data)
             # Save the conversation after updating process information
             self.history_manager._save_conversation(
                 user_id, session_id, conversation)
@@ -161,7 +164,8 @@ class QueryHandler(BaseHandler):
                     "drive": top_candidates, "walk": top_candidates}
 
             # Store top candidates in process information
-            last_message["processes"]["hidden"]["top_candidates_result"] = top_candidates
+            last_message["processes"]["hidden"]["top_candidates_result"] = convert_nan_to_none(
+                top_candidates)
 
             # Get advice based on the candidates
             advice_result = get_location_advice(
@@ -169,7 +173,8 @@ class QueryHandler(BaseHandler):
                 latitude, longitude, search_radius)
 
             # Store advice process information
-            last_message["processes"]["hidden"]["get_location_advice_result"] = advice_result
+            last_message["processes"]["hidden"]["get_location_advice_result"] = convert_nan_to_none(
+                advice_result)
 
             # Update the response in the history
             self.history_manager.log_assistant_message(
@@ -177,7 +182,7 @@ class QueryHandler(BaseHandler):
                 {
                     "status": "advice_provided",
                     "continuation": advice_result.get("continuation", False),
-                    "top_candidate_result": top_candidates
+                    "top_candidate_result": convert_nan_to_none(top_candidates)
                 }
             )
 
@@ -186,8 +191,8 @@ class QueryHandler(BaseHandler):
                 session["current_state"] = "providing_advice"
                 session["data"] = {
                     "prompt": user_input,
-                    "top_candidates": top_candidates,
-                    "extracted_json": extracted_json,
+                    "top_candidates": convert_nan_to_none(top_candidates),
+                    "extracted_json": convert_nan_to_none(extracted_json),
                     "latitude": latitude,
                     "longitude": longitude,
                     "search_radius": search_radius
@@ -257,7 +262,8 @@ class QueryHandler(BaseHandler):
         print("Subcategories search for context:", subcategories_for_context)
 
         # Store process information
-        last_message["processes"]["hidden"]["get_available_categories"] = subcategories_for_context
+        last_message["processes"]["hidden"]["get_available_categories"] = convert_nan_to_none(
+            subcategories_for_context)
         # Save the conversation after updating process information
         self.history_manager._save_conversation(
             user_id, session_id, conversation)
@@ -269,7 +275,8 @@ class QueryHandler(BaseHandler):
         print("Extracted JSON search:", subcategories)
 
         # Store LLM process information
-        last_message["processes"]["hidden"]["llamarequest_result"] = extracted_json
+        last_message["processes"]["hidden"]["llamarequest_result"] = convert_nan_to_none(
+            extracted_json)
         # Save the conversation after updating process information
         self.history_manager._save_conversation(
             user_id, session_id, conversation)
@@ -279,7 +286,8 @@ class QueryHandler(BaseHandler):
             latitude, longitude, search_radius, subcategories)
 
         # Store POI process information
-        last_message["processes"]["hidden"]["get_poi_by_subcategories_result"] = candidates
+        last_message["processes"]["hidden"]["get_poi_by_subcategories_result"] = convert_nan_to_none(
+            candidates)
         # Save the conversation after updating process information
         self.history_manager._save_conversation(
             user_id, session_id, conversation)
@@ -363,7 +371,7 @@ class QueryHandler(BaseHandler):
                 session["current_state"] = "providing_advice"
                 session["data"] = {
                     "prompt": search_prompt,
-                    "top_candidates": top_candidates,
+                    "top_candidates": convert_nan_to_none(top_candidates),
                     "latitude": latitude,
                     "longitude": longitude,
                     "search_radius": search_radius

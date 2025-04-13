@@ -7,6 +7,7 @@ from typing import Dict, List, Any, Optional
 
 from .history_manager import HistoryManager
 from src.logger_setup import get_logger
+from src.utils import convert_nan_to_none, serialize_for_json
 
 
 class JSONHistoryManager(HistoryManager):
@@ -65,8 +66,11 @@ class JSONHistoryManager(HistoryManager):
         history_file = self._get_history_file_path(user_id, session_id)
 
         try:
+            # Convert NaN values to None and prepare for JSON serialization
+            serialized_conversation = serialize_for_json(conversation)
+
             with open(history_file, 'w') as f:
-                json.dump(conversation, f, indent=2)
+                json.dump(serialized_conversation, f, indent=2)
             return True
         except Exception as e:
             self.logger.error(
@@ -90,7 +94,7 @@ class JSONHistoryManager(HistoryManager):
                     "content": content,
                     "timestamp": int(time.time())
                 },
-                "hidden": metadata or {}
+                "hidden": convert_nan_to_none(metadata) if metadata else {}
             },
             "processes": {
                 "hidden": {}
@@ -141,7 +145,7 @@ class JSONHistoryManager(HistoryManager):
                          metadata: Optional[Dict[str, Any]] = None) -> bool:
         """Log a user message to history."""
         # Prepare hidden metadata
-        hidden_metadata = metadata or {}
+        hidden_metadata = convert_nan_to_none(metadata) if metadata else {}
 
         # Ensure latitude, longitude, and search_radius are in the hidden fields
         if "latitude" in hidden_metadata and "longitude" in hidden_metadata:
@@ -178,12 +182,13 @@ class JSONHistoryManager(HistoryManager):
         # Update hidden metadata
         if metadata:
             if "top_candidate_result" in metadata:
-                last_message["response"]["hidden"]["top_candidate_result"] = metadata["top_candidate_result"]
+                last_message["response"]["hidden"]["top_candidate_result"] = convert_nan_to_none(
+                    metadata["top_candidate_result"])
 
             # Update processes.hidden fields if they exist in metadata
             if "processes" in metadata and "hidden" in metadata["processes"]:
                 last_message["processes"]["hidden"].update(
-                    metadata["processes"]["hidden"])
+                    convert_nan_to_none(metadata["processes"]["hidden"]))
 
         return self._save_conversation(user_id, session_id, conversation)
 
@@ -215,4 +220,6 @@ class JSONHistoryManager(HistoryManager):
         Returns:
             True if successful, False otherwise
         """
-        return self._save_conversation(user_id, session_id, conversation)
+        # Convert NaN values to None before saving
+        processed_conversation = convert_nan_to_none(conversation)
+        return self._save_conversation(user_id, session_id, processed_conversation)
