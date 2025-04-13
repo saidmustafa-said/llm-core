@@ -10,7 +10,7 @@ from src.utils import timing_decorator
 from src.data_types import TopCandidates, LocationAdviceResponse
 from src.function_api_builder import build_location_request, build_location_request_search
 from src.logger_setup import get_logger
-from src.config_manager import ConfigManager
+from src.config.config import ConfigManager
 from src.llm.llm_interface import LLMInterface
 
 

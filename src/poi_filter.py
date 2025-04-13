@@ -4,7 +4,7 @@ import math
 import re
 from src.data_types import POIData
 from typing import List, Dict, Optional
-from src.config_manager import ConfigManager
+from src.config.config import ConfigManager
 from src.interfaces.poi_manager import IPOIManager
 
 

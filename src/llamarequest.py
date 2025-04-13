@@ -8,7 +8,7 @@ from src.utils import timing_decorator
 from src.data_types import LLMResponse
 from src.function_api_builder import create_classification_request
 from src.logger_setup import get_logger
-from src.config_manager import ConfigManager
+from src.config.config import ConfigManager
 from src.llm.llm_interface import LLMInterface
 
 
@@ -27,10 +27,10 @@ class LlamaRequest(LLMInterface):
     def extract_content(self, response: Dict[str, Any]) -> Any:
         """
         Extracts the JSON content from the response's 'content' field.
-        
+
         Args:
             response: The raw API response
-            
+
         Returns:
             The extracted content
         """
@@ -51,11 +51,11 @@ class LlamaRequest(LLMInterface):
     def call_api(self, prompt: str, **kwargs) -> LLMResponse:
         """
         Make a request to the Llama API with caching support.
-        
+
         Args:
             prompt: The input prompt to send to the LLM
             **kwargs: Additional parameters for the API request
-            
+
         Returns:
             LLMResponse: Structured response from the LLM
         """
@@ -68,11 +68,11 @@ class LlamaRequest(LLMInterface):
         """
         Internal method to make the actual API request.
         This gets wrapped by the caching mechanism.
-        
+
         Args:
             prompt: The input prompt to send to the LLM
             **kwargs: Additional parameters for the API request
-            
+
         Returns:
             LLMResponse: Structured response from the LLM
         """
@@ -110,7 +110,7 @@ class LlamaRequest(LLMInterface):
 def get_llm_interface() -> LLMInterface:
     """
     Factory function to get the appropriate LLM interface implementation.
-    
+
     Returns:
         LLMInterface: The configured LLM interface implementation
     """
@@ -122,11 +122,11 @@ def get_llm_interface() -> LLMInterface:
 def llm_api(prompt: str, subcategories) -> LLMResponse:
     """
     Legacy function for backward compatibility.
-    
+
     Args:
         prompt: The input prompt to send to the LLM
         subcategories: Subcategories for classification
-        
+
     Returns:
         LLMResponse: Structured response from the LLM
     """
