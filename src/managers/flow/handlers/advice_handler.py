@@ -1,6 +1,6 @@
 # src/managers/flow/handlers/advice_handler.py
 
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 from src.managers.state.state_manager import StateManager
 from src.managers.history.history_manager import HistoryManager
 from src.get_location_advice import get_location_advice
@@ -10,18 +10,20 @@ from src.managers.flow.handlers.base_handler import BaseHandler
 
 class AdviceHandler(BaseHandler):
     """
-    Handler for processing advice continuations.
+    Handler for processing advice continuation.
     """
 
-    def __init__(self, state_manager: StateManager, history_manager: HistoryManager):
+    def __init__(self, state_manager: StateManager, history_manager: HistoryManager, num_candidates: Optional[int] = None):
         """
         Initialize the advice handler.
 
         Args:
             state_manager: Manager for storing and retrieving session state
             history_manager: Manager for logging conversation history
+            num_candidates: Optional number of top candidates to return
         """
         super().__init__(state_manager, history_manager)
+        self.num_candidates = num_candidates
 
     def handle_advice_continuation(self, user_id: str, session_id: str, user_input: str,
                                    formatted_history: str, session_data: Dict[str, Any],
@@ -93,7 +95,7 @@ class AdviceHandler(BaseHandler):
                 # Import the query handler here to avoid circular imports
                 from src.managers.flow.handlers.query_handler import QueryHandler
                 query_handler = QueryHandler(
-                    self.state_manager, self.history_manager)
+                    self.state_manager, self.history_manager, self.num_candidates)
 
                 # Directly search with the new location parameters
                 return query_handler.direct_location_search(

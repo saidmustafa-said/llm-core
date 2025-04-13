@@ -32,7 +32,8 @@ class FlowManager:
         # Initialize handlers with shared references
         self.query_handler = QueryHandler(
             state_manager, history_manager, num_candidates)
-        self.advice_handler = AdviceHandler(state_manager, history_manager)
+        self.advice_handler = AdviceHandler(
+            state_manager, history_manager, num_candidates)
         self.clarification_handler = ClarificationHandler(
             state_manager, history_manager)
 
