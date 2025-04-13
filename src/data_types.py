@@ -35,7 +35,6 @@ class POIData(TypedDict):
 class TopCandidates(TypedDict):
     drive: List[POIData]
     walk: List[POIData]
-    default: List[POIData]
 
 
 class Message(TypedDict):

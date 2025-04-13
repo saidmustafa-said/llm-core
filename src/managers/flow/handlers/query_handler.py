@@ -242,7 +242,8 @@ class QueryHandler(BaseHandler):
         top_candidates = self.top_candidates_finder.find_top_candidates(
             candidates, latitude, longitude, search_radius, self.num_candidates)
         if not isinstance(top_candidates, dict):
-            top_candidates = {"default": top_candidates}
+            # If top_candidates is not a dict, create a dict with both drive and walk modes
+            top_candidates = {"drive": top_candidates, "walk": top_candidates}
 
         # Get location advice for top candidates
         try:

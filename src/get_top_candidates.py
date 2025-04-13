@@ -184,7 +184,6 @@ def find_top_candidates(candidates: List[POIData], user_lat: float, user_lon: fl
         Dict containing:
         - drive: List[POIData] - Top candidates for driving mode
         - walk: List[POIData] - Top candidates for walking mode
-        - default: List[POIData] - Top candidates for default mode
         Each POIData contains:
         - name: Optional[str] - Name of the POI
         - latitude: float - Latitude coordinate
@@ -285,7 +284,7 @@ class TopCandidatesFinder:
             TopCandidates object containing lists of POIs for different modes
         """
         if not candidates:
-            return TopCandidates(drive=[], walk=[], default=[])
+            return TopCandidates(drive=[], walk=[])
 
         # Calculate distances for all candidates
         for candidate in candidates:
@@ -302,8 +301,7 @@ class TopCandidatesFinder:
         # Create TopCandidates object
         return TopCandidates(
             drive=top_candidates,
-            walk=top_candidates,
-            default=top_candidates
+            walk=top_candidates
         )
 
 
