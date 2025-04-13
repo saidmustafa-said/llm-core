@@ -1,11 +1,11 @@
-from src.utils import timing_decorator
+from src.utils.utils import timing_decorator
 import pandas as pd
 import math
 import re
-from src.data_types import POIData
+from src.core.data_types import POIData
 from typing import List, Dict, Optional
 from src.config.config import ConfigManager
-from src.interfaces.poi_manager import IPOIManager
+from src.location_poi.interfaces.poi_manager import IPOIManager
 
 
 class POIManager:

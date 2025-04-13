@@ -22,8 +22,8 @@ api{process_message}
     │       │
     │       ├── If subcategories found:
     │       │   ├── src.poi_manager{POIManager.get_poi_data} (with subcategories)
-    │       │   ├── src.get_top_candidates{find_top_candidates}
-    │       │   ├── src.get_location_advice{get_location_advice}
+    │       │   ├── src.location_poi.get_top_candidates{find_top_candidates}
+    │       │   ├── src.llm.get_location_advice{get_location_advice}
     │       │   ├── src.managers.history.history_manager{HistoryManager.log_assistant_message}
     │       │   └── src.managers.state.state_manager{StateManager.save_session}
     │       │
@@ -32,14 +32,14 @@ api{process_message}
     │               ├── src.poi_manager{POIManager.get_poi_data}
     │               ├── src.llamarequest{llm_api}
     │               ├── src.poi_manager{POIManager.get_poi_data} (with subcategories)
-    │               ├── src.get_top_candidates{find_top_candidates}
-    │               ├── src.get_location_advice{get_location_advice}
+    │               ├── src.location_poi.get_top_candidates{find_top_candidates}
+    │               ├── src.llm.get_location_advice{get_location_advice}
     │               ├── src.managers.history.history_manager{HistoryManager.log_assistant_message}
     │               └── src.managers.state.state_manager{StateManager.save_session}
     │
     ├── If state is "providing_advice":
     │   → _handle_advice_continuation
-    │       ├── src.get_location_advice{get_location_advice}
+    │       ├── src.llm.get_location_advice{get_location_advice}
     │       ├── src.managers.history.history_manager{HistoryManager.log_assistant_message}
     │       └── src.managers.state.state_manager{StateManager.save_session}
     │
@@ -73,8 +73,8 @@ api{get_messages}
 Middleware (every request)
 ----------------
 api{logging_middleware} 
-→ src.logger_setup{session_logger.start_session} 
-+ src.logger_setup{get_logger}
+→ src.core.logger_setup{session_logger.start_session} 
++ src.core.logger_setup{get_logger}
 
 
 GET /health

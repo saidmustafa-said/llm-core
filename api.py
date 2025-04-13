@@ -5,8 +5,8 @@ import time
 from typing import Dict, Any, Optional
 from src.config.config import ConfigManager
 from main import process_request, create_session, get_session_history, get_session_messages
-from src.logger_setup import session_logger, get_logger, get_health_check_logger
-from src.flow_manager import FlowManager
+from src.core.logger_setup import session_logger, get_logger, get_health_check_logger
+from src.core.flow_manager import FlowManager
 
 # Initialize FastAPI app
 app = FastAPI(

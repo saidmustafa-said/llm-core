@@ -6,7 +6,7 @@ import time
 from typing import Dict, List, Any, Optional
 
 from .history_manager import HistoryManager
-from src.logger_setup import get_logger
+from src.core.logger_setup import get_logger
 from src.utils import convert_nan_to_none, serialize_for_json
 
 

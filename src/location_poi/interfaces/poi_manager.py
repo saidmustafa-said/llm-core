@@ -1,5 +1,5 @@
 from typing import List, Protocol
-from src.data_types import POIData
+from src.core.data_types import POIData
 
 
 class IPOIManager(Protocol):

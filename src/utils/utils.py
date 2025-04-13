@@ -6,7 +6,7 @@ import time
 import math
 import numpy as np
 import pandas as pd
-from src.logger_setup import get_logger
+from src.core.logger_setup import get_logger
 from typing import Any, Dict, List, Union
 
 

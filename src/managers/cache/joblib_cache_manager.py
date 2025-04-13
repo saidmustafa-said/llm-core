@@ -7,7 +7,7 @@ import json
 from typing import Any, Optional, Dict, Callable, Tuple
 
 from src.managers.cache.cache_manager import CacheManager
-from src.logger_setup import get_logger
+from src.core.logger_setup import get_logger
 
 
 class JoblibCacheManager(CacheManager):

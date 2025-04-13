@@ -1,6 +1,6 @@
-from src.logger_setup import get_logger
+from src.core.logger_setup import get_logger
 from src.poi_filter import create_poi_manager
-from src.get_top_candidates import create_top_candidates_finder
+from src.location_poi.get_top_candidates import create_top_candidates_finder
 
 # Initialize logger context
 logger_instance.initialize_logging_context("test_user", 'api_execution')

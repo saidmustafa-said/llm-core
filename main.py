@@ -3,8 +3,8 @@
 from typing import Dict, Any, Optional, Tuple
 from src.managers.state.state_manager import StateManager
 from src.managers.history.history_manager import HistoryManager
-from src.flow_manager import FlowManager
-from src.logger_setup import get_logger
+from src.core.flow_manager import FlowManager
+from src.core.logger_setup import get_logger
 
 
 def process_request(user_id: str, session_id: str, user_input: str,

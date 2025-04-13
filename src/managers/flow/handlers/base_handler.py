@@ -3,7 +3,7 @@
 from typing import Dict, Any
 from src.managers.state.state_manager import StateManager
 from src.managers.history.history_manager import HistoryManager
-from src.logger_setup import get_logger
+from src.core.logger_setup import get_logger
 
 
 class BaseHandler:

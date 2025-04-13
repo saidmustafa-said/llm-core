@@ -6,7 +6,7 @@ from src.managers.history.history_manager import HistoryManager
 from src.managers.flow.handlers.query_handler import QueryHandler
 from src.managers.flow.handlers.advice_handler import AdviceHandler
 from src.managers.flow.handlers.clarification_handler import ClarificationHandler
-from src.logger_setup import get_logger
+from src.core.logger_setup import get_logger
 
 
 class FlowManager:

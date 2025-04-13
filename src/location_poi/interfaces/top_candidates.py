@@ -1,5 +1,5 @@
 from typing import List, Dict, Protocol
-from src.data_types import POIData, TopCandidates
+from src.core.data_types import POIData, TopCandidates
 
 
 class ITopCandidatesFinder(Protocol):

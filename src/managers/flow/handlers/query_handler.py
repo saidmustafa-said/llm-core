@@ -3,13 +3,13 @@
 from typing import Dict, Any, Optional
 from src.managers.state.state_manager import StateManager
 from src.managers.history.history_manager import HistoryManager
-from src.get_location_advice import get_location_advice
-from src.get_top_candidates import create_top_candidates_finder
-from src.poi_filter import create_poi_manager, IPOIManager
-from src.llamarequest import llm_api
+from src.llm.get_location_advice import get_location_advice
+from src.location_poi.get_top_candidates import create_top_candidates_finder
+from src.location_poi.poi_filter import create_poi_manager, IPOIManager
+from src.llm.llamarequest import llm_api
 from src.utils import convert_nan_to_none, serialize_for_json
 from src.managers.flow.handlers.base_handler import BaseHandler
-from src.interfaces.top_candidates import ITopCandidatesFinder
+from src.location_poi.interfaces.top_candidates import ITopCandidatesFinder
 
 
 class QueryHandler(BaseHandler):

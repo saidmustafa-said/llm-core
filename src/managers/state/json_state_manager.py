@@ -7,7 +7,7 @@ import uuid
 from typing import Dict, Any, Optional
 
 from .state_manager import StateManager
-from src.logger_setup import get_logger
+from src.core.logger_setup import get_logger
 
 
 class JSONStateManager(StateManager):

@@ -8,7 +8,7 @@ from src.utils import timing_decorator
 from src.data_types import LLMResponse
 from typing import List, Optional
 from src.function_api_builder import create_classification_request
-from src.logger_setup import get_logger
+from src.core.logger_setup import get_logger
 import json
 
 from src.config.config import ConfigManager
@@ -79,7 +79,7 @@ from src.utils import timing_decorator
 
 from src.data_types import TopCandidates, LocationAdviceResponse
 from src.function_api_builder import build_location_request, build_location_request_search
-from src.logger_setup import get_logger
+from src.core.logger_setup import get_logger
 from src.config.config import ConfigManager
 
 

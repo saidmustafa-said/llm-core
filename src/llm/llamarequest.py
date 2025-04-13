@@ -4,10 +4,10 @@ import pandas as pd
 from typing import List, Optional, Dict, Any
 import json
 
-from src.utils import timing_decorator
-from src.data_types import LLMResponse
-from src.function_api_builder import create_classification_request
-from src.logger_setup import get_logger
+from src.utils.utils import timing_decorator
+from src.core.data_types import LLMResponse
+from src.llm.function_api_builder import create_classification_request
+from src.core.logger_setup import get_logger
 from src.config.config import ConfigManager
 from src.llm.llm_interface import LLMInterface
 

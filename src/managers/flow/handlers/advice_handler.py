@@ -3,7 +3,7 @@
 from typing import Dict, Any, Optional
 from src.managers.state.state_manager import StateManager
 from src.managers.history.history_manager import HistoryManager
-from src.get_location_advice import get_location_advice
+from src.llm.get_location_advice import get_location_advice
 from src.utils import convert_nan_to_none
 from src.managers.flow.handlers.base_handler import BaseHandler
 

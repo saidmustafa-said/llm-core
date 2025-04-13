@@ -1,12 +1,12 @@
-from src.utils import timing_decorator
+from src.utils.utils import timing_decorator
 from osmnx import graph_from_point, distance
 import networkx as nx
 from functools import lru_cache
 from collections import OrderedDict
 import concurrent.futures
-from src.data_types import POIData, TopCandidates
+from src.core.data_types import POIData, TopCandidates
 from typing import List, Dict
-from src.interfaces.top_candidates import ITopCandidatesFinder
+from src.location_poi.interfaces.top_candidates import ITopCandidatesFinder
 import numpy as np
 
 # Limited-size cache for graphs
