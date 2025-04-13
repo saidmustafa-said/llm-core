@@ -110,3 +110,18 @@ class HistoryManager(ABC):
     def delete_history(self, user_id: str, session_id: str) -> None:
         """Delete or mark as deleted the history for a session"""
         pass
+
+    @abstractmethod
+    def save_conversation(self, user_id: str, session_id: str, conversation: Dict[str, Any]) -> bool:
+        """
+        Save a conversation to history.
+
+        Args:
+            user_id: The ID of the user
+            session_id: The ID of the session/conversation
+            conversation: The conversation data to save
+
+        Returns:
+            True if successful, False otherwise
+        """
+        pass

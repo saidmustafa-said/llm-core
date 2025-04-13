@@ -175,8 +175,15 @@ class JSONHistoryManager(HistoryManager):
             "continuation": metadata.get("continuation", False) if metadata else False
         })
 
-        if metadata and "top_candidate_result" in metadata:
-            last_message["response"]["hidden"]["top_candidate_result"] = metadata["top_candidate_result"]
+        # Update hidden metadata
+        if metadata:
+            if "top_candidate_result" in metadata:
+                last_message["response"]["hidden"]["top_candidate_result"] = metadata["top_candidate_result"]
+
+            # Update processes.hidden fields if they exist in metadata
+            if "processes" in metadata and "hidden" in metadata["processes"]:
+                last_message["processes"]["hidden"].update(
+                    metadata["processes"]["hidden"])
 
         return self._save_conversation(user_id, session_id, conversation)
 
@@ -195,3 +202,17 @@ class JSONHistoryManager(HistoryManager):
             new_path = os.path.join(dir_path, f"REMOVED_{file_name}")
             os.rename(file_path, new_path)
             self.logger.info(f"Marked history as removed: {new_path}")
+
+    def save_conversation(self, user_id: str, session_id: str, conversation: Dict[str, Any]) -> bool:
+        """
+        Save a conversation to history.
+
+        Args:
+            user_id: The ID of the user
+            session_id: The ID of the session/conversation
+            conversation: The conversation data to save
+
+        Returns:
+            True if successful, False otherwise
+        """
+        return self._save_conversation(user_id, session_id, conversation)

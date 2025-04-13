@@ -67,12 +67,18 @@ class QueryHandler(BaseHandler):
 
         # Store process information
         last_message["processes"]["hidden"]["get_available_categories"] = subcategories_for_context
+        # Save the conversation after updating process information
+        self.history_manager._save_conversation(
+            user_id, session_id, conversation)
 
         extracted_json = llm_api(user_input, subcategories_for_context)
         print("Extracted JSON:", extracted_json)
 
         # Store LLM process information
         last_message["processes"]["hidden"]["llamarequest_result"] = extracted_json
+        # Save the conversation after updating process information
+        self.history_manager._save_conversation(
+            user_id, session_id, conversation)
 
         # Check if clarification is needed
         if "clarification" in extracted_json:
@@ -119,6 +125,9 @@ class QueryHandler(BaseHandler):
 
             # Store POI process information
             last_message["processes"]["hidden"]["get_poi_by_subcategories_result"] = poi_data
+            # Save the conversation after updating process information
+            self.history_manager._save_conversation(
+                user_id, session_id, conversation)
 
             if not poi_data:
                 print("No POIs found for the identified subcategories")
@@ -234,10 +243,24 @@ class QueryHandler(BaseHandler):
         print(
             f"Directly searching for locations with coordinates: {latitude}, {longitude}")
 
+        # Get the conversation to update process information
+        conversation = self.history_manager._get_conversation(
+            user_id, session_id)
+        if not conversation["messages"]:
+            return {"response": "Error: No message found", "status": "error"}
+
+        last_message = conversation["messages"][-1]
+
         # First get categories and subcategories for context
         subcategories_for_context = self.poi_manager.get_available_categories(
             latitude, longitude, search_radius)
         print("Subcategories search for context:", subcategories_for_context)
+
+        # Store process information
+        last_message["processes"]["hidden"]["get_available_categories"] = subcategories_for_context
+        # Save the conversation after updating process information
+        self.history_manager._save_conversation(
+            user_id, session_id, conversation)
 
         # Get subcategories from LLM
         extracted_json = llm_api(
@@ -245,9 +268,21 @@ class QueryHandler(BaseHandler):
         subcategories = extracted_json.get("subcategories", [])
         print("Extracted JSON search:", subcategories)
 
+        # Store LLM process information
+        last_message["processes"]["hidden"]["llamarequest_result"] = extracted_json
+        # Save the conversation after updating process information
+        self.history_manager._save_conversation(
+            user_id, session_id, conversation)
+
         # Get POI data for the identified subcategories
         candidates = self.poi_manager.get_poi_by_subcategories(
             latitude, longitude, search_radius, subcategories)
+
+        # Store POI process information
+        last_message["processes"]["hidden"]["get_poi_by_subcategories_result"] = candidates
+        # Save the conversation after updating process information
+        self.history_manager._save_conversation(
+            user_id, session_id, conversation)
 
         if not candidates:
             print("No POIs found near specified location")
