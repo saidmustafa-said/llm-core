@@ -40,6 +40,14 @@ class ClarificationHandler(BaseHandler):
         """
         self.logger.info(f"Processing clarification for session {session_id}")
 
+        # Get the conversation to update process information
+        conversation = self.history_manager._get_conversation(
+            user_id, session_id)
+        if not conversation["messages"]:
+            return {"response": "Error: No message found", "status": "error"}
+
+        last_message = conversation["messages"][-1]
+
         # Get stored parameters
         latitude = session_data.get("latitude")
         longitude = session_data.get("longitude")
@@ -49,11 +57,18 @@ class ClarificationHandler(BaseHandler):
         session["current_state"] = "new_query"
         self.state_manager.save_session(user_id, session_id, session)
 
+        # Store clarification process information
+        last_message["processes"]["hidden"]["clarification_response"] = {
+            "original_prompt": session_data.get("original_prompt"),
+            "clarification_question": session_data.get("clarification_question"),
+            "user_response": user_input
+        }
+
         # Import the query handler here to avoid circular imports
         from src.managers.flow.handlers.query_handler import QueryHandler
         query_handler = QueryHandler(self.state_manager, self.history_manager)
 
-        # Process with the clarification input as a new query
+        # Process the clarified query
         return query_handler.process_query(
             user_id, session_id, user_input, formatted_history,
             latitude, longitude, search_radius, session

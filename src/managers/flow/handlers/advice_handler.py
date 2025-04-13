@@ -27,32 +27,32 @@ class AdviceHandler(BaseHandler):
                                    formatted_history: str, session_data: Dict[str, Any],
                                    session: Dict[str, Any]) -> Dict[str, Any]:
         """
-        Handle continuations when user asks follow-up questions about locations.
-
-        Args:
-            user_id: Unique identifier for the user
-            session_id: Unique identifier for the current session
-            user_input: Text message from the user
-            formatted_history: Formatted conversation history
-            session_data: Current session data
-            session: Current session state
-
-        Returns:
-            Dict containing response and any additional action information
+        Handle the advice continuation state when providing additional information.
         """
         self.logger.info(
             f"Processing advice continuation for session {session_id}")
 
+        # Get the conversation to update process information
+        conversation = self.history_manager._get_conversation(
+            user_id, session_id)
+        if not conversation["messages"]:
+            return {"response": "Error: No message found", "status": "error"}
+
+        last_message = conversation["messages"][-1]
+
         # Get stored parameters
-        top_candidates = session_data.get("top_candidates")
         latitude = session_data.get("latitude")
         longitude = session_data.get("longitude")
         search_radius = session_data.get("search_radius")
+        top_candidates = session_data.get("top_candidates", {})
 
         try:
             # Get follow-up advice
             advice_result = get_location_advice(user_input, formatted_history, top_candidates,
                                                 latitude, longitude, search_radius)
+
+            # Store advice process information
+            last_message["processes"]["hidden"]["get_location_advice_result"] = advice_result
 
             # Check advice result format
             if "response" in advice_result:
@@ -63,7 +63,13 @@ class AdviceHandler(BaseHandler):
 
                 # Log assistant response
                 self.history_manager.log_assistant_message(
-                    user_id, session_id, response_text)
+                    user_id, session_id, response_text,
+                    {
+                        "status": "advice_provided",
+                        "continuation": continuation,
+                        "top_candidate_result": top_candidates
+                    }
+                )
 
                 # If not continuing, set state back to new_query
                 if not continuation:

@@ -82,17 +82,30 @@ class JSONHistoryManager(HistoryManager):
 
         conversation = self._get_conversation(user_id, session_id)
 
-        event = {
-            "type": event_type,
-            "content": content,
-            "timestamp": int(time.time())
+        # Create the new message structure
+        message = {
+            "prompt": {
+                "visible": {
+                    "type": event_type,
+                    "content": content,
+                    "timestamp": int(time.time())
+                },
+                "hidden": metadata or {}
+            },
+            "processes": {
+                "hidden": {}
+            },
+            "response": {
+                "visible": {
+                    "response": "",
+                    "status": "pending",
+                    "continuation": False
+                },
+                "hidden": {}
+            }
         }
 
-        if metadata:
-            event["metadata"] = metadata
-
-        conversation["messages"].append(event)
-
+        conversation["messages"].append(message)
         return self._save_conversation(user_id, session_id, conversation)
 
     def get_history(self, user_id: str, session_id: str, limit: Optional[int] = None) -> List[Dict[str, Any]]:
@@ -111,34 +124,51 @@ class JSONHistoryManager(HistoryManager):
         formatted_history = []
 
         for msg in messages:
-            event_type = msg.get("type", "unknown")
-            content = msg.get("content", "")
+            prompt = msg["prompt"]["visible"]
+            response = msg["response"]["visible"]
 
-            # Determine the role based on event type
-            if event_type == "user_message":
-                role = "User"
-            elif event_type == "assistant_message":
-                role = "Assistant"
-            else:
-                role = event_type.capitalize()
+            # Add user message
+            if prompt["type"] == "user_message":
+                formatted_history.append(f"User: {prompt['content']}")
 
-            # Handle cases where content might be a list (due to data issues)
-            if isinstance(content, list):
-                content = " ".join(content)
-
-            formatted_history.append(f"{role}: {content}")
+            # Add assistant response if it exists
+            if response["response"]:
+                formatted_history.append(f"Assistant: {response['response']}")
 
         return "\n".join(formatted_history)
 
     def log_user_message(self, user_id: str, session_id: str, content: str,
                          metadata: Optional[Dict[str, Any]] = None) -> bool:
         """Log a user message to history."""
-        return self.log_event(user_id, session_id, "user_message", content, metadata)
+        # Prepare hidden metadata
+        hidden_metadata = metadata or {}
+        if "latitude" in hidden_metadata and "longitude" in hidden_metadata:
+            hidden_metadata["search_radius"] = hidden_metadata.get(
+                "search_radius", 1000)
+            hidden_metadata["num_candidates"] = hidden_metadata.get(
+                "num_candidates", 4)
+
+        return self.log_event(user_id, session_id, "user_message", content, hidden_metadata)
 
     def log_assistant_message(self, user_id: str, session_id: str, content: str,
                               metadata: Optional[Dict[str, Any]] = None) -> bool:
         """Log an assistant message to history."""
-        return self.log_event(user_id, session_id, "assistant_message", content, metadata)
+        # Get the last message to update its response
+        conversation = self._get_conversation(user_id, session_id)
+        if not conversation["messages"]:
+            return False
+
+        last_message = conversation["messages"][-1]
+        last_message["response"]["visible"].update({
+            "response": content,
+            "status": metadata.get("status", "success") if metadata else "success",
+            "continuation": metadata.get("continuation", False) if metadata else False
+        })
+
+        if metadata and "top_candidate_result" in metadata:
+            last_message["response"]["hidden"]["top_candidate_result"] = metadata["top_candidate_result"]
+
+        return self._save_conversation(user_id, session_id, conversation)
 
     def clear_history(self, user_id: str, session_id: str) -> bool:
         """Clear the history for a session."""

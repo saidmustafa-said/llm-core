@@ -1,5 +1,5 @@
 # data_types.py
-from typing import TypedDict, List, Dict, Optional, Union
+from typing import TypedDict, List, Dict, Optional, Union, Any
 
 
 class LocationAdviceResponse(TypedDict):
@@ -39,14 +39,13 @@ class TopCandidates(TypedDict):
 
 
 class Message(TypedDict):
-    role: str
-    content: str
-    timestamp: int
-    metadata: Optional[Dict]
+    prompt: Dict[str, Any]  # Contains visible and hidden fields
+    processes: Dict[str, Any]  # Contains hidden process information
+    response: Dict[str, Any]  # Contains visible and hidden response fields
 
 
 class Conversation(TypedDict):
-    conversation_id: str
+    session_id: str
     created_at: int
     messages: List[Message]
 

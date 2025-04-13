@@ -52,13 +52,27 @@ class QueryHandler(BaseHandler):
         """
         self.logger.info(f"Processing new query for session {session_id}")
 
+        # Get the conversation to update process information
+        conversation = self.history_manager._get_conversation(
+            user_id, session_id)
+        if not conversation["messages"]:
+            return {"response": "Error: No message found", "status": "error"}
+
+        last_message = conversation["messages"][-1]
+
         # Step 1: Get text classification from LLM
         subcategories_for_context = self.poi_manager.get_available_categories(
             latitude, longitude, search_radius)
         print("Subcategories for context:", subcategories_for_context)
-        extracted_json = llm_api(
-            user_input, subcategories_for_context)
+
+        # Store process information
+        last_message["processes"]["hidden"]["get_available_categories"] = subcategories_for_context
+
+        extracted_json = llm_api(user_input, subcategories_for_context)
         print("Extracted JSON:", extracted_json)
+
+        # Store LLM process information
+        last_message["processes"]["hidden"]["llamarequest_result"] = extracted_json
 
         # Check if clarification is needed
         if "clarification" in extracted_json:
@@ -99,110 +113,48 @@ class QueryHandler(BaseHandler):
             subcategories = extracted_json.get("subcategories", [])
             self.logger.info(f"Identified subcategories: {subcategories}")
 
-            # Step 2: Get POI data for identified subcategories
-            candidates = self.poi_manager.get_poi_by_subcategories(
+            # Get POI data for the subcategories
+            poi_data = self.poi_manager.get_poi_by_subcategories(
                 latitude, longitude, search_radius, subcategories)
 
-            if not candidates:
-                self.logger.warning("No POIs found for given criteria")
-                # Update session state
-                session["current_state"] = "new_query"
-                self.state_manager.save_session(user_id, session_id, session)
+            # Store POI process information
+            last_message["processes"]["hidden"]["get_poi_by_subcategories_result"] = poi_data
 
-                response_text = "I couldn't find any places matching your criteria. Could you try with different criteria or a wider search radius?"
-                self.history_manager.log_assistant_message(
-                    user_id, session_id, response_text)
-
-                return {
-                    "response": response_text,
-                    "status": "no_results",
-                    "top_candidates": {}
-                }
-
-            # Step 3: Find top candidates
+            # Find top candidates
             top_candidates = self.top_candidates_finder.find_top_candidates(
-                candidates, latitude, longitude, search_radius, self.num_candidates)
-            print("Top candidates1:", top_candidates)
-            if not isinstance(top_candidates, dict):
-                top_candidates = {"default": top_candidates}
-            print("Top candidates2:", top_candidates)
+                poi_data, latitude, longitude, search_radius, self.num_candidates)
 
-            # Step 4: Get location advice for top candidates
-            try:
-                advice_result = get_location_advice(user_input, formatted_history, top_candidates,
-                                                    latitude, longitude, search_radius)
+            # Store top candidates in process information
+            last_message["processes"]["hidden"]["top_candidates_result"] = top_candidates
 
-                # Check advice result format
-                if "response" in advice_result:
-                    # Standard response
-                    response_text = advice_result.get("response")
-                    continuation = str(advice_result.get(
-                        "continuation", "false")).lower() == "true"
+            # Get advice based on the candidates
+            advice_result = get_location_advice(
+                user_input, formatted_history, top_candidates,
+                latitude, longitude, search_radius)
 
-                    # Log assistant response
-                    self.history_manager.log_assistant_message(
-                        user_id, session_id, response_text)
+            # Update the response in the history
+            self.history_manager.log_assistant_message(
+                user_id, session_id, advice_result.get("response", ""),
+                {
+                    "status": "advice_provided",
+                    "continuation": advice_result.get("continuation", False),
+                    "top_candidate_result": top_candidates
+                }
+            )
 
-                    # Update session state
-                    session["current_state"] = "providing_advice"
-                    session["data"] = {
-                        "prompt": user_input,
-                        "top_candidates": top_candidates,
-                        "extracted_json": extracted_json,
-                        "latitude": latitude,
-                        "longitude": longitude,
-                        "search_radius": search_radius
-                    }
-                    self.state_manager.save_session(
-                        user_id, session_id, session)
-
-                    return convert_nan_to_none({
-                        "response": response_text,
-                        "status": "advice_provided",
-                        "continuation": continuation,
-                        "top_candidates": top_candidates
-                    })
-                elif "action" in advice_result and advice_result["action"] == "classification_agent":
-                    # Handle location-based redirection by directly processing with new parameters
-                    new_prompt = advice_result.get("prompt", user_input)
-                    new_latitude = advice_result.get("latitude", latitude)
-                    new_longitude = advice_result.get("longitude", longitude)
-                    new_radius = advice_result.get("radius", search_radius)
-
-                    self.logger.info(
-                        f"Using refined search parameters: lat={new_latitude}, lon={new_longitude}, radius={new_radius}")
-
-                    # Call directly with new coordinates - this is the key change to prevent recursion issues
-                    # but still maintain the seamless flow without intermediate message
-                    return self.direct_location_search(
-                        user_id,
-                        session_id,
-                        new_prompt,
-                        new_latitude,
-                        new_longitude,
-                        new_radius,
-                        session,
-                        formatted_history
-                    )
-                else:
-                    self.logger.warning(
-                        "Unknown response format from location advice")
-                    return convert_nan_to_none({
-                        "response": "I couldn't process your request properly. Let's try again with a new query.",
-                        "status": "error",
-                        "top_candidates": {}
-                    })
-
-            except Exception as e:
-                self.logger.error(f"Location advice error: {str(e)}")
+            # Update session state
+            if advice_result.get("continuation", False):
+                session["current_state"] = "providing_advice"
+            else:
                 session["current_state"] = "new_query"
-                self.state_manager.save_session(user_id, session_id, session)
+            self.state_manager.save_session(user_id, session_id, session)
 
-                return convert_nan_to_none({
-                    "response": f"I encountered an error while processing your request: {str(e)}. Let's try again.",
-                    "status": "error",
-                    "top_candidates": {}
-                })
+            return convert_nan_to_none({
+                "response": advice_result.get("response", ""),
+                "status": "advice_provided",
+                "continuation": advice_result.get("continuation", False),
+                "top_candidates": top_candidates
+            })
         else:
             self.logger.warning("No subcategories found in LLM response")
             session["current_state"] = "new_query"
